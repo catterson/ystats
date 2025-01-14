@@ -92,7 +92,11 @@
     "href": "chapters/2R_WhyResearch.html",
     "title": "Why Research?",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!"
+    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "crumbs": [
+      "Home",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Research?</span>"
+    ]
   },
   {
     "objectID": "chapters/3R_Data.html",
@@ -135,14 +139,23 @@
     "href": "chapters/7R_CategoricalIV.html",
     "title": "Linear Models [Categorical IVs]",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!"
+    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "crumbs": [
+      "Home",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Linear Models \\[Categorical IVs\\]</span>"
+    ]
   },
   {
     "objectID": "chapters/8R_Assumptions.html",
     "href": "chapters/8R_Assumptions.html",
     "title": "Linear Models : Assumptions, Contrasts, and Experiments",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!"
+    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "crumbs": [
+      "Home",
+      "Predicting Data",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Linear Models : Assumptions, Contrasts, and Experiments</span>"
+    ]
   },
   {
     "objectID": "chapters/9R_SamplingError.html",
