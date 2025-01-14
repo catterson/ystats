@@ -4,10 +4,10 @@
     "href": "index.html",
     "title": "Why Statistics?",
     "section": "",
-    "text": "Introduction.\nHi! I’m your professor. My name is Arman Daniel Catterson, and thank you for reading these words that I wrote! Below is a short video so you can see what I look and sound like.\nThis textbook will also be part of the flipped classroom approach that we will take this semester.\nThe flipped classroom approach requires y’all to do the readings and watch the videos before class.\nThe flipped classroom approach also requires me to write text and record videos that are engaging and helpful for the three main parts of this class.",
+    "text": "Welcome",
     "crumbs": [
       "Home",
-      "Introduction."
+      "Welcome"
     ]
   },
   {
@@ -18,7 +18,7 @@
     "text": "Hey, it’s a check-in!\nLoading…",
     "crumbs": [
       "Home",
-      "Introduction."
+      "Welcome"
     ]
   },
   {
@@ -98,7 +98,7 @@
     "href": "chapters/2R_WhyResearch.html",
     "title": "Why Research Methods?",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "text": "Part 1.",
     "crumbs": [
       "Home",
       "Why?",
@@ -122,7 +122,12 @@
     "href": "chapters/4R_Description.html",
     "title": "Description",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!"
+    "text": "Part 1.",
+    "crumbs": [
+      "Home",
+      "Describing Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Description</span>"
+    ]
   },
   {
     "objectID": "chapters/5R_Scales.html",
@@ -139,6 +144,7 @@
     "text": "Hi! Stay tuned for reading materials. Thanks!",
     "crumbs": [
       "Home",
+      "Predicting Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Linear Models</span>"
     ]
   },
@@ -150,6 +156,7 @@
     "text": "Hi! Stay tuned for reading materials. Thanks!",
     "crumbs": [
       "Home",
+      "Predicting Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Linear Models \\[Categorical IVs\\]</span>"
     ]
   },
@@ -215,6 +222,76 @@
       "Home",
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>About</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/2R_WhyResearch.html#part-2.",
+    "href": "chapters/2R_WhyResearch.html#part-2.",
+    "title": "Why Research Methods?",
+    "section": "Part 2.",
+    "text": "Part 2.",
+    "crumbs": [
+      "Home",
+      "Why?",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Research Methods?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/2R_WhyResearch.html#part-3.",
+    "href": "chapters/2R_WhyResearch.html#part-3.",
+    "title": "Why Research Methods?",
+    "section": "Part 3.",
+    "text": "Part 3.",
+    "crumbs": [
+      "Home",
+      "Why?",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Research Methods?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/4R_Description.html#part-2.",
+    "href": "chapters/4R_Description.html#part-2.",
+    "title": "Description",
+    "section": "Part 2.",
+    "text": "Part 2.",
+    "crumbs": [
+      "Home",
+      "Describing Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Description</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/4R_Description.html#part-3.",
+    "href": "chapters/4R_Description.html#part-3.",
+    "title": "Description",
+    "section": "Part 3.",
+    "text": "Part 3.",
+    "crumbs": [
+      "Home",
+      "Describing Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Description</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/0R_About.html",
+    "href": "chapters/0R_About.html",
+    "title": "About this Class and Author",
+    "section": "",
+    "text": "The Professor\nHi! I’m your professor. My name is Arman Daniel Catterson, and thank you for reading these words that I wrote! Below is a short video so you can see what I look and sound like.",
+    "crumbs": [
+      "Home",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "chapters/0R_About.html#the-book",
+    "href": "chapters/0R_About.html#the-book",
+    "title": "About this Class and Author",
+    "section": "The Book",
+    "text": "The Book",
+    "crumbs": [
+      "Home",
+      "Introduction"
     ]
   }
 ]

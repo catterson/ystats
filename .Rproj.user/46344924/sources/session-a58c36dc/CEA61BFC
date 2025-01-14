@@ -3,14 +3,14 @@
     "path": "~/Dropbox/!WHY STATS/ystats/chapters/1R_WhyStats.qmd",
     "project_path": "chapters/1R_WhyStats.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "1855094459",
     "contents": "",
     "dirty": false,
     "created": 1736841610448.0,
     "source_on_save": false,
-    "relative_order": 4,
+    "relative_order": 6,
     "properties": {
-        "rmdVisualMode": "true",
+        "rmdVisualMode": "false",
         "rmdVisualWrapConfigured": "true",
         "source_window_id": "",
         "Source": "Source",
@@ -21,11 +21,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1736841622,
+    "lastKnownWriteTime": 1736883199,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1736841622247,
+    "last_content_update": 1736883199927,
     "read_only": false,
     "read_only_alternatives": []
 }

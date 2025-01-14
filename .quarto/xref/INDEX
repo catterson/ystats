@@ -118,5 +118,14 @@
   },
   "about.qmd": {
     "about.html": "f683287b"
+  },
+  "./chapters/0R_About.qmd": {
+    "0R_About.html": "a91b1f7d"
+  },
+  "chapters/0R_About.qmd": {
+    "0R_About.html": "65d7cf3a"
+  },
+  "Rcode.qmd": {
+    "Rcode.html": "df6ba4ff"
   }
 }
