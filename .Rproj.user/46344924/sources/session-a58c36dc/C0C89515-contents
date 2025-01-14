@@ -42,7 +42,7 @@ book:
       - text: "R Code You Need"
         href: Rcode.qmd
       - text: "Prof. Cat"
-        href: catterson.github.io
+        href: https://catterson.github.io
   sidebar: 
     style: docked
     alignment: "left"
