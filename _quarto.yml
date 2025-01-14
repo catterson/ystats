@@ -4,25 +4,6 @@ project:
 
 book:
   title: "Why Statistics?"
-  navbar: 
-    background: primary
-    search: true
-    left:
-      - text: "Home" 
-        href: index.qmd
-      - text: "Labs"
-        href: labs.qmd
-      - text: "R Code You Need"
-        href: Rcode.qmd
-      - text: "About"
-        href: about.qmd
-  sidebar: 
-    style: docked
-    alignment: "left"
-    subtitle: "Table of Contents"
-    logo: images/cover_page.png
-    collapse-level: 2
-  date: "12/11/2024"
   chapters:
     - index.qmd
     - part: "Why?"
@@ -49,7 +30,26 @@ book:
         - labs.qmd
         - about.qmd
     - references.qmd
-
+  navbar: 
+    background: primary
+    search: true
+    left:
+      - text: "Home" 
+        href: index.qmd
+      - text: "Labs"
+        href: labs.qmd
+      - text: "R Code You Need"
+        href: Rcode.qmd
+      - text: "About"
+        href: about.qmd
+  sidebar: 
+    style: docked
+    alignment: "left"
+    subtitle: "Table of Contents"
+    logo: images/cover_page.png
+    collapse-level: 2
+  date: "12/11/2024"
+  
 bibliography: references.bib
 
 format:
