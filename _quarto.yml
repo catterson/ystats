@@ -29,8 +29,8 @@ book:
         - ./chapters/12R_Conclusion2Introduction.qmd
   appendices:
     - labs.qmd
-    - references.qmd
     - Rcode.qmd
+    - references.qmd
   navbar: 
     background: primary
     search: true

@@ -293,5 +293,17 @@
       "Home",
       "Introduction"
     ]
+  },
+  {
+    "objectID": "Rcode.html",
+    "href": "Rcode.html",
+    "title": "Appendix B — Rcode",
+    "section": "",
+    "text": "Here is a list of the R code we use in this class.",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Rcode</span>"
+    ]
   }
 ]
