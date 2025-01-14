@@ -96,13 +96,13 @@
   {
     "objectID": "chapters/2R_WhyResearch.html",
     "href": "chapters/2R_WhyResearch.html",
-    "title": "Research Methods",
+    "title": "Why Research Methods?",
     "section": "",
     "text": "Hi! Stay tuned for reading materials. Thanks!",
     "crumbs": [
       "Home",
       "Why?",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Research Methods</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Research Methods?</span>"
     ]
   },
   {
@@ -192,5 +192,29 @@
     "title": "Conclusion 2 Introduction",
     "section": "",
     "text": "Hi! Stay tuned for reading materials. Thanks!"
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "Appendix A — labs",
+    "section": "",
+    "text": "Here is a list of your lab assignments. Everyone loves lab assignments!!\n\n\n\nDate\nLab\nDescription\nLink to Key",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>labs</span>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Appendix B — About",
+    "section": "",
+    "text": "B.1 Hi, it’s me - your professor.\nBlah blah",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>About</span>"
+    ]
   }
 ]

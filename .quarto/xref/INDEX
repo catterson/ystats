@@ -112,5 +112,11 @@
   },
   "./chapters/12R_Conclusion2Introduction.qmd": {
     "12R_Conclusion2Introduction.html": "0b828016"
+  },
+  "labs.qmd": {
+    "labs.html": "6cf5a92d"
+  },
+  "about.qmd": {
+    "about.html": "f683287b"
   }
 }

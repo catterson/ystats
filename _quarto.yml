@@ -26,9 +26,9 @@ book:
         - ./chapters/10R_NHSTPower.qmd
         - ./chapters/11R_MultipleRegression.qmd
         - ./chapters/12R_Conclusion2Introduction.qmd
-      appendices:
-        - labs.qmd
-        - about.qmd
+  appendices:
+    - labs.qmd
+    - about.qmd
     - references.qmd
   navbar: 
     background: primary
