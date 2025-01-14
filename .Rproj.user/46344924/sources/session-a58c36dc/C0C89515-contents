@@ -24,27 +24,30 @@ book:
     collapse-level: 2
   date: "12/11/2024"
   chapters:
-    - part: Why Statistics, Research Methods, and R?
+    - index.qmd
+    - part: "Why?"
       chapters: 
-        - index.qmd
         - ./chapters/1R_WhyStats.qmd
         - ./chapters/2R_WhyResearch.qmd
-    - part : Describing Data 
+    - part: "Describing Data"
       chapters: 
         - ./chapters/3R_Data.qmd
         - ./chapters/4R_Description.qmd
         - ./chapters/5R_Scales.qmd
-    - part : Predicting Data
+    - part: "Predicting Data"
       chapters: 
         - ./chapters/6R_LinearModels.qmd
         - ./chapters/7R_CategoricalIV.qmd
         - ./chapters/8R_Assumptions.qmd
-    - part : Predicting People
+    - part: "Predicting People"
       chapters: 
         - ./chapters/9R_SamplingError.qmd
         - ./chapters/10R_NHSTPower.qmd
         - ./chapters/11R_MultipleRegression.qmd
         - ./chapters/12R_Conclusion2Introduction.qmd
+      appendices:
+        - labs.qmd
+        - about.qmd
     - references.qmd
 
 bibliography: references.bib
