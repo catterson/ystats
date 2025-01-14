@@ -40,5 +40,77 @@
   },
   "references.qmd": {
     "references.html": "9283e870"
+  },
+  "chapters/1R_WhyStats.qmd": {
+    "1R_WhyStats.html": "c6a37790"
+  },
+  "chapters/2R_WhyResearch.qmd": {
+    "2R_WhyResearch.html": "0f0292c2"
+  },
+  "chapters/3R_Data.qmd": {
+    "3R_Data.html": "a5975e05"
+  },
+  "chapters/4R_Description.qmd": {
+    "4R_Description.html": "b3790ed8"
+  },
+  "chapters/5R_Scales.qmd": {
+    "5R_Scales.html": "a659c784"
+  },
+  "chapters/6R_LinearModels.qmd": {
+    "6R_LinearModels.html": "bfd9c146"
+  },
+  "chapters/7R_CategoricalIV.qmd": {
+    "7R_CategoricalIV.html": "265683be"
+  },
+  "chapters/8R_Assumptions.qmd": {
+    "8R_Assumptions.html": "2c96b699"
+  },
+  "chapters/9R_SamplingError.qmd": {
+    "9R_SamplingError.html": "2ba28047"
+  },
+  "chapters/10R_NHSTPower.qmd": {
+    "10R_NHSTPower.html": "91d4e5c3"
+  },
+  "chapters/11R_MultipleRegression.qmd": {
+    "11R_MultipleRegression.html": "b28fa58e"
+  },
+  "chapters/12R_Conclusion2Introduction.qmd": {
+    "12R_Conclusion2Introduction.html": "c54475a9"
+  },
+  "./chapters/1R_WhyStats.qmd": {
+    "1R_WhyStats.html": "7b240fc3"
+  },
+  "./chapters/2R_WhyResearch.qmd": {
+    "2R_WhyResearch.html": "8ecbaa4e"
+  },
+  "./chapters/3R_Data.qmd": {
+    "3R_Data.html": "c0de6336"
+  },
+  "./chapters/4R_Description.qmd": {
+    "4R_Description.html": "cfdec41b"
+  },
+  "./chapters/5R_Scales.qmd": {
+    "5R_Scales.html": "4434364d"
+  },
+  "./chapters/6R_LinearModels.qmd": {
+    "6R_LinearModels.html": "ff2caebb"
+  },
+  "./chapters/7R_CategoricalIV.qmd": {
+    "7R_CategoricalIV.html": "40d8841a"
+  },
+  "./chapters/8R_Assumptions.qmd": {
+    "8R_Assumptions.html": "2dff1b6d"
+  },
+  "./chapters/9R_SamplingError.qmd": {
+    "9R_SamplingError.html": "02860c31"
+  },
+  "./chapters/10R_NHSTPower.qmd": {
+    "10R_NHSTPower.html": "b209d5ed"
+  },
+  "./chapters/11R_MultipleRegression.qmd": {
+    "11R_MultipleRegression.html": "2daa68ed"
+  },
+  "./chapters/12R_Conclusion2Introduction.qmd": {
+    "12R_Conclusion2Introduction.html": "0b828016"
   }
 }
