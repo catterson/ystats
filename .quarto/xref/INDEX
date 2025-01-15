@@ -133,5 +133,11 @@
   },
   "./chapters/3R_ResearchMethods.qmd": {
     "3R_ResearchMethods.html": "9ae65b7f"
+  },
+  "chapters/2R_Data.qmd": {
+    "2R_Data.html": "4c2d96cc"
+  },
+  "chapters/3R_ResearchMethods.qmd": {
+    "3R_ResearchMethods.html": "cb5463be"
   }
 }

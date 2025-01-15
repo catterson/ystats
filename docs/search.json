@@ -139,37 +139,37 @@
   {
     "objectID": "chapters/6R_LinearModels.html",
     "href": "chapters/6R_LinearModels.html",
-    "title": "Linear Models",
+    "title": "Continuous IVs",
     "section": "",
     "text": "Hi! Stay tuned for reading materials. Thanks!",
     "crumbs": [
-      "Home",
-      "Predicting Data",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Linear Models</span>"
+      "Lab Assignments",
+      "Predicting People",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Continuous IVs</span>"
     ]
   },
   {
     "objectID": "chapters/7R_CategoricalIV.html",
     "href": "chapters/7R_CategoricalIV.html",
-    "title": "Linear Models [Categorical IVs]",
+    "title": "Categorical IVs",
     "section": "",
     "text": "Hi! Stay tuned for reading materials. Thanks!",
     "crumbs": [
-      "Home",
-      "Predicting Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Linear Models \\[Categorical IVs\\]</span>"
+      "Lab Assignments",
+      "Predicting People",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Categorical IVs</span>"
     ]
   },
   {
     "objectID": "chapters/8R_Assumptions.html",
     "href": "chapters/8R_Assumptions.html",
-    "title": "Linear Models : Assumptions, Contrasts, and Experiments",
+    "title": "Assumptions and Extensions",
     "section": "",
     "text": "Hi! Stay tuned for reading materials. Thanks!",
     "crumbs": [
-      "Home",
-      "Predicting Data",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Linear Models : Assumptions, Contrasts, and Experiments</span>"
+      "Lab Assignments",
+      "Predicting People",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Assumptions and Extensions</span>"
     ]
   },
   {
@@ -205,9 +205,9 @@
     "href": "labs.html",
     "title": "Appendix A — Lab Assignments",
     "section": "",
-    "text": "Here is a list of your lab assignments. Everyone loves lab assignments!!\n\n\n\nLecture\nLab [due by 2:00 PM week after lecture]\nLink to Key [posted 1-week after deadline]\n\n\n\n\n1/24\nLab 1 [Getting StaRted]\n\n\n\n1/31\nLab 2 [Navigating Data]\n\n\n\n2/7\nLab 3 [Project Milestone: Intro Outline]\n\n\n\n2/14\nLab 4 [Summarizing Data]\n\n\n\n2/21\nLab 5 [Practice Mini Exam]\n\n\n\n2/28\nLab 6 [Project Milestone: Study Draft]\n\n\n\n3/7\nLab 7 [Linear Models]\n\n\n\n3/14\nLab 8 [More Models] \n\n\n\n3/21\nLab 9 [Project Milestone : Methods & Launch Study!]\n\n\n\n3/28\nLab 10 [Project Milestone : Participants & Descriptives]\n\n\n\n4/4\nLab 11 [Project Milestone : Linear Model Tables]\n\n\n\n4/11\nLab 12 [Practice Exam]\n\n\n\n4/18\n\n\n\n\n4/25\nLab 13 [Project : Draft]\n\n\n\n5/2\n\n\n\n\n5/9\nFinal Project is Due 5/12 at 11:59 PM",
+    "text": "Here is a list of your lab assignments. Everyone loves lab assignments!!\n\n\n\nLecture\nLab [due by 2:00 PM week after lecture]\nLink to Key [posted 1-week after deadline]\n\n\n\n\n1/24\nLab 1 [Getting StaRted]\nLab 1 Key\n\n\n1/31\nLab 2 [Navigating Data]\n\n\n\n2/7\nLab 3 [Project Milestone: Intro Outline]\n\n\n\n2/14\nLab 4 [Summarizing Data]\n\n\n\n2/21\nLab 5 [Practice Mini Exam]\n\n\n\n2/28\nLab 6 [Project Milestone: Study Draft]\n\n\n\n3/7\nLab 7 [Linear Models]\n\n\n\n3/14\nLab 8 [More Models] \n\n\n\n3/21\nLab 9 [Project Milestone : Methods & Launch Study!]\n\n\n\n3/28\nLab 10 [Project Milestone : Participants & Descriptives]\n\n\n\n4/4\nLab 11 [Project Milestone : Linear Model Tables]\n\n\n\n4/11\nLab 12 [Practice Exam]\n\n\n\n4/18\n\n\n\n\n4/25\nLab 13 [Project : Draft]\n\n\n\n5/2\n\n\n\n\n5/9\nFinal Project is Due 5/12 at 11:59 PM",
     "crumbs": [
-      "Cat Home",
+      "Lab Assignments",
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Lab Assignments</span>"
     ]
@@ -413,7 +413,7 @@
     "href": "chapters/0R_About.html#goals-of-the-course",
     "title": "Introduction",
     "section": "Goals of the Course",
-    "text": "Goals of the Course\nThis class is really three classes in one semester.\n\nStatistics.\nProgramming in R. This semester, we will learn to use the free program R to work with data. No previous programming experience is required, and if it helps all the R code we will learn in this class would fit on one page\nResearch Methods.",
+    "text": "Goals of the Course\nThis class is really three classes in one semester - a research methods class where you will learn how psychologists collect data in order to answer questions about people (or non-human animals), a programming class where you will learn how to use R to work with these data, and a statistics class where you will learn how and why psychologists analyze this data to answer their questions.\nThere are to major assessments ## Course Structure This semester, we’ll be taking a flipped classroom approach to learning the statistics, research methods, and programming required of modern psychology researchers.\n\nBefore lecture you’ll read and watch some videos to be introduced to the content that we will then cover more deeply in lecture. You’ll also take a short quiz (no time limit, open-note, and you can take as many times as you’d like) that will encourage you to do the readings, and let me know what topics are still confusing to students.\nDuring lecture we will start with a review of concepts you learned from the pre-readings, go over any common questions that students still have, and then use the remaining time to practice and discussing the skills and concepts. We will work on the homework assignment together\nAfter lecture you’ll complete any homework that we didn’t finish in class, and then read for the next week’s lecture.\n\nThe flipped classroom approach requires y’all to do the readings and watch the videos before class, and requires me to write text and record videos that are engaging and helpful for the students in the class.",
     "crumbs": [
       "Lab Assignments",
       "Introduction"
@@ -428,6 +428,65 @@
     "crumbs": [
       "Lab Assignments",
       "Introduction"
+    ]
+  },
+  {
+    "objectID": "chapters/0R_About.html#course-syllabus.",
+    "href": "chapters/0R_About.html#course-syllabus.",
+    "title": "Introduction",
+    "section": "Course Syllabus.",
+    "text": "Course Syllabus.",
+    "crumbs": [
+      "Lab Assignments",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "chapters/2R_Data.html",
+    "href": "chapters/2R_Data.html",
+    "title": "Data",
+    "section": "",
+    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "crumbs": [
+      "Lab Assignments",
+      "Describing People",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/3R_ResearchMethods.html",
+    "href": "chapters/3R_ResearchMethods.html",
+    "title": "Why Research Methods?",
+    "section": "",
+    "text": "Part 1.",
+    "crumbs": [
+      "Lab Assignments",
+      "Describing People",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why Research Methods?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/3R_ResearchMethods.html#part-2.",
+    "href": "chapters/3R_ResearchMethods.html#part-2.",
+    "title": "Why Research Methods?",
+    "section": "Part 2.",
+    "text": "Part 2.",
+    "crumbs": [
+      "Lab Assignments",
+      "Describing People",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why Research Methods?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/3R_ResearchMethods.html#part-3.",
+    "href": "chapters/3R_ResearchMethods.html#part-3.",
+    "title": "Why Research Methods?",
+    "section": "Part 3.",
+    "text": "Part 3.",
+    "crumbs": [
+      "Lab Assignments",
+      "Describing People",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Why Research Methods?</span>"
     ]
   }
 ]
