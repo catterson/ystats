@@ -10,7 +10,13 @@ Below is a short video so you can see what I look and sound like.
 :::
 
 ## Goals of the Course
+This class is really three classes in one semester.
 
+1. **Statistics.** 
+
+2. **Programming in R.** This semester, we will learn to use the free program R to work with data. No previous programming experience is required, and if it helps all the R code we will learn in this class would fit on one page
+
+3. **Research Methods.**
 
 ## Course Structure
 This semester, we'll be taking a **flipped classroom** approach to learning the statistics, research methods, and programming required of modern psychology researchers. 

@@ -3,7 +3,7 @@
     "path": "~/Dropbox/!WHY STATS/ystats/chapters/0R_About.qmd",
     "project_path": "chapters/0R_About.qmd",
     "type": "quarto_markdown",
-    "hash": "883856231",
+    "hash": "415411424",
     "contents": "",
     "dirty": false,
     "created": 1736883316236.0,
@@ -14,15 +14,15 @@
         "rmdVisualWrapConfigured": "true",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "3,78",
+        "cursorPosition": "16,227",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1736902205,
+    "lastKnownWriteTime": 1736970660,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1736902205064,
+    "last_content_update": 1736970660267,
     "read_only": false,
     "read_only_alternatives": []
 }
