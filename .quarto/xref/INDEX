@@ -127,5 +127,11 @@
   },
   "Rcode.qmd": {
     "Rcode.html": "df6ba4ff"
+  },
+  "./chapters/2R_Data.qmd": {
+    "2R_Data.html": "921c6a27"
+  },
+  "./chapters/3R_ResearchMethods.qmd": {
+    "3R_ResearchMethods.html": "9ae65b7f"
   }
 }

@@ -4,10 +4,10 @@
     "href": "index.html",
     "title": "Why Statistics?",
     "section": "",
-    "text": "Welcome",
+    "text": "Preface\nHello! This book - Why Statistics? - was written to support students’ learning of the statistics, research methods, and R programming skills that are required of modern psychology researchers. Whew!\nI’ve learned over the years that students approach statistics with a variety of emotions - many of them negative. For what it’s worth, I have been happy to see most students thrive in the class, and will do my best to support y’all and make this class (and book) a positive learning experience TM.",
     "crumbs": [
-      "Home",
-      "Welcome"
+      "Lab Assignments",
+      "Preface"
     ]
   },
   {
@@ -26,10 +26,10 @@
     "href": "chapters/1R_WhyStats.html",
     "title": "Why Statistics?",
     "section": "",
-    "text": "To-Do List :",
+    "text": "To-Do List (due before our first lecture):",
     "crumbs": [
-      "Home",
-      "Why?",
+      "Lab Assignments",
+      "Describing People",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
   },
@@ -50,10 +50,10 @@
     "href": "chapters/1R_WhyStats.html#why-statistics-in-psychology",
     "title": "Why Statistics?",
     "section": "Why Statistics in Psychology?",
-    "text": "Why Statistics in Psychology?\nAs y’all know, this class is a requirement for students who want to be psychology majors. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder why-the-flip they are required to take a math class when all they just want to learn about people (or other non-human animals), you know!??!\nI agree that people (or non-human animals) are interesting. And we all have this interest in people (or non-human animals) because we are complex1. While people are similar in many ways, we also differ in radical ways; from superficial features like age and race, to more complex ways like our personality or emotions, to highly specific behaviors such as whether all students in the class are reading these words or not, or how bored or excited (or any emotional experience) students are while reading these words…y’all get the idea.\nIndividuals differ in terms of every facet of life, and statistics and research methods are the tools that psychologists use to try and study those differences.\n\nStatistics as a Language\n\n\n\n\n\n\n\n\nStatistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand differences in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.\n\n\n\n\nVocabulary. Statistics has specific definitions for specific ideas, such as “between-person” and “within-person variation” (as described above). Statistics terms like “standard deviation” are also just vocabulary (in this case an equation to define a type of variation). Some of these vocabulary words are easier to understand and remember than others, and like all languages, sometimes people disagree on the definition, and sometimes misuse these words.\nGrammar and Syntax. The way we organize words also matters when learning languages. Saying “the professor graded the students“ has a very different meaning than “the students graded the professor”, even though these share the exact same words. Statistics (and research methods) also requires precision in the way we organize the ideas, terms, and processes. We’ll learn more about this as we discuss the scientific method (a highly structured and organized approach to doing research), but also as we learn how to navigate doing data analysis.\nCultural Immersion. A good language class will also help students to understand the ways that the language is connected to people, places, and history (and usually food, though I’m not sure if there’s cultural food norms abouts statistics or research methods). In this class, we’ll think about the ways we can immerse ourselves in the culture of statistics and research methods, from the cultural practices that inform which methods or tools to use, to the ways that the culture of statistics and research might needlessly create barriers for certain types of people or studies.\nPractice and Past Experiences. And yes, in order to gain fluency in a language, you need to practice! Attendance and regular engagement with this class will ensure that you are able to get the practice that you need. It’s also good to note that people differ in terms of their past experiences with computers and math, and are bringing those experiences (for better or worse) with them into this class.\n\n\n\nVariables and Variation\n\n\nPrediction and Power",
+    "text": "Why Statistics in Psychology?\nAs y’all know, this class is a requirement for students who want to be psychology majors. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder why-the-flip they are required to take a math class when all they just want to learn about people (or other non-human animals), you know!??!\nI agree that people (or non-human animals) are interesting. And we all have this interest in people (or non-human animals) because we are complex1. While people are similar in many ways, we also differ in radical ways; from superficial features like age and race, to more complex ways like our personality or emotions, to highly specific behaviors such as whether all students in the class are reading these words or not, or how bored or excited (or any emotional experience) students are while reading these words…y’all get the idea.\n\nStatistics as a Language\nStatistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand differences in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.\n\nVariables and Variation\nVariation is at the heart of statistics, and is defined by differences, change, and complexity.\n\n\n\n\n\n\n\nBetween-Person Variation describes how individuals differ from each other. Think about ways that you differ from others; not everybody wears glasses, has the same level of silliness / seriousness / desire to cause mischief / fascination with horses.\n\n\n\nWithin-Person Variation describes how one individual changes over time or across different situations. Think about the person you are today - are you exactly the same as you were yesterday? A year ago? You’ve changed (varied) in ways both small (hunger, exhaustion, number of words you’ve read for this class) and large (personality, love interests, identity, etc.)\n\n\n\nNo variation would describe a situation in which everyone is exactly the same. I can’t think of too many situations where there is no variation; let me know on Discord if you can think of one? And while there’s no theoretical limit to the amount of variation that there can be, one major task of this class will be to learn to quantify the amount of variation that we observe in our role as psychologists.\n\n🌞🌞🌞\n🌞🌞🌞\n\n\n\n\nA Variable is a label for some psychological phenomenon that has variation. I’m not sure where I first heard this, but psychologists often focus on what they call the “ABCs”. \n\nA is for Affect = the emotions that you feel.\nB is for Behavior = the actions that you do.\nC is for cognition = the thoughts you have.\n\nThese are not rigid categories, and psychologists often debate the definitions of these terms. But they can be useful ways to think about how to think about people, and help break down a complex phenomenon into more specific components.\n\n\nPractice : Variables and Variation\nFor example, think about how affect, behavior, and cognition might be relevant if I ask you to think about an upcoming exam (your first exam is in just a few weeks!) \n\n\n\n\n\n\n\n\nhighlight the cells below to see my ideas / check your understanding\n\n\nAffect Example\nthe feeling of anxiety or dread you have thinking about being assessed, or maybe a feeling of excitement about the opportunity to demonstrate your hard work / effort / knowledge!\n\n\nBehavior Example\nimmediately checking your calendar to see when exams are; or maybe avoiding your classes with a nice procrastination session on the ol’ infinite scroll machine.\n\n\nCognition Example\nthinking about all the work you have to do; wondering why the professor would choose this example when he could have thought about the ways that affect, behavior, and cognition would be triggered when you see a puppy or kitten or something like that…\n\n\n\n(Here’s a cat video I like for students needing a distraction from thinking about exams. I promise your exams in this class will be chill and I’ll do my best to prepare y’all.)\n\n\nLanguage is More than Vocabulary\nStatistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand variation in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.\n\nVocabulary. Equations like “the mean” or “standard deviation” or “cronbach’s alpha” or “p-value” are precise vocabulary terms that define some feature of variation. Some of these vocabulary words are easier to understand and remember than others, and like all languages, sometimes people disagree on the definition, and sometimes misuse these words.\nGrammar and Syntax. The way we organize words also matters when learning languages. Saying “the professor graded the students“ has a very different meaning than “the students graded the professor”, even though these share the exact same words. Statistics (and research methods) also requires precision in the way we organize the ideas, terms, and processes. We’ll learn more about this as we discuss the scientific method (a highly structured and organized approach to doing research), but also as we learn how to navigate doing data analysis.\nCultural Immersion. A good language class will also help students to understand the ways that the language is connected to people, places, and history2. In this class, we’ll think about the ways we can immerse ourselves in the culture of statistics and research methods, from the cultural practices that inform which methods or tools to use, to the ways that the culture of statistics and research might needlessly create barriers for certain types of people or studies.\nPractice and Past Experiences. And yes, in order to gain fluency in a language, you need to practice! Attendance and regular engagement with this class will ensure that you are able to get the practice that you need. It’s also good to note that people differ in terms of their past experiences with computers and math, and are bringing those experiences (for better or worse) with them into this class.\n\n\n\n\nCulture in Statistics : Me-Search\n\n\n\n\n\n\n\n\nHiya folks! Everyone’s favorite Open-Source Mickey Mouse here. I’ll be popping up in the book from time to time to critically engage with the idea that statistics has a culture that is socially constructed by people like you!\n\n\n\nAll psychologists are interested in questions sparked by their own observations or experiences. This is sometimes called “me-search” - the idea that a person’s research interests reflect their own experience.\nMesearch isn’t necessarily bad, but it does serve as a form of potential bias in research - not only will a researcher’s own biases and beliefs influence the way they conduct research, but the types of questions that are asked will be influenced by the types of people doing research.\nFor example, a survey of over 26,000 research articles in psychology documented just how rarely the topic of race is studied in psychology (see figure below).\n\n\n\n\n\nAs we’ll discuss throughout this class, life is complex and there is never one explanation for any phenomenon. However, it’s important to note that psychology as a field has historically been dominated by white authors (researchers who write scientific papers) and white editors (researchers who decide what papers get published or not).\n\n\n\n\n\nThese trends are important to reflect on, because they reveal a bias in who becomes a psychologist, and what types of questions these researchers are interested in pursuing.\nIt’s also a goal of this class to not only highlight the important contributions of non-white researchers and statisticians, but also make sure that all students in this diverse classroom feels empowered to use statistics, research methods, and R skills to ask (and answer) research questions that matter to them!3",
     "crumbs": [
-      "Home",
-      "Why?",
+      "Lab Assignments",
+      "Describing People",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
   },
@@ -62,10 +62,10 @@
     "href": "chapters/1R_WhyStats.html#why-r",
     "title": "Why Statistics?",
     "section": "Why R?",
-    "text": "Why R?\n\nInstalling R\n\n\nNavigating R\n\n\nDefining Variables in R",
+    "text": "Why R?\nThis semester, we will also learn how to use the computer programming language R to work with data, conduct analyses, and make graphs. R can be intimidating to work with at first, and is more confusing than it needs to be sometimes (as you’ll quickly find out haha), but I promise you will learn! In fact, that’s the point of this class. It’s totally okay (and expected) for you to feel frustrated at times; this is part of the learning process. So please embrace the “I HAVE NO IDEA WHAT I’M DOING” dog meme energy (and look how happy the doggy looks!) as you embark on your R journey.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R\nUse the links below to install R and Posit (also called RStudio; yes this is confusing).\nNote : You must download both R and Posit (these are separate programs). Make sure to download the most recent version of R and Posit to avoid issues in the future.\n\nDownload and Install the Program R : R is the powerful, free, and somewhat intimidating computer program that we will use to analyze data in this class. This website is not super friendly - choose the operating system you have (Windows, MacOS, or Linux) and then download the “latest release” on the next page. If you have a chromebook, you will need to use posit.cloud.\nDownload and Install the Program RStudio (Posit) : Posit (formerly called RStudio) is an Integrated Development Environment (IDE) - basically a “home” for R to live in, with rooms and this program is not 100% necessary, but makes it a little easier to navigate R. Note that you will need to install R first in order for Posit to work.\n\nHaving trouble getting these programs to work?\n\nHere’s one YouTube video someone made to show you how to download and install.\nTry posit.cloud. This is a web-based version of RStudio, and has a free option but limits you to 15-hours of work a month. There’s a paid option for $5/month that you can use; former students pointed out that you can always create a new “free” account if you run over the 15-hour limit.\nGo to section / office hours! Your GSI can help get everything working properly.\n\n\n\n\nNavigating R\nWatch the three videos below for a quick introduction to R - the program we will be using to analyze data.\n\n\n\nVideo Link\nTopics Covered / Resources\n\n\nWATCH : an introduction to R\n\nwhat R looks like when you open it\nbasic math in the console\nindexing and output\n\n\n\nWATCH : an introduction to RStudio\n\nwhat RStudio/Posit looks like; navigating the program\nbasic math in the console\nthe source file (makes life easier and saves your work!)\n\n\n\nWATCH : downloading an RScript; getting started on Quiz 1 :)\n\ndownloading this RScript to complete Quiz 1\nthe sum() function",
     "crumbs": [
-      "Home",
-      "Why?",
+      "Lab Assignments",
+      "Describing People",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
   },
@@ -74,9 +74,9 @@
     "href": "chapters/1R_WhyStats.html#why-research-methods",
     "title": "Why Statistics?",
     "section": "Why Research Methods?",
-    "text": "Why Research Methods?\n\nPsychology as a SCIENCE TM of People (and Non-Human Animals)\n\n\nDefining Your Research Questions",
+    "text": "Why Research Methods?\n\nPsychology as a SCIENCE TM of People (and Non-Human Animals)\nPsychology desperately wants to establish itself as a REAL SCIENCE ™. You don’t have to take my word for it, just look at the definitions of some common sources of psychological knowledge - introductory textbooks :  \n\n“Today, we define psychology as the science of behavior and mental processes.” (Myers, 2011)\n“…the science of behavior and the mind.” (Grey, 2010)\n“…the scientific study of mind, brain, and behavior.” (Gazzaniga, 2010)\n“…We now define psychologyas the science of behavior and mental processes.” (Myers & DeWall, 2018)\n\nI’m probably showing my age looking to textbooks, so let’s check in with ChatGPT to see whether the algorithmic summary of large piles of data suggests that psychology is, in fact, a “real science” : \n\n\nPerhaps more authoritatively, the American Psychological Association (APA) confirms that psychology is, “the study of the mind and behavior…a diverse scientific discipline comprising several major branches of research.” (APA, 2024). \nThe consistent emphasis on science (and “rigorous” methods!) in these definitions is an attempt to elevate psychology to the status of other “hard” sciences, like physics and chemistry. But inclusion of the term “science” also seeks to differentiate psychology from its less scientific heritage and past, defend itself from accusations from other scientists / talking heads (if not some of your friends in STEM majors…or parents) that it is not actually REAL SCIENCE ™. \n\n\nScientific Prediction (and Error)\nAnd so, here we are. In this document, in this required class, learning how to DO REAL SCIENCE. With statistics. Oh yeah, and we’ll also be learning to use this computer programming language called R  😈",
     "crumbs": [
-      "Home",
+      "Lab Assignments",
       "Why?",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
@@ -86,10 +86,10 @@
     "href": "chapters/1R_WhyStats.html#footnotes",
     "title": "Why Statistics?",
     "section": "",
-    "text": "One of the reasons I love teaching in the Bay Area is y’all are hella complex.↩︎",
+    "text": "One of the reasons I love teaching in the Bay Area is y’all are hella complex.↩︎\nAnd usually food, though I’m not sure if there’s cultural food norms about statistics or research methods.↩︎\nThis is the purpose of your final project! We’ll talk more about this throughout the class.↩︎",
     "crumbs": [
-      "Home",
-      "Why?",
+      "Lab Assignments",
+      "Describing People",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
   },
@@ -203,13 +203,13 @@
   {
     "objectID": "labs.html",
     "href": "labs.html",
-    "title": "Appendix A — labs",
+    "title": "Appendix A — Lab Assignments",
     "section": "",
-    "text": "Here is a list of your lab assignments. Everyone loves lab assignments!!\n\n\n\nDate\nLab\nDescription\nLink to Key",
+    "text": "Here is a list of your lab assignments. Everyone loves lab assignments!!\n\n\n\nLecture\nLab [due by 2:00 PM week after lecture]\nLink to Key [posted 1-week after deadline]\n\n\n\n\n1/24\nLab 1 [Getting StaRted]\n\n\n\n1/31\nLab 2 [Navigating Data]\n\n\n\n2/7\nLab 3 [Project Milestone: Intro Outline]\n\n\n\n2/14\nLab 4 [Summarizing Data]\n\n\n\n2/21\nLab 5 [Practice Mini Exam]\n\n\n\n2/28\nLab 6 [Project Milestone: Study Draft]\n\n\n\n3/7\nLab 7 [Linear Models]\n\n\n\n3/14\nLab 8 [More Models] \n\n\n\n3/21\nLab 9 [Project Milestone : Methods & Launch Study!]\n\n\n\n3/28\nLab 10 [Project Milestone : Participants & Descriptives]\n\n\n\n4/4\nLab 11 [Project Milestone : Linear Model Tables]\n\n\n\n4/11\nLab 12 [Practice Exam]\n\n\n\n4/18\n\n\n\n\n4/25\nLab 13 [Project : Draft]\n\n\n\n5/2\n\n\n\n\n5/9\nFinal Project is Due 5/12 at 11:59 PM",
     "crumbs": [
-      "Home",
+      "Cat Home",
       "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>labs</span>"
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Lab Assignments</span>"
     ]
   },
   {
@@ -275,11 +275,11 @@
   {
     "objectID": "chapters/0R_About.html",
     "href": "chapters/0R_About.html",
-    "title": "About this Class and Author",
+    "title": "Introduction",
     "section": "",
-    "text": "The Professor\nHi! I’m your professor. My name is Arman Daniel Catterson, and thank you for reading these words that I wrote! Below is a short video so you can see what I look and sound like.",
+    "text": "The Professor\nHi! I’m your professor. My name is Arman Daniel Catterson, and thank you for reading these words that I wrote! Below is a short video so you can see what I look and sound like.\nHi! I’m your professor. My name is Arman Daniel Catterson, and thank you for reading these words that I wrote! Below is a short video so you can see what I look and sound like.",
     "crumbs": [
-      "Home",
+      "Cat Home",
       "Introduction"
     ]
   },
@@ -304,6 +304,108 @@
       "Home",
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Rcode</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/0R_About.html#this-book",
+    "href": "chapters/0R_About.html#this-book",
+    "title": "Introduction",
+    "section": "This Book",
+    "text": "This Book\nThis textbook will also be part of the flipped classroom approach that we will take this semester.\n\nBefore lecture you’ll read and watch some videos to be introduced to the content that we will then cover more deeply in lecture. You’ll also take a short quiz (no time limit, open-note, and you can take as many times as you’d like) that will encourage you to do the readings, and let me know what topics are still confusing to students.\nDuring lecture we will review concepts that students still had questions about from the readings, and spend the rest of the time practicing and discussing the skills you learned. We will work on the homework assignment together\nAfter lecture you’ll complete any homework that we didn’t finish in class, and then read for the next week’s lecture.\n\nThe flipped classroom approach requires y’all to do the readings and watch the videos before class.\nThe flipped classroom approach also requires me to write text and record videos that are engaging and helpful for the three main parts of this class.\n\n\n\n\n\n\n\nProf. Cat\nStatistics and R : This semester, we’ll be learning how (and why) psychologists use statistics. We’ll also learn how to use the programming language R.\n\n\nMickey Mouse\nResearch Methods : Everyone’s favorite public domain character is here to help navigate you through the various tools that psychologists use, so you can use them to conduct an independent research project! Hooray!\n\n\nRatty Rat\nCritical Thinking :",
+    "crumbs": [
+      "Cat Home",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "chapters/0R_About.html#the-class",
+    "href": "chapters/0R_About.html#the-class",
+    "title": "Introduction",
+    "section": "The Class",
+    "text": "The Class\nHere’s a link to",
+    "crumbs": [
+      "Cat Home",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "chapters/0R_About.html#hey-its-a-check-in",
+    "href": "chapters/0R_About.html#hey-its-a-check-in",
+    "title": "Introduction",
+    "section": "Hey, it’s a check-in!",
+    "text": "Hey, it’s a check-in!\nLoading…",
+    "crumbs": [
+      "Cat Home",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "index.html#about-the-author",
+    "href": "index.html#about-the-author",
+    "title": "Why Statistics?",
+    "section": "About the Author",
+    "text": "About the Author\nMy name is Arman Daniel Catterson, and thank you for reading these words that I wrote. I’m a professor at Diablo Valley College (tenured) & UC Berkeley (continuing lecturer), who has been teaching some version of this class since Summer 2015. Feel free to say “hi” if you see me on campus :)",
+    "crumbs": [
+      "Lab Assignments",
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#find-a-problem-or-have-an-idea",
+    "href": "index.html#find-a-problem-or-have-an-idea",
+    "title": "Why Statistics?",
+    "section": "Find a Problem or Have an Idea?",
+    "text": "Find a Problem or Have an Idea?\nPlease fill out this form if you see any errors in the book, or have ideas about ways this textbook could better support students in this (or other) classes. This textbook is very much a work in progress, and I’d love any input you have about the content, organization, or presentation of these materials. If you want to use this text in your own class, reach out and I can send you lecture notes and assignment details.",
+    "crumbs": [
+      "Lab Assignments",
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use-this-book",
+    "href": "index.html#how-to-use-this-book",
+    "title": "Why Statistics?",
+    "section": "How to Use This Book",
+    "text": "How to Use This Book\nTo get started, click on the section titled “Introduction” in the Table of Contents to the left. You should also see an arrow in the bottom right corner of this screen that you can click on to advance to the next section if you want to read in order.\nAt the very top of this page, you should see some helpful links to our Lab Assignments, the RCode that you will need for this class (we will go over this throughout the semester), and the course syllabus.",
+    "crumbs": [
+      "Lab Assignments",
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "chapters/1R_WhyStats.html#to-do-list-due-before-our-first-lecture",
+    "href": "chapters/1R_WhyStats.html#to-do-list-due-before-our-first-lecture",
+    "title": "Why Statistics?",
+    "section": "",
+    "text": "Read this document and watch the videos.\nTake the quiz on bCourses (and submit the on-boarding survey code for the final question).",
+    "crumbs": [
+      "Lab Assignments",
+      "Describing People",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/1R_WhyStats.html#quiz-1",
+    "href": "chapters/1R_WhyStats.html#quiz-1",
+    "title": "Why Statistics?",
+    "section": "Quiz 1",
+    "text": "Quiz 1",
+    "crumbs": [
+      "Lab Assignments",
+      "Describing People",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/1R_WhyStats.html#psychology-as-a-real-science",
+    "href": "chapters/1R_WhyStats.html#psychology-as-a-real-science",
+    "title": "Why Statistics?",
+    "section": "Psychology as a REAL SCIENCE ™",
+    "text": "Psychology as a REAL SCIENCE ™\nPsychology desperately wants to establish itself as a real science, like physics and chemistry. You don’t have to take my word for it, just look at the definitions of some common sources of psychological knowledge - introductory textbooks :  \n\n“Today, we define psychology as the science of behavior and mental processes.” (Myers, 2011)\n“…the science of behavior and the mind.” (Grey, 2010)\n“…the scientific study of mind, brain, and behavior.” (Gazzaniga, 2010)\n“…We now define psychologyas the science of behavior and mental processes.” (Myers & DeWall, 2018)\n\nI’m probably showing my age looking to textbooks, so let’s check in with ChatGPT to see whether the algorithmic summary of large piles of data suggests that psychology is, in fact, a “real science” : \n\n\nPerhaps more authoritatively, the American Psychological Association (APA) confirms that psychology is, “the study of the mind and behavior…a diverse scientific discipline comprising several major branches of research.” (APA, 2024). \nThe consistent emphasis on science (and “rigorous” methods!) in these definitions is an attempt to elevate psychology to the status of other “hard” sciences, like physics and chemistry. But inclusion of the term “science” also seeks to differentiate psychology from its less scientific heritage and past, defend itself from accusations from other scientists / talking heads (if not some of your friends in STEM majors…or parents) that it is not actually REAL SCIENCE ™. \n\nWhat is Science? Prediction (and Error)\nAnd so, here we are. In this document, in this required class for the psychology major, learning how to DO REAL SCIENCE. With statistics. Oh yeah, and we’ll also be learning to use this computer programming language called R 😈",
+    "crumbs": [
+      "Lab Assignments",
+      "Describing People",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
   }
 ]
