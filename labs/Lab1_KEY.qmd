@@ -1,6 +1,6 @@
 # Lab 1 - KEY
 ::: {.callout-tip appearance="minimal"}
-Professor Answers below in these green boxes.
+Professor Answers below in these green boxes. Note that normally the key will post 1-week after the Lab deadline. I've posted this one so you can use it as a guide as we start the semester.
 :::
 **Create a Google Doc to answer these questions.** Please number your responses to help your GSI grade. There’s no word count, and we won’t penalize students for grammar or spelling. Do your best to explain your ideas in your own words, and if you get stuck or confused, post on Discord / ask your GSI / explain why you got stuck and what you tried to do to figure things out. 
 

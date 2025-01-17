@@ -1,0 +1,59 @@
+
+# vectors/arrays:
+score <- c(3,8,10,NA)
+age   <- c(7,6,6)
+
+sqrt(x) # vectorized function
+
+# data frame:
+d <- data.frame(subj   = c(1, 2, 3,  4)
+                ,age   = c(7, 7, 6,  5)
+                ,score = c(3, 8, 10, NA)
+                )
+
+# simple for loop
+for(r in 1:nrow(d)) {
+  if(r>1) {
+    print(d[r,])
+  }
+}
+
+# Some useful functions for implementing Monty Hall
+sample(1:3,1) # choose 1 random element of a list
+
+setdiff( 1:3, c(2,1))
+
+###########################
+## Implement Monty Hall
+###########################
+
+N_SIMULATIONS <- 10000
+
+nwins <- 0
+win.history <- NULL
+doors <- c("goat1", "goat2", "treasure")
+for(i in 1:N_SIMULATIONS) {
+  where.prize <- sample(doors,1) # prize is hidden in a random location
+  which.choose <- sample(doors,1) # what the contestant chose 
+  
+  # Monty can only open doors that are (i) unchosen, and 
+  # (ii) not where the prize is
+  can.open <- setdiff(doors, c(where.prize, which.choose))
+  
+  monty.opens <- sample(can.open,1) # Monty opens a random door that he can
+  
+  # if we switch:
+  #which.choose <- sample(setdiff(1:3, c(monty.opens, which.choose)),1)
+
+  if(which.choose == where.prize) {
+    nwins <- nwins+1
+  }
+  
+  # Keep track of our win percentage over runs of the algorithm:
+  win.history <- append(win.history, nwins/i)
+  #win.history <- c(win_history, nwins/i)
+}
+print(nwins/N_SIMULATIONS)
+
+
+
