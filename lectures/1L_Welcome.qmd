@@ -1,0 +1,89 @@
+---
+title: "Lecture 1 | Welcome to Psych 101"
+format: live-html
+---
+
+
+## Check-In, Agenda and Announcements
+
+### Check-In.
+
+{{< include ~/Dropbox/!WHY STATS/ystats/_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+for (x in 1:5) {
+  print(x ** 2)
+}
+```
+
+### Announcements
+
+-   Section Swap : post on bCourses ASAP.
+-   Next Week :
+    -   Attend Discussion Section
+    -   Complete Lab 1 (will start in lecture!)
+    -   Read Chapter 2
+    -   Complete Quiz 2
+-   Waitlisted Students : Thanks for your patience! Nothing I can do :(
+-   Join the Class Discord
+
+### Agenda
+
+-   2:10 - 2:30 \| Check-In & Announcements
+-   2:30 - 3:00 \| RECAP : Science as Prediction
+
+## R Practice : Defining Variables
+
+### Thinking about Programming (Free Association Activity)
+
+-   Close your eyes
+-   Take a deep breath (inhale / exhale)
+-   Visualize an image based on the word that you hear me say.
+-   What do you observe?
+
+## Recap : Science as Prediction
+
+### Variables and Variation
+
+### In R : Variables
+
++--------------------+---------------+
+| Code               | Description   |
++====================+===============+
+| ``` r              |               |
+| test <- c(#,#,#,#) |               |
+| ```                |               |
++--------------------+---------------+
+|                    |               |
++--------------------+---------------+
+
+#### Creating Numeric Variables
+
+```{r}
+counting <- c(1,2,3,4,5) # the numbers one through five
+print(counting) # one way to "print" the variable
+counting # another way to "print" the variable
+hist(counting) # a way to graph the variable (a histogram)
+```
+
+#### Creating Non-Numeric Variables
+
+```{r}
+laundryhang <- c("shirt", "shirt", "leggings", "leggings", "shirt", 
+             "shirt", "leggings", "pants", "sweater", "sweater") # defining a string variable
+print(laundryhang)
+laundryhang # another way to "print" the variable
+
+laundryhang <- as.factor(laundryhang) # changing the format of the sting variable into a categorical factor
+plot(laundryhang) # a way to graph the non-numeric variable
+```
+
+### Prediction & Error
+
+### Epistemic Beliefs
+
+## The Linear Model
+
+### Definition
+
+### Examples

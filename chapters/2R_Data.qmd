@@ -1,3 +1,545 @@
 # Data
 
-Hi! Stay tuned for reading materials. Thanks!
+Hello! In this week’s reading, you’ll learn how to work with data in R - first how to navigate datasets, and then how to graph both categorical and continuous variables.
+
+![Chinese medical poster, 1933 (ref [US NLM](https://www.nlm.nih.gov/hmd/chineseposters/understanding.html); image source [here](http://www.notechmagazine.com/2009/06/the-body-is-a-machine.html))](images/2_medicalposter.jpg){fig-alt="a chinese medical poster, depicting a human on the left and a mechanical version of the human on the right. for example, the human is holding up a weight with their arm, whereas the mechanical human has a crane for an arm." fig-align="center"}
+
+::: callout-important
+## To-Do List:
+
+-   Read this document and watch the videos.
+    -   Part 1 : On creating variables in R
+    -   Part 2 : In navigating and installing datasets in R.
+-   Complete the check-in and practice quiz.
+-   Take Quiz 2.
+:::
+
+# Part 1 : Defining Data
+
+Researchers seeking to bring a scientific approach to psychology love data, and aim to convert complex human thoughts, feelings, and behaviors into numbers. This is called **quantitative data,** and is the default approach almost all modern research psychologists take. For example: 
+
+-   Psychologists will quantify **affect** using heart rate monitors, finger temperature gauges, or even simple rating scales of how people are feeling (quick, how bored are you right now on a scale from 0 (not bored; super engaged professor!) to 10 (....most bored ever; surprised I’m even reading this right now)....see, you are just a number!)
+
+-   Psychologists often quantify **behavior** by measuring reaction time, the number of times a person fidgets in a chair, how far a person will sit from another person in a study, the speed of a group. And even qualitative data - like a person’s journal entry - would be turned into hard numbers by a researcher (who would ask a team of research assistants to read the journal and then count or provide a subjective rating to what they observe. this is called **behavioral coding**; we’ll learn about it later. remind me if I forget.)
+
+-   Neuroscientists quantify  **cognition** in terms of voxel activation in the brain, or a sleep researcher might ask participants to write down their dreams in a journal, which then a team of research assistants would read and convert into….you guessed it…numbers (e.g., number of times person dreamt about water or their parents; how stressful the dream seemed to the reader; etc.)
+
+While we will learn more about the various ways psychologists collect data later this semester, for now it’s important to acknowledge that these numbers have error (called **measurement error**), a fair amount of work in psychology goes into learning how to reduce measurement error as much as possible, and the existence of measurement error is one form of error that will contributes to the ERROR term in our linear models.
+
+Quantitative data takes two forms that we will see in this class - **numeric** (sometimes called **continuous data**)  and **categorical data (**sometimes called “string” data). 
+
+## Numeric variables
+
+### Definition : Numeric Variable
+
+Numeric variables are when the value of the variable is a number (e.g., your Extraversion score is 62 on a scale from 0 to 100; or you said “um” fifty times yesterday, or scrolled your phone five times since starting this reading. 
+
+**Continuous variables** are a special type of numeric variable, with the idea that values of the variable represent an “infinite” range of possibilities.
+
+We often simplify complexity into discrete groups, but for most complex phenomena, I believe that it’s best to think of life as a spectrum. For example, while I look at my walls and say “they are blue”, a physicist who really understands color theory would be able to interpret the wavelength of light that is being reflected off these walls, and understands that that wavelength really just a point on an infinite spectrum (bound by a certain range).
+
+![](images/2_lightspectrum.png)
+
+Psychologists working in R often use numeric data, and see this as a list (or vector) of numbers. For example, below is data on the narcissism (variable = NPI; a measure of how self-absorbed; self-interested) of a group of Berkeley Haas MBA students were[^2r_data-1].
+
+[^2r_data-1]: These data come from the hormone_data.csv file, which should be updated to our course page. You’ll learn more about how to access these data files later in this chapter.
+
+```{r}
+#| label: preload data
+haas <- read.csv("./chapter_data/hormone_data.csv", stringsAsFactors = T) 
+haas$NPI
+```
+
+**Professor Interpretation** I learn a lot just from this simple output!
+
+-   **haas \<- read.csv("./chapter_data/hormone_data.csv", stringsAsFactors = T")** is the R command that loads the dataset. Note that the path to the datafile - hormone_data.csv - is specific to the way I've stored these data in my file system. You'll learn below how to change this to access your own dataset :)
+-   **haas\$NPI** is the R command that was used to generate the output below; a list of 122 individual Narcissism scores.
+    -   I know there’s 122 individual scores because R is keeping count for me using indexing; the numbers in brackets. \[1\] shows that the first person in the dataset has a narcissism (NPI) score of 3.43; \[118\] 3.73 shows that this is the score for the 118th person in the dataset, and then I can count up to 122. There are much faster ways to do this, but I can do it this way too :)
+    -   I also see there are a few missing data points in the responses - these are marked as NA. This could be people who didn’t complete the survey or were excluded for other reasons (e.g. missing data).
+
+### Graphing : The Histogram
+
+**The Histogram** is a commonway researchers illustrate numeric variables. We will learn more about principles of good graphing this semester, but the KEY IDEA is to always always always graph your data because A PICTURE IS WORTH 1000 WORDS. 
+
+The histogram organizes data - you lose the individual values, but gain understanding in seeing how data are grouped together, which helps you observe patterns and get a quick summary of the variable. 
+
+There are two dimensions of a histogram : 
+
+-   **the x-axis** (the horizontal axis; what goes across) : displays the values of the variable as organized into groups (or “breaks”, in R). 
+
+-   **the y-axis** (the vertical axis; what goes up and down) : displays the frequency (or count) of the individuals in the data who “belong” to that group.
+
+Let’s look at our MBA friends again, through the power of a histogram. As you look at a graph, it’s important to practice thinking about what you learn from the data. Let’s avoid fancy stats terminology for now; it’s not necessary for our purposes!!
+
+```{r}
+hist(haas$NPI, xlab = "Narcissism Score", col = 'black', bor = 'white')
+```
+
+-   **the code :** this code draws a histogram using the `hist()` function. I've also added several `arguments` that change some of the default settings to give the graph some *digital style.*
+
+    -   `xlab` gives the x-axis of the graph a nice label.
+
+    -   `col`changes the color of the bars to black.
+
+    -   `bor` changes the color of the lines surrounding the bars to white.
+
+-   **the graph :** okay, what did R do!
+
+    -   **x-axis :** this reports the grouped values of the individual narcissism scores. 
+
+    -   **y-axis :** this reports how many people were in each group.
+
+-   **professor interpretation with no fancy stats language needed.**
+
+    -   most people (around 42?) had a narcissism score between 3 and 3.5
+
+    -   a few people were really high in narcissism…above a 4.5. I’m not sure from the graph exactly how many people were in this group, or what their score was.
+
+    -   a few people were really low in narcissism…below a 2. Again, I’m not sure from the graph exactly how many people were in this group, or what their score was, but I see their humble selves!
+
+    -   I also notice that this is not a super large study - the frequencies on the y-axis are relatively low numbers.
+
+### Activity : Think about Data!
+
+Okay, your turn. Below is a graph from the same MBA students, but this time measuring their testosterone levels. Look over the graph, THINK about what you see, and then expand the textbox below (click on the arrow on the right side of the green box) to see what I wrote.
+
+```{r}
+hist(haas$NPI, 
+     xlab = "Narcissism Score", 
+     col = 'black', bor = 'white')
+```
+
+::: {.callout-tip collapse="true"}
+#### PROFESSOR SPOILERS : Expand this textbox when you are ready by clicking on the arrow ---\>
+
+-   **the graph**
+    -   **x-axis** : this reports the grouped values of the individual testosterone scores, measured in some kind of density (pg/ML)
+    -   **y-axis** : this reports how many people were in each group.
+-   **what I see and observe with no stats language :**
+    -   most people (around 25+12+20 = 77) had a testosterone level between 50 and 100.
+    -   there were no scores below zero (which makes sense) and one person who had a very high level of testosterone. I’m not a hormone researcher, but the non-negative values seems good, and I might want to make sure that there wasn’t some data entry error for the extreme score.
+    -   Again, I notice that this is not a super large study….and these relatively low numbers seem similar to the narcissism data, which makes sense since they came from the same study.
+:::
+
+## Categorical Factor Variable
+
+### Definition : Categorical Factor Variable
+
+A categorical factor variable is when the values of the variable represent different groups, usually labeled with some kind of word. Categories are often useful and simple ways to group individuals together. For example, when I see a color, I don’t ever describe it in terms of its color hex code or specific wavelength - I just call it by the simple primary color that I got from the crayola box; maybe the 24 color version if I’m feeling fancy.
+
+Which of the shades below would you call blue?[^2r_data-2]
+
+[^2r_data-2]: they are all one color - the *human color*. just kidding from the top left it's 2, 3, 4, and 7. but I'm blue green color blind so you should argue with me in the comments.
+
+![](images/2_shadesofcyan.png){fig-alt="a 3x3 grid of different squares that are shades of blue and green" fig-align="center" width="388"}
+
+The broad label for the variable is called **the factor**, and the specific groups of data are called **levels**. So in the color example, the category of color would be the factor, and the different groups of color would be the levels.
+
+As another example, researchers can measure gender with categories such as female, male, transgender, and other. Identify the factor and levels in this example.
+
+::: {.callout-tip collapse="true"}
+#### What are the factors and levels in the example above?
+
+-   Factor : would be the variable of gender. Generally there’s one factor label for each variable.
+-   Level : would be the categories female, male, transgender, and other.
+:::
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Unfortunately, most psychological researchers still hold on to Male / Female binaries in the way they measure gender or sex, yet there are many reasons - both scientific and humanistic - to give people more range to express important aspects of their identity[^2r_data-3]. | **![facebook’s attempt at measuring more complex categories.](images/2_fb_gender.png)**    |
+|                                                                                                                                                                                                                                                                                  |                                                                                            |
+| Indeed, categories almost always oversimplify the complexity of life, yet are often used by people (and researchers) because they can sometimes be useful and simple shortcuts for us to understand the world.                                                                   | [^2r_data-4]                                                                               |
+|                                                                                                                                                                                                                                                                                  |                                                                                            |
+| If you are simply interested in doing a superficial survey of a variable like race, ethnicity, or gender, then I think categorical data can be a fine -if often unscientific - approach, and would recommend giving all people the chance to express their identity in some way. | **![a continuous approach to measuring gender.](images/2_genderspectrum.png)**[^2r_data-5] |
+|                                                                                                                                                                                                                                                                                  |                                                                                            |
+| However, if you are interested in really digging into a variable, then a continuous approach is almost always best. We’ll discuss more on how to do this in a few weeks when we learn about continuous variables and likert scales.                                              |                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+[^2r_data-3]: [See this article](https://compass.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/spc3.12506) for research documenting this phenomenon, and arguing why a more inclusive science is needed.
+
+    \
+
+[^2r_data-4]: [facebook’s attempt](http://abcnews.go.com/blogs/headlines/2014/02/heres-a-list-of-58-gender-options-for-facebook-users) at measuring more complex categories.
+
+    \
+
+[^2r_data-5]: a [continuous approach](https://scalar.usc.edu/works/index-2/media/the-gender-spectrum) to measuring gender. hi if u still reading, let me know if you have any thoughts on this section of the chapter.
+
+### Graphing : The Categorical Plot
+
+The histogram only describes a graph for numeric data, since it organizes numbers into groups (it kind of turns complex variation into more simple categories). When the variable is categorical, people call it a plot 🤷.
+
+This graph looks very similar to our histogram : 
+
+-   **the x-axis** (the horizontal axis; what goes across) : displays the levels of the factor variable.
+
+-   **the y-axis** (the vertical axis; what goes up and down) : displays the frequency (or count) of the individuals in the data who “belong” to each group.
+
+Alright, back to our good MBA friends. This is a graph of the categorical variable “sex”. Again, look over the graph, THINK about what you see (no stats terminology; what do you learn!), and then highlight my text to see what I wrote about.
+
+```{r}
+plot(haas$sex, col = 'black', bor = 'white', xlab = "Sex")
+```
+
+-   **The Code :** this code draws a histogram using the `plot()` function. Note that I've asked R to `plot` the variable `haas$sex`. I've also added several `arguments` that change some of the default settings to give the graph some *digital style.*
+
+    -   `xlab` gives the x-axis of the graph a nice label.
+
+    -   `col`changes the color of the bars to black.
+
+    -   `bor` changes the color of the lines surrounding the bars to white.
+
+-   **The Graph :**
+
+    -   **x-axis :** this reports levels (female; male) of the categorical factor variable Sex. 
+
+    -   **y-axis :** this reports how many people were in each group.
+
+-   **What I see and observe with no stats language :**
+
+    -   It appears that the researchers only measured sex as a f/m binary (or that no participants reported a category other than female or male).
+
+    -   there were more males than females in this dataset. This matches my perception / stereotype of what a typical MBA program might look like; however I looked into it and Haas reports a larger percentage of female enrollments in the MBA program; so our data may not serve as a representative sample of the true population.[^2r_data-6]\
+
+[^2r_data-6]: Will learn about these ideas much later this semester! here’s a link to learn more about [women in Haas](https://mba.haas.berkeley.edu/student-life/women). capitalism will eat us all eventually I guess, and good to challenge our stereotypes / perceptions!
+
+## Defining Variables in R
+
+Below are some videos, and R code, that review how to define a variable in R. Yeah!
+
+We practiced this in lecture, but below are some videos that go over how to define variables in R. Yeah!!!! I’m not going to share the Rscripts I’m using for these videos, since I think there’s value in typing this out yourself to get that muscle memory in 💪🤘 but let me know if you disagree / there’s a reason to provide them to y’all!
+
+### Video : Defining Numeric Variables in R
+
+{{< video https://youtu.be/0pXGqGDSySM >}}
+
+-   objects - assign function for numerical data
+
+-   c() : combining data together.
+
+-   length() : the number of objects
+
+### Video : Graphing Numeric Variables in R
+
+{{< video https://youtu.be/lmXQ2BhQNuo >}}
+
+-   hist() : a graph
+
+-   changing arguments : xlab, ylab, main
+
+### Video : Defining Categorical Variables in R
+
+{{< video https://youtu.be/CFXRxfaadIw>}}
+
+-   categorical data (“string”)
+-   as.factor() : to convert a string to a categorical variable
+-   levels() : to see the levels of your categorical variable.
+
+### Video : Graphing categorical variables in R
+
+{{< video https://youtu.be/Fmai9Ltpa5I>}}
+
+-   plot()
+-   changing arguments : col, bor, main; xlab; ylab
+
+## Part 2 : Working with Datasets
+
+### The Dataframe
+
+#### Definition : Rows and Columns
+
+As a researcher, you’ll be interested in understanding not only one variable at a time, but will be interested in a dataset - multiple variables about an individual that are organized - in order to see how variables are related to each other (remember : this is a function of the linear model).
+
+The datasets in our class will be stored on Dropbox; you can find a link to this on bCourses (see below).
+
+![](images/2_dropboxOnBcourses.png){fig-align="center"}
+
+You’ll learn how to load these datasets later in this lecture. For now, what is a dataset?
+
+A dataset is really a **dataframe** - a two-dimensional way to organize data - and takes the following structure in this class.
+
+-   **the rows** define the individual in the dataset. rows go across horizontally, like a rowboat going across a lake.
+
+-   the columns define the variables in the dataset.  go up and down vertically; like what might support a bridge.
+
+Look at the example below - again from our budding MBAs in the Haas program. What do you observe about the rows and columns? What does this tell you about the dataset?
+
+**![](images/2_haas_dataframe.png)**\
+\
+In the example dataframe above - I see 5 rows (representing 5 individuals) and five columns (representing five variables like the person’s **age**, their **sex,** their **test**osterone levels, political **ideo**logy, and their **NPI** (Narcissism) score.  or their Race, etc.) Note that the names of the variables do not count as a row, since these are not individuals in the dataset, and you would need to know more about the dataset to know that ideo = political ideology, or test = testosterone. I also see that R is helpfully telling me that this is only a snapshot of the entire dataset - the whole dataframe has 122 entries (rows), meaning that there’s 122 MBA students in this dataset, and 5 total columns (which we can all see here.)
+
+As a researcher, you have access to an entire dataset (either collected by you or another researcher) that organizes multiple variables for each individual. This semester, we’ll work with a variety of datasets on different psychological topics - not just haas students.
+
+#### Definition : Indexing
+
+The dataset gives us access to all the individual rows and columns at once, we will often want to focus on one specific variable (or individual) at a time. **Indexing** refers to a flexible method of selecting a specific set of data from a larger collection. Previously’ we’ve seen indexing when asking R to produce a large set of numbers; for example asking it to count from 1 to 100.
+
+```{r}
+1:100
+```
+
+The indexing shows up as brackets next to the actual data, and is way for R to index that the \[1\]st data entry is the number 1, the \[24\]th entry is the number 24, and so on.
+
+When I ask R to show me the dataset haas, the output can be overwhelming. Below is what R shows you when you ask to see the haas dataset. And this is a relatively small dataset with just 122 individuals (rows) and five variables (columns).
+
+```{r}
+haas
+```
+
+I am overwhelmed with data. So it will be important to find ways to target the data that we want. There are several ways we can do this!
+
+Because a dataset has two different dimensions, we have to use two coordinates to index the dataset - one coordinate for the row(s) that we want to focus on, and one coordinate for the column(s) that we want to focus on.\
+
+#### Indexing an Entire Dataset
+
+Because a dataset has two different dimensions, we have to use two coordinates to index the dataset - one coordinate for the row(s) that we want to focus on, and one coordinate for the column(s) that we want to focus on.
+
+-   `data` \# this reports the entire dataset. In the example to the right, I’ve typed in haas (since this is the name of the dataset in this example) and see the dataset reported.
+
+-   `data[i, j]` \# this code returns a specific row (i), and a specific column (j). The convention is to use the letter i for a row first, then j for a column **\[you can remember this order as RC Car, or R is Cool\].** For example
+
+    ```{r}
+    haas[2,3]
+    ```
+
+    Shows me that R has highlighted the second row and third column of the dataset - the second person’s testosterone level is 143.89 units.
+
+`data[ , j]` \# if you leave a blank for the rows, then R will return all of the rows, and whatever column you specify. This can be good for looking at a specific variable for all individuals. For example, the following code returns all of the testosterone data (the third column).
+
+```{{r}}
+haas[,3]
+```
+
+-   `data[i, ]` \#  if you leave a blank for the column, then you would see all of the columns for a specific row. This can be good for looking at a specific individual’s entire dataset; such as all of participant 2’s data below.
+
+    ```{r}
+    haas[2,]
+    ```
+
+-   `haas[i:i, c(j, j)]` \# you can adapt this code to give a range of values too. for example, if I want to see rows 4-10 and columns 1 and 3, I would run the following code.
+
+    ```{r}
+    haas[4:10, c(1,3)]
+    ```
+
+#### Indexing a Single Variable
+
+-   `data$variable` \# You can also use the \$ (dollar sign) in R to reference a single variable from a dataset. This is very useful, because you can use the name of the variable instead of the numerical index. So, for example, if I want to highlight the testosterone levels of the haas dataset, I would run the following :
+
+    ```{r}
+    haas$test
+    ```
+
+-   `data$variable[i]` \# We can then use indexing to narrow this down. Because a variable only has one dimension (it’s just a collection of individuals; not rows and individuals) I only need to use one coordinate to index the specific individual(s) I want to find.
+
+```{r}
+haas$test[2]
+```
+
+-   `data$variable[i:i]` \# Can be used to find a range of individuals. These numbers need to be sequential for this code to work.
+
+    ```{r}
+    haas$test[1:3]
+    ```
+
+-   `data$variable[c(i,i,i)]` \# If you want to find individuals who are not next to each other, you need to use the **c (combine) function** to combine multiple coordinates together. You can have as many coordinates here as you want. For example : 
+
+    ```{r}
+    haas$test[c(2,3,14:18, 116:118)]
+    ```
+
+#### Test Yourself!
+
+Okay, practice time. Use the haas dataset and your knowledge of indexing to identify what R would show if you typed in the following commands (no R required)
+
+-   haas\$age\[47\]
+-   haas\$NPI\[1:3\]
+-   haas\[51,2\]
+-   haas\[60, \]
+-   haas\[ , 6\]
+
+::: {.callout-tip collapse="true"}
+##### Answer Key
+
+-   28
+-   3.43 4.40 3.13
+-   female
+-   26 female 21.63 3 2.6
+-   you would get an error; there is no 6th column.
+:::
+
+### Videos : How to Navigate Datasets in R
+
+Let’s get some more practice with some actual data. Before we learn how to import data in R, we can work with a super exciting dataset that is already part of the R program - a dataset on the weights of chickens (chkwt).
+
+Watch the two videos below to see how I navigate this dataset; here’s a [link to the RScript](https://www.dropbox.com/scl/fi/e9l24v1vshdjih7rctxcn/navigating_data.R?rlkey=st0f3hzkrkmha4u4224f6n43i&dl=0) that I use in the videos. 
+
+#### Video : Checking Datasets in R
+
+{{< video https://youtu.be/TaonMS3b0pU>}}
+
+-   **length() :** counts the number of objects (variables) in a dataset (or any object)
+
+-   **nrow() :** counts the number of rows (participants) in a dataset
+
+**head() :** looks at the first six rows of a dataset
+
+#### Video : Navigating Datasets with Indexing
+
+{{< video https://youtu.be/js2vV5P4DSQ>}}
+
+-   Use this video to answer the check-in questions below.
+
+## [Check-In : Navigating Variables and Datasets with Indexing](https://docs.google.com/forms/d/e/1FAIpQLSeYROuiCU1wKb5W36k9IQIKMra2y5Wt9P84Er8WdBaQ6hvHNw/viewform?usp=sf_link)
+
+Use the fake dataset below and your knowledge of navigating datasets with indexing to identify what answer R would give if you gave it the following code. (Note : no R is needed to complete this problem).
+
+```{r}
+#| include: false
+data <- data.frame(StudentID = c(1:5),
+                favDrink = c("boba", "boba", "boba", "coffee", "water"),
+                age = c(20, 19, 54, 22, 38))
+```
+
+```{r}
+data
+```
+
+## The .csv File
+
+### Definition : The .csv File
+
+As a researcher, you will work with data that you (or other researcher friends) have collected. The .csv file (csv stands for comma separated variables) is one of the most common formats for storing data that you will encounter. You’ve probably encountered this before, and likely have opened this file type in a program like excel or google sheets. But in this class, we’ll learn to load these files directly into R. Using R has two advantages :
+
+-   R is way more powerful than excel or Google Sheets.
+-   R allows us to document all of our steps. This semester, we’ll learn how to make changes to the dataset (e.g., changing the names of a variable; removing bad data; transforming data). It’s important to be completely transparent about these changes, and doing these changes in R (with an R Script!) will ensure that we document our steps for our future selves / other researchers.
+
+### Videos : How to Load Datasets in R
+
+There are two different ways to load a data file into R : one way (“the point and click method”) involves clicking some boxes, like most of y’all are used to doing. The second way involves typing in an R command. Below are videos that highlight each method.
+
+::: callout-important
+Regardless of which method you use, there are three things you want to check every time you load data : change the name of the dataset (to make it something simple to type and memorable); check the headers (make sure the variables have names, since sometimes), and set stringAsFactors = TRUE (which will automatically convert all your string variables into categorical factor variables, which is almost always what you will want to do in this class.
+
+These instructions are highlighted because students often forget. So note the importance! They are important steps!!!
+:::
+
+#### Video : Importing Data with the "Point and Click" Method and Console Method
+
+{{\< video https://youtu.be/XLew6OeYAm0}}
+
+-   the “point and click” method of loading data
+-   the console / Rscript method of loading data
+
+#### Video : For Posit Users : working with projects and loading data in the cloud.
+
+{{ \< video https://youtu.be/HOhINtpyjT4 \> }}
+
+-   posit.cloud users! You will need an extra step that folks using posit.cloud have to use to upload datasets to the cloud (and then import them).
+
+# Practice Quiz 2
+
+Okay, this was a LOT. Like drinking water from a fire hose. I promise this will get easier, and it just requires practice. Let’s see how clear the professor’s instructions were with this….Required Practice Quiz!
+
+[**CLICK THIS LINK to take the Practice Quiz.**](https://docs.google.com/forms/d/e/1FAIpQLSczCIkUMPcHX36bYbBpU4fH2Ei_U4neGsERl5WD8jTWRSxfiw/viewform?usp=sf_link) Use your knowledge of navigating and loading datasets to answer 
+
+-   [**Here’s an Rscript with the practice quiz questions**](https://www.dropbox.com/scl/fi/972y9dq8yan2l2q7cme5f/2.1_NavigatingData.R?rlkey=al8gff6iqxj0fdiy0mn8wiyp9&dl=0)**.** Submit your answers to the link above for credit (this is graded based on completion).
+
+-   [**Here’s a video key with the practice quiz answers**](https://youtu.be/cfeogtcAhNM)**.** Please attempt the quiz on your own; if you get stuck, refer to the relevant videos above. And feel free to reach out on Discord if something’s confusing or I got something wrong. Appreciate y’alls engagement!
+
+# TLDR
+
+We learned about different kinds of data (numeric and categorical), and how to graph and interpret these data. We also learned how to load and navigate datasets in R in order to look at variables.
+
+In lecture this week, we will continue to get practice working with datasets and variables. Yeah!
+
+That is all. Thx for reading, as always.
+
+# Chapter Appendix : R Commands
+
+### R Code : Creating Variables in R
+
+### Numeric Variables in R
+
++-----------------------------------+----------------------------------------------------------------------------------------------------+
+| Code                              | Description                                                                                        |
++===================================+====================================================================================================+
+| `variable <- c(#, #, #, #, etc.)` | **variable** = an object that you will define in R                                                 |
+|                                   |                                                                                                    |
+| `tired <- c(1,2,3,4)`             | **\<-** = “assign”; tells R to save whatever comes on the right to whatever object is on the left. |
+|                                   |                                                                                                    |
+|                                   | **c** = combine : tells R to combine whatever happens in the parentheses                           |
+|                                   |                                                                                                    |
+|                                   | **()** = parentheses to group related terms                                                        |
+|                                   |                                                                                                    |
+|                                   | **\# =** what you store in the variable; each item should be separated by a comma and space.       |
++-----------------------------------+----------------------------------------------------------------------------------------------------+
+| `hist(dat$variable)`              | **For continuous variables :** draws a histogram.                                                  |
++-----------------------------------+----------------------------------------------------------------------------------------------------+
+
+### String Variables
+
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `variable <- c(“name1”, “name2”, “name1”, etc.)` | **variable** = an object that you will define in R                                                                                                              |
+|                                                  |                                                                                                                                                                 |
+| `emotion <- c(“sad”, “happy”, “sad”)`            | **\<-** = “assign”; tells R to save whatever comes on the right to whatever object is on the left.                                                              |
+|                                                  |                                                                                                                                                                 |
+|                                                  | **c** = combine : tells R to combine whatever happens in the parentheses                                                                                        |
+|                                                  |                                                                                                                                                                 |
+|                                                  | **()** = parentheses to group related terms                                                                                                                     |
+|                                                  |                                                                                                                                                                 |
+|                                                  | **\# =** what you store in the variable; each item should be separated by a comma and space.                                                                    |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `as.factor(variable)`                            | **as.factor()** \# converts a string variable into a categorical factor                                                                                         |
+|                                                  |                                                                                                                                                                 |
+| `as.factor(emotion)`                             |                                                                                                                                                                 |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `variable <- as.factor(variable)`                | **\# “**saves” this conversion as the original variable                                                                                                         |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `plot(dat$variable)`                             | **For categorical variables :** draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis). |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+### R Commands for Importing and Navigating Data
+
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| **R Command**                                            | **What it Does**                                                                                                          |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `dat <- read.csv(“path/file.csv”, stringsAsFactors = T)` | loads the data file into R (or use the “point & click method”); sets string variables to be categorical factor variables. |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `head(dat)`                                              | looks at the first 6 rows of the data file                                                                                |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `tail(dat)`                                              | looks at the last 6 rows of the data file                                                                                 |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `nrow(dat)`                                              | displays the number of rows (each row = an individual)                                                                    |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `ncol(dat)`                                              | displays the number of columns (each column = a variable)                                                                 |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `names(dat)`                                             | displays the names of the object (column names = names of variables)                                                      |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `dat$variable`                                           | displays the variable from a dataset                                                                                      |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `dat$variable[i]`                                        | displays the individual row \[i\] from the variable                                                                       |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `dat[i, j]`                                              | displays an individual row \[i\] and column \[j\] from the dataset                                                        |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+
+### R Commands for Visualizing Data
+
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **R Command**                             | **What it Does**                                                                                                                                            |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `summary(dat)`                            | Reports descriptive statistics for all variables in the dataset.                                                                                            |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `summary(dat$variable)`                   | Reports descriptive statistics for a categorical variable (frequency / number of individuals in each level) or continuous variable (mean, range, etc.)      |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `as.numeric(dat$variable)`                | Makes the variable numeric (for continuous graphs)                                                                                                          |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `as.factor(dat$variable)`                 | Makes the variable a categorical factor (for categorical graphs)                                                                                            |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `dat$variable <- as.factor(dat$variable)` | Assigns the as.factor output to the original variable. (In other words, this saves your new categorical factor variable by overwriting the old one.)        |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `plot(dat$variable)`                      | For categorical variables : draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis). |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hist(dat$variable)`                      | For continuous variables : draws a histogram.                                                                                                               |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `par(mfrow = c(i, j))`                    | Splits your graphics window into i rows and j columns.                                                                                                      |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
