@@ -2,11 +2,11 @@
 
 Spring 2025
 
-**Create a Google Doc to answer these questions.** Please number your responses to help your GSI grade. There’s no word count, and we won’t penalize students for grammar or spelling. Do your best to explain your ideas in your own words, and if you get stuck or confused, post on Discord / ask your GSI / explain why you got stuck and what you tried to do to figure things out. 
+**Copy and paste these questions into a document (Google Doc or Word) to answer these questions.** Please number your responses to help your GSI grade. There’s no word count, and we won’t penalize students for grammar or spelling. Do your best to explain your ideas in your own words, and if you get stuck or confused, post on Discord / ask your GSI / explain why you got stuck and what you tried to do to figure things out. 
 
-1.  **In Lecture.** What’s a prediction about people that you made today? What information did you use to make this prediction? How did (or could) you use this prediction to influence outcomes? Were you valid in your predictions?
+1.  **In Lecture / Chapter 2.** Define two variables in R - one numeric and one string variable (these can be unrelated to your project topic!) Make sure to collect at least ten data points for each variable, and show that you successfully defined the variable in R by "printing" it in R. Yeah, you're programming!
 
-2.  **In Lecture / Chapter 2.** Define two variables in R - one numeric and one string variable (these can be unrelated to your project topic!) Make sure to collect at least ten data points for each variable, and show that you successfully defined the variable in R by "printing" it in R. Yeah, you're programming!
+2.  **In Lecture.** What’s a prediction about people that you made today? What information did you use to make this prediction? How did (or could) you use this prediction to influence outcomes? Were you valid in your predictions?
 
 3.  **In Lecture / Section / On Your Own.** Get started on the final project by thinking through a research question you might be interested in studying as a psychology researcher. (Totally fine to change this, but great to start focusing on a question.)
 

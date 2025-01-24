@@ -3,7 +3,7 @@
     "path": "~/Dropbox/!WHY STATS/ystats/labs.qmd",
     "project_path": "labs.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "1689054197",
     "contents": "",
     "dirty": false,
     "created": 1737143871469.0,
@@ -16,16 +16,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "2:0",
+        "rmdVisualModeLocation": "237:57",
         "cursorPosition": "0,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1737143878,
+    "lastKnownWriteTime": 1737729963,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1737143878668,
+    "last_content_update": 1737729963172,
     "read_only": false,
     "read_only_alternatives": []
 }
