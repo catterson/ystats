@@ -5,21 +5,21 @@ format: html
 
 Here is a list of your lab assignments. Everyone loves lab assignments!!
 
-| Lecture Date | Lecture Notes                | Lab \[due by 2:00 PM the week after lecture\]                                                                                                                | Link to Key |
+| Lecture Date | Lecture Notes                 | Lab \[due by 2:00 PM the week after lecture\]                                                                                                                | Link to Key |
 |------------------|-----------------|---------------------------------------------|-------------------------|
-| 1/24         | [Welcome](./1L_Whystats.qmd) | [Lab1 \[Getting Started\]](./labs/Lab1.qmd) + [Google Doc](https://docs.google.com/document/d/1-W-NpdImLLvq_EUhrwZY2rD5jQcWXlqwuAXlC6v8FQE/edit?usp=sharing) | Lab 1 Key   |
-| 1/31         |                              | Lab 2 \[Navigating Data\]                                                                                                                                    |             |
-| 2/7          |                              | **Project Milestone: Intro Outline**                                                                                                                         |             |
-| 2/14         |                              | Lab 3 \[Summarizing Data\]                                                                                                                                   |             |
-| 2/21         |                              | Lab 4 \[Practice Mini Exam\]                                                                                                                                 |             |
-| 2/28         |                              | **Project Milestone: Study Draft**                                                                                                                           |             |
-| 3/7          |                              | Lab 5 \[Linear Models\]                                                                                                                                      |             |
-| 3/14         |                              | Lab 6 \[More Models\]                                                                                                                                        |             |
-| 3/21         |                              | **Project Milestone : Methods & Launch Study!**                                                                                                              |             |
-| 3/28         |                              | **Project Milestone : Participants & Descriptive Statistics**                                                                                                |             |
-| 4/4          |                              | **Project Milestone : Linear Model Tables**                                                                                                                  |             |
-| 4/11         |                              | Lab 7 \[Practice Exam\]                                                                                                                                      |             |
-| 4/18         |                              |                                                                                                                                                              |             |
-| 4/25         |                              | **Project Milestone : Draft**                                                                                                                                |             |
-| 5/2          |                              |                                                                                                                                                              |             |
-| 5/9          |                              | **Final Project is Due 5/12 at 11:59 PM**                                                                                                                    |             |
+| 1/24         | [Welcome](./1L_Whystats.html) | [Lab1 \[Getting Started\]](./labs/Lab1.qmd) + [Google Doc](https://docs.google.com/document/d/1-W-NpdImLLvq_EUhrwZY2rD5jQcWXlqwuAXlC6v8FQE/edit?usp=sharing) | Lab 1 Key   |
+| 1/31         |                               | Lab 2 \[Navigating Data\]                                                                                                                                    |             |
+| 2/7          |                               | **Project Milestone: Intro Outline**                                                                                                                         |             |
+| 2/14         |                               | Lab 3 \[Summarizing Data\]                                                                                                                                   |             |
+| 2/21         |                               | Lab 4 \[Practice Mini Exam\]                                                                                                                                 |             |
+| 2/28         |                               | **Project Milestone: Study Draft**                                                                                                                           |             |
+| 3/7          |                               | Lab 5 \[Linear Models\]                                                                                                                                      |             |
+| 3/14         |                               | Lab 6 \[More Models\]                                                                                                                                        |             |
+| 3/21         |                               | **Project Milestone : Methods & Launch Study!**                                                                                                              |             |
+| 3/28         |                               | **Project Milestone : Participants & Descriptive Statistics**                                                                                                |             |
+| 4/4          |                               | **Project Milestone : Linear Model Tables**                                                                                                                  |             |
+| 4/11         |                               | Lab 7 \[Practice Exam\]                                                                                                                                      |             |
+| 4/18         |                               |                                                                                                                                                              |             |
+| 4/25         |                               | **Project Milestone : Draft**                                                                                                                                |             |
+| 5/2          |                               |                                                                                                                                                              |             |
+| 5/9          |                               | **Final Project is Due 5/12 at 11:59 PM**                                                                                                                    |             |
