@@ -184,7 +184,12 @@
     "href": "chapters/10R_NHSTPower.html",
     "title": "Null Hypothesis Significance Testing and Power",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!"
+    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "crumbs": [
+      "Lab Assignments",
+      "Predicting Reality",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Null Hypothesis Significance Testing and Power</span>"
+    ]
   },
   {
     "objectID": "chapters/11R_MultipleRegression.html",
