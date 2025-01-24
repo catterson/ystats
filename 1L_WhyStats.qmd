@@ -7,7 +7,7 @@ format: html
 
 ## Welcome and Check-In!
 
-**access these lecture notes on bCourses (or visit : catterson.github.io/ystats/1L_WhyStats.html**
+**access these lecture notes on bCourses!**
 
 [**click on this link to check-in (or visit : tinyurl.com/first101class)**](https://docs.google.com/forms/d/e/1FAIpQLSekU91xhyXiYxxOsWbSGuJ3pAmPOazq9L_24hkcQpej-n0bBg/viewform?usp=header)
 
@@ -205,15 +205,15 @@ plot(laundryhang) # a way to graph the non-numeric variable
 
 Psychological scientists seek to better understand variation, in order to help make valid predictions in ways that help exert power over our environments.
 
-+----------------------------------------------------------------------+-------------------------------+
-| Topic                                                                | Other Questions We Might Ask? |
-+======================================================================+===============================+
-| ![](lectures/lecture_images/1L_prosthetic.mp4)                       |                               |
-+----------------------------------------------------------------------+-------------------------------+
-| ![](lectures/lecture_images/1L_fb.png){width="600"}[^1l_whystats-1]  |                               |
-+----------------------------------------------------------------------+-------------------------------+
-| ![](lectures/lecture_images/1L_blm.png){width="600"}[^1l_whystats-2] |                               |
-+----------------------------------------------------------------------+-------------------------------+
++----------------------------------------------------------------------+------------------------------------------------------+
+| Topic                                                                | Other Questions We Might Ask?                        |
++======================================================================+======================================================+
+| ![](lectures/lecture_images/1L_prosthetic.mp4)                       |                                                      |
++----------------------------------------------------------------------+------------------------------------------------------+
+| ![](lectures/lecture_images/1L_fb.png){width="600"}[^1l_whystats-1]  |                                                      |
++----------------------------------------------------------------------+------------------------------------------------------+
+| ![](lectures/lecture_images/1L_blm.png){width="600"}[^1l_whystats-2] |                                                      |
++----------------------------------------------------------------------+------------------------------------------------------+
 
 [^1l_whystats-1]: Here's [a link to the article](https://www.nytimes.com/2016/05/06/business/facebook-bends-the-rules-of-audience-engagement-to-its-advantage.html) where this headline comes from. These data are a little dated, and I couldn't immediately find more recent data - my guess is Meta does not really want to advertise that people are using the product more and more. However, in [reports to investors](https://s21.q4cdn.com/399680738/files/doc_financials/2024/q2/Earnings-Presentation-Q2-2024.pdf) reports consistent growth in metrics like "ad impressions" and "daily active users". Let me know if you find other sources to show how technology companies are capturing more and more of our attention!
 
