@@ -339,13 +339,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#defining-variables-in-r" id="toc-defining-variables-in-r" class="nav-link" data-scroll-target="#defining-variables-in-r">Defining Variables in R</a>
   <ul class="collapse">
-  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a>
-  <ul class="collapse">
   <li><a href="#video-defining-numeric-variables-in-r" id="toc-video-defining-numeric-variables-in-r" class="nav-link" data-scroll-target="#video-defining-numeric-variables-in-r">Video : Defining Numeric Variables in R</a></li>
   <li><a href="#video-graphing-numeric-variables-in-r" id="toc-video-graphing-numeric-variables-in-r" class="nav-link" data-scroll-target="#video-graphing-numeric-variables-in-r">Video : Graphing Numeric Variables in R</a></li>
   <li><a href="#video-defining-categorical-variables-in-r" id="toc-video-defining-categorical-variables-in-r" class="nav-link" data-scroll-target="#video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</a></li>
   <li><a href="#video-graphing-categorical-variables-in-r" id="toc-video-graphing-categorical-variables-in-r" class="nav-link" data-scroll-target="#video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</a></li>
-  </ul></li>
   </ul></li>
   <li><a href="#part-2-working-with-datasets" id="toc-part-2-working-with-datasets" class="nav-link" data-scroll-target="#part-2-working-with-datasets">Part 2 : Working with Datasets</a>
   <ul class="collapse">
@@ -374,13 +371,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   </ul></li>
   </ul></li>
+  <li><a href="#practice-quiz-2" id="toc-practice-quiz-2" class="nav-link" data-scroll-target="#practice-quiz-2">Practice Quiz 2</a></li>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link" data-scroll-target="#tldr">TLDR</a></li>
   <li><a href="#chapter-appendix-r-commands" id="toc-chapter-appendix-r-commands" class="nav-link" data-scroll-target="#chapter-appendix-r-commands">Chapter Appendix : R Commands</a>
   <ul>
   <li><a href="#r-code-creating-variables-in-r" id="toc-r-code-creating-variables-in-r" class="nav-link" data-scroll-target="#r-code-creating-variables-in-r">R Code : Creating Variables in R</a></li>
   <li><a href="#numeric-variables-in-r" id="toc-numeric-variables-in-r" class="nav-link" data-scroll-target="#numeric-variables-in-r">Numeric Variables in R</a></li>
-  <li><a href="#example-creating-numeric-variables" id="toc-example-creating-numeric-variables" class="nav-link" data-scroll-target="#example-creating-numeric-variables">Example : Creating Numeric Variables</a></li>
   <li><a href="#string-variables" id="toc-string-variables" class="nav-link" data-scroll-target="#string-variables">String Variables</a></li>
-  <li><a href="#example-creating-non-numeric-variables" id="toc-example-creating-non-numeric-variables" class="nav-link" data-scroll-target="#example-creating-non-numeric-variables">Example : Creating Non-Numeric Variables</a></li>
   <li><a href="#r-commands-for-importing-and-navigating-data" id="toc-r-commands-for-importing-and-navigating-data" class="nav-link" data-scroll-target="#r-commands-for-importing-and-navigating-data">R Commands for Importing and Navigating Data</a></li>
   <li><a href="#r-commands-for-visualizing-data" id="toc-r-commands-for-visualizing-data" class="nav-link" data-scroll-target="#r-commands-for-visualizing-data">R Commands for Visualizing Data</a></li>
   </ul></li>
@@ -427,15 +424,19 @@ To-Do List:
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Read this document and watch the videos.</li>
-<li>Complete the check-ins and practice quiz.</li>
+<li>Read this document and watch the videos.
+<ul>
+<li>Part 1 : On creating variables in R</li>
+<li>Part 2 : In navigating and installing datasets in R.</li>
+</ul></li>
+<li>Complete the check-in and practice quiz.</li>
 <li>Take Quiz 2.</li>
 </ul>
 </div>
 </div>
 <section id="part-1-defining-data" class="level1">
 <h1>Part 1 : Defining Data</h1>
-<p>Researchers seeking to bring a scientific approach to psychology love data, and aim to convert complex human thoughts, feelings, and behaviors into numbers. This is called <strong>quantitative data,</strong> and is the default approach almost all modern research psychologists take. For example :&nbsp;</p>
+<p>Researchers seeking to bring a scientific approach to psychology love data, and aim to convert complex human thoughts, feelings, and behaviors into numbers. This is called <strong>quantitative data,</strong> and is the default approach almost all modern research psychologists take. For example:&nbsp;</p>
 <ul>
 <li><p>Psychologists will quantify <strong>affect</strong> using heart rate monitors, finger temperature gauges, or even simple rating scales of how people are feeling (quick, how bored are you right now on a scale from 0 (not bored; super engaged professor!) to 10 (….most bored ever; surprised I’m even reading this right now)….see, you are just a number!)</p></li>
 <li><p>Psychologists often quantify <strong>behavior</strong> by measuring reaction time, the number of times a person fidgets in a chair, how far a person will sit from another person in a study, the speed of a group. And even qualitative data - like a person’s journal entry - would be turned into hard numbers by a researcher (who would ask a team of research assistants to read the journal and then count or provide a subjective rating to what they observe. this is called <strong>behavioral coding</strong>; we’ll learn about it later. remind me if I forget.)</p></li>
@@ -652,11 +653,9 @@ What are the factors and levels in the example above?
 <section id="defining-variables-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="defining-variables-in-r">Defining Variables in R</h2>
 <p>Below are some videos, and R code, that review how to define a variable in R. Yeah!</p>
-<section id="videos" class="level3">
-<h3 class="anchored" data-anchor-id="videos">Videos</h3>
 <p>We practiced this in lecture, but below are some videos that go over how to define variables in R. Yeah!!!! I’m not going to share the Rscripts I’m using for these videos, since I think there’s value in typing this out yourself to get that muscle memory in 💪🤘 but let me know if you disagree / there’s a reason to provide them to y’all!</p>
-<section id="video-defining-numeric-variables-in-r" class="level4">
-<h4 class="anchored" data-anchor-id="video-defining-numeric-variables-in-r">Video : Defining Numeric Variables in R</h4>
+<section id="video-defining-numeric-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-defining-numeric-variables-in-r">Video : Defining Numeric Variables in R</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/0pXGqGDSySM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li><p>objects - assign function for numerical data</p></li>
@@ -664,16 +663,16 @@ What are the factors and levels in the example above?
 <li><p>length() : the number of objects</p></li>
 </ul>
 </section>
-<section id="video-graphing-numeric-variables-in-r" class="level4">
-<h4 class="anchored" data-anchor-id="video-graphing-numeric-variables-in-r">Video : Graphing Numeric Variables in R</h4>
+<section id="video-graphing-numeric-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-graphing-numeric-variables-in-r">Video : Graphing Numeric Variables in R</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/lmXQ2BhQNuo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li><p>hist() : a graph</p></li>
 <li><p>changing arguments : xlab, ylab, main</p></li>
 </ul>
 </section>
-<section id="video-defining-categorical-variables-in-r" class="level4">
-<h4 class="anchored" data-anchor-id="video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</h4>
+<section id="video-defining-categorical-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/CFXRxfaadIw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li>categorical data (“string”)</li>
@@ -681,14 +680,13 @@ What are the factors and levels in the example above?
 <li>levels() : to see the levels of your categorical variable.</li>
 </ul>
 </section>
-<section id="video-graphing-categorical-variables-in-r" class="level4">
-<h4 class="anchored" data-anchor-id="video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</h4>
+<section id="video-graphing-categorical-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Fmai9Ltpa5I" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li>plot()</li>
 <li>changing arguments : col, bor, main; xlab; ylab</li>
 </ul>
-</section>
 </section>
 </section>
 <section id="part-2-working-with-datasets" class="level2">
@@ -1054,7 +1052,7 @@ Important
 </div>
 <section id="video-importing-data-with-the-point-and-click-method-and-console-method" class="level4">
 <h4 class="anchored" data-anchor-id="video-importing-data-with-the-point-and-click-method-and-console-method">Video : Importing Data with the “Point and Click” Method and Console Method</h4>
-<p>{{&lt; video https://youtu.be/XLew6OeYAm0}}</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XLew6OeYAm0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li>the “point and click” method of loading data</li>
 <li>the console / Rscript method of loading data</li>
@@ -1062,13 +1060,28 @@ Important
 </section>
 <section id="video-for-posit-users-working-with-projects-and-loading-data-in-the-cloud." class="level4">
 <h4 class="anchored" data-anchor-id="video-for-posit-users-working-with-projects-and-loading-data-in-the-cloud.">Video : For Posit Users : working with projects and loading data in the cloud.</h4>
-<p>{{ &lt; video https://youtu.be/HOhINtpyjT4 &gt; }}</p>
+<p>{{&lt; video https://youtu.be/HOhINtpyjT4&gt; }}</p>
 <ul>
 <li>posit.cloud users! You will need an extra step that folks using posit.cloud have to use to upload datasets to the cloud (and then import them).</li>
 </ul>
 </section>
 </section>
 </section>
+</section>
+<section id="practice-quiz-2" class="level1">
+<h1>Practice Quiz 2</h1>
+<p>Okay, this was a LOT. Like drinking water from a fire hose. I promise this will get easier, and it just requires practice. Let’s see how clear the professor’s instructions were with this….Required Practice Quiz!</p>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSczCIkUMPcHX36bYbBpU4fH2Ei_U4neGsERl5WD8jTWRSxfiw/viewform?usp=sf_link"><strong>CLICK THIS LINK to take the Practice Quiz.</strong></a> Use your knowledge of navigating and loading datasets to answer&nbsp;</p>
+<ul>
+<li><p><a href="https://www.dropbox.com/scl/fi/972y9dq8yan2l2q7cme5f/2.1_NavigatingData.R?rlkey=al8gff6iqxj0fdiy0mn8wiyp9&amp;dl=0"><strong>Here’s an Rscript with the practice quiz questions</strong></a><strong>.</strong> Submit your answers to the link above for credit (this is graded based on completion).</p></li>
+<li><p><a href="https://youtu.be/cfeogtcAhNM"><strong>Here’s a video key with the practice quiz answers</strong></a><strong>.</strong> Please attempt the quiz on your own; if you get stuck, refer to the relevant videos above. And feel free to reach out on Discord if something’s confusing or I got something wrong. Appreciate y’alls engagement!</p></li>
+</ul>
+</section>
+<section id="tldr" class="level1">
+<h1>TLDR</h1>
+<p>We learned about different kinds of data (numeric and categorical), and how to graph and interpret these data. We also learned how to load and navigate datasets in R in order to look at variables.</p>
+<p>In lecture this week, we will continue to get practice working with datasets and variables. Yeah!</p>
+<p>That is all. Thx for reading, as always.</p>
 </section>
 <section id="chapter-appendix-r-commands" class="level1">
 <h1>Chapter Appendix : R Commands</h1>
@@ -1079,8 +1092,8 @@ Important
 <h3 class="anchored" data-anchor-id="numeric-variables-in-r">Numeric Variables in R</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 74%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1090,11 +1103,8 @@ Important
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>variable <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="co">#, #, #, #, etc.)</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>tired <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><p><code>variable &lt;- c(#, #, #, #, etc.)</code></p>
+<p><code>tired &lt;- c(1,2,3,4)</code></p></td>
 <td><p><strong>variable</strong> = an object that you will define in R</p>
 <p><strong>&lt;-</strong> = “assign”; tells R to save whatever comes on the right to whatever object is on the left.</p>
 <p><strong>c</strong> = combine : tells R to combine whatever happens in the parentheses</p>
@@ -1102,33 +1112,11 @@ Important
 <p><strong># =</strong> what you store in the variable; each item should be separated by a comma and space.</p></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dat<span class="sc">$</span>variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><code>hist(dat$variable)</code></td>
 <td><strong>For continuous variables :</strong> draws a histogram.</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="example-creating-numeric-variables" class="level3">
-<h3 class="anchored" data-anchor-id="example-creating-numeric-variables">Example : Creating Numeric Variables</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>counting <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="co"># the numbers one through five</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(counting) <span class="co"># one way to "print" the variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 2 3 4 5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>counting <span class="co"># another way to "print" the variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 2 3 4 5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(counting) <span class="co"># a way to graph the variable (a histogram)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2R_Data_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
 <section id="string-variables" class="level3">
 <h3 class="anchored" data-anchor-id="string-variables">String Variables</h3>
@@ -1139,9 +1127,8 @@ Important
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>variable <span class="ot">&lt;-</span> <span class="fu">c</span>(“name1”, “name2”, “name1”, etc.)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>emotion <span class="ot">&lt;-</span> <span class="fu">c</span>(“sad”, “happy”, “sad”)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><p><code>variable &lt;- c(“name1”, “name2”, “name1”, etc.)</code></p>
+<p><code>emotion &lt;- c(“sad”, “happy”, “sad”)</code></p></td>
 <td><p><strong>variable</strong> = an object that you will define in R</p>
 <p><strong>&lt;-</strong> = “assign”; tells R to save whatever comes on the right to whatever object is on the left.</p>
 <p><strong>c</strong> = combine : tells R to combine whatever happens in the parentheses</p>
@@ -1149,55 +1136,118 @@ Important
 <p><strong># =</strong> what you store in the variable; each item should be separated by a comma and space.</p></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.factor</span>(variable)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">as.factor</span>(emotion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><p><code>as.factor(variable)</code></p>
+<p><code>as.factor(emotion)</code></p></td>
 <td><strong>as.factor()</strong> # converts a string variable into a categorical factor</td>
 </tr>
 <tr class="odd">
-<td><pre><code>variable &lt;- as.factor(variable)</code></pre></td>
+<td><code>variable &lt;- as.factor(variable)</code></td>
 <td><strong># “</strong>saves” this conversion as the original variable</td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat<span class="sc">$</span>variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><code>plot(dat$variable)</code></td>
 <td><strong>For categorical variables :</strong> draws a barplot. For continuous variables :&nbsp; illustrates values of the variable (y-axis) as a function of their index (x-axis).</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="example-creating-non-numeric-variables" class="level3">
-<h3 class="anchored" data-anchor-id="example-creating-non-numeric-variables">Example : Creating Non-Numeric Variables</h3>
-<p>The data below describe the categories of family laundry that was hanging in my apartment to dry.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>laundryhang <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"shirt"</span>, <span class="st">"shirt"</span>, <span class="st">"leggings"</span>, <span class="st">"leggings"</span>, <span class="st">"shirt"</span>, </span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>             <span class="st">"shirt"</span>, <span class="st">"leggings"</span>, <span class="st">"pants"</span>, <span class="st">"sweater"</span>, <span class="st">"sweater"</span>) <span class="co"># defining a string variable</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(laundryhang)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "shirt"    "shirt"    "leggings" "leggings" "shirt"    "shirt"   
- [7] "leggings" "pants"    "sweater"  "sweater" </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>laundryhang <span class="co"># another way to "print" the variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "shirt"    "shirt"    "leggings" "leggings" "shirt"    "shirt"   
- [7] "leggings" "pants"    "sweater"  "sweater" </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>laundryhang <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(laundryhang) <span class="co"># changing the format of the sting variable into a categorical factor</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(laundryhang) <span class="co"># a way to graph the non-numeric variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2R_Data_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
 <section id="r-commands-for-importing-and-navigating-data" class="level3">
 <h3 class="anchored" data-anchor-id="r-commands-for-importing-and-navigating-data">R Commands for Importing and Navigating Data</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>R Command</strong></td>
+<td><strong>What it Does</strong></td>
+</tr>
+<tr class="even">
+<td><code>dat &lt;- read.csv(“path/file.csv”, stringsAsFactors = T)</code></td>
+<td>loads the data file into R (or use the “point &amp; click method”); sets string variables to be categorical factor variables.</td>
+</tr>
+<tr class="odd">
+<td><code>head(dat)</code></td>
+<td>looks at the first 6 rows of the data file</td>
+</tr>
+<tr class="even">
+<td><code>tail(dat)</code></td>
+<td>looks at the last 6 rows of the data file</td>
+</tr>
+<tr class="odd">
+<td><code>nrow(dat)</code></td>
+<td>displays the number of rows (each row = an individual)</td>
+</tr>
+<tr class="even">
+<td><code>ncol(dat)</code></td>
+<td>displays the number of columns (each column = a variable)</td>
+</tr>
+<tr class="odd">
+<td><code>names(dat)</code></td>
+<td>displays the names of the object (column names = names of variables)</td>
+</tr>
+<tr class="even">
+<td><code>dat$variable</code></td>
+<td>displays the variable from a dataset</td>
+</tr>
+<tr class="odd">
+<td><code>dat$variable[i]</code></td>
+<td>displays the individual row [i] from the variable</td>
+</tr>
+<tr class="even">
+<td><code>dat[i, j]</code></td>
+<td>displays an individual row [i] and column [j] from the dataset</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="r-commands-for-visualizing-data" class="level3">
 <h3 class="anchored" data-anchor-id="r-commands-for-visualizing-data">R Commands for Visualizing Data</h3>
-<p>Blah.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>R Command</strong></td>
+<td><strong>What it Does</strong></td>
+</tr>
+<tr class="even">
+<td><code>summary(dat)</code></td>
+<td>Reports descriptive statistics for all variables in the dataset.</td>
+</tr>
+<tr class="odd">
+<td><code>summary(dat$variable)</code></td>
+<td>Reports descriptive statistics for a categorical variable (frequency / number of individuals in each level) or continuous variable (mean, range, etc.)</td>
+</tr>
+<tr class="even">
+<td><code>as.numeric(dat$variable)</code></td>
+<td>Makes the variable numeric (for continuous graphs)</td>
+</tr>
+<tr class="odd">
+<td><code>as.factor(dat$variable)</code></td>
+<td>Makes the variable a categorical factor (for categorical graphs)</td>
+</tr>
+<tr class="even">
+<td><code>dat$variable &lt;- as.factor(dat$variable)</code></td>
+<td>Assigns the as.factor output to the original variable. (In other words, this saves your new categorical factor variable by overwriting the old one.)</td>
+</tr>
+<tr class="odd">
+<td><code>plot(dat$variable)</code></td>
+<td>For categorical variables : draws a barplot. For continuous variables :&nbsp; illustrates values of the variable (y-axis) as a function of their index (x-axis).</td>
+</tr>
+<tr class="even">
+<td><code>hist(dat$variable)</code></td>
+<td>For continuous variables : draws a histogram.</td>
+</tr>
+<tr class="odd">
+<td><code>par(mfrow = c(i, j))</code></td>
+<td>Splits your graphics window into i rows and j columns.</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
