@@ -344,23 +344,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#video-defining-categorical-variables-in-r" id="toc-video-defining-categorical-variables-in-r" class="nav-link" data-scroll-target="#video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</a></li>
   <li><a href="#video-graphing-categorical-variables-in-r" id="toc-video-graphing-categorical-variables-in-r" class="nav-link" data-scroll-target="#video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</a></li>
   </ul></li>
+  </ul></li>
   <li><a href="#part-2-working-with-datasets" id="toc-part-2-working-with-datasets" class="nav-link" data-scroll-target="#part-2-working-with-datasets">Part 2 : Working with Datasets</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#the-dataframe" id="toc-the-dataframe" class="nav-link" data-scroll-target="#the-dataframe">The Dataframe</a>
   <ul class="collapse">
   <li><a href="#definition-rows-and-columns" id="toc-definition-rows-and-columns" class="nav-link" data-scroll-target="#definition-rows-and-columns">Definition : Rows and Columns</a></li>
-  <li><a href="#definition-indexing" id="toc-definition-indexing" class="nav-link" data-scroll-target="#definition-indexing">Definition : Indexing</a></li>
+  <li><a href="#definition-indexing" id="toc-definition-indexing" class="nav-link" data-scroll-target="#definition-indexing">Definition : Indexing</a>
+  <ul class="collapse">
   <li><a href="#indexing-an-entire-dataset" id="toc-indexing-an-entire-dataset" class="nav-link" data-scroll-target="#indexing-an-entire-dataset">Indexing an Entire Dataset</a></li>
   <li><a href="#indexing-a-single-variable" id="toc-indexing-a-single-variable" class="nav-link" data-scroll-target="#indexing-a-single-variable">Indexing a Single Variable</a></li>
-  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself">Test Yourself!</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself">Test Yourself!</a>
+  <ul class="collapse">
   <li><a href="#videos-how-to-navigate-datasets-in-r" id="toc-videos-how-to-navigate-datasets-in-r" class="nav-link" data-scroll-target="#videos-how-to-navigate-datasets-in-r">Videos : How to Navigate Datasets in R</a>
   <ul class="collapse">
   <li><a href="#video-checking-datasets-in-r" id="toc-video-checking-datasets-in-r" class="nav-link" data-scroll-target="#video-checking-datasets-in-r">Video : Checking Datasets in R</a></li>
   <li><a href="#video-navigating-datasets-with-indexing" id="toc-video-navigating-datasets-with-indexing" class="nav-link" data-scroll-target="#video-navigating-datasets-with-indexing">Video : Navigating Datasets with Indexing</a></li>
   </ul></li>
-  </ul></li>
   <li><a href="#check-in-navigating-variables-and-datasets-with-indexing" id="toc-check-in-navigating-variables-and-datasets-with-indexing" class="nav-link" data-scroll-target="#check-in-navigating-variables-and-datasets-with-indexing">Check-In : Navigating Variables and Datasets with Indexing</a></li>
+  </ul></li>
   <li><a href="#the-.csv-file" id="toc-the-.csv-file" class="nav-link" data-scroll-target="#the-.csv-file">The .csv File</a>
   <ul class="collapse">
   <li><a href="#definition-the-.csv-file" id="toc-definition-the-.csv-file" class="nav-link" data-scroll-target="#definition-the-.csv-file">Definition : The .csv File</a></li>
@@ -689,12 +693,13 @@ What are the factors and levels in the example above?
 </ul>
 </section>
 </section>
-<section id="part-2-working-with-datasets" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-working-with-datasets">Part 2 : Working with Datasets</h2>
-<section id="the-dataframe" class="level3">
-<h3 class="anchored" data-anchor-id="the-dataframe">The Dataframe</h3>
-<section id="definition-rows-and-columns" class="level4">
-<h4 class="anchored" data-anchor-id="definition-rows-and-columns">Definition : Rows and Columns</h4>
+</section>
+<section id="part-2-working-with-datasets" class="level1">
+<h1>Part 2 : Working with Datasets</h1>
+<section id="the-dataframe" class="level2">
+<h2 class="anchored" data-anchor-id="the-dataframe">The Dataframe</h2>
+<section id="definition-rows-and-columns" class="level3">
+<h3 class="anchored" data-anchor-id="definition-rows-and-columns">Definition : Rows and Columns</h3>
 <p>As a researcher, you’ll be interested in understanding not only one variable at a time, but will be interested in a dataset - multiple variables about an individual that are organized - in order to see how variables are related to each other (remember : this is a function of the linear model).</p>
 <p>The datasets in our class will be stored on Dropbox; you can find a link to this on bCourses (see below).</p>
 <div class="quarto-figure quarto-figure-center">
@@ -714,8 +719,8 @@ What are the factors and levels in the example above?
 In the example dataframe above - I see 5 rows (representing 5 individuals) and five columns (representing five variables like the person’s <strong>age</strong>, their <strong>sex,</strong> their <strong>test</strong>osterone levels, political <strong>ideo</strong>logy, and their <strong>NPI</strong> (Narcissism) score.&nbsp; or their Race, etc.) Note that the names of the variables do not count as a row, since these are not individuals in the dataset, and you would need to know more about the dataset to know that ideo = political ideology, or test = testosterone. I also see that R is helpfully telling me that this is only a snapshot of the entire dataset - the whole dataframe has 122 entries (rows), meaning that there’s 122 MBA students in this dataset, and 5 total columns (which we can all see here.)</p>
 <p>As a researcher, you have access to an entire dataset (either collected by you or another researcher) that organizes multiple variables for each individual. This semester, we’ll work with a variety of datasets on different psychological topics - not just haas students.</p>
 </section>
-<section id="definition-indexing" class="level4">
-<h4 class="anchored" data-anchor-id="definition-indexing">Definition : Indexing</h4>
+<section id="definition-indexing" class="level3">
+<h3 class="anchored" data-anchor-id="definition-indexing">Definition : Indexing</h3>
 <p>The dataset gives us access to all the individual rows and columns at once, we will often want to focus on one specific variable (or individual) at a time. <strong>Indexing</strong> refers to a flexible method of selecting a specific set of data from a larger collection. Previously’ we’ve seen indexing when asking R to produce a large set of numbers; for example asking it to count from 1 to 100.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -861,7 +866,6 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 <p>I am overwhelmed with data. So it will be important to find ways to target the data that we want. There are several ways we can do this!</p>
 <p>Because a dataset has two different dimensions, we have to use two coordinates to index the dataset - one coordinate for the row(s) that we want to focus on, and one coordinate for the column(s) that we want to focus on.<br>
 </p>
-</section>
 <section id="indexing-an-entire-dataset" class="level4">
 <h4 class="anchored" data-anchor-id="indexing-an-entire-dataset">Indexing an Entire Dataset</h4>
 <p>Because a dataset has two different dimensions, we have to use two coordinates to index the dataset - one coordinate for the row(s) that we want to focus on, and one coordinate for the column(s) that we want to focus on.</p>
@@ -952,8 +956,10 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 </div></li>
 </ul>
 </section>
-<section id="test-yourself" class="level4">
-<h4 class="anchored" data-anchor-id="test-yourself">Test Yourself!</h4>
+</section>
+</section>
+<section id="test-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="test-yourself">Test Yourself!</h2>
 <p>Okay, practice time. Use the haas dataset and your knowledge of indexing to identify what R would show if you typed in the following commands (no R required)</p>
 <ul>
 <li>haas$age[47]</li>
@@ -984,8 +990,6 @@ Answer Key
 </div>
 </div>
 </div>
-</section>
-</section>
 <section id="videos-how-to-navigate-datasets-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="videos-how-to-navigate-datasets-in-r">Videos : How to Navigate Datasets in R</h3>
 <p>Let’s get some more practice with some actual data. Before we learn how to import data in R, we can work with a super exciting dataset that is already part of the R program - a dataset on the weights of chickens (chkwt).</p>
@@ -1007,9 +1011,8 @@ Answer Key
 </ul>
 </section>
 </section>
-</section>
-<section id="check-in-navigating-variables-and-datasets-with-indexing" class="level2">
-<h2 class="anchored" data-anchor-id="check-in-navigating-variables-and-datasets-with-indexing"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYROuiCU1wKb5W36k9IQIKMra2y5Wt9P84Er8WdBaQ6hvHNw/viewform?usp=sf_link">Check-In : Navigating Variables and Datasets with Indexing</a></h2>
+<section id="check-in-navigating-variables-and-datasets-with-indexing" class="level3">
+<h3 class="anchored" data-anchor-id="check-in-navigating-variables-and-datasets-with-indexing"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYROuiCU1wKb5W36k9IQIKMra2y5Wt9P84Er8WdBaQ6hvHNw/viewform?usp=sf_link">Check-In : Navigating Variables and Datasets with Indexing</a></h3>
 <p>Use the fake dataset below and your knowledge of navigating datasets with indexing to identify what answer R would give if you gave it the following code. (Note : no R is needed to complete this problem).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1022,6 +1025,7 @@ Answer Key
 5         5    water  38</code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="the-.csv-file" class="level2">
 <h2 class="anchored" data-anchor-id="the-.csv-file">The .csv File</h2>
@@ -1085,11 +1089,11 @@ Important
 </section>
 <section id="chapter-appendix-r-commands" class="level1">
 <h1>Chapter Appendix : R Commands</h1>
-<section id="r-code-creating-variables-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="r-code-creating-variables-in-r">R Code : Creating Variables in R</h3>
+<section id="r-code-creating-variables-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="r-code-creating-variables-in-r">R Code : Creating Variables in R</h2>
 </section>
-<section id="numeric-variables-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="numeric-variables-in-r">Numeric Variables in R</h3>
+<section id="numeric-variables-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="numeric-variables-in-r">Numeric Variables in R</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 26%">
@@ -1118,8 +1122,8 @@ Important
 </tbody>
 </table>
 </section>
-<section id="string-variables" class="level3">
-<h3 class="anchored" data-anchor-id="string-variables">String Variables</h3>
+<section id="string-variables" class="level2">
+<h2 class="anchored" data-anchor-id="string-variables">String Variables</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 23%">
@@ -1151,12 +1155,12 @@ Important
 </tbody>
 </table>
 </section>
-<section id="r-commands-for-importing-and-navigating-data" class="level3">
-<h3 class="anchored" data-anchor-id="r-commands-for-importing-and-navigating-data">R Commands for Importing and Navigating Data</h3>
+<section id="r-commands-for-importing-and-navigating-data" class="level2">
+<h2 class="anchored" data-anchor-id="r-commands-for-importing-and-navigating-data">R Commands for Importing and Navigating Data</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 32%">
+<col style="width: 67%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1202,12 +1206,12 @@ Important
 </tbody>
 </table>
 </section>
-<section id="r-commands-for-visualizing-data" class="level3">
-<h3 class="anchored" data-anchor-id="r-commands-for-visualizing-data">R Commands for Visualizing Data</h3>
+<section id="r-commands-for-visualizing-data" class="level2">
+<h2 class="anchored" data-anchor-id="r-commands-for-visualizing-data">R Commands for Visualizing Data</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 21%">
+<col style="width: 78%">
 </colgroup>
 <tbody>
 <tr class="odd">

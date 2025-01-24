@@ -241,11 +241,11 @@ We practiced this in lecture, but below are some videos that go over how to defi
 -   plot()
 -   changing arguments : col, bor, main; xlab; ylab
 
-## Part 2 : Working with Datasets
+# Part 2 : Working with Datasets
 
-### The Dataframe
+## The Dataframe
 
-#### Definition : Rows and Columns
+### Definition : Rows and Columns
 
 As a researcher, you’ll be interested in understanding not only one variable at a time, but will be interested in a dataset - multiple variables about an individual that are organized - in order to see how variables are related to each other (remember : this is a function of the linear model).
 
@@ -269,7 +269,7 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 
 As a researcher, you have access to an entire dataset (either collected by you or another researcher) that organizes multiple variables for each individual. This semester, we’ll work with a variety of datasets on different psychological topics - not just haas students.
 
-#### Definition : Indexing
+### Definition : Indexing
 
 The dataset gives us access to all the individual rows and columns at once, we will often want to focus on one specific variable (or individual) at a time. **Indexing** refers to a flexible method of selecting a specific set of data from a larger collection. Previously’ we’ve seen indexing when asking R to produce a large set of numbers; for example asking it to count from 1 to 100.
 
@@ -347,7 +347,7 @@ haas$test[2]
     haas$test[c(2,3,14:18, 116:118)]
     ```
 
-#### Test Yourself!
+## Test Yourself!
 
 Okay, practice time. Use the haas dataset and your knowledge of indexing to identify what R would show if you typed in the following commands (no R required)
 
@@ -358,7 +358,7 @@ Okay, practice time. Use the haas dataset and your knowledge of indexing to iden
 -   haas\[ , 6\]
 
 ::: {.callout-tip collapse="true"}
-##### Answer Key
+### Answer Key
 
 -   28
 -   3.43 4.40 3.13
@@ -389,7 +389,7 @@ Watch the two videos below to see how I navigate this dataset; here’s a [link 
 
 -   Use this video to answer the check-in questions below.
 
-## [Check-In : Navigating Variables and Datasets with Indexing](https://docs.google.com/forms/d/e/1FAIpQLSeYROuiCU1wKb5W36k9IQIKMra2y5Wt9P84Er8WdBaQ6hvHNw/viewform?usp=sf_link)
+### [Check-In : Navigating Variables and Datasets with Indexing](https://docs.google.com/forms/d/e/1FAIpQLSeYROuiCU1wKb5W36k9IQIKMra2y5Wt9P84Er8WdBaQ6hvHNw/viewform?usp=sf_link)
 
 Use the fake dataset below and your knowledge of navigating datasets with indexing to identify what answer R would give if you gave it the following code. (Note : no R is needed to complete this problem).
 
@@ -456,9 +456,9 @@ That is all. Thx for reading, as always.
 
 # Chapter Appendix : R Commands
 
-### R Code : Creating Variables in R
+## R Code : Creating Variables in R
 
-### Numeric Variables in R
+## Numeric Variables in R
 
 +-----------------------------------+----------------------------------------------------------------------------------------------------+
 | Code                              | Description                                                                                        |
@@ -476,7 +476,7 @@ That is all. Thx for reading, as always.
 | `hist(dat$variable)`              | **For continuous variables :** draws a histogram.                                                  |
 +-----------------------------------+----------------------------------------------------------------------------------------------------+
 
-### String Variables
+## String Variables
 
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `variable <- c(“name1”, “name2”, “name1”, etc.)` | **variable** = an object that you will define in R                                                                                                              |
@@ -498,31 +498,48 @@ That is all. Thx for reading, as always.
 | `plot(dat$variable)`                             | **For categorical variables :** draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis). |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-### R Commands for Importing and Navigating Data
+## R Commands for Importing and Navigating Data
 
-|  |  |
-|----|----|
-| **R Command** | **What it Does** |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| **R Command**                                            | **What it Does**                                                                                                          |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | `dat <- read.csv(“path/file.csv”, stringsAsFactors = T)` | loads the data file into R (or use the “point & click method”); sets string variables to be categorical factor variables. |
-| `head(dat)` | looks at the first 6 rows of the data file |
-| `tail(dat)` | looks at the last 6 rows of the data file |
-| `nrow(dat)` | displays the number of rows (each row = an individual) |
-| `ncol(dat)` | displays the number of columns (each column = a variable) |
-| `names(dat)` | displays the names of the object (column names = names of variables) |
-| `dat$variable` | displays the variable from a dataset |
-| `dat$variable[i]` | displays the individual row \[i\] from the variable |
-| `dat[i, j]` | displays an individual row \[i\] and column \[j\] from the dataset |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `head(dat)`                                              | looks at the first 6 rows of the data file                                                                                |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `tail(dat)`                                              | looks at the last 6 rows of the data file                                                                                 |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `nrow(dat)`                                              | displays the number of rows (each row = an individual)                                                                    |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `ncol(dat)`                                              | displays the number of columns (each column = a variable)                                                                 |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `names(dat)`                                             | displays the names of the object (column names = names of variables)                                                      |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `dat$variable`                                           | displays the variable from a dataset                                                                                      |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `dat$variable[i]`                                        | displays the individual row \[i\] from the variable                                                                       |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| `dat[i, j]`                                              | displays an individual row \[i\] and column \[j\] from the dataset                                                        |
++----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
-### R Commands for Visualizing Data
+## R Commands for Visualizing Data
 
-|  |  |
-|----|----|
-| **R Command** | **What it Does** |
-| `summary(dat)` | Reports descriptive statistics for all variables in the dataset. |
-| `summary(dat$variable)` | Reports descriptive statistics for a categorical variable (frequency / number of individuals in each level) or continuous variable (mean, range, etc.) |
-| `as.numeric(dat$variable)` | Makes the variable numeric (for continuous graphs) |
-| `as.factor(dat$variable)` | Makes the variable a categorical factor (for categorical graphs) |
-| `dat$variable <- as.factor(dat$variable)` | Assigns the as.factor output to the original variable. (In other words, this saves your new categorical factor variable by overwriting the old one.) |
-| `plot(dat$variable)` | For categorical variables : draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis). |
-| `hist(dat$variable)` | For continuous variables : draws a histogram. |
-| `par(mfrow = c(i, j))` | Splits your graphics window into i rows and j columns. |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **R Command**                             | **What it Does**                                                                                                                                            |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `summary(dat)`                            | Reports descriptive statistics for all variables in the dataset.                                                                                            |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `summary(dat$variable)`                   | Reports descriptive statistics for a categorical variable (frequency / number of individuals in each level) or continuous variable (mean, range, etc.)      |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `as.numeric(dat$variable)`                | Makes the variable numeric (for continuous graphs)                                                                                                          |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `as.factor(dat$variable)`                 | Makes the variable a categorical factor (for categorical graphs)                                                                                            |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `dat$variable <- as.factor(dat$variable)` | Assigns the as.factor output to the original variable. (In other words, this saves your new categorical factor variable by overwriting the old one.)        |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `plot(dat$variable)`                      | For categorical variables : draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis). |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hist(dat$variable)`                      | For continuous variables : draws a histogram.                                                                                                               |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `par(mfrow = c(i, j))`                    | Splits your graphics window into i rows and j columns.                                                                                                      |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
