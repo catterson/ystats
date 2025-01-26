@@ -40,7 +40,31 @@ format: html
 
 **Class Activity.** Let's create a list of variables that we observe in this classroom.
 
--   
+-   hair style
+
+-   hair color
+
+-   ethnicity
+
+-   eye color
+
+-   body size
+
+-   devices
+
+-   gender
+
+-   identity
+
+    -   affect : feeling of affinity for fitting in w/ your culture.
+
+    -   behavior : how you express it
+
+    -   cognition : self-perception (do you think about this identity / perceive it in others?)
+
+-   glasses
+
+-   hats vs. no hats
 
 **Key Terms.** From the readings.
 
@@ -64,7 +88,11 @@ Find a buddy in the class! (There's a discord thread if you prefer to communicat
 
 **Student Examples**
 
--   
+-   Hamza : motivation for goal changes over time \[within person - starts as affect –\> behavior\]
+
+-   Max : emotional effect of languages (how much the same word in a western language influences someone compared to that word in an eastern language) \[between person - comparing people who speak one language to people who speak another.\]
+
+-   Camille : Moral regret (you did something bad and feel bad about it) and how that changes over time.
 
 # R : Defining Variables
 
@@ -83,7 +111,7 @@ The console is where R does its work.
 
 -   **ACTIVITY :** Look at the image below. What do you see? What makes sense / what seems confusing?
 
-### ![](lectures/lecture_images/1_RConsole.png)
+### ![](lectures/lecture_images/1_RConsole.png){width="522"}
 
 ### Some Additional Notes on R Studio and the Source File (.R)
 

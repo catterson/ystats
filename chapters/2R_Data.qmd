@@ -104,8 +104,8 @@ hist(haas$NPI, xlab = "Narcissism Score", col = 'black', bor = 'white')
 Okay, your turn. Below is a graph from the same MBA students, but this time measuring their testosterone levels. Look over the graph, THINK about what you see, and then expand the textbox below (click on the arrow on the right side of the green box) to see what I wrote.
 
 ```{r}
-hist(haas$NPI, 
-     xlab = "Narcissism Score", 
+hist(haas$test, 
+     xlab = "Testosterone Level", 
      col = 'black', bor = 'white')
 ```
 
@@ -145,6 +145,7 @@ As another example, researchers can measure gender with categories such as femal
 :::
 
 #### Culture in Statistics : Gender Identity
+
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ![](/images/doff_intro_mickey.png) | Hi folks! It's me again, Open-Source Mickey Mouse to talk with you about the idea that statistics has a culture that is socially constructed by people like you! We live in a society where people in positions of power often have very narrow definitions of what it means to be a person! This manifests in all sorts of ways - you probably feel this pressure when you think about what it means to be a "successful student".                                                                                                                                                                                                                                                                               |
 |                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
