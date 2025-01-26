@@ -513,7 +513,7 @@ To-Do List:
 </ul>
 <p>Let’s look at our MBA friends again, through the power of a histogram. As you look at a graph, it’s important to practice thinking about what you learn from the data. Let’s avoid fancy stats terminology for now; it’s not necessary for our purposes!!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(haas<span class="sc">$</span>NPI, <span class="at">xlab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(haas<span class="sc">$</span>NPI, <span class="at">xlab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>, <span class="at">main =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -528,6 +528,7 @@ To-Do List:
 <li><p><code>xlab</code> gives the x-axis of the graph a nice label.</p></li>
 <li><p><code>col</code>changes the color of the bars to black.</p></li>
 <li><p><code>bor</code> changes the color of the lines surrounding the bars to white.</p></li>
+<li><p><code>main</code> changes the title. In this case, <code>""</code> sets the title to be nothing, so there’s no title.</p></li>
 </ul></li>
 <li><p><strong>the graph :</strong> okay, what did R do!</p>
 <ul>
@@ -548,7 +549,7 @@ To-Do List:
 <p>Okay, your turn. Below is a graph from the same MBA students, but this time measuring their testosterone levels. Look over the graph, THINK about what you see, and then expand the textbox below (click on the arrow on the right side of the green box) to see what I wrote.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(haas<span class="sc">$</span>test, </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Testosterone Level"</span>, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Testosterone Level"</span>, <span class="at">main =</span> <span class="st">""</span>, </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>

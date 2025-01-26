@@ -72,7 +72,7 @@ There are two dimensions of a histogram : 
 Let’s look at our MBA friends again, through the power of a histogram. As you look at a graph, it’s important to practice thinking about what you learn from the data. Let’s avoid fancy stats terminology for now; it’s not necessary for our purposes!!
 
 ```{r}
-hist(haas$NPI, xlab = "Narcissism Score", col = 'black', bor = 'white')
+hist(haas$NPI, xlab = "Narcissism Score", col = 'black', bor = 'white', main = "")
 ```
 
 -   **the code :** this code draws a histogram using the `hist()` function. I've also added several `arguments` that change some of the default settings to give the graph some *digital style.*
@@ -82,6 +82,8 @@ hist(haas$NPI, xlab = "Narcissism Score", col = 'black', bor = 'white')
     -   `col`changes the color of the bars to black.
 
     -   `bor` changes the color of the lines surrounding the bars to white.
+
+    -   `main` changes the title. In this case, `""` sets the title to be nothing, so there's no title.
 
 -   **the graph :** okay, what did R do!
 
@@ -105,7 +107,7 @@ Okay, your turn. Below is a graph from the same MBA students, but this time meas
 
 ```{r}
 hist(haas$test, 
-     xlab = "Testosterone Level", 
+     xlab = "Testosterone Level", main = "", 
      col = 'black', bor = 'white')
 ```
 
