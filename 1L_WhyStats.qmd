@@ -228,20 +228,39 @@ plot(laundryhang) # a way to graph the non-numeric variable
         -   created an example that serves as meta-commentary on the importance of attendance.
     -   **Was Professor Valid?** TBD! \<3
 -   **Work on Lab 1, Question 1. \[In Lecture\]** What’s a prediction about people that you made today? What information did you use to make this prediction? How did (or could) you use this prediction to influence outcomes? Were you valid in your predictions?
+    -   JESSICA :
+        -   prediction : this professor is awesome!
+        -   knowledge : other people told me the class was managable and friendly.
+        -   power : felt excited to enter the class
+        -   valid : maybe? let's see.
+    -   TRISHA :
+        -   prediction : thought people would come out of apartments when fire alarm went off in building; there was an emergency.
+        -   knowledge : we are taught to do this
+        -   power : left my apartment (without thinking too much about grabbing my keys)
+        -   valid : no, I was the only one outside.
+        -   **model : behavior in response to fire alarm \~ training + motivation not to die + social norms + error**
 
 ### Scientific Predictions
 
 Psychological scientists seek to better understand variation, in order to help make valid predictions in ways that help exert power over our environments.
 
-+----------------------------------------------------------------------+------------------------------------------------------+
-| Topic                                                                | Other Questions We Might Ask?                        |
-+======================================================================+======================================================+
-| ![](lectures/lecture_images/1L_prosthetic.mp4)                       |                                                      |
-+----------------------------------------------------------------------+------------------------------------------------------+
-| ![](lectures/lecture_images/1L_fb.png){width="600"}[^1l_whystats-1]  |                                                      |
-+----------------------------------------------------------------------+------------------------------------------------------+
-| ![](lectures/lecture_images/1L_blm.png){width="600"}[^1l_whystats-2] |                                                      |
-+----------------------------------------------------------------------+------------------------------------------------------+
++----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| Topic                                                                | Other Questions We Might Ask?                                                                                         |
++======================================================================+=======================================================================================================================+
+| ![](lectures/lecture_images/1L_prosthetic.mp4)                       |                                                                                                                       |
++----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| ![](lectures/lecture_images/1L_fb.png){width="600"}[^1l_whystats-1]  | Are there differences between how long people actually use social media and how long people want to use social media? |
+|                                                                      |                                                                                                                       |
+|                                                                      | What dopamine reactions do people get after using social media?                                                       |
+|                                                                      |                                                                                                                       |
+|                                                                      | How do reactions to visual cues in the environemnt differ when people are on their phones?                            |
+|                                                                      |                                                                                                                       |
+|                                                                      | What factors keep people off social media long-term?                                                                  |
+|                                                                      |                                                                                                                       |
+|                                                                      | Do the engineers who create infinite scrolling feel guilty.                                                           |
++----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| ![](lectures/lecture_images/1L_blm.png){width="600"}[^1l_whystats-2] |                                                                                                                       |
++----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 [^1l_whystats-1]: Here's [a link to the article](https://www.nytimes.com/2016/05/06/business/facebook-bends-the-rules-of-audience-engagement-to-its-advantage.html) where this headline comes from. These data are a little dated, and I couldn't immediately find more recent data - my guess is Meta does not really want to advertise that people are using the product more and more. However, in [reports to investors](https://s21.q4cdn.com/399680738/files/doc_financials/2024/q2/Earnings-Presentation-Q2-2024.pdf) reports consistent growth in metrics like "ad impressions" and "daily active users". Let me know if you find other sources to show how technology companies are capturing more and more of our attention!
 
@@ -269,9 +288,9 @@ Psychological scientists seek to better understand variation, in order to help m
 
 ### Examples
 
--   rain \~
+-   rain \~ number of umbrellas other people have + personal experience + weather app + clouds + sun + smell + pressure + error
 
--   class quality \~
+-   class quality \~ communication + study habits + lecture [***attendance***]{.underline} *+* quality of lecturing + mood / vibes + professor and student adaptability to the class + workload + participation + time management + hunger + sleep + life shit + 3 hours lectures on a friday afternoon + respect + right amount of material that is relevant and interetsting + study buddy + LEARNING somethign useful and relevant + ERROR
 
 ### Another Example
 
@@ -281,7 +300,7 @@ Psychological scientists seek to better understand variation, in order to help m
 -   which IV allows us to make the best predictions (effect size)
 -   the amount of error in your prediction (error can come from our measures, our models, and maybe is just inherent to science?)
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcXn1H6Tcp4pWwkbuqkGa9Pw2BW5X8LTLtU4oDmpQwVPHAh-OkVuuWRz7Ir6K3vGW_BYcRgnFsA5baC9KErNgMksdqxswLEeDKZkhyR2n-hZ7CPb8-CJnx_kx8Rd2atrHMxRQuvBR6gE1m61LL1NXi92g1Q?key=-c8GtewYj7xaFRpMDwKIPQ){fig-align="center"}
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcXn1H6Tcp4pWwkbuqkGa9Pw2BW5X8LTLtU4oDmpQwVPHAh-OkVuuWRz7Ir6K3vGW_BYcRgnFsA5baC9KErNgMksdqxswLEeDKZkhyR2n-hZ7CPb8-CJnx_kx8Rd2atrHMxRQuvBR6gE1m61LL1NXi92g1Q?key=-c8GtewYj7xaFRpMDwKIPQ){fig-align="center" width="391"}
 
 ## Work on Lab 1 : Predictions & Research Questions.
 
