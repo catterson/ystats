@@ -6,7 +6,7 @@ format: html
 Here is a list of your lab assignments. Everyone loves lab assignments!!
 
 | Lecture Date | Lecture Notes                | Lab \[due by 2:00 PM the week after lecture\]                                                                                              | Link to Key |
-|------------------|-----------------|---------------------------------------------|-------------------------|
+|--------------|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|-------------|
 | 1/24         | [Welcome](./1L_Whystats.qmd) | [Lab 1 - Getting Started \[Google Doc\]](https://docs.google.com/document/d/1-W-NpdImLLvq_EUhrwZY2rD5jQcWXlqwuAXlC6v8FQE/edit?usp=sharing) | Lab 1 Key   |
 | 1/31         |                              | Lab 2 \[Navigating Data\]                                                                                                                  |             |
 | 2/7          |                              | **Project Milestone: Intro Outline**                                                                                                       |             |
