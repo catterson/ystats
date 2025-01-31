@@ -4,7 +4,7 @@ format: html
 
 # Description
 
-Hello! This week, you’ll learn how to use statistics to describe data in terms of centrality and complexity (and review how the mean and standard deviation can be thought of as prediction and error), learn how psychologists define “good” data, and learn a little about the business of publishing research articles.
+Hello! This week, you’ll learn how to use statistics to describe data in terms of centrality and complexity (and review how the mean and standard deviation can be thought of as prediction and error).
 
 ![](images/3_Bar_GraphDigitalStyle.png.webp){fig-align="center"}
 
@@ -274,6 +274,27 @@ Lots of things can influence a student’s score on an exam, such as how much st
 
 These data are not normally distributed because the students were all part of the same college, in the same classroom, taught by the same professor, at the same time. The professor did his best to prepare these students, and wrote a test that would be based on the kinds of practice they had gone over in lecture. These variables are considered “non random” because they were shared by all students. The data are skewed because these non-random shared experiences helped students do well on the exam.
 :::
+
+#### Culture in Statistics : The Normal Curve
+
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](/images/doff_intro_mickey.png) | That's right folks, it's time for another chat with your friend Open-Source Mickey Mouse! This time, we're gonna chat about the idea that people differ from some average. The idea that you could quantify people as "average" is fairly new - it's hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s[^3r_description-6]. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet's ideas to try and "rank" individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else. |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+[^3r_description-6]: see Rose's END OF AVERAGE (2016) or, for a more critical approach, Chapman's (2023) EMPIRE OF NORMALITY.
+
+::: callout-warning
+But you don't have to take it from me! Here's Galton in his own words :
+
+*To conclude, the range of mental power between—I will not say the highest Caucasian and the lowest savage—but between the greatest and least of English intellects, is enormous. ... I propose in this chapter to range men according to their natural abilities, putting them into classes separated by equal degrees of merit, and to show the relative number of individuals included in the several classes.....The method I shall employ for discovering all this, is an application of the very curious theoretical law of “deviation from an average.” First, I will explain the law, and then I will show that the production of natural intellectual gifts comes justly within its scope. -* Galton, Hereditary Genius (1869). [Linked here](https://galton.org/books/hereditary-genius/text/v5/galton-1869-hereditary-genius-v5.htm).
+:::
+
+The point of bringing up some of the racist origins of statistics is two-fold :
+
+1.  Many people like to argue that "good" statistics is objective, and that scientists are free of bias. So it's important to acknowledge that the inventors of many statistics that we use had clear biases and did not behave objectively. Rather than try to be free of bias, I think it's important to acknowledge where and when people are biased, and address those biases up explicitly.
+2.  Statistics is a tool, and that tool can be used poorly and dangerously in ways that can cause a lot of pain. Just because something has numbers doens't mean it's correct. For example, Galton's work showing "statistically" that white people were superior in ability to other groups didn't account for other factors like socioeconomic status. And for what it's worth, modern scientists overwhelmingly agree that "race" is a social construct. There are genetic differences that explain different skin tones, however there is more genetic variation in skin tone within a similar “race” than between different “races”. [Read more about this here.](https://www.smithsonianmag.com/smart-news/genetic-study-shows-skin-color-just-skin-deep-180965261/)
+
+Alright, that's all for now! Let me know what you think and see you next time!
 
 ## Why This Matters.
 

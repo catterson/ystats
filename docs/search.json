@@ -28,7 +28,7 @@
     "section": "",
     "text": "Chapter 1",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Describing People",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
@@ -52,7 +52,7 @@
     "section": "Why Statistics in Psychology?",
     "text": "Why Statistics in Psychology?\nAs y’all know, this class is a requirement for students who want to be psychology majors. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder why-the-flip they are required to take a math class when all they just want to learn about people (or other non-human animals), ya know!??!\nI agree that people (or non-human animals) are interesting. And we all have this interest in people (or non-human animals) because we are complex1. While people are similar in many ways, we also differ in radical ways; from superficial features like age and race, to more complex ways like our personality or emotions, to highly specific behaviors such as whether all students in the class are reading these words or not, or how bored or excited (or any emotional experience) students are while reading these words.\nI hope that you have an interest in people (or non-human animals), and that this class helps you learn how to think about those interests through a psychological, and statistical lens. You don’t always need this lens - and as we will discuss there can sometimes be dangers in viewing people through this lens - but it’s useful to be able to wear these “glasses” when needed.\n\nStatistics as a Language\nStatistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand differences in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.\n\nVariables and Variation\nVariation is at the heart of statistics, and is defined by differences, change, and complexity.\n\n\n\n\n\n\n\nBetween-Person Variation describes how individuals differ from each other. Think about ways that you differ from others; not everybody wears glasses, has the same level of silliness / seriousness / desire to cause mischief / fascination with horses.\n\n\n\nWithin-Person Variation describes how one individual changes over time or across different situations. Think about the person you are today - are you exactly the same as you were yesterday? A year ago? You’ve changed (varied) in ways both small (hunger, exhaustion, number of words you’ve read for this class) and large (personality, love interests, identity, etc.)\n\n\n\nNo variation would describe a situation in which everyone is exactly the same. I can’t think of too many situations where there is no variation; let me know on Discord if you can think of one? And while there’s no theoretical limit to the amount of variation that there can be, one major task of this class will be to learn to quantify the amount of variation that we observe in our role as psychologists.\n\n🌞🌞🌞\n🌞🌞🌞\n\n\n\n\nA Variable is a label for some psychological phenomenon that has variation. I’m not sure where I first heard this, but psychologists often focus on what they call the “ABCs”. \n\nA is for Affect = the emotions that you feel.\nB is for Behavior = the actions that you do.\nC is for cognition = the thoughts you have.\n\nThese are not rigid categories, and psychologists often debate the definitions of these terms. But they can be useful ways to think about how to think about people, and help break down a complex phenomenon into more specific components.\n\n\nPractice : Variables and Variation\nFor example, think about how affect, behavior, and cognition might be relevant if I ask you to think about an upcoming exam (your first exam is in just a few weeks!) \n\n\n\n\n\n\n\n\nhighlight the cells below to see my ideas / check your understanding\n\n\nAffect Example\nthe feeling of anxiety or dread you have thinking about being assessed, or maybe a feeling of excitement about the opportunity to demonstrate your hard work / effort / knowledge!\n\n\nBehavior Example\nimmediately checking your calendar to see when exams are; or maybe avoiding your classes with a nice procrastination session on the ol’ infinite scroll machine.\n\n\nCognition Example\nthinking about all the work you have to do; wondering why the professor would choose this example when he could have thought about the ways that affect, behavior, and cognition would be triggered when you see a puppy or kitten or something like that…\n\n\n\n(Here’s a cat video I like for students needing a distraction from thinking about exams. I promise your exams in this class will be chill and I’ll do my best to prepare y’all.)\n\n\nLanguage is More than Vocabulary\nStatistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand variation in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.\n\nVocabulary. Equations like “the mean” or “standard deviation” or “cronbach’s alpha” or “p-value” are precise vocabulary terms that define some feature of variation. Some of these vocabulary words are easier to understand and remember than others, and like all languages, sometimes people disagree on the definition, and sometimes misuse these words.\nGrammar and Syntax. The way we organize words also matters when learning languages. Saying “the professor graded the students“ has a very different meaning than “the students graded the professor”, even though these share the exact same words. Statistics (and research methods) also requires precision in the way we organize the ideas, terms, and processes. We’ll learn more about this as we discuss the scientific method (a highly structured and organized approach to doing research), but also as we learn how to navigate doing data analysis.\nCultural Immersion. A good language class will also help students to understand the ways that the language is connected to people, places, and history2. In this class, we’ll think about the ways we can immerse ourselves in the culture of statistics and research methods, from the cultural practices that inform which methods or tools to use, to the ways that the culture of statistics and research might needlessly create barriers for certain types of people or studies.\nPractice and Past Experiences. And yes, in order to gain fluency in a language, you need to practice! Attendance and regular engagement with this class will ensure that you are able to get the practice that you need. It’s also good to note that people differ in terms of their past experiences with computers and math, and are bringing those experiences (for better or worse) with them into this class.\n\n\n\n\nCulture in Statistics : Me-Search\n\n\n\n\n\n\n\n\nHiya folks! Everyone’s favorite Open-Source Mickey Mouse here. I’ll be popping up in the book from time to time to critically engage with the idea that statistics has a culture that is socially constructed by people like you!\n\n\n\nAll psychologists are interested in questions sparked by their own observations or experiences. This is sometimes called “me-search” - the idea that a person’s research interests reflect their own experience.\nMe-search can be an important way for researchers to use their statistics and research methods training to address questions and issues that are relevant to their lives and communities.\nBelow are a few examples of research questions that are related to a person’s real-life experiences.\n\n\n\nReal Life Experience\nResearch Question\n\n\nA researcher develops vision problems due to his studies of light, and had to live in a completely darkened room, where he became completely isolated from most of reality.3\nDoes reality exist, or can it only be known through our perceptions?\n\n\nA black graduate student at the University of Chicago realizes that white people cross the street to avoid him, and finds himself whistling classical music to signal that he does not fit their negative stereotypes of a black male.4\nHow do people respond and react to others’ negative stereotypes?\n\n\n\nHowever, me-search also serves as a form of potential bias in research - not only will a researcher’s own biases and beliefs influence the way they conduct research, but the types of questions that are asked will be influenced by the types of people doing research.\nFor example, a survey of over 26,000 research articles in psychology documented just how rarely the topic of race is studied in psychology (see figure below).\n\n\n\n\n\nAs we’ll discuss throughout this class, life is complex and there is never one explanation for any phenomenon. However, it’s important to note that psychology as a field has historically been dominated by white authors (researchers who write scientific papers) and white editors (researchers who decide what papers get published or not).\n\n\n\n\n\nThese trends are important to reflect on, because they reveal a bias in who becomes a psychologist, and what types of questions these researchers are interested in pursuing.\nIt’s also a goal of this class to not only highlight the important contributions of non-white researchers and statisticians, but also make sure that all students in this diverse classroom feels empowered to use statistics, research methods, and R skills to ask (and answer) research questions that matter to them!5",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Describing People",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
@@ -62,9 +62,9 @@
     "href": "chapters/1R_WhyStats.html#why-r",
     "title": "Why Statistics?",
     "section": "Why R?",
-    "text": "Why R?\nThis semester, we will also learn how to use the computer programming language R to work with data, conduct analyses, and make graphs. R can be intimidating to work with at first, and is more confusing than it needs to be sometimes (as you’ll quickly find out haha), but I promise you will learn! In fact, that’s the point of this class. It’s totally okay (and expected) for you to feel frustrated at times; this is part of the learning process. So please embrace the “I HAVE NO IDEA WHAT I’M DOING” dog meme energy (and look how happy the doggy looks!) as you embark on your R journey.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R\nUse this link to Download and Install the Programs R and RStudio Desktop\nNote : You must download both R and RStudio Desktop (these are two separate programs). Make sure to download the most recent version of R and RStudio to avoid issues in the future.\n\nR is the powerful, free, and somewhat intimidating computer program that we will use to analyze data in this class. This website is not super friendly - choose the operating system you have (Windows, MacOS, or Linux) and then download the “latest release” on the next page. If you have a chromebook or iPad / tablet, you will need to use posit.cloud.\nRStudio is an Integrated Development Environment (IDE) - basically a “home” for R to live in, with rooms and this program is not 100% necessary, but makes it a little easier to navigate R. Note that you will need to install R first in order for RStudio to work.\n\nHaving trouble getting these programs to work?\n\nHere’s one YouTube video someone made to show you how to download and install.\nTry posit.cloud. This is a web-based version of RStudio, and has a free option but limits you to 15-hours of work a month. There’s a paid option for $5/month that you can use; former students pointed out that you can always create a new “free” account if you run over the 15-hour limit.\nPost on our class Discord / go to section / office hours! The professor, other students, or your TA can help get everything working properly.\n\n\n\nNavigating R\nWatch the two videos below for a quick introduction to R - the program we will be using to analyze data.\n\nVIDEO : Navigating R\n\n\nwhat R looks like when you open it\nbasic math in the console\nindexing and output\n\n\n\nVIDEO : Navigating RStudio\n\n\nwhat RStudio/Posit looks like; navigating the program\nbasic math in the console\nthe source file (makes life easier and saves your work!)",
+    "text": "Why R?\nThis semester, we will also learn how to use the computer programming language R to work with data, conduct analyses, and make graphs. R can be intimidating to work with at first, and is more confusing than it needs to be sometimes (as you’ll quickly find out haha), but I promise you will learn! In fact, that’s the point of this class. It’s totally okay (and expected) for you to feel frustrated at times; this is part of the learning process. So please embrace the “I HAVE NO IDEA WHAT I’M DOING” dog meme energy (and look how happy the doggy looks!) as you embark on your R journey.\n\n\n\n\n\n\n\n\n\n\nInstalling R\nUse this link to Download and Install the Programs R and RStudio Desktop\nNote : You must download both R and RStudio Desktop (these are two separate programs). Make sure to download the most recent version of R and RStudio to avoid issues in the future.\n\nR is the powerful, free, and somewhat intimidating computer program that we will use to analyze data in this class. This website is not super friendly - choose the operating system you have (Windows, MacOS, or Linux) and then download the “latest release” on the next page. If you have a chromebook or iPad / tablet, you will need to use posit.cloud.\nRStudio is an Integrated Development Environment (IDE) - basically a “home” for R to live in, with rooms and this program is not 100% necessary, but makes it a little easier to navigate R. Note that you will need to install R first in order for RStudio to work.\n\nHaving trouble getting these programs to work?\n\nHere’s one YouTube video someone made to show you how to download and install.\nTry posit.cloud. This is a web-based version of RStudio, and has a free option but limits you to 15-hours of work a month. There’s a paid option for $5/month that you can use; former students pointed out that you can always create a new “free” account if you run over the 15-hour limit.\nPost on our class Discord / go to section / office hours! The professor, other students, or your TA can help get everything working properly.\n\n\n\nNavigating R\nWatch the two videos below for a quick introduction to R - the program we will be using to analyze data.\n\nVIDEO : Navigating R\n\n\nwhat R looks like when you open it\nbasic math in the console\nindexing and output\n\n\n\nVIDEO : Navigating RStudio\n\n\nwhat RStudio/Posit looks like; navigating the program\nbasic math in the console\nthe source file (makes life easier and saves your work!)",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Describing People",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
@@ -88,7 +88,7 @@
     "section": "",
     "text": "One of the reasons I love teaching in the Bay Area is y’all are hella complex.↩︎\nAnd usually food, though I’m not sure if there’s cultural food norms about statistics or research methods.↩︎\nThis happened to Gustav Fechner, one of the early psychologists who pioneered the study of psychophysics, which tested theories that our perceptions do not always match reality (seen in many examples, such as the dress). FWIW I see it as blue and black.↩︎\nThis anecdote (as reported here) inspired Claude Steele’s research on stereotype threat.↩︎\nThis is the purpose of your final project! We’ll talk more about this throughout the class.↩︎\nSee the syllabus for the course ChatGPT policy. You may also be interested to read on the ethical and environmental issues surrounding this emerging technology.↩︎\nYou can see when scientists predict Halley’s comet to come closest to earth here. While this is fairly accurate, I’ve seen the exact prediction change over the years - there is still some error in this prediction.↩︎",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Describing People",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
@@ -134,7 +134,12 @@
     "href": "chapters/5R_Scales.html",
     "title": "Scales",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!"
+    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "crumbs": [
+      "List of R Code",
+      "Describing People",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Scales</span>"
+    ]
   },
   {
     "objectID": "chapters/6R_LinearModels.html",
@@ -143,7 +148,7 @@
     "section": "",
     "text": "Hi! Stay tuned for reading materials. Thanks!",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Predicting People",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Continuous IVs</span>"
     ]
@@ -155,7 +160,7 @@
     "section": "",
     "text": "Hi! Stay tuned for reading materials. Thanks!",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Predicting People",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Categorical IVs</span>"
     ]
@@ -167,7 +172,7 @@
     "section": "",
     "text": "Hi! Stay tuned for reading materials. Thanks!",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Predicting People",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Assumptions and Extensions</span>"
     ]
@@ -177,7 +182,12 @@
     "href": "chapters/9R_SamplingError.html",
     "title": "Sampling Error and Bias",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!"
+    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "crumbs": [
+      "List of R Code",
+      "Predicting Reality",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Sampling Error and Bias</span>"
+    ]
   },
   {
     "objectID": "chapters/10R_NHSTPower.html",
@@ -186,7 +196,7 @@
     "section": "",
     "text": "Hi! Stay tuned for reading materials. Thanks!",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Predicting Reality",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Null Hypothesis Significance Testing and Power</span>"
     ]
@@ -196,14 +206,24 @@
     "href": "chapters/11R_MultipleRegression.html",
     "title": "Multiple Regression",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!"
+    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "crumbs": [
+      "List of R Code",
+      "Predicting Reality",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Multiple Regression</span>"
+    ]
   },
   {
     "objectID": "chapters/12R_Conclusion2Introduction.html",
     "href": "chapters/12R_Conclusion2Introduction.html",
     "title": "Conclusion 2 Introduction",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!"
+    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "crumbs": [
+      "List of R Code",
+      "Predicting Reality",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Conclusion 2 Introduction</span>"
+    ]
   },
   {
     "objectID": "labs.html",
@@ -284,7 +304,7 @@
     "section": "",
     "text": "Goals of the Course\nThis class is really three classes in one semester - a research methods class where you will learn how psychologists collect data in order to answer questions about people (or non-human animals), a programming class where you will learn how to use R to work with these data, and a statistics class where you will learn how and why psychologists analyze this data to answer their questions.\nThere are two major assignments in the class that represent the kinds of authentic skills you might need as a psychological researcher:\nWe will talk much more about these assignments throughout the semester, and you will be well prepared for them if you follow along with the readings, quizzes, and homework assignments each week.",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Introduction"
     ]
   },
@@ -306,7 +326,7 @@
     "section": "",
     "text": "Here is a list of the R code we use in this class.",
     "crumbs": [
-      "Home",
+      "List of R Code",
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Rcode</span>"
     ]
@@ -408,7 +428,7 @@
     "section": "Psychology as a REAL SCIENCE ™",
     "text": "Psychology as a REAL SCIENCE ™\nPsychology desperately wants to establish itself as a real science, like physics and chemistry. You don’t have to take my word for it, just look at the definitions of some common sources of psychological knowledge - introductory textbooks :  \n\n“Today, we define psychology as the science of behavior and mental processes.” (Myers, 2011)\n“…the science of behavior and the mind.” (Grey, 2010)\n“…the scientific study of mind, brain, and behavior.” (Gazzaniga, 2010)\n“…We now define psychology as the science of behavior and mental processes.” (Myers & DeWall, 2018)\n\nI’m probably showing my age looking to textbooks, so let’s check in with ChatGPT6 to see whether the algorithmic summary of large piles of data suggests that psychology is, in fact, a “real science” : \n\n\nPerhaps more authoritatively, the American Psychological Association (APA) confirms that psychology is, “the study of the mind and behavior…a diverse scientific discipline comprising several major branches of research.” (APA, 2024). \nThe consistent emphasis on science (and “rigorous” methods!) in these definitions is an attempt to elevate psychology to the status of other “hard” sciences, like physics and chemistry. But inclusion of the term “science” also seeks to differentiate psychology from its less scientific heritage and past, defend itself from accusations from other scientists / talking heads (if not some of your friends in STEM majors…or parents) that it is not actually REAL SCIENCE ™. \n\nWhat is Science? Prediction (and Error)\nOne of the most important goals of science is to form predictions, and then use these predictions in order to influence outcomes (a form of power).\nA prediction is an educated guess you have about the future. Educated means that the guess comes from some knowledge (either your experiences, beliefs, something you learned in a textbook, or the results of a scientific study). A prediction can have two outcomes :\n\nValid : your prediction is right\nError : your prediction is wrong.\n\nOf course, things are rarely as simple as “right” or “wrong”, and a large part of this class will be learning how to quantify exactly how much error there is in our scientific predictions.\nAs an example, let’s look to the stars.\n\n\n\n\nAstronomers have developed knowledge about celestial bodies - gravity, orbits, mass (I know very little about this).\nBut I trust this science because astronomers are able to use it to make very valid predictions about giant space rocks and when they will come close to the earth.7\nI can use this knowledge to plan a stargazing trip, or plan to watch all the rich people leave earth when the “big one” comes for the rest of us.\n\n\n\nFor our first lecture, start thinking of some predictions that you have made today. What knowledge informed the prediction. Did you use this prediction to influence your future behavior in some way? What kinds of predictions do psychologists make? We will chat more about these ideas in class :) but it’s a core focus on why psychologists use predictions.\nAnd so, here we are. In this document, in this required class for the psychology major, learning how to DO REAL SCIENCE. With statistics. So Oh yeah, and we’ll also be learning to use this computer programming language called R 😈",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Describing People",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span>"
     ]
@@ -420,7 +440,7 @@
     "section": "",
     "text": "The R Exam. I’ll give you a dataset, and you’ll use your knowledge of statistics, R, and research methods to answer questions about the dataset.\nThe Final Project. You will identify a resarch question that you care about, and then design a study, collect data, analyze the data to answer this question (and write up everything as a scientific research paper.) Wow!",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Introduction"
     ]
   },
@@ -431,7 +451,7 @@
     "section": "Course Structure",
     "text": "Course Structure\nThis semester, we’ll be taking a flipped classroom approach to learning the statistics, research methods, and programming required of modern psychology researchers.\n\nBefore lecture you’ll read and watch some videos to be introduced to the content that we will then cover more deeply in lecture. You’ll also take a short quiz (no time limit, open-note, and you can take as many times as you’d like) that will encourage you to do the readings, and let me know what topics are still confusing to students.\nDuring lecture we will start with a review of concepts you learned from the pre-readings, go over any common questions that students still have, and then use the remaining time to practice and discussing the skills and concepts. We will work on the homework assignment together\nAfter lecture you’ll complete any homework that we didn’t finish in class, and then read for the next week’s lecture.\n\nThe flipped classroom approach requires y’all to do the readings and watch the videos before class, and requires me to write text and record videos that are engaging and helpful for the students in the class.",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Introduction"
     ]
   },
@@ -442,7 +462,7 @@
     "section": "Course Syllabus.",
     "text": "Course Syllabus.\nTake a look at our course syllabus - linked above (and also on bCourses). We will chat a little about course policies on the first day.\nAlso, please take a moment to join our class Discord if you haven’t already (the link to join is on bCourses, and in first the announcement I sent) - it’s a great space to build community, and ask (and help answer) questions about the class or why R isn’t working.",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Introduction"
     ]
   },
@@ -501,7 +521,7 @@
     "section": "Getting Started.",
     "text": "Getting Started.\nBefore our first class, please read Chapter 1 (Why Statistics?) By clicking the right arrow below, or clicking on this chapter in the Table of Contents. Yeah!",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Introduction"
     ]
   },
@@ -884,7 +904,7 @@
     "section": "",
     "text": "Part 1.",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Describing People",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Why Research Methods?</span>"
     ]
@@ -896,7 +916,7 @@
     "section": "Part 2.",
     "text": "Part 2.",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Describing People",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Why Research Methods?</span>"
     ]
@@ -908,7 +928,7 @@
     "section": "Part 3.",
     "text": "Part 3.",
     "crumbs": [
-      "Lab Assignments",
+      "List of R Code",
       "Describing People",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Why Research Methods?</span>"
     ]
@@ -1014,7 +1034,7 @@
     "href": "chapters/3R_Description.html#definition.-3",
     "title": "Description",
     "section": "Definition.",
-    "text": "Definition.\nThe “Normal” (or Gaussian) distribution is a common shape for what distributions of data look like. The shape is often called a “bell curve”, because it looks like the curve of a bell.\nWhile many distributions appear normal, the “Normal Distribution” ™ refers to a distribution that describes an expected probability of a range of scores.\n\n\n\n\n\nThe Normal Distribution is called “normal” because researchers expect to see this type of distribution for variables where two conditions are met:\n\nThere are multiple explanations for why the variation occurs. This happens very frequently across all science, since life is complex and there are many reasons why individuals differ.\nThese multiple explanations occur randomly. This means that the multiple explanations for variation are mostly independent of one another, and there is not some shared experience among individuals that is influencing their variation.\n\n\nExample : Thinking About Distributions\nFor example, let’s look at one example “normal” distributions - the “self-esteem” variable we saw in Lecture 2. Note that it’s not perfectly normal4, but it’s pretty close and representative of the kind of “real world” data that you might encounter.\n\nhist(d$SELFES, col = 'black', bor = 'white', \n     main = \"Histogram of Self-Esteem\", \n     xlab = \"Self-Esteem Score\", breaks = 15)\n\n\n\n\n\n\n\n\n“Random” explanations for why variation in self-esteem occurs. Self-esteem is complex, and can be influenced by variables such as: genetics, parental environment, home environment, income, neurotransmitters, whether your crush told you they like you too the day you took the self-esteem survey, etc. These variables are considered random because one does not influence the other, and they differ across participants in the study. That is, someone who had a happy parental environment may not necessarily have a high income. \n“Non-Random” Explanations. Careful observers will note that self-esteem appears slightly shifted above the mid-point of the scale (which goes from 1-4, so 2.5 would be the mid-point), and that there’s some slight negative skew (meaning more individuals are on the higher end of the distribution). This shift is likely the result of some shared cultural experiences among participants - our society values self-esteem, and people might be biased to self-enhance / self-present a higher self-esteem. This is a non-random influence, since many participants might experience this.\n\n\nExample 2 : Thinking About Distributions\nBelow is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer5.)\n\n\n\n\n\n\n\n\n\n\n\n“Random” Reasons for Variation\n\n\n\n\n\nLots of things can influence a student’s score on an exam, such as how much students were motivated to study, how much time they had to study, what was going on in their lives, whether they had a study buddy in the class, whether they were sick or not on the day of the exam, their “test taking” skills and strategies and anxiety levels, etc.\n\n\n\n\n\n\n\n\n\n“Non-Random” Reasons for Variation.\n\n\n\n\n\nThese data are not normally distributed because the students were all part of the same college, in the same classroom, taught by the same professor, at the same time. The professor did his best to prepare these students, and wrote a test that would be based on the kinds of practice they had gone over in lecture. These variables are considered “non random” because they were shared by all students. The data are skewed because these non-random shared experiences helped students do well on the exam.",
+    "text": "Definition.\nThe “Normal” (or Gaussian) distribution is a common shape for what distributions of data look like. The shape is often called a “bell curve”, because it looks like the curve of a bell.\nWhile many distributions appear normal, the “Normal Distribution” ™ refers to a distribution that describes an expected probability of a range of scores.\n\n\n\n\n\nThe Normal Distribution is called “normal” because researchers expect to see this type of distribution for variables where two conditions are met:\n\nThere are multiple explanations for why the variation occurs. This happens very frequently across all science, since life is complex and there are many reasons why individuals differ.\nThese multiple explanations occur randomly. This means that the multiple explanations for variation are mostly independent of one another, and there is not some shared experience among individuals that is influencing their variation.\n\n\nExample : Thinking About Distributions\nFor example, let’s look at one example “normal” distributions - the “self-esteem” variable we saw in Lecture 2. Note that it’s not perfectly normal4, but it’s pretty close and representative of the kind of “real world” data that you might encounter.\n\nhist(d$SELFES, col = 'black', bor = 'white', \n     main = \"Histogram of Self-Esteem\", \n     xlab = \"Self-Esteem Score\", breaks = 15)\n\n\n\n\n\n\n\n\n“Random” explanations for why variation in self-esteem occurs. Self-esteem is complex, and can be influenced by variables such as: genetics, parental environment, home environment, income, neurotransmitters, whether your crush told you they like you too the day you took the self-esteem survey, etc. These variables are considered random because one does not influence the other, and they differ across participants in the study. That is, someone who had a happy parental environment may not necessarily have a high income. \n“Non-Random” Explanations. Careful observers will note that self-esteem appears slightly shifted above the mid-point of the scale (which goes from 1-4, so 2.5 would be the mid-point), and that there’s some slight negative skew (meaning more individuals are on the higher end of the distribution). This shift is likely the result of some shared cultural experiences among participants - our society values self-esteem, and people might be biased to self-enhance / self-present a higher self-esteem. This is a non-random influence, since many participants might experience this.\n\n\nExample 2 : Thinking About Distributions\nBelow is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer5.)\n\n\n\n\n\n\n\n\n\n\n\n“Random” Reasons for Variation\n\n\n\n\n\nLots of things can influence a student’s score on an exam, such as how much students were motivated to study, how much time they had to study, what was going on in their lives, whether they had a study buddy in the class, whether they were sick or not on the day of the exam, their “test taking” skills and strategies and anxiety levels, etc.\n\n\n\n\n\n\n\n\n\n“Non-Random” Reasons for Variation.\n\n\n\n\n\nThese data are not normally distributed because the students were all part of the same college, in the same classroom, taught by the same professor, at the same time. The professor did his best to prepare these students, and wrote a test that would be based on the kinds of practice they had gone over in lecture. These variables are considered “non random” because they were shared by all students. The data are skewed because these non-random shared experiences helped students do well on the exam.\n\n\n\n\nCulture in Statistics : The Normal Curve\n\n\n\n\n\n\n\n\nThat’s right folks, it’s time for another chat with your friend Open-Source Mickey Mouse! This time, we’re gonna chat about the idea that people differ from some average. The idea that you could quantify people as “average” is fairly new - it’s hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s6. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet’s ideas to try and “rank” individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else.\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nBut you don’t have to take it from me! Here’s Galton in his own words :\nTo conclude, the range of mental power between—I will not say the highest Caucasian and the lowest savage—but between the greatest and least of English intellects, is enormous. … I propose in this chapter to range men according to their natural abilities, putting them into classes separated by equal degrees of merit, and to show the relative number of individuals included in the several classes…..The method I shall employ for discovering all this, is an application of the very curious theoretical law of “deviation from an average.” First, I will explain the law, and then I will show that the production of natural intellectual gifts comes justly within its scope. - Galton, Hereditary Genius (1869). Linked here.\n\n\nThe point of bringing up some of the racist origins of statistics is two-fold :\n\nMany people like to argue that “good” statistics is objective, and that scientists are free of bias. So it’s important to acknowledge that the inventors of many statistics that we use had clear biases and did not behave objectively. Rather than try to be free of bias, I think it’s important to acknowledge where and when people are biased, and address those biases up explicitly.\nStatistics is a tool, and that tool can be used poorly and dangerously in ways that can cause a lot of pain. Just because something has numbers doens’t mean it’s correct. For example, Galton’s work showing “statistically” that white people were superior in ability to other groups didn’t account for other factors like socioeconomic status. And for what it’s worth, modern scientists overwhelmingly agree that “race” is a social construct. There are genetic differences that explain different skin tones, however there is more genetic variation in skin tone within a similar “race” than between different “races”. Read more about this here.\n\nAlright, that’s all for now! Let me know what you think and see you next time!",
     "crumbs": [
       "List of R Code",
       "Describing People",
@@ -1062,7 +1082,7 @@
     "href": "chapters/3R_Description.html#footnotes",
     "title": "Description",
     "section": "",
-    "text": "the mode would be 3 and 20, since these are the most frequent↩︎\nsee Antoine de Saint-Exupéry’s (1943). The Little Prince.↩︎\nNo shame billionaires! You are just very different from the rest of us. Let us know if I can hang out on your yacht? You belong to an understudied group and I have some research ideas. kthxbye.↩︎\ngood not to hold data to unrealistic body images as well as people.↩︎\nIt is negatively skewed, since the tail is on the negative side of the distribution.↩︎",
+    "text": "the mode would be 3 and 20, since these are the most frequent↩︎\nsee Antoine de Saint-Exupéry’s (1943). The Little Prince.↩︎\nNo shame billionaires! You are just very different from the rest of us. Let us know if I can hang out on your yacht? You belong to an understudied group and I have some research ideas. kthxbye.↩︎\ngood not to hold data to unrealistic body images as well as people.↩︎\nIt is negatively skewed, since the tail is on the negative side of the distribution.↩︎\nsee Rose’s END OF AVERAGE (2016) or, for a more critical approach, Chapman’s (2023) EMPIRE OF NORMALITY.↩︎",
     "crumbs": [
       "List of R Code",
       "Describing People",
