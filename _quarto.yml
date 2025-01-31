@@ -35,7 +35,7 @@ book:
     background: primary
     search: true
     left:
-      - text: "Psych 101 Homepage [Lectures, Labs, Syllabus]" 
+      - text: "Psych 101 [Lecture Notes, Labs, Syllabus]" 
         href: http://catterson.github.io/calstats/calstatsSP25.html
       - text: "List of R Code"
         href: Rcode.qmd
