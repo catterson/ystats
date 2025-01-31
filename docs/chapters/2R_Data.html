@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.5.57" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data – Why Statistics?</title>
+<title>Why Statistics? - Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -58,7 +56,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/3R_Description.html" rel="next">
+<link href="../chapters/1R_WhyStats.html" rel="prev">
+<link href=".././images/open_source_mouse.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -90,21 +107,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body>
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Why Statistics?</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-  aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation"
-  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -114,31 +129,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Psych 101 [Lecture Notes, Labs, Syllabus]</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/Rcode.html"> 
+    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
 <span class="menu-text">List of R Code</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://catterson.github.io"> 
-<span class="menu-text">Prof. Cat Homepage</span></a>
+<span class="menu-text">Prof.&nbsp;Cat Homepage</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn"
-      data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" 
-      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" role="link"
-        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/2R_Data.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -148,153 +158,153 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="/index.html" class="sidebar-logo-link">
-      <img src="/./images/open_source_mouse.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"/>
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src=".././images/open_source_mouse.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/0R_About.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/0R_About.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Describing People</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/1R_WhyStats.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span></span></a>
+  <a href="../chapters/1R_WhyStats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/2R_Data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class='chapter-number'>2</span>  <span class='chapter-title'>Data</span></span></a>
+  <a href="../chapters/2R_Data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/3R_Description.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span></span></a>
+  <a href="../chapters/3R_Description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/4R_ResearchMethods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>4</span>  <span class='chapter-title'>Why Research Methods?</span></span></a>
+  <a href="../chapters/4R_ResearchMethods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/5R_Scales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>5</span>  <span class='chapter-title'>Scales</span></span></a>
+  <a href="../chapters/5R_Scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Scales</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Predicting People</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/6R_LinearModels.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>6</span>  <span class='chapter-title'>Continuous IVs</span></span></a>
+  <a href="../chapters/6R_LinearModels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Continuous IVs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/7R_CategoricalIV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>7</span>  <span class='chapter-title'>Categorical IVs</span></span></a>
+  <a href="../chapters/7R_CategoricalIV.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Categorical IVs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/8R_Assumptions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>8</span>  <span class='chapter-title'>Assumptions and Extensions</span></span></a>
+  <a href="../chapters/8R_Assumptions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Assumptions and Extensions</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Predicting Reality</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/9R_SamplingError.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>9</span>  <span class='chapter-title'>Sampling Error and Bias</span></span></a>
+  <a href="../chapters/9R_SamplingError.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sampling Error and Bias</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/10R_NHSTPower.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>10</span>  <span class='chapter-title'>Null Hypothesis Significance Testing and Power</span></span></a>
+  <a href="../chapters/10R_NHSTPower.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Null Hypothesis Significance Testing and Power</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/11R_MultipleRegression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>11</span>  <span class='chapter-title'>Multiple Regression</span></span></a>
+  <a href="../chapters/11R_MultipleRegression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Multiple Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/chapters/12R_Conclusion2Introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>12</span>  <span class='chapter-title'>Conclusion 2 Introduction</span></span></a>
+  <a href="../chapters/12R_Conclusion2Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conclusion 2 Introduction</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/labs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>A</span>  <span class='chapter-title'>Lab Assignments</span></span></a>
+  <a href="../labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Lab Assignments</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/Rcode.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>B</span>  <span class='chapter-title'>Rcode</span></span></a>
+  <a href="../Rcode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/references.html" class="sidebar-item-text sidebar-link">
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -303,15 +313,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#part-1-defining-data" id="toc-part-1-defining-data" class="nav-link active" data-scroll-target="#part-1-defining-data">Part 1 : Defining Data</a>
+  <ul>
+  <li><a href="#numeric-variables" id="toc-numeric-variables" class="nav-link" data-scroll-target="#numeric-variables">Numeric variables</a>
+  <ul class="collapse">
+  <li><a href="#definition-numeric-variable" id="toc-definition-numeric-variable" class="nav-link" data-scroll-target="#definition-numeric-variable">Definition : Numeric Variable</a></li>
+  <li><a href="#graphing-the-histogram" id="toc-graphing-the-histogram" class="nav-link" data-scroll-target="#graphing-the-histogram">Graphing : The Histogram</a></li>
+  <li><a href="#activity-think-about-data" id="toc-activity-think-about-data" class="nav-link" data-scroll-target="#activity-think-about-data">Activity : Think about Data!</a></li>
+  </ul></li>
+  <li><a href="#categorical-factor-variable" id="toc-categorical-factor-variable" class="nav-link" data-scroll-target="#categorical-factor-variable">Categorical Factor Variable</a>
+  <ul class="collapse">
+  <li><a href="#definition-categorical-factor-variable" id="toc-definition-categorical-factor-variable" class="nav-link" data-scroll-target="#definition-categorical-factor-variable">Definition : Categorical Factor Variable</a>
+  <ul class="collapse">
+  <li><a href="#culture-in-statistics-gender-identity" id="toc-culture-in-statistics-gender-identity" class="nav-link" data-scroll-target="#culture-in-statistics-gender-identity">Culture in Statistics : Gender Identity</a></li>
+  </ul></li>
+  <li><a href="#graphing-the-categorical-plot" id="toc-graphing-the-categorical-plot" class="nav-link" data-scroll-target="#graphing-the-categorical-plot">Graphing : The Categorical Plot</a></li>
+  </ul></li>
+  <li><a href="#defining-variables-in-r" id="toc-defining-variables-in-r" class="nav-link" data-scroll-target="#defining-variables-in-r">Defining Variables in R</a>
+  <ul class="collapse">
+  <li><a href="#video-defining-numeric-variables-in-r" id="toc-video-defining-numeric-variables-in-r" class="nav-link" data-scroll-target="#video-defining-numeric-variables-in-r">Video : Defining Numeric Variables in R</a></li>
+  <li><a href="#video-graphing-numeric-variables-in-r" id="toc-video-graphing-numeric-variables-in-r" class="nav-link" data-scroll-target="#video-graphing-numeric-variables-in-r">Video : Graphing Numeric Variables in R</a></li>
+  <li><a href="#video-defining-categorical-variables-in-r" id="toc-video-defining-categorical-variables-in-r" class="nav-link" data-scroll-target="#video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</a></li>
+  <li><a href="#video-graphing-categorical-variables-in-r" id="toc-video-graphing-categorical-variables-in-r" class="nav-link" data-scroll-target="#video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part-2-working-with-datasets" id="toc-part-2-working-with-datasets" class="nav-link" data-scroll-target="#part-2-working-with-datasets">Part 2 : Working with Datasets</a>
+  <ul>
+  <li><a href="#the-dataframe" id="toc-the-dataframe" class="nav-link" data-scroll-target="#the-dataframe">The Dataframe</a>
+  <ul class="collapse">
+  <li><a href="#definition-rows-and-columns" id="toc-definition-rows-and-columns" class="nav-link" data-scroll-target="#definition-rows-and-columns">Definition : Rows and Columns</a></li>
+  <li><a href="#definition-indexing" id="toc-definition-indexing" class="nav-link" data-scroll-target="#definition-indexing">Definition : Indexing</a>
+  <ul class="collapse">
+  <li><a href="#indexing-an-entire-dataset" id="toc-indexing-an-entire-dataset" class="nav-link" data-scroll-target="#indexing-an-entire-dataset">Indexing an Entire Dataset</a></li>
+  <li><a href="#indexing-a-single-variable" id="toc-indexing-a-single-variable" class="nav-link" data-scroll-target="#indexing-a-single-variable">Indexing a Single Variable</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself">Test Yourself!</a>
+  <ul class="collapse">
+  <li><a href="#videos-how-to-navigate-datasets-in-r" id="toc-videos-how-to-navigate-datasets-in-r" class="nav-link" data-scroll-target="#videos-how-to-navigate-datasets-in-r">Videos : How to Navigate Datasets in R</a>
+  <ul class="collapse">
+  <li><a href="#video-checking-datasets-in-r" id="toc-video-checking-datasets-in-r" class="nav-link" data-scroll-target="#video-checking-datasets-in-r">Video : Checking Datasets in R</a></li>
+  <li><a href="#video-navigating-datasets-with-indexing" id="toc-video-navigating-datasets-with-indexing" class="nav-link" data-scroll-target="#video-navigating-datasets-with-indexing">Video : Navigating Datasets with Indexing</a></li>
+  </ul></li>
+  <li><a href="#check-in-navigating-variables-and-datasets-with-indexing" id="toc-check-in-navigating-variables-and-datasets-with-indexing" class="nav-link" data-scroll-target="#check-in-navigating-variables-and-datasets-with-indexing">Check-In : Navigating Variables and Datasets with Indexing</a></li>
+  </ul></li>
+  <li><a href="#the-.csv-file" id="toc-the-.csv-file" class="nav-link" data-scroll-target="#the-.csv-file">The .csv File</a>
+  <ul class="collapse">
+  <li><a href="#definition-the-.csv-file" id="toc-definition-the-.csv-file" class="nav-link" data-scroll-target="#definition-the-.csv-file">Definition : The .csv File</a></li>
+  <li><a href="#videos-how-to-load-datasets-in-r" id="toc-videos-how-to-load-datasets-in-r" class="nav-link" data-scroll-target="#videos-how-to-load-datasets-in-r">Videos : How to Load Datasets in R</a>
+  <ul class="collapse">
+  <li><a href="#video-importing-data-with-the-point-and-click-method-and-console-method" id="toc-video-importing-data-with-the-point-and-click-method-and-console-method" class="nav-link" data-scroll-target="#video-importing-data-with-the-point-and-click-method-and-console-method">Video : Importing Data with the “Point and Click” Method and Console Method</a></li>
+  <li><a href="#video-for-posit-users-working-with-projects-and-loading-data-in-the-cloud." id="toc-video-for-posit-users-working-with-projects-and-loading-data-in-the-cloud." class="nav-link" data-scroll-target="#video-for-posit-users-working-with-projects-and-loading-data-in-the-cloud.">Video : For Posit Users : working with projects and loading data in the cloud.</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#practice-quiz-2" id="toc-practice-quiz-2" class="nav-link" data-scroll-target="#practice-quiz-2">Practice Quiz 2</a></li>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link" data-scroll-target="#tldr">TLDR</a></li>
+  <li><a href="#chapter-appendix-r-commands" id="toc-chapter-appendix-r-commands" class="nav-link" data-scroll-target="#chapter-appendix-r-commands">Chapter Appendix : R Commands</a>
+  <ul>
+  <li><a href="#r-code-creating-variables-in-r" id="toc-r-code-creating-variables-in-r" class="nav-link" data-scroll-target="#r-code-creating-variables-in-r">R Code : Creating Variables in R</a></li>
+  <li><a href="#numeric-variables-in-r" id="toc-numeric-variables-in-r" class="nav-link" data-scroll-target="#numeric-variables-in-r">Numeric Variables in R</a></li>
+  <li><a href="#string-variables" id="toc-string-variables" class="nav-link" data-scroll-target="#string-variables">String Variables</a></li>
+  <li><a href="#r-commands-for-importing-and-navigating-data" id="toc-r-commands-for-importing-and-navigating-data" class="nav-link" data-scroll-target="#r-commands-for-importing-and-navigating-data">R Commands for Importing and Navigating Data</a></li>
+  <li><a href="#r-commands-for-visualizing-data" id="toc-r-commands-for-visualizing-data" class="nav-link" data-scroll-target="#r-commands-for-visualizing-data">R Commands for Visualizing Data</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/2R_Data.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Data</h1>
 </div>
@@ -329,87 +408,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">In This Chapter</h2>
-   
-  <ul>
-  <li><a href="#part-1-defining-data" id="toc-part-1-defining-data">Part 1 : Defining Data</a>
-  <ul>
-  <li><a href="#numeric-variables" id="toc-numeric-variables">Numeric variables</a>
-  <ul>
-  <li><a href="#definition-numeric-variable" id="toc-definition-numeric-variable">Definition : Numeric Variable</a></li>
-  <li><a href="#graphing-the-histogram" id="toc-graphing-the-histogram">Graphing : The Histogram</a></li>
-  <li><a href="#activity-think-about-data" id="toc-activity-think-about-data">Activity : Think about Data!</a></li>
-  </ul></li>
-  <li><a href="#categorical-factor-variable" id="toc-categorical-factor-variable">Categorical Factor Variable</a>
-  <ul>
-  <li><a href="#definition-categorical-factor-variable" id="toc-definition-categorical-factor-variable">Definition : Categorical Factor Variable</a>
-  <ul>
-  <li><a href="#culture-in-statistics-gender-identity" id="toc-culture-in-statistics-gender-identity">Culture in Statistics : Gender Identity</a></li>
-  </ul></li>
-  <li><a href="#graphing-the-categorical-plot" id="toc-graphing-the-categorical-plot">Graphing : The Categorical Plot</a></li>
-  </ul></li>
-  <li><a href="#defining-variables-in-r" id="toc-defining-variables-in-r">Defining Variables in R</a>
-  <ul>
-  <li><a href="#video-defining-numeric-variables-in-r" id="toc-video-defining-numeric-variables-in-r">Video : Defining Numeric Variables in R</a></li>
-  <li><a href="#video-graphing-numeric-variables-in-r" id="toc-video-graphing-numeric-variables-in-r">Video : Graphing Numeric Variables in R</a></li>
-  <li><a href="#video-defining-categorical-variables-in-r" id="toc-video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</a></li>
-  <li><a href="#video-graphing-categorical-variables-in-r" id="toc-video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#part-2-working-with-datasets" id="toc-part-2-working-with-datasets">Part 2 : Working with Datasets</a>
-  <ul>
-  <li><a href="#the-dataframe" id="toc-the-dataframe">The Dataframe</a>
-  <ul>
-  <li><a href="#definition-rows-and-columns" id="toc-definition-rows-and-columns">Definition : Rows and Columns</a></li>
-  <li><a href="#definition-indexing" id="toc-definition-indexing">Definition : Indexing</a>
-  <ul>
-  <li><a href="#indexing-an-entire-dataset" id="toc-indexing-an-entire-dataset">Indexing an Entire Dataset</a></li>
-  <li><a href="#indexing-a-single-variable" id="toc-indexing-a-single-variable">Indexing a Single Variable</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#test-yourself" id="toc-test-yourself">Test Yourself!</a>
-  <ul>
-  <li><a href="#videos-how-to-navigate-datasets-in-r" id="toc-videos-how-to-navigate-datasets-in-r">Videos : How to Navigate Datasets in R</a>
-  <ul>
-  <li><a href="#video-checking-datasets-in-r" id="toc-video-checking-datasets-in-r">Video : Checking Datasets in R</a></li>
-  <li><a href="#video-navigating-datasets-with-indexing" id="toc-video-navigating-datasets-with-indexing">Video : Navigating Datasets with Indexing</a></li>
-  </ul></li>
-  <li><a href="#check-in-navigating-variables-and-datasets-with-indexing" id="toc-check-in-navigating-variables-and-datasets-with-indexing">Check-In : Navigating Variables and Datasets with Indexing</a></li>
-  </ul></li>
-  <li><a href="#the-.csv-file" id="toc-the-.csv-file">The .csv File</a>
-  <ul>
-  <li><a href="#definition-the-.csv-file" id="toc-definition-the-.csv-file">Definition : The .csv File</a></li>
-  <li><a href="#videos-how-to-load-datasets-in-r" id="toc-videos-how-to-load-datasets-in-r">Videos : How to Load Datasets in R</a>
-  <ul>
-  <li><a href="#video-importing-data-with-the-point-and-click-method-and-console-method" id="toc-video-importing-data-with-the-point-and-click-method-and-console-method">Video : Importing Data with the “Point and Click” Method and Console Method</a></li>
-  <li><a href="#video-for-posit-users-working-with-projects-and-loading-data-in-the-cloud." id="toc-video-for-posit-users-working-with-projects-and-loading-data-in-the-cloud.">Video : For Posit Users : working with projects and loading data in the cloud.</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#practice-quiz-2" id="toc-practice-quiz-2">Practice Quiz 2</a></li>
-  <li><a href="#tldr" id="toc-tldr">TLDR</a></li>
-  <li><a href="#chapter-appendix-r-commands" id="toc-chapter-appendix-r-commands">Chapter Appendix : R Commands</a>
-  <ul>
-  <li><a href="#r-code-creating-variables-in-r" id="toc-r-code-creating-variables-in-r">R Code : Creating Variables in R</a></li>
-  <li><a href="#numeric-variables-in-r" id="toc-numeric-variables-in-r">Numeric Variables in R</a></li>
-  <li><a href="#string-variables" id="toc-string-variables">String Variables</a></li>
-  <li><a href="#r-commands-for-importing-and-navigating-data" id="toc-r-commands-for-importing-and-navigating-data">R Commands for Importing and Navigating Data</a></li>
-  <li><a href="#r-commands-for-visualizing-data" id="toc-r-commands-for-visualizing-data">R Commands for Visualizing Data</a></li>
-  </ul></li>
-  </ul>
-</nav>
+
 <p>Hello! In this week’s reading, you’ll learn how to work with data in R - first how to navigate datasets, and then how to graph (and think critically about) both categorical and continuous variables.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="images/2_medicalposter.jpg" class="img-fluid" alt="a chinese medical poster, depicting a human on the left and a mechanical version of the human on the right. for example, the human is holding up a weight with their arm, whereas the mechanical human has a crane for an arm." /></p>
+<figure class="figure">
+<p><img src="images/2_medicalposter.jpg" class="img-fluid figure-img" alt="a chinese medical poster, depicting a human on the left and a mechanical version of the human on the right. for example, the human is holding up a weight with their arm, whereas the mechanical human has a crane for an arm."></p>
 <figcaption>Chinese medical poster, 1933 (ref <a href="https://www.nlm.nih.gov/hmd/chineseposters/understanding.html">US NLM</a>; image source <a href="http://www.notechmagazine.com/2009/06/the-body-is-a-machine.html">here</a>)</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 To-Do List:
@@ -429,26 +439,26 @@ To-Do List:
 </div>
 <section id="part-1-defining-data" class="level1">
 <h1>Part 1 : Defining Data</h1>
-<p>Researchers seeking to bring a scientific approach to psychology love data, and aim to convert complex human thoughts, feelings, and behaviors into numbers. This is called <strong>quantitative data,</strong> and is the default approach almost all modern research psychologists take. For example: </p>
+<p>Researchers seeking to bring a scientific approach to psychology love data, and aim to convert complex human thoughts, feelings, and behaviors into numbers. This is called <strong>quantitative data,</strong> and is the default approach almost all modern research psychologists take. For example:&nbsp;</p>
 <ul>
 <li><p>Psychologists will quantify <strong>affect</strong> using heart rate monitors, finger temperature gauges, or even simple rating scales of how people are feeling (quick, how bored are you right now on a scale from 0 (not bored; super engaged professor!) to 10 (….most bored ever; surprised I’m even reading this right now)….see, you are just a number!)</p></li>
 <li><p>Psychologists often quantify <strong>behavior</strong> by measuring reaction time, the number of times a person fidgets in a chair, how far a person will sit from another person in a study, the speed of a group. And even qualitative data - like a person’s journal entry - would be turned into hard numbers by a researcher (who would ask a team of research assistants to read the journal and then count or provide a subjective rating to what they observe. this is called <strong>behavioral coding</strong>; we’ll learn about it later. remind me if I forget.)</p></li>
-<li><p>Neuroscientists quantify  <strong>cognition</strong> in terms of voxel activation in the brain, or a sleep researcher might ask participants to write down their dreams in a journal, which then a team of research assistants would read and convert into….you guessed it…numbers (e.g., number of times person dreamt about water or their parents; how stressful the dream seemed to the reader; etc.)</p></li>
+<li><p>Neuroscientists quantify&nbsp; <strong>cognition</strong> in terms of voxel activation in the brain, or a sleep researcher might ask participants to write down their dreams in a journal, which then a team of research assistants would read and convert into….you guessed it…numbers (e.g., number of times person dreamt about water or their parents; how stressful the dream seemed to the reader; etc.)</p></li>
 </ul>
 <p>While we will learn more about the various ways psychologists collect data later this semester, for now it’s important to acknowledge that these numbers have error (called <strong>measurement error</strong>), a fair amount of work in psychology goes into learning how to reduce measurement error as much as possible, and the existence of measurement error is one form of error that will contributes to the ERROR term in our linear models.</p>
-<p>Quantitative data takes two forms that we will see in this class - <strong>numeric</strong> (sometimes called <strong>continuous data</strong>)  and <strong>categorical data (</strong>sometimes called “string” data). </p>
+<p>Quantitative data takes two forms that we will see in this class - <strong>numeric</strong> (sometimes called <strong>continuous data</strong>)&nbsp; and <strong>categorical data (</strong>sometimes called “string” data).&nbsp;</p>
 <section id="numeric-variables" class="level2">
-<h2>Numeric variables</h2>
+<h2 class="anchored" data-anchor-id="numeric-variables">Numeric variables</h2>
 <section id="definition-numeric-variable" class="level3">
-<h3>Definition : Numeric Variable</h3>
-<p>Numeric variables are when the value of the variable is a number (e.g., your Extraversion score is 62 on a scale from 0 to 100; or you said “um” fifty times yesterday, or scrolled your phone five times since starting this reading. </p>
+<h3 class="anchored" data-anchor-id="definition-numeric-variable">Definition : Numeric Variable</h3>
+<p>Numeric variables are when the value of the variable is a number (e.g., your Extraversion score is 62 on a scale from 0 to 100; or you said “um” fifty times yesterday, or scrolled your phone five times since starting this reading.&nbsp;</p>
 <p><strong>Continuous variables</strong> are a special type of numeric variable, with the idea that values of the variable represent an “infinite” range of possibilities.</p>
 <p>We often simplify complexity into discrete groups, but for most complex phenomena, I believe that it’s best to think of life as a spectrum. For example, while I look at my walls and say “they are blue”, a physicist who really understands color theory would be able to interpret the wavelength of light that is being reflected off these walls, and understands that that wavelength really just a point on an infinite spectrum (bound by a certain range).</p>
-<p><img src="images/2_lightspectrum.png" class="img-fluid" /></p>
+<p><img src="images/2_lightspectrum.png" class="img-fluid"></p>
 <p>Psychologists working in R often use numeric data, and see this as a list (or vector) of numbers. For example, below is data on the narcissism (variable = NPI; a measure of how self-absorbed; self-interested) of a group of Berkeley Haas MBA students were<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>haas <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./chapter_data/hormone_data.csv&quot;</span>, <span class="at">stringsAsFactors =</span> T) </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>NPI</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>haas <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"./chapter_data/hormone_data.csv"</span>, <span class="at">stringsAsFactors =</span> T) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>NPI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1] 3.43 4.40 3.13   NA 3.00   NA 3.05   NA   NA 3.63 3.95 3.08 3.83 3.23 3.80
  [16] 1.80 3.68 3.48 2.73 3.40 2.95 3.65 2.88 2.50 3.13 2.75 3.00 3.15 3.30 3.20
@@ -467,26 +477,26 @@ To-Do List:
 <li><strong>haas$NPI</strong> is the R command that was used to generate the output below; a list of 122 individual Narcissism scores.
 <ul>
 <li>I know there’s 122 individual scores because R is keeping count for me using indexing; the numbers in brackets. [1] shows that the first person in the dataset has a narcissism (NPI) score of 3.43; [118] 3.73 shows that this is the score for the 118th person in the dataset, and then I can count up to 122. There are much faster ways to do this, but I can do it this way too :)</li>
-<li>I also see there are a few missing data points in the responses - these are marked as NA. This could be people who didn’t complete the survey or were excluded for other reasons (e.g. missing data).</li>
+<li>I also see there are a few missing data points in the responses - these are marked as NA. This could be people who didn’t complete the survey or were excluded for other reasons (e.g.&nbsp;missing data).</li>
 </ul></li>
 </ul>
 </section>
 <section id="graphing-the-histogram" class="level3">
-<h3>Graphing : The Histogram</h3>
-<p><strong>The Histogram</strong> is a commonway researchers illustrate numeric variables. We will learn more about principles of good graphing this semester, but the KEY IDEA is to always always always graph your data because A PICTURE IS WORTH 1000 WORDS. </p>
-<p>The histogram organizes data - you lose the individual values, but gain understanding in seeing how data are grouped together, which helps you observe patterns and get a quick summary of the variable. </p>
-<p>There are two dimensions of a histogram : </p>
+<h3 class="anchored" data-anchor-id="graphing-the-histogram">Graphing : The Histogram</h3>
+<p><strong>The Histogram</strong> is a commonway researchers illustrate numeric variables. We will learn more about principles of good graphing this semester, but the KEY IDEA is to always always always graph your data because A PICTURE IS WORTH 1000 WORDS.&nbsp;</p>
+<p>The histogram organizes data - you lose the individual values, but gain understanding in seeing how data are grouped together, which helps you observe patterns and get a quick summary of the variable.&nbsp;</p>
+<p>There are two dimensions of a histogram :&nbsp;</p>
 <ul>
-<li><p><strong>the x-axis</strong> (the horizontal axis; what goes across) : displays the values of the variable as organized into groups (or “breaks”, in R). </p></li>
+<li><p><strong>the x-axis</strong> (the horizontal axis; what goes across) : displays the values of the variable as organized into groups (or “breaks”, in R).&nbsp;</p></li>
 <li><p><strong>the y-axis</strong> (the vertical axis; what goes up and down) : displays the frequency (or count) of the individuals in the data who “belong” to that group.</p></li>
 </ul>
 <p>Let’s look at our MBA friends again, through the power of a histogram. As you look at a graph, it’s important to practice thinking about what you learn from the data. Let’s avoid fancy stats terminology for now; it’s not necessary for our purposes!!</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(haas<span class="sc">$</span>NPI, <span class="at">xlab =</span> <span class="st">&quot;Narcissism Score&quot;</span>, <span class="at">col =</span> <span class="st">&#39;black&#39;</span>, <span class="at">bor =</span> <span class="st">&#39;white&#39;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(haas<span class="sc">$</span>NPI, <span class="at">xlab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>, <span class="at">main =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2R_Data_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2R_Data_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -501,7 +511,7 @@ To-Do List:
 </ul></li>
 <li><p><strong>the graph :</strong> okay, what did R do!</p>
 <ul>
-<li><p><strong>x-axis :</strong> this reports the grouped values of the individual narcissism scores. </p></li>
+<li><p><strong>x-axis :</strong> this reports the grouped values of the individual narcissism scores.&nbsp;</p></li>
 <li><p><strong>y-axis :</strong> this reports how many people were in each group.</p></li>
 </ul></li>
 <li><p><strong>professor interpretation with no fancy stats language needed.</strong></p>
@@ -514,16 +524,16 @@ To-Do List:
 </ul>
 </section>
 <section id="activity-think-about-data" class="level3">
-<h3>Activity : Think about Data!</h3>
+<h3 class="anchored" data-anchor-id="activity-think-about-data">Activity : Think about Data!</h3>
 <p>Okay, your turn. Below is a graph from the same MBA students, but this time measuring their testosterone levels. Look over the graph, THINK about what you see, and then expand the textbox below (click on the arrow on the right side of the green box) to see what I wrote.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(haas<span class="sc">$</span>test, </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Testosterone Level&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&#39;black&#39;</span>, <span class="at">bor =</span> <span class="st">&#39;white&#39;</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(haas<span class="sc">$</span>test, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Testosterone Level"</span>, <span class="at">main =</span> <span class="st">""</span>, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2R_Data_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2R_Data_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -531,12 +541,12 @@ To-Do List:
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 PROFESSOR SPOILERS : Expand this textbox when you are ready by clicking on the arrow —&gt;
 </div>
-<div class='callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end'><i class='callout-toggle'></i></div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
@@ -559,14 +569,14 @@ PROFESSOR SPOILERS : Expand this textbox when you are ready by clicking on the a
 </section>
 </section>
 <section id="categorical-factor-variable" class="level2">
-<h2>Categorical Factor Variable</h2>
+<h2 class="anchored" data-anchor-id="categorical-factor-variable">Categorical Factor Variable</h2>
 <section id="definition-categorical-factor-variable" class="level3">
-<h3>Definition : Categorical Factor Variable</h3>
+<h3 class="anchored" data-anchor-id="definition-categorical-factor-variable">Definition : Categorical Factor Variable</h3>
 <p>A categorical factor variable is when the values of the variable represent different groups, usually labeled with some kind of word. Categories are often useful and simple ways to group individuals together. For example, when I see a color, I don’t ever describe it in terms of its color hex code or specific wavelength - I just call it by the simple primary color that I got from the crayola box; maybe the 24 color version if I’m feeling fancy.</p>
 <p>Which of the shades below would you call blue?<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="images/2_shadesofcyan.png" class="img-fluid quarto-figure quarto-figure-center" alt="a 3x3 grid of different squares that are shades of blue and green" width="388" /></p>
+<figure class="figure">
+<p><img src="images/2_shadesofcyan.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="a 3x3 grid of different squares that are shades of blue and green" width="388"></p>
 </figure>
 </div>
 <p>The broad label for the variable is called <strong>the factor</strong>, and the specific groups of data are called <strong>levels</strong>. So in the color example, the category of color would be the factor, and the different groups of color would be the levels.</p>
@@ -574,12 +584,12 @@ PROFESSOR SPOILERS : Expand this textbox when you are ready by clicking on the a
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 What are the factors and levels in the example above?
 </div>
-<div class='callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end'><i class='callout-toggle'></i></div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
@@ -591,46 +601,46 @@ What are the factors and levels in the example above?
 </div>
 </div>
 <section id="culture-in-statistics-gender-identity" class="level4">
-<h4>Culture in Statistics : Gender Identity</h4>
-<table class="caption-top">
+<h4 class="anchored" data-anchor-id="culture-in-statistics-gender-identity">Culture in Statistics : Gender Identity</h4>
+<table class="caption-top table">
 <tbody>
 <tr class="odd">
-<td><img src="../images/doff_intro_mickey.png" class="img-fluid" /></td>
+<td><img src="../images/doff_intro_mickey.png" class="img-fluid"></td>
 <td><p>Hi folks! It’s me again, Open-Source Mickey Mouse to talk with you about the idea that statistics has a culture that is socially constructed by people like you! We live in a society where people in positions of power often have very narrow definitions of what it means to be a person! This manifests in all sorts of ways - you probably feel this pressure when you think about what it means to be a “successful student”.</p>
 <p>One domain where this is particularly relevant is in the area of gender identity. While many people identify as “male” or “female”, some people don’t fit into these categories. (Seems pretty simple to me to let folks exist as they want! But I’m just a poor public servant.) Yet as folks in power have recently <a href="https://www.motherjones.com/politics/2025/01/trumps-definitions-of-male-and-female-are-nonsense-science-with-staggering-ramifications/">forced this narrow binary view of gender identity onto everyone</a>, it becomes even more critical to engage with these ideas and try to define a science that can capture the complexity of human life in ways that let people be their full selves.</p></td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <tbody>
 <tr class="odd">
 <td><p>Unfortunately, most psychological researchers still hold on to Male / Female binaries in the way they measure gender or sex, yet there are many reasons - both scientific and humanistic - to give people more range to express important aspects of their identity<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
 <p>Indeed, categories almost always oversimplify the complexity of life, yet are often used by people (and researchers) because they can sometimes be useful and simple shortcuts for us to understand the world.</p>
 <p>If you are simply interested in doing a superficial survey of a variable like race, ethnicity, or gender, then I think categorical data can be a fine -if often unscientific - approach, and would recommend giving all people the chance to express their identity in some way.</p>
 <p>However, if you are interested in really digging into a variable, then a continuous approach is almost always best. We’ll discuss more on how to do this in a few weeks when we learn about continuous variables and likert scales.</p></td>
-<td><p><strong><img src="images/2_fb_gender.png" class="img-fluid" alt="facebook’s attempt at measuring more complex categories." /></strong></p>
+<td><p><strong><img src="images/2_fb_gender.png" class="img-fluid" alt="facebook’s attempt at measuring more complex categories."></strong></p>
 <p><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<p><strong><img src="images/2_genderspectrum.png" class="img-fluid" alt="a continuous approach to measuring gender." /></strong><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p></td>
+<p><strong><img src="images/2_genderspectrum.png" class="img-fluid" alt="a continuous approach to measuring gender."></strong><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 </section>
 <section id="graphing-the-categorical-plot" class="level3">
-<h3>Graphing : The Categorical Plot</h3>
+<h3 class="anchored" data-anchor-id="graphing-the-categorical-plot">Graphing : The Categorical Plot</h3>
 <p>The histogram only describes a graph for numeric data, since it organizes numbers into groups (it kind of turns complex variation into more simple categories). When the variable is categorical, people call it a plot 🤷.</p>
-<p>This graph looks very similar to our histogram : </p>
+<p>This graph looks very similar to our histogram :&nbsp;</p>
 <ul>
 <li><p><strong>the x-axis</strong> (the horizontal axis; what goes across) : displays the levels of the factor variable.</p></li>
 <li><p><strong>the y-axis</strong> (the vertical axis; what goes up and down) : displays the frequency (or count) of the individuals in the data who “belong” to each group.</p></li>
 </ul>
 <p>Alright, back to our good MBA friends. This is a graph of the categorical variable “sex”. Again, look over the graph, THINK about what you see (no stats terminology; what do you learn!), and then highlight my text to see what I wrote about.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(haas<span class="sc">$</span>sex, <span class="at">col =</span> <span class="st">&#39;black&#39;</span>, <span class="at">bor =</span> <span class="st">&#39;white&#39;</span>, <span class="at">xlab =</span> <span class="st">&quot;Sex&quot;</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(haas<span class="sc">$</span>sex, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>, <span class="at">xlab =</span> <span class="st">"Sex"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2R_Data_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2R_Data_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -644,25 +654,25 @@ What are the factors and levels in the example above?
 </ul></li>
 <li><p><strong>The Graph :</strong></p>
 <ul>
-<li><p><strong>x-axis :</strong> this reports levels (female; male) of the categorical factor variable Sex. </p></li>
+<li><p><strong>x-axis :</strong> this reports levels (female; male) of the categorical factor variable Sex.&nbsp;</p></li>
 <li><p><strong>y-axis :</strong> this reports how many people were in each group.</p></li>
 </ul></li>
 <li><p><strong>What I see and observe with no stats language :</strong></p>
 <ul>
 <li><p>It appears that the researchers only measured sex as a f/m binary (or that no participants reported a category other than female or male).</p></li>
-<li><p>there were more males than females in this dataset. This matches my perception / stereotype of what a typical MBA program might look like; however I looked into it and Haas reports a larger percentage of female enrollments in the MBA program; so our data may not serve as a representative sample of the true population.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a><br />
+<li><p>there were more males than females in this dataset. This matches my perception / stereotype of what a typical MBA program might look like; however I looked into it and Haas reports a larger percentage of female enrollments in the MBA program; so our data may not serve as a representative sample of the true population.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a><br>
 </p></li>
 </ul></li>
 </ul>
 </section>
 </section>
 <section id="defining-variables-in-r" class="level2">
-<h2>Defining Variables in R</h2>
+<h2 class="anchored" data-anchor-id="defining-variables-in-r">Defining Variables in R</h2>
 <p>Below are some videos, and R code, that review how to define a variable in R. Yeah!</p>
 <p>We practiced this in lecture, but below are some videos that go over how to define variables in R. Yeah!!!! I’m not going to share the Rscripts I’m using for these videos, since I think there’s value in typing this out yourself to get that muscle memory in 💪🤘 but let me know if you disagree / there’s a reason to provide them to y’all!</p>
 <section id="video-defining-numeric-variables-in-r" class="level3">
-<h3>Video : Defining Numeric Variables in R</h3>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/0pXGqGDSySM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 class="anchored" data-anchor-id="video-defining-numeric-variables-in-r">Video : Defining Numeric Variables in R</h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/0pXGqGDSySM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li><p>objects - assign function for numerical data</p></li>
 <li><p>c() : combining data together.</p></li>
@@ -670,16 +680,16 @@ What are the factors and levels in the example above?
 </ul>
 </section>
 <section id="video-graphing-numeric-variables-in-r" class="level3">
-<h3>Video : Graphing Numeric Variables in R</h3>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/lmXQ2BhQNuo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 class="anchored" data-anchor-id="video-graphing-numeric-variables-in-r">Video : Graphing Numeric Variables in R</h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/lmXQ2BhQNuo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li><p>hist() : a graph</p></li>
 <li><p>changing arguments : xlab, ylab, main</p></li>
 </ul>
 </section>
 <section id="video-defining-categorical-variables-in-r" class="level3">
-<h3>Video : Defining Categorical Variables in R</h3>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/CFXRxfaadIw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 class="anchored" data-anchor-id="video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/CFXRxfaadIw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li>categorical data (“string”)</li>
 <li>as.factor() : to convert a string to a categorical variable</li>
@@ -687,8 +697,8 @@ What are the factors and levels in the example above?
 </ul>
 </section>
 <section id="video-graphing-categorical-variables-in-r" class="level3">
-<h3>Video : Graphing categorical variables in R</h3>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Fmai9Ltpa5I" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 class="anchored" data-anchor-id="video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Fmai9Ltpa5I" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li>plot()</li>
 <li>changing arguments : col, bor, main; xlab; ylab</li>
@@ -699,33 +709,33 @@ What are the factors and levels in the example above?
 <section id="part-2-working-with-datasets" class="level1">
 <h1>Part 2 : Working with Datasets</h1>
 <section id="the-dataframe" class="level2">
-<h2>The Dataframe</h2>
+<h2 class="anchored" data-anchor-id="the-dataframe">The Dataframe</h2>
 <section id="definition-rows-and-columns" class="level3">
-<h3>Definition : Rows and Columns</h3>
+<h3 class="anchored" data-anchor-id="definition-rows-and-columns">Definition : Rows and Columns</h3>
 <p>As a researcher, you’ll be interested in understanding not only one variable at a time, but will be interested in a dataset - multiple variables about an individual that are organized - in order to see how variables are related to each other (remember : this is a function of the linear model).</p>
 <p>The datasets in our class will be stored on Dropbox; you can find a link to this on bCourses (see below).</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="images/2_dropboxOnBcourses.png" class="img-fluid quarto-figure quarto-figure-center" /></p>
+<figure class="figure">
+<p><img src="images/2_dropboxOnBcourses.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <p>You’ll learn how to load these datasets later in this lecture. For now, what is a dataset?</p>
 <p>A dataset is really a <strong>dataframe</strong> - a two-dimensional way to organize data - and takes the following structure in this class.</p>
 <ul>
-<li><p><strong>the rows</strong> define the individual in the dataset. rows go across horizontally, like a rowboat going across a lake.</p></li>
-<li><p>the columns define the variables in the dataset.  go up and down vertically; like what might support a bridge.</p></li>
+<li><p><strong>the rows</strong> define the individual in the dataset.&nbsp;rows go across horizontally, like a rowboat going across a lake.</p></li>
+<li><p>the columns define the variables in the dataset. &nbsp;go up and down vertically; like what might support a bridge.</p></li>
 </ul>
 <p>Look at the example below - again from our budding MBAs in the Haas program. What do you observe about the rows and columns? What does this tell you about the dataset?</p>
-<p><strong><img src="images/2_haas_dataframe.png" class="img-fluid" /></strong><br />
-<br />
-In the example dataframe above - I see 5 rows (representing 5 individuals) and five columns (representing five variables like the person’s <strong>age</strong>, their <strong>sex,</strong> their <strong>test</strong>osterone levels, political <strong>ideo</strong>logy, and their <strong>NPI</strong> (Narcissism) score.  or their Race, etc.) Note that the names of the variables do not count as a row, since these are not individuals in the dataset, and you would need to know more about the dataset to know that ideo = political ideology, or test = testosterone. I also see that R is helpfully telling me that this is only a snapshot of the entire dataset - the whole dataframe has 122 entries (rows), meaning that there’s 122 MBA students in this dataset, and 5 total columns (which we can all see here.)</p>
+<p><strong><img src="images/2_haas_dataframe.png" class="img-fluid"></strong><br>
+<br>
+In the example dataframe above - I see 5 rows (representing 5 individuals) and five columns (representing five variables like the person’s <strong>age</strong>, their <strong>sex,</strong> their <strong>test</strong>osterone levels, political <strong>ideo</strong>logy, and their <strong>NPI</strong> (Narcissism) score.&nbsp; or their Race, etc.) Note that the names of the variables do not count as a row, since these are not individuals in the dataset, and you would need to know more about the dataset to know that ideo = political ideology, or test = testosterone. I also see that R is helpfully telling me that this is only a snapshot of the entire dataset - the whole dataframe has 122 entries (rows), meaning that there’s 122 MBA students in this dataset, and 5 total columns (which we can all see here.)</p>
 <p>As a researcher, you have access to an entire dataset (either collected by you or another researcher) that organizes multiple variables for each individual. This semester, we’ll work with a variety of datasets on different psychological topics - not just haas students.</p>
 </section>
 <section id="definition-indexing" class="level3">
-<h3>Definition : Indexing</h3>
+<h3 class="anchored" data-anchor-id="definition-indexing">Definition : Indexing</h3>
 <p>The dataset gives us access to all the individual rows and columns at once, we will often want to focus on one specific variable (or individual) at a time. <strong>Indexing</strong> refers to a flexible method of selecting a specific set of data from a larger collection. Previously’ we’ve seen indexing when asking R to produce a large set of numbers; for example asking it to count from 1 to 100.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
  [19]  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36
@@ -738,7 +748,7 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 <p>The indexing shows up as brackets next to the actual data, and is way for R to index that the [1]st data entry is the number 1, the [24]th entry is the number 24, and so on.</p>
 <p>When I ask R to show me the dataset haas, the output can be overwhelming. Below is what R shows you when you ask to see the haas dataset. And this is a relatively small dataset with just 122 individuals (rows) and five variables (columns).</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>haas</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>haas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    age    sex   test ideo  NPI
 1    NA   male     NA   NA 3.43
@@ -866,16 +876,16 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 </div>
 </div>
 <p>I am overwhelmed with data. So it will be important to find ways to target the data that we want. There are several ways we can do this!</p>
-<p>Because a dataset has two different dimensions, we have to use two coordinates to index the dataset - one coordinate for the row(s) that we want to focus on, and one coordinate for the column(s) that we want to focus on.<br />
+<p>Because a dataset has two different dimensions, we have to use two coordinates to index the dataset - one coordinate for the row(s) that we want to focus on, and one coordinate for the column(s) that we want to focus on.<br>
 </p>
 <section id="indexing-an-entire-dataset" class="level4">
-<h4>Indexing an Entire Dataset</h4>
+<h4 class="anchored" data-anchor-id="indexing-an-entire-dataset">Indexing an Entire Dataset</h4>
 <p>Because a dataset has two different dimensions, we have to use two coordinates to index the dataset - one coordinate for the row(s) that we want to focus on, and one coordinate for the column(s) that we want to focus on.</p>
 <ul>
 <li><p><code>data</code> # this reports the entire dataset. In the example to the right, I’ve typed in haas (since this is the name of the dataset in this example) and see the dataset reported.</p></li>
 <li><p><code>data[i, j]</code> # this code returns a specific row (i), and a specific column (j). The convention is to use the letter i for a row first, then j for a column <strong>[you can remember this order as RC Car, or R is Cool].</strong> For example</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>haas[<span class="dv">2</span>,<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>haas[<span class="dv">2</span>,<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 143.89</code></pre>
 </div>
@@ -883,13 +893,13 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 <p>Shows me that R has highlighted the second row and third column of the dataset - the second person’s testosterone level is 143.89 units.</p></li>
 </ul>
 <p><code>data[ , j]</code> # if you leave a blank for the rows, then R will return all of the rows, and whatever column you specify. This can be good for looking at a specific variable for all individuals. For example, the following code returns all of the testosterone data (the third column).</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="in">haas[,3]</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><p><code>data[i, ]</code> #  if you leave a blank for the column, then you would see all of the columns for a specific row. This can be good for looking at a specific individual’s entire dataset; such as all of participant 2’s data below.</p>
+<li><p><code>data[i, ]</code> # &nbsp;if you leave a blank for the column, then you would see all of the columns for a specific row. This can be good for looking at a specific individual’s entire dataset; such as all of participant 2’s data below.</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>haas[<span class="dv">2</span>,]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>haas[<span class="dv">2</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  age  sex   test ideo NPI
 2  NA male 143.89   NA 4.4</code></pre>
@@ -897,7 +907,7 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 </div></li>
 <li><p><code>haas[i:i, c(j, j)]</code> # you can adapt this code to give a range of values too. for example, if I want to see rows 4-10 and columns 1 and 3, I would run the following code.</p>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>haas[<span class="dv">4</span><span class="sc">:</span><span class="dv">10</span>, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>haas[<span class="dv">4</span><span class="sc">:</span><span class="dv">10</span>, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   age  test
 4   30    NA
@@ -912,11 +922,11 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 </ul>
 </section>
 <section id="indexing-a-single-variable" class="level4">
-<h4>Indexing a Single Variable</h4>
+<h4 class="anchored" data-anchor-id="indexing-a-single-variable">Indexing a Single Variable</h4>
 <ul>
 <li><p><code>data$variable</code> # You can also use the $ (dollar sign) in R to reference a single variable from a dataset. This is very useful, because you can use the name of the variable instead of the numerical index. So, for example, if I want to highlight the testosterone levels of the haas dataset, I would run the following :</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>test</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1]     NA 143.89     NA     NA     NA     NA     NA     NA  77.95     NA
  [11] 126.29  59.48  89.45  82.80  97.39  54.80  46.07     NA  87.40  85.01
@@ -936,7 +946,7 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 <li><p><code>data$variable[i]</code> # We can then use indexing to narrow this down. Because a variable only has one dimension (it’s just a collection of individuals; not rows and individuals) I only need to use one coordinate to index the specific individual(s) I want to find.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>test[<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>test[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 143.89</code></pre>
 </div>
@@ -944,14 +954,14 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 <ul>
 <li><p><code>data$variable[i:i]</code> # Can be used to find a range of individuals. These numbers need to be sequential for this code to work.</p>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>test[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>test[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]     NA 143.89     NA</code></pre>
 </div>
 </div></li>
-<li><p><code>data$variable[c(i,i,i)]</code> # If you want to find individuals who are not next to each other, you need to use the <strong>c (combine) function</strong> to combine multiple coordinates together. You can have as many coordinates here as you want. For example : </p>
+<li><p><code>data$variable[c(i,i,i)]</code> # If you want to find individuals who are not next to each other, you need to use the <strong>c (combine) function</strong> to combine multiple coordinates together. You can have as many coordinates here as you want. For example :&nbsp;</p>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>test[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">14</span><span class="sc">:</span><span class="dv">18</span>, <span class="dv">116</span><span class="sc">:</span><span class="dv">118</span>)]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>test[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">14</span><span class="sc">:</span><span class="dv">18</span>, <span class="dv">116</span><span class="sc">:</span><span class="dv">118</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 143.89     NA  82.80  97.39  54.80  46.07     NA  41.35  64.66  37.95</code></pre>
 </div>
@@ -961,7 +971,7 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 </section>
 </section>
 <section id="test-yourself" class="level2">
-<h2>Test Yourself!</h2>
+<h2 class="anchored" data-anchor-id="test-yourself">Test Yourself!</h2>
 <p>Okay, practice time. Use the haas dataset and your knowledge of indexing to identify what R would show if you typed in the following commands (no R required)</p>
 <ul>
 <li>haas$age[47]</li>
@@ -973,12 +983,12 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Answer Key
 </div>
-<div class='callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end'><i class='callout-toggle'></i></div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
@@ -993,12 +1003,12 @@ Answer Key
 </div>
 </div>
 <section id="videos-how-to-navigate-datasets-in-r" class="level3">
-<h3>Videos : How to Navigate Datasets in R</h3>
+<h3 class="anchored" data-anchor-id="videos-how-to-navigate-datasets-in-r">Videos : How to Navigate Datasets in R</h3>
 <p>Let’s get some more practice with some actual data. Before we learn how to import data in R, we can work with a super exciting dataset that is already part of the R program - a dataset on the weights of chickens (chkwt).</p>
-<p>Watch the two videos below to see how I navigate this dataset; here’s a <a href="https://www.dropbox.com/scl/fi/e9l24v1vshdjih7rctxcn/navigating_data.R?rlkey=st0f3hzkrkmha4u4224f6n43i&amp;dl=0">link to the RScript</a> that I use in the videos. </p>
+<p>Watch the two videos below to see how I navigate this dataset; here’s a <a href="https://www.dropbox.com/scl/fi/e9l24v1vshdjih7rctxcn/navigating_data.R?rlkey=st0f3hzkrkmha4u4224f6n43i&amp;dl=0">link to the RScript</a> that I use in the videos.&nbsp;</p>
 <section id="video-checking-datasets-in-r" class="level4">
-<h4>Video : Checking Datasets in R</h4>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/TaonMS3b0pU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h4 class="anchored" data-anchor-id="video-checking-datasets-in-r">Video : Checking Datasets in R</h4>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/TaonMS3b0pU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li><p><strong>length() :</strong> counts the number of objects (variables) in a dataset (or any object)</p></li>
 <li><p><strong>nrow() :</strong> counts the number of rows (participants) in a dataset</p></li>
@@ -1006,18 +1016,18 @@ Answer Key
 <p><strong>head() :</strong> looks at the first six rows of a dataset</p>
 </section>
 <section id="video-navigating-datasets-with-indexing" class="level4">
-<h4>Video : Navigating Datasets with Indexing</h4>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/js2vV5P4DSQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h4 class="anchored" data-anchor-id="video-navigating-datasets-with-indexing">Video : Navigating Datasets with Indexing</h4>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/js2vV5P4DSQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li>Use this video to answer the check-in questions below.</li>
 </ul>
 </section>
 </section>
 <section id="check-in-navigating-variables-and-datasets-with-indexing" class="level3">
-<h3><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYROuiCU1wKb5W36k9IQIKMra2y5Wt9P84Er8WdBaQ6hvHNw/viewform?usp=sf_link">Check-In : Navigating Variables and Datasets with Indexing</a></h3>
+<h3 class="anchored" data-anchor-id="check-in-navigating-variables-and-datasets-with-indexing"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYROuiCU1wKb5W36k9IQIKMra2y5Wt9P84Er8WdBaQ6hvHNw/viewform?usp=sf_link">Check-In : Navigating Variables and Datasets with Indexing</a></h3>
 <p>Use the fake dataset below and your knowledge of navigating datasets with indexing to identify what answer R would give if you gave it the following code. (Note : no R is needed to complete this problem).</p>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  StudentID favDrink age
 1         1     boba  20
@@ -1030,9 +1040,9 @@ Answer Key
 </section>
 </section>
 <section id="the-.csv-file" class="level2">
-<h2>The .csv File</h2>
+<h2 class="anchored" data-anchor-id="the-.csv-file">The .csv File</h2>
 <section id="definition-the-.csv-file" class="level3">
-<h3>Definition : The .csv File</h3>
+<h3 class="anchored" data-anchor-id="definition-the-.csv-file">Definition : The .csv File</h3>
 <p>As a researcher, you will work with data that you (or other researcher friends) have collected. The .csv file (csv stands for comma separated variables) is one of the most common formats for storing data that you will encounter. You’ve probably encountered this before, and likely have opened this file type in a program like excel or google sheets. But in this class, we’ll learn to load these files directly into R. Using R has two advantages :</p>
 <ul>
 <li>R is way more powerful than excel or Google Sheets.</li>
@@ -1040,12 +1050,12 @@ Answer Key
 </ul>
 </section>
 <section id="videos-how-to-load-datasets-in-r" class="level3">
-<h3>Videos : How to Load Datasets in R</h3>
+<h3 class="anchored" data-anchor-id="videos-how-to-load-datasets-in-r">Videos : How to Load Datasets in R</h3>
 <p>There are two different ways to load a data file into R : one way (“the point and click method”) involves clicking some boxes, like most of y’all are used to doing. The second way involves typing in an R command. Below are videos that highlight each method.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Important
@@ -1057,15 +1067,15 @@ Important
 </div>
 </div>
 <section id="video-importing-data-with-the-point-and-click-method-and-console-method" class="level4">
-<h4>Video : Importing Data with the “Point and Click” Method and Console Method</h4>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XLew6OeYAm0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h4 class="anchored" data-anchor-id="video-importing-data-with-the-point-and-click-method-and-console-method">Video : Importing Data with the “Point and Click” Method and Console Method</h4>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XLew6OeYAm0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li>the “point and click” method of loading data</li>
 <li>the console / Rscript method of loading data</li>
 </ul>
 </section>
 <section id="video-for-posit-users-working-with-projects-and-loading-data-in-the-cloud." class="level4">
-<h4>Video : For Posit Users : working with projects and loading data in the cloud.</h4>
+<h4 class="anchored" data-anchor-id="video-for-posit-users-working-with-projects-and-loading-data-in-the-cloud.">Video : For Posit Users : working with projects and loading data in the cloud.</h4>
 <p>{{&lt; video https://youtu.be/HOhINtpyjT4&gt; }}</p>
 <ul>
 <li>posit.cloud users! You will need an extra step that folks using posit.cloud have to use to upload datasets to the cloud (and then import them).</li>
@@ -1077,7 +1087,7 @@ Important
 <section id="practice-quiz-2" class="level1">
 <h1>Practice Quiz 2</h1>
 <p>Okay, this was a LOT. Like drinking water from a fire hose. I promise this will get easier, and it just requires practice. Let’s see how clear the professor’s instructions were with this….Required Practice Quiz!</p>
-<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSczCIkUMPcHX36bYbBpU4fH2Ei_U4neGsERl5WD8jTWRSxfiw/viewform?usp=sf_link"><strong>CLICK THIS LINK to take the Practice Quiz.</strong></a> Use your knowledge of navigating and loading datasets to answer </p>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSczCIkUMPcHX36bYbBpU4fH2Ei_U4neGsERl5WD8jTWRSxfiw/viewform?usp=sf_link"><strong>CLICK THIS LINK to take the Practice Quiz.</strong></a> Use your knowledge of navigating and loading datasets to answer&nbsp;</p>
 <ul>
 <li><p><a href="https://www.dropbox.com/scl/fi/972y9dq8yan2l2q7cme5f/2.1_NavigatingData.R?rlkey=al8gff6iqxj0fdiy0mn8wiyp9&amp;dl=0"><strong>Here’s an Rscript with the practice quiz questions</strong></a><strong>.</strong> Submit your answers to the link above for credit (this is graded based on completion).</p></li>
 <li><p><a href="https://youtu.be/cfeogtcAhNM"><strong>Here’s a video key with the practice quiz answers</strong></a><strong>.</strong> Please attempt the quiz on your own; if you get stuck, refer to the relevant videos above. And feel free to reach out on Discord if something’s confusing or I got something wrong. Appreciate y’alls engagement!</p></li>
@@ -1092,14 +1102,14 @@ Important
 <section id="chapter-appendix-r-commands" class="level1">
 <h1>Chapter Appendix : R Commands</h1>
 <section id="r-code-creating-variables-in-r" class="level2">
-<h2>R Code : Creating Variables in R</h2>
+<h2 class="anchored" data-anchor-id="r-code-creating-variables-in-r">R Code : Creating Variables in R</h2>
 </section>
 <section id="numeric-variables-in-r" class="level2">
-<h2>Numeric Variables in R</h2>
-<table class="caption-top">
+<h2 class="anchored" data-anchor-id="numeric-variables-in-r">Numeric Variables in R</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 26%" />
-<col style="width: 73%" />
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1125,11 +1135,11 @@ Important
 </table>
 </section>
 <section id="string-variables" class="level2">
-<h2>String Variables</h2>
-<table class="caption-top">
+<h2 class="anchored" data-anchor-id="string-variables">String Variables</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 23%" />
-<col style="width: 76%" />
+<col style="width: 23%">
+<col style="width: 76%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1152,17 +1162,17 @@ Important
 </tr>
 <tr class="even">
 <td><code>plot(dat$variable)</code></td>
-<td><strong>For categorical variables :</strong> draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis).</td>
+<td><strong>For categorical variables :</strong> draws a barplot. For continuous variables :&nbsp; illustrates values of the variable (y-axis) as a function of their index (x-axis).</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="r-commands-for-importing-and-navigating-data" class="level2">
-<h2>R Commands for Importing and Navigating Data</h2>
-<table class="caption-top">
+<h2 class="anchored" data-anchor-id="r-commands-for-importing-and-navigating-data">R Commands for Importing and Navigating Data</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 32%">
+<col style="width: 67%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1209,11 +1219,11 @@ Important
 </table>
 </section>
 <section id="r-commands-for-visualizing-data" class="level2">
-<h2>R Commands for Visualizing Data</h2>
-<table class="caption-top">
+<h2 class="anchored" data-anchor-id="r-commands-for-visualizing-data">R Commands for Visualizing Data</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 21%">
+<col style="width: 78%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1242,7 +1252,7 @@ Important
 </tr>
 <tr class="odd">
 <td><code>plot(dat$variable)</code></td>
-<td>For categorical variables : draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis).</td>
+<td>For categorical variables : draws a barplot. For continuous variables :&nbsp; illustrates values of the variable (y-axis) as a function of their index (x-axis).</td>
 </tr>
 <tr class="even">
 <td><code>hist(dat$variable)</code></td>
@@ -1254,24 +1264,20 @@ Important
 </tr>
 </tbody>
 </table>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar-title">Why Statistics?</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar-title">Why Statistics?</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-next"><span class="chapter-number">3</span>  <span class="chapter-title">Description</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-prev"><span class="chapter-number">1</span>  <span class="chapter-title">Why Statistics?</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/index.htmlPreface">Preface</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/0R_About.htmlIntroduction">Introduction</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-1">Describing People</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/1R_WhyStats.html&lt;span-class=&#39;chapter-number&#39;&gt;1&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Why-Statistics?&lt;/span&gt;"><span class="chapter-number">1</span>  <span class="chapter-title">Why Statistics?</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/2R_Data.html&lt;span-class=&#39;chapter-number&#39;&gt;2&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Data&lt;/span&gt;"><span class="chapter-number">2</span>  <span class="chapter-title">Data</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/3R_Description.html&lt;span-class=&#39;chapter-number&#39;&gt;3&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Description&lt;/span&gt;"><span class="chapter-number">3</span>  <span class="chapter-title">Description</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/4R_ResearchMethods.html&lt;span-class=&#39;chapter-number&#39;&gt;4&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Why-Research-Methods?&lt;/span&gt;"><span class="chapter-number">4</span>  <span class="chapter-title">Why Research Methods?</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/5R_Scales.html&lt;span-class=&#39;chapter-number&#39;&gt;5&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Scales&lt;/span&gt;"><span class="chapter-number">5</span>  <span class="chapter-title">Scales</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-2">Predicting People</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/6R_LinearModels.html&lt;span-class=&#39;chapter-number&#39;&gt;6&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Continuous-IVs&lt;/span&gt;"><span class="chapter-number">6</span>  <span class="chapter-title">Continuous IVs</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/7R_CategoricalIV.html&lt;span-class=&#39;chapter-number&#39;&gt;7&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Categorical-IVs&lt;/span&gt;"><span class="chapter-number">7</span>  <span class="chapter-title">Categorical IVs</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/8R_Assumptions.html&lt;span-class=&#39;chapter-number&#39;&gt;8&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Assumptions-and-Extensions&lt;/span&gt;"><span class="chapter-number">8</span>  <span class="chapter-title">Assumptions and Extensions</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-3">Predicting Reality</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/9R_SamplingError.html&lt;span-class=&#39;chapter-number&#39;&gt;9&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Sampling-Error-and-Bias&lt;/span&gt;"><span class="chapter-number">9</span>  <span class="chapter-title">Sampling Error and Bias</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/10R_NHSTPower.html&lt;span-class=&#39;chapter-number&#39;&gt;10&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Null-Hypothesis-Significance-Testing-and-Power&lt;/span&gt;"><span class="chapter-number">10</span>  <span class="chapter-title">Null Hypothesis Significance Testing and Power</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/11R_MultipleRegression.html&lt;span-class=&#39;chapter-number&#39;&gt;11&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Multiple-Regression&lt;/span&gt;"><span class="chapter-number">11</span>  <span class="chapter-title">Multiple Regression</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/chapters/12R_Conclusion2Introduction.html&lt;span-class=&#39;chapter-number&#39;&gt;12&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Conclusion-2-Introduction&lt;/span&gt;"><span class="chapter-number">12</span>  <span class="chapter-title">Conclusion 2 Introduction</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-4">Appendices</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/labs.html&lt;span-class=&#39;chapter-number&#39;&gt;A&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Lab-Assignments&lt;/span&gt;"><span class="chapter-number">A</span>  <span class="chapter-title">Lab Assignments</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/Rcode.html&lt;span-class=&#39;chapter-number&#39;&gt;B&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Rcode&lt;/span&gt;"><span class="chapter-number">B</span>  <span class="chapter-title">Rcode</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/references.htmlReferences">References</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Psych 101 [Lecture Notes, Labs, Syllabus]">Psych 101 [Lecture Notes, Labs, Syllabus]</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:http://catterson.github.io/calstats/calstatsSP25.html">http://catterson.github.io/calstats/calstatsSP25.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:List of R Code">List of R Code</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/Rcode.html">/Rcode.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Prof. Cat Homepage">Prof. Cat Homepage</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:https://catterson.github.io">https://catterson.github.io</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-breadcrumbs-Describing-People">Describing People</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-breadcrumbs-&lt;span-class=&#39;chapter-number&#39;&gt;2&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Data&lt;/span&gt;"><span class="chapter-number">2</span>  <span class="chapter-title">Data</span></span></p>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metatitle">Data – Why Statistics?</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercardtitle">Data – Why Statistics?</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardtitle">Data – Why Statistics?</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metasitename">Why Statistics?</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercarddesc"></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardddesc"></span></p>
-</div>
+
+
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr />
+<hr>
 <ol>
 <li id="fn1"><p>These data come from the hormone_data.csv file, which should be updated to our course page. You’ll learn more about how to access these data files later in this chapter.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>they are all one color - the <em>human color</em>. just kidding from the top left it’s 2, 3, 4, and 7. but I’m blue green color blind so you should argue with me in the comments.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p><a href="https://compass.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/spc3.12506">See this article</a> for research documenting this phenomenon, and arguing why a more inclusive science is needed.</p>
-<p><br />
+<p><br>
 <a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p><a href="http://abcnews.go.com/blogs/headlines/2014/02/heres-a-list-of-58-gender-options-for-facebook-users">facebook’s attempt</a> at measuring more complex categories.</p>
-<p><br />
+<p><br>
 <a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>a <a href="https://scalar.usc.edu/works/index-2/media/the-gender-spectrum">continuous approach</a> to measuring gender. hi if u still reading, let me know if you have any thoughts on this section of the chapter.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>Will learn about these ideas much later this semester! here’s a link to learn more about <a href="https://mba.haas.berkeley.edu/student-life/women">women in Haas</a>. capitalism will eat us all eventually I guess, and good to challenge our stereotypes / perceptions!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -1279,7 +1285,7 @@ Important
 </section>
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1314,7 +1320,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1346,29 +1363,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1376,7 +1371,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1701,18 +1696,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a  href="/chapters/1R_WhyStats.html" class="pagination-link" aria-label="Why Statistics?">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class='chapter-number'>1</span>  <span class='chapter-title'>Why Statistics?</span></span>
+      <a href="../chapters/1R_WhyStats.html" class="pagination-link" aria-label="Why Statistics?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a  href="/chapters/3R_Description.html" class="pagination-link" aria-label="Description">
-        <span class="nav-page-text"><span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/3R_Description.html" class="pagination-link" aria-label="Description">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 
-</body>
 
-</html>
+
+
+</body></html>
