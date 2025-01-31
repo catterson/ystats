@@ -1,0 +1,78 @@
+---
+title: "Lab2_KEY"
+format: html
+---
+
+1.  **Datasets are Fun To Load :** Load the “covid_behavior_dataset.csv” dataset. Check to make sure the data loaded correctly with the head() function. Report the sample size and names of the variables from this dataset, and look over the code book. What are some variables that seem interesting to you? How might you use these variables in a linear model (either as a DV or as IVs?)
+
+```{r}
+covid <- read.csv("../datasets/covid-data/covid_behavior_data.csv",
+                  stringsAsFactors = T)
+head(covid) # testing to see that this worked
+nrow(covid) # the sample size
+names(covid) # the names of the variables
+```
+
+I'm interested in people's handwashing behaviors; notice a lot of variation in this....and also curious about the ethnicity and political_party preference of the people in the study (/whether this was a representative sample or not.)
+
+As a linear model, I might write : `handwashing ~ political_party + gender + error`
+
+with my theory that conservatives and women will be more likely to wash their hands than liberals or men.
+
+2.  **Number Problems :** Graph two numeric variables from this dataset. Change the arguments on the graph to make them look “nice”. Describe what you learn about the individuals for each variable (no stats terminology yet!) and what additional questions you have about the variables.
+
+    ```{r}
+    par(mfrow = c(1,2)) # splitting my graphics window
+    hist(covid$Handwash, col = 'black', bor = 'white',
+         main = "Handwashing Behavior (Self-Reported)",
+         xlab = "0 = Did Not Do\n4 = Very Often or Always Do")
+    hist(covid$Mask, col = 'black', bor = 'white',
+         main = "Masking Behavior (Self-Reported)", 
+         xlab = "0 = Did Not Do\n4 = Very Often or Always Do")
+    ```
+
+    -   **What I Learned :** I see that people self-reported high frequency of both handwashing and masking behavior. It looks like there were slightly more people who reported not wearing masks than not washing their hands, but this difference seems pretty small.
+
+    -   **Other Questions I Have :** I'm a little skeptical about these data TBH...they are self-reported, so people might be lying (specifically, self-enhancing so they don't seem gross?). Or, maybe the types of people who take online surveys are very diligent about wearing masks and washing hands in ways that the rest of society does not appear to be based on my observations. So I'm wondering how much we can trust these data.
+
+3.  **Category Problems :** Graph two categorical variables from this dataset. Describe what you learn from each variable, and report the frequency of the number of individuals in each group. Do you think it’s possible (or preferred) to measure this categorical variable in a numeric / continuous way? Why / why not?
+
+    ```{r}
+    par(mfrow = c(1,3))
+    plot(covid$gender, col = 'black', xlab = "Gender")
+    plot(covid$ethnicity, col = 'black', xlab = "Ethnicity")
+    plot(covid$political_party, col = 'black', xlab = "Political Orientation")
+    summary(data.frame(covid$gender,
+                       covid$ethnicity,
+                       covid$political_party))
+    ```
+
+    -   I see that there were very similar numbers of men and women (with slightly more women than men in the survey), and that it does not appear non-binary / transgender / other gender identities were measured / available options for people.
+
+    -   It looks like this study also did not differentiate ethnicity very well (only three defined categories; with everyone else lumped into "other") and that the data are predominantly white people.
+
+    -   It also looks like there are about equal numbers of democrats and republicans (slim republican majority...so it goes), and that there are a few independents.
+
+    -   There's not a lot of missing data. Neat!
+
+4.  **(In Discussion Section) Mini Problems** : Repeat the steps above for variables from another dataset - the "class_mini" dataset that we discussed in lecture today. These data will be posted to bCourses as a .csv file after class, along with a CODEBOOK that explains what the variables measure.
+
+    -   **Datasets are Fun To Load:** Load the “class_mini.csv” dataset and look over the codebook. Check to ensure the data is loaded correctly with the head() function. Report the sample size and names of the variables from this dataset, and look over the code book. What are some variables that seem interesting to you? How might you use these variables in a linear model (either as a DV or as IVs?)
+
+        ```{r}
+        mini <- read.csv("~/Dropbox/Teaching Datasets/class")
+        ```
+
+    -   **Number Problems:** Graph two numeric variables from this dataset. Change the arguments on the graph to make them look “nice”. Describe what you learn about the individuals for each variable \[no stats terminology yet!\] 
+
+        ```{r}
+
+        ```
+
+    -   **Category Problems:** Graph two categorical variables from this dataset. Describe what you learn from each variable, and report the frequency of the number of individuals in each group. Do you think it’s possible (or preferred) to measure this categorical variable in a numeric/continuous way? Why / why not?
+
+        ```{r}
+
+        ```
+
+5.  **(In Discussion Section) Sharing Problems** : Share your R code for Problem 4 with another student in the class who you’ve never talked to before. Paste their code into your R script and generate the graph that they created below. Hooray for open science!!!

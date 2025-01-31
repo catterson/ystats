@@ -142,5 +142,17 @@
   },
   "1L_Whystats.qmd": {
     "1L_Whystats.html": "5e97da06"
+  },
+  "chapters/3R_Description.qmd": {
+    "3R_Description.html": "831c1968"
+  },
+  "./chapters/3R_Description.qmd": {
+    "3R_Description.html": "24aa21f5"
+  },
+  "./chapters/4R_ResearchMethods.qmd": {
+    "4R_ResearchMethods.html": "aa53a3f2"
+  },
+  "chapters/4R_ResearchMethods.qmd": {
+    "4R_ResearchMethods.html": "ca9958e5"
   }
 }

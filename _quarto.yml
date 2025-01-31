@@ -13,8 +13,8 @@ book:
       chapters: 
         - ./chapters/1R_WhyStats.qmd
         - ./chapters/2R_Data.qmd
-        - ./chapters/3R_ResearchMethods.qmd
-        - ./chapters/4R_Description.qmd
+        - ./chapters/3R_Description.qmd
+        - ./chapters/4R_ResearchMethods.qmd
         - ./chapters/5R_Scales.qmd
     - part: "Predicting People"
       chapters: 
@@ -27,9 +27,6 @@ book:
         - ./chapters/10R_NHSTPower.qmd
         - ./chapters/11R_MultipleRegression.qmd
         - ./chapters/12R_Conclusion2Introduction.qmd
-    - part: "Lectures"
-      chapters:
-        -  1L_Whystats.qmd
   appendices:
     - labs.qmd
     - Rcode.qmd
@@ -38,10 +35,8 @@ book:
     background: primary
     search: true
     left:
-      - text: "Syllabus" 
-        href: https://docs.google.com/document/d/e/2PACX-1vS33SlqaL_id8gCFtq53Scq1HMKb3ufA4L3kvma4xMG-VO_u_IxZyKA4ldlSQRjNilrYHIWYfksQr7m/pub
-      - text: "Lab Assignments"
-        href: labs.qmd
+      - text: "Psych 101 Homepage [Lectures, Labs, Syllabus]" 
+        href: http://catterson.github.io/calstats/calstatsSP25.html
       - text: "List of R Code"
         href: Rcode.qmd
       - text: "Prof. Cat Homepage"
