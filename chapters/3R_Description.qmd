@@ -196,19 +196,19 @@ With no other knowledge about an individual, the mean is our best prediction abo
 
 **Residuals** refer to the fact that the mean is not a perfect prediction for every person; people will differ from our predictions. These differences between each individual's actual score and our predicted value (in this case, the mean) are called residuals. The residuals will always be actual score minus prediction - I remember this because as researchers we care about actual people first.
 
-{{< video https://youtu.be/sK6_vcs23I0 >}}
+{{< video https://youtu.be/AGl7jo3WRJY >}}
 
 #### Video : The Sum of (Squared) Residual Errors
 
 **The sum of squared errors (SS)** is a way to quantify the total residuals when using the mean to make predictions. As you'll see in the video, we must first square the residual differences in order to remove the direction (since we care about the total error, not whether the individual was above or below our prediction.). And then we sum these squared differences to quantify the total (squared error).
 
-{{< video https://youtu.be/sK6_vcs23I0 >}}
+{{< video https://youtu.be/hN5opflzXIA >}}
 
 #### Video : The (Unsquared) Average of These Squared Residuals = Standard Deviation
 
 **The standard deviation** is the squared root of these averaged squared differences. Or, in less technical terms, the standard deviation is the average of how much people differ from the mean - a measure of the average variation.
 
-{{< video https://youtu.be/sK6_vcs23I0 >}}
+{{< video https://youtu.be/4SQUK8GXwrI >}}
 
 ### Why This Matters
 
