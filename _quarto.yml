@@ -28,7 +28,6 @@ book:
         - ./chapters/11R_MultipleRegression.qmd
         - ./chapters/12R_Conclusion2Introduction.qmd
   appendices:
-    - labs.qmd
     - Rcode.qmd
     - references.qmd
   navbar: 
