@@ -154,5 +154,17 @@
   },
   "chapters/4R_ResearchMethods.qmd": {
     "4R_ResearchMethods.html": "ca9958e5"
+  },
+  "chapters/4R_Scales.qmd": {
+    "4R_Scales.html": "12c300cd"
+  },
+  "./chapters/4R_Scales.qmd": {
+    "4R_Scales.html": "cc613973"
+  },
+  "./chapters/5R_GoodScience.qmd": {
+    "5R_GoodScience.html": "048ae379"
+  },
+  "chapters/5R_GoodScience.qmd": {
+    "5R_GoodScience.html": "cd806bac"
   }
 }
