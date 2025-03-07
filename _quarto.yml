@@ -56,7 +56,7 @@ format:
     toc: true
     toc-depth: 4
     toc-expand: true
-    toc-location: right
+    toc-location: left
     toc-title: In This Chapter
     format-links: true
   pdf:

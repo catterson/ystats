@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Continuous IVs – Why Statistics?</title>
+<title>The Linear Model – Why Statistics?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chapters/7R_CategoricalIV.html" rel="next">
-<link href="../chapters/5R_Scales.html" rel="prev">
+<link href="../chapters/5R_GoodScience.html" rel="prev">
 <link href=".././images/open_source_mouse.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -70,10 +104,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -113,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Continuous IVs</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Linear Model</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -171,14 +234,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/4R_ResearchMethods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></span></a>
+  <a href="../chapters/4R_Scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Measures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/5R_Scales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Scales</span></span></a>
+  <a href="../chapters/5R_GoodScience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></span></a>
   </div>
 </li>
       </ul>
@@ -195,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/6R_LinearModels.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Continuous IVs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Linear Model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -258,14 +321,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Lab Assignments</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../Rcode.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -278,18 +335,48 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#part-1-making-predictions" id="toc-part-1-making-predictions" class="nav-link active" data-scroll-target="#part-1-making-predictions">Part 1 : Making Predictions</a>
+  <ul>
+  <li><a href="#recap-the-mean-and-linear-model-as-prediction" id="toc-recap-the-mean-and-linear-model-as-prediction" class="nav-link" data-scroll-target="#recap-the-mean-and-linear-model-as-prediction">RECAP : The Mean (and Linear Model) as Prediction</a></li>
+  <li><a href="#the-linear-model-its-just-a-line-with-a-slope" id="toc-the-linear-model-its-just-a-line-with-a-slope" class="nav-link" data-scroll-target="#the-linear-model-its-just-a-line-with-a-slope">The Linear Model : It’s Just a Line (With a Slope)</a>
+  <ul class="collapse">
+  <li><a href="#basic-concept." id="toc-basic-concept." class="nav-link" data-scroll-target="#basic-concept.">Basic Concept.</a></li>
+  <li><a href="#prestige-example" id="toc-prestige-example" class="nav-link" data-scroll-target="#prestige-example"><strong>Prestige Example</strong></a></li>
+  <li><a href="#the-scatterplot" id="toc-the-scatterplot" class="nav-link" data-scroll-target="#the-scatterplot">The Scatterplot</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part-2-evaluating-error-in-predictions" id="toc-part-2-evaluating-error-in-predictions" class="nav-link" data-scroll-target="#part-2-evaluating-error-in-predictions">Part 2 : Evaluating Error in Predictions</a>
+  <ul>
+  <li><a href="#visualizing-residual-error-in-the-model" id="toc-visualizing-residual-error-in-the-model" class="nav-link" data-scroll-target="#visualizing-residual-error-in-the-model">Visualizing Residual Error in the Model</a></li>
+  <li><a href="#calculating-residual-error-in-the-model" id="toc-calculating-residual-error-in-the-model" class="nav-link" data-scroll-target="#calculating-residual-error-in-the-model">Calculating Residual Error in the Model</a></li>
+  <li><a href="#video-example-age-and-narcissism" id="toc-video-example-age-and-narcissism" class="nav-link" data-scroll-target="#video-example-age-and-narcissism">Video Example : Age and Narcissism</a></li>
+  </ul></li>
+  <li><a href="#part-3-interpreting-models-with-the-z-score" id="toc-part-3-interpreting-models-with-the-z-score" class="nav-link" data-scroll-target="#part-3-interpreting-models-with-the-z-score">Part 3 : Interpreting Models with the Z-Score</a>
+  <ul>
+  <li><a href="#why-z-score-in-a-model" id="toc-why-z-score-in-a-model" class="nav-link" data-scroll-target="#why-z-score-in-a-model">Why Z-Score in a Model</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-of-z-scores" id="toc-interpretation-of-z-scores" class="nav-link" data-scroll-target="#interpretation-of-z-scores">Interpretation of Z-Scores</a></li>
+  <li><a href="#video-example-age-and-narcissism-z-scored" id="toc-video-example-age-and-narcissism-z-scored" class="nav-link" data-scroll-target="#video-example-age-and-narcissism-z-scored">Video Example : Age and Narcissism (Z-Scored)</a></li>
+  </ul></li>
+  <li><a href="#check-out-understanding-z-scores-and-this-chapter-document" id="toc-check-out-understanding-z-scores-and-this-chapter-document" class="nav-link" data-scroll-target="#check-out-understanding-z-scores-and-this-chapter-document">CHECK-OUT : Understanding Z-Scores and this Chapter! Document</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Continuous IVs</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Linear Model</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Continuous IVs</h1>
+<h1 class="title">The Linear Model</h1>
 </div>
 
 
@@ -306,9 +393,507 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Hi! Stay tuned for reading materials. Thanks!</p>
+<p>This week, you’ll learn about how we can define a linear model to make predictions about one variable (the DV) from another (the IV). You’ll then learn about R2 (read : “R-squared”) - professor’s favorite statistic - and how this quantifies the amount of error in a model. You’ll then learn how our good friend the z-score can be used to calculate a correlation coefficient. Wow!</p>
+<section id="part-1-making-predictions" class="level1 page-columns page-full">
+<h1>Part 1 : Making Predictions</h1>
+<p>At the beginning of the semester, we talked about how the goal of psychological science is to make predictions about people, while recognizing that our predictions will not perfectly match what actually happens (which we call error).</p>
+<p>Conceptually, we can think of a person’s actual score on y (some variable) as the sum of our prediction and the error in our prediction (with the goal to minimize error as much as possible).</p>
+<p>As an equation, we would write this as: <code>actual.score = our.prediction + error</code></p>
+<p>Great! But the real question is WHAT should define our prediction?</p>
+<section id="recap-the-mean-and-linear-model-as-prediction" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="recap-the-mean-and-linear-model-as-prediction">RECAP : The Mean (and Linear Model) as Prediction</h2>
+<p>Previously, we learned how the mean was a simple way to make a prediction about individuals.</p>
+<p>For example, if you wanted to know whether it would rain today, you might look at the average rainfall for today’s date, and use that average for your prediction.</p>
+<p>Let’s review this idea, and set up the linear model, by working with a classic dataset in teaching statistics - the Prestige dataset. These data are contained in the car package, and are used in one of the classic R textbooks - John Fox’ Applied Regression Analysis and Generalized Linear Models (2nd Edition).</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("car") # this installs a package - you only need to do this ONCE. Remove the # to run this code.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car) <span class="co"># loading the library - make sure you installed it first!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>presto <span class="ot">&lt;-</span> Prestige <span class="co"># creating a copy of the dataset so you don't mess something up :)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(presto) <span class="co"># tadaa!!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "education" "income"    "women"     "prestige"  "census"    "type"     </code></pre>
+</div>
+</div>
+<p>You can read more about these variables by typing in ?Prestige to access the help page for the dataset. For this lecture, we’ll be working with the variable prestige, which is a measure of how prestigious certain jobs were, in Canada, in the 1960s<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Note that individuals in this dataset are not people, but people’s attitudes about types of jobs.</p>
+<p>The graph to the right illustrates variation in this variable, as well as how the mean of prestige is the value that is closest to all the scores in the distribution.</p>
+<p>The graph below <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> is defined by the following equation :</p>
+<p><span class="math inline">\(\huge y_i = \hat{Y} + \epsilon_i\)</span></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(presto<span class="sc">$</span>prestige)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(presto<span class="sc">$</span>prestige), <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Index (Individual Row Number)"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">ylab =</span> <span class="st">"Individual Prestige Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="6R_LinearModels_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><strong>Here’s a guide to what’s in the equation and on the graph!</strong></p>
+<p><span class="math inline">\(\Large y_i\)</span> = the DV = the individual’s actual score we are trying to predict (remember <span class="math inline">\(_i\)</span> = index; a specific individual.)</p>
+<ul>
+<li><strong>on the graph:</strong> each individual dot (on the y-axis; the x-axis just describes when people submitted the survey.</li>
+</ul>
+<p><span class="math inline">\(\Large \hat{Y}\)</span> = our prediction (the mean).</p>
+<ul>
+<li><strong>on the graph:</strong> the solid red line</li>
+</ul>
+<p><span class="math inline">\(\Large \epsilon\)</span> = residual error = distance between the predicted values of y and the individual’s actual value of y</p>
+<ul>
+<li><strong>on the graph:</strong> the distance between each dot and the line.</li>
+</ul>
+</div></div><p>The equation is fancy way of saying that an individual’s actual scores = our prediction (the mean) + error.</p>
+<p><strong>The mean was a good starting place to make predictions for two reasons :</strong></p>
+<ol type="1">
+<li><p><strong>By definition, the mean is the value that is closest to all the scores.</strong> In other words, the mean minimizes the error in our predictions.</p></li>
+<li><p><strong>The mean is static (it does not change), meaning we can make the same prediction for every person.</strong> This is a good place to start, but obviously there’s a lot of error in our predictions. In fact, using our knowledge of residual errors, we can calculate this total (squared) error when we use the mean to make a prediction.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>residual <span class="ot">&lt;-</span> presto<span class="sc">$</span>prestige <span class="sc">-</span> <span class="fu">mean</span>(presto<span class="sc">$</span>prestige)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(residual<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 29895.43</code></pre>
+</div>
+</div></li>
+</ol>
+<p>This value is the total sum of the squared residuals (also called the <strong>sum of the squared errors</strong> or often abbreviated <strong>SST</strong> when focused on the residuals of the mean.</p>
+<p><strong>TLDR : we are interested in a variable (prestige), we can make pretty good predictions about prestige based on the mean (since by definition the mean is closest to all the scores in the data), and we are able to quantify how good our prediction is by calculating the sum of squared errors.</strong></p>
+<p>Next, we’ll try to improve upon our predictions of prestige.</p>
+</section>
+<section id="the-linear-model-its-just-a-line-with-a-slope" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-linear-model-its-just-a-line-with-a-slope">The Linear Model : It’s Just a Line (With a Slope)</h2>
+<section id="basic-concept." class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="basic-concept.">Basic Concept.</h3>
+<div class="page-columns page-full"><p>The <strong>linear model</strong> is a simple, yet flexible, way to make predictions about one variable (the DV or y). There are many types of models, but most follow the same basic principles that we will review in this document. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">The mean is actually a linear model in its simplest form : y ~ 1 + error, with 1 serving as a constant value (the mean!).</span></div></div>
+<p>The mean is a great starting place, but it’s limited because it’s static - we have the same prediction for everyone in the dataset, when we know that people differ. So we will want to come up with predictions that change, depending on what we learn about another person. This is something I refer to as <strong>the principle of covariation</strong>. It’s a simple idea - if there’s a pattern in how two things vary, then we can use information about one variable to make a prediction about what will happen for the other variable. This is what we talked about earlier in the semester when we discussed the idea of prediction - we’re just formalizing this idea with numbers now.</p>
+<p>So, as a conceptual example, there is variation in rain (some days it rains and some days it does not) and there is variation in clouds (bright skies some days; clouds other days). The <strong><em>covariation</em></strong> happens as I notice that on days when it rains (variable = rain), it also tends to be cloudy (variable = clouds). These two variables vary together (they “co-vary”). Of course, this pattern isn’t always true - there’s error.</p>
+<p>I could write this as a model, where my predictions about whether it will rain will be influenced by whether I see clouds in the sky : <code>rain = clouds + error</code></p>
+<p>I would use this model to make an adjustment to my prediction when it rains - if there are clouds, I might think it’s more likely that it will rain. That is, the presence of clouds <strong><em>changes my prediction.</em></strong> This change is a critical idea, and will be important to quanity - how large is the change? Does it improve my predictions?</p>
+<p>As another example, think about how you would write an equation to model the idea that on days when it’s raining, I tend to hear raindrops (and on days when it’s not raining, I don’t tend to hear raindrops). I might write this model as <code>rain = rain sounds + error</code></p>
+<p>These two models look similar, but are not equal. If I had to guess, I’d say that hearing rain is a better way to make predictions of rain than looking at the clouds, meaning there would be less error in my predictions. So not only do models use information about which variables you can use to make predictions about another, but they also tell you how much you should update your predictions about one variable from another.</p>
+</section>
+<section id="prestige-example" class="level3">
+<h3 class="anchored" data-anchor-id="prestige-example"><strong>Prestige Example</strong></h3>
+<p>Returning to our previous example, let’s predict the variable prestige from the variable education - another continuous variable in the Prestige dataset. As a linear model, I would write this as : <code>prestige = education + error</code></p>
+<p>In the same way I could expect rain sounds to be related to rain, a job that requires more years of education might be related to how prestigious the job is. This is not true of all careers (consider the “high educated” poet ridiculed by society, perhaps, or the “low educated” firefighter revered by society<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>Let’s graph these two variables side by side.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="co"># splits my graphing window</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(presto<span class="sc">$</span>prestige, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>, <span class="at">main =</span> <span class="st">""</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(presto<span class="sc">$</span>education, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>, <span class="at">main =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="6R_LinearModels_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Great. So both prestige and education vary. Not every job has the same prestige, and not every job requires the same years of education.</p>
+<p>The question is whether these two variables <strong>covary</strong>. Are changes in prestige related to changes in education??</p>
+<p><strong>Pop Quiz: How can you see the relationship between prestige and education in the graphs above?</strong></p>
+<p>::: {.callout-tip collapse = “true”} You cannot!!! I’m guessing that some of you are thinking that because both distributions are slightly positively skewed, this means that there is some covariation between these variables. However, this is an example of patterns in randomness - we can’t really tell whether there is covariation from these two separate graphs. Instead, we need a different kind of graph that explicitly draws a connection between these two separate variables. This is the scatterplot, which you will learn about below :) :::</p>
+</section>
+<section id="the-scatterplot" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="the-scatterplot">The Scatterplot</h3>
+<p>In order to examine how these two variables covary (that is, how variation in education is related to variation in prestige), we need to use a scatterplot.</p>
+<p>A scatterplot graphs individual scores in terms of one variable on the Y axis (the vertical line) and the other variable on the X axis (the horizontal line).</p>
+<p>To graph a scatterplot, you can use the plot() function, and tell R to predict one variable (in this case prestige) from another (education).</p>
+<p>Take a look at the graph below - what do you see?</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> presto)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="6R_LinearModels_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Watch the video below for an explanation of what’s going on in the graph.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/vkSxsIfyHk4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>To define the model (as I did in the video), we just need to use a few lines of code.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> presto) <span class="co"># this defines the model, and then saves it to an object (called mod)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod) <span class="co"># this shows me the values of the model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)   education 
+ -10.731982    5.360878 </code></pre>
+</div>
+</div>
+<p>The linear model is just another line that updates our predictions of one variable based on knowledge of another.</p>
+<p>This line (in red, on the graph below) has the following equation :</p>
+<p><span class="math inline">\(\huge y_i = a + b_1 * X_i + \epsilon_i\)</span></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> presto, <span class="co"># plots the model again</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">16</span>),  <span class="co"># changes my x-axis to range from 0 to 16</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">20</span>,<span class="dv">90</span>)) <span class="co"># changes my y-axis to range from -15 to 90</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(mod, <span class="at">col =</span> <span class="st">'red'</span>, <span class="at">lwd =</span> <span class="dv">5</span>) <span class="co"># this adds the line to my graph.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="6R_LinearModels_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="math inline">\(\Large y_i\)</span> = the DV = each individual’s actual score on the dependent variable.</p>
+<ul>
+<li>on the graph: the value of each dot on the y-axis</li>
+</ul>
+<p><span class="math inline">\(\Large a\)</span> = the intercept = the starting place for our prediction. You can think of the intercept as “the predicted value of y when all x values are zero”.)</p>
+<ul>
+<li>on the graph : the value of the line at X = 0</li>
+</ul>
+<p><span class="math inline">\(\Large X_i\)</span> = the IV = the individual’s actual score on the independent variable (a different variable than the DV).</p>
+<ul>
+<li>on the graph : the value of each dot on the x-axis</li>
+</ul>
+<p><span class="math inline">\(\Large b_1\)</span> = the slope = an adjustment we make in our prediction of y, based on the individual’s x value.</p>
+<ul>
+<li>on the graph: how much the line increases in y value when x-values increase by 1 unit.</li>
+</ul>
+<p><span class="math inline">\(\Large \epsilon_i\)</span> = residual error = the distance between our prediction and the individual’s actual y value.</p>
+<ul>
+<li>on the graph: the distance between each individual data point and the line.</li>
+</ul>
+</div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSev3Ot9gGd9QcHpEh5GhWifCAA7c_A-ycKT-7Zg5orC3dtGlg/viewform?usp=sf_link">Check-In: Intercepts and Slopes</a>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>Test your understanding of linear models!</strong> Use the Prestige dataset and R to predict the variable income (the DV) from the variable education (the IV). You can try to do this in R on your own computer, or use the output below. Use this model to answer the questions for this check-in in the link above.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = income ~ education, data = presto)
+
+Coefficients:
+(Intercept)    education  
+    -2853.6        898.8  </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="part-2-evaluating-error-in-predictions" class="level1">
+<h1>Part 2 : Evaluating Error in Predictions</h1>
+<p>Remember our goal is to make good predictions that have little error. So to evaluate the quality of our predictions, we need to evaluate how much residual error there is - the distance between each point and the line.</p>
+<section id="visualizing-residual-error-in-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-residual-error-in-the-model">Visualizing Residual Error in the Model</h2>
+<p>This is similar to what we did with the mean - we draw a line that is close to all the individual scores, and then calculate the sum of the squared errors. However, whereas the mean yields the same prediction for each individual (and the line is flat), the linear model yields a specific prediction for each individual’s y score, based on the value of x (and the line has a slope).</p>
+<p>Below are two graphs - the one on the left uses the mean to make predictions of prestige, and the one on the right uses education to make predictions of prestige (our model).</p>
+<p>Look at the two graphs - can you tell which one has more (or less) residual error?</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(presto<span class="sc">$</span>prestige)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(presto<span class="sc">$</span>prestige), <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> presto, <span class="co"># plots the model again</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">16</span>),  <span class="co"># changes my x-axis to range from 0 to 16</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">20</span>,<span class="dv">90</span>)) <span class="co"># changes my y-axis to range from -15 to 90</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(mod, <span class="at">col =</span> <span class="st">'red'</span>, <span class="at">lwd =</span> <span class="dv">5</span>) <span class="co"># this adds the line to my graph.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="6R_LinearModels_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Just by looking at two graphs, it’s clear that there’s less residual error when we use education to make predictions of prestige (vs.&nbsp;using the mean). In other words, the individual scores are further from the red line on the left graph than on the right graph.</p>
+</section>
+<section id="calculating-residual-error-in-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-residual-error-in-the-model">Calculating Residual Error in the Model</h2>
+<p>Still, we are going to want to calculate these differences to describe just how much better our predictions are. What makes this potentially more challenging is that when we use a model to make predictions for individual scores, we will predict a different value for each individual based on the result of our model. For example, a job that requires 6 years of education will have a different predicted value of prestige than a job that requires 7 years of education.</p>
+<p>Fortunately, R does the hard work of making predictions for us, and even saves the residual errors as part of the model output.</p>
+<p>For example, from our model where we predicted prestige from education:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mod<span class="sc">$</span>residuals) <span class="co"># these are the residuals (the errors from our model)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> gov.administrators    general.managers         accountants purchasing.officers 
+           9.250875           14.107621            5.673573            6.310758 
+           chemists          physicists 
+           5.855950            4.487854 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mod<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>) <span class="co"># these are the squared residuals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> gov.administrators    general.managers         accountants purchasing.officers 
+           85.57869           199.02497            32.18943            39.82567 
+           chemists          physicists 
+           34.29215            20.14084 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(mod<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>) <span class="co"># these are the sum of the squared residuals when using the model to make predictions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8286.99</code></pre>
+</div>
+</div>
+<p>Notice that the sum of the squared errors for this model, where we use education to predict prestige, is less than the sum of the squared errors from the model where we used the mean to make predictions.</p>
+<p>In fact, we can calculate exactly how large this difference in errors is between the two predictions.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>SSM <span class="ot">&lt;-</span> <span class="fu">sum</span>(mod<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>) <span class="co"># saving the sum of the squared errors from the model</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>SST <span class="ot">&lt;-</span> <span class="fu">sum</span>(residual<span class="sc">^</span><span class="dv">2</span>) <span class="co"># saving the sum of the squared errors from the mean</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>SST <span class="sc">-</span> SSM <span class="co"># the difference in the squared errors from the mean vs. the model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 21608.44</code></pre>
+</div>
+</div>
+<p>This tells me that the model where we use education to predict prestige reduces the squared error by 21608.44. That is a large number! But it’s hard to understand how large it is, because it’s missing context.</p>
+<p>To provide this number context, we can describe how large this reduction in residual error is, relative to the original residual error that we had when we used the mean to make predictions.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(SST <span class="sc">-</span> SSM)<span class="sc">/</span>SST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7228007</code></pre>
+</div>
+</div>
+<p>This number (.72) means that using education to predict prestige explains 72% of the total variation in prestige (when you use the mean to make predictions). If this sounds like a large percentage, you would be right - there’s no “rule” about what counts as a large or little percentage of variation explained.</p>
+<p>This statistic is called <span class="math inline">\(R^2\)</span> (“r-squared”), and is defined by the following equation.</p>
+<p><span class="math inline">\(\Huge R^2 = \frac{SS_{total} - SS_{model}}{SS_{total}}\)</span></p>
+<p>What <span class="math inline">\(R^2\)</span> does is contextualize our reduction in error, by describing how much less error we have in our model, compared to the error that we had when using just the mean to make predictions.</p>
+<ul>
+<li><p>Another way to think of <span class="math inline">\(R^2\)</span> is that it describes the percentage of variation in the DV that our model is able to predict or explain.</p></li>
+<li><p><span class="math inline">\(R^2\)</span> can range from 0 to 1. The closer to zero, the less our model improves upon predictions (because 0 = no difference between the error when using the mean to make predictions and the error when using the model to make predictions). The closer to one, the more our model improves upon predictions. An <span class="math inline">\(R^2\)</span> of 1 would mean that you are making perfect predictions. If this happens, you have probably done something wrong.</p></li>
+</ul>
+</section>
+<section id="video-example-age-and-narcissism" class="level2">
+<h2 class="anchored" data-anchor-id="video-example-age-and-narcissism">Video Example : Age and Narcissism</h2>
+<p>Remember our Narcissistic MBA students? They’re back, in Linear Model form!!!!</p>
+<ul>
+<li><a href="https://www.dropbox.com/s/w7qi8v13vkp7tjp/linearmodel_NPIage.R?dl=0">link to the R script I used for this video</a></li>
+</ul>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/mfR5JNwCrYs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScaXZgOIYrWEUQdOS_vRq2UlMne8VHOvmfRYzSerpsamGP5Zg/viewform?usp=sf_link">Check-In : Understanding <span class="math inline">\(R^2\)</span></a>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Here’s a super quick check-in on interpreting <span class="math inline">\(R^2\)</span> values!</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-3-interpreting-models-with-the-z-score" class="level1">
+<h1>Part 3 : Interpreting Models with the Z-Score</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+RECAP : Uhhh…can you re-explain Z-Scoring Professor???
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>A z-score describes how far an individual score falls above and below the mean (a residual!) in units of standard deviation. Z-scores are used to help give context to data - how far above or below the average is an individual (their distance from the mean), compared to the standard deviation (the average amount that people differ from the mean).</p>
+<p>Z-scores can also be useful when the units of measurement don’t have any meaning. For example, let’s say you take a job on Jeff Bezo’s Mars ™ and learn that a job pays 1298723 BezosBucks. Is this a little? A lot? Well, knowing that it’s 120 BezosBucks above the average income might give you some indication that you are going to be better off than others on Jeff Bezos’ Mars ™. But how much better off?</p>
+<p>If you learn the standard deviation of income on Jeff Bezos’ Mars ™ is 12, then your above average salary is 10 times more than what you’d expect the average person to differ from the average salary - you are gonna be VERY RICH compared to the average resident - drinking fresh water and breathing air created by the finest asteroidoxygenators!</p>
+<p>But if the standard deviation is 1200, then your z-score = .1, which means you are only a tenth of a standard deviation above average, which means that you will be lumped with the masses on Jeff Bezos’ Mars - slurping recycled air with the rest of us.</p>
+</div>
+</div>
+</div>
+<section id="why-z-score-in-a-model" class="level2">
+<h2 class="anchored" data-anchor-id="why-z-score-in-a-model">Why Z-Score in a Model</h2>
+<p>In a linear model, the slope describes the relationship between the two variables in whatever units the DV and the IV were measured in. So in our prestige example, the slope of 5.36 means that for every 1-unit increase in years of education, our prediction of prestige goes up by 5.36 points. Is that a little change in prestige? A lot? It’s hard to know, since prestige is not tangible, but a human-created construct.</p>
+<p>Which brings us back to z-scores. If we z-score both the DV and the IV in our linear model, the (arbitrary) units of measurement disappear, and both variables are described in terms of standard deviation. This allows us to better relate each variable to another. To z-score the variables in a model, you just use the scale() function inside the linear model.</p>
+<p>Click the tabs to switch between Raw Units and Z-Scored Units. What changes? What stays the same??</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Linear Model in Raw Units</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Linear Model in Z-Scored Units</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Here’s the graph, in the original units of measurement.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> presto, </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Prestige (Raw Units)"</span>,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Education (Years)"</span>) </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> presto)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(mod, <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="6R_LinearModels_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>And here’s the result of the model.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">coef</span>(mod), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)   education 
+     -10.73        5.36 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Here’s the graph when the DV and IV are Z-Scored.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">scale</span>(prestige) <span class="sc">~</span> <span class="fu">scale</span>(education), <span class="at">data =</span> presto, </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Prestige (Units of Standard Deviation)"</span>,</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Education (Units of Standard Deviation)"</span>) </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>zmod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">scale</span>(prestige) <span class="sc">~</span> <span class="fu">scale</span>(education), <span class="at">data =</span> presto)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(zmod, <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="6R_LinearModels_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>And here’s the result of the model.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">coef</span>(zmod), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>     (Intercept) scale(education) 
+            0.00             0.85 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="interpretation-of-z-scores" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-of-z-scores">Interpretation of Z-Scores</h3>
+<p>As before, the data do not change - the only thing that changes are the units in which the DV and IV are measured (and thus the units of the intercept and slope).&nbsp;</p>
+<ul>
+<li><p><strong>The intercept of a z-scored model will always be zero (or something very near zero).</strong> Remember that a z-score of zero means average, and the intercept is defined as “the predicted value of the DV when all IVs are zero.” This means that….</p>
+<ul>
+<li><p>…the predicted value of the DV is zero when the IV is zero.</p></li>
+<li><p>…someone with the average IV (IV = z-score of zero) is predicted to have the average DV (DV = z-score of zero), or&nbsp;</p></li>
+</ul></li>
+<li><p><strong>The slope of a z-scored model describes the relationship between the variables in units of standard deviation.</strong> When both the DV and IV share the same units of measurement, the slope becomes a lot more informative, since it tells you exactly how linked the two variables are. Knowing that for every 1-unit increase in years of education, the predicted prestige goes up by 5.36 (the slope) makes far less sense to me than knowing that for every standard deviation increase in years of education, the predicted prestige goes up by .85.</p>
+<ul>
+<li><p>The maximum slope of a z-scored linear model (with one IV) is 1 (one). This would be a perfect positive relationship, where a one standard deviation increase in the IV is equal to a one standard deviation increase in the DV.&nbsp;</p></li>
+<li><p>The minimum slope of a z-scored linear model (with one IV) is -1 (negative one). This would be a perfect negative relationship, where a one standard deviation increase in the IV is equal to a one standard deviation decrease in the DV.&nbsp;</p></li>
+<li><p>A slope of zero would mean that there’s no relationship between the two variables.</p></li>
+<li><p>Wait a minute…that’s….CORRELATION COEFFICIENT’S MUSIC.</p></li>
+</ul></li>
+</ul>
+<p>Yes, class, a correlation - the relationship between two variables, is just the standardized (z-scored) slope of a linear model (with one IV).</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(presto<span class="sc">$</span>prestige, presto<span class="sc">$</span>education) <span class="co"># the correlation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8501769</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(zmod)[<span class="dv">2</span>] <span class="co"># the slope of our z-scored model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>scale(education) 
+       0.8501769 </code></pre>
+</div>
+</div>
+<p>Wow! We will chat more about this in the video below, and in lecture next week :) thanks for reading!</p>
+</section>
+<section id="video-example-age-and-narcissism-z-scored" class="level3">
+<h3 class="anchored" data-anchor-id="video-example-age-and-narcissism-z-scored">Video Example : Age and Narcissism (Z-Scored)</h3>
+<p>{{&lt; https://youtu.be/2jYwIOTaQ6g  &gt;}} The video above walks through z-scoring in another example, from the narcissism dataset.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/6_AgeNPIZscoreVid.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="check-out-understanding-z-scores-and-this-chapter-document" class="level2">
+<h2 class="anchored" data-anchor-id="check-out-understanding-z-scores-and-this-chapter-document"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdpzsYEijsSkaG_gRA4Pmqg1QFGWmTSUUmR8B31cYNtms6jtw/viewform?usp=sf_link">CHECK-OUT : Understanding Z-Scores and this Chapter! Document</a></h2>
 
 
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Super exciting! But remember this is like driving around a safe, boring parking lot!! We’ll hit the highway soon enough.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>NOTE: Eagle eyed students may note something odd about the way the data are arranged on this graph - it looks like there’s some quadratic (curved) pattern in the way the data are arranged. Because the x-axis for this graph (the index) is the row in which each data, all this quadratic pattern means is that more prestigious jobs tended to be listed earlier in the dataset than less prestigious jobs.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>And good to explore why we care about prestige in careers anyway? I blame capitalism and our society’s unwillingness to provide people with their basic needs, so a person’s value is determined by how much their material conditions, and whether they can meet (or exceed) those basic needs. Anyway, point is firefighters and poets are both cool and important for society.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -733,8 +1318,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/5R_Scales.html" class="pagination-link" aria-label="Scales">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Scales</span></span>
+      <a href="../chapters/5R_GoodScience.html" class="pagination-link" aria-label="Why Research Methods?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
