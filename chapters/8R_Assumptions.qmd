@@ -1,3 +1,61 @@
 # Assumptions and Extensions
 
 Hi! Stay tuned for reading materials. Thanks!
+
+## Experimental Methods
+
+Scientists and psychologists often want (or need) to establish causation, and an experiment is the “gold standard” approach for how to do this.
+
+I’m guessing y’all have learned about experiments in many other classes, so won’t spend pages and pages and pages going over it again here.[^6]
+
+[^6]: I'll just spend pages going over it. Hah hah.
+
+**Here’s a [supplemental chapter on experiments](https://kpu.pressbooks.pub/psychmethods4e/part/experimental-research/) that reviews some key terms you should be familiar with :** experimental manipulation; extraneous variables as “noise”; random assignment; placebo effects; external validity; construct validity; experimenter expectancy effects.
+
+### The Google Experiment
+
+When I worked at Google as an intern for one summer[^7], corporate PR told a story about their "data driven approach", where no decision was left to mere chance. Even something as simple as the color font they used could be the focus of an analytic research question.
+
+[^7]: well-fed; gratuitously paid; soul-drained. I was in their "People Operations" (/HR) department, helping them set up longitudinal surveys and do various other research projects on compensation, appreciation, and diversity that helped feed the corporate beast.
+
++------------------------------------------+-----------------------------------------+
+| **Google Homepage : Before Experiments** | **Google Homepage : After Experiments** |
++------------------------------------------+-----------------------------------------+
+| ![](images/7_goog.png)                   | ![](images/7_goog2.png)                 |
++------------------------------------------+-----------------------------------------+
+
+Watch the video below. You can [read more about this study here](https://www.theguardian.com/technology/2014/feb/05/why-google-engineers-designers).
+
+{{< video https://youtu.be/WtBMEEdgmuc >}}
+
+![](images/7_goog3.png){fig-align="center"}
+
+**Then, see if you can identify the different parts of an experiment.**
+
+-   **linear model :** DV \~ IV (what was manipulated) + confound variables + error
+
+-   **manipulation :** what were the treatment and control groups?
+
+-   **random assignment :** how were confound variables balanced across conditions?
+
+-   **double-blind :** did the study avoid demand characteristics & placebo effects?
+
+-   **generalizability :** did the study have external validity? what was the effect size (R2)?
+
+-   **ethics :** should researchers do this type of study \[predict & control\]
+
+::: {.callout-tip collapse="true"}
+### Answers to Google Shade of Blue Experiment
+
+-   **linear model** : number of ads that peopled clicked on \~ shade of blue people saw + age + location + income + education + media literacy + relevance of the ad + etc + error
+
+-   **manipulation :** “control” group = shade of blue (existing shade of blue); treatment group = shade of blue.
+
+-   **random assignment :** participants were randomly assigned to see links in one shade of blue or another. because this was randomly assigned, all the other differences between people (those variables that might affect the DV, such as age or location) are “balanced out”.
+
+-   **double-blind :** the participant didn’t know that google was manipulating the shade of blue to get them to click on ads. the website (google) doesn’t know whats going on.
+
+-   **generalizability :** yes, high external validity! Google was changing its own website. an example of low external validity would be printing out a sheet with different shades of blue that users “click” on with their finger.
+
+-   **ethics :** WOULD LOVE TO HEAR FROM Y’ALL : do you think it’s ethical for companies like Google to do this research???
+:::
