@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assumptions and Extensions – Why Statistics?</title>
+<title>More Levels and Experiments – Why Statistics?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,6 +104,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -113,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/8R_Assumptions.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Assumptions and Extensions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/8R_Assumptions.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">More Levels and Experiments</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -171,14 +234,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/4R_ResearchMethods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></span></a>
+  <a href="../chapters/4R_Scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Measures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/5R_Scales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Scales</span></span></a>
+  <a href="../chapters/5R_GoodScience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></span></a>
   </div>
 </li>
       </ul>
@@ -195,19 +258,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/6R_LinearModels.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Continuous IVs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Linear Model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/7R_CategoricalIV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Categorical IVs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model Pt 2: Categorical IVs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/8R_Assumptions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Assumptions and Extensions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">More Levels and Experiments</span></span></a>
   </div>
 </li>
       </ul>
@@ -258,14 +321,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Lab Assignments</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../Rcode.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -278,18 +335,40 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#part-1-the-linear-model-with-a-categorical-ivwith-three-levels" id="toc-part-1-the-linear-model-with-a-categorical-ivwith-three-levels" class="nav-link active" data-scroll-target="#part-1-the-linear-model-with-a-categorical-ivwith-three-levels">Part 1 : The Linear Model with a Categorical IV…with THREE+ Levels</a>
+  <ul>
+  <li><a href="#video-1-defining-the-model-with-the-lm-function" id="toc-video-1-defining-the-model-with-the-lm-function" class="nav-link" data-scroll-target="#video-1-defining-the-model-with-the-lm-function"><strong>Video 1 : Defining the Model with the lm() function</strong></a></li>
+  <li><a href="#video-2-interpreting-the-model" id="toc-video-2-interpreting-the-model" class="nav-link" data-scroll-target="#video-2-interpreting-the-model"><strong>Video 2 : Interpreting the Model</strong></a>
+  <ul class="collapse">
+  <li><a href="#the-linear-model-equation" id="toc-the-linear-model-equation" class="nav-link" data-scroll-target="#the-linear-model-equation"><strong>The Linear Model Equation:</strong></a></li>
+  <li><a href="#using-the-equation-and-dummy-coding-to-generate-predicted-values" id="toc-using-the-equation-and-dummy-coding-to-generate-predicted-values" class="nav-link" data-scroll-target="#using-the-equation-and-dummy-coding-to-generate-predicted-values"><strong>Using the Equation and Dummy Coding to Generate Predicted Values</strong></a></li>
+  <li><a href="#yes-professor-a-picture-is-worth.1000-words." id="toc-yes-professor-a-picture-is-worth.1000-words." class="nav-link" data-scroll-target="#yes-professor-a-picture-is-worth.1000-words."><strong>Yes, Professor, A Picture is Worth….1000 Words.</strong></a></li>
+  </ul></li>
+  <li><a href="#video-3-releveling-the-variable" id="toc-video-3-releveling-the-variable" class="nav-link" data-scroll-target="#video-3-releveling-the-variable"><strong>Video 3 : Releveling the Variable</strong></a></li>
+  <li><a href="#video-4-r2-for-a-categorical-model" id="toc-video-4-r2-for-a-categorical-model" class="nav-link" data-scroll-target="#video-4-r2-for-a-categorical-model"><strong>Video 4 :</strong> <span class="math inline">\(R^2\)</span> <strong>for a Categorical Model</strong></a></li>
+  </ul></li>
+  <li><a href="#check-in-to-assess-your-understanding-here-no-r-required" id="toc-check-in-to-assess-your-understanding-here-no-r-required" class="nav-link" data-scroll-target="#check-in-to-assess-your-understanding-here-no-r-required"><strong>CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE</strong> <strong>[no r required]</strong></a></li>
+  <li><a href="#part-2-experimental-methods" id="toc-part-2-experimental-methods" class="nav-link" data-scroll-target="#part-2-experimental-methods">Part 2 : Experimental Methods</a>
+  <ul>
+  <li><a href="#the-google-experiment" id="toc-the-google-experiment" class="nav-link" data-scroll-target="#the-google-experiment">The Google Experiment</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/8R_Assumptions.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Assumptions and Extensions</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/8R_Assumptions.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">More Levels and Experiments</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Assumptions and Extensions</h1>
+<h1 class="title">More Levels and Experiments</h1>
 </div>
 
 
@@ -306,9 +385,246 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Hi! Stay tuned for reading materials. Thanks!</p>
+<section id="part-1-the-linear-model-with-a-categorical-ivwith-three-levels" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-the-linear-model-with-a-categorical-ivwith-three-levels">Part 1 : The Linear Model with a Categorical IV…with THREE+ Levels</h2>
+<p>In Chapter 7, we showed how the linear model could be adapted to predict a numeric DV when the IV was a categorical variable with two levels. And guess what? When the IV has more than three levels, we can use the same linear model. Hooray! The only difference is now you have multiple levels that differ from the intercept (or “reference group”).</p>
+<p>Let’s mix it up, and see if some good ol’ fashioned YOUTUBE VIDEOS OF A DISEMBODIED VOICE can explain this.</p>
+<section id="video-1-defining-the-model-with-the-lm-function" class="level3">
+<h3 class="anchored" data-anchor-id="video-1-defining-the-model-with-the-lm-function"><strong>Video 1 : Defining the Model with the lm() function</strong></h3>
+<ul>
+<li><a href="https://www.dropbox.com/scl/fi/zftlvmxn81onija9awafk/7_3LevelModelQuiz7.R?rlkey=5qxhanq64lbvmtya7du6ubypf&amp;dl=0"><strong>here’s a link to R Script (as used in the video)</strong></a></li>
+</ul>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/pTnWxUq9opE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(presto<span class="sc">$</span>prestige)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(presto<span class="sc">$</span>type)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="8R_Assumptions_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> type, <span class="at">data =</span> presto)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mod</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = prestige ~ type, data = presto)
+
+Coefficients:
+(Intercept)     typeprof       typewc  
+     35.527       32.321        6.716  </code></pre>
+</div>
+</div>
+</section>
+<section id="video-2-interpreting-the-model" class="level3">
+<h3 class="anchored" data-anchor-id="video-2-interpreting-the-model"><strong>Video 2 : Interpreting the Model</strong></h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/d2p8Aj_Xcd4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="the-linear-model-equation" class="level4">
+<h4 class="anchored" data-anchor-id="the-linear-model-equation"><strong>The Linear Model Equation:</strong></h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)    typeprof      typewc 
+  35.527273   32.321114    6.716206 </code></pre>
+</div>
+</div>
+</section>
+<section id="using-the-equation-and-dummy-coding-to-generate-predicted-values" class="level4">
+<h4 class="anchored" data-anchor-id="using-the-equation-and-dummy-coding-to-generate-predicted-values"><strong>Using the Equation and Dummy Coding to Generate Predicted Values</strong></h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 18%">
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 26%">
+<col style="width: 18%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><p>(the intercept)</p>
+<p><strong>35.5</strong></p></td>
+<td><p>X1</p>
+<p>(typeprof)</p>
+<p><strong>32.3</strong></p></td>
+<td><p>X2</p>
+<p>(typewc)</p>
+<p><strong>6.7</strong></p></td>
+<td>Calculations</td>
+<td>Predicted Value</td>
+</tr>
+<tr class="even">
+<td>bc</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>35.5 + 32.3*0 + 6.7*0</td>
+<td>= 35.5</td>
+</tr>
+<tr class="odd">
+<td>prof</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>35.5 + 32.3*1 + 6.7*0</td>
+<td>= 67.8</td>
+</tr>
+<tr class="even">
+<td>wc</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>35.5 + 32.3*0 + 6.7*1</td>
+<td>= 42.2</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="yes-professor-a-picture-is-worth.1000-words." class="level4">
+<h4 class="anchored" data-anchor-id="yes-professor-a-picture-is-worth.1000-words."><strong>Yes, Professor, A Picture is Worth….1000 Words.</strong></h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(presto<span class="sc">$</span>prestige, <span class="at">col =</span> presto<span class="sc">$</span>type, <span class="at">pch =</span> <span class="dv">19</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(mod)[<span class="dv">2</span>], <span class="at">col =</span> <span class="st">'red'</span>, <span class="at">lwd =</span> <span class="dv">5</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(mod)[<span class="dv">3</span>], <span class="at">col =</span> <span class="st">'green'</span>, <span class="at">lwd =</span> <span class="dv">5</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>], <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">lwd =</span> <span class="dv">5</span>) <span class="co"># blue collar</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(prestige <span class="sc">~</span> type, <span class="at">data =</span> presto, <span class="at">connect =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="8R_Assumptions_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="video-3-releveling-the-variable" class="level3">
+<h3 class="anchored" data-anchor-id="video-3-releveling-the-variable"><strong>Video 3 : Releveling the Variable</strong></h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/dXtLevWv4WU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>presto<span class="sc">$</span>typeR <span class="ot">&lt;-</span> <span class="fu">relevel</span>(presto<span class="sc">$</span>type, <span class="at">ref =</span> <span class="st">"prof"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> typeR, <span class="at">data =</span> presto)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(prestige <span class="sc">~</span> typeR, <span class="at">data =</span> presto, <span class="at">connect =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="8R_Assumptions_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)     typeRbc     typeRwc 
+   67.84839   -32.32111   -25.60491 </code></pre>
+</div>
+</div>
+</section>
+<section id="video-4-r2-for-a-categorical-model" class="level3">
+<h3 class="anchored" data-anchor-id="video-4-r2-for-a-categorical-model"><strong>Video 4 :</strong> <span class="math inline">\(R^2\)</span> <strong>for a Categorical Model</strong></h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/qebJ3AH6r3I" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(presto<span class="sc">$</span>prestige, <span class="at">main =</span> <span class="st">"The Mean as Our Prediction"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(presto<span class="sc">$</span>prestige), )</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(presto<span class="sc">$</span>prestige, <span class="at">col =</span> presto<span class="sc">$</span>type, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">main =</span> <span class="st">"The Model (Job Type) As Our Prediction"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(mod)[<span class="dv">2</span>], <span class="at">col =</span> <span class="st">'red'</span>, <span class="at">lwd =</span> <span class="dv">5</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(mod)[<span class="dv">3</span>], <span class="at">col =</span> <span class="st">'green'</span>, <span class="at">lwd =</span> <span class="dv">5</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>], <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">lwd =</span> <span class="dv">5</span>) <span class="co"># blue collar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="8R_Assumptions_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="check-in-to-assess-your-understanding-here-no-r-required" class="level2">
+<h2 class="anchored" data-anchor-id="check-in-to-assess-your-understanding-here-no-r-required"><a href="https://docs.google.com/forms/d/e/1FAIpQLScyhL8OaHrdnmFXc36O6czzfkK1h85ka-XqIV9hWrWjwv5I-A/viewform?usp=sf_link"><strong>CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE</strong></a> <strong>[no r required]</strong></h2>
+</section>
+<section id="part-2-experimental-methods" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-experimental-methods">Part 2 : Experimental Methods</h2>
+<p>Last chapter, we learned the “four reasons” why you might find a “pattern in the data” (another way of saying why “correlation does not equal causation”. However, scientists and psychologists often want (or need) to establish causation, and an experiment is the “gold standard” approach for how to do this.</p>
+<p>Scientists and psychologists often want (or need) to establish causation, and an experiment is the “gold standard” approach for how to do this.</p>
+<p>I’m guessing y’all have learned about experiments in many other classes, so won’t spend pages and pages and pages going over it again here.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><strong>Here’s a <a href="https://kpu.pressbooks.pub/psychmethods4e/part/experimental-research/">supplemental chapter on experiments</a> that reviews some key terms you should be familiar with :</strong> experimental manipulation; extraneous variables as “noise”; random assignment; placebo effects; external validity; construct validity; experimenter expectancy effects.</p>
+<section id="the-google-experiment" class="level3">
+<h3 class="anchored" data-anchor-id="the-google-experiment">The Google Experiment</h3>
+<p>When I worked at Google as an intern for one summer<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, corporate PR told a story about their “data driven approach”, where no decision was left to mere chance. Even something as simple as the color font they used could be the focus of an analytic research question.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 49%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Google Homepage : Before Experiments</strong></td>
+<td><strong>Google Homepage : After Experiments</strong></td>
+</tr>
+<tr class="even">
+<td><img src="images/7_goog.png" class="img-fluid"></td>
+<td><img src="images/7_goog2.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<p>Watch the video below. You can <a href="https://www.theguardian.com/technology/2014/feb/05/why-google-engineers-designers">read more about this study here</a>.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WtBMEEdgmuc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/7_goog3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p><strong>Then, see if you can identify the different parts of an experiment.</strong></p>
+<ul>
+<li><p><strong>linear model :</strong> DV ~ IV (what was manipulated) + confound variables + error</p></li>
+<li><p><strong>manipulation :</strong> what were the treatment and control groups?</p></li>
+<li><p><strong>random assignment :</strong> how were confound variables balanced across conditions?</p></li>
+<li><p><strong>double-blind :</strong> did the study avoid demand characteristics &amp; placebo effects?</p></li>
+<li><p><strong>generalizability :</strong> did the study have external validity? what was the effect size (R2)?</p></li>
+<li><p><strong>ethics :</strong> should researchers do this type of study [predict &amp; control]</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answers to Google Shade of Blue Experiment
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>linear model</strong> : number of ads that peopled clicked on ~ shade of blue people saw + age + location + income + education + media literacy + relevance of the ad + etc + error</p></li>
+<li><p><strong>manipulation :</strong> “control” group = shade of blue (existing shade of blue); treatment group = shade of blue.</p></li>
+<li><p><strong>random assignment :</strong> participants were randomly assigned to see links in one shade of blue or another. because this was randomly assigned, all the other differences between people (those variables that might affect the DV, such as age or location) are “balanced out”.</p></li>
+<li><p><strong>double-blind :</strong> the participant didn’t know that google was manipulating the shade of blue to get them to click on ads. the website (google) doesn’t know whats going on.</p></li>
+<li><p><strong>generalizability :</strong> yes, high external validity! Google was changing its own website. an example of low external validity would be printing out a sheet with different shades of blue that users “click” on with their finger.</p></li>
+<li><p><strong>ethics :</strong> WOULD LOVE TO HEAR FROM Y’ALL : do you think it’s ethical for companies like Google to do this research???</p></li>
+</ul>
+</div>
+</div>
+</div>
 
 
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>I’ll just spend pages going over it. Hah hah.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>well-fed; gratuitously paid; soul-drained. I was in their “People Operations” (/HR) department, helping them set up longitudinal surveys and do various other research projects on compensation, appreciation, and diversity that helped feed the corporate beast.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -733,8 +1049,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/7R_CategoricalIV.html" class="pagination-link" aria-label="Categorical IVs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Categorical IVs</span></span>
+      <a href="../chapters/7R_CategoricalIV.html" class="pagination-link" aria-label="Linear Model Pt 2: Categorical IVs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model Pt 2: Categorical IVs</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

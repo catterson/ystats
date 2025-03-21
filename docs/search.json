@@ -168,13 +168,13 @@
   {
     "objectID": "chapters/8R_Assumptions.html",
     "href": "chapters/8R_Assumptions.html",
-    "title": "Assumptions and Extensions",
+    "title": "More Levels and Experiments",
     "section": "",
-    "text": "Hi! Stay tuned for reading materials. Thanks!",
+    "text": "Part 1 : The Linear Model with a Categorical IV…with THREE+ Levels\nIn Chapter 7, we showed how the linear model could be adapted to predict a numeric DV when the IV was a categorical variable with two levels. And guess what? When the IV has more than three levels, we can use the same linear model. Hooray! The only difference is now you have multiple levels that differ from the intercept (or “reference group”).\nLet’s mix it up, and see if some good ol’ fashioned YOUTUBE VIDEOS OF A DISEMBODIED VOICE can explain this.",
     "crumbs": [
       "List of R Code",
       "Predicting People",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Assumptions and Extensions</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>More Levels and Experiments</span>"
     ]
   },
   {
@@ -1771,6 +1771,54 @@
       "List of R Code",
       "Predicting People",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Linear Model Pt 2: Categorical IVs</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/8R_Assumptions.html#part-1-the-linear-model-with-a-categorical-ivwith-three-levels",
+    "href": "chapters/8R_Assumptions.html#part-1-the-linear-model-with-a-categorical-ivwith-three-levels",
+    "title": "More Levels and Experiments",
+    "section": "",
+    "text": "Video 1 : Defining the Model with the lm() function\n\nhere’s a link to R Script (as used in the video)\n\n\n\npar(mfrow = c(1,2))\nhist(presto$prestige)\nplot(presto$type)\n\n\n\n\n\n\n\nmod &lt;- lm(prestige ~ type, data = presto)\nmod\n\n\nCall:\nlm(formula = prestige ~ type, data = presto)\n\nCoefficients:\n(Intercept)     typeprof       typewc  \n     35.527       32.321        6.716  \n\n\n\n\nVideo 2 : Interpreting the Model\n\n\nThe Linear Model Equation:\n\ncoef(mod)\n\n(Intercept)    typeprof      typewc \n  35.527273   32.321114    6.716206 \n\n\n\n\nUsing the Equation and Dummy Coding to Generate Predicted Values\n\n\n\n\n\n\n\n\n\n\n\n\n(the intercept)\n35.5\nX1\n(typeprof)\n32.3\nX2\n(typewc)\n6.7\nCalculations\nPredicted Value\n\n\nbc\n1\n0\n0\n35.5 + 32.3*0 + 6.7*0\n= 35.5\n\n\nprof\n1\n1\n0\n35.5 + 32.3*1 + 6.7*0\n= 67.8\n\n\nwc\n1\n0\n1\n35.5 + 32.3*0 + 6.7*1\n= 42.2\n\n\n\n\n\nYes, Professor, A Picture is Worth….1000 Words.\n\npar(mfrow = c(1,2))\nplot(presto$prestige, col = presto$type, pch = 19)\nabline(h = coef(mod)[1] + coef(mod)[2], col = 'red', lwd = 5)\nabline(h = coef(mod)[1] + coef(mod)[3], col = 'green', lwd = 5)\nabline(h = coef(mod)[1], col = 'black', lwd = 5) # blue collar\n\nplotmeans(prestige ~ type, data = presto, connect = FALSE)\n\n\n\n\n\n\n\n\n\n\n\nVideo 3 : Releveling the Variable\n\n\npresto$typeR &lt;- relevel(presto$type, ref = \"prof\")\nmod2 &lt;- lm(prestige ~ typeR, data = presto)\nplotmeans(prestige ~ typeR, data = presto, connect = FALSE)\n\n\n\n\n\n\n\ncoef(mod2)\n\n(Intercept)     typeRbc     typeRwc \n   67.84839   -32.32111   -25.60491 \n\n\n\n\nVideo 4 : \\(R^2\\) for a Categorical Model\n\n\npar(mfrow = c(1,2))\nplot(presto$prestige, main = \"The Mean as Our Prediction\")\nabline(h = mean(presto$prestige), )\n\nplot(presto$prestige, col = presto$type, pch = 19, main = \"The Model (Job Type) As Our Prediction\")\nabline(h = coef(mod)[1] + coef(mod)[2], col = 'red', lwd = 5)\nabline(h = coef(mod)[1] + coef(mod)[3], col = 'green', lwd = 5)\nabline(h = coef(mod)[1], col = 'black', lwd = 5) # blue collar",
+    "crumbs": [
+      "List of R Code",
+      "Predicting People",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>More Levels and Experiments</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/8R_Assumptions.html#part-2-experimental-methods",
+    "href": "chapters/8R_Assumptions.html#part-2-experimental-methods",
+    "title": "More Levels and Experiments",
+    "section": "Part 2 : Experimental Methods",
+    "text": "Part 2 : Experimental Methods\nLast chapter, we learned the “four reasons” why you might find a “pattern in the data” (another way of saying why “correlation does not equal causation”. However, scientists and psychologists often want (or need) to establish causation, and an experiment is the “gold standard” approach for how to do this.\nScientists and psychologists often want (or need) to establish causation, and an experiment is the “gold standard” approach for how to do this.\nI’m guessing y’all have learned about experiments in many other classes, so won’t spend pages and pages and pages going over it again here.1\nHere’s a supplemental chapter on experiments that reviews some key terms you should be familiar with : experimental manipulation; extraneous variables as “noise”; random assignment; placebo effects; external validity; construct validity; experimenter expectancy effects.\n\nThe Google Experiment\nWhen I worked at Google as an intern for one summer2, corporate PR told a story about their “data driven approach”, where no decision was left to mere chance. Even something as simple as the color font they used could be the focus of an analytic research question.\n\n\n\n\n\n\n\nGoogle Homepage : Before Experiments\nGoogle Homepage : After Experiments\n\n\n\n\n\n\n\nWatch the video below. You can read more about this study here.\n\n\n\n\n\n\nThen, see if you can identify the different parts of an experiment.\n\nlinear model : DV ~ IV (what was manipulated) + confound variables + error\nmanipulation : what were the treatment and control groups?\nrandom assignment : how were confound variables balanced across conditions?\ndouble-blind : did the study avoid demand characteristics & placebo effects?\ngeneralizability : did the study have external validity? what was the effect size (R2)?\nethics : should researchers do this type of study [predict & control]\n\n\n\n\n\n\n\nAnswers to Google Shade of Blue Experiment\n\n\n\n\n\n\nlinear model : number of ads that peopled clicked on ~ shade of blue people saw + age + location + income + education + media literacy + relevance of the ad + etc + error\nmanipulation : “control” group = shade of blue (existing shade of blue); treatment group = shade of blue.\nrandom assignment : participants were randomly assigned to see links in one shade of blue or another. because this was randomly assigned, all the other differences between people (those variables that might affect the DV, such as age or location) are “balanced out”.\ndouble-blind : the participant didn’t know that google was manipulating the shade of blue to get them to click on ads. the website (google) doesn’t know whats going on.\ngeneralizability : yes, high external validity! Google was changing its own website. an example of low external validity would be printing out a sheet with different shades of blue that users “click” on with their finger.\nethics : WOULD LOVE TO HEAR FROM Y’ALL : do you think it’s ethical for companies like Google to do this research???",
+    "crumbs": [
+      "List of R Code",
+      "Predicting People",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>More Levels and Experiments</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/8R_Assumptions.html#footnotes",
+    "href": "chapters/8R_Assumptions.html#footnotes",
+    "title": "More Levels and Experiments",
+    "section": "",
+    "text": "I’ll just spend pages going over it. Hah hah.↩︎\nwell-fed; gratuitously paid; soul-drained. I was in their “People Operations” (/HR) department, helping them set up longitudinal surveys and do various other research projects on compensation, appreciation, and diversity that helped feed the corporate beast.↩︎",
+    "crumbs": [
+      "List of R Code",
+      "Predicting People",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>More Levels and Experiments</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/8R_Assumptions.html#check-in-to-assess-your-understanding-here-no-r-required",
+    "href": "chapters/8R_Assumptions.html#check-in-to-assess-your-understanding-here-no-r-required",
+    "title": "More Levels and Experiments",
+    "section": "CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE [no r required]",
+    "text": "CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE [no r required]",
+    "crumbs": [
+      "List of R Code",
+      "Predicting People",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>More Levels and Experiments</span>"
     ]
   }
 ]

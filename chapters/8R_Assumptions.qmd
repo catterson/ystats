@@ -1,22 +1,117 @@
-# Assumptions and Extensions
+# More Levels and Experiments
 
-Hi! Stay tuned for reading materials. Thanks!
+## Part 1 : The Linear Model with a Categorical IV…with THREE+ Levels
 
-## Experimental Methods
+In Chapter 7, we showed how the linear model could be adapted to predict a numeric DV when the IV was a categorical variable with two levels. And guess what? When the IV has more than three levels, we can use the same linear model. Hooray! The only difference is now you have multiple levels that differ from the intercept (or “reference group”).
+
+Let's mix it up, and see if some good ol' fashioned YOUTUBE VIDEOS OF A DISEMBODIED VOICE can explain this.
+
+```{r}
+#| include: false
+library(car)
+library(gplots)
+
+presto <- Prestige
+```
+
+### **Video 1 : Defining the Model with the lm() function**
+
+-   [**here’s a link to R Script (as used in the video)**](https://www.dropbox.com/scl/fi/zftlvmxn81onija9awafk/7_3LevelModelQuiz7.R?rlkey=5qxhanq64lbvmtya7du6ubypf&dl=0)
+
+{{< video https://youtu.be/pTnWxUq9opE >}}
+
+```{r}
+par(mfrow = c(1,2))
+hist(presto$prestige)
+plot(presto$type)
+
+mod <- lm(prestige ~ type, data = presto)
+mod
+```
+
+### **Video 2 : Interpreting the Model**
+
+{{< video https://youtu.be/d2p8Aj_Xcd4 >}}
+
+#### **The Linear Model Equation:**
+
+```{r}
+coef(mod)
+```
+
+#### **Using the Equation and Dummy Coding to Generate Predicted Values**
+
++------+-----------------+------------+----------+-------------------------+-----------------+
+|      | (the intercept) | X1         | X2       | Calculations            | Predicted Value |
+|      |                 |            |          |                         |                 |
+|      | **35.5**        | (typeprof) | (typewc) |                         |                 |
+|      |                 |            |          |                         |                 |
+|      |                 | **32.3**   | **6.7**  |                         |                 |
++------+-----------------+------------+----------+-------------------------+-----------------+
+| bc   | 1               | 0          | 0        | 35.5 + 32.3\*0 + 6.7\*0 | = 35.5          |
++------+-----------------+------------+----------+-------------------------+-----------------+
+| prof | 1               | 1          | 0        | 35.5 + 32.3\*1 + 6.7\*0 | = 67.8          |
++------+-----------------+------------+----------+-------------------------+-----------------+
+| wc   | 1               | 0          | 1        | 35.5 + 32.3\*0 + 6.7\*1 | = 42.2          |
++------+-----------------+------------+----------+-------------------------+-----------------+
+
+#### **Yes, Professor, A Picture is Worth....1000 Words.**
+
+```{r}
+par(mfrow = c(1,2))
+plot(presto$prestige, col = presto$type, pch = 19)
+abline(h = coef(mod)[1] + coef(mod)[2], col = 'red', lwd = 5)
+abline(h = coef(mod)[1] + coef(mod)[3], col = 'green', lwd = 5)
+abline(h = coef(mod)[1], col = 'black', lwd = 5) # blue collar
+
+plotmeans(prestige ~ type, data = presto, connect = FALSE)
+```
+
+### **Video 3 : Releveling the Variable**
+
+{{< video https://youtu.be/dXtLevWv4WU >}}
+
+```{r}
+presto$typeR <- relevel(presto$type, ref = "prof")
+mod2 <- lm(prestige ~ typeR, data = presto)
+plotmeans(prestige ~ typeR, data = presto, connect = FALSE)
+coef(mod2)
+```
+
+### **Video 4 :** $R^2$ **for a Categorical Model**
+
+{{< video  https://youtu.be/qebJ3AH6r3I>}}
+
+```{r}
+par(mfrow = c(1,2))
+plot(presto$prestige, main = "The Mean as Our Prediction")
+abline(h = mean(presto$prestige), )
+
+plot(presto$prestige, col = presto$type, pch = 19, main = "The Model (Job Type) As Our Prediction")
+abline(h = coef(mod)[1] + coef(mod)[2], col = 'red', lwd = 5)
+abline(h = coef(mod)[1] + coef(mod)[3], col = 'green', lwd = 5)
+abline(h = coef(mod)[1], col = 'black', lwd = 5) # blue collar
+```
+
+## [**CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE**](https://docs.google.com/forms/d/e/1FAIpQLScyhL8OaHrdnmFXc36O6czzfkK1h85ka-XqIV9hWrWjwv5I-A/viewform?usp=sf_link) **\[no r required\]**
+
+## Part 2 : Experimental Methods
+
+Last chapter, we learned the “four reasons” why you might find a “pattern in the data” (another way of saying why “correlation does not equal causation”. However, scientists and psychologists often want (or need) to establish causation, and an experiment is the “gold standard” approach for how to do this.
 
 Scientists and psychologists often want (or need) to establish causation, and an experiment is the “gold standard” approach for how to do this.
 
-I’m guessing y’all have learned about experiments in many other classes, so won’t spend pages and pages and pages going over it again here.[^6]
+I’m guessing y’all have learned about experiments in many other classes, so won’t spend pages and pages and pages going over it again here.[^8r_assumptions-1]
 
-[^6]: I'll just spend pages going over it. Hah hah.
+[^8r_assumptions-1]: I'll just spend pages going over it. Hah hah.
 
 **Here’s a [supplemental chapter on experiments](https://kpu.pressbooks.pub/psychmethods4e/part/experimental-research/) that reviews some key terms you should be familiar with :** experimental manipulation; extraneous variables as “noise”; random assignment; placebo effects; external validity; construct validity; experimenter expectancy effects.
 
 ### The Google Experiment
 
-When I worked at Google as an intern for one summer[^7], corporate PR told a story about their "data driven approach", where no decision was left to mere chance. Even something as simple as the color font they used could be the focus of an analytic research question.
+When I worked at Google as an intern for one summer[^8r_assumptions-2], corporate PR told a story about their "data driven approach", where no decision was left to mere chance. Even something as simple as the color font they used could be the focus of an analytic research question.
 
-[^7]: well-fed; gratuitously paid; soul-drained. I was in their "People Operations" (/HR) department, helping them set up longitudinal surveys and do various other research projects on compensation, appreciation, and diversity that helped feed the corporate beast.
+[^8r_assumptions-2]: well-fed; gratuitously paid; soul-drained. I was in their "People Operations" (/HR) department, helping them set up longitudinal surveys and do various other research projects on compensation, appreciation, and diversity that helped feed the corporate beast.
 
 +------------------------------------------+-----------------------------------------+
 | **Google Homepage : Before Experiments** | **Google Homepage : After Experiments** |
