@@ -41,19 +41,19 @@ coef(mod)
 
 #### **Using the Equation and Dummy Coding to Generate Predicted Values**
 
-+------+-----------------+------------+----------+-------------------------+-----------------+
-|      | (the intercept) | X1         | X2       | Calculations            | Predicted Value |
-|      |                 |            |          |                         |                 |
-|      | **35.5**        | (typeprof) | (typewc) |                         |                 |
-|      |                 |            |          |                         |                 |
-|      |                 | **32.3**   | **6.7**  |                         |                 |
-+------+-----------------+------------+----------+-------------------------+-----------------+
-| bc   | 1               | 0          | 0        | 35.5 + 32.3\*0 + 6.7\*0 | = 35.5          |
-+------+-----------------+------------+----------+-------------------------+-----------------+
-| prof | 1               | 1          | 0        | 35.5 + 32.3\*1 + 6.7\*0 | = 67.8          |
-+------+-----------------+------------+----------+-------------------------+-----------------+
-| wc   | 1               | 0          | 1        | 35.5 + 32.3\*0 + 6.7\*1 | = 42.2          |
-+------+-----------------+------------+----------+-------------------------+-----------------+
++----------+-----------------+------------+----------+-------------------------+-----------------+
+|          | (the intercept) | X1         | X2       | Calculations            | Predicted Value |
+|          |                 |            |          |                         |                 |
+|          | **35.5**        | (typeprof) | (typewc) |                         |                 |
+|          |                 |            |          |                         |                 |
+|          |                 | **32.3**   | **6.7**  |                         |                 |
++----------+-----------------+------------+----------+-------------------------+-----------------+
+| bc       | 1               | 0          | 0        | 35.5 + 32.3\*0 + 6.7\*0 | = 35.5          |
++----------+-----------------+------------+----------+-------------------------+-----------------+
+| prof     | 1               | 1          | 0        | 35.5 + 32.3\*1 + 6.7\*0 | = 67.8          |
++----------+-----------------+------------+----------+-------------------------+-----------------+
+| wc       | 1               | 0          | 1        | 35.5 + 32.3\*0 + 6.7\*1 | = 42.2          |
++----------+-----------------+------------+----------+-------------------------+-----------------+
 
 #### **Yes, Professor, A Picture is Worth....1000 Words.**
 
@@ -80,7 +80,7 @@ coef(mod2)
 
 ### **Video 4 :** $R^2$ **for a Categorical Model**
 
-{{< video  https://youtu.be/qebJ3AH6r3I>}}
+{{< video https://youtu.be/qebJ3AH6r3I>}}
 
 ```{r}
 par(mfrow = c(1,2))
@@ -106,6 +106,15 @@ I’m guessing y’all have learned about experiments in many other classes, so 
 [^8r_assumptions-1]: I'll just spend pages going over it. Hah hah.
 
 **Here’s a [supplemental chapter on experiments](https://kpu.pressbooks.pub/psychmethods4e/part/experimental-research/) that reviews some key terms you should be familiar with :** experimental manipulation; extraneous variables as “noise”; random assignment; placebo effects; external validity; construct validity; experimenter expectancy effects.
+
+### The Definition of Causality
+
+1.  The cause and effect are contiguous in space and time.
+2.  The cause must be prior to the effect. (no reverse causation)
+3.  There must be a constant union betwixt the cause and effect. (“Tis chiefly this quality, that constitutes the relation.”) (no random chance)
+4.  The same cause always produces the same effect, and the same effect never arises but from the same cause. (not "just" some third variable) [^1]
+
+[^1] but remember, life is complex and there are often multiple causes of human behavior!
 
 ### The Google Experiment
 
