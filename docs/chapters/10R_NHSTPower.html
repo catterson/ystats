@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Null Hypothesis Significance Testing and Power – Why Statistics?</title>
+<title>Multiple Regression – Why Statistics?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,6 +104,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -113,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/9R_SamplingError.html">Predicting Reality</a></li><li class="breadcrumb-item"><a href="../chapters/10R_NHSTPower.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Null Hypothesis Significance Testing and Power</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/9R_SamplingError.html">Predicting Reality</a></li><li class="breadcrumb-item"><a href="../chapters/10R_NHSTPower.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multiple Regression</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -171,14 +234,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/4R_ResearchMethods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></span></a>
+  <a href="../chapters/4R_Scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Measures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/5R_Scales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Scales</span></span></a>
+  <a href="../chapters/5R_GoodScience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></span></a>
   </div>
 </li>
       </ul>
@@ -195,19 +258,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/6R_LinearModels.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Continuous IVs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Linear Model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/7R_CategoricalIV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Categorical IVs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model Pt 2: Categorical IVs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/8R_Assumptions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Assumptions and Extensions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">More Levels and Experiments</span></span></a>
   </div>
 </li>
       </ul>
@@ -230,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/10R_NHSTPower.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Null Hypothesis Significance Testing and Power</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multiple Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -258,14 +321,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Lab Assignments</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../Rcode.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -278,18 +335,36 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#the-purpose-of-multiple-regression" id="toc-the-purpose-of-multiple-regression" class="nav-link active" data-scroll-target="#the-purpose-of-multiple-regression">The Purpose of Multiple Regression</a></li>
+  <li><a href="#multivariate-linear-regression-a-more-complex-model" id="toc-multivariate-linear-regression-a-more-complex-model" class="nav-link" data-scroll-target="#multivariate-linear-regression-a-more-complex-model">Multivariate Linear Regression : A More Complex Model</a>
+  <ul>
+  <li><a href="#comparing-models-the-regression-table." id="toc-comparing-models-the-regression-table." class="nav-link" data-scroll-target="#comparing-models-the-regression-table.">Comparing Models : The Regression Table.</a></li>
+  <li><a href="#types-of-changes-between-the-multivariate-and-bivariate-models" id="toc-types-of-changes-between-the-multivariate-and-bivariate-models" class="nav-link" data-scroll-target="#types-of-changes-between-the-multivariate-and-bivariate-models">Types of Changes Between the Multivariate and Bivariate Models</a></li>
+  <li><a href="#reasons-why-the-relationship-changes-between-models" id="toc-reasons-why-the-relationship-changes-between-models" class="nav-link" data-scroll-target="#reasons-why-the-relationship-changes-between-models">Reasons Why The Relationship Changes Between Models</a></li>
+  </ul></li>
+  <li><a href="#more-practice" id="toc-more-practice" class="nav-link" data-scroll-target="#more-practice">More Practice</a>
+  <ul>
+  <li><a href="#a-multiple-regression-video" id="toc-a-multiple-regression-video" class="nav-link" data-scroll-target="#a-multiple-regression-video"><strong>A MULTIPLE REGRESSION VIDEO :</strong></a></li>
+  <li><a href="#check-in-heres-a-practice-quiz" id="toc-check-in-heres-a-practice-quiz" class="nav-link" data-scroll-target="#check-in-heres-a-practice-quiz"><strong>Check-In : Here’s a Practice Quiz</strong></a></li>
+  <li><a href="#check-out" id="toc-check-out" class="nav-link" data-scroll-target="#check-out">Check-Out</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/9R_SamplingError.html">Predicting Reality</a></li><li class="breadcrumb-item"><a href="../chapters/10R_NHSTPower.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Null Hypothesis Significance Testing and Power</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/9R_SamplingError.html">Predicting Reality</a></li><li class="breadcrumb-item"><a href="../chapters/10R_NHSTPower.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multiple Regression</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Null Hypothesis Significance Testing and Power</h1>
+<h1 class="title">Multiple Regression</h1>
 </div>
 
 
@@ -306,9 +381,312 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Hi! Stay tuned for reading materials. Thanks!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.tate.org.uk/art/artworks/ernst-the-entire-city-n05289"><img src="images/clipboard-2498404660.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A crumbling city looms oppressively below the ring-shaped moon. Ernst made a whole series of such works. The imagery may reflect his pessimism as Nazism took hold in his native Germany. The ruined cityscape was created using a technique that Ernst called ‘grattage’ (scraping). It involved placing the canvas over planks of wood or other textured surfaces, then scraping paint across it. The shapes that emerged formed the basis of the image. Grattage was one of a number of techniques that Surrealist artists explored as a way of letting a chance element into their work."></a></p>
+</figure>
+</div>
+<figcaption>The Entire City, Max Ernst (1934)</figcaption>
+</figure>
+</div>
+<section id="the-purpose-of-multiple-regression" class="level2">
+<h2 class="anchored" data-anchor-id="the-purpose-of-multiple-regression">The Purpose of Multiple Regression</h2>
+<p><strong>Key Questions :</strong> What is redundant covariation and how does this relate to the idea of a 3rd variable?</p>
+<p><strong>“The Whole is Greater Than the Sum of Its Parts”</strong></p>
+<p>I like the above work by Max Ernst; like all evocative art it manages to transcend the individual brush strokes and colors to express a sense of terror. But if you were to isolate each line and color into its separate components - canvas; blue; brown; red - the sum of those different parts wouldn’t equal the work as a whole.</p>
+<p>The idea behind a multiple regression is the same - by combining two separate independent variables into one integrated model, researchers can understand more about the phenomenon than they would understand if they just examined the results of two separate bivariate models.</p>
+<p>Specifically, there are two main benefits to the multiple regression :&nbsp;</p>
+<ol type="1">
+<li><p><strong>Examining the unique effects of variables :</strong> the first benefit of a multiple linear regression is that we can test whether the effect of one variable (IV1) on another (DV) is unique to that variable, or whether that relationship is also explained by some other variable (IV2). We’ll talk more about this idea throughout this document.</p></li>
+<li><p><strong>Examining the dependent effects of variables :</strong> another benefit of the multiple linear regression is that we can examine whether the relationship between one independent variable (IV1) and the dependent variable (DV) depends on another variable (IV2). This idea is called an interaction effect - we will talk about this in a separate lecture.</p></li>
+</ol>
+<p>This first benefit to a multiple regression may sound familiar; we talked about it (briefly) in the beginning of the semester in the context of confound vs.&nbsp;control variables.</p>
+<p><strong>Confound vs.&nbsp;Control Variables</strong></p>
+<p>The basic idea was that many variables explain human life, and it’s hard to know whether the relationships we find between one independent variable and the dependent variable are specific to that one independent variable, or whether there’s some other variable that might be influencing the relationship. We talked about this earlier in the semester when we talked about the idea behind a <strong>confound variable</strong> - a variable that is not part of your model, but would influence the results. The classic example is that <a href="http://www.slate.com/blogs/crime/2013/07/09/warm_weather_homicide_rates_when_ice_cream_sales_rise_homicides_rise_coincidence.html">ice cream sales are related to murder rates</a>. Of course, ice cream does not really contribute to people getting murdered. There’s a confound variable - heat - that is related to both how much ice cream is sold (the more heat, the more people eat ice cream) and murder (the hotter it is, the more likely people are to kill each other…apparently.) And if you account for that confound variable by including it in your model, then you’d find that the relationship between ice cream and murder goes away…it’s explained by the relationship between heat and murder.</p>
+<p><strong>Recap : The Principle of Covariation</strong></p>
+<p>Our goal with multiple linear regression is the same goal we’ve been working with so far this semester - to explain complexity. To achieve this goal, we’ve been relying on something that I think of as the “principle of covariation”. With a bivariate linear regression (what we’ve been doing so far this semester), this involves explaining variation on one psychological dimension (the dependent variable) based on variation on another psychological dimension (the independent variable). In other words, making predictions about Y based on information in X.</p>
+<p>We wrote out this bivariate model like so :</p>
+<p><span class="math display">\[\huge y_i = a + b_1*X_{1i} + {\epsilon}_i\]</span></p>
+<p>To make sure we are all on the same page<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, let’s recap what’s going on with this model. On the left-hand side, we are making predictions for some variable (y : the dependent variable) - specifically an individual’s score on that variable (yi : the tiny i represents some specific individual in the dataset). On the right-hand side of the equation, we have a starting place for our predictions (a : the intercept), and then a slope (b1) that describes how we adjust our predictions of Y based on the individual’s specific value of some other variable (X1i : the first independent variable). And since human life is complex, our predictions will not be perfect, but will have error (ei) which we define as the difference between the individual’s actual score (yi) and our predictions for that person’s score (a + b1X1i). Neat.</p>
+<p>So far, we’ve used the linear model to make predictions of continuous variables based on categorical variables. For example, in the Prestige dataset (<a href="https://www.dropbox.com/s/lca1e7vdkt27wz0/prestige_data.csv?dl=1">download HERE</a>) we predicted prestige from job type (a categorical factor with three levels - blue collar, professional, and white collar).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gplots)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'gplots'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:stats':
+
+    lowess</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> type, <span class="at">data =</span> Prestige)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(prestige <span class="sc">~</span> type, <span class="at">data =</span> Prestige, <span class="at">connect =</span> F, <span class="at">ylab =</span> <span class="st">"Prestige"</span>, <span class="at">xlab =</span> <span class="st">"Job Type"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10R_NHSTPower_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = prestige ~ type, data = Prestige)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-18.2273  -7.1773  -0.0854   6.1174  25.2565 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   35.527      1.432  24.810  &lt; 2e-16 ***
+typeprof      32.321      2.227  14.511  &lt; 2e-16 ***
+typewc         6.716      2.444   2.748  0.00718 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 9.499 on 95 degrees of freedom
+  (4 observations deleted due to missingness)
+Multiple R-squared:  0.6976,    Adjusted R-squared:  0.6913 
+F-statistic: 109.6 on 2 and 95 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>We also used this linear model to make predictions of continuous variables (e.g., prestige) based on other continuous variables (e.g., education).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> Prestige)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> Prestige, <span class="at">xlab =</span> <span class="st">"Years of Education"</span>, <span class="at">ylab =</span> <span class="st">"Prestige"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(mod2, <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10R_NHSTPower_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = prestige ~ education, data = Prestige)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-26.0397  -6.5228   0.6611   6.7430  18.1636 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  -10.732      3.677  -2.919  0.00434 ** 
+education      5.361      0.332  16.148  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 9.103 on 100 degrees of freedom
+Multiple R-squared:  0.7228,    Adjusted R-squared:   0.72 
+F-statistic: 260.8 on 1 and 100 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><br>
+<strong>Redundant Covariation</strong></p>
+<p>We could go through life (and statistics) by considering simple relationships between two variables. These kinds of bivariate models are a good (and necessary) place to start our inquiry. But no psychological phenomenon is entirely explained by any one variable. Instead, human life is explained by multiple variables that are often related to each other and sometimes work together<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> in order to influence behavior. We saw this in the example above, where prestige appears to be separately explained both by job type and education. But the situation gets more complicated, because as a quick test in R reveals, job type and education are also related to each other.&nbsp;</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mod3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(education <span class="sc">~</span> type, <span class="at">data =</span> Prestige)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = education ~ type, data = Prestige)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.99419 -0.80932  0.08947  0.61392  2.57068 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   8.3593     0.1800  46.446  &lt; 2e-16 ***
+typeprof      5.7249     0.2799  20.450  &lt; 2e-16 ***
+typewc        2.6624     0.3072   8.667 1.16e-13 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.194 on 95 degrees of freedom
+  (4 observations deleted due to missingness)
+Multiple R-squared:  0.8153,    Adjusted R-squared:  0.8114 
+F-statistic: 209.6 on 2 and 95 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(education <span class="sc">~</span> type, <span class="at">data =</span> Prestige, <span class="at">connect =</span> F, <span class="at">xlab =</span> <span class="st">"Job Type"</span>, <span class="at">ylab =</span> <span class="st">"Years of Education"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10R_NHSTPower_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Compare this output (and graph) to the output (and graph) where we predicted prestige from job type. Spoiler alert - the effects are pretty similar. Blue collar workers are predicted to have the lowest level of education (8.35 years), professionals have 5.72 years of education more than blue collar workers (a significant difference), and white collar workers have 2.66 years of education more than blue collar workers (also a significant difference).&nbsp;</p>
+<p>That job type, education, and prestige are all related to each other represents <strong>redundant covariation</strong> and raises an important possibility - the relationship between job type and prestige could really be due to the relationship between education and prestige. That is, since jobs with more education are rated as having more prestige, and blue collar workers have the least education (on average), the reason why blue collar jobs have the least amount of prestige could be better explained by differences in education. Similarly, professionals might be rated as having the most prestige because they have the most education. Of course, it’s also possible that education is related to prestige because of the type of job that workers have.</p>
+<p>With separate bivariate models, it’s impossible to know whether these two independent variables are uniquely related to prestige or whether one variable is more related to prestige than another because we are only looking at one relationship at a time. The multivariate regression - one that predicts prestige simultaneously from both education and job type - will help sort out this issue.&nbsp;</p>
+</section>
+<section id="multivariate-linear-regression-a-more-complex-model" class="level2">
+<h2 class="anchored" data-anchor-id="multivariate-linear-regression-a-more-complex-model">Multivariate Linear Regression : A More Complex Model</h2>
+<p>In order to better understand the complexity of human life, we’ll need to define a more complex model that explains some dependent variable as a function of multiple independent variables. This is called a multivariate (multiple variables) linear regression model, or a multiple regression for short. In a multiple linear regression, we are going to use…wait for it…multiple independent variables to make predictions about the dependent variable.&nbsp;</p>
+<p>We’ll now write our model out like this :</p>
+<p><span class="math display">\[\huge y_i = a + b_1*X_{1i} + b_2*X_{2i} + ... + b_k*X_{ki} + {\epsilon}_i\]</span></p>
+<p>At first, this model may look scary, but it’s actually quite familiar - we are making predictions about some specific individual’s score on some specific variable (y), but now are using information in multiple variables (X1 and X2) to update our predictions of y. The ’k’s indicate that you can build a model with as many predictors as you want (this will create complications that we’ll talk about later…).</p>
+<p>Below is a model where we predict prestige from both education and job type. Spend a few minutes looking at this output, and see if you can interpret it. (Don’t worry, we’ll get to the NHST stuff later.)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mod4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> education <span class="sc">+</span> type, <span class="at">data =</span> Prestige)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)   education    typeprof      typewc 
+  -2.698159    4.572793    6.142444   -5.458495 </code></pre>
+</div>
+</div>
+<p>Alright, hopefully you felt like a lot of the output from this multivariate linear regression model was somewhat familiar. If not, that’s okay…the good news is that much of this output can be interpreted in the SAME WAY that we interpreted the output from a bivariate relationship.&nbsp;</p>
+<p><strong>Components of the Multivariate Linear Regression</strong></p>
+<p>This more complex model is comprised of the following components :&nbsp;</p>
+<ul>
+<li><p><strong>the intercept :</strong> I say intercept, you say….<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> The intercept in this model describes the predicted prestige for someone with zero years of education, who is NOT a professional, and is NOT a white collar worker - in other words an uneducated blue collar worker. Because no one in the sample actually had less than six years of education, an education of zero does not make sense, which is why the prestige is below zero.</p></li>
+<li><p><strong>the slope of education :</strong> this describes the relationship between education and prestige - for every year of education, we add 4.6 prestige points. Critically, this is the relationship between education and prestige controlling for the effect of job type (the unique effect of education.)</p></li>
+<li><p><strong>the slope of professional :</strong> this coefficient describes the change in our predictions between the reference level (blue collar workers - defined by the intercept) and professionals, controlling for the effect of education (the unique effect of being a professional worker). When accounting for the effect of education in the model, professionals have 6.1 more prestige points than blue collar workers.</p></li>
+<li><p><strong>the slope of white collar :</strong> this coefficient describes the change in our predictions between the reference level (blue collar workers - defined by the intercept) and white collar workers, controlling for the effect of education. When accounting for the effect of education in the model, white collar workers are predicted to have 5.6 less prestige points than blue collar workers.</p></li>
+</ul>
+<p>We can use this model to make predictions for specific individuals : <strong>Ŷ ~ -2.7 + 4.6(Xeducation) + 6.1(Xprof) - 5.5 (Xwc)</strong></p>
+<p><strong>Pop Quiz :</strong> Use this model to calculate the predicted values of Y for….</p>
+<ul>
+<li><p>a blue collar worker with 10 years of education?</p></li>
+<li><p>a white collar worker with 12 years of education?</p></li>
+<li><p>a professional worker with 12 years of education?</p></li>
+</ul>
+<p><strong>Here are the answers.</strong> No peeking!<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<section id="comparing-models-the-regression-table." class="level3">
+<h3 class="anchored" data-anchor-id="comparing-models-the-regression-table.">Comparing Models : The Regression Table.</h3>
+<p>Because your multivariate model will contain two different independent variables, it’s likely that the scale of your two IVs will be different. To assist in comparing the change between models, or comparing the slopes within one multivariate model, it’s important to scale (standardize or z-score) your variables.</p>
+<p>We did this before, when we used the scale function to transform each variable in the model.</p>
+<p>But there’s a better way to do this, AND to export our analyses. All in one handy-dandy table.</p>
+<p>If you are reading this far, go ahead and try a new function - <code>export_summs()</code> from the <code>jtools</code> library. You’ll need to install this new package <code>install.packages("jtools")</code>, and then load this to your library.</p>
+<p>We can use the <code>export_summs()</code> function to export the summary of multiple models, and then ask R to transform both the response (DV) and IVs.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("jtools")</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jtools)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">export_summs</span>(mod1, mod2, mod4, <span class="at">transform.response =</span> T, <span class="at">scale =</span> T, <span class="at">center =</span> T, <span class="at">binary.factors =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  ">
+<colgroup><col><col><col><col></colgroup><tbody><tr>
+<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Model 1</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Model 2</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Model 3</th></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(Intercept)</th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">-0.69 ***</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.00&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">-0.04&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(0.08)&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(0.05)&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(0.12)&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">typeprof</th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1.89 ***</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.36&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(0.13)&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(0.25)&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">typewc</th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.39 **&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">-0.32 *&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(0.14)&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(0.16)&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">education</th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.85 ***</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.74 ***</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(0.05)&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(0.11)&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">N</th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">98&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">102&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">98&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">R2</th><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.70&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.72&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.80&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th colspan="4" style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">All continuous variables are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.001;  ** p &lt; 0.01;  * p &lt; 0.05.</th></tr>
+</tbody></table>
+
+</div>
+</div>
+<p>What’s lovely about this kind of table is we can look across each row, and see how the coefficients for each variable change across our models. Remember - the reason we were doing a multivariate regression is to see how the bivariate relationships between the independent and dependent variables change when you account for redundant covariation.</p>
+</section>
+<section id="types-of-changes-between-the-multivariate-and-bivariate-models" class="level3">
+<h3 class="anchored" data-anchor-id="types-of-changes-between-the-multivariate-and-bivariate-models">Types of Changes Between the Multivariate and Bivariate Models</h3>
+<p>There are three different ways that the relationships can change from the bivariate to multivariate model - I’m simplifying these concepts a bit for the sake of this introductory class. Links to more information if you want to learn more about the precise definition and application of the terms.&nbsp;</p>
+<ol type="1">
+<li><p><strong>Independent Effects :</strong> The relationship between IV1 and the DV <strong>does not substantially change</strong> when IV2 is included in the model. This means that the relationship between IV1 and the DV is not explained by IV2. If your goal is to show that there is a significant relationship between IV1 and the DV, and that relationship does not go away when you include IV2 in your model, then this is what you are hoping to find.</p></li>
+<li><p><strong>Mediation Effects :</strong> The relationship between IV1 and the DV <strong>is weakened (which is called partial mediation) or goes away completely (which is called full mediation)</strong> when IV2 is included in the model. This means that the relationship between IV1 and the DV is dependent on the other variable. <a href="http://davidakenny.net/cm/mediate.htm">You can read more about this here.</a>&nbsp;</p></li>
+<li><p><strong>Suppressor Effect :</strong> The relationship between IV1 and the DV <strong>is strengthened</strong> <strong>(or changes direction)</strong> when IV2 is included in the model. You can <a href="http://stats.stackexchange.com/questions/73869/suppression-effect-in-regression-definition-and-visual-explanation-depiction">read more about this here</a>.&nbsp;</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ACTIVITY : Look over the models. How do the slopes change from Model 1 to Model 3? From Model 2 to Model 3?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The difference (slope) between professionals and blue collar workers that we saw in Model 1 (ß = 1.89) goes down and becomes non-significant (ß = .36; this is called mediation). The the difference (slope) between white collar and blue collar workers in Model 1 (ß = .39) changes in direction in Model 3 to become (ß = -.32; this is called a suppressor effect).</p>
+<p>The effect of education as seen in the bivariate model (Model 2 ß = .85) remains about the same in Model 3 (ß = .74; this is called an independent effect, since the effect of education is not influenced by the addition of job type in the model).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="reasons-why-the-relationship-changes-between-models" class="level3">
+<h3 class="anchored" data-anchor-id="reasons-why-the-relationship-changes-between-models">Reasons Why The Relationship Changes Between Models</h3>
+<p>Remember, there are always two reasons why we’d see a change.</p>
+<ol type="1">
+<li><p>chance : the change in the slope was just due to some kind of sampling error; the difference between the models is really just random chance.</p></li>
+<li><p>some real effect. IV2 really does change the relationship between IV1 and the DV : that is, there is some real relationship between IV2, IV1, and the DV that changes the slopes in your model.</p></li>
+</ol>
+<ul>
+<li>There are various ways to test for whether the change in slopes is large enough to be important / statistically significant. One method is is something called <strong>bootstrapping</strong> - I’ll eventually put this in a supplemental chapter, but the basic idea is that you run a for-loop to resample the data, estimate the slope in a bivariate vs.&nbsp;multivariate model (from a new dataset), and then save the difference in slopes to “bucket” (or whatever you have named the array), and then repeat the process 1000 times. Another method to test for the difference is called the “Sobel Test”; you can read about it <a href="http://quantpsy.org/sobel/sobel.htm">here</a> or <a href="https://en.wikipedia.org/wiki/Sobel_test">here</a> if you want. Or not!</li>
+</ul>
+</section>
+</section>
+<section id="more-practice" class="level2">
+<h2 class="anchored" data-anchor-id="more-practice">More Practice</h2>
+<p>Okay, that was a lot! A few more resources to help and test your understanding.</p>
+<section id="a-multiple-regression-video" class="level3">
+<h3 class="anchored" data-anchor-id="a-multiple-regression-video"><strong>A MULTIPLE REGRESSION VIDEO :</strong></h3>
+<p>Hey, do you like my disembodied voice explaining things on top of an R screenshot? Well good news, in this video I go through another example of multiple regression in R.</p>
+<ul>
+<li><strong>Here’s the R script I used;</strong> the data come from the “hormone” dataset, posted to bCourses.</li>
+</ul>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/IAF8xFoLqEI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="check-in-heres-a-practice-quiz" class="level3">
+<h3 class="anchored" data-anchor-id="check-in-heres-a-practice-quiz"><a href="https://docs.google.com/forms/d/e/1FAIpQLScrzFncwFj8FqUtnFtboJL-oVk927cORWDuEkQVOTYFWhkyrw/viewform?usp=sf_link"><strong>Check-In : Here’s a Practice Quiz</strong></a></h3>
+<p>Use the check-in to practice and prepare for your quiz this week. See the answer key videos below, but try on your own first.</p>
+<ul>
+<li>Professor Does the Check-In (Part 1)</li>
+</ul>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/-Ptge73ZA64" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<ul>
+<li>Professor Does the Check-In (Part 2)</li>
+</ul>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Hy--XyoM5Gw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="check-out" class="level3">
+<h3 class="anchored" data-anchor-id="check-out"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf6cLneQdLKf3iQVOGfXO3TumZIVZKU0eZ18xKetbjMTMdRRw/viewform?usp=sf_link">Check-Out</a></h3>
+<p>how’s it going and what should I focus on for our lecture next week.</p>
+<p>YEAH!</p>
 
 
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>since this is written. har har.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>we’ll talk about this point (an interaction effect) in the next set of lecture notes.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>THE PREDICTED VALUE OF Y WHEN ALL X VALUES ARE ZERO<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>43.3, 47, and 58.6.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
