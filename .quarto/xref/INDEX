@@ -166,5 +166,23 @@
   },
   "chapters/5R_GoodScience.qmd": {
     "5R_GoodScience.html": "cd806bac"
+  },
+  "./chapters/8R_3PlusLevelsExperiments.qmd": {
+    "8R_3PlusLevelsExperiments.html": "8fbfd1bf"
+  },
+  "./chapters/10R_MultipleRegression.qmd": {
+    "10R_MultipleRegression.html": "ad969843"
+  },
+  "./chapters/11R_InteractionFX.qmd": {
+    "11R_InteractionFX.html": "6e8c0a7c"
+  },
+  "chapters/8R_3PlusLevelsExperiments.qmd": {
+    "8R_3PlusLevelsExperiments.html": "8196661f"
+  },
+  "chapters/10R_MultipleRegression.qmd": {
+    "10R_MultipleRegression.html": "90eff4d3"
+  },
+  "chapters/11R_InteractionFX.qmd": {
+    "11R_InteractionFX.html": "8ff0180e"
   }
 }
