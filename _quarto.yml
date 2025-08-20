@@ -8,7 +8,6 @@ book:
   favicon: ./images/open_source_mouse.png
   chapters:
     - index.qmd
-    - ./chapters/0R_About.qmd
     - part: "Describing People"
       chapters: 
         - ./chapters/1R_WhyStats.qmd
