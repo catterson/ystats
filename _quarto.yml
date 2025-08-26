@@ -44,20 +44,22 @@ book:
     alignment: "left"
     subtitle: "Table of Contents"
     logo: ./images/open_source_mouse.png
-    collapse-level: 2
   date: "Spring 2025"
   
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: lux
     toc: true
     toc-depth: 4
     toc-expand: true
     toc-location: left
     toc-title: In This Chapter
     format-links: true
+    number-sections: true
+    reference-location: margin
+    citation-location: margin
   pdf:
     documentclass: scrreprt
     include-in-header: 

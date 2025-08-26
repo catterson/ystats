@@ -2,89 +2,90 @@
 
 In this chapter, you'll learn how psychologists (and scientists) construct and share their knowledge.
 
-# Part 1. Good Science
+# Part 1. Good Science \[moved to chapter 1\]
 
-## The Scientific Method in 5 Easy Steps
+## ~~The Scientific Method in 5 Easy Steps~~
 
-So, you’ve defined a research question you are interested in? Yeah! The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project[^5r_goodscience-1]. There are five parts, described below.
+~~So, you’ve defined a research question you are interested in? Yeah! The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project[^5r_goodscience-1]. There are five parts, described below.~~
 
 [^5r_goodscience-1]:   Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the [American Psychological Association](https://convention.apa.org/) or the [Association of Psychological Science](https://www.psychologicalscience.org/conventions). The [Western Psychological Association](https://westernpsych.org/convention/) has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the [Society of Personality and Social Psychology](http://meeting.spsp.org/)). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.
 
-#### **Step 1 : Identify a Question**
+#### ~~**Step 1 : Identify a Question**~~
 
-First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Chapter 1, we talked about how these questions are often informed by the researcher’s own observations or experiences. 
+~~First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Chapter 1, we talked about how these questions are often informed by the researcher’s own observations or experiences.~~
 
-Still looking for a project topic? A few ideas to consider :
+~~Still looking for a project topic? A few ideas to consider :~~
 
--   **Think about why you become a psychology major.** Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people's lies? Think about these interests, then think about what variables might be relevant. For example, while you won't have access to an fMRI machine (or the required statistics) in order to [reconstruct images people see during their dreams](https://www.youtube.com/watch?v=inaH_i_TjV4), you might study people's beliefs about the importance of their dreams, or the extent to which they have dreams.
+-   ~~**Think about why you become a psychology major.** Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people's lies? Think about these interests, then think about what variables might be relevant. For example, while you won't have access to an fMRI machine (or the required statistics) in order to [reconstruct images people see during their dreams](https://www.youtube.com/watch?v=inaH_i_TjV4), you might study people's beliefs about the importance of their dreams, or the extent to which they have dreams.~~
 
--   **Focus on a problem you've encountered or observed in real-life.** Notice that something in the world could be better? How would you label that as a variable? For example, maybe you want to better understand people's attitudes about capitalism or racism or housing costs.
+-   ~~**Focus on a problem you've encountered or observed in real-life.** Notice that something in the world could be better? How would you label that as a variable? For example, maybe you want to better understand people's attitudes about capitalism or racism or housing costs.~~
 
--   **Look at faculty webpages, and see what they (and / or their graduate students) are studying.** Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question might you study with this project?
+-   ~~**Look at faculty webpages, and see what they (and / or their graduate students) are studying.** Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question might you study with this project?~~
 
--   **Chase the latest trends of today.** What's capitalism care about these days? AI?
+-   ~~**Chase the latest trends of today.** What's capitalism care about these days? AI?~~
 
-But you don't have to take my word for it. [Here's another guide](https://libguides.usc.edu/writingguide/introduction/researchproblem) that might offer some help, or ask for help in the class discord / office hours / lecture!\
+~~But you don't have to take my word for it. [Here's another guide](https://libguides.usc.edu/writingguide/introduction/researchproblem) that might offer some help, or ask for help in the class discord / office hours / lecture!\
+~~
 
-**Step 2 : Develop a Theory**
+~~**Step 2 : Develop a Theory**~~
 
-A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is comprehensive (it relates to all nature, not just plants or animals or finches), it is explanatory (it’s why we and [cats](https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg) both narrow our eyes when we are scared and angry), and it is supported (by over 100 years of evidence[^5r_goodscience-2]). 
+~~A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is comprehensive (it relates to all nature, not just plants or animals or finches), it is explanatory (it’s why we and [cats](https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg) both narrow our eyes when we are scared and angry), and it is supported (by over 100 years of evidence[^5r_goodscience-2]).~~
 
 [^5r_goodscience-2]: [From fossil records to observations of fruit flies and plans](https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01)
 
-**RECAP : Statistical Models as a Question & Theory:**
+~~**RECAP : Statistical Models as a Question & Theory:**~~
 
-As discussed in Lecture 1, a scientific model identifies the variables that a researcher wants to predict (the dependent variable = the focus of the question) and the variables that the researcher thinks will explain the dependent variable (the independent variables). 
+~~As discussed in Lecture 1, a scientific model identifies the variables that a researcher wants to predict (the dependent variable = the focus of the question) and the variables that the researcher thinks will explain the dependent variable (the independent variables).~~
 
-For example, if my question is “What causes rain to fall in the sky?”, then my dependent variable would be listed as **rain** (sometimes it rains; sometimes it does not). If my theory is that it rains because there are dark clouds in the sky, then I would write my model as  : **`rain ~ clouds + error.`**
+~~For example, if my question is “What causes rain to fall in the sky?”, then my dependent variable would be listed as **rain** (sometimes it rains; sometimes it does not). If my theory is that it rains because there are dark clouds in the sky, then I would write my model as  : **`rain ~ clouds + error.`**~~
 
-**Most scientists refrain from saying that a theory is “proven” or “true” for two reasons:**
+~~**Most scientists refrain from saying that a theory is “proven” or “true” for two reasons:**~~
 
-1.  First, the scientific method is a process - our knowledge and ideas are continually updated. So it’s likely that the theory of evolution will be updated as we learn more about the complex ways genes replicate and interact with the environment. Saying that a theory is “proven” is a common mistake - watch out for it! 
+1.  ~~First, the scientific method is a process - our knowledge and ideas are continually updated. So it’s likely that the theory of evolution will be updated as we learn more about the complex ways genes replicate and interact with the environment. Saying that a theory is “proven” is a common mistake - watch out for it!~~
 
-2.  Second, most scientists (and psychologists) draw from Karl Popper’s philosophy of science, which adheres to a requirement for science called **falsifiability -** the ability to find evidence that rejects a theory (“ability to falsify”). This means a theory is never ‘proven’ because scientists are continually looking for evidence to reject the theory. It also means that a belief that cannot be tested or rejected would be rejected as a scientific belief - you have to be able to test your belief in some observable way. Falsifiability is where I think science separates from religious belief - someone with faith doesn’t need evidence, and that’s okay! It just doesn’t make the belief scientific under science’s narrow definition. 
+2.  ~~Second, most scientists (and psychologists) draw from Karl Popper’s philosophy of science, which adheres to a requirement for science called **falsifiability -** the ability to find evidence that rejects a theory (“ability to falsify”). This means a theory is never ‘proven’ because scientists are continually looking for evidence to reject the theory. It also means that a belief that cannot be tested or rejected would be rejected as a scientific belief - you have to be able to test your belief in some observable way. Falsifiability is where I think science separates from religious belief - someone with faith doesn’t need evidence, and that’s okay! It just doesn’t make the belief scientific under science’s narrow definition.~~
 
-**Hypotheses** are specific predictions that researchers make about what they expect to see in the data if their theory is supported or is not supported by data. 
+~~**Hypotheses** are specific predictions that researchers make about what they expect to see in the data if their theory is supported or is not supported by data.~~
 
--   The **alternative hypothesis** (sometimes written **HA**) is the researcher’s own belief. It may seem strange to label your belief “alternative” when this word is used for things that are supposed to be different (“alternative rock = it’s not your parent’s rock & roll!”), and we are so used to thinking that our beliefs are the default that to call them alternative seems wrong. This is an example of previous beliefs bias, and the decision to label our beliefs as the “alternative” is an example of science trying to correct this bias. It’s a small and symbolic correction, but it’s better than nothing.
+-   ~~The **alternative hypothesis** (sometimes written **HA**) is the researcher’s own belief. It may seem strange to label your belief “alternative” when this word is used for things that are supposed to be different (“alternative rock = it’s not your parent’s rock & roll!”), and we are so used to thinking that our beliefs are the default that to call them alternative seems wrong. This is an example of previous beliefs bias, and the decision to label our beliefs as the “alternative” is an example of science trying to correct this bias. It’s a small and symbolic correction, but it’s better than nothing.~~
 
--   The **null hypothesis** (sometimes written **H0**) is the label given for whatever evidence would not support the researcher’s belief.
+-   ~~The **null hypothesis** (sometimes written **H0**) is the label given for whatever evidence would not support the researcher’s belief.~~
 
-**EXAMPLE :** Let’s say you believe that smoking cannabis hurts a person’s memory. What’s the alternative hypothesis? What’s the null?
+~~**EXAMPLE :** Let’s say you believe that smoking cannabis hurts a person’s memory. What’s the alternative hypothesis? What’s the null?~~
 
--   Null Hypothesis : People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna.
+-   ~~Null Hypothesis : People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna.~~
 
--   Alternative Hypothesis : People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.
+-   ~~Alternative Hypothesis : People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.~~
 
--   Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs. non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)
+-   ~~Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs. non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)~~
 
-[**Check-In : Identifying Models, Null, and Alternative Hypotheses.**](https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=sf_link)Let’s review with a quick check-in to practice identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory. As a reminder, check-ins are required, graded for completion, and will be used for you and me to gauge understanding.
+[~~**Check-In : Identifying Models, Null, and Alternative Hypotheses.**~~](https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=sf_link)~~Let’s review with a quick check-in to practice identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory. As a reminder, check-ins are required, graded for completion, and will be used for you and me to gauge understanding.~~
 
-### Step 3 : Collect Data
+### ~~Step 3 : Collect Data~~
 
-As described above, scientific theories are supported by evidence called data. How researchers collect data is something we will discuss in more detail over the next few weeks. In general, researchers have to figure out how to measure the variables they are interested in studying (e.g., “how will I know if someone is happy or not?”), and then find participants (people or animals) to study (e.g., “whose happiness should I study”). 
+~~As described above, scientific theories are supported by evidence called data. How researchers collect data is something we will discuss in more detail over the next few weeks. In general, researchers have to figure out how to measure the variables they are interested in studying (e.g., “how will I know if someone is happy or not?”), and then find participants (people or animals) to study (e.g., “whose happiness should I study”).~~
 
-For example, in our smoking cannabis example the decisions about how to measure memory (a music memory game or a word recognition task?) or how much cannabis (a little or a lot?) or who to study (Berkeley students or your grandparents?) in the study would likely influence the results.
+~~For example, in our smoking cannabis example the decisions about how to measure memory (a music memory game or a word recognition task?) or how much cannabis (a little or a lot?) or who to study (Berkeley students or your grandparents?) in the study would likely influence the results.~~
 
-The decisions that researchers make about how to define their measures and the participants they will study are very important, and will influence the results of the study (and thus our knowledge of the topic), so stay tuned for more discussion!
+~~The decisions that researchers make about how to define their measures and the participants they will study are very important, and will influence the results of the study (and thus our knowledge of the topic), so stay tuned for more discussion!~~
 
-### Step 4 : Use Data to Test Theories
+### ~~Step 4 : Use Data to Test Theories~~
 
-Finally, researchers look to see if the data they collected supports or rejects their theory (and evaluate how strongly their theory is supported or rejected). We'll talk much more about using data to test theories this semester.
+~~Finally, researchers look to see if the data they collected supports or rejects their theory (and evaluate how strongly their theory is supported or rejected). We'll talk much more about using data to test theories this semester.~~
 
-In our smoking cannabis example, the researcher would look to see which group did better on the memory test, and if the smokers did worse, then their theory would be supported (by this one study, at least).
+~~In our smoking cannabis example, the researcher would look to see which group did better on the memory test, and if the smokers did worse, then their theory would be supported (by this one study, at least).~~
 
-### Step 5 : Repeat
+### ~~Step 5 : Repeat~~
 
-Once a study is completed, researchers repeat the scientific method in two different ways.
+~~Once a study is completed, researchers repeat the scientific method in two different ways.~~
 
-Researchers will sometimes repeat the exact same steps a second time - something called **replication**. Replication is critical to science.
+~~Researchers will sometimes repeat the exact same steps a second time - something called **replication**. Replication is critical to science.~~
 
-Scientists also repeat the scientific method with a new question that is based on the results from their first study. Science is a process, and researchers are never done learning about how to better predict & control the world. There’s always more research to do. For example, after identifying a pattern between smoking cannabis and memory, a researcher might ask whether the type or dosage of cannabis intake would influence memory, whether abstinence could reverse the effects of memory impairment, or whether cannabis and coffee together might lead to a different result. Note that this is not an example of replication, since researchers are not testing the same question they had - but it’s repeating the scientific method for a new question inspired by the old. This is good, and part of scientific progress. But the problem is that the incentives for scientific publication focused almost entirely on “new” research, and not really making sure that the “old” research was valid.
+~~Scientists also repeat the scientific method with a new question that is based on the results from their first study. Science is a process, and researchers are never done learning about how to better predict & control the world. There’s always more research to do. For example, after identifying a pattern between smoking cannabis and memory, a researcher might ask whether the type or dosage of cannabis intake would influence memory, whether abstinence could reverse the effects of memory impairment, or whether cannabis and coffee together might lead to a different result. Note that this is not an example of replication, since researchers are not testing the same question they had - but it’s repeating the scientific method for a new question inspired by the old. This is good, and part of scientific progress. But the problem is that the incentives for scientific publication focused almost entirely on “new” research, and not really making sure that the “old” research was valid.~~
 
-### It's Never Actually Easy
+### ~~It's Never Actually Easy~~
 
-Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a [Replication Crisis](https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics). This crisis is two-fold a) researchers tend not to seek to replicate their (or others’) results, and b) systematic attempts to do so have suggested that the majority of results in psychology do not replicate[^5r_goodscience-3].
+~~Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a [Replication Crisis](https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics). This crisis is two-fold a) researchers tend not to seek to replicate their (or others’) results, and b) systematic attempts to do so have suggested that the majority of results in psychology do not replicate[^5r_goodscience-3].~~
 
 [^5r_goodscience-3]: You can go deeper into some of the drama surrounding the replication project [here](#0). lemme know what you think on the discord thread for this week.
 
@@ -119,14 +120,19 @@ Watch the video below to go over some possible answers, or just look over the ta
 
 {{< video https://youtu.be/T9dTk6Sa434 >}}
 
-|  |  |
-|----|----|
-| **face :** does our measure or result look like what it should look like? | **high :** I have a sense of what my weight should be (e.g, if it says 10 or 1000 i know either the units are wrong or scale is broken.) |
-| **convergent :** is our measure similar to related concepts? | **high :** my weight according to the scale is (somewhat) related to how much I stress eat, how little I exercise, my parents’ weight, etc. |
-| **discriminant :** is our measure different from unrelated concepts? | **high :** my weight is unrelated to intelligence, how much I love R, whether I wear sandals with or without socks, etc. |
-| **test-retest :** do we get the same result if we take multiple measures? | **high :** If I step on the scale and get a number, I should be able to step off the scale, step on again, and get the same number. |
-| **interrater reliability :** would another observer make the same measurements? | **high :** a different scale (same model and technology) should give me the same result as my scale. |
-| **inter-item reliability :** would one item in the likert scale be related to others? | **not relevant.** a bathroom scale is not a likert scale. |
++---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| **face :** does our measure or result look like what it should look like?             | **high :** I have a sense of what my weight should be (e.g, if it says 10 or 1000 i know either the units are wrong or scale is broken.)    |
++---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| **convergent :** is our measure similar to related concepts?                          | **high :** my weight according to the scale is (somewhat) related to how much I stress eat, how little I exercise, my parents’ weight, etc. |
++---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| **discriminant :** is our measure different from unrelated concepts?                  | **high :** my weight is unrelated to intelligence, how much I love R, whether I wear sandals with or without socks, etc.                    |
++---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| **test-retest :** do we get the same result if we take multiple measures?             | **high :** If I step on the scale and get a number, I should be able to step off the scale, step on again, and get the same number.         |
++---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| **interrater reliability :** would another observer make the same measurements?       | **high :** a different scale (same model and technology) should give me the same result as my scale.                                        |
++---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| **inter-item reliability :** would one item in the likert scale be related to others? | **not relevant.** a bathroom scale is not a likert scale.                                                                                   |
++---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 :::
 
 ## Bad Data : Phrenology in terms of Validity and Reliability
@@ -263,13 +269,17 @@ Well, below are a few other ideas to make superficial , all depending on our goo
 
 2.  **The Impact Factor of the Journal.** Journals have different “prestige factors”, and the impact factor is one way to quantify this prestige. Impact factor is usually defined as the number of times the average article in a journal has been referenced by other researchers in a year. So an impact factor of 2 means that each article in that journal is referenced by two other articles in a year. The impact factor is something you have to look up - journals usually track this. I wouldn’t spend too much time worrying about it, but it’s a quick way to get a very superficial sense of the journal’s reputation. For example, let’s see how the impact factor relates to our rule of “broader journal name = more prestige”.
 
-|  |  |
-|----|----|
-| **Journal** | **Impact Factor According to Google in 2024** |
-| Journal of Research in Personality | 2.6 |
-| Journal of Personality and Social Psychology | 6.4 |
-| Psychological Science | 10.1 \[couldn’t find a recent stat on this tho\] |
-| Science | 44.7 \[this escalated quickly\] |
++----------------------------------------------+--------------------------------------------------+
+| **Journal**                                  | **Impact Factor According to Google in 2024**    |
++----------------------------------------------+--------------------------------------------------+
+| Journal of Research in Personality           | 2.6                                              |
++----------------------------------------------+--------------------------------------------------+
+| Journal of Personality and Social Psychology | 6.4                                              |
++----------------------------------------------+--------------------------------------------------+
+| Psychological Science                        | 10.1 \[couldn’t find a recent stat on this tho\] |
++----------------------------------------------+--------------------------------------------------+
+| Science                                      | 44.7 \[this escalated quickly\]                  |
++----------------------------------------------+--------------------------------------------------+
 
 3.  **The Researcher and Institution.** Another way to evaluate an article is by evaluating the author. Does it look like this research has produced other cool research, or do you find their work boring and problematic for some reason? Is this researcher well known and respected in the field? Do they seem to have a happy photo with all their graduate students on their lab website, or is their lab website 10 years old and just has one sad looking graduate student asking for help with their eyes? Has the researcher continued to produce interesting, reliable research? Or were they the subject of a replication scandal?
 

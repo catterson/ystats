@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Why Statistics?</title>
+<title>Chapter 1 | Why? – Why Statistics?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,17 +31,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chapters/2R_Data.html" rel="next">
-<link href="../chapters/0R_About.html" rel="prev">
+<link href="../index.html" rel="prev">
 <link href=".././images/open_source_mouse.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d69c144a735e15f5be1766bedc050848.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,10 +70,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -113,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapter 1 | Why?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -133,13 +162,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/0R_About.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Hello!</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -154,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/1R_WhyStats.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapter 1 | Why?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -195,19 +218,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/6R_LinearModels.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Continuous IVs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Linear Model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/7R_CategoricalIV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Categorical IVs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model Pt 2: Categorical IVs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/8R_Assumptions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Assumptions and Extensions</span></span></a>
+  <a href="../chapters/8R_3PlusLevelsExperiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">More Levels and Experiments</span></span></a>
   </div>
 </li>
       </ul>
@@ -229,14 +252,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/10R_NHSTPower.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Null Hypothesis Significance Testing and Power</span></span></a>
+  <a href="../chapters/10R_MultipleRegression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multiple Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/11R_MultipleRegression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Multiple Regression</span></span></a>
+  <a href="../chapters/11R_InteractionFX.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interaction Effects</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -272,32 +295,27 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
-  <li><a href="#chapter-1" id="toc-chapter-1" class="nav-link active" data-scroll-target="#chapter-1">Chapter 1</a>
+  <li><a href="#part-1-why-statistics-in-psychology" id="toc-part-1-why-statistics-in-psychology" class="nav-link active" data-scroll-target="#part-1-why-statistics-in-psychology">Part 1 : Why Statistics in Psychology?</a>
   <ul>
-  <li><a href="#why-statistics-in-psychology" id="toc-why-statistics-in-psychology" class="nav-link" data-scroll-target="#why-statistics-in-psychology">Why Statistics in Psychology?</a>
-  <ul class="collapse">
   <li><a href="#statistics-as-a-language" id="toc-statistics-as-a-language" class="nav-link" data-scroll-target="#statistics-as-a-language">Statistics as a Language</a>
   <ul class="collapse">
   <li><a href="#variables-and-variation" id="toc-variables-and-variation" class="nav-link" data-scroll-target="#variables-and-variation">Variables and Variation</a></li>
   <li><a href="#practice-variables-and-variation" id="toc-practice-variables-and-variation" class="nav-link" data-scroll-target="#practice-variables-and-variation">Practice : Variables and Variation</a></li>
   <li><a href="#language-is-more-than-vocabulary" id="toc-language-is-more-than-vocabulary" class="nav-link" data-scroll-target="#language-is-more-than-vocabulary">Language is More than Vocabulary</a></li>
-  </ul></li>
   <li><a href="#culture-in-statistics-me-search" id="toc-culture-in-statistics-me-search" class="nav-link" data-scroll-target="#culture-in-statistics-me-search">Culture in Statistics : Me-Search</a></li>
   </ul></li>
   <li><a href="#psychology-as-a-real-science" id="toc-psychology-as-a-real-science" class="nav-link" data-scroll-target="#psychology-as-a-real-science">Psychology as a REAL SCIENCE ™</a>
   <ul class="collapse">
   <li><a href="#what-is-science-prediction-and-error" id="toc-what-is-science-prediction-and-error" class="nav-link" data-scroll-target="#what-is-science-prediction-and-error">What is Science? Prediction (and Error)</a></li>
+  <li><a href="#linear-models-to-organize-our-predictions" id="toc-linear-models-to-organize-our-predictions" class="nav-link" data-scroll-target="#linear-models-to-organize-our-predictions">Linear Models to Organize Our Predictions</a></li>
   </ul></li>
-  <li><a href="#why-r" id="toc-why-r" class="nav-link" data-scroll-target="#why-r">Why R?</a>
-  <ul class="collapse">
+  </ul></li>
+  <li><a href="#part-2-why-r" id="toc-part-2-why-r" class="nav-link" data-scroll-target="#part-2-why-r">Part 2 : Why R?</a>
+  <ul>
   <li><a href="#installing-r" id="toc-installing-r" class="nav-link" data-scroll-target="#installing-r">Installing R</a></li>
   <li><a href="#navigating-r" id="toc-navigating-r" class="nav-link" data-scroll-target="#navigating-r">Navigating R</a>
   <ul class="collapse">
@@ -305,18 +323,29 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#video-navigating-rstudio" id="toc-video-navigating-rstudio" class="nav-link" data-scroll-target="#video-navigating-rstudio">VIDEO : Navigating RStudio</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#part-3-how-science-the-scientific-method-in-five-easy-steps" id="toc-part-3-how-science-the-scientific-method-in-five-easy-steps" class="nav-link" data-scroll-target="#part-3-how-science-the-scientific-method-in-five-easy-steps">Part 3 : How Science? The Scientific Method in Five Easy Steps</a>
+  <ul>
+  <li><a href="#step-1-identify-a-question" id="toc-step-1-identify-a-question" class="nav-link" data-scroll-target="#step-1-identify-a-question"><strong>Step 1 : Identify a Question</strong></a></li>
+  <li><a href="#step-2-develop-a-theory" id="toc-step-2-develop-a-theory" class="nav-link" data-scroll-target="#step-2-develop-a-theory"><strong>Step 2 : Develop a Theory</strong></a></li>
+  <li><a href="#step-3-collect-data" id="toc-step-3-collect-data" class="nav-link" data-scroll-target="#step-3-collect-data">Step 3 : Collect Data</a></li>
+  <li><a href="#step-4-use-data-to-test-theories" id="toc-step-4-use-data-to-test-theories" class="nav-link" data-scroll-target="#step-4-use-data-to-test-theories">Step 4 : Use Data to Test Theories</a></li>
+  <li><a href="#step-5-repeat" id="toc-step-5-repeat" class="nav-link" data-scroll-target="#step-5-repeat">Step 5 : Repeat</a></li>
+  <li><a href="#its-never-actually-easy" id="toc-its-never-actually-easy" class="nav-link" data-scroll-target="#its-never-actually-easy">It’s Never Actually Easy</a></li>
   </ul></li>
-  <li><a href="#quiz-1" id="toc-quiz-1" class="nav-link" data-scroll-target="#quiz-1">Quiz 1</a></li>
   <li><a href="#in-lecture." id="toc-in-lecture." class="nav-link" data-scroll-target="#in-lecture.">In Lecture.</a></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapter 1 | Why?</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Why Statistics?</h1>
+<h1 class="title">Chapter 1 | Why?</h1>
 </div>
 
 
@@ -333,33 +362,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this week’s reading, you’ll learn why psychology students like you are required to take this course - a statistics class, a research methods class, and an R programming class.</p>
+<p>In this week’s reading, you’ll learn why students like you are required to learn the statistics, programming language, and research methods required of modern psychology.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-To-Do List (due before our first lecture):
+To-Do List (due before our next lecture)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
 <li><p>Read this document and watch the videos.</p></li>
-<li><p>Download R and RStudio [two separate programs - see links below] or set up a free account with <a href="posit.cloud">posit.cloud</a></p></li>
-<li><p>Complete the on-boarding survey and save the special code you receive at the end.</p></li>
-<li><p>Take Quiz 1 (on bCourses) and submit the special code for the last question.</p></li>
+<li><p>Download R and RStudio (two separate programs) or set up a free account with <a href="posit.cloud">posit.cloud</a></p></li>
+<li><p>Take Quiz 1 (on our course page).</p></li>
 </ul>
 </div>
 </div>
-<section id="chapter-1" class="level1">
-<h1>Chapter 1</h1>
-<section id="why-statistics-in-psychology" class="level2">
-<h2 class="anchored" data-anchor-id="why-statistics-in-psychology">Why Statistics in Psychology?</h2>
-<p>As y’all know, this class is a requirement for students who want to be psychology majors. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder <em>why-the-flip</em> they are required to take a math class when all they just want to learn about people (or other non-human animals), ya know!??!</p>
+<section id="part-1-why-statistics-in-psychology" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="part-1-why-statistics-in-psychology">Part 1 : Why Statistics in Psychology?</h2>
+<p>As y’all know, this class is a requirement for students who want to be psychology majors. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder <em>why-the-f*%@</em> they are required to take a math class when all they just want to learn about people (or other non-human animals), ya know!??!</p>
 <p>I agree that people (or non-human animals) are interesting. And we all have this interest in people (or non-human animals) because we are complex<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. While people are similar in many ways, we also differ in radical ways; from superficial features like age and race, to more complex ways like our personality or emotions, to highly specific behaviors such as whether all students in the class are reading these words or not, or how bored or excited (or any emotional experience) students are while reading these words.</p>
-<p>I hope that you have an interest in people (or non-human animals), and that this class helps you learn how to think about those interests through a psychological, and statistical lens. You don’t always need this lens - and as we will discuss there can sometimes be dangers in viewing people through this lens - but it’s useful to be able to wear these “glasses” when needed.</p>
-<section id="statistics-as-a-language" class="level3">
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;&nbsp;One of the reasons I love teaching in the Bay Area is y’all are hella complex.</p></div></div><p>I hope that you have an interest in people (or non-human animals), and that this class helps you learn how to think about those interests through a psychological, and statistical lens. You don’t always need this lens - and as we will discuss there can sometimes be dangers in viewing people through this lens - but it’s useful to be able to wear these “glasses” when needed.</p>
+<section id="statistics-as-a-language" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="statistics-as-a-language">Statistics as a Language</h3>
 <p>Statistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand differences in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.</p>
 <section id="variables-and-variation" class="level4">
@@ -396,13 +422,13 @@ To-Do List (due before our first lecture):
 </ul>
 <p>These are not rigid categories, and psychologists often debate the definitions of these terms. But they can be useful ways to think about how to think about people, and help break down a complex phenomenon into more specific components.</p>
 </section>
-<section id="practice-variables-and-variation" class="level4">
+<section id="practice-variables-and-variation" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="practice-variables-and-variation">Practice : Variables and Variation</h4>
-<p>For example, think about how affect, behavior, and cognition might be relevant if I ask you to think about an upcoming exam (your first exam is in just a few weeks!)&nbsp;</p>
+<p>For example, think about how affect, behavior, and cognition might be relevant if I ask you to think about an upcoming exam (your first exam is in just a few weeks!)</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 8%">
+<col style="width: 92%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -423,9 +449,9 @@ To-Do List (due before our first lecture):
 </tr>
 </tbody>
 </table>
-<p><em>(Here’s <a href="https://www.youtube.com/watch?v=Am3NVGP9rkQ">a cat video</a> I like for students needing a distraction from thinking about exams. I promise your exams in this class will be chill and I’ll do my best to prepare y’all.)</em></p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Here’s <a href="https://www.youtube.com/watch?v=Am3NVGP9rkQ">a cat video</a> I like for students needing a distraction from thinking about exams. I promise your exams in this class will be chill and I’ll do my best to prepare y’all.</span></div></div>
 </section>
-<section id="language-is-more-than-vocabulary" class="level4">
+<section id="language-is-more-than-vocabulary" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="language-is-more-than-vocabulary">Language is More than Vocabulary</h4>
 <p>Statistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand variation in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.</p>
 <ul>
@@ -434,23 +460,14 @@ To-Do List (due before our first lecture):
 <li><p><strong>Cultural Immersion.</strong> A good language class will also help students to understand the ways that the language is connected to people, places, and history<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. In this class, we’ll think about the ways we can immerse ourselves in the culture of statistics and research methods, from the cultural practices that inform which methods or tools to use, to the ways that the culture of statistics and research might needlessly create barriers for certain types of people or studies.</p></li>
 <li><p><strong>Practice and Past Experiences.</strong> And yes, in order to gain fluency in a language, you need to practice! Attendance and regular engagement with this class will ensure that you are able to get the practice that you need. It’s also good to note that people differ in terms of their past experiences with computers and math, and are bringing those experiences (for better or worse) with them into this class.</p></li>
 </ul>
-</section>
-</section>
-<section id="culture-in-statistics-me-search" class="level3">
-<h3 class="anchored" data-anchor-id="culture-in-statistics-me-search">Culture in Statistics : Me-Search</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><img src="../images/doff_intro_mickey.png" class="img-fluid" width="156"></td>
-<td>Hiya folks! Everyone’s favorite Open-Source Mickey Mouse here. I’ll be popping up in the book from time to time to critically engage with the idea that statistics has a culture that is socially constructed by people like you!</td>
-</tr>
-</tbody>
-</table>
-<p>All psychologists are interested in questions sparked by their own observations or experiences. This is sometimes called “<strong>me-search</strong>” - the idea that a person’s research interests reflect their own experience.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;And usually food, though I’m not sure if there’s cultural food norms about statistics or research methods.</p></div></div></section>
+<section id="culture-in-statistics-me-search" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="culture-in-statistics-me-search">Culture in Statistics : Me-Search</h4>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="smallcaps">Hiya folks! Everyone’s favorite Open-Source Mickey Mouse here. I’ll be popping up in the book from time to time to critically engage with the idea that statistics has a culture that is socially constructed by people like you!</span></p>
+<p><img src="../images/doff_intro_mickey.png" class="img-fluid" width="156"></p>
+</div></div><p>All psychologists are interested in questions sparked by their own observations or experiences. This is sometimes called “<strong>me-search</strong>” - the idea that a person’s research interests reflect their own experience.</p>
 <p>Me-search can be an important way for researchers to use their statistics and research methods training to address questions and issues that are relevant to their lives and communities.</p>
 <p>Below are a few examples of research questions that are related to a person’s real-life experiences.</p>
 <table class="caption-top table">
@@ -469,11 +486,11 @@ To-Do List (due before our first lecture):
 </tr>
 </tbody>
 </table>
-<p>However, me-search also serves as a form of potential bias in research - not only will a researcher’s own biases and beliefs influence the way they conduct research, but the types of questions that are asked will be influenced by the types of people doing research.</p>
-<p>For example, a survey of over 26,000 research articles in psychology documented just how rarely the topic of race is studied in psychology (see figure below).</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;This happened to <a href="https://plato.stanford.edu/entries/fechner/">Gustav Fechner</a>, one of the early psychologists who pioneered the study of psychophysics, which tested theories that our perceptions do not always match reality (seen in many examples, such as <a href="https://www.rit.edu/news/color-scientists-explain-dress-went-viral">the dress</a>). FWIW I see it as blue and black.</p></div><div id="fn4"><p><sup>4</sup>&nbsp;This anecdote (<a href="https://www.npr.org/2010/04/12/125859207/whistling-vivaldi-and-beating-stereotypes">as reported here</a>) inspired Claude Steele’s research on <a href="https://en.wikipedia.org/wiki/Stereotype_threat">stereotype threat</a>.</p></div></div><p>Me-search also serves as a form of potential bias in research - not only will a researcher’s own biases and beliefs influence the way they conduct research, but the types of questions that are asked will be influenced by the types of people doing research.</p>
+<p>For example, a survey of over 26,000 research articles in psychology documented just how rarely the topic of race is studied in psychology.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/1_RaceResearch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="a graph that illustrates how much research on race is published in three different types of psychology journals. the proportion of publications on the y-axis, and the decade on the x-axis. the graph shows that over time, the percentage of publications that highlight race has stayed at zero for cognitive psychology, slightly increased from around 5% for developmental and social psychology (in the 1970s) to 10% for developmental psychology in the 2010s and 8% in social psychology in the 2010s." width="587"></p>
+<p><img src="../images/1_RaceResearch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="a graph that illustrates how much research on race is published in three different types of psychology journals. the proportion of publications on the y-axis, and the decade on the x-axis. the graph shows that over time, the percentage of publications that highlight race has stayed at zero for cognitive psychology, slightly increased from around 5% for developmental and social psychology (in the 1970s) to 10% for developmental psychology in the 2010s and 8% in social psychology in the 2010s." width="475"></p>
 </figure>
 </div>
 <p>As we’ll discuss throughout this class, life is complex and there is never one explanation for any phenomenon. However, it’s important to note that psychology as a field has historically been dominated by white authors (researchers who write scientific papers) and white editors (researchers who decide what papers get published or not).</p>
@@ -484,11 +501,11 @@ To-Do List (due before our first lecture):
 </div>
 <p>These trends are important to reflect on, because they reveal a bias in who becomes a psychologist, and what types of questions these researchers are interested in pursuing.</p>
 <p>It’s also a goal of this class to not only highlight the important contributions of non-white researchers and statisticians, but also make sure that all students in this diverse classroom feels empowered to use statistics, research methods, and R skills to ask (and answer) research questions that matter to them!<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;This is the purpose of your final project! We’ll talk more about this throughout the class.</p></div></div></section>
 </section>
-</section>
-<section id="psychology-as-a-real-science" class="level2">
-<h2 class="anchored" data-anchor-id="psychology-as-a-real-science">Psychology as a REAL SCIENCE ™</h2>
-<p>Psychology desperately wants to establish itself as a real science, like physics and chemistry. You don’t have to take my word for it, just look at the definitions of some common sources of psychological knowledge - introductory textbooks :&nbsp;&nbsp;</p>
+<section id="psychology-as-a-real-science" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="psychology-as-a-real-science">Psychology as a REAL SCIENCE ™</h3>
+<p>Psychology uses statistics because, in part, it wants to establish itself as a real science, like physics and chemistry. You don’t have to take my word for it, just look at the definitions of some common sources of psychological knowledge - introductory textbooks:</p>
 <ul>
 <li><p>“Today, we define psychology as the science of behavior and mental processes.” (Myers, 2011)</p></li>
 <li><p>“…the science of behavior and the mind.” (Grey, 2010)</p></li>
@@ -496,12 +513,11 @@ To-Do List (due before our first lecture):
 <li><p>“…We now define psychology as the science of behavior and mental processes.” (Myers &amp; DeWall, 2018)</p></li>
 </ul>
 <p>I’m probably showing my age looking to textbooks, so let’s check in with ChatGPT<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> to see whether the algorithmic summary of large piles of data suggests that psychology is, in fact, a “real science” :&nbsp;</p>
-<p><img src="../images/1_psychsci_chatGPT_def.png" class="img-fluid" width="475"><br>
-</p>
-<p>Perhaps more authoritatively, the American Psychological Association (APA) confirms that psychology is, “the study of the mind and behavior…a diverse scientific discipline comprising several major branches of research.” (APA, 2024).&nbsp;</p>
-<p>The consistent emphasis on science (and “rigorous” methods!) in these definitions is an attempt to elevate psychology to the status of other “hard” sciences, like physics and chemistry. But inclusion of the term “science” also seeks to differentiate psychology from its less scientific heritage and past, defend itself from accusations from other scientists / talking heads (if not some of your friends in STEM majors…or parents) that it is not actually REAL SCIENCE ™.&nbsp;</p>
-<section id="what-is-science-prediction-and-error" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-science-prediction-and-error">What is Science? Prediction (and Error)</h3>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;See the syllabus for the course ChatGPT policy. You may also be interested to read on the ethical and <a href="https://bsj.studentorg.berkeley.edu/the-new-dimension-to-the-climate-crisis-chat-gpt/">environmental issues</a> surrounding this emerging technology.</p></div></div><p><img src="../images/1_psychsci_chatGPT_def.png" class="img-fluid" width="475"></p>
+<p>Perhaps more authoritatively, the American Psychological Association (APA) confirms that psychology is, “the study of the mind and behavior…a diverse scientific discipline comprising several major branches of research.” (APA, 2024).</p>
+<p>The consistent emphasis on science (and “rigorous” methods!) in these definitions is an attempt to elevate psychology through language to the status of other “hard” sciences, like physics and chemistry. But inclusion of the term “science” also seeks to differentiate psychology from its less scientific heritage and past, defend itself from accusations from other scientists / talking heads (if not some of your friends in STEM majors…or parents) that it is not actually REAL SCIENCE ™.&nbsp;</p>
+<section id="what-is-science-prediction-and-error" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="what-is-science-prediction-and-error">What is Science? Prediction (and Error)</h4>
 <p>One of the most important goals of science is to form <strong>predictions</strong>, and then use these predictions in order to influence outcomes (a form of <strong>power</strong>).</p>
 <p>A <strong>prediction</strong> is an educated guess you have about the future. Educated means that the guess comes from some knowledge (either your experiences, beliefs, something you learned in a textbook, or the results of a scientific study). A prediction can have two outcomes :</p>
 <ul>
@@ -520,15 +536,80 @@ To-Do List (due before our first lecture):
 </tr>
 </tbody>
 </table>
-<p>For our first lecture, start thinking of some predictions that you have made today. What knowledge informed the prediction. Did you use this prediction to influence your future behavior in some way? What kinds of predictions do psychologists make? We will chat more about these ideas in class :) but it’s a core focus on why psychologists use predictions.</p>
-<p>And so, here we are. In this document, in this required class for the psychology major, learning how to DO REAL SCIENCE. With statistics. So Oh yeah, and we’ll also be learning to use this computer programming language called R <a href="https://emojipedia.org/smiling-face-with-horns">😈</a></p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;You can see when scientists predict Halley’s comet to come closest to earth <a href="https://theskylive.com/halley-tracker">here</a>. While this is fairly accurate, I’ve seen the exact prediction change over the years - there is still some error in this prediction.</p></div></div><p>As another example, on the day I’m writing these words, I do not predict that it will rain outside. I am making this prediction based on the following information :</p>
+<ul>
+<li><p>it did not rain yesterday</p></li>
+<li><p>it is not currently raining</p></li>
+<li><p>I live in Oakland, where it rarely rains in August.</p></li>
+<li><p>the air doesn’t have that feeling of rain; that smell.</p></li>
+<li><p>I looked at the weather forecast app and it said we had a week of sunny weather ahead.</p></li>
+<li><p>Nobody was carrying an umbrella today.</p></li>
+<li><p>there are no clouds.</p></li>
+</ul>
+<p>Because I predict it will not rain, I’m not too worried that the tarp is not covering my bike locked outside. Of course, my prediction could be wrong.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="images/1_puffinrain.png" class="img-fluid quarto-figure quarto-figure-center"> It sometimes rains when sunny, as on Puffin Rock, where we’ll be here come rain or shine.</p>
+</div></div><p>For our first lecture, start thinking of some predictions that you have made. What knowledge informed the prediction? Did you use this prediction to influence your future behavior in some way? What kinds of predictions do psychologists make? We will chat more about these ideas in class :) but it’s a core focus on why psychologists use predictions.</p>
+<p>And so, here we are. In this document, in this required class for the psychology major, learning how to DO REAL SCIENCE. With statistics.</p>
+</section>
+<section id="linear-models-to-organize-our-predictions" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="linear-models-to-organize-our-predictions">Linear Models to Organize Our Predictions</h4>
+<p>The linear model a simple formula that helps researchers to make, and quantify, their predictions. We will talk much more about linear models in our class - they are one of the most important concepts we will cover and a foundation of modern statistics - but for now let’s just focus on the basics :</p>
+<p>A linear model takes the following form: <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;I can already feel some of y’alls math anxiety rising across time and space. But remember, stats is just a language with some vocabulary we need to learn.</p></div></div><p><span class="math display">\[
+DV \sim IV_1 + IV_2 + ... + IV_k + \epsilon
+\]</span></p>
+<p>Below is a description of terms in the model :</p>
+<ul>
+<li><p><strong>DV = dependent variable.</strong> This is the variable that you want to predict. It’s up to the researcher what variable is the dependent variable. More complicated models can have more than one DV, but for this class we will just focus on one DV at a time.</p></li>
+<li><p><strong>IV = independent variable.</strong> This is a different variable that you think will help you make predictions. Again, it’s up to the researcher to choose what variables they will include to try and make predictions of the DV.</p></li>
+<li><p><strong>k = any number.</strong> This is a way of saying that there can be many IVs. Life is complex, and so in order to predict one variable, we will need to use information from lots of other variables.</p></li>
+<li><p><strong>~ = a squiggly line / tilde.</strong> I like to use the squiggly line to reinforce the idea that our model is uncertain and squiggly (this is not an exact prediction where an equal sign would be used). R also uses the tilde for defining a model, so it’s nice to start practicing stretching our pinkie finger to reach that upper left corner of the keyboard.</p></li>
+<li><p><span class="math inline">\(\epsilon\)</span> <strong>= error =</strong> this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven’t included certain variables that are important to make predictions (either because we can’t measure them in our study, don’t think they are important enough to study, or don’t know that we should study them), or because we are measuring our variables with some amount of error<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>.</p></li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;We will learn more about <em>measurement error</em> in Chapter 4.</p></div></div><p>For example, I could write out my prediction about rain as the following linear model :</p>
+<ul>
+<li>rain ~ clouds + umbrellas + weather app status + smell + air pressure + season + location + temperature + error</li>
+</ul>
+<p>We read a model as : “the DV is a function of…” or sometimes “the DV depends on…”. So I’d read this model as “rain is a function of clouds, umbrellas, the weather app status…etc.” And it’s good practice to leave the variables neutral (e.g., just “clouds”, not “storm clouds”).<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Later we will talk about ways to account for the fact that more umbrellas increases the chance it will rain in our model.</p></div></div><p>Error in this model would represent the fact that I haven’t accounted for some important variables that we know we should include (like humidity, coastal pressure systems, or palnetary waves), the fact that some of my variables were probably measured with error (was no one <em>really</em> carrying an umbrella???), and the fact that there are some things that we don’t know about rain, and what predicts it (this is what weather scientists are trying to learn more about.)</p>
+<p>Once we add numbers and data to a linear model<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>, we can quickly see :</p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;We will get to this in Chapter 6!</p></div></div><ul>
+<li><p>which variables allow us to make the best predictions, and which variables do not improve our predictions (e.g., is the number of umbrellas others are carrying a good predictor of whether it’s going to rain or not?)</p></li>
+<li><p>the direction of the relationship between each IV and the DV (e.g., is it that more umbrellas = more rain, or more umbrellas = less rain?)</p></li>
+<li><p>the amount of error in our predictions (e.g., how good, exactly, is this model at predicting the rain?)</p></li>
+</ul>
+<section id="practice-writing-a-model" class="level5">
+<h5 class="anchored" data-anchor-id="practice-writing-a-model">Practice Writing A Model</h5>
+<p>Imagine a researcher wants to better understand why people differ in happiness, and believes that playing music, drinking more water, and eating ice cream sandwiches are important factors to consider. How would you write this out as a linear model?</p>
+<p>Click below to see the answer.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Practice Writing A Model
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>happiness ~ music playing + water intake + ice cream consumption + error</p>
+<p>For this model, note that I’ve organized the focus of the researcher’s question on the left-hand side of the equation; listed the three other variables to the right (and tried to be neutral about how I describe them (e.g., not “drinking more water”); included error at the end of my model to account for the fact that some people who play music, drink water, and eat ice cream are, in fact, not happy. I also didn’t add other varibles that might be related to happiness, since these were not part of the researcher’s statement.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="why-r" class="level2">
-<h2 class="anchored" data-anchor-id="why-r">Why R?</h2>
-<p>This semester, we will also learn how to use the computer programming language R to work with data, conduct analyses, and make graphs. R can be intimidating to work with at first, and is more confusing than it needs to be sometimes (as you’ll quickly find out haha), but I promise you will learn! In fact, that’s the point of this class. It’s totally okay (and expected) for you to feel frustrated at times; this is part of the learning process. So please embrace the “I HAVE NO IDEA WHAT I’M DOING” dog meme energy (and look how happy the doggy looks!) as you embark on your R journey.<br>
+</section>
+</section>
+<section id="part-2-why-r" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="part-2-why-r">Part 2 : Why R?</h2>
+<p>This semester, we will also learn how to use the computer programming language R to work with data, conduct analyses, and make graphs. R can be intimidating to work with at first, and is more confusing than it needs to be sometimes (as you’ll quickly find out…), but I promise you will learn!<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> It’s totally okay (and expected) for you to feel frustrated at times; this is part of the learning process. So please embrace the “I HAVE NO IDEA WHAT I’M DOING” dog meme energy (and look how happy the doggy looks!) as you embark on your R journey.<br>
 </p>
-<table class="caption-top table">
+<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;In fact, that’s the point of this class.</p></div></div><table class="caption-top table">
 <tbody>
 <tr class="odd">
 <td><img src="images/R_logo.svg.png" class="img-fluid" width="275"></td>
@@ -547,8 +628,8 @@ To-Do List (due before our first lecture):
 <p><strong>Having trouble getting these programs to work?</strong></p>
 <ol type="1">
 <li><p><strong>Here’s <a href="https://www.youtube.com/watch?v=0Qu7Jg1Jw5A">one YouTube video</a></strong> someone made to show you how to download and install.</p></li>
-<li><p><strong>Try <a href="https://posit.cloud">posit.cloud</a></strong>. This is a web-based version of RStudio, and has a free option but limits you to 15-hours of work a month. There’s a paid option for $5/month that you can use; former students pointed out that you can always create a new “free” account if you run over the 15-hour limit.</p></li>
-<li><p><strong>Post on our class Discord / go to section / office hours!</strong> The professor, other students, or your TA can help get everything working properly.</p></li>
+<li><p><strong>Try <a href="https://posit.cloud">posit.cloud</a></strong>. This is a web-based version of RStudio, and has a free option but limits your hours of work each month. There’s a paid option for $5/month that you can use if you sign up with your student e-mail address; former students also pointed out that you can always create a new “free” account if you run over the 15-hour limit.</p></li>
+<li><p><strong>Ask for help!</strong> The professor, other students, or a tutor / your TA can help get everything working properly.</p></li>
 </ol>
 </section>
 <section id="navigating-r" class="level3">
@@ -574,85 +655,64 @@ To-Do List (due before our first lecture):
 </section>
 </section>
 </section>
+<section id="part-3-how-science-the-scientific-method-in-five-easy-steps" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="part-3-how-science-the-scientific-method-in-five-easy-steps">Part 3 : How Science? The Scientific Method in Five Easy Steps</h2>
+<p>The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;&nbsp;&nbsp;Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the <a href="https://convention.apa.org/">American Psychological Association</a> or the <a href="https://www.psychologicalscience.org/conventions">Association of Psychological Science</a>. The <a href="https://westernpsych.org/convention/">Western Psychological Association</a> has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the <a href="http://meeting.spsp.org/">Society of Personality and Social Psychology</a>). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.</p></div></div><p>I like to organize the scientific method into five broad parts, described below.</p>
+<section id="step-1-identify-a-question" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-identify-a-question"><strong>Step 1 : Identify a Question</strong></h3>
+<p>First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Part 1 of this chapter, we talked about how these questions are often informed by the researcher’s own observations or experiences.</p>
+<p>Looking for a project topic? A few ideas to consider :</p>
+<ul>
+<li><p><strong>Think about why you become a psychology major.</strong> Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people’s lies? Think about these interests, then think about what variables might be relevant. For example, while you won’t have access to an fMRI machine (or the required statistics) in order to <a href="https://www.youtube.com/watch?v=inaH_i_TjV4">reconstruct images people see during their dreams</a>, you might study people’s beliefs about the importance of their dreams, or the extent to which they have dreams.</p></li>
+<li><p><strong>Focus on a problem you’ve encountered or observed in real-life.</strong> Notice that something in the world could be better? How would you label that as a variable? For example, maybe you want to better understand people’s attitudes about capitalism or racism or housing costs.</p></li>
+<li><p><strong>Look at faculty webpages, and see what they (and / or their graduate students) are studying.</strong> Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question might you study with this project?</p></li>
+<li><p><strong>Chase the latest trends of today.</strong> What’s capitalism care about these days? AI?</p></li>
+</ul>
+<p>But you don’t have to take my word for it. <a href="https://libguides.usc.edu/writingguide/introduction/researchproblem">Here’s another guide</a> that might offer some help, or ask for help in the class discord / office hours / lecture!</p>
 </section>
-<section id="quiz-1" class="level1">
-<h1>Quiz 1</h1>
-<p>Use this week’s readings and videos to answer the questions below. Make sure to reference the video on getting started on Quiz 1 (above) before starting this quiz. You will have time to work on this in your discussion section (see agenda above) before lecture if you get stuck on something in R. <strong>Note that Quizzes are open-note and untimed and allow for multiple attempts (highest grade is recorded).</strong></p>
+<section id="step-2-develop-a-theory" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="step-2-develop-a-theory"><strong>Step 2 : Develop a Theory</strong></h3>
+<p>A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is <em>comprehensive</em> (it relates to all nature, not just plants or animals or finches), it is <em>explanatory</em> (it’s why we and <a href="https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg">cats</a> both narrow our eyes when we are scared and angry), and it is <em>supported</em> (by over 100 years of evidence<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>).&nbsp;</p>
+<div class="no-row-height column-margin column-container"><div id="fn14"><p><sup>14</sup>&nbsp;<a href="https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01">From fossil records to observations of fruit flies and plans</a></p></div></div><p><strong>Most scientists refrain from saying that a theory is “proven” or “true” for two reasons:</strong></p>
 <ol type="1">
-<li><p>What do scientists call a prediction that is wrong?</p>
-<ol type="a">
-<li><p>mistakes</p></li>
-<li><p>valid</p></li>
-<li><p>error</p></li>
-<li><p>a prediction that is wrong</p></li>
-<li><p>they say, “welcome to the school of life”</p></li>
-</ol></li>
-<li><p>According to this reading, what are the primary goals of science?</p>
-<ol type="a">
-<li><p>wearing lab coats and looking cool and applying for grants</p></li>
-<li><p>educating students</p></li>
-<li><p>educating the public</p></li>
-<li><p>description and detection</p></li>
-<li><p>prediction and power</p></li>
-</ol></li>
-<li><p>Which of the following would be an example of between-person variation?</p>
-<ol type="a">
-<li><p>you have MORE computer experience than your best friend in the class</p></li>
-<li><p>you have LESS computer experience than your best friend in the class</p></li>
-<li><p>you have MORE computer experience at the end of the semester than at the beginning</p></li>
-<li><p>both A and B</p></li>
-<li><p>none of the above</p></li>
-</ol></li>
-<li><p>Which of the following would be an example of within-person variation?</p>
-<ol type="a">
-<li><p>you have MORE computer experience than your best friend in the class</p></li>
-<li><p>you have LESS computer experience than your best friend in the class</p></li>
-<li><p>you have MORE computer experience at the end of the semester than at the beginning</p></li>
-<li><p>both A and B</p></li>
-<li><p>none of the above</p></li>
-</ol></li>
-<li><p>A person laughs because they are nervous. This could be an example of…</p>
-<ol type="a">
-<li><p>affect</p></li>
-<li><p>behavior</p></li>
-<li><p>cognition</p></li>
-<li><p>both A and B</p></li>
-<li><p>all of the above</p></li>
-</ol></li>
-<li><p>“Me-Search” refers to…</p>
-<ol type="a">
-<li><p>the tendency for researchers to study topics based on their own life experiences.&nbsp;</p></li>
-<li><p>the tendency for researchers to live their lives based on the results of their research studies.</p></li>
-<li><p>a metric that ranks the number of times a researcher references their own work.</p></li>
-<li><p>a metric that ranks the number of times a researcher is referenced by others.</p></li>
-<li><p>a phenomenon where people Google themselves even though they already know who they are.</p></li>
-</ol></li>
-<li><p>According to the syllabus, what’s the professor’s policy on ChatGPT?</p>
-<ol type="a">
-<li><p>never allowed; constitutes a violation of the Academic Integrity Policy&nbsp;</p></li>
-<li><p>fine to use for R work, but not anything written, as long as you reference it and describe in detail how you used it.</p></li>
-<li><p>use whenever / however you want, as long as you reference it and describe in detail how you used it.</p></li>
-<li><p>when you really think about it, we are all AI in some way.</p></li>
-<li><p>there are ways to consider using AI in a data analysis. here’s a list of policy ideas that your professor might have.</p></li>
-</ol></li>
-<li><p>Is there extra credit in the class?</p>
-<ol type="a">
-<li><p>Yes, professor is a kind professor.</p></li>
-<li><p>Yes, professor makes assignments way too hard and then has to make up for it with bogus work.</p></li>
-<li><p>Yes, professor could use some more subscribers on the YouTube channel thanks.</p></li>
-<li><p>No, professor is a kind professor who will make sure you are supported throughout the class as long as you do the required work, and if it’s “extra” credit then the work is either not really that important (and should thus be cut), or actually is important and all students should do it?</p></li>
-<li><p>Not yet, but there’s power in a union and more of us students than there are GSIs and professor.</p></li>
-</ol></li>
-<li><p>What are “check-ins”?</p>
-<ol type="a">
-<li><p>Opportunities to connect with your professor in office hours.</p></li>
-<li><p>Advice to check in with yourself while doing work in this class; a way to be mindful despite the sometimes stress and chaos common to students’ experience.</p></li>
-<li><p>Required surveys that will be in your readings and lectures that are graded for completion.</p></li>
-<li><p>A new type of snack from FritoLay corporation.</p></li>
-<li><p>All of the above.</p></li>
-</ol></li>
-<li><p>What is the special code you receive when you complete <a href="https://docs.google.com/forms/d/e/1FAIpQLSe2BViZxY_bojwqGQ8g5QDdhjoGnyOykuM721NUWMc_Dpng1w/viewform?usp=header">the onboarding survey</a>?</p></li>
+<li><p>First, the scientific method is a process - our knowledge and ideas are continually updated. So it’s likely that the theory of evolution will be updated as we learn more about the complex ways genes replicate and interact with the environment. Saying that a theory is “proven” is a common mistake - watch out for it!&nbsp;</p></li>
+<li><p>Second, most scientists (and psychologists) draw from Karl Popper’s philosophy of science, which adheres to a requirement for science called <strong>falsifiability -</strong> the ability to find evidence that rejects a theory (“ability to falsify”). This means a theory is never ‘proven’ because scientists are continually looking for evidence to reject the theory. It also means that a belief that cannot be tested or rejected would be rejected as a scientific belief - you have to be able to test your belief in some observable way. Falsifiability is where I think science separates from religious belief - someone with faith doesn’t need evidence, and that’s okay! It just doesn’t make the belief scientific under science’s narrow definition.&nbsp;</p></li>
 </ol>
+<p><strong>Hypotheses</strong> are specific predictions that researchers make about what they expect to see in the data if their theory is supported or is not supported by data.&nbsp;</p>
+<ul>
+<li><p>The <strong>alternative hypothesis</strong> (sometimes written <strong>HA</strong>) is the researcher’s own belief. It may seem strange to label your belief “alternative” when this word is used for things that are supposed to be different (“alternative rock = it’s not your parent’s rock &amp; roll!”), and we are so used to thinking that our beliefs are the default that to call them alternative seems wrong. This is an example of previous beliefs bias, and the decision to label our beliefs as the “alternative” is an example of science trying to correct this bias. It’s a small and symbolic correction, but it’s better than nothing.</p></li>
+<li><p>The <strong>null hypothesis</strong> (sometimes written <strong>H0</strong>) is the label given for whatever evidence would not support the researcher’s belief.</p></li>
+</ul>
+<p><strong>EXAMPLE :</strong> Let’s say you believe that smoking cannabis hurts a person’s memory. What’s the alternative hypothesis? What’s the null?</p>
+<ul>
+<li><p><strong>Null Hypothesis :</strong> People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna. <a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a></p></li>
+<li><p><strong>Alternative Hypothesis :</strong> People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.</p></li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn15"><p><sup>15</sup>&nbsp;Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs.&nbsp;non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)</p></div></div><p><strong>Practice : Identifying Models, Null, and Alternative Hypotheses.</strong> Let’s review to practice identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory.</p>
+</section>
+<section id="step-3-collect-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-collect-data">Step 3 : Collect Data</h3>
+<p>As described above, scientific theories are supported by evidence called data. How researchers collect data is something we will discuss in more detail over the next few weeks. In general, researchers have to figure out how to measure the variables they are interested in studying (e.g., “how will I know if someone is happy or not?”), and then find participants (people or animals) to study (e.g., “whose happiness should I study”).&nbsp;</p>
+<p>For example, in our smoking cannabis example the decisions about how to measure memory (a music memory game or a word recognition task?) or how much cannabis (a little or a lot?) or who to study (Berkeley students or your grandparents?) in the study would likely influence the results.</p>
+<p>The decisions that researchers make about how to define their measures and the participants they will study are very important, and will influence the results of the study (and thus our knowledge of the topic), so stay tuned for more discussion!</p>
+</section>
+<section id="step-4-use-data-to-test-theories" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-use-data-to-test-theories">Step 4 : Use Data to Test Theories</h3>
+<p>Finally, researchers look to see if the data they collected supports or rejects their theory (and evaluate how strongly their theory is supported or rejected). We’ll talk much more about using data to test theories this semester.</p>
+<p>In our smoking cannabis example, the researcher would look to see which group did better on the memory test, and if the smokers did worse, then their theory would be supported (by this one study, at least).</p>
+</section>
+<section id="step-5-repeat" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-repeat">Step 5 : Repeat</h3>
+<p>Once a study is completed, researchers repeat the scientific method in two different ways.</p>
+<p>Researchers will sometimes repeat the exact same steps a second time - something called <strong>replication</strong>. Replication is critical to science.</p>
+<p>Scientists also repeat the scientific method with a new question that is based on the results from their first study. Science is a process, and researchers are never done learning about how to better predict &amp; control the world. There’s always more research to do. For example, after identifying a pattern between smoking cannabis and memory, a researcher might ask whether the type or dosage of cannabis intake would influence memory, whether abstinence could reverse the effects of memory impairment, or whether cannabis and coffee together might lead to a different result. Note that this is not an example of replication, since researchers are not testing the same question they had - but it’s repeating the scientific method for a new question inspired by the old. This is good, and part of scientific progress. But the problem is that the incentives for scientific publication focused almost entirely on “new” research, and not really making sure that the “old” research was valid.</p>
+</section>
+<section id="its-never-actually-easy" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="its-never-actually-easy">It’s Never Actually Easy</h3>
+<p>Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a <a href="https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics">Replication Crisis</a>. This crisis is two-fold a) researchers tend not to seek to replicate their (or others’) results, and b) systematic attempts to do so have suggested that the majority of results in psychology do not replicate<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn16"><p><sup>16</sup>&nbsp;You can go deeper into some of the drama surrounding the replication project <a href="#0">here</a>. lemme know what you think on the discord thread for this week.</p></div></div><p>We will chat more about this in our next lecture. But I think that’s enough reading for now?</p>
+</section>
 </section>
 <section id="in-lecture." class="level1">
 <h1>In Lecture.</h1>
@@ -660,18 +720,7 @@ To-Do List (due before our first lecture):
 
 
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>&nbsp;One of the reasons I love teaching in the Bay Area is y’all are hella complex.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>And usually food, though I’m not sure if there’s cultural food norms about statistics or research methods.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>This happened to <a href="https://plato.stanford.edu/entries/fechner/">Gustav Fechner</a>, one of the early psychologists who pioneered the study of psychophysics, which tested theories that our perceptions do not always match reality (seen in many examples, such as <a href="https://www.rit.edu/news/color-scientists-explain-dress-went-viral">the dress</a>). FWIW I see it as blue and black.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>This anecdote (<a href="https://www.npr.org/2010/04/12/125859207/whistling-vivaldi-and-beating-stereotypes">as reported here</a>) inspired Claude Steele’s research on <a href="https://en.wikipedia.org/wiki/Stereotype_threat">stereotype threat</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>This is the purpose of your final project! We’ll talk more about this throughout the class.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>See the syllabus for the course ChatGPT policy. You may also be interested to read on the ethical and <a href="https://bsj.studentorg.berkeley.edu/the-new-dimension-to-the-climate-crisis-chat-gpt/">environmental issues</a> surrounding this emerging technology.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>You can see when scientists predict Halley’s comet to come closest to earth <a href="https://theskylive.com/halley-tracker">here</a>. While this is fairly accurate, I’ve seen the exact prediction change over the years - there is still some error in this prediction.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -756,8 +805,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -868,7 +915,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1096,8 +1142,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/0R_About.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="../index.html" class="pagination-link" aria-label="Hello!">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Hello!</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
