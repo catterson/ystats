@@ -246,10 +246,8 @@ Once we add numbers and data to a linear model[^1r_whystats-11], we can quickly 
 
 Imagine a researcher wants to better understand why people differ in happiness, and believes that playing music, drinking more water, and eating ice cream sandwiches are important factors to consider. How would you write this out as a linear model?
 
-Click below to see the answer.
-
 ::: {.callout-caution collapse="true"}
-##### Practice Writing A Model
+##### Click Here to See The Answer
 
 happiness \~ music playing + water intake + ice cream consumption + error
 
@@ -358,7 +356,7 @@ A scientific theory is one that is comprehensive, explanatory, and supported by 
 
 [^1r_whystats-15]: Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs. non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)
 
-**Practice : Identifying Models, Null, and Alternative Hypotheses.** Let’s review to practice identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory.
+[**Practice : Identifying Models, Null, and Alternative Hypotheses**](https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=header)**.** Here's a quick practice quiz to review identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory.
 
 ### Step 3 : Collect Data
 
