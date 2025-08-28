@@ -357,7 +357,7 @@ Hi folks, Prof. Cat here. I'll be popping up throughout this book to guide you t
 :::
 
 ::: column-margin
-![hi, says prof. cat](images/1_profcathi.JPG){fig-alt="a hand drawn image of a cat wearing clothes and glasses and saying hi" fig-align="right" width="136"}
+![hi, says prof. cat](images/1_profcathi.JPG){fig-alt="a hand drawn image of a cat wearing clothes and glasses and saying hi" fig-align="left" width="136"}
 :::
 
 ### Step 2 : Develop a Theory
