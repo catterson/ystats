@@ -14,21 +14,23 @@ In this week’s reading, you’ll learn why students like you are required to l
 
 ## Part 1 : Why Statistics in Psychology?
 
-As y’all know, this class is a requirement for students who want to be psychology majors. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder *why-the-f\*%\@* they are required to take a math class when all they just want to learn about people (or other non-human animals), ya know!??!
+As y’all know, this class is a requirement for students who want to be psychology majors. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder *why-the-flip* they are required to take a math class when all they just want to learn about people (or other non-human animals), ya know!??!
 
 I agree that people (or non-human animals) are interesting. And we all have this interest in people (or non-human animals) because we are complex[^1r_whystats-1]. While people are similar in many ways, we also differ in radical ways; from superficial features like age and race, to more complex ways like our personality or emotions, to highly specific behaviors such as whether all students in the class are reading these words or not, or how bored or excited (or any emotional experience) students are while reading these words.
 
 [^1r_whystats-1]:  One of the reasons I love teaching in the Bay Area is y’all are hella complex.
 
-I hope that you have an interest in people (or non-human animals), and that this class helps you learn how to think about those interests through a psychological, and statistical lens. You don't always need this lens - and as we will discuss there can sometimes be dangers in viewing people through this lens - but it's useful to be able to wear these "glasses" when needed.
+I hope that you have an interest in people (or non-human animals), and that this class helps you learn how to think about those interests through a psychological, and statistical lens. You don't always need this lens - and as we will discuss there can sometimes be dangers in viewing people through this lens - but it's useful to be able to wear these "stats glasses" when needed.
 
 ### Statistics as a Language
 
 Statistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand differences in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.
 
+Like all languages, statistics has vocabulary - words that have shared meaning, and allow us to understand what we are talking about.
+
 #### Variables and Variation
 
-Variation is at the heart of statistics, and is defined by differences, change, and complexity.
+Variation is at the heart of statistics, and is the specific vocabulary that researchers use to describe the differences, change, and complexity that defines life.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Between-Person Variation** describes how individuals differ from each other. Think about ways that you differ from others; not everybody wears glasses, has the same level of silliness / seriousness / desire to cause mischief / fascination with horses.                                                                                                                                                             | ![](/images/1_between_belcher_variation.webp){fig-alt="five characters who are family members of the the TV show bob’s burgers expressing a variety of emotions and striking different poses." fig-align="center"} |
@@ -68,9 +70,9 @@ For example, think about how affect, behavior, and cognition might be relevant i
 
 [Here's [a cat video](https://www.youtube.com/watch?v=Am3NVGP9rkQ) I like for students needing a distraction from thinking about exams. I promise your exams in this class will be chill and I'll do my best to prepare y'all.]{.aside}
 
-#### Language is More than Vocabulary
+#### What's Language?
 
-Statistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand variation in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.
+Statisitcs, like spoken languages, is a combination of vocabulary, rules, and culture that people use to communicate with each other.
 
 -   **Vocabulary.** Equations like "the mean" or “standard deviation” or "cronbach's alpha" or "p-value" are precise vocabulary terms that define some feature of variation. Some of these vocabulary words are easier to understand and remember than others, and like all languages, sometimes people disagree on the definition, and sometimes misuse these words.
 
@@ -110,7 +112,7 @@ Below are a few examples of research questions that are related to a person's re
 
 Me-search also serves as a form of potential bias in research - not only will a researcher’s own biases and beliefs influence the way they conduct research, but the types of questions that are asked will be influenced by the types of people doing research.
 
-For example, a survey of over 26,000 research articles in psychology documented just how rarely the topic of race is studied in psychology.
+For example, a survey of over 26,000 research articles in psychology documented just how rarely the topic of race is studied.
 
 ![](/images/1_RaceResearch.png){fig-alt="a graph that illustrates how much research on race is published in three different types of psychology journals. the proportion of publications on the y-axis, and the decade on the x-axis. the graph shows that over time, the percentage of publications that highlight race has stayed at zero for cognitive psychology, slightly increased from around 5% for developmental and social psychology (in the 1970s) to 10% for developmental psychology in the 2010s and 8% in social psychology in the 2010s." fig-align="center" width="475"}
 
@@ -251,7 +253,7 @@ Imagine a researcher wants to better understand why people differ in happiness, 
 
 happiness \~ music playing + water intake + ice cream consumption + error
 
-For this model, note that I've organized the focus of the researcher's question on the left-hand side of the equation; listed the three other variables to the right (and tried to be neutral about how I describe them (e.g., not "drinking more water"); included error at the end of my model to account for the fact that some people who play music, drink water, and eat ice cream are, in fact, not happy. I also didn't add other varibles that might be related to happiness, since these were not part of the researcher's statement.
+For this model, I've organized the focus of the research question on the left-hand side and listed the three other variables to the right, using neutral descriptions (e.g., 'water intake' rather than 'drinking more water'). I also included error at the end of my model to account for the fact that some people who play music, drink water, and eat ice cream are, in fact, not happy. I also didn't add other varibles that might be related to happiness, since these were not part of the researcher's statement.
 :::
 
 ## Part 2 : Why R?
