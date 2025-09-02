@@ -260,7 +260,7 @@ As a researcher, you’ll be interested in understanding not only one variable a
 
 The datasets in our class will be stored on Dropbox; you can find a link to this on our course Canvas page (see below).
 
-![](images/2_dropboxOnBcourses.png){fig-align="center"}
+![](images/2_dropboxchapters.png){fig-align="center"}
 
 You’ll learn how to load these datasets later in this lecture. For now, what is a dataset?
 
