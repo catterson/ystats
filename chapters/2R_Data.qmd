@@ -258,7 +258,7 @@ Below are some videos, and R code, that review how to define a variable in R. Ye
 
 As a researcher, you’ll be interested in understanding not only one variable at a time, but will be interested in a dataset - multiple variables about an individual that are organized - in order to see how variables are related to each other (remember : this is a function of the linear model).
 
-The datasets in our class will be stored on Dropbox; you can find a link to this on our course Canvas page (see below).
+The datasets in our class will be stored on Dropbox; you can find a link to this on our course page, under the Course Materials module (see below for the image that you're looking for).
 
 ![](images/2_dropboxchapters.png){fig-align="center"}
 
