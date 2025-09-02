@@ -163,17 +163,15 @@ As another example, researchers can measure gender with categories such as femal
 
 [Unfortunately, most psychological researchers still hold on to Male / Female binaries in the way they measure gender or sex, yet there are many reasons - both scientific and humanistic - to give people more range to express important aspects of their identity.]{.smallcaps}
 
-![facebook’s attempt at measuring more complex categories.](images/2_fb_gender.png)
+![[facebook’s attempt](http://abcnews.go.com/blogs/headlines/2014/02/heres-a-list-of-58-gender-options-for-facebook-users) at measuring more complex categories.](images/2_fb_gender.png)
 
-[Indeed, categories almost always oversimplify the complexity of life, yet are often used by people (and researchers) because they can sometimes be useful and simple shortcuts for us to understand the world.]{.smallcaps} \[\^2r_data-4\]:
-
-[Here's facebook’s attempt](http://abcnews.go.com/blogs/headlines/2014/02/heres-a-list-of-58-gender-options-for-facebook-users) at measuring more complex categories. \[\^2r_data-4\]
+[Indeed, categories almost always oversimplify the complexity of life, yet are often used by people (and researchers) because they can sometimes be useful and simple shortcuts for us to understand the world.]{.smallcaps}
 
 [If you are simply interested in doing a superficial survey of a variable like race, ethnicity, or gender, then I think categorical data can be a fine -if often unscientific - approach, and would recommend giving all people the chance to express their identity in some way. For example, [here's an article](https://compass.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/spc3.12506) describing research on the way that exclusionary categories can negatively impact science, and offering clear and easy recommendations for reseachers to broaden science (e.g., reporting non-binary participants).]{.smallcaps}
 
 [However, if you are interested in really digging into a variable, then a continuous approach is almost always best, since it allows for more flexibility in capturing complexity in variation. We’ll discuss more on how to do this in a few weeks when we learn about measuring continuous variables with likert scales.]{.smallcaps}
 
-[a continuous approach to measuring gender.](images/2_genderspectrum.png)[^2r_data-5]
+![](images/2_genderspectrum.png)[^2r_data-5]
 
 [^2r_data-5]: a [continuous approach](https://scalar.usc.edu/works/index-2/media/the-gender-spectrum) to measuring gender. hi if u still reading, let me know if you have any thoughts on this section of the chapter.
 
