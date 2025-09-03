@@ -3,9 +3,9 @@ title: "Rcode"
 format: html
 ---
 
-Here is a list of the R code we use in this class.
+Hi class, here is a list of the R code we use in this class. Let me know if you spot errors or gaps in this list, have ideas for clarifications, or found an easier way to do something!
 
-## R Code : Creating Variables in R
+# Creating Variables in R
 
 ## Numeric Variables in R
 
@@ -47,7 +47,7 @@ Here is a list of the R code we use in this class.
 | `plot(dat$variable)`                             | **For categorical variables :** draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis). |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-## R Commands for Importing and Navigating Data
+# Importing and Navigating Data
 
 +----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | **R Command**                                            | **What it Does**                                                                                                          |
@@ -71,7 +71,7 @@ Here is a list of the R code we use in this class.
 | `dat[i, j]`                                              | displays an individual row \[i\] and column \[j\] from the dataset                                                        |
 +----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
-## R Commands for Visualizing Data
+# Visualizing Data
 
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **R Command**                             | **What it Does**                                                                                                                                            |
