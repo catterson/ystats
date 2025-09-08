@@ -324,7 +324,7 @@
     "href": "Rcode.html",
     "title": "Appendix A — Rcode",
     "section": "",
-    "text": "B Creating Variables in R\nHi class, here is a list of the R code we use in this class. Let me know if you spot errors or gaps in this list, have ideas for clarifications, or found an easier way to do something!",
+    "text": "A.1 R Code : Creating Variables in R\nHere is a list of the R code we use in this class.",
     "crumbs": [
       "List of R Code",
       "Appendices",
@@ -2264,8 +2264,8 @@
     "objectID": "Rcode.html#numeric-variables-in-r",
     "href": "Rcode.html#numeric-variables-in-r",
     "title": "Appendix A — Rcode",
-    "section": "B.1 Numeric Variables in R",
-    "text": "B.1 Numeric Variables in R\n\n\n\n\n\n\n\nCode\nDescription\n\n\n\n\nvariable &lt;- c(#, #, #, #, etc.)\ntired &lt;- c(1,2,3,4)\nvariable = an object that you will define in R\n&lt;- = “assign”; tells R to save whatever comes on the right to whatever object is on the left.\nc = combine : tells R to combine whatever happens in the parentheses\n() = parentheses to group related terms\n# = what you store in the variable; each item should be separated by a comma and space.\n\n\nhist(dat$variable)\nFor continuous variables : draws a histogram.",
+    "section": "A.2 Numeric Variables in R",
+    "text": "A.2 Numeric Variables in R\n\n\n\n\n\n\n\nCode\nDescription\n\n\n\n\nvariable &lt;- c(#, #, #, #, etc.)\ntired &lt;- c(1,2,3,4)\nvariable = an object that you will define in R\n&lt;- = “assign”; tells R to save whatever comes on the right to whatever object is on the left.\nc = combine : tells R to combine whatever happens in the parentheses\n() = parentheses to group related terms\n# = what you store in the variable; each item should be separated by a comma and space.\n\n\nhist(dat$variable)\nFor continuous variables : draws a histogram.",
     "crumbs": [
       "List of R Code",
       "Appendices",
@@ -2276,8 +2276,32 @@
     "objectID": "Rcode.html#string-variables",
     "href": "Rcode.html#string-variables",
     "title": "Appendix A — Rcode",
-    "section": "B.2 String Variables",
-    "text": "B.2 String Variables\n\n\n\n\n\n\n\nvariable &lt;- c(“name1”, “name2”, “name1”, etc.)\nemotion &lt;- c(“sad”, “happy”, “sad”)\nvariable = an object that you will define in R\n&lt;- = “assign”; tells R to save whatever comes on the right to whatever object is on the left.\nc = combine : tells R to combine whatever happens in the parentheses\n() = parentheses to group related terms\n# = what you store in the variable; each item should be separated by a comma and space.\n\n\nas.factor(variable)\nas.factor(emotion)\nas.factor() # converts a string variable into a categorical factor\n\n\nvariable &lt;- as.factor(variable)\n# “saves” this conversion as the original variable\n\n\nplot(dat$variable)\nFor categorical variables : draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis).",
+    "section": "A.3 String Variables",
+    "text": "A.3 String Variables\n\n\n\n\n\n\n\nvariable &lt;- c(“name1”, “name2”, “name1”, etc.)\nemotion &lt;- c(“sad”, “happy”, “sad”)\nvariable = an object that you will define in R\n&lt;- = “assign”; tells R to save whatever comes on the right to whatever object is on the left.\nc = combine : tells R to combine whatever happens in the parentheses\n() = parentheses to group related terms\n# = what you store in the variable; each item should be separated by a comma and space.\n\n\nas.factor(variable)\nas.factor(emotion)\nas.factor() # converts a string variable into a categorical factor\n\n\nvariable &lt;- as.factor(variable)\n# “saves” this conversion as the original variable\n\n\nplot(dat$variable)\nFor categorical variables : draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis).",
+    "crumbs": [
+      "List of R Code",
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Rcode</span>"
+    ]
+  },
+  {
+    "objectID": "Rcode.html#r-commands-for-importing-and-navigating-data",
+    "href": "Rcode.html#r-commands-for-importing-and-navigating-data",
+    "title": "Appendix A — Rcode",
+    "section": "A.4 R Commands for Importing and Navigating Data",
+    "text": "A.4 R Commands for Importing and Navigating Data\n\n\n\n\n\n\n\nR Command\nWhat it Does\n\n\ndat &lt;- read.csv(“path/file.csv”, stringsAsFactors = T)\nloads the data file into R (or use the “point & click method”); sets string variables to be categorical factor variables.\n\n\nhead(dat)\nlooks at the first 6 rows of the data file\n\n\ntail(dat)\nlooks at the last 6 rows of the data file\n\n\nnrow(dat)\ndisplays the number of rows (each row = an individual)\n\n\nncol(dat)\ndisplays the number of columns (each column = a variable)\n\n\nnames(dat)\ndisplays the names of the object (column names = names of variables)\n\n\ndat$variable\ndisplays the variable from a dataset\n\n\ndat$variable[i]\ndisplays the individual row [i] from the variable\n\n\ndat[i, j]\ndisplays an individual row [i] and column [j] from the dataset",
+    "crumbs": [
+      "List of R Code",
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Rcode</span>"
+    ]
+  },
+  {
+    "objectID": "Rcode.html#r-commands-for-visualizing-data",
+    "href": "Rcode.html#r-commands-for-visualizing-data",
+    "title": "Appendix A — Rcode",
+    "section": "A.5 R Commands for Visualizing Data",
+    "text": "A.5 R Commands for Visualizing Data\n\n\n\n\n\n\n\nR Command\nWhat it Does\n\n\nsummary(dat)\nReports descriptive statistics for all variables in the dataset.\n\n\nsummary(dat$variable)\nReports descriptive statistics for a categorical variable (frequency / number of individuals in each level) or continuous variable (mean, range, etc.)\n\n\nas.numeric(dat$variable)\nMakes the variable numeric (for continuous graphs)\n\n\nas.factor(dat$variable)\nMakes the variable a categorical factor (for categorical graphs)\n\n\ndat$variable &lt;- as.factor(dat$variable)\nAssigns the as.factor output to the original variable. (In other words, this saves your new categorical factor variable by overwriting the old one.)\n\n\nplot(dat$variable)\nFor categorical variables : draws a barplot. For continuous variables :  illustrates values of the variable (y-axis) as a function of their index (x-axis).\n\n\nhist(dat$variable)\nFor continuous variables : draws a histogram.\n\n\npar(mfrow = c(i, j))\nSplits your graphics window into i rows and j columns.",
     "crumbs": [
       "List of R Code",
       "Appendices",
