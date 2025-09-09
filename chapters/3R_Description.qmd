@@ -290,6 +290,6 @@ We will practice removing outliers in lecture! It will get easier.
 
 # TLDR.
 
-We learned how to describe variables in terms of consistency (e.g., mean, median) and complexity (e.g., range, standard deviation). We focused on how to define the standard deviation, what is meant by a "normal" distribution, and then looked at how to do this in R.
+We learned how to describe variables in terms of consistency (e.g., mean, median) and complexity (e.g., range, standard deviation). We focused on how to define the standard deviation, and then looked at how to do this in R.
 
 Next week in lecture, we will continue to learn to use R, statistics, and our human brains to describe and understand how people differ.
