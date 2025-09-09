@@ -271,6 +271,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#string-variables" id="toc-string-variables" class="nav-link" data-scroll-target="#string-variables"><span class="header-section-number">A.3</span> String Variables</a></li>
   <li><a href="#r-commands-for-importing-and-navigating-data" id="toc-r-commands-for-importing-and-navigating-data" class="nav-link" data-scroll-target="#r-commands-for-importing-and-navigating-data"><span class="header-section-number">A.4</span> R Commands for Importing and Navigating Data</a></li>
   <li><a href="#r-commands-for-visualizing-data" id="toc-r-commands-for-visualizing-data" class="nav-link" data-scroll-target="#r-commands-for-visualizing-data"><span class="header-section-number">A.5</span> R Commands for Visualizing Data</a></li>
+  <li><a href="#r-code-descriptive-statistics" id="toc-r-code-descriptive-statistics" class="nav-link" data-scroll-target="#r-code-descriptive-statistics"><span class="header-section-number">A.6</span> R Code : Descriptive Statistics</a></li>
   </ul>
 </nav>
 </nav>
@@ -371,8 +372,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="A.4" class="anchored" data-anchor-id="r-commands-for-importing-and-navigating-data"><span class="header-section-number">A.4</span> R Commands for Importing and Navigating Data</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 32%">
+<col style="width: 67%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -422,8 +423,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="A.5" class="anchored" data-anchor-id="r-commands-for-visualizing-data"><span class="header-section-number">A.5</span> R Commands for Visualizing Data</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 21%">
+<col style="width: 78%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -461,6 +462,56 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td><code>par(mfrow = c(i, j))</code></td>
 <td>Splits your graphics window into i rows and j columns.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="r-code-descriptive-statistics" class="level2" data-number="A.6">
+<h2 data-number="A.6" class="anchored" data-anchor-id="r-code-descriptive-statistics"><span class="header-section-number">A.6</span> R Code : Descriptive Statistics</h2>
+<p>Below is a list of code we’ll use to calculate descriptive statistics in R.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>R Command</strong></td>
+<td><strong>What It Does</strong></td>
+</tr>
+<tr class="even">
+<td><code>summary(dat)</code></td>
+<td>Reports descriptive statistics for all variables in the dataset.</td>
+</tr>
+<tr class="odd">
+<td><code>summary(dat$variable)</code></td>
+<td><p>Reports descriptive statistics for a continuous variable.</p>
+<p>Reports frequency for a categorical variable.</p></td>
+</tr>
+<tr class="even">
+<td><code>mean(dat$variable, na.rm = T)</code></td>
+<td>Reports the mean (average) of a variable; you must include the na.rm = T argument if there is missing data (otherwise R will return NA as the result).</td>
+</tr>
+<tr class="odd">
+<td><code>median(dat$variable, na.rm = T)</code></td>
+<td>Reports the median (middle point) of a variable.</td>
+</tr>
+<tr class="even">
+<td><code>range(dat$variable, na.rm = T)</code></td>
+<td>Reports the lower limit and upper limit of the variable.</td>
+</tr>
+<tr class="odd">
+<td><code>sd(dat$variable, na.rm = T)</code></td>
+<td>Reports the standard deviation of the variable.</td>
+</tr>
+<tr class="even">
+<td><p><code>hist(dat$variable)</code></p>
+<p><code>abline(v =mean(dat$variable))</code></p></td>
+<td>Draws a line on a plot or histogram at specified values (e.g., this draws a vertical line at the mean of dat$variable. You can replace v with h to draw a horizontal line. We will use abline() later in the semester in a different way.</td>
+</tr>
+<tr class="odd">
+<td><code>par(mfrow = c(i, j))</code></td>
+<td>Splits your graphics window into i rows and j columns (replace i and j with numbers)</td>
 </tr>
 </tbody>
 </table>

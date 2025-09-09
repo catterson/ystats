@@ -2367,5 +2367,77 @@
       "Describing People",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span>"
     ]
+  },
+  {
+    "objectID": "chapters/3R_Description.html#video-describing-happiness-world-happiness-report",
+    "href": "chapters/3R_Description.html#video-describing-happiness-world-happiness-report",
+    "title": "Description",
+    "section": "Video : Describing Happiness (World Happiness Report)",
+    "text": "Video : Describing Happiness (World Happiness Report)\nIn this video, I walk through loading the World Happiness Report (in our Chapter Dataset folder on the course page), and describing and graphing the happiness variable.",
+    "crumbs": [
+      "List of R Code",
+      "Describing People",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/3R_Description.html#video-standard-deviation-of-happiness-world-happiness-report",
+    "href": "chapters/3R_Description.html#video-standard-deviation-of-happiness-world-happiness-report",
+    "title": "Description",
+    "section": "Video : Standard Deviation of Happiness (World Happiness Report)",
+    "text": "Video : Standard Deviation of Happiness (World Happiness Report)\nIn this video, I review how to calculate the standard deviation, and what this statistic tells you about the variable happiness.",
+    "crumbs": [
+      "List of R Code",
+      "Describing People",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/3R_Description.html#r-code-descriptive-statistics",
+    "href": "chapters/3R_Description.html#r-code-descriptive-statistics",
+    "title": "Description",
+    "section": "R Code : Descriptive Statistics",
+    "text": "R Code : Descriptive Statistics\nBelow is a list of code we’ll use to calculate descriptive statistics in R.\n\n\n\n\n\n\n\nR Command\nWhat It Does\n\n\nsummary(dat)\nReports descriptive statistics for all variables in the dataset.\n\n\nsummary(dat$variable)\nReports descriptive statistics for a continuous variable.\nReports frequency for a categorical variable.\n\n\nmean(dat$variable, na.rm = T)\nReports the mean (average) of a variable; you must include the na.rm = T argument if there is missing data (otherwise R will return NA as the result).\n\n\nmedian(dat$variable, na.rm = T)\nReports the median (middle point) of a variable.\n\n\nrange(dat$variable, na.rm = T)\nReports the lower limit and upper limit of the variable.\n\n\nsd(dat$variable, na.rm = T)\nReports the standard deviation of the variable.\n\n\nhist(dat$variable)\nabline(v =mean(dat$variable))\nDraws a line on a plot or histogram at specified values (e.g., this draws a vertical line at the mean of dat$variable. You can replace v with h to draw a horizontal line. We will use abline() later in the semester in a different way.\n\n\npar(mfrow = c(i, j))\nSplits your graphics window into i rows and j columns (replace i and j with numbers)",
+    "crumbs": [
+      "List of R Code",
+      "Describing People",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span>"
+    ]
+  },
+  {
+    "objectID": "Rcode.html#r-code-descriptive-statistics",
+    "href": "Rcode.html#r-code-descriptive-statistics",
+    "title": "Appendix A — Rcode",
+    "section": "A.6 R Code : Descriptive Statistics",
+    "text": "A.6 R Code : Descriptive Statistics\nBelow is a list of code we’ll use to calculate descriptive statistics in R.\n\n\n\n\n\n\n\nR Command\nWhat It Does\n\n\nsummary(dat)\nReports descriptive statistics for all variables in the dataset.\n\n\nsummary(dat$variable)\nReports descriptive statistics for a continuous variable.\nReports frequency for a categorical variable.\n\n\nmean(dat$variable, na.rm = T)\nReports the mean (average) of a variable; you must include the na.rm = T argument if there is missing data (otherwise R will return NA as the result).\n\n\nmedian(dat$variable, na.rm = T)\nReports the median (middle point) of a variable.\n\n\nrange(dat$variable, na.rm = T)\nReports the lower limit and upper limit of the variable.\n\n\nsd(dat$variable, na.rm = T)\nReports the standard deviation of the variable.\n\n\nhist(dat$variable)\nabline(v =mean(dat$variable))\nDraws a line on a plot or histogram at specified values (e.g., this draws a vertical line at the mean of dat$variable. You can replace v with h to draw a horizontal line. We will use abline() later in the semester in a different way.\n\n\npar(mfrow = c(i, j))\nSplits your graphics window into i rows and j columns (replace i and j with numbers)",
+    "crumbs": [
+      "List of R Code",
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Rcode</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/3R_Description.html#practice-quiz-with-r-practice-quiz-3-describing-variables",
+    "href": "chapters/3R_Description.html#practice-quiz-with-r-practice-quiz-3-describing-variables",
+    "title": "Description",
+    "section": "Practice Quiz with R : Practice Quiz 3 (Describing Variables)",
+    "text": "Practice Quiz with R : Practice Quiz 3 (Describing Variables)\nInstructions\nUse R and the twitter_emotion_data.csv to answer the following questions in the check-in above.\n\nHere’s a link to the dataset (load this into R) and a link to the Codebook (that describes the dataset)\nLink to a video key; but good to try this on your own!\n\nQuestions\n\nLoad the data and check to make sure the data loaded correctly. How many individuals (tweets; in this dataset, each row = one tweet) are in the dataset?\nGraph the variable retweet_count. How would you describe the shape of this variable?\nWhat do you learn about the variable retweet_count from this graph?\nWhat is the mean of the variable retweet_count?\nWhat is the median of the variable retweet_count?\nWhat is the standard deviation of the variable retweet_count? [note : you do not need to do this by hand]?\nWhat is the lowest value (range) of the variable retweet_count?\nWhat is the highest value (range) of the variable retweet_count?\nNow, work with the categorical variable Orientation. How many Liberal (tweets) are in the dataset?\nHow many Conservative (tweets) are in the dataset?",
+    "crumbs": [
+      "List of R Code",
+      "Describing People",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/3R_Description.html#video-removing-outliers",
+    "href": "chapters/3R_Description.html#video-removing-outliers",
+    "title": "Description",
+    "section": "Video : Removing Outliers",
+    "text": "Video : Removing Outliers\nThe video below describes how to remove outliers, using a datset built into R.\n\nWe will practice removing outliers in lecture! It will get easier.",
+    "crumbs": [
+      "List of R Code",
+      "Describing People",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span>"
+    ]
   }
 ]

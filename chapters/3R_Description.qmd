@@ -220,7 +220,19 @@ Great question! The standard deviation does two things :
 
 # Part 2 : Describing Data in R
 
-## Descriptive Statistics
+## Video : Describing Happiness (World Happiness Report)
+
+In this video, I walk through loading the World Happiness Report (in our Chapter Dataset folder on the course page), and describing and graphing the happiness variable.
+
+{{< video https://youtu.be/Te1ChWgiATU >}}
+
+## Video : Standard Deviation of Happiness (World Happiness Report)
+
+In this video, I review how to calculate the standard deviation, and what this statistic tells you about the variable happiness.
+
+{{< video https://youtu.be/Pm8Z2z6QWMs >}}
+
+## R Code : Descriptive Statistics
 
 Below is a list of code we'll use to calculate descriptive statistics in R.
 
@@ -248,7 +260,7 @@ Below is a list of code we'll use to calculate descriptive statistics in R.
 | `par(mfrow = c(i, j))`            | Splits your graphics window into i rows and j columns (replace i and j with numbers)                                                                                                                                                       |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-## [Check-In with R](https://docs.google.com/forms/d/e/1FAIpQLScJ2ZvwLv2D4SYXFN2NL-7M8-B3Acq9BXsS1HwJSPf-LnGx4w/viewform?usp=sf_link) : Practice Quiz 3 (Describing Variables)
+## [Practice Quiz with R](https://docs.google.com/forms/d/e/1FAIpQLScJ2ZvwLv2D4SYXFN2NL-7M8-B3Acq9BXsS1HwJSPf-LnGx4w/viewform?usp=sf_link) : Practice Quiz 3 (Describing Variables)
 
 **Instructions**
 
@@ -280,7 +292,7 @@ Use R and the twitter_emotion_data.csv to answer the following questions in the 
 
 10. How many Conservative (tweets) are in the dataset?
 
-## Removing Outliers
+## Video : Removing Outliers
 
 The video below describes how to remove outliers, using a datset built into R.
 
