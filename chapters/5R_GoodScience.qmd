@@ -2,92 +2,92 @@
 
 In this chapter, you'll learn how psychologists (and scientists) construct and share their knowledge.
 
-# Part 1. Good Science \[moved to chapter 1\]
+# Part 1. The "Normal" Distribution.
 
-## ~~The Scientific Method in 5 Easy Steps~~
+## Definition.
 
-~~So, you’ve defined a research question you are interested in? Yeah! The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project[^5r_goodscience-1]. There are five parts, described below.~~
+The “Normal” (or Gaussian) distribution is a common shape for what distributions of data look like. The shape is often called a “bell curve”, because it looks like the curve of a bell.
 
-[^5r_goodscience-1]:   Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the [American Psychological Association](https://convention.apa.org/) or the [Association of Psychological Science](https://www.psychologicalscience.org/conventions). The [Western Psychological Association](https://westernpsych.org/convention/) has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the [Society of Personality and Social Psychology](http://meeting.spsp.org/)). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.
+While many distributions appear normal, the “Normal Distribution” ™ refers to a distribution that describes an expected probability of a range of scores.
 
-#### ~~**Step 1 : Identify a Question**~~
+![](images/3_NormalDistributionAnnotated.png){fig-align="center"}
 
-~~First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Chapter 1, we talked about how these questions are often informed by the researcher’s own observations or experiences.~~
+The Normal Distribution is called "normal" because researchers expect to see this type of distribution for variables where two conditions are met:
 
-~~Still looking for a project topic? A few ideas to consider :~~
+1.  **There are multiple explanations for why the variation occurs**. This happens very frequently across all science, since life is complex and there are many reasons why individuals differ.
+2.  **These multiple explanations occur randomly**. This means that the multiple explanations for variation are mostly independent of one another, and there is not some shared experience among individuals that is influencing their variation.
 
--   ~~**Think about why you become a psychology major.** Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people's lies? Think about these interests, then think about what variables might be relevant. For example, while you won't have access to an fMRI machine (or the required statistics) in order to [reconstruct images people see during their dreams](https://www.youtube.com/watch?v=inaH_i_TjV4), you might study people's beliefs about the importance of their dreams, or the extent to which they have dreams.~~
+### Example : Thinking About Distributions
 
--   ~~**Focus on a problem you've encountered or observed in real-life.** Notice that something in the world could be better? How would you label that as a variable? For example, maybe you want to better understand people's attitudes about capitalism or racism or housing costs.~~
+For example, let’s look at one example "normal" distributions - the "self-esteem" variable we saw in Lecture 2. Note that it's not perfectly normal[^3r_description-4], but it's pretty close and representative of the kind of "real world" data that you might encounter.
 
--   ~~**Look at faculty webpages, and see what they (and / or their graduate students) are studying.** Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question might you study with this project?~~
+[^3r_description-4]: good not to hold data to unrealistic body images as well as people.
 
--   ~~**Chase the latest trends of today.** What's capitalism care about these days? AI?~~
+```{r}
+#| include: false
+d <- read.csv("../datasets/Self-Esteem Dataset/data.csv", stringsAsFactors = T, na.strings = "0", sep = "\t")
+SELFES.df <- data.frame(d[,c(1:2,4,6,7)], 5-d[,c(3,5,8:10)])
+d$SELFES <- rowMeans(SELFES.df, na.rm = T)
+```
 
-~~But you don't have to take my word for it. [Here's another guide](https://libguides.usc.edu/writingguide/introduction/researchproblem) that might offer some help, or ask for help in the class discord / office hours / lecture!\
-~~
+```{r}
+hist(d$SELFES, col = 'black', bor = 'white', 
+     main = "Histogram of Self-Esteem", 
+     xlab = "Self-Esteem Score", breaks = 15)
+```
 
-~~**Step 2 : Develop a Theory**~~
+**"Random" explanations for why variation in self-esteem occurs.** Self-esteem is complex, and can be influenced by variables such as: genetics, parental environment, home environment, income, neurotransmitters, whether your crush told you they like you too the day you took the self-esteem survey, etc. These variables are considered random because one does not influence the other, and they differ across participants in the study. That is, someone who had a happy parental environment may not necessarily have a high income. 
 
-~~A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is comprehensive (it relates to all nature, not just plants or animals or finches), it is explanatory (it’s why we and [cats](https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg) both narrow our eyes when we are scared and angry), and it is supported (by over 100 years of evidence[^5r_goodscience-2]).~~
+**"Non-Random" Explanations.** Careful observers will note that self-esteem appears slightly shifted above the mid-point of the scale (which goes from 1-4, so 2.5 would be the mid-point), and that there's some slight negative skew (meaning more individuals are on the higher end of the distribution). This shift is likely the result of some shared cultural experiences among participants - our society values self-esteem, and people might be biased to self-enhance / self-present a higher self-esteem. This is a non-random influence, since many participants might experience this.
 
-[^5r_goodscience-2]: [From fossil records to observations of fruit flies and plans](https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01)
+### Example 2 : Thinking About Distributions
 
-~~**RECAP : Statistical Models as a Question & Theory:**~~
+Below is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer[^3r_description-5].)
 
-~~As discussed in Lecture 1, a scientific model identifies the variables that a researcher wants to predict (the dependent variable = the focus of the question) and the variables that the researcher thinks will explain the dependent variable (the independent variables).~~
+[^3r_description-5]: It is negatively skewed, since the tail is on the negative side of the distribution.
 
-~~For example, if my question is “What causes rain to fall in the sky?”, then my dependent variable would be listed as **rain** (sometimes it rains; sometimes it does not). If my theory is that it rains because there are dark clouds in the sky, then I would write my model as  : **`rain ~ clouds + error.`**~~
+![](images/3_RGrades.png){fig-align="center"}
 
-~~**Most scientists refrain from saying that a theory is “proven” or “true” for two reasons:**~~
+::: {.callout-tip collapse="true"}
+#### "Random" Reasons for Variation
 
-1.  ~~First, the scientific method is a process - our knowledge and ideas are continually updated. So it’s likely that the theory of evolution will be updated as we learn more about the complex ways genes replicate and interact with the environment. Saying that a theory is “proven” is a common mistake - watch out for it!~~
+Lots of things can influence a student’s score on an exam, such as how much students were motivated to study, how much time they had to study, what was going on in their lives, whether they had a study buddy in the class, whether they were sick or not on the day of the exam, their “test taking” skills and strategies and anxiety levels, etc.
+:::
 
-2.  ~~Second, most scientists (and psychologists) draw from Karl Popper’s philosophy of science, which adheres to a requirement for science called **falsifiability -** the ability to find evidence that rejects a theory (“ability to falsify”). This means a theory is never ‘proven’ because scientists are continually looking for evidence to reject the theory. It also means that a belief that cannot be tested or rejected would be rejected as a scientific belief - you have to be able to test your belief in some observable way. Falsifiability is where I think science separates from religious belief - someone with faith doesn’t need evidence, and that’s okay! It just doesn’t make the belief scientific under science’s narrow definition.~~
+::: {.callout-tip collapse="true"}
+#### "Non-Random" Reasons for Variation.
 
-~~**Hypotheses** are specific predictions that researchers make about what they expect to see in the data if their theory is supported or is not supported by data.~~
+These data are not normally distributed because the students were all part of the same college, in the same classroom, taught by the same professor, at the same time. The professor did his best to prepare these students, and wrote a test that would be based on the kinds of practice they had gone over in lecture. These variables are considered “non random” because they were shared by all students. The data are skewed because these non-random shared experiences helped students do well on the exam.
+:::
 
--   ~~The **alternative hypothesis** (sometimes written **HA**) is the researcher’s own belief. It may seem strange to label your belief “alternative” when this word is used for things that are supposed to be different (“alternative rock = it’s not your parent’s rock & roll!”), and we are so used to thinking that our beliefs are the default that to call them alternative seems wrong. This is an example of previous beliefs bias, and the decision to label our beliefs as the “alternative” is an example of science trying to correct this bias. It’s a small and symbolic correction, but it’s better than nothing.~~
+#### 
 
--   ~~The **null hypothesis** (sometimes written **H0**) is the label given for whatever evidence would not support the researcher’s belief.~~
+::: callout-warning
+#### Culture in Statistics : The Normal Curve
 
-~~**EXAMPLE :** Let’s say you believe that smoking cannabis hurts a person’s memory. What’s the alternative hypothesis? What’s the null?~~
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](/images/doff_intro_mickey.png){width="3in"} | That's right folks, it's time for another chat with your friend Open-Source Mickey Mouse! This time, we're gonna chat about the idea that people differ from some average. The idea that you could quantify people as "average" is fairly new - it's hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s[^3r_description-6]. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet's ideas to try and "rank" individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else. |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
--   ~~Null Hypothesis : People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna.~~
+But you don't have to take it from me! Here's Galton in his own words :
 
--   ~~Alternative Hypothesis : People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.~~
+*To conclude, the range of mental power between—I will not say the highest Caucasian and the lowest savage—but between the greatest and least of English intellects, is enormous. ... I propose in this chapter to range men according to their natural abilities, putting them into classes separated by equal degrees of merit, and to show the relative number of individuals included in the several classes.....The method I shall employ for discovering all this, is an application of the very curious theoretical law of “deviation from an average.” First, I will explain the law, and then I will show that the production of natural intellectual gifts comes justly within its scope. -* Galton, Hereditary Genius (1869). [Linked here](https://galton.org/books/hereditary-genius/text/v5/galton-1869-hereditary-genius-v5.htm).
+:::
 
--   ~~Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs. non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)~~
+[^3r_description-6]: see Rose's END OF AVERAGE (2016) or, for a more critical approach, Chapman's (2023) EMPIRE OF NORMALITY.
 
-[~~**Check-In : Identifying Models, Null, and Alternative Hypotheses.**~~](https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=sf_link)~~Let’s review with a quick check-in to practice identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory. As a reminder, check-ins are required, graded for completion, and will be used for you and me to gauge understanding.~~
+The point of bringing up some of the racist origins of statistics is two-fold :
 
-### ~~Step 3 : Collect Data~~
+1.  Many people like to argue that "good" statistics is objective, and that scientists are free of bias. So it's important to acknowledge that the inventors of many statistics that we use had clear biases and did not behave objectively. Rather than try to be free of bias, I think it's important to acknowledge where and when people are biased, and address those biases up explicitly.
+2.  Statistics is a tool, and that tool can be used poorly and dangerously in ways that can cause a lot of pain. Just because something has numbers doens't mean it's correct. For example, Galton's work showing "statistically" that white people were superior in ability to other groups didn't account for other factors like socioeconomic status. And for what it's worth, modern scientists overwhelmingly agree that "race" is a social construct. There are genetic differences that explain different skin tones, however there is more genetic variation in skin tone within a similar “race” than between different “races”. [Read more about this here.](https://www.smithsonianmag.com/smart-news/genetic-study-shows-skin-color-just-skin-deep-180965261/)
 
-~~As described above, scientific theories are supported by evidence called data. How researchers collect data is something we will discuss in more detail over the next few weeks. In general, researchers have to figure out how to measure the variables they are interested in studying (e.g., “how will I know if someone is happy or not?”), and then find participants (people or animals) to study (e.g., “whose happiness should I study”).~~
+Alright, that's all for now! Let me know what you think and see you next time!
 
-~~For example, in our smoking cannabis example the decisions about how to measure memory (a music memory game or a word recognition task?) or how much cannabis (a little or a lot?) or who to study (Berkeley students or your grandparents?) in the study would likely influence the results.~~
+## Why This Matters.
 
-~~The decisions that researchers make about how to define their measures and the participants they will study are very important, and will influence the results of the study (and thus our knowledge of the topic), so stay tuned for more discussion!~~
+The normal distribution is foundational to the statistics we will learn in this class. (And in an advanced statistics class, you'll learn how to adapt techniques if you want to understand non-normal distributions.)
 
-### ~~Step 4 : Use Data to Test Theories~~
-
-~~Finally, researchers look to see if the data they collected supports or rejects their theory (and evaluate how strongly their theory is supported or rejected). We'll talk much more about using data to test theories this semester.~~
-
-~~In our smoking cannabis example, the researcher would look to see which group did better on the memory test, and if the smokers did worse, then their theory would be supported (by this one study, at least).~~
-
-### ~~Step 5 : Repeat~~
-
-~~Once a study is completed, researchers repeat the scientific method in two different ways.~~
-
-~~Researchers will sometimes repeat the exact same steps a second time - something called **replication**. Replication is critical to science.~~
-
-~~Scientists also repeat the scientific method with a new question that is based on the results from their first study. Science is a process, and researchers are never done learning about how to better predict & control the world. There’s always more research to do. For example, after identifying a pattern between smoking cannabis and memory, a researcher might ask whether the type or dosage of cannabis intake would influence memory, whether abstinence could reverse the effects of memory impairment, or whether cannabis and coffee together might lead to a different result. Note that this is not an example of replication, since researchers are not testing the same question they had - but it’s repeating the scientific method for a new question inspired by the old. This is good, and part of scientific progress. But the problem is that the incentives for scientific publication focused almost entirely on “new” research, and not really making sure that the “old” research was valid.~~
-
-### ~~It's Never Actually Easy~~
-
-~~Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a [Replication Crisis](https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics). This crisis is two-fold a) researchers tend not to seek to replicate their (or others’) results, and b) systematic attempts to do so have suggested that the majority of results in psychology do not replicate[^5r_goodscience-3].~~
-
-[^5r_goodscience-3]: You can go deeper into some of the drama surrounding the replication project [here](#0). lemme know what you think on the discord thread for this week.
+This does not mean that every variable needs to be normally distributed; we'll work with skewed variables and categorical variables (which have their own distributions) in lots of ways. However, the "normal distribution" is an important reference point that we can use to evaluate variables. For example, exam scores are *negatively skewed* because they differ from the normal distribution.
 
 # Part 2. Good Data
 

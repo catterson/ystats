@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -91,10 +125,6 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="http://catterson.github.io/calstats/calstatsSP25.html"> 
-<span class="menu-text">Psych 101 [Lecture Notes, Labs, Syllabus]</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
 <span class="menu-text">List of R Code</span></a>
   </li>  
@@ -154,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/2R_Data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Data Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -270,16 +300,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
-  <li><a href="#part-1.-good-science-moved-to-chapter-1" id="toc-part-1.-good-science-moved-to-chapter-1" class="nav-link active" data-scroll-target="#part-1.-good-science-moved-to-chapter-1">Part 1. Good Science [moved to chapter 1]</a>
+  <li><a href="#part-1.-the-normal-distribution." id="toc-part-1.-the-normal-distribution." class="nav-link active" data-scroll-target="#part-1.-the-normal-distribution.">Part 1. The “Normal” Distribution.</a>
   <ul>
-  <li><a href="#the-scientific-method-in-5-easy-steps" id="toc-the-scientific-method-in-5-easy-steps" class="nav-link" data-scroll-target="#the-scientific-method-in-5-easy-steps"><del>The Scientific Method in 5 Easy Steps</del></a>
+  <li><a href="#definition." id="toc-definition." class="nav-link" data-scroll-target="#definition.">Definition.</a>
   <ul class="collapse">
-  <li><a href="#step-1-identify-a-question" id="toc-step-1-identify-a-question" class="nav-link" data-scroll-target="#step-1-identify-a-question"><del><strong>Step 1 : Identify a Question</strong></del></a></li>
-  <li><a href="#step-3-collect-data" id="toc-step-3-collect-data" class="nav-link" data-scroll-target="#step-3-collect-data"><del>Step 3 : Collect Data</del></a></li>
-  <li><a href="#step-4-use-data-to-test-theories" id="toc-step-4-use-data-to-test-theories" class="nav-link" data-scroll-target="#step-4-use-data-to-test-theories"><del>Step 4 : Use Data to Test Theories</del></a></li>
-  <li><a href="#step-5-repeat" id="toc-step-5-repeat" class="nav-link" data-scroll-target="#step-5-repeat"><del>Step 5 : Repeat</del></a></li>
-  <li><a href="#its-never-actually-easy" id="toc-its-never-actually-easy" class="nav-link" data-scroll-target="#its-never-actually-easy"><del>It’s Never Actually Easy</del></a></li>
+  <li><a href="#example-thinking-about-distributions" id="toc-example-thinking-about-distributions" class="nav-link" data-scroll-target="#example-thinking-about-distributions">Example : Thinking About Distributions</a></li>
+  <li><a href="#example-2-thinking-about-distributions" id="toc-example-2-thinking-about-distributions" class="nav-link" data-scroll-target="#example-2-thinking-about-distributions">Example 2 : Thinking About Distributions</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#why-this-matters." id="toc-why-this-matters." class="nav-link" data-scroll-target="#why-this-matters.">Why This Matters.</a></li>
   </ul></li>
   <li><a href="#part-2.-good-data" id="toc-part-2.-good-data" class="nav-link" data-scroll-target="#part-2.-good-data">Part 2. Good Data</a>
   <ul>
@@ -338,67 +369,121 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>In this chapter, you’ll learn how psychologists (and scientists) construct and share their knowledge.</p>
-<section id="part-1.-good-science-moved-to-chapter-1" class="level1 page-columns page-full">
-<h1>Part 1. Good Science [moved to chapter 1]</h1>
-<section id="the-scientific-method-in-5-easy-steps" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="the-scientific-method-in-5-easy-steps"><del>The Scientific Method in 5 Easy Steps</del></h2>
-<p><del>So, you’ve defined a research question you are interested in? Yeah! The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. There are five parts, described below.</del></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;&nbsp;&nbsp;Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the <a href="https://convention.apa.org/">American Psychological Association</a> or the <a href="https://www.psychologicalscience.org/conventions">Association of Psychological Science</a>. The <a href="https://westernpsych.org/convention/">Western Psychological Association</a> has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the <a href="http://meeting.spsp.org/">Society of Personality and Social Psychology</a>). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.</p></div></div><section id="step-1-identify-a-question" class="level4 page-columns page-full">
-<h4 class="anchored" data-anchor-id="step-1-identify-a-question"><del><strong>Step 1 : Identify a Question</strong></del></h4>
-<p><del>First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Chapter 1, we talked about how these questions are often informed by the researcher’s own observations or experiences.</del></p>
-<p><del>Still looking for a project topic? A few ideas to consider :</del></p>
-<ul>
-<li><p><del><strong>Think about why you become a psychology major.</strong> Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people’s lies? Think about these interests, then think about what variables might be relevant. For example, while you won’t have access to an fMRI machine (or the required statistics) in order to <a href="https://www.youtube.com/watch?v=inaH_i_TjV4">reconstruct images people see during their dreams</a>, you might study people’s beliefs about the importance of their dreams, or the extent to which they have dreams.</del></p></li>
-<li><p><del><strong>Focus on a problem you’ve encountered or observed in real-life.</strong> Notice that something in the world could be better? How would you label that as a variable? For example, maybe you want to better understand people’s attitudes about capitalism or racism or housing costs.</del></p></li>
-<li><p><del><strong>Look at faculty webpages, and see what they (and / or their graduate students) are studying.</strong> Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question might you study with this project?</del></p></li>
-<li><p><del><strong>Chase the latest trends of today.</strong> What’s capitalism care about these days? AI?</del></p></li>
-</ul>
-<p><del>But you don’t have to take my word for it. <a href="https://libguides.usc.edu/writingguide/introduction/researchproblem">Here’s another guide</a> that might offer some help, or ask for help in the class discord / office hours / lecture!<br>
-</del></p>
-<p><del><strong>Step 2 : Develop a Theory</strong></del></p>
-<p><del>A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is comprehensive (it relates to all nature, not just plants or animals or finches), it is explanatory (it’s why we and <a href="https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg">cats</a> both narrow our eyes when we are scared and angry), and it is supported (by over 100 years of evidence<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>).</del></p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;<a href="https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01">From fossil records to observations of fruit flies and plans</a></p></div></div><p><del><strong>RECAP : Statistical Models as a Question &amp; Theory:</strong></del></p>
-<p><del>As discussed in Lecture 1, a scientific model identifies the variables that a researcher wants to predict (the dependent variable = the focus of the question) and the variables that the researcher thinks will explain the dependent variable (the independent variables).</del></p>
-<p><del>For example, if my question is “What causes rain to fall in the sky?”, then my dependent variable would be listed as <strong>rain</strong> (sometimes it rains; sometimes it does not). If my theory is that it rains because there are dark clouds in the sky, then I would write my model as&nbsp; : <strong><code>rain ~ clouds + error.</code></strong></del></p>
-<p><del><strong>Most scientists refrain from saying that a theory is “proven” or “true” for two reasons:</strong></del></p>
+<section id="part-1.-the-normal-distribution." class="level1 page-columns page-full">
+<h1>Part 1. The “Normal” Distribution.</h1>
+<section id="definition." class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="definition.">Definition.</h2>
+<p>The “Normal” (or Gaussian) distribution is a common shape for what distributions of data look like. The shape is often called a “bell curve”, because it looks like the curve of a bell.</p>
+<p>While many distributions appear normal, the “Normal Distribution” ™ refers to a distribution that describes an expected probability of a range of scores.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/3_NormalDistributionAnnotated.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>The Normal Distribution is called “normal” because researchers expect to see this type of distribution for variables where two conditions are met:</p>
 <ol type="1">
-<li><p><del>First, the scientific method is a process - our knowledge and ideas are continually updated. So it’s likely that the theory of evolution will be updated as we learn more about the complex ways genes replicate and interact with the environment. Saying that a theory is “proven” is a common mistake - watch out for it!</del></p></li>
-<li><p><del>Second, most scientists (and psychologists) draw from Karl Popper’s philosophy of science, which adheres to a requirement for science called <strong>falsifiability -</strong> the ability to find evidence that rejects a theory (“ability to falsify”). This means a theory is never ‘proven’ because scientists are continually looking for evidence to reject the theory. It also means that a belief that cannot be tested or rejected would be rejected as a scientific belief - you have to be able to test your belief in some observable way. Falsifiability is where I think science separates from religious belief - someone with faith doesn’t need evidence, and that’s okay! It just doesn’t make the belief scientific under science’s narrow definition.</del></p></li>
+<li><strong>There are multiple explanations for why the variation occurs</strong>. This happens very frequently across all science, since life is complex and there are many reasons why individuals differ.</li>
+<li><strong>These multiple explanations occur randomly</strong>. This means that the multiple explanations for variation are mostly independent of one another, and there is not some shared experience among individuals that is influencing their variation.</li>
 </ol>
-<p><del><strong>Hypotheses</strong> are specific predictions that researchers make about what they expect to see in the data if their theory is supported or is not supported by data.</del></p>
-<ul>
-<li><p><del>The <strong>alternative hypothesis</strong> (sometimes written <strong>HA</strong>) is the researcher’s own belief. It may seem strange to label your belief “alternative” when this word is used for things that are supposed to be different (“alternative rock = it’s not your parent’s rock &amp; roll!”), and we are so used to thinking that our beliefs are the default that to call them alternative seems wrong. This is an example of previous beliefs bias, and the decision to label our beliefs as the “alternative” is an example of science trying to correct this bias. It’s a small and symbolic correction, but it’s better than nothing.</del></p></li>
-<li><p><del>The <strong>null hypothesis</strong> (sometimes written <strong>H0</strong>) is the label given for whatever evidence would not support the researcher’s belief.</del></p></li>
-</ul>
-<p><del><strong>EXAMPLE :</strong> Let’s say you believe that smoking cannabis hurts a person’s memory. What’s the alternative hypothesis? What’s the null?</del></p>
-<ul>
-<li><p><del>Null Hypothesis : People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna.</del></p></li>
-<li><p><del>Alternative Hypothesis : People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.</del></p></li>
-<li><p><del>Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs.&nbsp;non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)</del></p></li>
-</ul>
-<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=sf_link"><del><strong>Check-In : Identifying Models, Null, and Alternative Hypotheses.</strong></del></a><del>Let’s review with a quick check-in to practice identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory. As a reminder, check-ins are required, graded for completion, and will be used for you and me to gauge understanding.</del></p>
+<section id="example-thinking-about-distributions" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="example-thinking-about-distributions">Example : Thinking About Distributions</h3>
+<p>For example, let’s look at one example “normal” distributions - the “self-esteem” variable we saw in Lecture 2. Note that it’s not perfectly normal<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but it’s pretty close and representative of the kind of “real world” data that you might encounter.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;good not to hold data to unrealistic body images as well as people.</p></div></div><div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d<span class="sc">$</span>SELFES, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Histogram of Self-Esteem"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Self-Esteem Score"</span>, <span class="at">breaks =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5R_GoodScience_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>“Random” explanations for why variation in self-esteem occurs.</strong> Self-esteem is complex, and can be influenced by variables such as: genetics, parental environment, home environment, income, neurotransmitters, whether your crush told you they like you too the day you took the self-esteem survey, etc. These variables are considered random because one does not influence the other, and they differ across participants in the study. That is, someone who had a happy parental environment may not necessarily have a high income.&nbsp;</p>
+<p><strong>“Non-Random” Explanations.</strong> Careful observers will note that self-esteem appears slightly shifted above the mid-point of the scale (which goes from 1-4, so 2.5 would be the mid-point), and that there’s some slight negative skew (meaning more individuals are on the higher end of the distribution). This shift is likely the result of some shared cultural experiences among participants - our society values self-esteem, and people might be biased to self-enhance / self-present a higher self-esteem. This is a non-random influence, since many participants might experience this.</p>
 </section>
-<section id="step-3-collect-data" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-collect-data"><del>Step 3 : Collect Data</del></h3>
-<p><del>As described above, scientific theories are supported by evidence called data. How researchers collect data is something we will discuss in more detail over the next few weeks. In general, researchers have to figure out how to measure the variables they are interested in studying (e.g., “how will I know if someone is happy or not?”), and then find participants (people or animals) to study (e.g., “whose happiness should I study”).</del></p>
-<p><del>For example, in our smoking cannabis example the decisions about how to measure memory (a music memory game or a word recognition task?) or how much cannabis (a little or a lot?) or who to study (Berkeley students or your grandparents?) in the study would likely influence the results.</del></p>
-<p><del>The decisions that researchers make about how to define their measures and the participants they will study are very important, and will influence the results of the study (and thus our knowledge of the topic), so stay tuned for more discussion!</del></p>
+<section id="example-2-thinking-about-distributions" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="example-2-thinking-about-distributions">Example 2 : Thinking About Distributions</h3>
+<p>Below is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.)</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;It is negatively skewed, since the tail is on the negative side of the distribution.</p></div></div><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/3_RGrades.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+“Random” Reasons for Variation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Lots of things can influence a student’s score on an exam, such as how much students were motivated to study, how much time they had to study, what was going on in their lives, whether they had a study buddy in the class, whether they were sick or not on the day of the exam, their “test taking” skills and strategies and anxiety levels, etc.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+“Non-Random” Reasons for Variation.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>These data are not normally distributed because the students were all part of the same college, in the same classroom, taught by the same professor, at the same time. The professor did his best to prepare these students, and wrote a test that would be based on the kinds of practice they had gone over in lecture. These variables are considered “non random” because they were shared by all students. The data are skewed because these non-random shared experiences helped students do well on the exam.</p>
+</div>
+</div>
+</div>
+<section id="section" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="section"></h4>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Culture in Statistics : The Normal Curve
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 95%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../images/doff_intro_mickey.png" class="img-fluid" style="width:3in"></td>
+<td>That’s right folks, it’s time for another chat with your friend Open-Source Mickey Mouse! This time, we’re gonna chat about the idea that people differ from some average. The idea that you could quantify people as “average” is fairly new - it’s hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet’s ideas to try and “rank” individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else.</td>
+</tr>
+</tbody>
+</table>
+<p>But you don’t have to take it from me! Here’s Galton in his own words :</p>
+<p><em>To conclude, the range of mental power between—I will not say the highest Caucasian and the lowest savage—but between the greatest and least of English intellects, is enormous. … I propose in this chapter to range men according to their natural abilities, putting them into classes separated by equal degrees of merit, and to show the relative number of individuals included in the several classes…..The method I shall employ for discovering all this, is an application of the very curious theoretical law of “deviation from an average.” First, I will explain the law, and then I will show that the production of natural intellectual gifts comes justly within its scope. -</em> Galton, Hereditary Genius (1869). <a href="https://galton.org/books/hereditary-genius/text/v5/galton-1869-hereditary-genius-v5.htm">Linked here</a>.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;see Rose’s END OF AVERAGE (2016) or, for a more critical approach, Chapman’s (2023) EMPIRE OF NORMALITY.</p></div></div><p>The point of bringing up some of the racist origins of statistics is two-fold :</p>
+<ol type="1">
+<li>Many people like to argue that “good” statistics is objective, and that scientists are free of bias. So it’s important to acknowledge that the inventors of many statistics that we use had clear biases and did not behave objectively. Rather than try to be free of bias, I think it’s important to acknowledge where and when people are biased, and address those biases up explicitly.</li>
+<li>Statistics is a tool, and that tool can be used poorly and dangerously in ways that can cause a lot of pain. Just because something has numbers doens’t mean it’s correct. For example, Galton’s work showing “statistically” that white people were superior in ability to other groups didn’t account for other factors like socioeconomic status. And for what it’s worth, modern scientists overwhelmingly agree that “race” is a social construct. There are genetic differences that explain different skin tones, however there is more genetic variation in skin tone within a similar “race” than between different “races”. <a href="https://www.smithsonianmag.com/smart-news/genetic-study-shows-skin-color-just-skin-deep-180965261/">Read more about this here.</a></li>
+</ol>
+<p>Alright, that’s all for now! Let me know what you think and see you next time!</p>
 </section>
-<section id="step-4-use-data-to-test-theories" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-use-data-to-test-theories"><del>Step 4 : Use Data to Test Theories</del></h3>
-<p><del>Finally, researchers look to see if the data they collected supports or rejects their theory (and evaluate how strongly their theory is supported or rejected). We’ll talk much more about using data to test theories this semester.</del></p>
-<p><del>In our smoking cannabis example, the researcher would look to see which group did better on the memory test, and if the smokers did worse, then their theory would be supported (by this one study, at least).</del></p>
 </section>
-<section id="step-5-repeat" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-repeat"><del>Step 5 : Repeat</del></h3>
-<p><del>Once a study is completed, researchers repeat the scientific method in two different ways.</del></p>
-<p><del>Researchers will sometimes repeat the exact same steps a second time - something called <strong>replication</strong>. Replication is critical to science.</del></p>
-<p><del>Scientists also repeat the scientific method with a new question that is based on the results from their first study. Science is a process, and researchers are never done learning about how to better predict &amp; control the world. There’s always more research to do. For example, after identifying a pattern between smoking cannabis and memory, a researcher might ask whether the type or dosage of cannabis intake would influence memory, whether abstinence could reverse the effects of memory impairment, or whether cannabis and coffee together might lead to a different result. Note that this is not an example of replication, since researchers are not testing the same question they had - but it’s repeating the scientific method for a new question inspired by the old. This is good, and part of scientific progress. But the problem is that the incentives for scientific publication focused almost entirely on “new” research, and not really making sure that the “old” research was valid.</del></p>
 </section>
-<section id="its-never-actually-easy" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="its-never-actually-easy"><del>It’s Never Actually Easy</del></h3>
-<p><del>Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a <a href="https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics">Replication Crisis</a>. This crisis is two-fold a) researchers tend not to seek to replicate their (or others’) results, and b) systematic attempts to do so have suggested that the majority of results in psychology do not replicate<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</del></p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;You can go deeper into some of the drama surrounding the replication project <a href="#0">here</a>. lemme know what you think on the discord thread for this week.</p></div></div></section>
+<section id="why-this-matters." class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters.">Why This Matters.</h2>
+<p>The normal distribution is foundational to the statistics we will learn in this class. (And in an advanced statistics class, you’ll learn how to adapt techniques if you want to understand non-normal distributions.)</p>
+<p>This does not mean that every variable needs to be normally distributed; we’ll work with skewed variables and categorical variables (which have their own distributions) in lots of ways. However, the “normal distribution” is an important reference point that we can use to evaluate variables. For example, exam scores are <em>negatively skewed</em> because they differ from the normal distribution.</p>
 </section>
 </section>
 <section id="part-2.-good-data" class="level1 page-columns page-full">
@@ -424,7 +509,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="example-validity-and-reliability">Example : Validity and Reliability</h2>
 <p>Think about a scale. How would you evaluate the validity (face, convergent, discriminant) and reliability (test-retest / interjudge) of a bathroom scale? Think about this on your own, then look over the video key / guide below.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -433,7 +518,7 @@ Expand To See Answers
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Watch the video below to go over some possible answers, or just look over the table.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/T9dTk6Sa434" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>

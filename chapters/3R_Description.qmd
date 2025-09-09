@@ -12,20 +12,23 @@ Hello! This week, you’ll learn how to use statistics to describe data in terms
 ## To-Do List:
 
 -   Read this document and watch the videos. Are you pressed for time? Some guidance below.
-    -   Part 1 : Focus on the mean, and why it's important.
-    -   Part 2 : Focus on Standard Deviation, and watch these videos.
-    -   Part 3 : Focus on what a normal distribution is, and why we should care / critique it a little.
-    -   Part 4 : Complete the check-in and practice quiz, and watch the video on removing outliers.
+    -   Part 1 : Focus on the mean, and why it's important, and watch the videos on standard deviation.
+    -   Part 2 : Complete the practice quiz and watch the video key. If time, watch the video on removing outliers.
 -   Take Quiz 3 : on using your knowledge of R (and standard deviation) to describe data.
+
 :::
 
-# Part 1 : Centrality
+# Part 1 : Descriptive Statistics
 
-Centrality refers to ways that statistics try to reduce the complexity of individual scores in a distribution to some more simple shared feature. Statistics like the mean, median, and mode try to focus on what is most common, or core, to a set of diverse data. You can think of *centrality* like a summary - while a lot of information is lost in summary (e.g., Lord of the Rings is much more about some Hobbits trying to destroy an evil ring), a summary often gets the point across in few words (e.g., Lord of the Rings does spend a lot of time describing Hobbits trying to destroy an evil ring.)
+We use statistics as a language to describe how individuals are both similar to, and different from, each other.
 
-## The Mean
+## Centrality
 
-### Definition.
+Statistics like the mean, median, and mode focus on what is most central to a distribution of data. These measures of centrality reduce the complexity of individual scores, but in doing so emphasize some of the core aspects of the variable. You can think of *centrality* like a summary of the data. While a lot of information is lost in summary (e.g., Lord of the Rings is much more about some Hobbits trying to destroy an evil ring), a summary often gets the key points across in few words (e.g., Lord of the Rings does spend a lot of time describing Hobbits trying to destroy an evil ring.)
+
+### The Mean
+
+#### Definition.
 
 The mean (also known as the average) is one of the most important statistics, and the foundation for much of what we will do in this class.
 
@@ -47,7 +50,7 @@ So, when reading this formula, you would "say" : "y bar (the mean) is equal to t
 
 See?! Simple!
 
-### Why It Matters.
+#### Why It Matters.
 
 One important characteristic of the mean is that it is the value of a distribution that is closest to all the other scores. This means that the mean serves as our “best guess” (a prediction) about the value of what any random individual scores in this distribution. This is why the mean is also called the ‘expected value’.
 
@@ -55,9 +58,9 @@ You've internalized this in many ways - if you know the average temperature for 
 
 HOWEVER - the mean does not perfectly describe all scores in the distribution (because people are complex - we are not the same). We’ll talk more about these “errors” in prediction when we talk about the standard deviation (a measure of complexity) below.
 
-## The Median
+### The Median
 
-### The Definition
+#### The Definition
 
 The **median** is the value that is in the very *middle* of a distribution of scores. This means that 50% of scores in the distribution are higher than the median value, and 50% of the scores are lower than the median value.  If there’s an odd set of numbers, the median is the middle number. If there’s an even set of numbers, the median is the average of the two middle numbers. 
 
@@ -74,15 +77,15 @@ So imagine two sets of numbers : what number is in the very middle?
 -   2, 2, 3, 3, 5, 10, 14, 19 = the median value is 4; since there is no "true" middle, 4 is the value that is in the middle of the two nearest values 3 and 5.
 :::
 
-### Why It Matters
+#### Why It Matters
 
 Because the median is defined entirely by the middle of a distribution, it is less influenced by extreme data (outliers) than the mean. Below are two graphs of height. The one on the left is for a collection of people, and the histogram on the right is a graph of heights for a collection of people and some big friendly giants. The median of this distribution is illustrated as a vertical blue line, and the mean of this distribution is illustrated as a vertical red line.
 
 ![](images/3_MedianvMean.png){fig-align="center"}
 
-## The Mode
+### The Mode
 
-### The Definition
+#### The Definition
 
 The **mode** is the most common number in a set of numbers. If two numbers are equally common in a distribution, then the distribution is said to be bi-modal (and more than two most common numbers = multimodal)
 
@@ -90,7 +93,7 @@ So if your distribution was : 2, 3, 3, 5, 10, 14, 19, 20, 20, then the mode woul
 
 [^3r_description-1]: the mode would be 3 and 20, since these are the most frequent
 
-### Why It Matters
+#### Why It Matters
 
 The mode is rarely reported in research articles - I sometimes see it in within-person studies, or in situations where researchers are measuring psychophysiological measures (like heart rate or vagal tone) where the peak of the distribution might indicate something important.
 
@@ -112,25 +115,25 @@ For example, look at the following illustration : why might this bimodal distrib
 
 [^3r_description-2]: see Antoine de Saint-Exupéry’s (1943). The Little Prince.
 
-# Part 2 : Complexity
+## Complexity
 
 Complexity refers to the ways that data differ from each other - really the focus of variation. And yet, as scientists, we are trying to understand patterns in that variation, and so have developed a language to talk about some of the systematic ways that individuals differ.
 
-## Range.
+### Range.
 
-### Definition.
+#### Definition.
 
 One way people differ is by the extreme ends; this is called **the range**. Most people refer to the range as the lowest and highest value; though sometimes the range is defined as the distance between the highest and lowest value.
 
-### Why It Matters.
+#### Why It Matters.
 
 The extreme low and high of your variable give you a sense about the limits of variation. How to interpret these limits really depends on the variable you are measuring; for a variable like reaction time in some cognitive task, I would expect the low end to be zero (or something near zero, but not negative) and the high end influenced by how long I would expect the task to take (usually anywhere from less than a second for a quick reaction to a few minutes.) If the high end of the range was something like 30-minutes, I would think that something went wrong.
 
 As a researcher (and teacher) I often use the range as a quick way to ensure the data are correct - that is, to confirm that the lowest and highest scores are possible values given the way the variable was measured. For example, I check the range when looking at test scores to make sure no students got a negative score or score above 100% (both impossible in my class.)
 
-## Outliers.
+### Outliers.
 
-### The Definition
+#### The Definition
 
 Outliers are extreme values that are so different from the rest of the data that you remove them from the dataset because you worry that they might cause problems for your data. Outliers exist because of errors in data entry (for example, the person who lists their age as 1009 instead of 19) or because they represent individuals who are qualitatively different from the rest of your data (for example, the participant who is a billionaire and lists that as their income.[^3r_description-3])
 
@@ -138,15 +141,15 @@ Outliers are extreme values that are so different from the rest of the data that
 
 How extreme is too extreme? Some folks like to come up with rules for making this decision based on the number of standard deviations away from the mean or some other metric. I appreciate those efforts, but personally believe it’s better to judge outliers based on the qualitative decisions above (and use past research as a guide). Whatever you do, make sure to (1) justify your decisions, (2) report these decisions in your code and analyses, and (3) make any decisions about removing outliers as early as possible and before you start making predictions.
 
-### Why It Matters.
+#### Why It Matters.
 
 The presence of outliers in your data has the potential to influence your results in ways that will bias your results. For example, if someone wandered off in the middle of a cognitive task, their outliers for reaction time might make you think people took way longer to complete the task than people really needed to take. If I included everyone who didn't take the exam (and got a zero) in taking the average of the exam score, I might think that students did worse on the exam than they really did, when I should have excluded these zeros to get a better representation of how people did on the exam.
 
 It's therefore super critical to a) identify any possible outliers in the data, and b) remove them from data analysis, and c) be 100% transparent that you have removed data. You will learn to do this using R in Part 4 below.
 
-## Skew.
+### Skew.
 
-### Definition.
+#### Definition.
 
 Skew describes asymmetry in the shape of the distribution. A graph that is symmetrical has no skew.
 
@@ -156,7 +159,7 @@ It’s easy to confuse the different types of skew, so I like to think of skew a
 
 **skew → pikachu →** ![](images/3_pikaskew.png){width="102"}**--\> tail**
 
-### Why It Matters.
+#### Why It Matters.
 
 Skew can help us to think about why people
 
@@ -166,9 +169,7 @@ Skew can help us to think about why people
 
 -   **No Skew (also called the "Normal Distribution")** is when the distribution is symmetrical.
 
-## Kurtosis
-
-##### **Kurtosis**
+### Kurtosis
 
 Kurtosis describes the size of the tails, relative to the middle of the distribution. I think of kurtosis as the pointiness of the distribution. Mesokurtic is a distribution that looks “normal”, leptokurtic is a distribution that is skinny in the middle (with many individual scores in the tail of the distribution), and platykurtic is a distribution wide in the middle with few observations in the tails.
 
@@ -176,7 +177,7 @@ Kurtosis describes the size of the tails, relative to the middle of the distribu
 
 Like skew, there are ways to quantify kurtosis, but we won’t cover this in the class. I almost never see kurtosis reported as a statistic in journals.
 
-## The Standard Deviation.
+## The Standard Deviation : A Mix of Centrality and Complexity
 
 ### The Definition
 
@@ -217,94 +218,7 @@ Great question! The standard deviation does two things :
 1.  The standard deviation quantifies how much the "average" person differs from the average of the individuals in a group. This is a great statistic to have, since it quantifies how much individuals differ from each other on average (between-person variation)
 2.  The standard deviation serves as a baseline for our predictions. The mean is a GREAT starting place for our predictions, but soon we will want to make more sophisticated predictions. We will do this with our good friend *the linear model*, and will know whether we can improve our predictions by decreasing the amount of residual error.
 
-# Part 3. The "Normal" Distribution.
-
-## Definition.
-
-The “Normal” (or Gaussian) distribution is a common shape for what distributions of data look like. The shape is often called a “bell curve”, because it looks like the curve of a bell.
-
-While many distributions appear normal, the “Normal Distribution” ™ refers to a distribution that describes an expected probability of a range of scores.
-
-![](images/3_NormalDistributionAnnotated.png){fig-align="center"}
-
-The Normal Distribution is called "normal" because researchers expect to see this type of distribution for variables where two conditions are met:
-
-1.  **There are multiple explanations for why the variation occurs**. This happens very frequently across all science, since life is complex and there are many reasons why individuals differ.
-2.  **These multiple explanations occur randomly**. This means that the multiple explanations for variation are mostly independent of one another, and there is not some shared experience among individuals that is influencing their variation.
-
-### Example : Thinking About Distributions
-
-For example, let’s look at one example "normal" distributions - the "self-esteem" variable we saw in Lecture 2. Note that it's not perfectly normal[^3r_description-4], but it's pretty close and representative of the kind of "real world" data that you might encounter.
-
-[^3r_description-4]: good not to hold data to unrealistic body images as well as people.
-
-```{r}
-#| include: false
-d <- read.csv("../datasets/Self-Esteem Dataset/data.csv", stringsAsFactors = T, na.strings = "0", sep = "\t")
-SELFES.df <- data.frame(d[,c(1:2,4,6,7)], 5-d[,c(3,5,8:10)])
-d$SELFES <- rowMeans(SELFES.df, na.rm = T)
-```
-
-```{r}
-hist(d$SELFES, col = 'black', bor = 'white', 
-     main = "Histogram of Self-Esteem", 
-     xlab = "Self-Esteem Score", breaks = 15)
-```
-
-**"Random" explanations for why variation in self-esteem occurs.** Self-esteem is complex, and can be influenced by variables such as: genetics, parental environment, home environment, income, neurotransmitters, whether your crush told you they like you too the day you took the self-esteem survey, etc. These variables are considered random because one does not influence the other, and they differ across participants in the study. That is, someone who had a happy parental environment may not necessarily have a high income. 
-
-**"Non-Random" Explanations.** Careful observers will note that self-esteem appears slightly shifted above the mid-point of the scale (which goes from 1-4, so 2.5 would be the mid-point), and that there's some slight negative skew (meaning more individuals are on the higher end of the distribution). This shift is likely the result of some shared cultural experiences among participants - our society values self-esteem, and people might be biased to self-enhance / self-present a higher self-esteem. This is a non-random influence, since many participants might experience this.
-
-### Example 2 : Thinking About Distributions
-
-Below is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer[^3r_description-5].)
-
-[^3r_description-5]: It is negatively skewed, since the tail is on the negative side of the distribution.
-
-![](images/3_RGrades.png){fig-align="center"}
-
-::: {.callout-tip collapse="true"}
-#### "Random" Reasons for Variation
-
-Lots of things can influence a student’s score on an exam, such as how much students were motivated to study, how much time they had to study, what was going on in their lives, whether they had a study buddy in the class, whether they were sick or not on the day of the exam, their “test taking” skills and strategies and anxiety levels, etc.
-:::
-
-::: {.callout-tip collapse="true"}
-#### "Non-Random" Reasons for Variation.
-
-These data are not normally distributed because the students were all part of the same college, in the same classroom, taught by the same professor, at the same time. The professor did his best to prepare these students, and wrote a test that would be based on the kinds of practice they had gone over in lecture. These variables are considered “non random” because they were shared by all students. The data are skewed because these non-random shared experiences helped students do well on the exam.
-:::
-
-#### 
-
-::: callout-warning
-#### Culture in Statistics : The Normal Curve
-
-|  |  |
-|----|----|
-| ![](/images/doff_intro_mickey.png){width="3in"} | That's right folks, it's time for another chat with your friend Open-Source Mickey Mouse! This time, we're gonna chat about the idea that people differ from some average. The idea that you could quantify people as "average" is fairly new - it's hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s[^3r_description-6]. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet's ideas to try and "rank" individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else. |
-
-But you don't have to take it from me! Here's Galton in his own words :
-
-*To conclude, the range of mental power between—I will not say the highest Caucasian and the lowest savage—but between the greatest and least of English intellects, is enormous. ... I propose in this chapter to range men according to their natural abilities, putting them into classes separated by equal degrees of merit, and to show the relative number of individuals included in the several classes.....The method I shall employ for discovering all this, is an application of the very curious theoretical law of “deviation from an average.” First, I will explain the law, and then I will show that the production of natural intellectual gifts comes justly within its scope. -* Galton, Hereditary Genius (1869). [Linked here](https://galton.org/books/hereditary-genius/text/v5/galton-1869-hereditary-genius-v5.htm).
-:::
-
-[^3r_description-6]: see Rose's END OF AVERAGE (2016) or, for a more critical approach, Chapman's (2023) EMPIRE OF NORMALITY.
-
-The point of bringing up some of the racist origins of statistics is two-fold :
-
-1.  Many people like to argue that "good" statistics is objective, and that scientists are free of bias. So it's important to acknowledge that the inventors of many statistics that we use had clear biases and did not behave objectively. Rather than try to be free of bias, I think it's important to acknowledge where and when people are biased, and address those biases up explicitly.
-2.  Statistics is a tool, and that tool can be used poorly and dangerously in ways that can cause a lot of pain. Just because something has numbers doens't mean it's correct. For example, Galton's work showing "statistically" that white people were superior in ability to other groups didn't account for other factors like socioeconomic status. And for what it's worth, modern scientists overwhelmingly agree that "race" is a social construct. There are genetic differences that explain different skin tones, however there is more genetic variation in skin tone within a similar “race” than between different “races”. [Read more about this here.](https://www.smithsonianmag.com/smart-news/genetic-study-shows-skin-color-just-skin-deep-180965261/)
-
-Alright, that's all for now! Let me know what you think and see you next time!
-
-## Why This Matters.
-
-The normal distribution is foundational to the statistics we will learn in this class. (And in an advanced statistics class, you'll learn how to adapt techniques if you want to understand non-normal distributions.)
-
-This does not mean that every variable needs to be normally distributed; we'll work with skewed variables and categorical variables (which have their own distributions) in lots of ways. However, the "normal distribution" is an important reference point that we can use to evaluate variables. For example, exam scores are *negatively skewed* because they differ from the normal distribution.
-
-# Describing Data in R
+# Part 2 : Describing Data in R
 
 ## Descriptive Statistics
 
