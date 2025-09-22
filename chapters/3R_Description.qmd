@@ -15,7 +15,6 @@ Hello! This week, you’ll learn how to use statistics to describe data in terms
     -   Part 1 : Focus on the mean, and why it's important, and watch the videos on standard deviation.
     -   Part 2 : Complete the practice quiz and watch the video key. If time, watch the video on removing outliers.
 -   Take Quiz 3 : on using your knowledge of R (and standard deviation) to describe data.
-
 :::
 
 # Part 1 : Descriptive Statistics
@@ -312,7 +311,7 @@ Researchers spread their scientific knowledge by publishing research papers. You
 
 2.  **Researcher designs a study, collects data, analyzes the data, and writes up the data as a report.** All the steps of the scientific method. This is what you will do for the final project!
 
-3.  **Researcher submits the report to a scientific journal.** A journal is a collection of articles that are usually united by some common theme. In general, the shorter the name of the journal, the more prestigious[^5r_goodscience-5]. For example, the “Journal of Research in Personality” is considered less prestigious than the “Journal of Personality and Social Psychology”, which is less prestigious than the journal called “Psychological Science”, which is considered less prestigious than the journal called “Science”. 
+3.  **Researcher submits the report to a scientific journal.** A journal is a collection of articles that are usually united by some common theme. In general, the shorter the name of the journal, the more prestigious[^3r_description-4]. For example, the “Journal of Research in Personality” is considered less prestigious than the “Journal of Personality and Social Psychology”, which is less prestigious than the journal called “Psychological Science”, which is considered less prestigious than the journal called “Science”. 
 
 4.  **An editor decides whether to review or reject the article.** Editors make an initial decision - based on a summary of the study and a letter that the author writes to the editor - whether the research article might be a good fit for the journal. If so, they pass it along to the next step. If not, they send a “Thanks, but….” rejection letter.
 
@@ -322,8 +321,7 @@ Researchers spread their scientific knowledge by publishing research papers. You
 
 7.  **The (accepted) paper goes to a proofreader and is published.** Hooray! This process probably takes anywhere from 6 months (insanely fast) to 2 years (or more, depending on the number of revisions that are required).
 
-[^5r_goodscience-5]: Prestige is a very subjective concept in science. However, scientists have found many ways to quantify it, as described in the sections below!
-
+[^3r_description-4]: Prestige is a very subjective concept in science. However, scientists have found many ways to quantify it, as described in the sections below!
 
 ## Publish! Or Perish…?
 
@@ -395,17 +393,13 @@ Well, below are a few other ideas to make superficial , all depending on our goo
 
 2.  **The Impact Factor of the Journal.** Journals have different “prestige factors”, and the impact factor is one way to quantify this prestige. Impact factor is usually defined as the number of times the average article in a journal has been referenced by other researchers in a year. So an impact factor of 2 means that each article in that journal is referenced by two other articles in a year. The impact factor is something you have to look up - journals usually track this. I wouldn’t spend too much time worrying about it, but it’s a quick way to get a very superficial sense of the journal’s reputation. For example, let’s see how the impact factor relates to our rule of “broader journal name = more prestige”.
 
-+----------------------------------------------+--------------------------------------------------+
-| **Journal**                                  | **Impact Factor According to Google in 2024**    |
-+----------------------------------------------+--------------------------------------------------+
-| Journal of Research in Personality           | 2.6                                              |
-+----------------------------------------------+--------------------------------------------------+
-| Journal of Personality and Social Psychology | 6.4                                              |
-+----------------------------------------------+--------------------------------------------------+
-| Psychological Science                        | 10.1 \[couldn’t find a recent stat on this tho\] |
-+----------------------------------------------+--------------------------------------------------+
-| Science                                      | 44.7 \[this escalated quickly\]                  |
-+----------------------------------------------+--------------------------------------------------+
+|  |  |
+|----|----|
+| **Journal** | **Impact Factor According to Google in 2024** |
+| Journal of Research in Personality | 2.6 |
+| Journal of Personality and Social Psychology | 6.4 |
+| Psychological Science | 10.1 \[couldn’t find a recent stat on this tho\] |
+| Science | 44.7 \[this escalated quickly\] |
 
 3.  **The Researcher and Institution.** Another way to evaluate an article is by evaluating the author. Does it look like this research has produced other cool research, or do you find their work boring and problematic for some reason? Is this researcher well known and respected in the field? Do they seem to have a happy photo with all their graduate students on their lab website, or is their lab website 10 years old and just has one sad looking graduate student asking for help with their eyes? Has the researcher continued to produce interesting, reliable research? Or were they the subject of a replication scandal?
 

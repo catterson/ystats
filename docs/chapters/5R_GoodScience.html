@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Why Research Methods? – Why Statistics?</title>
+<title>“Normal” Data – Why Statistics?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/5R_GoodScience.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/5R_GoodScience.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">“Normal” Data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/5R_GoodScience.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">“Normal” Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -312,15 +312,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#why-this-matters." id="toc-why-this-matters." class="nav-link" data-scroll-target="#why-this-matters.">Why This Matters.</a></li>
   </ul></li>
-  <li><a href="#part-2.-z-scoring-in-r" id="toc-part-2.-z-scoring-in-r" class="nav-link" data-scroll-target="#part-2.-z-scoring-in-r">Part 2. Z-Scoring in R</a></li>
-  <li><a href="#part-3-measures" id="toc-part-3-measures" class="nav-link" data-scroll-target="#part-3-measures">Part 3 | Measures</a>
+  <li><a href="#part-2.-z-scoring-and-outliers-in-r" id="toc-part-2.-z-scoring-and-outliers-in-r" class="nav-link" data-scroll-target="#part-2.-z-scoring-and-outliers-in-r">Part 2. Z-Scoring and Outliers in R</a>
   <ul>
-  <li><a href="#self-reports" id="toc-self-reports" class="nav-link" data-scroll-target="#self-reports">Self-Reports</a>
+  <li><a href="#in-r-z-scores" id="toc-in-r-z-scores" class="nav-link" data-scroll-target="#in-r-z-scores">In R : Z-Scores</a>
   <ul class="collapse">
-  <li><a href="#qualitative-interviews" id="toc-qualitative-interviews" class="nav-link" data-scroll-target="#qualitative-interviews">Qualitative Interviews</a></li>
-  <li><a href="#survey-methods" id="toc-survey-methods" class="nav-link" data-scroll-target="#survey-methods">Survey Methods</a></li>
+  <li><a href="#z-scoring-individual-scores-age" id="toc-z-scoring-individual-scores-age" class="nav-link" data-scroll-target="#z-scoring-individual-scores-age">Z-Scoring Individual Scores : Age</a></li>
+  <li><a href="#z-scores-by-hand" id="toc-z-scores-by-hand" class="nav-link" data-scroll-target="#z-scores-by-hand">Z-Scores “By Hand”</a></li>
   </ul></li>
-  <li><a href="#observations" id="toc-observations" class="nav-link" data-scroll-target="#observations">Observations</a></li>
+  </ul></li>
+  <li><a href="#part-3-good-measures" id="toc-part-3-good-measures" class="nav-link" data-scroll-target="#part-3-good-measures">Part 3 | Good Measures</a>
+  <ul>
   <li><a href="#good-data-validity-and-reliability" id="toc-good-data-validity-and-reliability" class="nav-link" data-scroll-target="#good-data-validity-and-reliability">Good Data : Validity and Reliability</a>
   <ul class="collapse">
   <li><a href="#specific-forms-of-validity" id="toc-specific-forms-of-validity" class="nav-link" data-scroll-target="#specific-forms-of-validity">Specific Forms of Validity</a></li>
@@ -344,9 +345,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/5R_GoodScience.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Why Research Methods?</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/5R_GoodScience.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">“Normal” Data</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Why Research Methods?</h1>
+<h1 class="title">“Normal” Data</h1>
 </div>
 
 
@@ -363,7 +364,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In this chapter, you’ll learn how psychologists (and scientists) construct and share their knowledge.</p>
+<p>In this chapter, we’ll define and discuss the idea of “normality”, how psychologists (and scientists) evaluate whether data are “good”.</p>
+<p><img src="images/clipboard-4149537892.png" class="img-fluid"></p>
+<p>The image above depicts <a href="https://www.thomasjprice.com/times-square-arts"><em>Grounded in the Stars</em></a>, a 12-foot sculpture of a young woman that stood in New York CIty’s Times Square from April 29 through June 14, 2025.</p>
+<p>There’s a lot that I love about this image, from the artistry of rendering braids and clothes so naturally in sculpted bronze, to the way the character stares off in the distance as if unconcerned with the gaze of others, to the way the sculpture proudly claims space in a society that does not currently and historically create inclusive spaces for black women. Indeed, the sculpture is surrounded by other massive images<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> whose presence in the space may go unnoticed because it is so routine to see images of white men in public places.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Tom Cruise and some eyeglass model who kind of looks like a 90s era Tom Cruise. Ving Rhames is there too if you look closely enough.</p></div></div><p>The artist’s website emphasizes the way the sculpture challenges pre-existing ideas about who is represented in our society, and references Michelangelo’s <em>David</em> as inspiration, but clarifies that this sculpture is “A fictionalized character constructed from images, observations, and open calls spanning between Los Angeles and London” who “carries familiar qualities, from her stance and countenance to her everyday clothing.”</p>
+<p>This statue, and the fact that it was an amalgamation of real people, also reminded me of the sculptures of Normann and Norma who - like the unnamed woman in Times Square - “were based on the measurements of 15,000 men and women between the ages of 21 and 25 compiled from a variety of sources”. Unlike our sculpture <em>Grounded in the Stars,</em> Normann and Norma were based on the measurements “of a white racial group.”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Quote and images from <a href="https://www.cabinetmagazine.org/issues/15/cambers.php">here</a>. I first learned about Normann and Norma from Todd Rose’s book THE END OF AVERAGE.</p></div><div class="">
+<p><img src="images/clipboard-1894112951.png" class="img-fluid"></p>
+</div><div id="fn3"><p><sup>3</sup>&nbsp;For a more in-depth history of Norma and Normann, including critiques of the gender and post-WW2 contexts in which these statues arose, See Chapter 8 of Peter Cryle &amp; and Elizabeth Stephens’ <em>Normality: A Critical Genealogy</em>. University of Chicago Press, 2017.Chicago Scholarship Online, 2018. <a href="#0">https://doi.org/10.7208/chicago/9780226484198.001.0001</a>.</p></div><div id="fn4"><p><sup>4</sup>&nbsp;I’m not entirely sure why Normann was not subject to a similar contest, though my guess is that it’s a symptom of a patriarchy that perpetuates the male gaze in <a href="https://www.youtube.com/watch?v=ulsjuiFO2J0">many ways</a>.</p></div></div>
+<p>These sculptures were labeled as “The Typical American”, and reflected the values of an American. These statues also perpetuated these values in various ways - they were first displayed in the American Museum of Natural History during two International Congresses of Eugenics in 1945, where they helped inspire the “wider anthropological studies of the ‘native white’ American type”<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Furthermore, when the statues were gifted to the Cleveland Health Museum, the museum held a contest to find the woman who most typically represented Norma<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, offering prize money in “A search for Norma, the typical American woman”.</p>
+<p>While a winner was selected, the search failed in the original efforts to find someone who <em>perfectly</em> matched this average, as the measurements of the winner “did not coincide with those of the statue. . . . after assessment of the measurements of 3,863 women who entered the search, Norma remained a hypothetical individual.”<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Josephine Robertson, “Theatre Cashier, 23, Wins Title of ‘Norma,’ Besting 3,863 Entries,” Cleveland Plain Dealer, September 23, 1945, 1.</p></div></div><p>Here, we see a few course themes -</p>
+<p>What is “Normal”?</p>
 <section id="part-1.-the-normal-distribution." class="level1 page-columns page-full">
 <h1>Part 1. The “Normal” Distribution.</h1>
 <section id="definition." class="level2 page-columns page-full">
@@ -382,8 +395,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <section id="example-thinking-about-distributions" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="example-thinking-about-distributions">Example : Thinking About Distributions</h3>
-<p>For example, let’s look at one example “normal” distributions - the “self-esteem” variable we saw in Lecture 2. Note that it’s not perfectly normal<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but it’s pretty close and representative of the kind of “real world” data that you might encounter.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;good not to hold data to unrealistic body images as well as people.</p></div></div><div class="cell">
+<p>For example, let’s look at one example “normal” distributions - the “self-esteem” variable we saw in Lecture 2. Note that it’s not perfectly normal<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, but it’s pretty close and representative of the kind of “real world” data that you might encounter.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;good not to hold data to unrealistic body images as well as people.</p></div></div><div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d<span class="sc">$</span>SELFES, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>, </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Histogram of Self-Esteem"</span>, </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Self-Esteem Score"</span>, <span class="at">breaks =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -400,8 +413,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="example-2-thinking-about-distributions" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="example-2-thinking-about-distributions">Example 2 : Thinking About Distributions</h3>
-<p>Below is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.)</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;It is negatively skewed, since the tail is on the negative side of the distribution.</p></div></div><div class="quarto-figure quarto-figure-center">
+<p>Below is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.)</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;It is negatively skewed, since the tail is on the negative side of the distribution.</p></div></div><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/3_RGrades.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
@@ -452,13 +465,13 @@ Culture in Statistics : The Normal Curve
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 4%">
-<col style="width: 95%">
+<col style="width: 16%">
+<col style="width: 83%">
 </colgroup>
 <tbody>
 <tr class="odd">
 <td><img src="../images/doff_intro_mickey.png" class="img-fluid" style="width:3in"></td>
-<td>That’s right folks, it’s time for another chat with your friend Open-Source Mickey Mouse! This time, we’re gonna chat about the idea that people differ from some average. The idea that you could quantify people as “average” is fairly new - it’s hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet’s ideas to try and “rank” individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else.</td>
+<td>That’s right folks, it’s time for another chat with your friend Open-Source Mickey Mouse! This time, we’re gonna chat about the idea that people differ from some average. The idea that you could quantify people as “average” is fairly new - it’s hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet’s ideas to try and “rank” individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else.</td>
 </tr>
 </tbody>
 </table>
@@ -466,7 +479,7 @@ Culture in Statistics : The Normal Curve
 <p><em>To conclude, the range of mental power between—I will not say the highest Caucasian and the lowest savage—but between the greatest and least of English intellects, is enormous. … I propose in this chapter to range men according to their natural abilities, putting them into classes separated by equal degrees of merit, and to show the relative number of individuals included in the several classes…..The method I shall employ for discovering all this, is an application of the very curious theoretical law of “deviation from an average.” First, I will explain the law, and then I will show that the production of natural intellectual gifts comes justly within its scope. -</em> Galton, Hereditary Genius (1869). <a href="https://galton.org/books/hereditary-genius/text/v5/galton-1869-hereditary-genius-v5.htm">Linked here</a>.</p>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;see Rose’s END OF AVERAGE (2016) or, for a more critical approach, Chapman’s (2023) EMPIRE OF NORMALITY.</p></div></div><p>The point of bringing up some of the racist origins of statistics is two-fold :</p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;see Rose’s END OF AVERAGE (2016) or, for a more critical approach, Chapman’s (2023) EMPIRE OF NORMALITY.</p></div></div><p>The point of bringing up some of the racist origins of statistics is two-fold :</p>
 <ol type="1">
 <li>Many people like to argue that “good” statistics is objective, and that scientists are free of bias. So it’s important to acknowledge that the inventors of many statistics that we use had clear biases and did not behave objectively. Rather than try to be free of bias, I think it’s important to acknowledge where and when people are biased, and address those biases up explicitly.</li>
 <li>Statistics is a tool, and that tool can be used poorly and dangerously in ways that can cause a lot of pain. Just because something has numbers doens’t mean it’s correct. For example, Galton’s work showing “statistically” that white people were superior in ability to other groups didn’t account for other factors like socioeconomic status. And for what it’s worth, modern scientists overwhelmingly agree that “race” is a social construct. There are genetic differences that explain different skin tones, however there is more genetic variation in skin tone within a similar “race” than between different “races”. <a href="https://www.smithsonianmag.com/smart-news/genetic-study-shows-skin-color-just-skin-deep-180965261/">Read more about this here.</a></li>
@@ -481,109 +494,148 @@ Culture in Statistics : The Normal Curve
 <p>This does not mean that every variable needs to be normally distributed; we’ll work with skewed variables and categorical variables (which have their own distributions) in lots of ways. However, the “normal distribution” is an important reference point that we can use to evaluate variables. For example, exam scores are <em>negatively skewed</em> because they differ from the normal distribution.</p>
 </section>
 </section>
-<section id="part-2.-z-scoring-in-r" class="level1">
-<h1>Part 2. Z-Scoring in R</h1>
-<p>The Z-Score is a linear transformation, that calculates the distance from the mean, in units of standard deviation. Watch the video below to get a sense of what this transformation does, and why we should care.</p>
+<section id="part-2.-z-scoring-and-outliers-in-r" class="level1">
+<h1>Part 2. Z-Scoring and Outliers in R</h1>
+<p>The Z-Score is a linear transformation, that calculates the distance from the mean, in units of standard deviation.</p>
+<p>Watch the video below to get a sense of what this transformation does, and why we should care.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/wPX4tlDLXjE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="part-3-measures" class="level1 page-columns page-full">
-<h1>Part 3 | Measures</h1>
-<p>One of the challenges psychologists face in their attempts to be a REAL SCIENCE ™ is that their data is particularly hard to collect. Unlike physical variables like temperature or mass, psychological variables are often internal to people, and defined by mental states that are difficult to observe. As we saw in lecture, even a “simple” expressed behavior like an interruption can be very difficult to measure with high degrees of reliability and validity that we would hope. For a more complex variable such as depression, the task might seem impossible. Indeed, a large part of psychological research is engaging in debate and scholarship about how to best <strong>operationalize</strong> variables of interest (e.g., how should we define or measure depression?)&nbsp;</p>
-<p>A full discussion of the different types of methods psychologists use to collect data is beyond the scope of this author. However, below I’ve tried to outline a few different approaches psychologists take, commenting on their benefits and limitations so you can begin to critically think about whether these methods are, in fact, getting at “THE TRUTH” of what people (or non-human animals) are like.</p>
-<section id="self-reports" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="self-reports">Self-Reports</h2>
-<p>One of the simplest ways to collect data on an individual is just to ask them what they are like, and have the person report on themselves (a self-report). There are two different approaches to getting self-reports - survey methods and qualitative interviews.</p>
-<section id="qualitative-interviews" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="qualitative-interviews">Qualitative Interviews</h3>
-<p>One way to get individuals to tell you what they are like is through a structured interview where researchers ask open-ended questions. One such example of this is the McAdams Life Narrative<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. In this structured interview, a trained research assistant asks a set of broad questions to participants over the course of 1 to 3 hours. The research assistant is advised to “feel free to skip some of these questions if they seem redundant or irrelevant, and should follow up with other questions as needed “ but also to “not adopt an advisory or judgmental role, but should instead serve as an empathic and encouraging guide and an affirming sounding board.”</p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;McAdams talks about his work in this <a href="#0">popular press interview</a> and writes about it in this <a href="#0">scientific journal review article</a>.</p></div><div id="fn5"><p><sup>5</sup>&nbsp;<a href="https://www.dropbox.com/scl/fi/pn3tlz9alo4u0m6lqgcwl/McAdams_Narrative_Instructions.pdf?rlkey=8m48abjh5kgdxbbdworh0dxbh&amp;dl=0">Here’s a link to the full narrative instructions</a> if you want to do the whole thing; it’s a great way to know someone.</p></div></div><p>Below is an excerpt from the first part of the interview - if you are comfortable, please share your chapters on the Chapter 4 Discord thread!<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
-<p><img src="images/4_McAdams.png" class="img-fluid"></p>
-</section>
-<section id="survey-methods" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="survey-methods">Survey Methods</h3>
-<p>Qualitative interviews are not very common in psychological research, because they take a lot of time to conduct, and then more time to convert people’s open-ended responses into data (a form of behavioral coding, described in more detail below).</p>
-<p>Instead, the majority of self-reports come from surveys. Read about these below.</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><strong>Definition</strong></td>
-<td>A questionnaire where individuals answer specific questions about themselves on a structured rating scale.</td>
-</tr>
-<tr class="even">
-<td><strong>Example</strong></td>
-<td>“On a scale from 1 (Strongly Disagree) to 5 (Strongly Agree), how satisfied with your life are you right now?”</td>
-</tr>
-<tr class="odd">
-<td><strong>Benefits</strong></td>
-<td><ul>
-<li><p><strong>Easy to collect :</strong> It only takes a few minutes for people to answer a survey, and the data come in a clean and organized format that requires little effort to analyze. In Part 2 below, you’ll learn how to clean and organize the results of a likert scale.</p></li>
-<li><p><strong>Self-Knowledge Validity :</strong> People know things about themselves, often this knowledge is based in “reality”, and sometimes a self-report is the only way to get this knowledge. For example, only you know what was your happiest moment in life, and you probably have an accurate awareness about how anxious you are about the final project in this class.</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><strong>Limitations</strong></td>
-<td><ul>
-<li><p><strong>Self-Enhancement / Self-Diminishment Bias :</strong> People are often motivated to either enhance or diminish their accomplishments when asked. For example, no student has ever come up to me at the end of the semester and told me, “Professor, just so you know - I cheated on the exam.” Even though they may know they cheated, they don’t want to admit that because our society has norms or guidelines about when cheating is appropriate<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Other times, a person may not want to highlight their accomplishments (self-diminishment) because they don’t want to seem like they are bragging.</p></li>
-<li><p><strong>Self-Insight Bias :</strong> Sometimes, people also really don’t know what they are like. A person may not know, for example, whether they snore when they sleep (a behavior), how anxious they really are in a situation (an affect), or their patterns of unconscious bias (a cognition).</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Indeed, our society decides what <a href="https://jacobin.com/2022/11/no-stock-buyback-coalition-labor-unions-corporate-greed-inequality">forms of cheating are acceptable</a>.</p></div></div><p>Self-reports have a bad reputation in psychology, particularly because of the ability for people to engage in self-enhancement/diminishment or self-insight bias. However, they are a very powerful, and very commonly used method of assessment, even for studies where researchers are able to observe other types of data.&nbsp;</p>
-<p>For example, despite all the behavioral data that powerful technology companies like Facebook/Instagram/Meta, TikTok, Twitter/X, etc. collect, you’ve probably seen them ask you to answer some survey. They care about you<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, and know that asking you questions about yourself is an important way to show that level of care.</p>
-<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;…and your clicking on advertisements; hey, it’s hard to distinguish the two really…</p></div></div><p>Below is one example from some survey when I used to be on Facebook. If they changed their graphic design since I was last on, it’s probably because of some survey feedback they received.</p>
-<div class="quarto-figure quarto-figure-center">
+<section id="in-r-z-scores" class="level3">
+<h3 class="anchored" data-anchor-id="in-r-z-scores">In R : Z-Scores</h3>
+<section id="z-scoring-individual-scores-age" class="level4">
+<h4 class="anchored" data-anchor-id="z-scoring-individual-scores-age">Z-Scoring Individual Scores : Age</h4>
+<p>If we look at the variable age from the self-esteem dataset, we see some issues.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d<span class="sc">$</span>age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="images/4L_FBsurvey.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="5R_GoodScience_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
-<p><img src="images/4L_fbsurvey2.png" class="img-fluid" width="525"><br>
-</p>
+</div>
+</div>
+<p>This looks odd. R says this is a histogram, but it doesn’t look like the histograms we’ve seen before for a few reasons :</p>
+<ol type="1">
+<li><strong>Why does the x-axis go so far to the right?</strong> There are extreme outliers in the variable age - most likley due to errors in data entry - that are way out to the right on the x-axis.</li>
+<li><strong>What are those numbers on the x-axis!?</strong> These outliers are so extreme, that R is reporting the values of age using exponents. 5e+08 means 5 * 10^8 = 5 * 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10 = 500,000,000 = 500 million. Whew!</li>
+<li><strong>But where are these outliers on the graph? It doesn’t look like there’s anything there?</strong> The dataset is so large (tens of thousands of people appear to have ages that are closer to zero years old than 500 million years old) that the individual outliers are not registering on the graph. But they exist, and we can use R to find them.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>d[d<span class="sc">$</span>age <span class="sc">&gt;</span> <span class="dv">120</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(d<span class="sc">$</span>age),]<span class="sc">$</span>age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]       1975       1993        229        366       1354      90210
+ [7]      80230        590        442        234        258        333
+[13]        980       1000      45678        333        156        134
+[19]        152        474        414        334        630        169
+[25]       1997 2147483647        123       7300        972       9000
+[31]     100000        662</code></pre>
+</div>
+</div>
+<p>In this code, I’m using indexing [] to ask R to find me the rows from the dataset d that contain ages that are greater than 120 years old AND ages that are not na values (the ! when used in coding means “not”); the comma with nothing after it inside the bracket tells R to find me all the columns from the d dataset, which I’m indexing.</p>
+<p>I see that some of the ages were entered in as the year of birth; others look like maybe errors in data entry or jokes (e.g., 90210) and someone entered in an extreme value of 2147483647 that is contributing to our strange graph, and throwing off the mean (but not the median, since it, as we all remember from Chapter 3, is less sensitive to outliers.)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>age, <span class="at">na.rm =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 45333.77</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(d<span class="sc">$</span>age, <span class="at">na.rm =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22</code></pre>
+</div>
+</div>
+<p>So let’s remove these outliers.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>d[d<span class="sc">$</span>age <span class="sc">&gt;</span> <span class="dv">120</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(d<span class="sc">$</span>age),]<span class="sc">$</span>age <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d<span class="sc">$</span>age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5R_GoodScience_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>And now I have much clearer view of the variable age, and a more representative mean and standard deviation of age.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>age, <span class="at">na.rm =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 26.60417</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(d<span class="sc">$</span>age, <span class="at">na.rm =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12.42537</code></pre>
+</div>
+</div>
+<p>But there are still some folks who are … very old. Older than 80 years old. Which is amazing if true.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>elders <span class="ot">&lt;-</span> d[d<span class="sc">$</span>age <span class="sc">&gt;</span> <span class="dv">80</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(d<span class="sc">$</span>age),]<span class="sc">$</span>age</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>elders</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  85  99  92 100 120  95  83  85  85  89  92  81  99  87 100  82  81  85  98
+[20]  90  90 118  99  86  84  84 117  82</code></pre>
+</div>
+</div>
+<p>So, these elders exist. And maybe they are real. But should we include them?</p>
+</section>
+<section id="z-scores-by-hand" class="level4">
+<h4 class="anchored" data-anchor-id="z-scores-by-hand">Z-Scores “By Hand”</h4>
+<p>If we try to use the scale() function described above for z-scoring this group of elders, it doesn’t look like anyone is too far away from the average in terms of their standard deviation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scale</span>(elders)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             [,1]
+ [1,] -0.66942309
+ [2,]  0.59218197
+ [3,] -0.03862056
+ [4,]  0.68229662
+ [5,]  2.48458956
+ [6,]  0.23172338
+ [7,] -0.84965239
+ [8,] -0.66942309
+ [9,] -0.66942309
+[10,] -0.30896450
+[11,] -0.03862056
+[12,] -1.02988168
+[13,]  0.59218197
+[14,] -0.48919380
+[15,]  0.68229662
+[16,] -0.93976704
+[17,] -1.02988168
+[18,] -0.66942309
+[19,]  0.50206732
+[20,] -0.21884986
+[21,] -0.21884986
+[22,]  2.30436027
+[23,]  0.59218197
+[24,] -0.57930845
+[25,] -0.75953774
+[26,] -0.75953774
+[27,]  2.21424562
+[28,] -0.93976704
+attr(,"scaled:center")
+[1] 92.42857
+attr(,"scaled:scale")
+[1] 11.09698</code></pre>
+</div>
+</div>
+<p>Yet I would expect the person who is 118 to be much more than 2 standard deviations away from our new mean…so the scale function doesn’t work in this case, because</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(elders <span class="sc">-</span> <span class="fu">mean</span>(d<span class="sc">$</span>age, <span class="at">na.rm =</span> T))<span class="sc">/</span> <span class="co"># distance from the mean...divided by.</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sd</span>(d<span class="sc">$</span>age, <span class="at">na.rm =</span> T) <span class="co"># standard deviation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 4.699725 5.826452 5.263088 5.906932 7.516542 5.504530 4.538764 4.699725
+ [9] 4.699725 5.021647 5.263088 4.377803 5.826452 4.860686 5.906932 4.458283
+[17] 4.377803 4.699725 5.745971 5.102127 5.102127 7.355581 5.826452 4.780205
+[25] 4.619244 4.619244 7.275100 4.458283</code></pre>
+</div>
+</div>
+<p>Okay,now it seems like ALL of these elders (people older than 80 years old) are very different from the average. They are all more than 4 times the standard deviation. This gives me more confidence that I could remove them from the dataset.</p>
+<p>But should I remove them from the dataset just because they are different?</p>
 </section>
 </section>
-<section id="observations" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="observations">Observations</h2>
-<p>Often, self-reports are insufficient to capture what a person is like, or researchers are studying individuals who cannot give self-reports, such as infants, people with disabilities, or non-human animals.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;If I was a billionaire, I’d fund a team of psychologists to train monkeys to answer surveys. this is maybe why I am not a billionaire. that and the whole “intergenerational wealth” thing / chosen teaching career / lack of a desire to crush others and extract as much wealth from them…hard to know which factor is at play. Life is complex! Let me know if you are a billionaire and want to fund some other ideas / subscribe to my newsletter.</p>
-<p><br>
-</p></div></div><p>Read about some common forms of observation methods below.</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><strong>Definition</strong></td>
-<td>Observational methods refer to ways in which another individual generates data on the target person of interest.</td>
-</tr>
-<tr class="even">
-<td><strong>Examples</strong></td>
-<td><p><strong>Informant Reports.</strong> Informant reports are a special form of surveys, where researchers ask friends, family, or strangers to answer survey questions about another person. This is technically observational data, since the people answering the surveys are basing their judgments on their observations of the individual.</p>
-<p><img src="images/4L_YOU.png" class="img-fluid"> |</p>
-<p><strong>Behavioral Data</strong>. When the variables of interest are physical, then researchers can use measurement tools to directly observe the behavior. For example, researchers wanting to measure stress might measure cortisol by taking samples of saliva from the cheek; researchers wanting to understand the brain look to voxel activation with fMRI, or cortical neuron activation with EEG.</p>
-<p><img src="images/4L_swab.png" class="img-fluid"> |</p>
-<p><strong>Behavioral Coding.</strong> Sometimes, it’s easier to have research assistants observe the physical behaviors of interest. For example, y’all served as behavioral coders when you counted the number of interruptions (a behavior!) Other times, research assistants will observe real-life interactions and observe variables such as time spent talking, distance between participants, or provide ratings of how much emotion or anxiety the person seemed to be expressing (using a rating scale). The “strange situation” task (where a parent leaves the room and researchers observe what a child does) is another example.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
-<p><img src="images/4_RAnotes.png" class="img-fluid"></p></td>
-</tr>
-<tr class="odd">
-<td><strong>Benefits</strong></td>
-<td><ul>
-<li><p><strong>“External”.</strong> Researchers like observational methods because they, by definition, require some outward expression of the underlying psychological processes. Professor could go on a rant here and won’t, but psychology has been increasingly fixated on behavior since Watson kicked off the behaviorism movement in the 1920s, and these data are often prioritized, since our field loves predicting people’s actual behavior (so they can exert power over it).</p></li>
-<li><p><strong>Less influenced by self-report biases.</strong> Observers are considered to be less biased than individuals, who may be particularly prone to self-enhancement, self-diminishment. And observers may be able to fill in the gaps left behind by self-insight bias. For example, a person’s close friends may know more about the individual’s reputation than they themselves do.</p></li>
-<li><p><strong>More reliable (multiple sources).</strong> While there is only one self to provide a self-report, there can be multiple observers. Indeed, observational methods almost always leverage this power and require multiple swabs of spit to get a reliable estimate of cortisol, or have multiple research assistants rate the same behavior to check and make sure they are each getting a similar answer.</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><strong>Limitations</strong></td>
-<td><ul>
-<li><p><strong>Time-Intensive.</strong> It can be incredibly costly to collect observational data. Yale charges over $600/hour for use of their fMRI machine (Berkeley doesn’t list their prices), and conducting a study to measure a naturally occurring behavior could take years between designing the study, recruiting and training the research assistants to observe the behavior, taking the time to collect the data, and then doing the behavioral coding necessary to convert the observations into numbers. Whew. Much easier to just give someone a survey and have them complete it.</p></li>
-<li><p><strong>The Hawthorne Effect.</strong> The act of observation can often change behavior. Couples may be less likely to fight if they know they are being monitored by a psychologist, and even <a href="https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality">light changes its behavior depending on the way it is observed</a>. Researchers can take steps to address this change in behavior - and sometimes the power of the phenomenon is so large that it doesn’t matter if a researcher is there. In couples studies, for example, researchers can get couples to fight by having each person write out a list of things that cause conflict in the relationship, and then having the people trade lists and talk about it. Often however, individuals habituate to the presence of observation - do you think about the fact that your online interactions are being harvested by tech companies every day, or just kinda get used to it?</p></li>
-<li><p><strong>Not all aspects of psychology are observable.</strong> A person’s subjective experience matters, and sometimes a self-report is the only way you can get this data. If you look like you are smiling and have the neurotransmitter levels that suggest you are happy, but feel miserable, are you happy?</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;You can compare <a href="https://www.youtube.com/watch?v=QquZxJhuSg8">this child’s reaction</a> to <a href="https://www.youtube.com/watch?v=AGRT6VjnTm8">this child’s reaction</a>. What do you observe? How would you quantify these observations and turn them into cold, hard data?</p>
-<p><br>
-</p></div></div><p><strong>TLDR : there are lots of different methods to measure what individuals are like, and for your final project you probably will want to give people self-report surveys to keep things simple for this very first study!</strong></p>
 </section>
+<section id="part-3-good-measures" class="level1 page-columns page-full">
+<h1>Part 3 | Good Measures</h1>
 <section id="good-data-validity-and-reliability" class="level2">
 <h2 class="anchored" data-anchor-id="good-data-validity-and-reliability">Good Data : Validity and Reliability</h2>
 <p>Scientists evaluate the quality of their measures in terms of <strong>validity</strong> (“truth” or accuracy) and <strong>reliability</strong> (repeatability or precision). Learn more about these two concepts - and their specific forms - in the two videos below.</p>
@@ -666,8 +718,8 @@ Expand To See Answers
 </figure>
 </div>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/DoLK72ueYs8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>Phrenology is no longer considered a valid or reliable science, yet its presence still lingers in psychology, and is often taught as history without reference to its racist origins and consequences<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>. And as we have (and will continue to discuss) there are still many ways in which racism (and sexism, classism, and ableism) occur and affect psychology (and other sciences too).</p>
-<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;For examples, in the common Intro Psych textbook written by Myers &amp; DeWall (2018)</p></div></div><p>For example, more modern intelligence testing is often criticized for prioritizing White European values and language in the way it assesses supposedly “objective” knowledge. In an important test of this claim, the psychologist Robert Williams (pictured to the right) designed an IQ test that was as <strong>reliable</strong> as the default IQ test, but was “biased” to prioritize and value Black culture.</p>
+<p>Phrenology is no longer considered a valid or reliable science, yet its presence still lingers in psychology, and is often taught as history without reference to its racist origins and consequences<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. And as we have (and will continue to discuss) there are still many ways in which racism (and sexism, classism, and ableism) occur and affect psychology (and other sciences too).</p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;For examples, in the common Intro Psych textbook written by Myers &amp; DeWall (2018)</p></div></div><p>For example, more modern intelligence testing is often criticized for prioritizing White European values and language in the way it assesses supposedly “objective” knowledge. In an important test of this claim, the psychologist Robert Williams (pictured to the right) designed an IQ test that was as <strong>reliable</strong> as the default IQ test, but was “biased” to prioritize and value Black culture.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/5_IQtest.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
