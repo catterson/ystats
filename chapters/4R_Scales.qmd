@@ -285,8 +285,4 @@ Read about some common forms of observation methods below.
 
 # Quiz 4.
 
-Note : Creating likert scales and working with z-scores is hard, and takes practice. So I went ahead and uploaded a video key for Quiz 4 (as part of the quiz assignment).
-
-You should try to take the quiz on your own - good to have a little bit of struggle! - and use the video key as a guide to learn. We will continue to practice over the next few weeks; this is the last new big topics in R we will learn before the R Exam.
-
-Yeah!
+Note : Creating likert scales takes practice. So I went ahead and uploaded a video key for Quiz 4 (as part of the quiz assignment). You should try to take the quiz on your own - good to have a little bit of struggle! - and use the video key as a guide to learn. We will continue to practice over the next few weeks; this is the last new big topic in R we will learn before the R Exam.
