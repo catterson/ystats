@@ -59,6 +59,13 @@ Indeed, many of the variables that psychologists measure do appear "Normal". For
 
 [^5r_goodscience-5]: good not to hold data to unrealistic body images as well as people.
 
+
+
+
+
+
+
+
 ```{r}
 #| include: false
 d <- read.csv("../datasets/Self-Esteem Dataset/data.csv", stringsAsFactors = T, na.strings = "0", sep = "\t")
@@ -71,6 +78,13 @@ hist(d$SELFES, col = 'black', bor = 'white',
      main = "Histogram of Self-Esteem", 
      xlab = "Self-Esteem Score", breaks = 15)
 ```
+
+
+
+
+
+
+
 
 **"Independent" explanations for why variation in self-esteem occurs.** Self-esteem is complex, and can be influenced by variables such as: genetics, parental environment, home environment, income, neurotransmitters, whether your crush told you they like you too the day you took the self-esteem survey, etc. These variables are considered independent because one does not influence the other, and they differ across participants in the study. That is, someone who had a happy parental environment may not necessarily have a high income, rich people have their crushes ignore them too, etc.
 
@@ -163,29 +177,71 @@ Z-scoring changes the units of the variable from the original unit of measuremen
 
 You can see first few "Raw" and "Z-Scores" from the self-esteem dataset below.
 
+
+
+
+
+
+
+
 ```{r}
 #| echo: false
 head(data.frame("Raw Scores" = d$SELFES, "Z-Scores" = scale(d$SELFES)))
 ```
 
+
+
+
+
+
+
+
 There are two ways of calculating the z-scores:
 
 1.  **Using the `scale()` function.** This function calculates the mean and standard deviation of an object, and then uses these statistics to calculate the z-score for the data.
+
+
+
+
+
+
+
 
     ```{r}
     d$SELFES_Z <- scale(d$SELFES)
     d$SELFES_Z[1:5]
     ```
 
+
+
+
+
+
+
+
     -   Note that the \[1:5\] index is not needed for z-scoring, and is just helping me only show the first five elements.
 
 2.  **You can also manually calculate a z-score.** But don't do this by hand. I mean you could, but you could also do this with a pencil and that's not needed anymore.
+
+
+
+
+
+
+
 
     ```{r}
     zSELF <- (d$SELFES - mean(d$SELFES, na.rm = T)) / # distance from the mean, divided by....
               sd(d$SELFES, na.rm = T) # the standard deviation
     zSELF[1:5] # just showing the first 10 z-scored variables.
     ```
+
+
+
+
+
+
+
 
 ### Z-Score : Who Cares?
 
@@ -198,9 +254,23 @@ A z-score can be useful for two reasons :
 
 If we look at the variable age from the same self-esteem dataset, we see some issues.
 
+
+
+
+
+
+
+
 ```{r}
 hist(d$age)
 ```
+
+
+
+
+
+
+
 
 This looks wrong. R says this is a histogram, but it doesn't look like the histograms we've seen before for a few reasons :
 
@@ -208,9 +278,23 @@ This looks wrong. R says this is a histogram, but it doesn't look like the histo
 2.  **What are those numbers on the x-axis!?** These outliers are so extreme, that R is reporting the values of age using exponents. 5e+08 means 5 \* 10\^8 = 5 \* 10 \* 10 \* 10 \* 10 \* 10 \* 10 \* 10 \* 10 = 500,000,000 = 500 million. Whew!
 3.  **But where are these outliers on the graph? It doesn't look like there's anything there?** The dataset is so large (tens of thousands of people appear to have ages that are closer to zero years old than 500 million years old) that the individual outliers are not registering on the graph. But they exist, and we can use R to find them.
 
+
+
+
+
+
+
+
 ```{r}
 d$age[d$age > 100 & !is.na(d$age)]
 ```
+
+
+
+
+
+
+
 
 In this code, I'm using indexing \[\] to ask R to find two things :
 
@@ -224,14 +308,35 @@ In this code, I'm using indexing \[\] to ask R to find two things :
 
 I see that some of the ages were entered in as the year of birth; others look like maybe errors in data entry or jokes (e.g., 90210) and someone entered in an extreme value of 2147483647 that is contributing to our strange graph, and throwing off the mean (but not the median, since it, as we all remember from Chapter 3, is less sensitive to outliers.)
 
+
+
+
+
+
+
+
 ```{r}
 mean(d$age, na.rm = T)
 median(d$age, na.rm = T)
 ```
 
+
+
+
+
+
+
+
 ### Side Quest : Removing Outliers Without Z-Scoring
 
 So let's remove these outliers, and check to see that R did this correctly.
+
+
+
+
+
+
+
 
 ```{r}
 d$age[d$age > 100 & !is.na(d$age)] # finds the outliers
@@ -239,20 +344,62 @@ d$age[d$age > 100 & !is.na(d$age)] <- NA # replaces the outliers with NA
 hist(d$age) # my graph.
 ```
 
+
+
+
+
+
+
+
 This looks better, but now I see that there are some suspiciously young ages. So I'll adapt my code to look for individuals who are less than 18 years old.
+
+
+
+
+
+
+
 
 ```{r}
 d$age[d$age < 18 & !is.na(d$age)]
 min(d$age, na.rm = T)
 ```
 
+
+
+
+
+
+
+
 A lot of teenagers, and some young kids, and even an individual who is reporting their age as 1. And while it could be interesting to look at the narcissism levels of teenagers (and Freud wrote a brilliant if slightly deranged chapter on baby narcissism in [Civilization and Its Discontents](https://www.stephenhicks.org/wp-content/uploads/2015/10/FreudS-CIVILIZATION-AND-ITS-DISCONTENTS-text-final.pdf)), I'm going to avoid any CPHS violations (which treats minors as vulnerable populations) and invoking the wrath of the THE YOUTH who ARE OUR FUTURE, and go ahead and remove these people from the dataset too.
+
+
+
+
+
+
+
 
 ```{r}
 d$age[d$age < 18 & !is.na(d$age)] <- NA
 ```
 
+
+
+
+
+
+
+
 And now I have much clearer view of the variable age, and a more representative mean and standard deviation of age.
+
+
+
+
+
+
+
 
 ```{r}
 hist(d$age, xlim = c(15,100), breaks = 30, main = "Histogram of Age (Outliers Removed)", xlab = "Age (in years)")
@@ -260,17 +407,45 @@ mean(d$age, na.rm = T)
 sd(d$age, na.rm = T)
 ```
 
+
+
+
+
+
+
+
 #### Okay, back to using z-scoring.
 
 Looking at the graph, I'm not sure that 100 was the best cut-off for age. There are only a few people between the ages of 80-100, and I'm wondering whether they should actually be included in the dataset.
+
+
+
+
+
+
+
 
 ```{r}
 d$age[d$age > 80 & !is.na(d$age)]
 ```
 
+
+
+
+
+
+
+
 Here's where a z-score could be useful. Are these elders radically different from our distribution? Let's see how far they are away from the mean of age in units of standard deviation![^5r_goodscience-10]
 
 [^5r_goodscience-10]: In the code below, I'm calculating the z-score of age, and defining this as ageZ. But I'm using the original variable - age - to define my rules inside of the bracket.
+
+
+
+
+
+
+
 
 ```{r}
 d$ageZ <- scale(d$age)
@@ -278,12 +453,33 @@ d$ageZ[d$age > 80 & !is.na(d$age)]
 
 ```
 
+
+
+
+
+
+
+
 I see that all of these ages are very more than four standard deviations away from the average - this is very different from average. In a "normal" distribution, the vast majority of other data would be expected to fall below these z-scores. I can look this up with the `pnorm()` function, which calculates the probability of a score falling below a given z-score (what's called the "lower tail" of the distribution. You can also use this function to find the upper tail by changing one of the arguments.)
+
+
+
+
+
+
+
 
 ```{r}
 pnorm(d$ageZ[d$age > 80 & !is.na(d$age)]) * 100
 pnorm(d$ageZ[d$age > 80 & !is.na(d$age)])
 ```
+
+
+
+
+
+
+
 
 So, if 99.99963% of other scores are expected to fall below an age that is 4.48 standard deviations above the mean (which is the z-score for an 85 year old person in this dataset), then it seems like the 85 year old person is radically different from the rest, and could be excluded.
 
@@ -293,7 +489,27 @@ Some people like to define "rules" for excluding data; things like 3x the standa
 
 Here's a video I recorded a few years ago on z-scores. Plan to re-record something, so let me know what you like about this video, and / or what other videos on this topic (or any topic in the class) you would like to see.
 
+
+
+
+
+
+
+
 {{< video https://www.youtube.com/watch?v=wPX4tlDLXjE >}}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Part 3 \| Good Measures
 
@@ -326,7 +542,27 @@ Think about a scale. How would you evaluate the validity (face, convergent, disc
 
 Watch the video below to go over some possible answers, or just look over the table.
 
+
+
+
+
+
+
+
 {{< video https://youtu.be/T9dTk6Sa434 >}}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 |  |  |
 |------------------------------------|------------------------------------|
@@ -344,7 +580,27 @@ Watch the video below to review these terms, in the context of phrenology - an e
 
 ![](images/5_PhrenologyHead.png){alt="38322-004-6FE24489.jpg" fig-align="center" width="222"}
 
+
+
+
+
+
+
+
 {{< video https://youtu.be/DoLK72ueYs8 >}}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Phrenology is no longer considered a valid or reliable science, yet its presence still lingers in psychology, and is often taught as history without reference to its racist origins and consequences[^5r_goodscience-11]. And as we have (and will continue to discuss) there are still many ways in which racism (and sexism, classism, and ableism) occur and affect psychology (and other sciences too).
 
@@ -366,7 +622,27 @@ Test your understanding of reliability and validity with the check-in above.
 
 Below is a video to review the check-in answers, since these terms can be tricky :)
 
+
+
+
+
+
+
+
 {{< video https://youtu.be/95W3DKRGR24 >}}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Would You Like to Learn More? \[Optional Readings\]
 
@@ -379,3 +655,4 @@ Below is a video to review the check-in answers, since these terms can be tricky
 # TLDR.
 
 Science on people is hard.
+

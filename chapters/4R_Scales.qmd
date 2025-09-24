@@ -182,6 +182,7 @@ This looks good. When I look at this graph I see the following things:
 {{< video https://youtu.be/TRdDahx6RQw >}}
 
 -   Here’s a [link to the Rscript](https://www.dropbox.com/s/zsx0shzd3shmpza/likert_scales_c_video.r?dl=0) I used in the video
+-   NOTE : skip / ignore the stuff on using the scale in a model - realized that is leftover from when I used to talk about likert scales after linear models and prof has not gotten a chance to re-record the video...we will talk about linear models in a a few weeks. Let me know if you have ideas about how to improve the video for when I do re-record!
 
 # Part 3 : Data is Hard in a Soft Science
 
