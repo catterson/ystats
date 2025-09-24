@@ -184,7 +184,7 @@ As another example, on the day I'm writing these words, I do not predict that it
 
 -   I looked at the weather forecast app and it said we had a week of sunny weather ahead.
 
--   Nobody was carrying an umbrella today.
+-   [Nobody was carrying an umbrella today](https://walzr.com/weather-watching).
 
 -   there are no clouds.
 
