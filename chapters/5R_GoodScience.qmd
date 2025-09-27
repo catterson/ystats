@@ -239,14 +239,17 @@ d$age[d$age > 100 & !is.na(d$age)] <- NA # replaces the outliers with NA
 hist(d$age) # my graph.
 ```
 
-This looks better, but now I see that there are some suspiciously young ages. So I'll adapt my code to look for individuals who are less than 18 years old.
+This looks better, but now I see that there are some suspiciously young ages. 
+
+So I'll adapt my code to look for individuals who are less than 18 years old.
 
 ```{r}
-d$age[d$age < 18 & !is.na(d$age)]
 min(d$age, na.rm = T)
+youngfolk <- d$age[d$age < 18 & !is.na(d$age)] 
+youngfolk[1:100] # just the first 100 folks less than 18
 ```
 
-A lot of teenagers, and some young kids, and even an individual who is reporting their age as 1. And while it could be interesting to look at the narcissism levels of teenagers (and Freud wrote a brilliant if slightly deranged chapter on baby narcissism in [Civilization and Its Discontents](https://www.stephenhicks.org/wp-content/uploads/2015/10/FreudS-CIVILIZATION-AND-ITS-DISCONTENTS-text-final.pdf)), I'm going to avoid any CPHS violations (which treats minors as vulnerable populations) and invoking the wrath of the THE YOUTH who ARE OUR FUTURE, and go ahead and remove these people from the dataset too.
+I see a lot of teenagers, and some young kids, and even an individual who is reporting their age as 1. And while it could be interesting to look at the narcissism levels of teenagers (and Freud wrote a brilliant if slightly deranged chapter on baby narcissism in [Civilization and Its Discontents](https://www.stephenhicks.org/wp-content/uploads/2015/10/FreudS-CIVILIZATION-AND-ITS-DISCONTENTS-text-final.pdf)), I'm going to avoid any CPHS violations (which treats minors as vulnerable populations) and invoking the wrath of the THE YOUTH who ARE OUR FUTURE, and go ahead and remove these people from the dataset too.
 
 ```{r}
 d$age[d$age < 18 & !is.na(d$age)] <- NA
@@ -289,7 +292,19 @@ So, if 99.99963% of other scores are expected to fall below an age that is 4.48 
 
 Some people like to define "rules" for excluding data; things like 3x the standard deviation, or 4x the standard deviation. I'm not a huge fan of these rules, since I think they ignore important context for variables, and are hard to always apply (for example, the teenagers in the dataset are within 3 standard deviations, but I still think they could and should be excluded.) It's best to try and see what the standards in a particular field are, try to make decisions about outlier removal before you collect the data (something called pre-registration, which we will learn about later), document these changes (in your R code), and then be prepared to make different decisions when someone reviewing your research (like an advisor or journal editor) asks you to do something different.
 
-### Video : Z-Scores
+## Video Example : War Data
+
+In the video below, I introduce the dataset, do some data cleaning, and discuss the mean and median.
+
+{{< video https://youtu.be/nEdJvrwV0GQ >}}
+
+In the video below, I work through calculating the standard deviation, why the outliers are causing problems with the descriptive statistics, and then professor goes on a little tangent about a few different methods on how to address these problems. Note : we won't really cover log-transformations in this chapter (yet! maybe I'll add it at some point but there's already a lot going on.) But let me know if you have questions and I can try to explain point y'all to some other resources.
+
+{{< video https://youtu.be/Y20eLKQmnew >}}
+
+Here's a link to the RScript I use in the videos.
+
+### Another Video : Z-Scores
 
 Here's a video I recorded a few years ago on z-scores. Plan to re-record something, so let me know what you like about this video, and / or what other videos on this topic (or any topic in the class) you would like to see.
 
