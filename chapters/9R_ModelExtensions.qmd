@@ -41,19 +41,19 @@ coef(mod)
 
 #### **Using the Equation and Dummy Coding to Generate Predicted Values**
 
-+----------+-----------------+------------+----------+-------------------------+-----------------+
-|          | (the intercept) | X1         | X2       | Calculations            | Predicted Value |
-|          |                 |            |          |                         |                 |
-|          | **35.5**        | (typeprof) | (typewc) |                         |                 |
-|          |                 |            |          |                         |                 |
-|          |                 | **32.3**   | **6.7**  |                         |                 |
-+----------+-----------------+------------+----------+-------------------------+-----------------+
-| bc       | 1               | 0          | 0        | 35.5 + 32.3\*0 + 6.7\*0 | = 35.5          |
-+----------+-----------------+------------+----------+-------------------------+-----------------+
-| prof     | 1               | 1          | 0        | 35.5 + 32.3\*1 + 6.7\*0 | = 67.8          |
-+----------+-----------------+------------+----------+-------------------------+-----------------+
-| wc       | 1               | 0          | 1        | 35.5 + 32.3\*0 + 6.7\*1 | = 42.2          |
-+----------+-----------------+------------+----------+-------------------------+-----------------+
++------+-----------------+------------+----------+-------------------------+-----------------+
+|      | (the intercept) | X1         | X2       | Calculations            | Predicted Value |
+|      |                 |            |          |                         |                 |
+|      | **35.5**        | (typeprof) | (typewc) |                         |                 |
+|      |                 |            |          |                         |                 |
+|      |                 | **32.3**   | **6.7**  |                         |                 |
++------+-----------------+------------+----------+-------------------------+-----------------+
+| bc   | 1               | 0          | 0        | 35.5 + 32.3\*0 + 6.7\*0 | = 35.5          |
++------+-----------------+------------+----------+-------------------------+-----------------+
+| prof | 1               | 1          | 0        | 35.5 + 32.3\*1 + 6.7\*0 | = 67.8          |
++------+-----------------+------------+----------+-------------------------+-----------------+
+| wc   | 1               | 0          | 1        | 35.5 + 32.3\*0 + 6.7\*1 | = 42.2          |
++------+-----------------+------------+----------+-------------------------+-----------------+
 
 #### **Yes, Professor, A Picture is Worth....1000 Words.**
 
@@ -101,9 +101,9 @@ Last chapter, we learned the “four reasons” why you might find a “pattern 
 
 Scientists and psychologists often want (or need) to establish causation, and an experiment is the “gold standard” approach for how to do this.
 
-I’m guessing y’all have learned about experiments in many other classes, so won’t spend pages and pages and pages going over it again here.[^8r_assumptions-1]
+I’m guessing y’all have learned about experiments in many other classes, so won’t spend pages and pages and pages going over it again here.[^9r_modelextensions-1]
 
-[^8r_assumptions-1]: I'll just spend pages going over it. Hah hah.
+[^9r_modelextensions-1]: I'll just spend pages going over it. Hah hah.
 
 **Here’s a [supplemental chapter on experiments](https://kpu.pressbooks.pub/psychmethods4e/part/experimental-research/) that reviews some key terms you should be familiar with :** experimental manipulation; extraneous variables as “noise”; random assignment; placebo effects; external validity; construct validity; experimenter expectancy effects.
 
@@ -112,21 +112,20 @@ I’m guessing y’all have learned about experiments in many other classes, so 
 1.  The cause and effect are contiguous in space and time.
 2.  The cause must be prior to the effect. (no reverse causation)
 3.  There must be a constant union betwixt the cause and effect. (“Tis chiefly this quality, that constitutes the relation.”) (no random chance)
-4.  The same cause always produces the same effect, and the same effect never arises but from the same cause. (not "just" some third variable) [^1]
+4.  The same cause always produces the same effect, and the same effect never arises but from the same cause. (not "just" some third variable) \[\^1\]
 
-[^1] but remember, life is complex and there are often multiple causes of human behavior!
+\[\^1\] but remember, life is complex and there are often multiple causes of human behavior!
 
 ### The Google Experiment
 
-When I worked at Google as an intern for one summer[^8r_assumptions-2], corporate PR told a story about their "data driven approach", where no decision was left to mere chance. Even something as simple as the color font they used could be the focus of an analytic research question.
+When I worked at Google as an intern for one summer[^9r_modelextensions-2], corporate PR told a story about their "data driven approach", where no decision was left to mere chance. Even something as simple as the color font they used could be the focus of an analytic research question.
 
-[^8r_assumptions-2]: well-fed; gratuitously paid; soul-drained. I was in their "People Operations" (/HR) department, helping them set up longitudinal surveys and do various other research projects on compensation, appreciation, and diversity that helped feed the corporate beast.
+[^9r_modelextensions-2]: well-fed; gratuitously paid; soul-drained. I was in their "People Operations" (/HR) department, helping them set up longitudinal surveys and do various other research projects on compensation, appreciation, and diversity that helped feed the corporate beast.
 
-+------------------------------------------+-----------------------------------------+
+|  |  |
+|----|----|
 | **Google Homepage : Before Experiments** | **Google Homepage : After Experiments** |
-+------------------------------------------+-----------------------------------------+
-| ![](images/7_goog.png)                   | ![](images/7_goog2.png)                 |
-+------------------------------------------+-----------------------------------------+
+| ![](images/7_goog.png) | ![](images/7_goog2.png) |
 
 Watch the video below. You can [read more about this study here](https://www.theguardian.com/technology/2014/feb/05/why-google-engineers-designers).
 

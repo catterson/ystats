@@ -52,9 +52,9 @@ There are three questions to consider when evaluating whether sampling bias is i
 
 ### Obama Polling Example : Sampling Bias
 
-Below are data from 2012[^9r_samplingerror-1], when Barack Obama was running against Mitt Romney in the US Presidential Election. Look over the data, and think about the answers to the three questions to evaluate sampling bias.
+Below are data from 2012[^8r_samplingerror-1], when Barack Obama was running against Mitt Romney in the US Presidential Election. Look over the data, and think about the answers to the three questions to evaluate sampling bias.
 
-[^9r_samplingerror-1]: source : <https://fivethirtyeight.com/features/obamas-lead-looks-stronger-in-polls-that-include-cellphones/>
+[^8r_samplingerror-1]: source : <https://fivethirtyeight.com/features/obamas-lead-looks-stronger-in-polls-that-include-cellphones/>
 
 ![](images/clipboard-3670391903.png)
 
@@ -172,9 +172,9 @@ Okay, now please place your thumbs in between your eyebrows, and stare at the tr
 
 Wow. Did you feel that power? You did, right?? Yeah. Amazing.
 
-What we've done - through the power of triangles (the strongest shape, both physically and psychologically) - is generate a dataset[^9r_samplingerror-2] that we will consider to be a population of data.
+What we've done - through the power of triangles (the strongest shape, both physically and psychologically) - is generate a dataset[^8r_samplingerror-2] that we will consider to be a population of data.
 
-[^9r_samplingerror-2]: You can [access the fake dataset here](https://www.dropbox.com/scl/fi/cvcwam7xe202nuocbfmbp/brainwavebabydata.csv?rlkey=5hi2xknvv83cgydurts31fvlw&dl=0) if you want to follow along in R, but this is not necessary and I think reading these notes should suffice.
+[^8r_samplingerror-2]: You can [access the fake dataset here](https://www.dropbox.com/scl/fi/cvcwam7xe202nuocbfmbp/brainwavebabydata.csv?rlkey=5hi2xknvv83cgydurts31fvlw&dl=0) if you want to follow along in R, but this is not necessary and I think reading these notes should suffice.
 
 I’ve named this dataset babby, and it has two variables for 40000 individuals - one IV and one DV.
 
@@ -218,15 +218,15 @@ As described above, psychologists will almost never have access to the true popu
 
 Most samples in psychology are biased; taking a random sample from the population as a psychological researcher is incredibly difficult, if not impossible. However, even if you were to take a perfectly random sample from the population, you should expect your sample to differ at least a little from the broader population.
 
-We can illustrate this in R. R has a built-in function called sample(), which takes a random sample[^9r_samplingerror-3] of whatever numbers you give it. For example, here’s a fun game - think of a number between 1 and 10. Then ask R to sample() a random number between 1 and 10 and see if you are vibing with R. I am thinking of the number FOUR.
+We can illustrate this in R. R has a built-in function called sample(), which takes a random sample[^8r_samplingerror-3] of whatever numbers you give it. For example, here’s a fun game - think of a number between 1 and 10. Then ask R to sample() a random number between 1 and 10 and see if you are vibing with R. I am thinking of the number FOUR.
 
-[^9r_samplingerror-3]: There are different ways that computers can take “random samples”, each with different merits. The default method R uses is “"Mersenne-Twister" From Matsumoto and Nishimura (1998). This stuff goes way beyond my pay grade; I imagine there are a few explanations on the internet. Let me know if you find a good one!
+[^8r_samplingerror-3]: There are different ways that computers can take “random samples”, each with different merits. The default method R uses is “"Mersenne-Twister" From Matsumoto and Nishimura (1998). This stuff goes way beyond my pay grade; I imagine there are a few explanations on the internet. Let me know if you find a good one!
 
     \
 
-In the code below, I’m asking R to define the numbers 1 through 10, and then draw ONE number from this set.[^9r_samplingerror-4]
+In the code below, I’m asking R to define the numbers 1 through 10, and then draw ONE number from this set.[^8r_samplingerror-4]
 
-[^9r_samplingerror-4]: Note that when I use the `set.seed()` function before the `sample()` function, I'm telling R to "fix" the random number generator it uses. This gives me a consistent result time it runs the "random" `sample()` function. And if you also run `set.seed(42)` before you run `sample(1:10, 1)` you should also get the same answer of 1. You can specify any number within `set.seed()`, and only want to use this function when you want others to get the same answer as you (like when sharing code). Most of the time, we don't want to use this function because we want things to be "random". Let me know if this is confusing! I can try to clarify.
+[^8r_samplingerror-4]: Note that when I use the `set.seed()` function before the `sample()` function, I'm telling R to "fix" the random number generator it uses. This gives me a consistent result time it runs the "random" `sample()` function. And if you also run `set.seed(42)` before you run `sample(1:10, 1)` you should also get the same answer of 1. You can specify any number within `set.seed()`, and only want to use this function when you want others to get the same answer as you (like when sharing code). Most of the time, we don't want to use this function because we want things to be "random". Let me know if this is confusing! I can try to clarify.
 
 ```{r}
 set.seed(42)
@@ -306,9 +306,9 @@ In none of these samples does the slope equal exactly zero - which as we know is
 
 Yes, my dear actively engaged student, you are correct. And yet, there will still be sampling error. We can increase the size of the random sample that R takes by changing the code to define sampy such that it is a random sample of 150 individuals from babby : `sampy <- babby[sample(1:nrow(babby), 150), ]`
 
-Here are 10 more linear models from 10 random samples of babby, each with a sample size of 150[^9r_samplingerror-5]. 
+Here are 10 more linear models from 10 random samples of babby, each with a sample size of 150[^8r_samplingerror-5]. 
 
-[^9r_samplingerror-5]: A sample size of 150 may still seem small, but it’s around the average in fields like social and personality psychology ([Fraley et al., 2022](https://journals.sagepub.com/doi/pdf/10.1177/25152459221120217)) and well above the average in other fields like neuroscience ([Button et al., 2013](https://www.nature.com/articles/nrn3475)).
+[^8r_samplingerror-5]: A sample size of 150 may still seem small, but it’s around the average in fields like social and personality psychology ([Fraley et al., 2022](https://journals.sagepub.com/doi/pdf/10.1177/25152459221120217)) and well above the average in other fields like neuroscience ([Button et al., 2013](https://www.nature.com/articles/nrn3475)).
 
 What do you notice when looking at these different linear models?
 
@@ -410,9 +410,9 @@ So researchers have developed methods of estimating sampling error. One method i
 
 #### **The “Standard Error” : Estimating Sampling Error With NHST**
 
-The “Standard Error” is the name given to the NHST approach to estimating sampling error. The “conceptual” equation[^9r_samplingerror-6] to estimate standard error is as follows :
+The “Standard Error” is the name given to the NHST approach to estimating sampling error. The “conceptual” equation[^8r_samplingerror-6] to estimate standard error is as follows :
 
-[^9r_samplingerror-6]:  This conceptual equation won’t give you what R calculates, because R will use something called the pooled variance in its calculation of the standard deviation (since the null hypothesis assumes no relationship between the DV and IV, it’s better to calculate a weighted average of the DV and IV for your estimate of the standard deviation. There’s a long equation to calculate this that I used to students and have them do “by hand”. However, over the years I realize that this does not help students learn, and that even the complicated equation is an oversimplification of a much more involved proof which you can learn about in more advanced classes if you want.
+[^8r_samplingerror-6]:  This conceptual equation won’t give you what R calculates, because R will use something called the pooled variance in its calculation of the standard deviation (since the null hypothesis assumes no relationship between the DV and IV, it’s better to calculate a weighted average of the DV and IV for your estimate of the standard deviation. There’s a long equation to calculate this that I used to students and have them do “by hand”. However, over the years I realize that this does not help students learn, and that even the complicated equation is an oversimplification of a much more involved proof which you can learn about in more advanced classes if you want.
 
 $$
 \huge \text{standard error (SE)} = \frac{\sigma}{\sqrt{n}}
@@ -493,13 +493,13 @@ A significant effect DOES NOT mean : 
 
 -   **the effect we found in our study is real.** we don’t have access to the truth, and are still making a guess about what the population is like based on our limited sample. so just because an effect is significant doesn’t make it real.
 
--   **the effect we found in our study is not due to chance.** there is still a chance that we are making a mistake in our estimate of sampling error. and even a small p-value of .000001 means there is a chance that we observed this slope due to random sampling error[^9r_samplingerror-7].
+-   **the effect we found in our study is not due to chance.** there is still a chance that we are making a mistake in our estimate of sampling error. and even a small p-value of .000001 means there is a chance that we observed this slope due to random sampling error[^8r_samplingerror-7].
 
 -   **the effect we found in our study is important.** a “significant effect” doesn’t mean the effect is important or meaningful. That’s a question for your critical thinking brain : are these results important to society or me? How will this knowledge be used?
 
 -   **the study used valid methodology.** a bad study designed with poorly defined and unreliable measures, a biased sample, or an improper experimental method that is “significant” is still a bad study. 
 
-[^9r_samplingerror-7]:  This is called Type I error (a false positive) - when we incorrectly reject the null hypothesis. The probability of committing Type I error is defined by the p-value you set to reject the null hypothesis, typically .05 = 5%. Type II error is when you incorrectly reject the alternative hypothesis (false negative). we won’t cover how to calculate Type II error this semester (or the related concept of Statistical Power - which is an estimate of the probability you can correctly support your theory as a researcher), but they are important ideas. [Here’s an okay video](https://www.youtube.com/watch?v=OkbXBWuzikM) that seems to give a good overview of these types of error for those students who are interested, and [here’s a video walking through how to do this in R](https://www.youtube.com/watch?v=ZIjOG8LTTh8). Let me know if you have questions / find better videos!
+[^8r_samplingerror-7]:  This is called Type I error (a false positive) - when we incorrectly reject the null hypothesis. The probability of committing Type I error is defined by the p-value you set to reject the null hypothesis, typically .05 = 5%. Type II error is when you incorrectly reject the alternative hypothesis (false negative). we won’t cover how to calculate Type II error this semester (or the related concept of Statistical Power - which is an estimate of the probability you can correctly support your theory as a researcher), but they are important ideas. [Here’s an okay video](https://www.youtube.com/watch?v=OkbXBWuzikM) that seems to give a good overview of these types of error for those students who are interested, and [here’s a video walking through how to do this in R](https://www.youtube.com/watch?v=ZIjOG8LTTh8). Let me know if you have questions / find better videos!
 
 So what does a significant effect mean again? A significant effect means : “We are unlikely to observe the slope we found in our sample (or one more extreme) if we were to draw a random sample from a population under conditions of the null hypothesis.”
 
@@ -513,9 +513,9 @@ $$
 \huge \text{95% Confidence Interval} = b\pm 1.96 * SE_b
 $$
 
-Positive and Negative 1.96 are the values of the normal distribution that contain 95% of the scores[^9r_samplingerror-8]. Multiplying this value by the estiamted standard error of the slope (which describes how much the slope might vary due to random sampling error) translates these boundaries into the same units as your slope. You can visualize the 95% Confidence Interval below.
+Positive and Negative 1.96 are the values of the normal distribution that contain 95% of the scores[^8r_samplingerror-8]. Multiplying this value by the estiamted standard error of the slope (which describes how much the slope might vary due to random sampling error) translates these boundaries into the same units as your slope. You can visualize the 95% Confidence Interval below.
 
-[^9r_samplingerror-8]: The exact range of the 95% confidence interval will not always be within ±1.96 standard errors of the slope - that’s the theoretical range based on a normal distribution. In practice, the range will depend on certain features of your sample and model (much like the t-distribution we discussed), but will approach 1.96 as your sample size increases; and if you want to be more conservative, you can round up to 2\*SEb as long as your sample size is \> 30.
+[^8r_samplingerror-8]: The exact range of the 95% confidence interval will not always be within ±1.96 standard errors of the slope - that’s the theoretical range based on a normal distribution. In practice, the range will depend on certain features of your sample and model (much like the t-distribution we discussed), but will approach 1.96 as your sample size increases; and if you want to be more conservative, you can round up to 2\*SEb as long as your sample size is \> 30.
 
     \
 
@@ -538,7 +538,7 @@ WHEW!!!
 Y’all will like this - it is very easy to do all the NHST stuff in R. First, you start with a linear model. I’m going to draw from the MBA study we’ve used before, and examine the relationship between Narcissism (NPI) and Age (age).
 
 ```{r}
-mba <- read.csv("~/Dropbox/!WHY STATS/Class Datasets/hormone_data.csv", stringsAsFactors = T)
+mba <- read.csv("~/Dropbox/!WHY STATS/Chapter Datasets/hormone_data.csv", stringsAsFactors = T)
 age.mod <- lm(NPI ~ age, data = mba)
 par(mfrow = c(1,1))
 plot(NPI ~ age, data = mba, pch = 19, xlab = "Age", ylab = "Narcissism (NPI)")

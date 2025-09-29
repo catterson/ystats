@@ -32,9 +32,9 @@ We wrote out this bivariate model like so :
 
 $$\huge y_i = a + b_1*X_{1i} + {\epsilon}_i$$
 
-To make sure we are all on the same page[^10r_nhstpower-1], let’s recap what’s going on with this model. On the left-hand side, we are making predictions for some variable (y : the dependent variable) - specifically an individual’s score on that variable (yi : the tiny i represents some specific individual in the dataset). On the right-hand side of the equation, we have a starting place for our predictions (a : the intercept), and then a slope (b1) that describes how we adjust our predictions of Y based on the individual’s specific value of some other variable (X1i : the first independent variable). And since human life is complex, our predictions will not be perfect, but will have error (ei) which we define as the difference between the individual’s actual score (yi) and our predictions for that person’s score (a + b1X1i). Neat.
+To make sure we are all on the same page[^10r_multipleregression-1], let’s recap what’s going on with this model. On the left-hand side, we are making predictions for some variable (y : the dependent variable) - specifically an individual’s score on that variable (yi : the tiny i represents some specific individual in the dataset). On the right-hand side of the equation, we have a starting place for our predictions (a : the intercept), and then a slope (b1) that describes how we adjust our predictions of Y based on the individual’s specific value of some other variable (X1i : the first independent variable). And since human life is complex, our predictions will not be perfect, but will have error (ei) which we define as the difference between the individual’s actual score (yi) and our predictions for that person’s score (a + b1X1i). Neat.
 
-[^10r_nhstpower-1]: since this is written. har har.
+[^10r_multipleregression-1]: since this is written. har har.
 
 So far, we've used the linear model to make predictions of continuous variables based on categorical variables. For example, in the Prestige dataset ([download HERE](https://www.dropbox.com/s/lca1e7vdkt27wz0/prestige_data.csv?dl=1)) we predicted prestige from job type (a categorical factor with three levels - blue collar, professional, and white collar).
 
@@ -58,9 +58,9 @@ summary(mod2)
 \
 **Redundant Covariation**
 
-We could go through life (and statistics) by considering simple relationships between two variables. These kinds of bivariate models are a good (and necessary) place to start our inquiry. But no psychological phenomenon is entirely explained by any one variable. Instead, human life is explained by multiple variables that are often related to each other and sometimes work together[^10r_nhstpower-2] in order to influence behavior. We saw this in the example above, where prestige appears to be separately explained both by job type and education. But the situation gets more complicated, because as a quick test in R reveals, job type and education are also related to each other. 
+We could go through life (and statistics) by considering simple relationships between two variables. These kinds of bivariate models are a good (and necessary) place to start our inquiry. But no psychological phenomenon is entirely explained by any one variable. Instead, human life is explained by multiple variables that are often related to each other and sometimes work together[^10r_multipleregression-2] in order to influence behavior. We saw this in the example above, where prestige appears to be separately explained both by job type and education. But the situation gets more complicated, because as a quick test in R reveals, job type and education are also related to each other. 
 
-[^10r_nhstpower-2]: we’ll talk about this point (an interaction effect) in the next set of lecture notes.
+[^10r_multipleregression-2]: we’ll talk about this point (an interaction effect) in the next set of lecture notes.
 
 ```{r}
 mod3 <- lm(education ~ type, data = Prestige)
@@ -97,7 +97,7 @@ Alright, hopefully you felt like a lot of the output from this multivariate line
 
 This more complex model is comprised of the following components : 
 
--   **the intercept :** I say intercept, you say....[^10r_nhstpower-3] The intercept in this model describes the predicted prestige for someone with zero years of education, who is NOT a professional, and is NOT a white collar worker - in other words an uneducated blue collar worker. Because no one in the sample actually had less than six years of education, an education of zero does not make sense, which is why the prestige is below zero.
+-   **the intercept :** I say intercept, you say....[^10r_multipleregression-3] The intercept in this model describes the predicted prestige for someone with zero years of education, who is NOT a professional, and is NOT a white collar worker - in other words an uneducated blue collar worker. Because no one in the sample actually had less than six years of education, an education of zero does not make sense, which is why the prestige is below zero.
 
 -   **the slope of education :** this describes the relationship between education and prestige - for every year of education, we add 4.6 prestige points. Critically, this is the relationship between education and prestige controlling for the effect of job type (the unique effect of education.)
 
@@ -105,7 +105,7 @@ This more complex model is comprised of the following components : 
 
 -   **the slope of white collar :** this coefficient describes the change in our predictions between the reference level (blue collar workers - defined by the intercept) and white collar workers, controlling for the effect of education. When accounting for the effect of education in the model, white collar workers are predicted to have 5.6 less prestige points than blue collar workers.
 
-[^10r_nhstpower-3]: THE PREDICTED VALUE OF Y WHEN ALL X VALUES ARE ZERO
+[^10r_multipleregression-3]: THE PREDICTED VALUE OF Y WHEN ALL X VALUES ARE ZERO
 
 We can use this model to make predictions for specific individuals : **Ŷ \~ -2.7 + 4.6(Xeducation) + 6.1(Xprof) - 5.5 (Xwc)**
 
@@ -117,9 +117,9 @@ We can use this model to make predictions for specific individuals : **Ŷ \~ -2.
 
 -   a professional worker with 12 years of education?
 
-**Here are the answers.** No peeking![^10r_nhstpower-4]
+**Here are the answers.** No peeking![^10r_multipleregression-4]
 
-[^10r_nhstpower-4]: 43.3, 47, and 58.6.
+[^10r_multipleregression-4]: 43.3, 47, and 58.6.
 
 ### Comparing Models : The Regression Table.
 
@@ -193,8 +193,8 @@ Use the check-in to practice and prepare for your quiz this week. See the answer
 
 {{< video https://youtu.be/Hy--XyoM5Gw >}}
 
-### [Check-Out](https://docs.google.com/forms/d/e/1FAIpQLSf6cLneQdLKf3iQVOGfXO3TumZIVZKU0eZ18xKetbjMTMdRRw/viewform?usp=sf_link) 
+### [Check-Out](https://docs.google.com/forms/d/e/1FAIpQLSf6cLneQdLKf3iQVOGfXO3TumZIVZKU0eZ18xKetbjMTMdRRw/viewform?usp=sf_link)
 
-how’s it going and what should I focus on for our lecture next week. 
+how’s it going and what should I focus on for our lecture next week.
 
 YEAH!

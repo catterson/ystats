@@ -184,5 +184,29 @@
   },
   "chapters/11R_InteractionFX.qmd": {
     "11R_InteractionFX.html": "8ff0180e"
+  },
+  "./chapters/8R_SamplingError.qmd": {
+    "8R_SamplingError.html": "bf189874"
+  },
+  "./chapters/9R_ModelExtensions.qmd": {
+    "9R_ModelExtensions.html": "984c8bed"
+  },
+  "./chapters/12R_LogisticRegression.qmd": {
+    "12R_LogisticRegression.html": "47152d1c"
+  },
+  "./chapters/13R_Conclusion2Introduction.qmd": {
+    "13R_Conclusion2Introduction.html": "7ea27826"
+  },
+  "chapters/12R_LogisticRegression.qmd": {
+    "12R_LogisticRegression.html": "87521042"
+  },
+  "chapters/8R_SamplingError.qmd": {
+    "8R_SamplingError.html": "b45b9553"
+  },
+  "chapters/9R_ModelExtensions.qmd": {
+    "9R_ModelExtensions.html": "d6a8e1cd"
+  },
+  "chapters/13R_Conclusion2Introduction.qmd": {
+    "13R_Conclusion2Introduction.html": "fde14cef"
   }
 }
