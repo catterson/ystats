@@ -198,7 +198,7 @@ First,  we define our model, and examine the coefficients of this model. I’ve
 **I walk you through this model below :**
 
 |  |  |  |  |
-|---------------|---------------|---------------|-----------------------------|
+|----|----|----|----|
 | **Term** | **Name** | **Value** | **Interpretation** |
 | 1 | Intercept | 0.00 | This is the starting place for our line - the predicted value of prestige when all X values are zero. Since my variables are z-scored, zero means “average”, so again we see that someone with average education and is NOT a white collar or professional worker (a blue collar worker) has an average level of prestige. |
 | 2 | z.education | .76 | This is the relationship between education and prestige for blue collar workers - in other words, for people who are NOT white collar or professional workers (blue collar workers). |
@@ -236,9 +236,8 @@ Here’s the output of my summary of a z-scored model. Let’s focus on just one
 
 ![](images/clipboard-3258589132.png)
 
-Our estimate is that positive relationship between education and prestige for blue collar workers (β = .76) is adjusted for professional workers (the adjustment is β = -.16, so the slope for people who do are professional workers would be β = .76 - .16 = β = .60). The standard error for the interaction effect (.23) suggests that IF the null hypothesis were “true”, the average variation in interaction effects we might find due to chance would be .23. The t-value (-.68) suggests that the interaction effect we found is only ⅔ of the average interaction effect we would expect to find on average due to sampling error  if the null hypothesis were true. The p-value (p = .5) suggests that the probability of finding this interaction effect if the null hypothesis is true is about 50%, which is very likely, and suggests that it’s most likely we would have found this interaction effect due to chance. 
+Our estimate is that positive relationship between education and prestige for blue collar workers (β = .76) is adjusted for professional workers (the adjustment is β = -.16, so the slope for people who do are professional workers would be β = .76 - .16 = β = .60). The standard error for the interaction effect (.23) suggests that IF the null hypothesis were “true”, the average variation in interaction effects we might find due to chance would be .23. The t-value (-.68) suggests that the interaction effect we found is only ⅔ of the average interaction effect we would expect to find on average due to sampling error if the null hypothesis were true. The p-value (p = .5) suggests that the probability of finding this interaction effect if the null hypothesis is true is about 50%, which is very likely, and suggests that it’s most likely we would have found this interaction effect due to chance.
 
 Of course, we could be wrong in our determination that this is a non-significant finding - there is a 50% chance that we would not observe this slope (or one larger) due to chance if the null hypothesis were true. But this, along with the fickle nature of interaction effects, I think this interaction effect, and the one for white collar jobs, is likely bogus. And in any case, if I really cared about this effect and wanted to write about this in a paper, I would replicate this effect in other datasets (starting with Berkeley students and then generalizing to other samples) no matter the significance level.
 
-Cool. I think that’s all for now. 
-
+Cool. I think that’s all for now.

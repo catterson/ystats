@@ -58,15 +58,12 @@ These are not rigid categories, and psychologists often debate the definitions o
 
 For example, think about how affect, behavior, and cognition might be relevant if I ask you to think about an upcoming exam (your first exam is in just a few weeks!)
 
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                       | **highlight the cells below to see my ideas / check your understanding**                                                                                                                                                                                                          |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Affect Example**    | [the feeling of anxiety or dread you have thinking about being assessed, or maybe a feeling of excitement about the opportunity to demonstrate your hard work / effort / knowledge!]{style="color:white"}                                                                         |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Behavior Example**  | [immediately checking your calendar to see when exams are; or maybe avoiding your classes with a nice procrastination session on the ol’ infinite scroll machine.]{style="color:white"}                                                                                           |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  |  |
+|----|----|
+|  | **highlight the cells below to see my ideas / check your understanding** |
+| **Affect Example** | [the feeling of anxiety or dread you have thinking about being assessed, or maybe a feeling of excitement about the opportunity to demonstrate your hard work / effort / knowledge!]{style="color:white"} |
+| **Behavior Example** | [immediately checking your calendar to see when exams are; or maybe avoiding your classes with a nice procrastination session on the ol’ infinite scroll machine.]{style="color:white"} |
 | **Cognition Example** | [thinking about all the work you have to do; wondering why the professor would choose this example when he could have thought about the ways that affect, behavior, and cognition would be triggered when you see a puppy or kitten or something like that…]{style="color:white"} |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 [Here's [a cat video](https://www.youtube.com/watch?v=Am3NVGP9rkQ) I like for students needing a distraction from thinking about exams. I promise your exams in this class will be chill and I'll do my best to prepare y'all.]{.aside}
 
@@ -98,13 +95,11 @@ Me-search can be an important way for researchers to use their statistics and re
 
 Below are a few examples of research questions that are related to a person's real-life experiences.
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| **Real Life Experience**                                                                                                                                                                                                                               | **Research Question**                                                |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| A researcher develops vision problems due to his studies of light, and had to live in a completely darkened room, where he became completely isolated from most of reality.[^1r_whystats-3]                                                            | Does reality exist, or can it only be known through our perceptions? |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| A black graduate student at the University of Chicago realizes that white people cross the street to avoid him, and finds himself whistling classical music to signal that he does not fit their negative stereotypes of a black male.[^1r_whystats-4] | How do people respond and react to others' negative stereotypes?     |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+|  |  |
+|----|----|
+| **Real Life Experience** | **Research Question** |
+| A researcher develops vision problems due to his studies of light, and had to live in a completely darkened room, where he became completely isolated from most of reality.[^1r_whystats-3] | Does reality exist, or can it only be known through our perceptions? |
+| A black graduate student at the University of Chicago realizes that white people cross the street to avoid him, and finds himself whistling classical music to signal that he does not fit their negative stereotypes of a black male.[^1r_whystats-4] | How do people respond and react to others' negative stereotypes? |
 
 [^1r_whystats-3]: This happened to [Gustav Fechner](https://plato.stanford.edu/entries/fechner/), one of the early psychologists who pioneered the study of psychophysics, which tested theories that our perceptions do not always match reality (seen in many examples, such as [the dress](https://www.rit.edu/news/color-scientists-explain-dress-went-viral)). FWIW I see it as blue and black.
 

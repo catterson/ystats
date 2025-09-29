@@ -239,7 +239,7 @@ d$age[d$age > 100 & !is.na(d$age)] <- NA # replaces the outliers with NA
 hist(d$age) # my graph.
 ```
 
-This looks better, but now I see that there are some suspiciously young ages. 
+This looks better, but now I see that there are some suspiciously young ages.
 
 So I'll adapt my code to look for individuals who are less than 18 years old.
 
@@ -344,7 +344,7 @@ Watch the video below to go over some possible answers, or just look over the ta
 {{< video https://youtu.be/T9dTk6Sa434 >}}
 
 |  |  |
-|------------------------------------|------------------------------------|
+|----|----|
 | **face :** does our measure or result look like what it should look like? | **high :** I have a sense of what my weight should be (e.g, if it says 10 or 1000 i know either the units are wrong or scale is broken.) |
 | **convergent :** is our measure similar to related concepts? | **high :** my weight according to the scale is (somewhat) related to how much I stress eat, how little I exercise, my parents’ weight, etc. |
 | **discriminant :** is our measure different from unrelated concepts? | **high :** my weight is unrelated to intelligence, how much I love R, whether I wear sandals with or without socks, etc. |
