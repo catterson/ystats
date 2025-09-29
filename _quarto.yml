@@ -26,7 +26,7 @@ book:
         - ./chapters/10R_MultipleRegression.qmd
         - ./chapters/11R_InteractionFX.qmd
         - ./chapters/12R_LogisticRegression.qmd
-        - ./chapters/13R_Conclusion2Introduction.qmd
+    - ./chapters/13R_Conclusion2Introduction.qmd
   appendices:
     - Rcode.qmd
     - references.qmd

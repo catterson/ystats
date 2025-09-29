@@ -1,4 +1,4 @@
-# Conclusion 2 Introduction
+# Farewell! (A Conclusion)
 
 Hi! In this final chapter, I'll summarize all the major themes from the course, integrate all of our critical statistics, R, and research methods skills into one transcendent ....
 
