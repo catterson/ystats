@@ -33,15 +33,15 @@ presto <- Prestige # creating a copy of the dataset so you don't mess something 
 names(presto) # tadaa!!
 ```
 
-You can read more about these variables by typing in ?Prestige to access the help page for the dataset. For this lecture, we'll be working with the variable prestige, which is a measure of how prestigious certain jobs were, in Canada, in the 1960s[^6r_linearmodels-1]. Note that individuals in this dataset are not people, but people's attitudes about types of jobs.
+You can read more about these variables by typing in ?Prestige to access the help page for the dataset. For this lecture, we'll be working with the variable prestige, which is a measure of how prestigious certain jobs were, in Canada, in the 1960s[^1]. Note that individuals in this dataset are not people, but people's attitudes about types of jobs.
 
-[^6r_linearmodels-1]: Super exciting! But remember this is like driving around a safe, boring parking lot!! We’ll hit the highway soon enough.
+[^1]: Super exciting! But remember this is like driving around a safe, boring parking lot!! We’ll hit the highway soon enough.
 
 The graph to the right illustrates variation in this variable, as well as how the mean of prestige is the value that is closest to all the scores in the distribution.
 
-The graph below [^6r_linearmodels-2] is defined by the following equation :
+The graph below [^2] is defined by the following equation :
 
-[^6r_linearmodels-2]: NOTE: Eagle eyed students may note something odd about the way the data are arranged on this graph - it looks like there's some quadratic (curved) pattern in the way the data are arranged. Because the x-axis for this graph (the index) is the row in which each data, all this quadratic pattern means is that more prestigious jobs tended to be listed earlier in the dataset than less prestigious jobs.
+[^2]: NOTE: Eagle eyed students may note something odd about the way the data are arranged on this graph - it looks like there's some quadratic (curved) pattern in the way the data are arranged. Because the x-axis for this graph (the index) is the row in which each data, all this quadratic pattern means is that more prestigious jobs tended to be listed earlier in the dataset than less prestigious jobs.
 
 $\huge y_i = \hat{Y} + \epsilon_i$
 
@@ -109,9 +109,9 @@ These two models look similar, but are not equal. If I had to guess, I'd say tha
 
 Returning to our previous example, let's predict the variable prestige from the variable education - another continuous variable in the Prestige dataset. As a linear model, I would write this as : `prestige = education + error`
 
-In the same way I could expect rain sounds to be related to rain, a job that requires more years of education might be related to how prestigious the job is. This is not true of all careers (consider the “high educated” poet ridiculed by society, perhaps, or the “low educated” firefighter revered by society[^6r_linearmodels-3].
+In the same way I could expect rain sounds to be related to rain, a job that requires more years of education might be related to how prestigious the job is. This is not true of all careers (consider the “high educated” poet ridiculed by society, perhaps, or the “low educated” firefighter revered by society[^3].
 
-[^6r_linearmodels-3]: And good to explore why we care about prestige in careers anyway? I blame capitalism and our society’s unwillingness to provide people with their basic needs, so a person's value is determined by how much their material conditions, and whether they can meet (or exceed) those basic needs. Anyway, point is firefighters and poets are both cool and important for society.
+[^3]: And good to explore why we care about prestige in careers anyway? I blame capitalism and our society’s unwillingness to provide people with their basic needs, so a person's value is determined by how much their material conditions, and whether they can meet (or exceed) those basic needs. Anyway, point is firefighters and poets are both cool and important for society.
 
 Let's graph these two variables side by side.
 
