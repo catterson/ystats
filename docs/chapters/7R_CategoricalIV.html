@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Linear Model Pt 2: Categorical IVs – Why Statistics?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/8R_SamplingError.html" rel="next">
+<link href="../chapters/6R_LinearModels.html" rel="prev">
+<link href=".././images/open_source_mouse.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1f30f38e89a8a4968f6809dfb3eaa9d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Why Statistics?</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
+<span class="menu-text">List of R Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://catterson.github.io"> 
+<span class="menu-text">Prof.&nbsp;Cat Homepage</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/7R_CategoricalIV.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model Pt 2: Categorical IVs</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src=".././images/open_source_mouse.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hello (An Introduction)!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Describing People</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/1R_WhyStats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/2R_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Data Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/3R_Description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/4R_Scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/5R_GoodScience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">“Normal” Data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Predicting People</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/6R_LinearModels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Linear Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/7R_CategoricalIV.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model Pt 2: Categorical IVs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/8R_SamplingError.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sampling Error and Bias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/9R_ModelExtensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">More Levels and Experiments</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">People Are Complex</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10R_MultipleRegression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multiple Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11R_InteractionFX.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interaction Effects</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12R_LogisticRegression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13R_Conclusion2Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Farewell! (A Conclusion)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Rcode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#part-1-the-linear-model-with-a-categorical-iv-with-two-levels" id="toc-part-1-the-linear-model-with-a-categorical-iv-with-two-levels" class="nav-link active" data-scroll-target="#part-1-the-linear-model-with-a-categorical-iv-with-two-levels">Part 1 : The Linear Model with a Categorical IV with Two Levels</a>
+  <ul>
+  <li><a href="#recap-working-with-categorical-factor-and-levels" id="toc-recap-working-with-categorical-factor-and-levels" class="nav-link" data-scroll-target="#recap-working-with-categorical-factor-and-levels">RECAP : Working With Categorical Factor and Levels</a></li>
+  <li><a href="#a-conceptual-example" id="toc-a-conceptual-example" class="nav-link" data-scroll-target="#a-conceptual-example">A Conceptual Example</a></li>
+  <li><a href="#connecting-a-linear-model-to-the-graph" id="toc-connecting-a-linear-model-to-the-graph" class="nav-link" data-scroll-target="#connecting-a-linear-model-to-the-graph">Connecting a Linear Model to the Graph</a></li>
+  <li><a href="#a-simpler-way-to-illustrate-a-model-with-a-categorical-iv-the-plotmeans-function" id="toc-a-simpler-way-to-illustrate-a-model-with-a-categorical-iv-the-plotmeans-function" class="nav-link" data-scroll-target="#a-simpler-way-to-illustrate-a-model-with-a-categorical-iv-the-plotmeans-function">A Simpler Way to Illustrate a Model with a Categorical IV: the plotmeans() function</a></li>
+  <li><a href="#r-and-the-linear-model-with-a-categorical-iv" id="toc-r-and-the-linear-model-with-a-categorical-iv" class="nav-link" data-scroll-target="#r-and-the-linear-model-with-a-categorical-iv"><span class="math inline">\(R^\)</span> and the Linear Model with a Categorical IV</a></li>
+  <li><a href="#re-leveling-a-2-level-factor-variable." id="toc-re-leveling-a-2-level-factor-variable." class="nav-link" data-scroll-target="#re-leveling-a-2-level-factor-variable.">Re-Leveling a 2-Level Factor Variable.</a></li>
+  <li><a href="#check-in-to-assess-your-understanding-here" id="toc-check-in-to-assess-your-understanding-here" class="nav-link" data-scroll-target="#check-in-to-assess-your-understanding-here">CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE</a></li>
+  <li><a href="#another-example" id="toc-another-example" class="nav-link" data-scroll-target="#another-example">Another Example</a></li>
+  </ul></li>
+  <li><a href="#part-2-the-four-reasons-why-youd-observe-a-pattern-in-the-data" id="toc-part-2-the-four-reasons-why-youd-observe-a-pattern-in-the-data" class="nav-link" data-scroll-target="#part-2-the-four-reasons-why-youd-observe-a-pattern-in-the-data">Part 2 : The “Four Reasons” Why You’d Observe a Pattern in the Data</a>
+  <ul>
+  <li><a href="#example-the-mascot-dataset" id="toc-example-the-mascot-dataset" class="nav-link" data-scroll-target="#example-the-mascot-dataset">Example : The Mascot Dataset</a></li>
+  <li><a href="#example-personality-and-longevity" id="toc-example-personality-and-longevity" class="nav-link" data-scroll-target="#example-personality-and-longevity">Example : Personality and Longevity</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/7R_CategoricalIV.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model Pt 2: Categorical IVs</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Linear Model Pt 2: Categorical IVs</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="part-1-the-linear-model-with-a-categorical-iv-with-two-levels" class="level1 page-columns page-full">
+<h1>Part 1 : The Linear Model with a Categorical IV with Two Levels</h1>
+<section id="recap-working-with-categorical-factor-and-levels" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="recap-working-with-categorical-factor-and-levels">RECAP : Working With Categorical Factor and Levels</h2>
+<p>It’s been a while since we focused on categorical variables. As a reminder, a categorical variable measures variation in terms of groups. The specific groups are called <strong>levels</strong>, and the broad name for the groups is called a <strong>factor.</strong>&nbsp;</p>
+<p>For example, in the “MBA Business Student Data” (<a href="https://www.dropbox.com/scl/fi/b2vq1yi5azwb5u8j7xe74/hormone_data.csv?rlkey=lv77ppuseg5cmqsy99pal55ct&amp;dl=0">hormone_data.csv</a>) researchers measure the variable <strong>sex</strong> as a categorical factor, with just two levels : <strong>female</strong> and <strong>male</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;I’ll just spend pages going over it. Hah hah.</p></div></div><div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mba <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Dropbox/!WHY STATS/Chapter Datasets/hormone_data.csv"</span>, <span class="at">stringsAsFactors =</span> T)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mba<span class="sc">$</span>sex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] male   male   male   male   male   female male   male   male   male  
+ [11] male   male   male   male   male   male   male   male   male   male  
+ [21] male   male   male   male   male   male   male   male   male   male  
+ [31] male   male   male   male   male   male   male   male   male   male  
+ [41] male   male   male   male   male   male   male   male   male   female
+ [51] female female female female female female female female female female
+ [61] female female female female female male   male   male   male   male  
+ [71] male   male   male   male   male   male   male   male   male   male  
+ [81] male   male   male   male   male   male   male   male   male   male  
+ [91] male   male   male   male   male   male   male   male   male   male  
+[101] male   male   male   male   female female female female female female
+[111] female female female female female female female female female female
+[121] female female
+Levels: female male</code></pre>
+</div>
+</div>
+<p>I can use the <code>plot()</code> function to illustrate this variable, and <code>summary()</code> function to report the number of individuals in each group.</p>
+<div class="cell page-columns page-full">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Sex, Graphed and Summarized</figcaption>
+</figure>
+</div>
+</div></div><details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mba<span class="sc">$</span>sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>female   male 
+    35     87 </code></pre>
+</div>
+</div>
+</section>
+<section id="a-conceptual-example" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="a-conceptual-example">A Conceptual Example</h2>
+<p>The equation for a linear model with a categorical IV is identical to what we’ve seen before :&nbsp;<br>
+<span class="math inline">\(\huge y_i = a + b_1 * X_i + \epsilon_i\)</span></p>
+<p>We are making a <strong>prediction about some dependent variable</strong> (<span class="math inline">\(y_i\)</span>) from a <strong>linear equation</strong> that has an <strong>intercept</strong> (<span class="math inline">\(a\)</span>, the starting place for our prediction), and then <strong>a slope</strong> (<span class="math inline">\(b_1\)</span> an adjustment we make) based on information about another <strong>(independent) variable</strong> (<span class="math inline">\(x_i\)</span>).</p>
+<p>For this first example, let’s define a model to predict narcissism (how self-centered and egotistical a person says they are) from the person’s sex.</p>
+<p>Before we jump to the linear model, let’s graph our dependent variable using the hist() function, since the variable is numeric. In the mba dataset, NPI (Narcissistic Personality Inventory) is what researchers defined for Narcissism</p>
+<div class="cell page-columns page-full">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mba<span class="sc">$</span>NPI, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>, <span class="at">main =</span> <span class="st">""</span>, <span class="at">xlab =</span> <span class="st">"Narcissism (NPI) Score"</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Narcissism Variable, Graphed</figcaption>
+</figure>
+</div>
+</div></div></div>
+<p>The data look good - I don’t see any outliers or problems in the data, and while it seems a little odd nobody said they were a 1 in terms of narcissism, the distribution is mostly normal and maybe everyone’s a little narcissistic?</p>
+<p>In the graph below, I’m using the plot function to illustrate the individual narcissism scores.</p>
+<p>Each individual narcissism score is a dot defined by the value on the y-axis, and their index (position in the dataset) is located on the x-axis. So the individual in the top left corner has a narcissism score of around 4.45, and was one of the first people to provide data (the index is not super relevant).</p>
+<p>See if you can guess where the mean is; illustrated as a horizontal line that goes closest to all the individual narcissism scores, such that the sum of the residual errors will be zero. Click the tab to see where the mean is actually is.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Where is the Mean???</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Here is the mean!</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Plot of Individual Narcissism Scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># abline(h = mean(mba$NPI, na.rm = T), lwd = 5)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Plot of Individual Narcissism Scores"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(mba<span class="sc">$</span>NPI, <span class="at">na.rm =</span> T), <span class="at">lwd =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>How did you do? I was a little low on this one. Okay; let’s keep moving.</p>
+<p>The graph below illustrates the same data, however this time I’ve asked R to color the dots based on the variable sex. In this graph, red dots illustrate the narcissism score for males in the dataset, the black dots illustrate the narcissism score for females in the dataset. Narcissism scores are on the y-axis, and the x-axis again indicates the index of the individual.</p>
+<p>Take a moment and look at this graph - what do you observe?</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> mba<span class="sc">$</span>sex, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Plot of Individual Narcissism Scores</span><span class="sc">\n</span><span class="st">Grouped By Sex (Red = Male, Black = Female)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What Professor Sees.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>I see that there are more red dots than black dots. This matches what I know about the variable ‘sex’ - there were more Male MBA students than Female MBA students in the data.</li>
+<li>I see that there are some clusters of where red and black dots occur. For some reason, the males and females are grouped - my guess is that these data were collected in two waves (maybe two classes of students) and were organized in each class by sex. This is not super relevant to the data, but</li>
+<li>I see that more of the red dots are higher on the y-axis than the black dots. This is not super easy to see, but there seems to be a trend there - the red dots are slightly higher on average than the black dots. <strong>But you don’t have to take my word for it, this is what the linear model does!</strong></li>
+</ol>
+</div>
+</div>
+</div>
+<p>Okay, time to play….WHERE’S…THAT….LINE!!!! (<em>crowd of students go wild</em>). Think about where you would draw two horizontal lines in the graph above - one that is closest to all the red dots and one that is closest to all the black dots.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Where’s the line?</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">The Black Line</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">The Red Line!</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Wow! How did you do??? Professor’s observations from the graph on the last page appear to be correct; the red dots tend to be higher than the black dots.</p>
+<p>I can see this on the graph because the red line (which is the average of the red dots) is higher than the black line (which is the average of the black dots).</p>
+<p>This is the core idea of a linear model - we are making predictions of one variable (y = the DV = Narcissism) from another variable (x = the IV = sex). For people who are male (the red dots), we are going to predict a narcissism score of around…..3.3 (where the red line hits the y-axis). Not every male has this exact same narcissism score (life is complex!) - we can see the residual error of red dots above and below this line (we will get to calculate this soon; hooray!) - but this red line defines the trend.</p>
+<p>For people who are female, we can predict a narcissism score of around 3 (where the black line hits the y-axis). Not every female has this exact same narcissism score, but the line defines the trend.</p>
+<p>And now, we can calculate the difference between these two groups - 0.3 - as the slope - the change we make in our predictions of narcissism depending on whether the person is male or female. Wow.</p>
+</section>
+<section id="connecting-a-linear-model-to-the-graph" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="connecting-a-linear-model-to-the-graph">Connecting a Linear Model to the Graph</h2>
+<p>Okay, let’s dig into what’s really going on here with the model. To define these lines, I ran the same function we used last week - `lm()`.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(NPI <span class="sc">~</span> sex, <span class="at">data =</span> mba) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>This code defines an object (that I’m calling mod, but you can call it whatever you want) as a linear model (lm), predicting Narcissism (NPI) from the variable sex, using the mba dataset. Nothing is show, because we have just defined the model.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)     sexmale 
+  3.0138235   0.2628015 </code></pre>
+</div>
+</div>
+<ul>
+<li>The coef() function asks R to report the coefficients from this new object. R reports the intercept (3.01) and a slope (0.26). Note that R has assigned this slope to one of the groups (male) of the categorical variable.</li>
+</ul>
+<p>The linear model that we have defined with this categorical independent is doing the same thing that our linear model with a numeric IV did - making predictions about the dependent from changes in the independent variable.&nbsp;</p>
+<p><strong>The slope is the key statistic here</strong>, since it tells us how our predictions of the dependent variable should change as the independent variable changes. When the independent variable was numeric, it could theoretically take any value. We could, for example, calculate the narcissism of someone who was 20 years old, 21 years old, 20.5 years old, etc. Of course, it may not be appropriate to calculate the narcissism of someone who was -100 years old, or 1000 years old (since these are nonsensical numbers), or even someone who was 10 years old if all the original data were based on college-age students.&nbsp;</p>
+<p>When the independent variable is categorical, it cannot take any value, since the data are constrained to be in a specific group. This means that we have to assign each group some numeric value - something called <strong>dummy coding</strong>.In our example, researchers have measured sex as a simple binary (Male or Female), the independent variable (sex) can only take two values - Male and Female. Male and Female are not values, so we will assign them values - 0 and 1.</p>
+<p>R defaults to alphabetical order - because F (for Female) comes earlier in the alphabet than M (for Male), when X = 0, we will be referring to the Females in the dataset, and when X = 1, we will be referring to the Males in the dataset.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;It’s up to you which group will be assigned the value 0 and which group will be assigned the value 1, and later we will learn how to swap this around and why it might matter.</p></div></div><table class="caption-top table">
+<thead>
+<tr class="header">
+<th>IV Value</th>
+<th>Categorical Factor Level</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>X = 0</td>
+<td>Female</td>
+</tr>
+<tr class="even">
+<td>X = 1</td>
+<td>Male</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s look at the graph. <strong>The intercept</strong> is the starting place for our predictions when all X values (the IV) are equal to zero. In this case, an X value of zero means that the individual is NOT male. The only other option in these data if the individual is NOT male is to be female. So the intercept - 3.01 - is the predicted Narcissism for someone who is female.</p>
+<div class="cell page-columns page-full">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)     sexmale 
+  3.0138235   0.2628015 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> mba<span class="sc">$</span>sex, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Plot of Individual Narcissism Scores</span><span class="sc">\n</span><span class="st">Grouped By Sex (Red = Male, Black = Female)"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'black'</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(mod)[<span class="dv">2</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div></div></div>
+<p>The slope is the adjustment we make to our prediction when X changes by 1, which means we refer to the males in the dataset. This means we add 0.26 to our starting place = 3.01 + .26 = 3.27 = where the horizontal red line is drawn = the predicted value of Narcissism for males in the dataset.</p>
+</section>
+<section id="a-simpler-way-to-illustrate-a-model-with-a-categorical-iv-the-plotmeans-function" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="a-simpler-way-to-illustrate-a-model-with-a-categorical-iv-the-plotmeans-function">A Simpler Way to Illustrate a Model with a Categorical IV: the plotmeans() function</h2>
+<p>I only use the plot() function for conceptual understanding - there are better (and easier) ways to visualize this linear model in R.</p>
+<p>One method I like is the plotmeans() function. This function comes from the gplots package. You will need to install this package once, then load it from the library each time you start R.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;install.packages(“gplots”) to install the package, then library(gplots) to load.</p></div><div id="fn4"><p><sup>4</sup>&nbsp;The warning message is telling me that the gplots and the stats libaries both have a function called lowess. R is “masking” this function from stats, which means if I refer to the lowess function , R will think I mean the one that comes from the gplots package. If I want to use the lowess from the stats library, I will need to manually tell R to do this using stats::lowess(). We won’t use the lowess function in this class.</p></div></div><p>Below is what it looks like when I install the gplots package (remember you only need to do this once) and then load the gplots library.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/7_gplots.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Once I get the gplots library working, I can use the plotmeans() function. This works similar to plot(), in that I define a DV, IV, and dataset. It can also take familiar arguments (like changing the title, axis labels, and axis limits). Below is the default graph you see when I run the most basic code :&nbsp;</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gplots)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'gplots'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:stats':
+
+    lowess</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(NPI <span class="sc">~</span> sex, <span class="at">data =</span> mba)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p><strong>NPI (Narcissism) scores are on the y-axis.</strong> R has limited the range of this variable in order to highlight the slope.&nbsp;</p></li>
+<li><p><strong>The categorical variable sex is defined on the x-axis</strong>. I can see the two groups - female and male. Above each label, R has listed the sample size (n) - the number of individuals in each group (there are 34 females and 80 males who gave narcissism data).</p></li>
+<li><p><strong>The small dot for each group is the predicted value of Narcissism for that group.</strong> Note that the dot for females is 3.01 (the intercept) and the dot for males is 3.27 (which is .26 higher than female = the slope).</p></li>
+<li><p><strong>The bars above and below the dots</strong> are something called “standard error bars”. We will learn about those in a few weeks; but you can basically think of them as an illustration of the “margin of error” we have when making predictions.</p></li>
+<li><p><strong>The line connecting the two dots</strong> is trying to illustrate the slope.However, it’s a little misleading, since it makes it seem like there are possible predicted values of Narcissism between female and male. While sex is a spectrum, these researchers did not measure sex in a numeric way, so there’s not data looking at estimates of narcissism for non-cisgendered people / folks on the spectrum, so this line is not appropriate. We can turn the line off with an argument.</p></li>
+</ul>
+<p>Below is a graph I might run to “clean-up” some of these issues; I’ve removed the line illustrating the slope, expanded the range of the y-axis, and renamed the variables.&nbsp;</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(NPI <span class="sc">~</span> sex, <span class="at">data =</span> mba, <span class="at">connect =</span> F, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Sex"</span>,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in arrows(x, li, x, pmax(y - gap, li), col = barcol, lwd = lwd, :
+zero-length arrow is of indeterminate angle and so skipped</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in arrows(x, ui, x, pmin(y + gap, ui), col = barcol, lwd = lwd, :
+zero-length arrow is of indeterminate angle and so skipped</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice that when I expand the y-axis range to include the full range of the scale, the difference in narcissism looks a lot smaller than it did when the graph was “zoomed” in. This is a <strong>critical media literacy skill</strong> - researchers sometimes report “zoomed in” graphs that make the effect look bigger than it really is.&nbsp;</p>
+<p>If only there was a way to actually define how large an effect is..using numbers! Oh….do you hear that…..it’s <span class="math inline">\(R^2\)</span>’s music!!!!!</p>
+</section>
+<section id="r-and-the-linear-model-with-a-categorical-iv" class="level2">
+<h2 class="anchored" data-anchor-id="r-and-the-linear-model-with-a-categorical-iv"><span class="math inline">\(R^\)</span> and the Linear Model with a Categorical IV</h2>
+<p>The principle behind <span class="math inline">\(R^2\)</span> for a linear model with a categorical IV is the same - we are looking to see <em>how much less residual error there is when we use the model to make predictions of our DV</em>, compared to when we use the mean when making predictions of our DV.</p>
+<p>You can try to visualize this decrease in the graphs below.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Residual Errors Using the Mean"</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(mba<span class="sc">$</span>NPI, <span class="at">na.rm =</span> T), <span class="at">lwd =</span> <span class="dv">5</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> mba<span class="sc">$</span>sex, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Residual Errors Using the Model"</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'black'</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(mod)[<span class="dv">2</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>For the mean (graph on left), the residual errors are the distance between each individual score (dot) and the prediction (black line).</li>
+<li>For the model (graph on right), the residual errors are the distance between each red dot (males actual narcissism score) and the red line (predicted narcissism for males) AND the distance between each black dot (females actual narcissism score) and the black line (predicted narcissism for females).</li>
+</ul>
+<p>I can calculate these residuals, like we did in the last chapter for a linear model with a numeric IV.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>residual <span class="ot">&lt;-</span> mba<span class="sc">$</span>NPI <span class="sc">-</span> <span class="fu">mean</span>(mba<span class="sc">$</span>NPI, <span class="at">na.rm =</span> T)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>total.residual <span class="ot">&lt;-</span> <span class="fu">sum</span>(residual<span class="sc">^</span><span class="dv">2</span>, <span class="at">na.rm =</span> T) <span class="co"># 32.48</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>total.residual</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 32.47965</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>model.residual <span class="ot">&lt;-</span> <span class="fu">sum</span>(mod<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>model.residual</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 30.83179</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>total.residual <span class="sc">-</span> model.residual</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.647857</code></pre>
+</div>
+</div>
+<p>It’s a pretty small difference in residual errors, and plugging these values into our equation of <span class="math inline">\(R^2\)</span> shows that our model really only reduces residual error by about 5% (compared to the mean).</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>(total.residual <span class="sc">-</span> model.residual)<span class="sc">/</span>model.residual</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0534467</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)<span class="sc">$</span>r.squared <span class="co"># R^2 the easy way</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.05073507</code></pre>
+</div>
+</div>
+<p>So yes, male business students say they are more narcissistic than female business students, but differences in sex only explain about 5% of the variation in narcissism. Life is complex. As always.</p>
+</section>
+<section id="re-leveling-a-2-level-factor-variable." class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="re-leveling-a-2-level-factor-variable.">Re-Leveling a 2-Level Factor Variable.</h2>
+<p>Okay, last thing. Remember how I write that the order of the levels (female = 0, male = 1) is arbitrary, and R defaults to alphabetical order? Sometimes you want to change the order around - in this example, make male = 0 and female = 1.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;It’s not important to do releveling in this example. However, sometimes one group is a clear reference group that should be assigned as the intercept. For example, if one group is the “default” experience, and you want to see how the other group changes that default. We’ll chat more about this next week.</p></div></div><p>This is called releveling. When you relevel, the data do not change - just the order of the data changes.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">relevel</span>(mba<span class="sc">$</span>sex, <span class="at">ref =</span> <span class="st">"male"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] male   male   male   male   male   female male   male   male   male  
+ [11] male   male   male   male   male   male   male   male   male   male  
+ [21] male   male   male   male   male   male   male   male   male   male  
+ [31] male   male   male   male   male   male   male   male   male   male  
+ [41] male   male   male   male   male   male   male   male   male   female
+ [51] female female female female female female female female female female
+ [61] female female female female female male   male   male   male   male  
+ [71] male   male   male   male   male   male   male   male   male   male  
+ [81] male   male   male   male   male   male   male   male   male   male  
+ [91] male   male   male   male   male   male   male   male   male   male  
+[101] male   male   male   male   female female female female female female
+[111] female female female female female female female female female female
+[121] female female
+Levels: male female</code></pre>
+</div>
+</div>
+<p>Note that this time at the bottom of the output, R is listing male as the first level, and female as the second level. To save the releveling change, I’m going to define a new variable (sexR) that is part of the mba dataset. I can then use this new, releveled variable, in my linear model and create a graph.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|fig-column: margin</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>mba<span class="sc">$</span>sexR <span class="ot">&lt;-</span> <span class="fu">relevel</span>(mba<span class="sc">$</span>sex, <span class="at">ref =</span> <span class="st">"male"</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>modR <span class="ot">&lt;-</span> <span class="fu">lm</span>(NPI <span class="sc">~</span> sexR, <span class="at">data =</span> mba)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(modR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)  sexRfemale 
+  3.2766250  -0.2628015 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(NPI <span class="sc">~</span> sexR, <span class="at">data =</span> mba)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modR)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.05073507</code></pre>
+</div>
+</div>
+<p>This graph should look familiar; it’s the mirror image of what we saw before. The intercept is still the predicted value of narcissism when X = 0, but now X = 0 means the person is NOT female (and therefore is male). This predicted value of 3.27 is the same predicted value we saw before releveling.</p>
+<p>The slope now is the adjustment in narcissism we make when we go from X = 0 to X = 1, or the difference in narcissism between females and males. This is just the flip of our previous slope, and describes that our prediction is that females will be .26 points less narcissistic than males.</p>
+<p>And if I ask R to calculate the R2 value, I get the same result because the model has not really changed; just the order of my levels.</p>
+</section>
+<section id="check-in-to-assess-your-understanding-here" class="level2">
+<h2 class="anchored" data-anchor-id="check-in-to-assess-your-understanding-here"><a href="https://docs.google.com/forms/d/e/1FAIpQLScDbKcyNYVWCVt-n3k8AT7xDSaUGwK-VYRgjxQ8iXPgZc3Hyg/viewform?usp=sf_link">CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE</a></h2>
+</section>
+<section id="another-example" class="level2">
+<h2 class="anchored" data-anchor-id="another-example">Another Example</h2>
+<p>Let’s practice with another example : Professor wants to know whether there are sex differences in testosterone. Define a linear model to predict testosterone (DV = test) from sex (IV = sex). Graph the linear model, report the slope and R2 value from the linear model, and interpret what you learn.</p>
+<p>Try this on your own. There’s a key (and video key) below.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="https://www.loom.com/share/909ad220c4d44d39886cd805eccbcb3f?sid=4e1d79e5-8b05-44f1-99cb-8fa9df914b34">Defining the Linear Model and Graphing the Relationship with plotmeans()</a></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>test.mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(test <span class="sc">~</span> sex, <span class="at">data =</span> mba)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(test.mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)     sexmale 
+   41.39556    49.28841 </code></pre>
+</div>
+</div>
+<p><a href="https://www.loom.com/share/3e1e386827354ab2a5ac5a0731f46b66?sid=8c7e3d8c-b1f9-479e-a948-ba90c75e0f5b">Graphing the Relationship: Conceptual Example</a></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>test, <span class="at">col =</span> mba<span class="sc">$</span>sex)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(test.mod)[<span class="dv">1</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">"black"</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(test.mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(test.mod)[<span class="dv">2</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="https://www.loom.com/share/d68a666340504fee871228d4d188ce54?sid=808010d7-1127-4177-8969-24df13936be1">Interpreting R2</a></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(test.mod)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3469868</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-2-the-four-reasons-why-youd-observe-a-pattern-in-the-data" class="level1">
+<h1>Part 2 : The “Four Reasons” Why You’d Observe a Pattern in the Data</h1>
+<section id="example-the-mascot-dataset" class="level4">
+<h4 class="anchored" data-anchor-id="example-the-mascot-dataset">Example : The Mascot Dataset</h4>
+<p>Last lecture, we saw that there was a relationship between how much explicit prejudice against indigenous groups people reported, and their love for a native american mascot.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/7_mascotgraph.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Watch the video below to learn about the “four reasons” why we might observe this pattern in the data.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/2plZk2tQIQ8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 23%">
+<col style="width: 67%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Reason</strong></td>
+<td><strong>Definition</strong></td>
+<td><strong>mascot attitudes ~ indigenous prejudice + error</strong></td>
+</tr>
+<tr class="even">
+<td><ol type="1">
+<li><strong>causation</strong></li>
+</ol></td>
+<td>the IV causes the DV to happen</td>
+<td>prejudice causes people to dehumanize others, and see them as mascots;</td>
+</tr>
+<tr class="odd">
+<td><ol start="2" type="1">
+<li><strong>reverse causation</strong></li>
+</ol></td>
+<td>the DV causes the IV to happen</td>
+<td>liking the mascot causes people to become more prejudiced.</td>
+</tr>
+<tr class="even">
+<td><ol start="3" type="1">
+<li><strong>third / confound variable</strong></li>
+</ol></td>
+<td>there’s some other variable that’s not in your model that is really causing the relationship</td>
+<td>mascot attitudes ~ prejudice + education + error; education is causing people to be prejudiced (less educated people are more prejudiced) and like the mascot (less educated people aren’t aware of the horrible racist history our society has caused indigenous groups).</td>
+</tr>
+<tr class="odd">
+<td><ol start="4" type="1">
+<li><strong>chance</strong></li>
+</ol></td>
+<td>we found this pattern due to random chance</td>
+<td>the people in our study just happened to show that more prejudice → more liking for the mascot.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="example-personality-and-longevity" class="level3">
+<h3 class="anchored" data-anchor-id="example-personality-and-longevity">Example : Personality and Longevity</h3>
+<p>Researchers have found a relationship between conscientiousness (a personality variable that describes how much someone says they are organized and on-time) and how long they will live.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-821411917.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answers to Personality and Longevity Example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p><strong>Causation.</strong> Conscientiousness causes people to die less early; makes people more likely to go to the doctor; follow safety rules (wear helmets!); etc than people low in conscientiousness.</p></li>
+<li><p><strong>Reverse Causation.</strong> Could mortality cause people to be less conscientious? No - dying is the last thing you do, and happens AFTER people have a personality. Reverse causation is not possible in this example.</p></li>
+<li><p><strong>Third Variables.</strong> The researchers do control for some possible third varibles - by including gender in the model, for example, they account for the fact that women tend to be more conscientious (likely due to socialization and expectations that they do lots of the mental and emotional if not physical labor), and live longer. We’ll talk about this more when we learn about multiple regression. But the researchers don’t account for every confound…perhaps income is a confounding variable; richer people are more likely to be conscientious (easier to be organized when basic needs are met / can throw money at problems), and richer people are more likely to live longer (can afford healthcare) than less rich folks.</p></li>
+<li><p><strong>Chance.</strong> the people in this study just happened to show that more conscientiousness → less mortality.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/6R_LinearModels.html" class="pagination-link" aria-label="The Linear Model">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Linear Model</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/8R_SamplingError.html" class="pagination-link" aria-label="Sampling Error and Bias">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sampling Error and Bias</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
