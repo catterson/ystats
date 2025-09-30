@@ -1,10 +1,18 @@
 # "Normal" Data
 
-In this chapter, we'll define and discuss the idea of "normality", how psychologists (and scientists) evaluate whether data are "good".
+::: callout-important
+## In This Chapter
+
+-   Define, discuss, and critique the idea of "normality" and "deviance".
+
+-   Use R to calculate a z-score, which quantifies an individual's deviance from the mean.
+
+-   Learn how scientists evaluate the quality of data, and see how this was used to debunk phrenology as racist.
+:::
 
 ![](images/clipboard-4149537892.png)
 
-The image above depicts [*Grounded in the Stars*](https://www.thomasjprice.com/times-square-arts), a 12-foot sculpture of a young woman that stood in New York CIty's Times Square from April 29 through June 14, 2025.
+The image above depicts [*Grounded in the Stars*](https://www.thomasjprice.com/times-square-arts), a 12-foot sculpture of a young woman that stood in New York City's Times Square from April 29 through June 14, 2025.
 
 There's a lot that I love about this image, from the artistry of rendering braids and clothes so naturally in sculpted bronze, to the way the character stares off in the distance as if unconcerned with the gaze of others, to the way the sculpture proudly claims space in a society that does not currently and historically create inclusive spaces for black women. Indeed, the sculpture is surrounded by other massive images[^5r_goodscience-1] whose presence in the space may go unnoticed because it is so routine to see images of white men in public places.
 
@@ -344,7 +352,7 @@ Watch the video below to go over some possible answers, or just look over the ta
 {{< video https://youtu.be/T9dTk6Sa434 >}}
 
 |  |  |
-|----|----|
+|------------------------------------|------------------------------------|
 | **face :** does our measure or result look like what it should look like? | **high :** I have a sense of what my weight should be (e.g, if it says 10 or 1000 i know either the units are wrong or scale is broken.) |
 | **convergent :** is our measure similar to related concepts? | **high :** my weight according to the scale is (somewhat) related to how much I stress eat, how little I exercise, my parents’ weight, etc. |
 | **discriminant :** is our measure different from unrelated concepts? | **high :** my weight is unrelated to intelligence, how much I love R, whether I wear sandals with or without socks, etc. |

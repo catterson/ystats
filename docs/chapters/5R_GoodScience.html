@@ -410,9 +410,25 @@ window.Quarto = {
 </header>
 
 
-<p>In this chapter, we’ll define and discuss the idea of “normality”, how psychologists (and scientists) evaluate whether data are “good”.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In This Chapter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Define, discuss, and critique the idea of “normality” and “deviance”.</p></li>
+<li><p>Use R to calculate a z-score, which quantifies an individual’s deviance from the mean.</p></li>
+<li><p>Learn how scientists evaluate the quality of data, and see how this was used to debunk phrenology as racist.</p></li>
+</ul>
+</div>
+</div>
 <p><img src="images/clipboard-4149537892.png" class="img-fluid"></p>
-<p>The image above depicts <a href="https://www.thomasjprice.com/times-square-arts"><em>Grounded in the Stars</em></a>, a 12-foot sculpture of a young woman that stood in New York CIty’s Times Square from April 29 through June 14, 2025.</p>
+<p>The image above depicts <a href="https://www.thomasjprice.com/times-square-arts"><em>Grounded in the Stars</em></a>, a 12-foot sculpture of a young woman that stood in New York City’s Times Square from April 29 through June 14, 2025.</p>
 <p>There’s a lot that I love about this image, from the artistry of rendering braids and clothes so naturally in sculpted bronze, to the way the character stares off in the distance as if unconcerned with the gaze of others, to the way the sculpture proudly claims space in a society that does not currently and historically create inclusive spaces for black women. Indeed, the sculpture is surrounded by other massive images<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> whose presence in the space may go unnoticed because it is so routine to see images of white men in public places.</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Tom Cruise and some eyeglass model who kind of looks like a 90s era Tom Cruise. Ving Rhames is there too if you look closely enough.</p></div></div><p>The artist’s website emphasizes the way the sculpture challenges pre-existing ideas about who is represented in our society, and references Michelangelo’s <em>David</em> as inspiration, but clarifies that this sculpture is “A fictionalized character constructed from images, observations, and open calls spanning between Los Angeles and London” who “carries familiar qualities, from her stance and countenance to her everyday clothing.”</p>
 <p>This statue, and the fact that it was an amalgamation of real people, also reminded me of the sculptures of “Normmann” and Norma.</p>
@@ -474,7 +490,7 @@ window.Quarto = {
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -483,14 +499,14 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Lots of things can influence a student’s score on an exam, such as how much students were motivated to study, how much time they had to study, what was going on in their lives, whether they had a study buddy in the class, whether they were sick or not on the day of the exam, their “test taking” skills and strategies and anxiety levels, etc.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -499,7 +515,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>These data are not normally distributed because the students were all part of the same college, in the same classroom, taught by the same professor, at the same time. The professor did his best to prepare these students, and wrote a test that would be based on the kinds of practice they had gone over in lecture. These variables are considered “non random” because they were shared by all students. The data are skewed because these non-random shared experiences helped students do well on the exam.</p>
 </div>
@@ -797,7 +813,7 @@ Culture in Statistics : The Normal Curve
 <h3 class="anchored" data-anchor-id="example-validity-and-reliability">Example : Validity and Reliability</h3>
 <p>Think about a scale. How would you evaluate the validity (face, convergent, discriminant) and reliability (test-retest / interjudge) of a bathroom scale? Think about this on your own, then look over the video key / guide below.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -806,7 +822,7 @@ Expand To See Answers
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Watch the video below to go over some possible answers, or just look over the table.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/T9dTk6Sa434" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
