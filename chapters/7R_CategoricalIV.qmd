@@ -1,20 +1,28 @@
 ---
-title: "Linear Model Pt 2: Categorical IVs"
+title: "Linear Model : Categorical IV"
 format: 
   html:
       code-overflow: wrap
       code-fold: show
 ---
 
+# Chapter Overview
+
+![](images/clipboard-2948302145.png)
+
+This week, we will learn how to define and interpret a linear model when the predictor is categorical.
+
+Often times, researchers want to group people into categories that represent broad and important differences. For example researchers or [artists](https://en.wikipedia.org/wiki/Man_at_the_Crossroads) looking to understand social class might divide individuals into groups like capitalists and workers.
+
+These categorical variables highlight ways that people differ - there are real and important differences between people who own the means of production, and people who do the work. However, categorical variables can also exaggerate the differences between groups (e.g., both capitalists and workers probably love their children in similar ways) and can minimize individual differences within groups (e.g., workers can differ in terms of their income, their race, their attitudes about capitalism, etc.)
+
 # Part 1 : The Linear Model with a Categorical IV with Two Levels
 
 ## RECAP : Working With Categorical Factor and Levels
 
-It’s been a while since we focused on categorical variables. As a reminder, a categorical variable measures variation in terms of groups. The specific groups are called **levels**, and the broad name for the groups is called a **factor.** 
+It’s been a while since we focused on categorical variables, so let's review some terms as we work through an example.
 
-For example, in the “MBA Business Student Data” ([hormone_data.csv](https://www.dropbox.com/scl/fi/b2vq1yi5azwb5u8j7xe74/hormone_data.csv?rlkey=lv77ppuseg5cmqsy99pal55ct&dl=0)) researchers measure the variable **sex** as a categorical factor, with just two levels : **female** and **male**[^7r_categoricaliv-1].
-
-[^7r_categoricaliv-1]: I'll just spend pages going over it. Hah hah.
+The specific groups of a categorical variable are called **levels**, and the broad name for the groups is called a **factor.** For example, in the “MBA Business Student Data” ([hormone_data.csv](https://www.dropbox.com/scl/fi/b2vq1yi5azwb5u8j7xe74/hormone_data.csv?rlkey=lv77ppuseg5cmqsy99pal55ct&dl=0)) researchers measure the variable **sex** as a categorical factor, with just two levels : **female** and **male**.
 
 ```{r}
 mba <- read.csv("~/Dropbox/!WHY STATS/Chapter Datasets/hormone_data.csv", stringsAsFactors = T)
@@ -158,9 +166,9 @@ The linear model that we have defined with this categorical independent is doing
 
 When the independent variable is categorical, it cannot take any value, since the data are constrained to be in a specific group. This means that we have to assign each group some numeric value - something called **dummy coding**.In our example, researchers have measured sex as a simple binary (Male or Female), the independent variable (sex) can only take two values - Male and Female. Male and Female are not values, so we will assign them values - 0 and 1.
 
-R defaults to alphabetical order - because F (for Female) comes earlier in the alphabet than M (for Male), when X = 0, we will be referring to the Females in the dataset, and when X = 1, we will be referring to the Males in the dataset.[^7r_categoricaliv-2]
+R defaults to alphabetical order - because F (for Female) comes earlier in the alphabet than M (for Male), when X = 0, we will be referring to the Females in the dataset, and when X = 1, we will be referring to the Males in the dataset.[^1]
 
-[^7r_categoricaliv-2]: It’s up to you which group will be assigned the value 0 and which group will be assigned the value 1, and later we will learn how to swap this around and why it might matter.
+[^1]: It’s up to you which group will be assigned the value 0 and which group will be assigned the value 1, and later we will learn how to swap this around and why it might matter.
 
 | IV Value | Categorical Factor Level |
 |----------|--------------------------|
@@ -184,13 +192,13 @@ The slope is the adjustment we make to our prediction when X changes by 1, which
 
 I only use the plot() function for conceptual understanding - there are better (and easier) ways to visualize this linear model in R.
 
-One method I like is the plotmeans() function. This function comes from the gplots package. You will need to install this package once, then load it from the library each time you start R.[^7r_categoricaliv-3]
+One method I like is the plotmeans() function. This function comes from the gplots package. You will need to install this package once, then load it from the library each time you start R.[^2]
 
-[^7r_categoricaliv-3]: install.packages(“gplots”) to install the package, then library(gplots) to load.
+[^2]: install.packages(“gplots”) to install the package, then library(gplots) to load.
 
-Below is what it looks like when I install the gplots package (remember you only need to do this once) and then load the gplots library.[^7r_categoricaliv-4]
+Below is what it looks like when I install the gplots package (remember you only need to do this once) and then load the gplots library.[^3]
 
-[^7r_categoricaliv-4]: The warning message is telling me that the gplots and the stats libaries both have a function called lowess. R is “masking” this function from stats, which means if I refer to the lowess function , R will think I mean the one that comes from the gplots package. If I want to use the lowess from the stats library, I will need to manually tell R to do this using stats::lowess(). We won’t use the lowess function in this class.
+[^3]: The warning message is telling me that the gplots and the stats libaries both have a function called lowess. R is “masking” this function from stats, which means if I refer to the lowess function , R will think I mean the one that comes from the gplots package. If I want to use the lowess from the stats library, I will need to manually tell R to do this using stats::lowess(). We won’t use the lowess function in this class.
 
 ![](images/7_gplots.png){fig-align="center"}
 
@@ -222,7 +230,7 @@ Notice that when I expand the y-axis range to include the full range of the scal
 
 If only there was a way to actually define how large an effect is..using numbers! Oh….do you hear that…..it’s $R^2$'s music!!!!!
 
-## $R^$ and the Linear Model with a Categorical IV
+## $R^2$ and the Linear Model with a Categorical IV
 
 The principle behind $R^2$ for a linear model with a categorical IV is the same - we are looking to see *how much less residual error there is when we use the model to make predictions of our DV*, compared to when we use the mean when making predictions of our DV.
 
@@ -266,9 +274,9 @@ So yes, male business students say they are more narcissistic than female busine
 
 ## Re-Leveling a 2-Level Factor Variable.
 
-Okay, last thing. Remember how I write that the order of the levels (female = 0, male = 1) is arbitrary, and R defaults to alphabetical order? Sometimes you want to change the order around - in this example, make male = 0 and female = 1.[^7r_categoricaliv-5]
+Okay, last thing. Remember how I write that the order of the levels (female = 0, male = 1) is arbitrary, and R defaults to alphabetical order? Sometimes you want to change the order around - in this example, make male = 0 and female = 1.[^4]
 
-[^7r_categoricaliv-5]: It’s not important to do releveling in this example. However, sometimes one group is a clear reference group that should be assigned as the intercept. For example, if one group is the “default” experience, and you want to see how the other group changes that default. We’ll chat more about this next week.
+[^4]: It’s not important to do releveling in this example. However, sometimes one group is a clear reference group that should be assigned as the intercept. For example, if one group is the “default” experience, and you want to see how the other group changes that default. We’ll chat more about this next week.
 
 This is called releveling. When you relevel, the data do not change - just the order of the data changes.
 
@@ -326,7 +334,7 @@ summary(test.mod)$r.squared
 
 # Part 2 : The “Four Reasons” Why You’d Observe a Pattern in the Data
 
-#### Example : The Mascot Dataset
+### Example : The Mascot Dataset
 
 Last lecture, we saw that there was a relationship between how much explicit prejudice against indigenous groups people reported, and their love for a native american mascot.
 
