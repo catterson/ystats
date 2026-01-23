@@ -43,13 +43,13 @@ book:
     alignment: "left"
     subtitle: "Table of Contents"
     logo: ./images/open_source_mouse.png
-  date: "Fall 2025"
+  date: "Spring 2026"
   
 bibliography: references.bib
 
 format:
   html:
-    theme: lux
+    theme: flatly
     toc: true
     toc-depth: 4
     toc-expand: true

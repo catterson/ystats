@@ -2,14 +2,18 @@
 
 In this week’s reading, you’ll learn why students like you are required to learn the statistics, programming language, and research methods required of modern psychology.
 
+[![](images/clipboard-4017464194.png){fig-align="center"}](https://commons.wikimedia.org/wiki/File:The_oldest_writing_in_the_world_-_The_Sumerian_Stone_Tablet.jpg)
+
 ::: callout-important
 ## To-Do List (due before our next lecture)
 
--   Read this document and watch the videos.
+-   Read this chapter and watch the videos.
 
--   Download R and RStudio (two separate programs) or set up a free account with [posit.cloud](posit.cloud)
+-   Complete the practice exercises (check-ins) and try to create some variables in R.
 
 -   Take Quiz 1 (on our course page).
+
+-   Think about something you would want to learn about people (or non-human animals) if you were a researcher.
 :::
 
 ## Part 1 : Why Statistics in Psychology?
@@ -18,13 +22,15 @@ As y’all know, this class is a requirement for students who want to be psychol
 
 I agree that people (or non-human animals) are interesting. And we all have this interest in people (or non-human animals) because we are complex[^1r_whystats-1]. While people are similar in many ways, we also differ in radical ways; from superficial features like age and race, to more complex ways like our personality or emotions, to highly specific behaviors such as whether all students in the class are reading these words or not, or how bored or excited (or any emotional experience) students are while reading these words.
 
-[^1r_whystats-1]:  One of the reasons I love teaching in the Bay Area is y’all are hella complex.
+[^1r_whystats-1]: One of the reasons I love teaching in the Bay Area is y’all are hella complex.
 
 I hope that you have an interest in people (or non-human animals), and that this class helps you learn how to think about those interests through a psychological, and statistical lens. You don't always need this lens - and as we will discuss there can sometimes be dangers in viewing people through this lens - but it's useful to be able to wear these "stats glasses" when needed.
 
 ### Statistics as a Language
 
-Statistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand differences in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.
+Statistics is a language that scientists use to describe this complexity. Indeed, historical records of the earliest written language reveal that people have used some form of symbols and numbers to represent - the Sumerian (modern day Iraq) stone tablet at the beginning of this chapter was used to represent where locusts and caterpillars had infested different plots of land.
+
+Psychology uses this language to better understand differences in people (or non-human animals), and other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.
 
 Like all languages, statistics has vocabulary - words that have shared meaning, and allow us to understand what we are talking about.
 
@@ -58,15 +64,15 @@ These are not rigid categories, and psychologists often debate the definitions o
 
 For example, think about how affect, behavior, and cognition might be relevant if I ask you to think about an upcoming exam (your first exam is in just a few weeks!)
 
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                   | **highlight the cells below to see my ideas / check your understanding**                                                                                                                                                                                                          |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Affect Example**                | [the feeling of anxiety or dread you have thinking about being assessed, or maybe a feeling of excitement about the opportunity to demonstrate your hard work / effort / knowledge!]{style="color:white"}                                                                         |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Behavior Example**              | [immediately checking your calendar to see when exams are; or maybe avoiding your classes with a nice procrastination session on the ol’ infinite scroll machine.]{style="color:white"}                                                                                           |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Cognition Example**             | [thinking about all the work you have to do; wondering why the professor would choose this example when he could have thought about the ways that affect, behavior, and cognition would be triggered when you see a puppy or kitten or something like that…]{style="color:white"} |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                       | **highlight the cells below to see my ideas / check your understanding**                                                                                                                                                                                                          |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Affect Example**    | [the feeling of anxiety or dread you have thinking about being assessed, or maybe a feeling of excitement about the opportunity to demonstrate your hard work / effort / knowledge!]{style="color:white"}                                                                         |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Behavior Example**  | [immediately checking your calendar to see when exams are; or maybe avoiding your classes with a nice procrastination session on the ol’ infinite scroll machine.]{style="color:white"}                                                                                           |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Cognition Example** | [thinking about all the work you have to do; wondering why the professor would choose this example when he could have thought about the ways that affect, behavior, and cognition would be triggered when you see a puppy or kitten or something like that…]{style="color:white"} |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 [Here's [a cat video](https://www.youtube.com/watch?v=Am3NVGP9rkQ) I like for students needing a distraction from thinking about exams. I promise your exams in this class will be chill and I'll do my best to prepare y'all.]{.aside}
 
@@ -160,19 +166,13 @@ A **prediction** is an educated guess you have about the future. Educated means 
 
 Of course, things are rarely as simple as "right" or "wrong", and a large part of this class will be learning how to quantify exactly how much error there is in our scientific predictions.
 
-As an example, let's look to the stars.
+As an example, let's look to the stars. Astronomers have developed knowledge about celestial bodies - gravity, orbits, mass (I know very little about this). But I trust this science because astronomers are able to use it to make very valid predictions about giant space rocks and when they will come close to the earth. I can use this knowledge to plan a stargazing trip, or plan to watch all the rich people leave earth when the "big one" comes for the rest of us.
 
-+--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ![](images/clipboard-3451448147.png) | Astronomers have developed knowledge about celestial bodies - gravity, orbits, mass (I know very little about this).                                                               |
-|                                      |                                                                                                                                                                                    |
-|                                      | But I trust this science because astronomers are able to use it to make very valid predictions about giant space rocks and when they will come close to the earth.[^1r_whystats-7] |
-|                                      |                                                                                                                                                                                    |
-|                                      | I can use this knowledge to plan a stargazing trip, or plan to watch all the rich people leave earth when the "big one" comes for the rest of us.                                  |
-+--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+::: column-margin
+![You can see when scientists predict Halley’s comet to come closest to earth [here](https://theskylive.com/halley-tracker). While this is fairly accurate, I’ve seen the exact prediction change over the years - there is still some error in this prediction.](images/clipboard-3451448147.png)
+:::
 
-[^1r_whystats-7]: You can see when scientists predict Halley's comet to come closest to earth [here](https://theskylive.com/halley-tracker). While this is fairly accurate, I've seen the exact prediction change over the years - there is still some error in this prediction.
-
-As another example, on the day I'm writing these words, I do not predict that it will rain outside. I am making this prediction based on the following information :
+As another example, on the day I'm writing these words, I do not predict that it will rain outside. I am making this prediction based on the following information:
 
 -   it did not rain yesterday
 
@@ -194,7 +194,7 @@ Because I predict it will not rain, I'm not too worried that the tarp is not cov
 ![](images/1_puffinrain.png){fig-align="center"} It sometimes rains when sunny, as on Puffin Rock, where we'll be here come rain or shine.
 :::
 
-For our first lecture, start thinking of some predictions that you have made. What knowledge informed the prediction? Did you use this prediction to influence your future behavior in some way? What kinds of predictions do psychologists make? We will chat more about these ideas in class :) but it's a core focus on why psychologists use predictions.
+Think about some predictions that you have made. What knowledge informed the prediction? Did you use this prediction to influence your future behavior in some way? What kinds of predictions do psychologists make? We will chat more about these ideas in class :) but it's a core focus on why psychologists use predictions.
 
 And so, here we are. In this document, in this required class for the psychology major, learning how to DO REAL SCIENCE. With statistics.
 
@@ -202,9 +202,9 @@ And so, here we are. In this document, in this required class for the psychology
 
 The linear model a simple formula that helps researchers to make, and quantify, their predictions. We will talk much more about linear models in our class - they are one of the most important concepts we will cover and a foundation of modern statistics - but for now let's just focus on the basics :
 
-A linear model takes the following form: [^1r_whystats-8]
+A linear model takes the following form: [^1r_whystats-7]
 
-[^1r_whystats-8]: I can already feel some of y'alls math anxiety rising across time and space. But remember, stats is just a language with some vocabulary we need to learn.
+[^1r_whystats-7]: I can already feel some of y'alls math anxiety rising across time and space. But remember, stats is just a language with some vocabulary we need to learn.
 
 $$
 DV \sim IV_1 + IV_2 + ... + IV_k + \epsilon
@@ -220,23 +220,23 @@ Below is a description of terms in the model :
 
 -   **\~ = a squiggly line / tilde.** I like to use the squiggly line to reinforce the idea that our model is uncertain and squiggly (this is not an exact prediction where an equal sign would be used). R also uses the tilde for defining a model, so it's nice to start practicing stretching our pinkie finger to reach that upper left corner of the keyboard.
 
--   $\epsilon$ **= error =** this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven't included certain variables that are important to make predictions (either because we can't measure them in our study, don't think they are important enough to study, or don't know that we should study them), or because we are measuring our variables with some amount of error[^1r_whystats-9].
+-   $\epsilon$ **= error =** this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven't included certain variables that are important to make predictions (either because we can't measure them in our study, don't think they are important enough to study, or don't know that we should study them), or because we are measuring our variables with some amount of error[^1r_whystats-8].
 
-[^1r_whystats-9]: We will learn more about *measurement error* in Chapter 4.
+[^1r_whystats-8]: We will learn more about *measurement error* in Chapter 4.
 
 For example, I could write out my prediction about rain as the following linear model :
 
 -   rain \~ clouds + umbrellas + weather app status + smell + air pressure + season + location + temperature + error
 
-We read a model as : "the DV is a function of..." or sometimes "the DV depends on...". So I'd read this model as "rain is a function of clouds, umbrellas, the weather app status...etc." And it's good practice to leave the variables neutral (e.g., just "clouds", not "storm clouds").[^1r_whystats-10]
+We read a model as : "the DV is a function of..." or sometimes "the DV depends on...". So I'd read this model as "rain is a function of clouds, umbrellas, the weather app status...etc." And it's good practice to leave the variables neutral (e.g., just "clouds", not "storm clouds").[^1r_whystats-9]
 
-[^1r_whystats-10]: Later we will talk about ways to account for the fact that more umbrellas increases the chance it will rain in our model.
+[^1r_whystats-9]: Later we will talk about ways to account for the fact that more umbrellas increases the chance it will rain in our model.
 
 Error in this model would represent the fact that I haven't accounted for some important variables that we know we should include (like humidity, coastal pressure systems, or palnetary waves), the fact that some of my variables were probably measured with error (was no one *really* carrying an umbrella???), and the fact that there are some things that we don't know about rain, and what predicts it (this is what weather scientists are trying to learn more about.)
 
-Once we add numbers and data to a linear model[^1r_whystats-11], we can quickly see :
+Once we add numbers and data to a linear model[^1r_whystats-10], we can quickly see :
 
-[^1r_whystats-11]: We will get to this in Chapter 6!
+[^1r_whystats-10]: We will get to this in Chapter 6!
 
 -   which variables allow us to make the best predictions, and which variables do not improve our predictions (e.g., is the number of umbrellas others are carrying a good predictor of whether it's going to rain or not?)
 
@@ -256,63 +256,50 @@ happiness \~ music playing + water intake + ice cream consumption + error
 For this model, I've organized the focus of the research question on the left-hand side and listed the three other variables to the right, using neutral descriptions (e.g., 'water intake' rather than 'drinking more water'). I also included error at the end of my model to account for the fact that some people who play music, drink water, and eat ice cream are, in fact, not happy. I also didn't add other varibles that might be related to happiness, since these were not part of the researcher's statement.
 :::
 
-## Part 2 : Why R?
+## Part 2 : Defining Variables in R
 
-This semester, we will also learn how to use the computer programming language R to work with data, conduct analyses, and make graphs. R can be intimidating to work with at first, and is more confusing than it needs to be sometimes (as you’ll quickly find out...), but I promise you will learn![^1r_whystats-12] It’s totally okay (and expected) for you to feel frustrated at times; this is part of the learning process. So please embrace the “I HAVE NO IDEA WHAT I’M DOING” dog meme energy (and look how happy the doggy looks!) as you embark on your R journey.\
+Below are some videos, and R code, that review how to define a variable in R. Practice creating your own script in RStudio to follow along; there’s value in typing this out yourself to get that muscle memory in 💪🤘.
 
-[^1r_whystats-12]: In fact, that’s the point of this class.
+Let us know if you get stuck on the class discord.
 
-|                                         |                            |
-|-----------------------------------------|----------------------------|
-| ![](images/R_logo.svg.png){width="275"} | ![](images/r_meme_dog.png) |
+### Video : Defining Numeric Variables in R
 
-### Installing R
+{{< video https://youtu.be/0pXGqGDSySM >}}
 
-[**Use this link to Download and Install the Programs R and RStudio Desktop**](https://posit.co/download/rstudio-desktop/)
+-   objects - assign function for numerical data
 
-[**Note : You must download both R and RStudio Desktop (these are two separate programs). Make sure to download the most recent version of R and RStudio to avoid issues in the future.**]{style="color:red"}
+-   c() : combining data together.
 
-1.  **R** is the powerful, free, and somewhat intimidating computer program that we will use to analyze data in this class. This website is not super friendly - choose the operating system you have (Windows, MacOS, or Linux) and then download the “latest release” on the next page. **If you have a chromebook or iPad / tablet, you will need to use [posit.cloud](https://rstudio.cloud/).**
+-   length() : the number of objects
 
-2.  **RStudio** is an Integrated Development Environment (IDE) - basically a “home” for R to live in, with rooms and this program is not 100% necessary, but makes it a little easier to navigate R. Note that you will need to install R first in order for RStudio to work.
+### Video : Graphing Numeric Variables in R
 
-**Having trouble getting these programs to work?**
+{{< video https://youtu.be/lmXQ2BhQNuo >}}
 
-1.  **Here’s [one YouTube video](https://www.youtube.com/watch?v=0Qu7Jg1Jw5A)** someone made to show you how to download and install.
+-   hist() : a graph
 
-2.  **Try [posit.cloud](https://posit.cloud)**. This is a web-based version of RStudio, and has a free option but limits your hours of work each month. There’s a paid option for \$5/month that you can use if you sign up with your student e-mail address; former students also pointed out that you can always create a new “free” account if you run over the 15-hour limit.
+-   changing arguments : xlab, ylab, main
 
-3.  **Ask for help!** The professor, other students, or a tutor / your TA can help get everything working properly.
+### Video : Defining Categorical Variables in R
 
-### Navigating R
+{{< video https://youtu.be/CFXRxfaadIw>}}
 
-Watch the two videos below for a quick introduction to R - the program we will be using to analyze data.
+-   categorical data (“string”)
+-   as.factor() : to convert a string to a categorical variable
+-   levels() : to see the levels of your categorical variable.
 
-#### VIDEO : Navigating R
+### Video : Graphing categorical variables in R
 
-{{< video https://youtu.be/TDt8x4ASZoc title = "Intro to R the program">}}
+{{< video https://youtu.be/Fmai9Ltpa5I>}}
 
--   what R looks like when you open it
-
--   basic math in the **console**
-
--   indexing and output
-
-#### VIDEO : Navigating RStudio
-
-{{< video https://youtu.be/on5oPls94oU title = "Intro to RStudio the program">}}
-
--   what RStudio/Posit looks like; navigating the program
-
--   basic math in the console
-
--   the **source file** (makes life easier and saves your work!)
+-   plot()
+-   changing arguments : col, bor, main; xlab; ylab
 
 ## Part 3 : How Science? The Scientific Method in Five Easy Steps
 
-The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project[^1r_whystats-13].
+The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project[^1r_whystats-11].
 
-[^1r_whystats-13]:   Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the [American Psychological Association](https://convention.apa.org/) or the [Association of Psychological Science](https://www.psychologicalscience.org/conventions). The [Western Psychological Association](https://westernpsych.org/convention/) has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the [Society of Personality and Social Psychology](http://meeting.spsp.org/)). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.
+[^1r_whystats-11]:   Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the [American Psychological Association](https://convention.apa.org/) or the [Association of Psychological Science](https://www.psychologicalscience.org/conventions). The [Western Psychological Association](https://westernpsych.org/convention/) has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the [Society of Personality and Social Psychology](http://meeting.spsp.org/)). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.
 
 I like to organize the scientific method into five broad parts, described below.
 
@@ -362,9 +349,9 @@ Hi folks, Prof. Cat here. I'll be popping up throughout this book to guide you t
 
 ### Step 2 : Develop a Theory
 
-A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is *comprehensive* (it relates to all nature, not just plants or animals or finches), it is *explanatory* (it’s why we and [cats](https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg) both narrow our eyes when we are scared and angry), and it is *supported* (by over 100 years of evidence[^1r_whystats-14]). 
+A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is *comprehensive* (it relates to all nature, not just plants or animals or finches), it is *explanatory* (it’s why we and [cats](https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg) both narrow our eyes when we are scared and angry), and it is *supported* (by over 100 years of evidence[^1r_whystats-12]). 
 
-[^1r_whystats-14]: [From fossil records to observations of fruit flies and plans](https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01)
+[^1r_whystats-12]: [From fossil records to observations of fruit flies and plans](https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01)
 
 **Most scientists refrain from saying that a theory is “proven” or “true” for two reasons:**
 
@@ -380,11 +367,11 @@ A scientific theory is one that is comprehensive, explanatory, and supported by 
 
 **EXAMPLE :** Let’s say you believe that smoking cannabis hurts a person’s memory. What’s the alternative hypothesis? What’s the null?
 
--   **Null Hypothesis :** People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna. [^1r_whystats-15]
+-   **Null Hypothesis :** People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna. [^1r_whystats-13]
 
 -   **Alternative Hypothesis :** People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.
 
-[^1r_whystats-15]: Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs. non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)
+[^1r_whystats-13]: Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs. non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)
 
 [**Practice : Identifying Models, Null, and Alternative Hypotheses**](https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=header)**.** Here's a quick practice quiz to review identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory.
 
@@ -412,9 +399,12 @@ Scientists also repeat the scientific method with a new question that is based o
 
 ### It's Never Actually Easy
 
-Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a [Replication Crisis](https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics). This crisis is two-fold a) researchers tend not to seek to replicate their (or others’) results, and b) systematic attempts to do so have suggested that the majority of results in psychology do not replicate[^1r_whystats-16].
+Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a [Replication Crisis](https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics). There are two parts to the crisis:
 
-[^1r_whystats-16]: You can go deeper into some of the drama surrounding the replication project [here](#0). lemme know what you think on the discord thread for this week.
+1.  Researchers tend not to seek to replicate their (or others’) results.
+2.  Systematic attempts to replicate previous research suggests that the majority of results in psychology do not replicate[^1r_whystats-14].
+
+[^1r_whystats-14]: You can go deeper into some of the drama surrounding the replication project [here](#0). lemme know what you think on the discord thread for this week.
 
 We will chat more about this in our next lecture. But I think that's enough reading for now?
 

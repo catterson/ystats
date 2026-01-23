@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,15 +33,17 @@ ul.task-list li input[type="checkbox"] {
 <link href="../chapters/2R_Data.html" rel="next">
 <link href="../index.html" rel="prev">
 <link href=".././images/open_source_mouse.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d69c144a735e15f5be1766bedc050848.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dd8479a8b43ae629028e453cd63fb9c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,7 +86,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -102,13 +104,15 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent">
+<body class="nav-sidebar docked nav-fixed slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Why Statistics?</span>
     </a>
@@ -150,7 +154,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src=".././images/open_source_mouse.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src=".././images/open_source_mouse.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src=".././images/open_source_mouse.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
@@ -220,7 +225,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/7R_CategoricalIV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model Pt 2: Categorical IVs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model : Categorical IV</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -316,14 +321,12 @@ window.Quarto = {
   <li><a href="#linear-models-to-organize-our-predictions" id="toc-linear-models-to-organize-our-predictions" class="nav-link" data-scroll-target="#linear-models-to-organize-our-predictions">Linear Models to Organize Our Predictions</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#part-2-why-r" id="toc-part-2-why-r" class="nav-link" data-scroll-target="#part-2-why-r">Part 2 : Why R?</a>
+  <li><a href="#part-2-defining-variables-in-r" id="toc-part-2-defining-variables-in-r" class="nav-link" data-scroll-target="#part-2-defining-variables-in-r">Part 2 : Defining Variables in R</a>
   <ul>
-  <li><a href="#installing-r" id="toc-installing-r" class="nav-link" data-scroll-target="#installing-r">Installing R</a></li>
-  <li><a href="#navigating-r" id="toc-navigating-r" class="nav-link" data-scroll-target="#navigating-r">Navigating R</a>
-  <ul class="collapse">
-  <li><a href="#video-navigating-r" id="toc-video-navigating-r" class="nav-link" data-scroll-target="#video-navigating-r">VIDEO : Navigating R</a></li>
-  <li><a href="#video-navigating-rstudio" id="toc-video-navigating-rstudio" class="nav-link" data-scroll-target="#video-navigating-rstudio">VIDEO : Navigating RStudio</a></li>
-  </ul></li>
+  <li><a href="#video-defining-numeric-variables-in-r" id="toc-video-defining-numeric-variables-in-r" class="nav-link" data-scroll-target="#video-defining-numeric-variables-in-r">Video : Defining Numeric Variables in R</a></li>
+  <li><a href="#video-graphing-numeric-variables-in-r" id="toc-video-graphing-numeric-variables-in-r" class="nav-link" data-scroll-target="#video-graphing-numeric-variables-in-r">Video : Graphing Numeric Variables in R</a></li>
+  <li><a href="#video-defining-categorical-variables-in-r" id="toc-video-defining-categorical-variables-in-r" class="nav-link" data-scroll-target="#video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</a></li>
+  <li><a href="#video-graphing-categorical-variables-in-r" id="toc-video-graphing-categorical-variables-in-r" class="nav-link" data-scroll-target="#video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</a></li>
   </ul></li>
   <li><a href="#part-3-how-science-the-scientific-method-in-five-easy-steps" id="toc-part-3-how-science-the-scientific-method-in-five-easy-steps" class="nav-link" data-scroll-target="#part-3-how-science-the-scientific-method-in-five-easy-steps">Part 3 : How Science? The Scientific Method in Five Easy Steps</a>
   <ul>
@@ -365,13 +368,23 @@ window.Quarto = {
 
 
 <p>In this week’s reading, you’ll learn why students like you are required to learn the statistics, programming language, and research methods required of modern psychology.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://commons.wikimedia.org/wiki/File:The_oldest_writing_in_the_world_-_The_Sumerian_Stone_Tablet.jpg"><img src="images/clipboard-4017464194.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+<figcaption>from wikipedia, a sumerian (modern day Iraq) stone tablet containing “a Locust Charm…the tablet records the means taken to rid various tracts of the land of a plague of locust and caterpillars. The last line,”he made it bright,” refers to the ceremonial purification of the field.”</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-To-Do List (due before our next lecture)
+<span class="screen-reader-only">Important</span>To-Do List (due before our next lecture)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -386,7 +399,7 @@ To-Do List (due before our next lecture)
 <h2 class="anchored" data-anchor-id="part-1-why-statistics-in-psychology">Part 1 : Why Statistics in Psychology?</h2>
 <p>As y’all know, this class is a requirement for students who want to be psychology majors. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder <em>why-the-flip</em> they are required to take a math class when all they just want to learn about people (or other non-human animals), ya know!??!</p>
 <p>I agree that people (or non-human animals) are interesting. And we all have this interest in people (or non-human animals) because we are complex<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. While people are similar in many ways, we also differ in radical ways; from superficial features like age and race, to more complex ways like our personality or emotions, to highly specific behaviors such as whether all students in the class are reading these words or not, or how bored or excited (or any emotional experience) students are while reading these words.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;&nbsp;One of the reasons I love teaching in the Bay Area is y’all are hella complex.</p></div></div><p>I hope that you have an interest in people (or non-human animals), and that this class helps you learn how to think about those interests through a psychological, and statistical lens. You don’t always need this lens - and as we will discuss there can sometimes be dangers in viewing people through this lens - but it’s useful to be able to wear these “stats glasses” when needed.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;One of the reasons I love teaching in the Bay Area is y’all are hella complex.</p></div></div><p>I hope that you have an interest in people (or non-human animals), and that this class helps you learn how to think about those interests through a psychological, and statistical lens. You don’t always need this lens - and as we will discuss there can sometimes be dangers in viewing people through this lens - but it’s useful to be able to wear these “stats glasses” when needed.</p>
 <section id="statistics-as-a-language" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="statistics-as-a-language">Statistics as a Language</h3>
 <p>Statistics is a language that scientists use to describe this complexity. While psychology uses this language to better understand differences in people (or non-human animals), other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.</p>
@@ -430,8 +443,8 @@ To-Do List (due before our next lecture)
 <p>For example, think about how affect, behavior, and cognition might be relevant if I ask you to think about an upcoming exam (your first exam is in just a few weeks!)</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
+<col style="width: 8%">
+<col style="width: 92%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -528,18 +541,16 @@ To-Do List (due before our next lecture)
 <li><p><strong>Error :</strong> your prediction is wrong.</p></li>
 </ul>
 <p>Of course, things are rarely as simple as “right” or “wrong”, and a large part of this class will be learning how to quantify exactly how much error there is in our scientific predictions.</p>
-<p>As an example, let’s look to the stars.</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><img src="images/clipboard-3451448147.png" class="img-fluid"></td>
-<td><p>Astronomers have developed knowledge about celestial bodies - gravity, orbits, mass (I know very little about this).</p>
-<p>But I trust this science because astronomers are able to use it to make very valid predictions about giant space rocks and when they will come close to the earth.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
-<p>I can use this knowledge to plan a stargazing trip, or plan to watch all the rich people leave earth when the “big one” comes for the rest of us.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;You can see when scientists predict Halley’s comet to come closest to earth <a href="https://theskylive.com/halley-tracker">here</a>. While this is fairly accurate, I’ve seen the exact prediction change over the years - there is still some error in this prediction.</p></div></div><p>As another example, on the day I’m writing these words, I do not predict that it will rain outside. I am making this prediction based on the following information :</p>
+<p>As an example, let’s look to the stars. Astronomers have developed knowledge about celestial bodies - gravity, orbits, mass (I know very little about this). But I trust this science because astronomers are able to use it to make very valid predictions about giant space rocks and when they will come close to the earth. I can use this knowledge to plan a stargazing trip, or plan to watch all the rich people leave earth when the “big one” comes for the rest of us.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3451448147.png" class="img-fluid figure-img"></p>
+<figcaption>You can see when scientists predict Halley’s comet to come closest to earth <a href="https://theskylive.com/halley-tracker">here</a>. While this is fairly accurate, I’ve seen the exact prediction change over the years - there is still some error in this prediction.</figcaption>
+</figure>
+</div>
+</div></div><p>As another example, on the day I’m writing these words, I do not predict that it will rain outside. I am making this prediction based on the following information:</p>
 <ul>
 <li><p>it did not rain yesterday</p></li>
 <li><p>it is not currently raining</p></li>
@@ -553,14 +564,14 @@ To-Do List (due before our next lecture)
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p><img src="images/1_puffinrain.png" class="img-fluid quarto-figure quarto-figure-center"> It sometimes rains when sunny, as on Puffin Rock, where we’ll be here come rain or shine.</p>
-</div></div><p>For our first lecture, start thinking of some predictions that you have made. What knowledge informed the prediction? Did you use this prediction to influence your future behavior in some way? What kinds of predictions do psychologists make? We will chat more about these ideas in class :) but it’s a core focus on why psychologists use predictions.</p>
+</div></div><p>Think about some predictions that you have made. What knowledge informed the prediction? Did you use this prediction to influence your future behavior in some way? What kinds of predictions do psychologists make? We will chat more about these ideas in class :) but it’s a core focus on why psychologists use predictions.</p>
 <p>And so, here we are. In this document, in this required class for the psychology major, learning how to DO REAL SCIENCE. With statistics.</p>
 </section>
 <section id="linear-models-to-organize-our-predictions" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="linear-models-to-organize-our-predictions">Linear Models to Organize Our Predictions</h4>
 <p>The linear model a simple formula that helps researchers to make, and quantify, their predictions. We will talk much more about linear models in our class - they are one of the most important concepts we will cover and a foundation of modern statistics - but for now let’s just focus on the basics :</p>
-<p>A linear model takes the following form: <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;I can already feel some of y’alls math anxiety rising across time and space. But remember, stats is just a language with some vocabulary we need to learn.</p></div></div><p><span class="math display">\[
+<p>A linear model takes the following form: <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;I can already feel some of y’alls math anxiety rising across time and space. But remember, stats is just a language with some vocabulary we need to learn.</p></div></div><p><span class="math display">\[
 DV \sim IV_1 + IV_2 + ... + IV_k + \epsilon
 \]</span></p>
 <p>Below is a description of terms in the model :</p>
@@ -569,16 +580,16 @@ DV \sim IV_1 + IV_2 + ... + IV_k + \epsilon
 <li><p><strong>IV = independent variable.</strong> This is a different variable that you think will help you make predictions. Again, it’s up to the researcher to choose what variables they will include to try and make predictions of the DV.</p></li>
 <li><p><strong>k = any number.</strong> This is a way of saying that there can be many IVs. Life is complex, and so in order to predict one variable, we will need to use information from lots of other variables.</p></li>
 <li><p><strong>~ = a squiggly line / tilde.</strong> I like to use the squiggly line to reinforce the idea that our model is uncertain and squiggly (this is not an exact prediction where an equal sign would be used). R also uses the tilde for defining a model, so it’s nice to start practicing stretching our pinkie finger to reach that upper left corner of the keyboard.</p></li>
-<li><p><span class="math inline">\(\epsilon\)</span> <strong>= error =</strong> this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven’t included certain variables that are important to make predictions (either because we can’t measure them in our study, don’t think they are important enough to study, or don’t know that we should study them), or because we are measuring our variables with some amount of error<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>.</p></li>
+<li><p><span class="math inline">\(\epsilon\)</span> <strong>= error =</strong> this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven’t included certain variables that are important to make predictions (either because we can’t measure them in our study, don’t think they are important enough to study, or don’t know that we should study them), or because we are measuring our variables with some amount of error<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p></li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;We will learn more about <em>measurement error</em> in Chapter 4.</p></div></div><p>For example, I could write out my prediction about rain as the following linear model :</p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;We will learn more about <em>measurement error</em> in Chapter 4.</p></div></div><p>For example, I could write out my prediction about rain as the following linear model :</p>
 <ul>
 <li>rain ~ clouds + umbrellas + weather app status + smell + air pressure + season + location + temperature + error</li>
 </ul>
-<p>We read a model as : “the DV is a function of…” or sometimes “the DV depends on…”. So I’d read this model as “rain is a function of clouds, umbrellas, the weather app status…etc.” And it’s good practice to leave the variables neutral (e.g., just “clouds”, not “storm clouds”).<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Later we will talk about ways to account for the fact that more umbrellas increases the chance it will rain in our model.</p></div></div><p>Error in this model would represent the fact that I haven’t accounted for some important variables that we know we should include (like humidity, coastal pressure systems, or palnetary waves), the fact that some of my variables were probably measured with error (was no one <em>really</em> carrying an umbrella???), and the fact that there are some things that we don’t know about rain, and what predicts it (this is what weather scientists are trying to learn more about.)</p>
-<p>Once we add numbers and data to a linear model<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>, we can quickly see :</p>
-<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;We will get to this in Chapter 6!</p></div></div><ul>
+<p>We read a model as : “the DV is a function of…” or sometimes “the DV depends on…”. So I’d read this model as “rain is a function of clouds, umbrellas, the weather app status…etc.” And it’s good practice to leave the variables neutral (e.g., just “clouds”, not “storm clouds”).<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Later we will talk about ways to account for the fact that more umbrellas increases the chance it will rain in our model.</p></div></div><p>Error in this model would represent the fact that I haven’t accounted for some important variables that we know we should include (like humidity, coastal pressure systems, or palnetary waves), the fact that some of my variables were probably measured with error (was no one <em>really</em> carrying an umbrella???), and the fact that there are some things that we don’t know about rain, and what predicts it (this is what weather scientists are trying to learn more about.)</p>
+<p>Once we add numbers and data to a linear model<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, we can quickly see :</p>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;We will get to this in Chapter 6!</p></div></div><ul>
 <li><p>which variables allow us to make the best predictions, and which variables do not improve our predictions (e.g., is the number of umbrellas others are carrying a good predictor of whether it’s going to rain or not?)</p></li>
 <li><p>the direction of the relationship between each IV and the DV (e.g., is it that more umbrellas = more rain, or more umbrellas = less rain?)</p></li>
 <li><p>the amount of error in our predictions (e.g., how good, exactly, is this model at predicting the rain?)</p></li>
@@ -587,12 +598,12 @@ DV \sim IV_1 + IV_2 + ... + IV_k + \epsilon
 <h5 class="anchored" data-anchor-id="practice-writing-a-model">Practice Writing A Model</h5>
 <p>Imagine a researcher wants to better understand why people differ in happiness, and believes that playing music, drinking more water, and eating ice cream sandwiches are important factors to consider. How would you write this out as a linear model?</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Click Here to See The Answer
+<span class="screen-reader-only">Caution</span>Click Here to See The Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -607,60 +618,49 @@ Click Here to See The Answer
 </section>
 </section>
 </section>
-<section id="part-2-why-r" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="part-2-why-r">Part 2 : Why R?</h2>
-<p>This semester, we will also learn how to use the computer programming language R to work with data, conduct analyses, and make graphs. R can be intimidating to work with at first, and is more confusing than it needs to be sometimes (as you’ll quickly find out…), but I promise you will learn!<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> It’s totally okay (and expected) for you to feel frustrated at times; this is part of the learning process. So please embrace the “I HAVE NO IDEA WHAT I’M DOING” dog meme energy (and look how happy the doggy looks!) as you embark on your R journey.<br>
-</p>
-<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;In fact, that’s the point of this class.</p></div></div><table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><img src="images/R_logo.svg.png" class="img-fluid" width="275"></td>
-<td><img src="images/r_meme_dog.png" class="img-fluid"></td>
-</tr>
-</tbody>
-</table>
-<section id="installing-r" class="level3">
-<h3 class="anchored" data-anchor-id="installing-r">Installing R</h3>
-<p><a href="https://posit.co/download/rstudio-desktop/"><strong>Use this link to Download and Install the Programs R and RStudio Desktop</strong></a></p>
-<p><span style="color:red"><strong>Note : You must download both R and RStudio Desktop (these are two separate programs). Make sure to download the most recent version of R and RStudio to avoid issues in the future.</strong></span></p>
-<ol type="1">
-<li><p><strong>R</strong> is the powerful, free, and somewhat intimidating computer program that we will use to analyze data in this class. This website is not super friendly - choose the operating system you have (Windows, MacOS, or Linux) and then download the “latest release” on the next page. <strong>If you have a chromebook or iPad / tablet, you will need to use <a href="https://rstudio.cloud/">posit.cloud</a>.</strong></p></li>
-<li><p><strong>RStudio</strong> is an Integrated Development Environment (IDE) - basically a “home” for R to live in, with rooms and this program is not 100% necessary, but makes it a little easier to navigate R. Note that you will need to install R first in order for RStudio to work.</p></li>
-</ol>
-<p><strong>Having trouble getting these programs to work?</strong></p>
-<ol type="1">
-<li><p><strong>Here’s <a href="https://www.youtube.com/watch?v=0Qu7Jg1Jw5A">one YouTube video</a></strong> someone made to show you how to download and install.</p></li>
-<li><p><strong>Try <a href="https://posit.cloud">posit.cloud</a></strong>. This is a web-based version of RStudio, and has a free option but limits your hours of work each month. There’s a paid option for $5/month that you can use if you sign up with your student e-mail address; former students also pointed out that you can always create a new “free” account if you run over the 15-hour limit.</p></li>
-<li><p><strong>Ask for help!</strong> The professor, other students, or a tutor / your TA can help get everything working properly.</p></li>
-</ol>
-</section>
-<section id="navigating-r" class="level3">
-<h3 class="anchored" data-anchor-id="navigating-r">Navigating R</h3>
-<p>Watch the two videos below for a quick introduction to R - the program we will be using to analyze data.</p>
-<section id="video-navigating-r" class="level4">
-<h4 class="anchored" data-anchor-id="video-navigating-r">VIDEO : Navigating R</h4>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/TDt8x4ASZoc" title="Intro to R the program" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="part-2-defining-variables-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-defining-variables-in-r">Part 2 : Defining Variables in R</h2>
+<p>Below are some videos, and R code, that review how to define a variable in R. Practice creating your own script in RStudio to follow along; there’s value in typing this out yourself to get that muscle memory in 💪🤘.</p>
+<p>Let us know if you get stuck on the class discord.</p>
+<section id="video-defining-numeric-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-defining-numeric-variables-in-r">Video : Defining Numeric Variables in R</h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/0pXGqGDSySM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
-<li><p>what R looks like when you open it</p></li>
-<li><p>basic math in the&nbsp;<strong>console</strong></p></li>
-<li><p>indexing and output</p></li>
+<li><p>objects - assign function for numerical data</p></li>
+<li><p>c() : combining data together.</p></li>
+<li><p>length() : the number of objects</p></li>
 </ul>
 </section>
-<section id="video-navigating-rstudio" class="level4">
-<h4 class="anchored" data-anchor-id="video-navigating-rstudio">VIDEO : Navigating RStudio</h4>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/on5oPls94oU" title="Intro to RStudio the program" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="video-graphing-numeric-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-graphing-numeric-variables-in-r">Video : Graphing Numeric Variables in R</h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/lmXQ2BhQNuo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
-<li><p>what RStudio/Posit looks like; navigating the program</p></li>
-<li><p>basic math in the console</p></li>
-<li><p>the&nbsp;<strong>source file</strong>&nbsp;(makes life easier and saves your work!)</p></li>
+<li><p>hist() : a graph</p></li>
+<li><p>changing arguments : xlab, ylab, main</p></li>
 </ul>
 </section>
+<section id="video-defining-categorical-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/CFXRxfaadIw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<ul>
+<li>categorical data (“string”)</li>
+<li>as.factor() : to convert a string to a categorical variable</li>
+<li>levels() : to see the levels of your categorical variable.</li>
+</ul>
+</section>
+<section id="video-graphing-categorical-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Fmai9Ltpa5I" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<ul>
+<li>plot()</li>
+<li>changing arguments : col, bor, main; xlab; ylab</li>
+</ul>
 </section>
 </section>
 <section id="part-3-how-science-the-scientific-method-in-five-easy-steps" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="part-3-how-science-the-scientific-method-in-five-easy-steps">Part 3 : How Science? The Scientific Method in Five Easy Steps</h2>
-<p>The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>.</p>
-<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;&nbsp;&nbsp;Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the <a href="https://convention.apa.org/">American Psychological Association</a> or the <a href="https://www.psychologicalscience.org/conventions">Association of Psychological Science</a>. The <a href="https://westernpsych.org/convention/">Western Psychological Association</a> has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the <a href="http://meeting.spsp.org/">Society of Personality and Social Psychology</a>). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.</p></div></div><p>I like to organize the scientific method into five broad parts, described below.</p>
+<p>The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;&nbsp;&nbsp;Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the <a href="https://convention.apa.org/">American Psychological Association</a> or the <a href="https://www.psychologicalscience.org/conventions">Association of Psychological Science</a>. The <a href="https://westernpsych.org/convention/">Western Psychological Association</a> has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the <a href="http://meeting.spsp.org/">Society of Personality and Social Psychology</a>). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.</p></div></div><p>I like to organize the scientific method into five broad parts, described below.</p>
 <section id="step-1-identify-a-question" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="step-1-identify-a-question">Step 1 : Identify a Question</h3>
 <p>First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Part 1 of this chapter, we talked about how these questions are often informed by the researcher’s own observations or experiences. In this section, we’ll discuss ways you can choose a topic to inspire a specific research question - something you will do as part of your final project in this class.</p>
@@ -715,7 +715,7 @@ Click Here to See The Answer
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Prof.&nbsp;Cat Has An Idea
+<span class="screen-reader-only">Tip</span>Prof.&nbsp;Cat Has An Idea
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -734,8 +734,8 @@ Prof.&nbsp;Cat Has An Idea
 </div></div></section>
 <section id="step-2-develop-a-theory" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="step-2-develop-a-theory">Step 2 : Develop a Theory</h3>
-<p>A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is <em>comprehensive</em> (it relates to all nature, not just plants or animals or finches), it is <em>explanatory</em> (it’s why we and <a href="https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg">cats</a> both narrow our eyes when we are scared and angry), and it is <em>supported</em> (by over 100 years of evidence<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>).&nbsp;</p>
-<div class="no-row-height column-margin column-container"><div id="fn14"><p><sup>14</sup>&nbsp;<a href="https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01">From fossil records to observations of fruit flies and plans</a></p></div></div><p><strong>Most scientists refrain from saying that a theory is “proven” or “true” for two reasons:</strong></p>
+<p>A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is <em>comprehensive</em> (it relates to all nature, not just plants or animals or finches), it is <em>explanatory</em> (it’s why we and <a href="https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg">cats</a> both narrow our eyes when we are scared and angry), and it is <em>supported</em> (by over 100 years of evidence<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>).&nbsp;</p>
+<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;<a href="https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01">From fossil records to observations of fruit flies and plans</a></p></div></div><p><strong>Most scientists refrain from saying that a theory is “proven” or “true” for two reasons:</strong></p>
 <ol type="1">
 <li><p>First, the scientific method is a process - our knowledge and ideas are continually updated. So it’s likely that the theory of evolution will be updated as we learn more about the complex ways genes replicate and interact with the environment. Saying that a theory is “proven” is a common mistake - watch out for it!&nbsp;</p></li>
 <li><p>Second, most scientists (and psychologists) draw from Karl Popper’s philosophy of science, which adheres to a requirement for science called <strong>falsifiability -</strong> the ability to find evidence that rejects a theory (“ability to falsify”). This means a theory is never ‘proven’ because scientists are continually looking for evidence to reject the theory. It also means that a belief that cannot be tested or rejected would be rejected as a scientific belief - you have to be able to test your belief in some observable way. Falsifiability is where I think science separates from religious belief - someone with faith doesn’t need evidence, and that’s okay! It just doesn’t make the belief scientific under science’s narrow definition.&nbsp;</p></li>
@@ -747,10 +747,10 @@ Prof.&nbsp;Cat Has An Idea
 </ul>
 <p><strong>EXAMPLE :</strong> Let’s say you believe that smoking cannabis hurts a person’s memory. What’s the alternative hypothesis? What’s the null?</p>
 <ul>
-<li><p><strong>Null Hypothesis :</strong> People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna. <a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a></p></li>
+<li><p><strong>Null Hypothesis :</strong> People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna. <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p></li>
 <li><p><strong>Alternative Hypothesis :</strong> People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.</p></li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn15"><p><sup>15</sup>&nbsp;Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs.&nbsp;non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)</p></div></div><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=header"><strong>Practice : Identifying Models, Null, and Alternative Hypotheses</strong></a><strong>.</strong> Here’s a quick practice quiz to review identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory.</p>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs.&nbsp;non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)</p></div></div><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=header"><strong>Practice : Identifying Models, Null, and Alternative Hypotheses</strong></a><strong>.</strong> Here’s a quick practice quiz to review identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory.</p>
 </section>
 <section id="step-3-collect-data" class="level3">
 <h3 class="anchored" data-anchor-id="step-3-collect-data">Step 3 : Collect Data</h3>
@@ -771,8 +771,12 @@ Prof.&nbsp;Cat Has An Idea
 </section>
 <section id="its-never-actually-easy" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="its-never-actually-easy">It’s Never Actually Easy</h3>
-<p>Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a <a href="https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics">Replication Crisis</a>. This crisis is two-fold a) researchers tend not to seek to replicate their (or others’) results, and b) systematic attempts to do so have suggested that the majority of results in psychology do not replicate<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>.</p>
-<div class="no-row-height column-margin column-container"><div id="fn16"><p><sup>16</sup>&nbsp;You can go deeper into some of the drama surrounding the replication project <a href="#0">here</a>. lemme know what you think on the discord thread for this week.</p></div></div><p>We will chat more about this in our next lecture. But I think that’s enough reading for now?</p>
+<p>Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a <a href="https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics">Replication Crisis</a>. There are two parts to the crisis:</p>
+<ol type="1">
+<li>Researchers tend not to seek to replicate their (or others’) results.</li>
+<li>Systematic attempts to replicate previous research suggests that the majority of results in psychology do not replicate<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>.</li>
+</ol>
+<div class="no-row-height column-margin column-container"><div id="fn14"><p><sup>14</sup>&nbsp;You can go deeper into some of the drama surrounding the replication project <a href="#0">here</a>. lemme know what you think on the discord thread for this week.</p></div></div><p>We will chat more about this in our next lecture. But I think that’s enough reading for now?</p>
 </section>
 </section>
 <section id="in-lecture." class="level1">
@@ -785,236 +789,243 @@ Prof.&nbsp;Cat Has An Idea
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1022,185 +1033,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../index.html" class="pagination-link" aria-label="Hello (An Introduction)!">

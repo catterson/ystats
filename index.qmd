@@ -48,6 +48,62 @@ The flipped classroom approach requires y'all to do the readings and watch the v
 
 Please take a look at the syllabus (on our course page) for more information about assignments, grading, and other course policies. However, the TLDR is that this course is designed for YOU to learn, so let me know if something is not working (but know that you will also need to do the work and can expect some level of struggle, since that's an important part of the learning process).
 
+## Why are we learning R? And who names a program after a letter?
+
+::: column-margin
+![fun fact : R was named because it was inspired by another program called S, and R comes after S in the English alphabet.](chapters/images/R_logo.svg.png)
+:::
+
+This semester, we will also learn how to use the computer programming language R to work with data, conduct analyses, and make graphs. R can be intimidating to work with at first, and is more confusing than it needs to be sometimes, but I promise you will learn! In fact, that’s the point of this class.
+
+It’s totally okay (and expected) for you to feel frustrated at times; this is part of the learning process. So please embrace the “I HAVE NO IDEA WHAT I’M DOING” dog meme energy as you embark on your R journey.
+
+::: column-margin
+![look how happy the doggy looks while learning](chapters/images/r_meme_dog.png)
+:::
+
+### Installing R
+
+[**Use this link to Download and Install the Programs R and RStudio Desktop**](https://posit.co/download/rstudio-desktop/)
+
+[**Note : You must download both R and RStudio Desktop (these are two separate programs). Make sure to download the most recent version of R and RStudio to avoid issues in the future.**]{style="color:red"}
+
+1.  **R** is the powerful, free, and friendly computer program that we will use to analyze data in this class. This website is not super friendly - choose the operating system you have (Windows, MacOS, or Linux) and then download the “latest release” on the next page. **If you have a chromebook or iPad / tablet, you will need to use [posit.cloud](https://rstudio.cloud/).**
+
+2.  **RStudio** is an Integrated Development Environment (IDE) - basically a “home” for R to live in, with rooms and this program is not 100% necessary, but makes it a little easier to navigate R. You will need to install R first in order for RStudio to work. *Mac Users : make sure you drag the program from the virtual disc into your Applications Folder to fully install the program.*
+
+**Having trouble getting these programs to work?**
+
+1.  **Here’s [one YouTube video](https://www.youtube.com/watch?v=0Qu7Jg1Jw5A)** someone made to show you how to download and install.
+
+2.  **Try [posit.cloud](https://posit.cloud)**. This is a web-based version of RStudio, and has a free option but limits your hours of work each month. There’s a paid option for \$5/month that you can use if you sign up with your student e-mail address; former students also pointed out that you can always create a new “free” account if you run over the 15-hour limit.
+
+3.  **Ask for help!** The professor, other students, or a tutor / your TA can help get everything working properly.
+
+### Navigating R
+
+Watch the two videos below for a quick introduction to R - the program we will be using to analyze data.
+
+#### VIDEO : Navigating R
+
+{{< video https://youtu.be/TDt8x4ASZoc title = "Intro to R the program">}}
+
+-   what R looks like when you open it
+
+-   basic math in the **console**
+
+-   indexing and output
+
+#### VIDEO : Navigating RStudio
+
+{{< video https://youtu.be/on5oPls94oU title = "Intro to RStudio the program">}}
+
+-   what RStudio/Posit looks like; navigating the program
+
+-   basic math in the console
+
+-   the **source file** (makes life easier and saves your work!)
+
 ## Who Is Writing These Words That I Am Reading?
 
 My name is Arman Daniel Catterson, and I'm very very very lucky to be a professor in the Bay Area at Diablo Valley College (tenured) and at UC Berkeley (continuing lecturer), who has been teaching some version of this class since Summer 2015. Feel free to say "hi" if you see me on campus :) or hit that "SUBSCRIBE" button on YouTube. Thank you for reading.

@@ -215,43 +215,6 @@ plot(haas$sex, col = 'black', bor = 'white', xlab = "Sex")
 
 # Part 2 : Data and Datasets in R
 
-## Defining Variables in R
-
-Below are some videos, and R code, that review how to define a variable in R. Yeah! I’m not going to share the Rscripts I’m using for these videos, since I think there’s value in typing this out yourself to get that muscle memory in 💪🤘 but let me know if you disagree / there’s a reason to provide them to y’all!
-
-### Video : Defining Numeric Variables in R
-
-{{< video https://youtu.be/0pXGqGDSySM >}}
-
--   objects - assign function for numerical data
-
--   c() : combining data together.
-
--   length() : the number of objects
-
-### Video : Graphing Numeric Variables in R
-
-{{< video https://youtu.be/lmXQ2BhQNuo >}}
-
--   hist() : a graph
-
--   changing arguments : xlab, ylab, main
-
-### Video : Defining Categorical Variables in R
-
-{{< video https://youtu.be/CFXRxfaadIw>}}
-
--   categorical data (“string”)
--   as.factor() : to convert a string to a categorical variable
--   levels() : to see the levels of your categorical variable.
-
-### Video : Graphing categorical variables in R
-
-{{< video https://youtu.be/Fmai9Ltpa5I>}}
-
--   plot()
--   changing arguments : col, bor, main; xlab; ylab
-
 ## The Dataframe
 
 ### Definition : Rows and Columns
