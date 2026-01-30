@@ -1173,5 +1173,82 @@
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Rcode</span>"
     ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Why Statistics?",
+    "section": "",
+    "text": "Hello (An Introduction)!",
+    "crumbs": [
+      "List of R Code",
+      "Hello (An Introduction)!"
+    ]
+  },
+  {
+    "objectID": "index.html#who-is-this-book-for",
+    "href": "index.html#who-is-this-book-for",
+    "title": "Why Statistics?",
+    "section": "Who Is This Book For?",
+    "text": "Who Is This Book For?\nThis book - Why Statistics? - is being written to support students’ learning of the statistics, R programming skills, and research methods that are required of modern psychological scientists. Whew!\nI’ve learned over the years that students approach statistics with a variety of intense emotions - many of them negative. For what it’s worth, I have been happy to see most students thrive in the class, and will do my best to support y’all and make this class (and book) a positive learning experienceTM.\nTo that end, please fill out this form (or talk to me in class) if you are confused or overwhelmed; this class work as well as it does because of past and present generations of students like you, and I hope that it will continue to improve thanks to present and future generations of students. If you want to use this text in your own class, reach out and I can send my lesson plans and assignments if they might be helpful.",
+    "crumbs": [
+      "List of R Code",
+      "Hello (An Introduction)!"
+    ]
+  },
+  {
+    "objectID": "index.html#whats-in-this-book",
+    "href": "index.html#whats-in-this-book",
+    "title": "Why Statistics?",
+    "section": "What’s In This Book?",
+    "text": "What’s In This Book?\nThis book is organized into three sections. You can view these sections (and the chapters inside) by looking at the Table of Contents to the left.\n\nDescribing People : This first section focuses on how psychologists, we’ll discuss both how and why psychologists seek to learn what people (or non-human animals) are like (Chapter 1), the different types of data that psychologists collect on people (Chapter 2), the fancy terms that psychologists use to describe how people differ (Chapter 3), the methods they use to try and turn complex psychological states like happiness, statistics anxiety, or love into numbers (Chapter 4), and the ways that they try to give context to these numbers (Chapter 5). We will also learn about some of the research methods required to develop your own research ideas, and fit these ideas in the past research that has been done (or not done!) on the topic.\nPredicting People : This section focuses on the ways that psychologists try and use statistics to make predictions (educated guesses) about what people are like. We’ll discuss how psychologists use the information they learn about people to make predictions about a person based on some other information (Chapter 6), how they make these predictions based on the categorical group the person belongs to (Chapter 7), how they try to make a guess about all people even though they are just studying a few (Chapter 8), and how they try to (Chapter 9). We will also learn about some of the research methods required to critically evaluate some of the important assumptions about research, to better understand how much faith to place in the results of a psychological study.\nPeople Are Complex : The final section goes deeper into some of the more advanced statistics and methods that psychologists use to understand people in their full complexity. Specifically, we will discuss how psychologists use multiple bits of information to update their predictions about people (Chapter 10), how our predictions can change depending on other features of the person or situation (Chapter 11), and how researchers adapt their statistics to account for different types of data (Chapter 12). Finally, we’ll conclude with some rambling thoughts about the whole endeavor of statistics and research in psychology, and reflect on the friends we made along the way on this journey (Chapter 13).\n\nThere are three parts to every chapter; when you click on a chapter, you’ll see another table of contents appear that organizes these parts.\n\nStatistics : You’ll learn how and why psychologists analyze data (i.e., use math) to learn about people (or non-human animals).\nR Programming : You’ll learn how to use the programming language R to work with these data. We will go over examples, and there will be some helpful videos to watch.\nResearch Methods : You’ll learn more about the decisions psychologists make when collect, analyzing, interpreting, and reporting data on people, and how these decisions can impact our understanding.",
+    "crumbs": [
+      "List of R Code",
+      "Hello (An Introduction)!"
+    ]
+  },
+  {
+    "objectID": "index.html#goals-of-the-book",
+    "href": "index.html#goals-of-the-book",
+    "title": "Why Statistics?",
+    "section": "Goals of the Book",
+    "text": "Goals of the Book\nI hope that by the end of this book, you’ll feel confident in your ability to do the kinds of authentic tasks that a psychological researcher might do :\n\nAnalyze Data. I’ll provide you a dataset and / or statistical output, and you’ll use your knowledge of statistics, R, and research methods to answer questions about the dataset. What do we learn from the data? Why should we care?\nConduct an Independent Study. You will identify a research question that you care about, and then design a study, collect and analyze the data, and write up a report to share with us what you learned about the question you had (and what other questions remain).\n\nWe will talk much more about these assignments throughout the semester, and you will be well prepared for them if you follow along with the readings, quizzes, and homework assignments each week.",
+    "crumbs": [
+      "List of R Code",
+      "Hello (An Introduction)!"
+    ]
+  },
+  {
+    "objectID": "index.html#how-will-i-use-this-book-for-our-class",
+    "href": "index.html#how-will-i-use-this-book-for-our-class",
+    "title": "Why Statistics?",
+    "section": "How Will I Use This Book for Our Class?",
+    "text": "How Will I Use This Book for Our Class?\nThis semester, we’ll be taking a flipped classroom approach to our learning.\n\nBefore lecture you’ll read and watch some videos to be introduced to the content that we will then cover more deeply in lecture. You’ll also take a short quiz (no time limit, open-note, and you can take as many times as you’d like) that will encourage you to do the readings, and let me know what topics are still confusing to students.\nDuring lecture we will start with a review of concepts you learned from the pre-readings, go over any common questions that students still have, and then use the remaining time to practice and discussing the skills and concepts. We will work on the homework assignment together\nAfter lecture you’ll complete any homework that we didn’t finish in class, and then read for the next week’s lecture.\n\nThe flipped classroom approach requires y’all to do the readings and watch the videos before class, and requires me to write text and record videos that are engaging and helpful for the students in the class.\nPlease take a look at the syllabus (on our course page) for more information about assignments, grading, and other course policies. However, the TLDR is that this course is designed for YOU to learn, so let me know if something is not working (but know that you will also need to do the work and can expect some level of struggle, since that’s an important part of the learning process).",
+    "crumbs": [
+      "List of R Code",
+      "Hello (An Introduction)!"
+    ]
+  },
+  {
+    "objectID": "index.html#why-are-we-learning-r-and-who-names-a-program-after-a-letter",
+    "href": "index.html#why-are-we-learning-r-and-who-names-a-program-after-a-letter",
+    "title": "Why Statistics?",
+    "section": "Why are we learning R? And who names a program after a letter?",
+    "text": "Why are we learning R? And who names a program after a letter?\n\n\n\n\n\nfun fact : R was named because it was inspired by another program called S, and R comes after S in the English alphabet.\n\n\nThis semester, we will also learn how to use the computer programming language R to work with data, conduct analyses, and make graphs. R can be intimidating to work with at first, and is more confusing than it needs to be sometimes, but I promise you will learn! In fact, that’s the point of this class.\nIt’s totally okay (and expected) for you to feel frustrated at times; this is part of the learning process. So please embrace the “I HAVE NO IDEA WHAT I’M DOING” dog meme energy as you embark on your R journey.\n\n\n\n\n\nlook how happy the doggy looks while learning\n\n\n\nInstalling R\nUse this link to Download and Install the Programs R and RStudio Desktop\nNote : You must download both R and RStudio Desktop (these are two separate programs). Make sure to download the most recent version of R and RStudio to avoid issues in the future.\n\nR is the powerful, free, and friendly computer program that we will use to analyze data in this class. This website is not super friendly - choose the operating system you have (Windows, MacOS, or Linux) and then download the “latest release” on the next page. If you have a chromebook or iPad / tablet, you will need to use posit.cloud.\nRStudio is an Integrated Development Environment (IDE) - basically a “home” for R to live in, with rooms and this program is not 100% necessary, but makes it a little easier to navigate R. You will need to install R first in order for RStudio to work. Mac Users : make sure you drag the program from the virtual disc into your Applications Folder to fully install the program.\n\nHaving trouble getting these programs to work?\n\nHere’s one YouTube video someone made to show you how to download and install.\nTry posit.cloud. This is a web-based version of RStudio, and has a free option but limits your hours of work each month. There’s a paid option for $5/month that you can use if you sign up with your student e-mail address; former students also pointed out that you can always create a new “free” account if you run over the 15-hour limit.\nAsk for help! The professor, other students, or a tutor / your TA can help get everything working properly.\n\n\n\nNavigating R\nWatch the two videos below for a quick introduction to R - the program we will be using to analyze data.\n\nVIDEO : Navigating R\n\n\nwhat R looks like when you open it\nbasic math in the console\nindexing and output\n\n\n\nVIDEO : Navigating RStudio\n\n\nwhat RStudio/Posit looks like; navigating the program\nbasic math in the console\nthe source file (makes life easier and saves your work!)",
+    "crumbs": [
+      "List of R Code",
+      "Hello (An Introduction)!"
+    ]
+  },
+  {
+    "objectID": "index.html#who-is-writing-these-words-that-i-am-reading",
+    "href": "index.html#who-is-writing-these-words-that-i-am-reading",
+    "title": "Why Statistics?",
+    "section": "Who Is Writing These Words That I Am Reading?",
+    "text": "Who Is Writing These Words That I Am Reading?\nMy name is Arman Daniel Catterson, and I’m very very very lucky to be a professor in the Bay Area at Diablo Valley College (tenured) and at UC Berkeley (continuing lecturer), who has been teaching some version of this class since Summer 2015. Feel free to say “hi” if you see me on campus :) or hit that “SUBSCRIBE” button on YouTube. Thank you for reading.",
+    "crumbs": [
+      "List of R Code",
+      "Hello (An Introduction)!"
+    ]
   }
 ]

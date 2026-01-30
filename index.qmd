@@ -102,7 +102,7 @@ Watch the two videos below for a quick introduction to R - the program we will b
 
 -   basic math in the console
 
--   the **source file** (makes life easier and saves your work!)
+-   the **source file** (makes life easier and saves your work!)
 
 ## Who Is Writing These Words That I Am Reading?
 
