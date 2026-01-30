@@ -1,4 +1,5 @@
 % Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
@@ -8,21 +9,23 @@
   DIV=11,
   numbers=noendperiod,
   oneside]{scrreprt}
-
+\usepackage{xcolor}
+\usepackage[left=1in,marginparwidth=2.0666666666667in,textwidth=4.1333333333333in,marginparsep=0.3in]{geometry}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -40,10 +43,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\usepackage[left=1in,marginparwidth=2.0666666666667in,textwidth=4.1333333333333in,marginparsep=0.3in]{geometry}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -109,8 +108,7 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -135,39 +133,20 @@
 % Set default figure placement to htbp
 \def\fps@figure{htbp}
 \makeatother
-% definitions for citeproc citations
-\NewDocumentCommand\citeproctext{}{}
-\NewDocumentCommand\citeproc{mm}{%
-  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-\makeatletter
- % allow citations to break across lines
- \let\@cite@ofmt\@firstofone
- % avoid brackets around text for \cite:
- \def\@biblabel#1{}
- \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
-\makeatother
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
- {\begin{list}{}{%
-  \setlength{\itemindent}{0pt}
-  \setlength{\leftmargin}{0pt}
-  \setlength{\parsep}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-   \setlength{\leftmargin}{\cslhangindent}
-   \setlength{\itemindent}{-1\cslhangindent}
-  \fi
-  % set entry spacing
-  \setlength{\itemsep}{#2\baselineskip}}}
- {\end{list}}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
 
 \usepackage{array}
 \usepackage{caption}
@@ -250,11 +229,9 @@
 \@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
 \@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
 \makeatother
-
 \usepackage{bookmark}
-
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Why Statistics?},
   colorlinks=true,
@@ -267,8 +244,7 @@
 
 \title{Why Statistics?}
 \author{}
-\date{2025-01-01}
-
+\date{2026-01-01}
 \begin{document}
 \maketitle
 
@@ -449,6 +425,135 @@ let me know if something is not working (but know that you will also
 need to do the work and can expect some level of struggle, since that's
 an important part of the learning process).
 
+\section*{Why are we learning R? And who names a program after a
+letter?}\label{why-are-we-learning-r-and-who-names-a-program-after-a-letter}
+\addcontentsline{toc}{section}{Why are we learning R? And who names a
+program after a letter?}
+
+\markright{Why are we learning R? And who names a program after a
+letter?}
+
+\marginnote{\begin{footnotesize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/R_logo.svg.png}}
+
+}
+
+\caption{fun fact : R was named because it was inspired by another
+program called S, and R comes after S in the English alphabet.}
+
+\end{figure}%
+
+\end{footnotesize}}
+
+This semester, we will also learn how to use the computer programming
+language R to work with data, conduct analyses, and make graphs. R can
+be intimidating to work with at first, and is more confusing than it
+needs to be sometimes, but I promise you will learn! In fact, that's the
+point of this class.
+
+It's totally okay (and expected) for you to feel frustrated at times;
+this is part of the learning process. So please embrace the ``I HAVE NO
+IDEA WHAT I'M DOING'' dog meme energy as you embark on your R journey.
+
+\marginnote{\begin{footnotesize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/r_meme_dog.png}}
+
+}
+
+\caption{look how happy the doggy looks while learning}
+
+\end{figure}%
+
+\end{footnotesize}}
+
+\subsection*{Installing R}\label{installing-r}
+\addcontentsline{toc}{subsection}{Installing R}
+
+\href{https://posit.co/download/rstudio-desktop/}{\textbf{Use this link
+to Download and Install the Programs R and RStudio Desktop}}
+
+{\textbf{Note : You must download both R and RStudio Desktop (these are
+two separate programs). Make sure to download the most recent version of
+R and RStudio to avoid issues in the future.}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{R} is the powerful, free, and friendly computer program that
+  we will use to analyze data in this class. This website is not super
+  friendly - choose the operating system you have (Windows, MacOS, or
+  Linux) and then download the ``latest release'' on the next page.
+  \textbf{If you have a chromebook or iPad / tablet, you will need to
+  use \href{https://rstudio.cloud/}{posit.cloud}.}
+\item
+  \textbf{RStudio} is an Integrated Development Environment (IDE) -
+  basically a ``home'' for R to live in, with rooms and this program is
+  not 100\% necessary, but makes it a little easier to navigate R. You
+  will need to install R first in order for RStudio to work. \emph{Mac
+  Users : make sure you drag the program from the virtual disc into your
+  Applications Folder to fully install the program.}
+\end{enumerate}
+
+\textbf{Having trouble getting these programs to work?}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Here's \href{https://www.youtube.com/watch?v=0Qu7Jg1Jw5A}{one
+  YouTube video}} someone made to show you how to download and install.
+\item
+  \textbf{Try \href{https://posit.cloud}{posit.cloud}}. This is a
+  web-based version of RStudio, and has a free option but limits your
+  hours of work each month. There's a paid option for \$5/month that you
+  can use if you sign up with your student e-mail address; former
+  students also pointed out that you can always create a new ``free''
+  account if you run over the 15-hour limit.
+\item
+  \textbf{Ask for help!} The professor, other students, or a tutor /
+  your TA can help get everything working properly.
+\end{enumerate}
+
+\subsection*{Navigating R}\label{navigating-r}
+\addcontentsline{toc}{subsection}{Navigating R}
+
+Watch the two videos below for a quick introduction to R - the program
+we will be using to analyze data.
+
+\subsubsection*{VIDEO : Navigating R}\label{video-navigating-r}
+\addcontentsline{toc}{subsubsection}{VIDEO : Navigating R}
+
+\url{https://youtu.be/TDt8x4ASZoc}
+
+\begin{itemize}
+\item
+  what R looks like when you open it
+\item
+  basic math in the~\textbf{console}
+\item
+  indexing and output
+\end{itemize}
+
+\subsubsection*{VIDEO : Navigating
+RStudio}\label{video-navigating-rstudio}
+\addcontentsline{toc}{subsubsection}{VIDEO : Navigating RStudio}
+
+\url{https://youtu.be/on5oPls94oU}
+
+\begin{itemize}
+\item
+  what RStudio/Posit looks like; navigating the program
+\item
+  basic math in the console
+\item
+  the~\textbf{source file}~(makes life easier and saves your work!)
+\end{itemize}
+
 \section*{Who Is Writing These Words That I Am
 Reading?}\label{who-is-writing-these-words-that-i-am-reading}
 \addcontentsline{toc}{section}{Who Is Writing These Words That I Am
@@ -471,16 +576,24 @@ In this week's reading, you'll learn why students like you are required
 to learn the statistics, programming language, and research methods
 required of modern psychology.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-important-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{To-Do List (due before our next lecture)}, colframe=quarto-callout-important-color-frame]
+\href{https://commons.wikimedia.org/wiki/File:The_oldest_writing_in_the_world_-_The_Sumerian_Stone_Tablet.jpg}{\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/clipboard-4017464194.png}}
+\end{center}
+}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-important-color-frame, left=2mm, colbacktitle=quarto-callout-important-color!10!white, breakable, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{To-Do List (due before our next lecture)}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \item
-  Read this document and watch the videos.
+  Read this chapter and watch the videos.
 \item
-  Download R and RStudio (two separate programs) or set up a free
-  account with \url{posit.cloud}
+  Complete the practice exercises (check-ins) and try to create some
+  variables in R.
 \item
   Take Quiz 1 (on our course page).
+\item
+  Think about something you would want to learn about people (or
+  non-human animals) if you were a researcher.
 \end{itemize}
 
 \end{tcolorbox}
@@ -498,7 +611,7 @@ know!??!
 
 I agree that people (or non-human animals) are interesting. And we all
 have this interest in people (or non-human animals) because we are
-complex\footnote{~One of the reasons I love teaching in the Bay Area is
+complex\footnote{One of the reasons I love teaching in the Bay Area is
   y'all are hella complex.}. While people are similar in many ways, we
 also differ in radical ways; from superficial features like age and
 race, to more complex ways like our personality or emotions, to highly
@@ -516,13 +629,19 @@ these ``stats glasses'' when needed.
 \subsection{Statistics as a Language}\label{statistics-as-a-language}
 
 Statistics is a language that scientists use to describe this
-complexity. While psychology uses this language to better understand
-differences in people (or non-human animals), other scientific
-disciplines focus on their own domains; physicists seek to understand
-differences (and similarities) in matter and energy, chemists seek to
-understand differences (and similarities) in elements and compounds,
-botanists seek to understand differences in plants, and economists seek
-to understand money.
+complexity. Indeed, historical records of the earliest written language
+reveal that people have used some form of symbols and numbers to
+represent - the Sumerian (modern day Iraq) stone tablet at the beginning
+of this chapter was used to represent where locusts and caterpillars had
+infested different plots of land.
+
+Psychology uses this language to better understand differences in people
+(or non-human animals), and other scientific disciplines focus on their
+own domains; physicists seek to understand differences (and
+similarities) in matter and energy, chemists seek to understand
+differences (and similarities) in elements and compounds, botanists seek
+to understand differences in plants, and economists seek to understand
+money.
 
 Like all languages, statistics has vocabulary - words that have shared
 meaning, and allow us to understand what we are talking about.
@@ -593,8 +712,8 @@ relevant if I ask you to think about an upcoming exam (your first exam
 is in just a few weeks!)
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0800}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.9200}}@{}}
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -690,8 +809,8 @@ Below are a few examples of research questions that are related to a
 person's real-life experiences.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7781}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2219}}@{}}
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -820,35 +939,34 @@ Of course, things are rarely as simple as ``right'' or ``wrong'', and a
 large part of this class will be learning how to quantify exactly how
 much error there is in our scientific predictions.
 
-As an example, let's look to the stars.
+As an example, let's look to the stars. Astronomers have developed
+knowledge about celestial bodies - gravity, orbits, mass (I know very
+little about this). But I trust this science because astronomers are
+able to use it to make very valid predictions about giant space rocks
+and when they will come close to the earth. I can use this knowledge to
+plan a stargazing trip, or plan to watch all the rich people leave earth
+when the ``big one'' comes for the rest of us.
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.1773}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.8227}}@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/clipboard-3451448147.png}}
-& Astronomers have developed knowledge about celestial bodies - gravity,
-orbits, mass (I know very little about this).
+\marginnote{\begin{footnotesize}
 
-But I trust this science because astronomers are able to use it to make
-very valid predictions about giant space rocks and when they will come
-close to the earth.\footnote{You can see when scientists predict
-  Halley's comet to come closest to earth
-  \href{https://theskylive.com/halley-tracker}{here}. While this is
-  fairly accurate, I've seen the exact prediction change over the years
-  - there is still some error in this prediction.}
+\begin{figure}[H]
 
-I can use this knowledge to plan a stargazing trip, or plan to watch all
-the rich people leave earth when the ``big one'' comes for the rest of
-us. \\
-\end{longtable}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/clipboard-3451448147.png}}
+
+}
+
+\caption{You can see when scientists predict Halley's comet to come
+closest to earth \href{https://theskylive.com/halley-tracker}{here}.
+While this is fairly accurate, I've seen the exact prediction change
+over the years - there is still some error in this prediction.}
+
+\end{figure}%
+
+\end{footnotesize}}
 
 As another example, on the day I'm writing these words, I do not predict
 that it will rain outside. I am making this prediction based on the
-following information :
+following information:
 
 \begin{itemize}
 \item
@@ -883,11 +1001,11 @@ come rain or shine.
 
 \end{footnotesize}}
 
-For our first lecture, start thinking of some predictions that you have
-made. What knowledge informed the prediction? Did you use this
-prediction to influence your future behavior in some way? What kinds of
-predictions do psychologists make? We will chat more about these ideas
-in class :) but it's a core focus on why psychologists use predictions.
+Think about some predictions that you have made. What knowledge informed
+the prediction? Did you use this prediction to influence your future
+behavior in some way? What kinds of predictions do psychologists make?
+We will chat more about these ideas in class :) but it's a core focus on
+why psychologists use predictions.
 
 And so, here we are. In this document, in this required class for the
 psychology major, learning how to DO REAL SCIENCE. With statistics.
@@ -995,7 +1113,7 @@ happiness, and believes that playing music, drinking more water, and
 eating ice cream sandwiches are important factors to consider. How would
 you write this out as a linear model?
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-caution-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Click Here to See The Answer}, colframe=quarto-callout-caution-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-caution-color-frame, left=2mm, colbacktitle=quarto-callout-caution-color!10!white, breakable, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Click Here to See The Answer}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 happiness \textasciitilde{} music playing + water intake + ice cream
 consumption + error
@@ -1011,102 +1129,68 @@ statement.
 
 \end{tcolorbox}
 
-\section{Part 2 : Why R?}\label{part-2-why-r}
+\section{Part 2 : Defining Variables in
+R}\label{part-2-defining-variables-in-r}
 
-This semester, we will also learn how to use the computer programming
-language R to work with data, conduct analyses, and make graphs. R can
-be intimidating to work with at first, and is more confusing than it
-needs to be sometimes (as you'll quickly find out\ldots), but I promise
-you will learn!\footnote{In fact, that's the point of this class.} It's
-totally okay (and expected) for you to feel frustrated at times; this is
-part of the learning process. So please embrace the ``I HAVE NO IDEA
-WHAT I'M DOING'' dog meme energy (and look how happy the doggy looks!)
-as you embark on your R journey.\\
+Below are some videos, and R code, that review how to define a variable
+in R. Practice creating your own script in RStudio to follow along;
+there's value in typing this out yourself to get that muscle memory in
+💪🤘.
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\includegraphics[width=2.86458in,height=\textheight,keepaspectratio]{chapters/images/R_logo.svg.png}
-&
-\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/r_meme_dog.png}} \\
-\end{longtable}
+Let us know if you get stuck on the class discord.
 
-\subsection{Installing R}\label{installing-r}
+\subsection{Video : Defining Numeric Variables in
+R}\label{video-defining-numeric-variables-in-r}
 
-\href{https://posit.co/download/rstudio-desktop/}{\textbf{Use this link
-to Download and Install the Programs R and RStudio Desktop}}
-
-{\textbf{Note : You must download both R and RStudio Desktop (these are
-two separate programs). Make sure to download the most recent version of
-R and RStudio to avoid issues in the future.}}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{R} is the powerful, free, and somewhat intimidating computer
-  program that we will use to analyze data in this class. This website
-  is not super friendly - choose the operating system you have (Windows,
-  MacOS, or Linux) and then download the ``latest release'' on the next
-  page. \textbf{If you have a chromebook or iPad / tablet, you will need
-  to use \href{https://rstudio.cloud/}{posit.cloud}.}
-\item
-  \textbf{RStudio} is an Integrated Development Environment (IDE) -
-  basically a ``home'' for R to live in, with rooms and this program is
-  not 100\% necessary, but makes it a little easier to navigate R. Note
-  that you will need to install R first in order for RStudio to work.
-\end{enumerate}
-
-\textbf{Having trouble getting these programs to work?}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Here's \href{https://www.youtube.com/watch?v=0Qu7Jg1Jw5A}{one
-  YouTube video}} someone made to show you how to download and install.
-\item
-  \textbf{Try \href{https://posit.cloud}{posit.cloud}}. This is a
-  web-based version of RStudio, and has a free option but limits your
-  hours of work each month. There's a paid option for \$5/month that you
-  can use if you sign up with your student e-mail address; former
-  students also pointed out that you can always create a new ``free''
-  account if you run over the 15-hour limit.
-\item
-  \textbf{Ask for help!} The professor, other students, or a tutor /
-  your TA can help get everything working properly.
-\end{enumerate}
-
-\subsection{Navigating R}\label{navigating-r}
-
-Watch the two videos below for a quick introduction to R - the program
-we will be using to analyze data.
-
-\subsubsection{VIDEO : Navigating R}\label{video-navigating-r}
-
-\url{https://youtu.be/TDt8x4ASZoc}
+\url{https://youtu.be/0pXGqGDSySM}
 
 \begin{itemize}
 \item
-  what R looks like when you open it
+  objects - assign function for numerical data
 \item
-  basic math in the~\textbf{console}
+  c() : combining data together.
 \item
-  indexing and output
+  length() : the number of objects
 \end{itemize}
 
-\subsubsection{VIDEO : Navigating
-RStudio}\label{video-navigating-rstudio}
+\subsection{Video : Graphing Numeric Variables in
+R}\label{video-graphing-numeric-variables-in-r}
 
-\url{https://youtu.be/on5oPls94oU}
+\url{https://youtu.be/lmXQ2BhQNuo}
 
 \begin{itemize}
 \item
-  what RStudio/Posit looks like; navigating the program
+  hist() : a graph
 \item
-  basic math in the console
+  changing arguments : xlab, ylab, main
+\end{itemize}
+
+\subsection{Video : Defining Categorical Variables in
+R}\label{video-defining-categorical-variables-in-r}
+
+\url{https://youtu.be/CFXRxfaadIw}
+
+\begin{itemize}
+\tightlist
 \item
-  the~\textbf{source file}~(makes life easier and saves your work!)
+  categorical data (``string'')
+\item
+  as.factor() : to convert a string to a categorical variable
+\item
+  levels() : to see the levels of your categorical variable.
+\end{itemize}
+
+\subsection{Video : Graphing categorical variables in
+R}\label{video-graphing-categorical-variables-in-r}
+
+\url{https://youtu.be/Fmai9Ltpa5I}
+
+\begin{itemize}
+\tightlist
+\item
+  plot()
+\item
+  changing arguments : col, bor, main; xlab; ylab
 \end{itemize}
 
 \section{Part 3 : How Science? The Scientific Method in Five Easy
@@ -1246,7 +1330,7 @@ What are some strategies that help people heal from inter-generational
 trauma? \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Prof.~Cat Has An Idea}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Prof.~Cat Has An Idea}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 Hi folks, Prof.~Cat here. I'll be popping up throughout this book to
 guide you through the process of working on your final project. To do
@@ -1433,12 +1517,20 @@ was valid.
 Science is hard, and people are very complex, which makes psychological
 science very hard. Unfortunately, psychology is in a bit of a
 \href{https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics}{Replication
-Crisis}. This crisis is two-fold a) researchers tend not to seek to
-replicate their (or others') results, and b) systematic attempts to do
-so have suggested that the majority of results in psychology do not
-replicate\footnote{You can go deeper into some of the drama surrounding
-  the replication project \hyperref[0]{here}. lemme know what you think
-  on the discord thread for this week.}.
+Crisis}. There are two parts to the crisis:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Researchers tend not to seek to replicate their (or others') results.
+\item
+  Systematic attempts to replicate previous research suggests that the
+  majority of results in psychology do not replicate\footnote{You can go
+    deeper into some of the drama surrounding the replication project
+    \hyperref[0]{here}. lemme know what you think on the discord thread
+    for this week.}.
+\end{enumerate}
 
 We will chat more about this in our next lecture. But I think that's
 enough reading for now?
@@ -1470,7 +1562,7 @@ NLM}; image source
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-important-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{To-Do List:}, colframe=quarto-callout-important-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-important-color-frame, left=2mm, colbacktitle=quarto-callout-important-color!10!white, breakable, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{To-Do List:}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -1735,8 +1827,8 @@ arrow on the right side of the green box) to see what I wrote.
 
 \pandocbounded{\includegraphics[keepaspectratio]{chapters/2R_Data_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{PROFESSOR SPOILERS : Expand this textbox when you are ready by clicking
-on the arrow ---\textgreater{}}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{PROFESSOR SPOILERS : Expand this textbox when you are ready by clicking
+on the arrow ---\textgreater{}}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -1804,7 +1896,7 @@ As another example, researchers can measure gender with categories such
 as female, male, transgender, and other. Identify the factor and levels
 in this example.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{What are the factors and levels in the example above?}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{What are the factors and levels in the example above?}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -1967,68 +2059,6 @@ highlight my text to see what I wrote about.
 
 \chapter{Part 2 : Data and Datasets in
 R}\label{part-2-data-and-datasets-in-r}
-
-\section{Defining Variables in R}\label{defining-variables-in-r}
-
-Below are some videos, and R code, that review how to define a variable
-in R. Yeah! I'm not going to share the Rscripts I'm using for these
-videos, since I think there's value in typing this out yourself to get
-that muscle memory in 💪🤘 but let me know if you disagree / there's a
-reason to provide them to y'all!
-
-\subsection{Video : Defining Numeric Variables in
-R}\label{video-defining-numeric-variables-in-r}
-
-\url{https://youtu.be/0pXGqGDSySM}
-
-\begin{itemize}
-\item
-  objects - assign function for numerical data
-\item
-  c() : combining data together.
-\item
-  length() : the number of objects
-\end{itemize}
-
-\subsection{Video : Graphing Numeric Variables in
-R}\label{video-graphing-numeric-variables-in-r}
-
-\url{https://youtu.be/lmXQ2BhQNuo}
-
-\begin{itemize}
-\item
-  hist() : a graph
-\item
-  changing arguments : xlab, ylab, main
-\end{itemize}
-
-\subsection{Video : Defining Categorical Variables in
-R}\label{video-defining-categorical-variables-in-r}
-
-\url{https://youtu.be/CFXRxfaadIw}
-
-\begin{itemize}
-\tightlist
-\item
-  categorical data (``string'')
-\item
-  as.factor() : to convert a string to a categorical variable
-\item
-  levels() : to see the levels of your categorical variable.
-\end{itemize}
-
-\subsection{Video : Graphing categorical variables in
-R}\label{video-graphing-categorical-variables-in-r}
-
-\url{https://youtu.be/Fmai9Ltpa5I}
-
-\begin{itemize}
-\tightlist
-\item
-  plot()
-\item
-  changing arguments : col, bor, main; xlab; ylab
-\end{itemize}
 
 \section{The Dataframe}\label{the-dataframe}
 
@@ -2302,7 +2332,7 @@ focus on.
 \begin{Shaded}
 \begin{Highlighting}[]
 \InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
-\InformationTok{haas[,3]}
+\NormalTok{haas[,}\DecValTok{3}\NormalTok{]}
 \InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
 \end{Highlighting}
 \end{Shaded}
@@ -2449,7 +2479,7 @@ R required)
   haas{[} , 6{]}
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Answer Key : Indexing!}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Answer Key : Indexing!}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -2562,7 +2592,7 @@ point and click method'') involves clicking some boxes, like most of
 y'all are used to doing. The second way involves typing in an R command.
 Below are videos that highlight each method.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-important-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, colframe=quarto-callout-important-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-important-color-frame, left=2mm, colbacktitle=quarto-callout-important-color!10!white, breakable, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 Regardless of which method you use, there are three things you want to
 check every time you load data : change the name of the dataset (to make
@@ -2656,7 +2686,7 @@ deviation can be thought of as prediction and error).
 \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/3_Bar_GraphDigitalStyle.png.webp}}
 \end{center}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-important-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{To-Do List:}, colframe=quarto-callout-important-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-important-color-frame, left=2mm, colbacktitle=quarto-callout-important-color!10!white, breakable, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{To-Do List:}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -2798,7 +2828,7 @@ So imagine two sets of numbers : what number is in the very middle?
   2, 2, 3, 3, 5, 10, 14, 19
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Activity : What's the median?}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Activity : What's the median?}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \item
@@ -2854,7 +2884,7 @@ distribution occur?
 
 \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/3_bimodalwhy.png}}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reasons for this bimodal distribution.}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reasons for this bimodal distribution.}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5212}}
@@ -3408,7 +3438,7 @@ peer-reviewers off about who the author of a study is (for example, the
 author of a study will likely reference their own work, since their new
 study builds off their old study.)
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Academic Publishers are Predatory Capitalists.}, colframe=quarto-callout-warning-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-warning-color-frame, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Academic Publishers are Predatory Capitalists.}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0349}}
@@ -3487,7 +3517,7 @@ Some tips for finding an article related to your topic :~
   article on your topic, it's likely that other researchers have also
   read that article, and used it in their future research. Google
   Scholar has a ``Cited By'' button
-  {[}\includegraphics[width=0.41667in,height=0.13542in]{index_files/mediabag/AD_4nXdWGVqSlFveQI-X.png}{]}that
+  {[}\includegraphics[width=0.41667in,height=0.13542in]{index_files/mediabag/AD_4nXdWGVqSlFveQI-X.pdf}{]}that
   you can use in order to see more recent articles that have referenced
   the article you found. This is a particularly useful way to find more
   recent research if you found a ``classic'' in the field, or check for
@@ -4081,297 +4111,37 @@ Scale}\label{i-like-to-watch-videos-creating-a-likert-scale}
   re-record!
 \end{itemize}
 
-\chapter{Part 3 : Data is Hard in a Soft
-Science}\label{part-3-data-is-hard-in-a-soft-science}
-
-One of the challenges psychologists face in their attempts to be a REAL
-SCIENCE ™ is that their data is particularly hard to collect. Unlike
-physical variables like temperature or mass, psychological variables are
-often internal to people, and defined by mental states that are
-difficult to observe. As we saw in lecture, even a ``simple'' expressed
-behavior like an interruption can be very difficult to measure with high
-degrees of reliability and validity that we would hope. For a more
-complex variable such as depression, the task might seem impossible.
-Indeed, a large part of psychological research is engaging in debate and
-scholarship about how to best \textbf{operationalize} variables of
-interest (e.g., how should we define or measure depression?)~
-
-A full discussion of the different types of methods psychologists use to
-collect data is beyond the scope of this author. However, below I've
-tried to outline a few different approaches psychologists take,
-commenting on their benefits and limitations so you can begin to
-critically think about whether these methods are, in fact, getting at
-``THE TRUTH'' of what people (or non-human animals) are like.
-
-\section{Self-Reports}\label{self-reports}
-
-One of the simplest ways to collect data on an individual is just to ask
-them what they are like, and have the person report on themselves (a
-self-report). There are two different approaches to getting self-reports
-- survey methods and qualitative interviews.
-
-\subsection{Qualitative Interviews}\label{qualitative-interviews}
-
-One way to get individuals to tell you what they are like is through a
-structured interview where researchers ask open-ended questions. One
-such example of this is the McAdams Life Narrative\footnote{McAdams
-  talks about his work in this \hyperref[0]{popular press interview} and
-  writes about it in this \hyperref[0]{scientific journal review
-  article}.}. In this structured interview, a trained research assistant
-asks a set of broad questions to participants over the course of 1 to 3
-hours. The research assistant is advised to ``feel free to skip some of
-these questions if they seem redundant or irrelevant, and should follow
-up with other questions as needed `` but also to ``not adopt an advisory
-or judgmental role, but should instead serve as an empathic and
-encouraging guide and an affirming sounding board.''
-
-Below is an excerpt from the first part of the interview - if you are
-comfortable, please share your chapters on the Chapter 4 Discord
-thread!\footnote{\href{https://www.dropbox.com/scl/fi/pn3tlz9alo4u0m6lqgcwl/McAdams_Narrative_Instructions.pdf?rlkey=8m48abjh5kgdxbbdworh0dxbh&dl=0}{Here's
-  a link to the full narrative instructions} if you want to do the whole
-  thing; it's a great way to know someone.}
-
-\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/4_McAdams.png}}
-
-\subsection{Survey Methods}\label{survey-methods}
-
-Qualitative interviews are not very common in psychological research,
-because they take a lot of time to conduct, and then more time to
-convert people's open-ended responses into data (a form of behavioral
-coding, described in more detail below).
-
-Instead, the majority of self-reports come from surveys. Read about
-these below.
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0293}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.9707}}@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\textbf{Definition} & A questionnaire where individuals answer specific
-questions about themselves on a structured rating scale. \\
-\textbf{Example} & ``On a scale from 1 (Strongly Disagree) to 5
-(Strongly Agree), how satisfied with your life are you right now?'' \\
-\textbf{Benefits} & \begin{minipage}[t]{\linewidth}\raggedright
-\begin{itemize}
-\item
-  \textbf{Easy to collect :} It only takes a few minutes for people to
-  answer a survey, and the data come in a clean and organized format
-  that requires little effort to analyze. In Part 2 below, you'll learn
-  how to clean and organize the results of a likert scale.
-\item
-  \textbf{Self-Knowledge Validity :} People know things about
-  themselves, often this knowledge is based in ``reality'', and
-  sometimes a self-report is the only way to get this knowledge. For
-  example, only you know what was your happiest moment in life, and you
-  probably have an accurate awareness about how anxious you are about
-  the final project in this class.
-\end{itemize}
-\end{minipage} \\
-\textbf{Limitations} & \begin{minipage}[t]{\linewidth}\raggedright
-\begin{itemize}
-\item
-  \textbf{Self-Enhancement / Self-Diminishment Bias :} People are often
-  motivated to either enhance or diminish their accomplishments when
-  asked. For example, no student has ever come up to me at the end of
-  the semester and told me, ``Professor, just so you know - I cheated on
-  the exam.'' Even though they may know they cheated, they don't want to
-  admit that because our society has norms or guidelines about when
-  cheating is appropriate\footnote{Indeed, our society decides what
-    \href{https://jacobin.com/2022/11/no-stock-buyback-coalition-labor-unions-corporate-greed-inequality}{forms
-    of cheating are acceptable}.}. Other times, a person may not want to
-  highlight their accomplishments (self-diminishment) because they don't
-  want to seem like they are bragging.
-\item
-  \textbf{Self-Insight Bias :} Sometimes, people also really don't know
-  what they are like. A person may not know, for example, whether they
-  snore when they sleep (a behavior), how anxious they really are in a
-  situation (an affect), or their patterns of unconscious bias (a
-  cognition).
-\end{itemize}
-\end{minipage} \\
-\end{longtable}
-
-Self-reports have a bad reputation in psychology, particularly because
-of the ability for people to engage in self-enhancement/diminishment or
-self-insight bias. However, they are a very powerful, and very commonly
-used method of assessment, even for studies where researchers are able
-to observe other types of data.~
-
-For example, despite all the behavioral data that powerful technology
-companies like Facebook/Instagram/Meta, TikTok, Twitter/X, etc. collect,
-you've probably seen them ask you to answer some survey. They care about
-you\footnote{\ldots and your clicking on advertisements; hey, it's hard
-  to distinguish the two really\ldots{}}, and know that asking you
-questions about yourself is an important way to show that level of care.
-
-Below is one example from some survey when I used to be on Facebook. If
-they changed their graphic design since I was last on, it's probably
-because of some survey feedback they received.
-
-\begin{center}
-\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/4L_FBsurvey.png}}
-\end{center}
-
-\includegraphics[width=5.46875in,height=\textheight,keepaspectratio]{chapters/images/4L_fbsurvey2.png}
-
-\section{Observations}\label{observations}
-
-Often, self-reports are insufficient to capture what a person is like,
-or researchers are studying individuals who cannot give self-reports,
-such as infants, people with disabilities, or non-human
-animals.\footnote{If I was a billionaire, I'd fund a team of
-  psychologists to train monkeys to answer surveys. this is maybe why I
-  am not a billionaire. that and the whole ``intergenerational wealth''
-  thing / chosen teaching career / lack of a desire to crush others and
-  extract as much wealth from them\ldots hard to know which factor is at
-  play. Life is complex! Let me know if you are a billionaire and want
-  to fund some other ideas / subscribe to my newsletter.
-
-  \hfill\break
-}
-
-Read about some common forms of observation methods below.
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0195}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.9805}}@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\textbf{Definition} & Observational methods refer to ways in which
-another individual generates data on the target person of interest. \\
-\textbf{Examples} & \begin{minipage}[t]{\linewidth}\raggedright
-\textbf{Informant Reports.} Informant reports are a special form of
-surveys, where researchers ask friends, family, or strangers to answer
-survey questions about another person. This is technically observational
-data, since the people answering the surveys are basing their judgments
-on their observations of the individual.
-
-\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/4L_YOU.png}}
-\textbar{}
-
-\textbf{Behavioral Data}. When the variables of interest are physical,
-then researchers can use measurement tools to directly observe the
-behavior. For example, researchers wanting to measure stress might
-measure cortisol by taking samples of saliva from the cheek; researchers
-wanting to understand the brain look to voxel activation with fMRI, or
-cortical neuron activation with EEG.
-
-\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/4L_swab.png}}
-\textbar{}
-
-\textbf{Behavioral Coding.} Sometimes, it's easier to have research
-assistants observe the physical behaviors of interest. For example,
-y'all served as behavioral coders when you counted the number of
-interruptions (a behavior!) Other times, research assistants will
-observe real-life interactions and observe variables such as time spent
-talking, distance between participants, or provide ratings of how much
-emotion or anxiety the person seemed to be expressing (using a rating
-scale). The ``strange situation'' task (where a parent leaves the room
-and researchers observe what a child does) is another
-example.\footnote{You can compare
-  \href{https://www.youtube.com/watch?v=QquZxJhuSg8}{this child's
-  reaction} to \href{https://www.youtube.com/watch?v=AGRT6VjnTm8}{this
-  child's reaction}. What do you observe? How would you quantify these
-  observations and turn them into cold, hard data?
-
-  \hfill\break
-}
-
-\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/4_RAnotes.png}}\strut
-\end{minipage} \\
-\textbf{Benefits} & \begin{minipage}[t]{\linewidth}\raggedright
-\begin{itemize}
-\item
-  \textbf{``External''.} Researchers like observational methods because
-  they, by definition, require some outward expression of the underlying
-  psychological processes. Professor could go on a rant here and won't,
-  but psychology has been increasingly fixated on behavior since Watson
-  kicked off the behaviorism movement in the 1920s, and these data are
-  often prioritized, since our field loves predicting people's actual
-  behavior (so they can exert power over it).
-\item
-  \textbf{Less influenced by self-report biases.} Observers are
-  considered to be less biased than individuals, who may be particularly
-  prone to self-enhancement, self-diminishment. And observers may be
-  able to fill in the gaps left behind by self-insight bias. For
-  example, a person's close friends may know more about the individual's
-  reputation than they themselves do.
-\item
-  \textbf{More reliable (multiple sources).} While there is only one
-  self to provide a self-report, there can be multiple observers.
-  Indeed, observational methods almost always leverage this power and
-  require multiple swabs of spit to get a reliable estimate of cortisol,
-  or have multiple research assistants rate the same behavior to check
-  and make sure they are each getting a similar answer.
-\end{itemize}
-\end{minipage} \\
-\textbf{Limitations} & \begin{minipage}[t]{\linewidth}\raggedright
-\begin{itemize}
-\item
-  \textbf{Time-Intensive.} It can be incredibly costly to collect
-  observational data. Yale charges over \$600/hour for use of their fMRI
-  machine (Berkeley doesn't list their prices), and conducting a study
-  to measure a naturally occurring behavior could take years between
-  designing the study, recruiting and training the research assistants
-  to observe the behavior, taking the time to collect the data, and then
-  doing the behavioral coding necessary to convert the observations into
-  numbers. Whew. Much easier to just give someone a survey and have them
-  complete it.
-\item
-  \textbf{The Hawthorne Effect.} The act of observation can often change
-  behavior. Couples may be less likely to fight if they know they are
-  being monitored by a psychologist, and even
-  \href{https://en.wikipedia.org/wiki/Wave\%E2\%80\%93particle_duality}{light
-  changes its behavior depending on the way it is observed}. Researchers
-  can take steps to address this change in behavior - and sometimes the
-  power of the phenomenon is so large that it doesn't matter if a
-  researcher is there. In couples studies, for example, researchers can
-  get couples to fight by having each person write out a list of things
-  that cause conflict in the relationship, and then having the people
-  trade lists and talk about it. Often however, individuals habituate to
-  the presence of observation - do you think about the fact that your
-  online interactions are being harvested by tech companies every day,
-  or just kinda get used to it?
-\item
-  \textbf{Not all aspects of psychology are observable.} A person's
-  subjective experience matters, and sometimes a self-report is the only
-  way you can get this data. If you look like you are smiling and have
-  the neurotransmitter levels that suggest you are happy, but feel
-  miserable, are you happy?
-\end{itemize}
-\end{minipage} \\
-\end{longtable}
-
-\textbf{TLDR : there are lots of different methods to measure what
-individuals are like, and for your final project you probably will want
-to give people self-report surveys to keep things simple for this very
-first study!}
-
-\chapter{Quiz 4.}\label{quiz-4.}
+\chapter{Likert Scale Quiz.}\label{likert-scale-quiz.}
 
 Note : Creating likert scales takes practice. So I went ahead and
-uploaded a video key for Quiz 4 (as part of the quiz assignment). You
+uploaded a video key for this quiz (as part of the quiz assignment). You
 should try to take the quiz on your own - good to have a little bit of
-struggle! - and use the video key as a guide to learn. We will continue
-to practice over the next few weeks; this is the last new big topic in R
-we will learn before the R Exam.
+struggle! - and use the video key as a guide to learn.
 
 \chapter{``Normal'' Data}\label{normal-data}
 
-In this chapter, we'll define and discuss the idea of ``normality'', how
-psychologists (and scientists) evaluate whether data are ``good''.
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-important-color-frame, left=2mm, colbacktitle=quarto-callout-important-color!10!white, breakable, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{In This Chapter}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
+
+\begin{itemize}
+\item
+  Define, discuss, and critique the idea of ``normality'' and
+  ``deviance''.
+\item
+  Use R to calculate a z-score, which quantifies an individual's
+  deviance from the mean.
+\item
+  Learn how scientists evaluate the quality of data, and see how this
+  was used to debunk phrenology as racist.
+\end{itemize}
+
+\end{tcolorbox}
 
 \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/clipboard-4149537892.png}}
 
 The image above depicts
 \href{https://www.thomasjprice.com/times-square-arts}{\emph{Grounded in
 the Stars}}, a 12-foot sculpture of a young woman that stood in New York
-CIty's Times Square from April 29 through June 14, 2025.
+City's Times Square from April 29 through June 14, 2025.
 
 There's a lot that I love about this image, from the artistry of
 rendering braids and clothes so naturally in sculpted bronze, to the way
@@ -4563,7 +4333,7 @@ for answer\footnote{It is negatively skewed, since the tail is on the
 \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/3_RGrades.png}}
 \end{center}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{``Random'' Reasons for Variation}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{``Random'' Reasons for Variation}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 Lots of things can influence a student's score on an exam, such as how
 much students were motivated to study, how much time they had to study,
@@ -4573,7 +4343,7 @@ class, whether they were sick or not on the day of the exam, their
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{``Non-Random'' Reasons for Variation.}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{``Non-Random'' Reasons for Variation.}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 These data are not normally distributed because the students were all
 part of the same college, in the same classroom, taught by the same
@@ -4594,7 +4364,7 @@ the exam.
 
 \end{footnotesize}}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Culture in Statistics : The Normal Curve}, colframe=quarto-callout-warning-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-warning-color-frame, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Culture in Statistics : The Normal Curve}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 That's right folks, it's time for another chat with your friend
 Open-Source Mickey Mouse! This time, we're gonna chat about the idea
@@ -5224,7 +4994,7 @@ convergent, discriminant) and reliability (test-retest / interjudge) of
 a bathroom scale? Think about this on your own, then look over the video
 key / guide below.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Expand To See Answers}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Expand To See Answers}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 Watch the video below to go over some possible answers, or just look
 over the table.
@@ -5232,8 +5002,8 @@ over the table.
 \url{https://youtu.be/T9dTk6Sa434}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3826}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6174}}@{}}
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -5351,9 +5121,278 @@ Readings{]}}\label{would-you-like-to-learn-more-optional-readings}
   recent research}to test phrenology's theories.
 \end{itemize}
 
+\section{Hard Data in a Soft Science}\label{hard-data-in-a-soft-science}
+
+One of the challenges psychologists face in their attempts to be a REAL
+SCIENCE ™ is that their data is particularly hard to collect. Unlike
+physical variables like temperature or mass, psychological variables are
+often internal to people, and defined by mental states that are
+difficult to observe. As we saw in lecture, even a ``simple'' expressed
+behavior like an interruption can be very difficult to measure with high
+degrees of reliability and validity that we would hope. For a more
+complex variable such as depression, the task might seem impossible.
+Indeed, a large part of psychological research is engaging in debate and
+scholarship about how to best \textbf{operationalize} variables of
+interest (e.g., how should we define or measure depression?)~
+
+A full discussion of the different types of methods psychologists use to
+collect data is beyond the scope of this author. However, below I've
+tried to outline a few different approaches psychologists take,
+commenting on their benefits and limitations so you can begin to
+critically think about whether these methods are, in fact, getting at
+``THE TRUTH'' of what people (or non-human animals) are like.
+
+\subsection{Self-Reports}\label{self-reports}
+
+One of the simplest ways to collect data on an individual is just to ask
+them what they are like, and have the person report on themselves (a
+self-report). There are two different approaches to getting self-reports
+- survey methods and qualitative interviews.
+
+\subsubsection{Qualitative Interviews}\label{qualitative-interviews}
+
+One way to get individuals to tell you what they are like is through a
+structured interview where researchers ask open-ended questions. One
+such example of this is the McAdams Life Narrative\footnote{McAdams
+  talks about his work in this \hyperref[0]{popular press interview} and
+  writes about it in this \hyperref[0]{scientific journal review
+  article}.}. In this structured interview, a trained research assistant
+asks a set of broad questions to participants over the course of 1 to 3
+hours. The research assistant is advised to ``feel free to skip some of
+these questions if they seem redundant or irrelevant, and should follow
+up with other questions as needed `` but also to ``not adopt an advisory
+or judgmental role, but should instead serve as an empathic and
+encouraging guide and an affirming sounding board.''
+
+Below is an excerpt from the first part of the interview - if you are
+comfortable, please share your chapters on the Chapter 4 Discord
+thread!\footnote{\href{https://www.dropbox.com/scl/fi/pn3tlz9alo4u0m6lqgcwl/McAdams_Narrative_Instructions.pdf?rlkey=8m48abjh5kgdxbbdworh0dxbh&dl=0}{Here's
+  a link to the full narrative instructions} if you want to do the whole
+  thing; it's a great way to know someone.}
+
+\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/4_McAdams.png}}
+
+\subsubsection{Survey Methods}\label{survey-methods}
+
+Qualitative interviews are not very common in psychological research,
+because they take a lot of time to conduct, and then more time to
+convert people's open-ended responses into data (a form of behavioral
+coding, described in more detail below).
+
+Instead, the majority of self-reports come from surveys. Read about
+these below.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0290}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.9710}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Definition} & A questionnaire where individuals answer specific
+questions about themselves on a structured rating scale. \\
+\textbf{Example} & ``On a scale from 1 (Strongly Disagree) to 5
+(Strongly Agree), how satisfied with your life are you right now?'' \\
+\textbf{Benefits} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{itemize}
+\item
+  \textbf{Easy to collect :} It only takes a few minutes for people to
+  answer a survey, and the data come in a clean and organized format
+  that requires little effort to analyze. In Part 2 below, you'll learn
+  how to clean and organize the results of a likert scale.
+\item
+  \textbf{Self-Knowledge Validity :} People know things about
+  themselves, often this knowledge is based in ``reality'', and
+  sometimes a self-report is the only way to get this knowledge. For
+  example, only you know what was your happiest moment in life, and you
+  probably have an accurate awareness about how anxious you are about
+  the final project in this class.
+\end{itemize}
+\end{minipage} \\
+\textbf{Limitations} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{itemize}
+\item
+  \textbf{Self-Enhancement / Self-Diminishment Bias :} People are often
+  motivated to either enhance or diminish their accomplishments when
+  asked. For example, no student has ever come up to me at the end of
+  the semester and told me, ``Professor, just so you know - I cheated on
+  the exam.'' Even though they may know they cheated, they don't want to
+  admit that because our society has norms or guidelines about when
+  cheating is appropriate\footnote{Indeed, our society decides what
+    \href{https://jacobin.com/2022/11/no-stock-buyback-coalition-labor-unions-corporate-greed-inequality}{forms
+    of cheating are acceptable}.}. Other times, a person may not want to
+  highlight their accomplishments (self-diminishment) because they don't
+  want to seem like they are bragging.
+\item
+  \textbf{Self-Insight Bias :} Sometimes, people also really don't know
+  what they are like. A person may not know, for example, whether they
+  snore when they sleep (a behavior), how anxious they really are in a
+  situation (an affect), or their patterns of unconscious bias (a
+  cognition).
+\end{itemize}
+\end{minipage} \\
+\end{longtable}
+
+Self-reports have a bad reputation in psychology, particularly because
+of the ability for people to engage in self-enhancement/diminishment or
+self-insight bias. However, they are a very powerful, and very commonly
+used method of assessment, even for studies where researchers are able
+to observe other types of data.~
+
+For example, despite all the behavioral data that powerful technology
+companies like Facebook/Instagram/Meta, TikTok, Twitter/X, etc. collect,
+you've probably seen them ask you to answer some survey. They care about
+you\footnote{\ldots and your clicking on advertisements; hey, it's hard
+  to distinguish the two really\ldots{}}, and know that asking you
+questions about yourself is an important way to show that level of care.
+
+Below is one example from some survey when I used to be on Facebook. If
+they changed their graphic design since I was last on, it's probably
+because of some survey feedback they received.
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/4L_FBsurvey.png}}
+\end{center}
+
+\includegraphics[width=5.46875in,height=\textheight,keepaspectratio]{chapters/images/4L_fbsurvey2.png}
+
+\subsubsection{Observations}\label{observations}
+
+Often, self-reports are insufficient to capture what a person is like,
+or researchers are studying individuals who cannot give self-reports,
+such as infants, people with disabilities, or non-human
+animals.\footnote{If I was a billionaire, I'd fund a team of
+  psychologists to train monkeys to answer surveys. this is maybe why I
+  am not a billionaire. that and the whole ``intergenerational wealth''
+  thing / chosen teaching career / lack of a desire to crush others and
+  extract as much wealth from them\ldots hard to know which factor is at
+  play. Life is complex! Let me know if you are a billionaire and want
+  to fund some other ideas / subscribe to my newsletter.
+
+  \hfill\break
+}
+
+Read about some common forms of observation methods below.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.0195}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.9805}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Definition} & Observational methods refer to ways in which
+another individual generates data on the target person of interest. \\
+\textbf{Examples} & \begin{minipage}[t]{\linewidth}\raggedright
+\textbf{Informant Reports.} Informant reports are a special form of
+surveys, where researchers ask friends, family, or strangers to answer
+survey questions about another person. This is technically observational
+data, since the people answering the surveys are basing their judgments
+on their observations of the individual.
+
+\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/4L_YOU.png}}
+\textbar{}
+
+\textbf{Behavioral Data}. When the variables of interest are physical,
+then researchers can use measurement tools to directly observe the
+behavior. For example, researchers wanting to measure stress might
+measure cortisol by taking samples of saliva from the cheek; researchers
+wanting to understand the brain look to voxel activation with fMRI, or
+cortical neuron activation with EEG.
+
+\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/4L_swab.png}}
+\textbar{}
+
+\textbf{Behavioral Coding.} Sometimes, it's easier to have research
+assistants observe the physical behaviors of interest. For example,
+y'all served as behavioral coders when you counted the number of
+interruptions (a behavior!) Other times, research assistants will
+observe real-life interactions and observe variables such as time spent
+talking, distance between participants, or provide ratings of how much
+emotion or anxiety the person seemed to be expressing (using a rating
+scale). The ``strange situation'' task (where a parent leaves the room
+and researchers observe what a child does) is another
+example.\footnote{You can compare
+  \href{https://www.youtube.com/watch?v=QquZxJhuSg8}{this child's
+  reaction} to \href{https://www.youtube.com/watch?v=AGRT6VjnTm8}{this
+  child's reaction}. What do you observe? How would you quantify these
+  observations and turn them into cold, hard data?
+
+  \hfill\break
+}
+
+\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/4_RAnotes.png}}\strut
+\end{minipage} \\
+\textbf{Benefits} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{itemize}
+\item
+  \textbf{``External''.} Researchers like observational methods because
+  they, by definition, require some outward expression of the underlying
+  psychological processes. Professor could go on a rant here and won't,
+  but psychology has been increasingly fixated on behavior since Watson
+  kicked off the behaviorism movement in the 1920s, and these data are
+  often prioritized, since our field loves predicting people's actual
+  behavior (so they can exert power over it).
+\item
+  \textbf{Less influenced by self-report biases.} Observers are
+  considered to be less biased than individuals, who may be particularly
+  prone to self-enhancement, self-diminishment. And observers may be
+  able to fill in the gaps left behind by self-insight bias. For
+  example, a person's close friends may know more about the individual's
+  reputation than they themselves do.
+\item
+  \textbf{More reliable (multiple sources).} While there is only one
+  self to provide a self-report, there can be multiple observers.
+  Indeed, observational methods almost always leverage this power and
+  require multiple swabs of spit to get a reliable estimate of cortisol,
+  or have multiple research assistants rate the same behavior to check
+  and make sure they are each getting a similar answer.
+\end{itemize}
+\end{minipage} \\
+\textbf{Limitations} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{itemize}
+\item
+  \textbf{Time-Intensive.} It can be incredibly costly to collect
+  observational data. Yale charges over \$600/hour for use of their fMRI
+  machine (Berkeley doesn't list their prices), and conducting a study
+  to measure a naturally occurring behavior could take years between
+  designing the study, recruiting and training the research assistants
+  to observe the behavior, taking the time to collect the data, and then
+  doing the behavioral coding necessary to convert the observations into
+  numbers. Whew. Much easier to just give someone a survey and have them
+  complete it.
+\item
+  \textbf{The Hawthorne Effect.} The act of observation can often change
+  behavior. Couples may be less likely to fight if they know they are
+  being monitored by a psychologist, and even
+  \href{https://en.wikipedia.org/wiki/Wave\%E2\%80\%93particle_duality}{light
+  changes its behavior depending on the way it is observed}. Researchers
+  can take steps to address this change in behavior - and sometimes the
+  power of the phenomenon is so large that it doesn't matter if a
+  researcher is there. In couples studies, for example, researchers can
+  get couples to fight by having each person write out a list of things
+  that cause conflict in the relationship, and then having the people
+  trade lists and talk about it. Often however, individuals habituate to
+  the presence of observation - do you think about the fact that your
+  online interactions are being harvested by tech companies every day,
+  or just kinda get used to it?
+\item
+  \textbf{Not all aspects of psychology are observable.} A person's
+  subjective experience matters, and sometimes a self-report is the only
+  way you can get this data. If you look like you are smiling and have
+  the neurotransmitter levels that suggest you are happy, but feel
+  miserable, are you happy?
+\end{itemize}
+\end{minipage} \\
+\end{longtable}
+
 \chapter{TLDR.}\label{tldr.-1}
 
-Science on people is hard.
+Developing a valid science of people is hard at best, and can be
+problematic when you use it to rank people. There are lots of different
+methods to measure what individuals are like, and for your final project
+you probably will want to give people self-report surveys to keep things
+simple for this very first study.
 
 \part{Predicting People}
 
@@ -5423,22 +5462,19 @@ Loading required package: carData
 You can read more about these variables by typing in ?Prestige to access
 the help page for the dataset. For this lecture, we'll be working with
 the variable prestige, which is a measure of how prestigious certain
-jobs were, in Canada, in the 1960s\footnote{Super exciting! But remember
-  this is like driving around a safe, boring parking lot!! We'll hit the
-  highway soon enough.}. Note that individuals in this dataset are not
-people, but people's attitudes about types of jobs.
+jobs were, in Canada, in the 1960s\footnote{It's up to you which group
+  will be assigned the value 0 and which group will be assigned the
+  value 1, and later we will learn how to swap this around and why it
+  might matter.}. Note that individuals in this dataset are not people,
+but people's attitudes about types of jobs.
 
 The graph to the right illustrates variation in this variable, as well
 as how the mean of prestige is the value that is closest to all the
 scores in the distribution.
 
-The graph below \footnote{NOTE: Eagle eyed students may note something
-  odd about the way the data are arranged on this graph - it looks like
-  there's some quadratic (curved) pattern in the way the data are
-  arranged. Because the x-axis for this graph (the index) is the row in
-  which each data, all this quadratic pattern means is that more
-  prestigious jobs tended to be listed earlier in the dataset than less
-  prestigious jobs.} is defined by the following equation :
+The graph below \footnote{install.packages(``gplots'') to install the
+  package, then library(gplots) to load.} is defined by the following
+equation :
 
 \(\huge y_i = \hat{Y} + \epsilon_i\)
 
@@ -5595,13 +5631,14 @@ In the same way I could expect rain sounds to be related to rain, a job
 that requires more years of education might be related to how
 prestigious the job is. This is not true of all careers (consider the
 ``high educated'' poet ridiculed by society, perhaps, or the ``low
-educated'' firefighter revered by society\footnote{And good to explore
-  why we care about prestige in careers anyway? I blame capitalism and
-  our society's unwillingness to provide people with their basic needs,
-  so a person's value is determined by how much their material
-  conditions, and whether they can meet (or exceed) those basic needs.
-  Anyway, point is firefighters and poets are both cool and important
-  for society.}.
+educated'' firefighter revered by society\footnote{The warning message
+  is telling me that the gplots and the stats libaries both have a
+  function called lowess. R is ``masking'' this function from stats,
+  which means if I refer to the lowess function , R will think I mean
+  the one that comes from the gplots package. If I want to use the
+  lowess from the stats library, I will need to manually tell R to do
+  this using stats::lowess(). We won't use the lowess function in this
+  class.}.
 
 Let's graph these two variables side by side.
 
@@ -5746,8 +5783,8 @@ prediction and the individual's actual y value.
 
 \end{footnotesize}}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{\href{https://docs.google.com/forms/d/e/1FAIpQLSev3Ot9gGd9QcHpEh5GhWifCAA7c_A-ycKT-7Zg5orC3dtGlg/viewform?usp=sf_link}{Check-In:
-Intercepts and Slopes}}, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-note-color-frame, left=2mm, colbacktitle=quarto-callout-note-color!10!white, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{\href{https://docs.google.com/forms/d/e/1FAIpQLSev3Ot9gGd9QcHpEh5GhWifCAA7c_A-ycKT-7Zg5orC3dtGlg/viewform?usp=sf_link}{Check-In:
+Intercepts and Slopes}}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \textbf{Test your understanding of linear models!} Use the Prestige
 dataset and R to predict the variable income (the DV) from the variable
@@ -5943,8 +5980,8 @@ form!!!!
 
 \url{https://youtu.be/mfR5JNwCrYs}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{\href{https://docs.google.com/forms/d/e/1FAIpQLScaXZgOIYrWEUQdOS_vRq2UlMne8VHOvmfRYzSerpsamGP5Zg/viewform?usp=sf_link}{Check-In
-: Understanding \(R^2\)}}, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-note-color-frame, left=2mm, colbacktitle=quarto-callout-note-color!10!white, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{\href{https://docs.google.com/forms/d/e/1FAIpQLScaXZgOIYrWEUQdOS_vRq2UlMne8VHOvmfRYzSerpsamGP5Zg/viewform?usp=sf_link}{Check-In
+: Understanding \(R^2\)}}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 Here's a super quick check-in on interpreting \(R^2\) values!
 
@@ -5953,7 +5990,7 @@ Here's a super quick check-in on interpreting \(R^2\) values!
 \chapter{Part 3 : Interpreting Models with the
 Z-Score}\label{part-3-interpreting-models-with-the-z-score}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{RECAP : Uhhh\ldots can you re-explain Z-Scoring Professor???}, colframe=quarto-callout-warning-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-warning-color-frame, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{RECAP : Uhhh\ldots can you re-explain Z-Scoring Professor???}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 A z-score describes how far an individual score falls above and below
 the mean (a residual!) in units of standard deviation. Z-scores are used
@@ -6148,8 +6185,34 @@ z-scoring in another example, from the narcissism dataset.
 : Understanding Z-Scores and this Chapter!
 Document}}{CHECK-OUT : Understanding Z-Scores and this Chapter! Document}}\label{check-out-understanding-z-scores-and-this-chapter-document}
 
-\chapter{Linear Model Pt 2: Categorical
-IVs}\label{linear-model-pt-2-categorical-ivs}
+\chapter{Linear Model : Categorical
+IV}\label{linear-model-categorical-iv}
+
+\chapter{Chapter Overview}\label{chapter-overview}
+
+\begin{figure*}
+
+\pandocbounded{\includegraphics[keepaspectratio]{chapters/images/clipboard-2948302145.png}}
+
+\end{figure*}%
+
+This week, we will learn how to define and interpret a linear model when
+the predictor is categorical.
+
+Often times, researchers want to group people into categories that
+represent broad and important differences. For example researchers or
+\href{https://en.wikipedia.org/wiki/Man_at_the_Crossroads}{artists}
+looking to understand social class might divide individuals into groups
+like capitalists and workers.
+
+These categorical variables highlight ways that people differ - there
+are real and important differences between people who own the means of
+production, and people who do the work. However, categorical variables
+can also exaggerate the differences between groups (e.g., both
+capitalists and workers probably love their children in similar ways)
+and can minimize individual differences within groups (e.g., workers can
+differ in terms of their income, their race, their attitudes about
+capitalism, etc.)
 
 \chapter{Part 1 : The Linear Model with a Categorical IV with Two
 Levels}\label{part-1-the-linear-model-with-a-categorical-iv-with-two-levels}
@@ -6157,16 +6220,15 @@ Levels}\label{part-1-the-linear-model-with-a-categorical-iv-with-two-levels}
 \section{RECAP : Working With Categorical Factor and
 Levels}\label{recap-working-with-categorical-factor-and-levels}
 
-It's been a while since we focused on categorical variables. As a
-reminder, a categorical variable measures variation in terms of groups.
-The specific groups are called \textbf{levels}, and the broad name for
-the groups is called a \textbf{factor.}~
+It's been a while since we focused on categorical variables, so let's
+review some terms as we work through an example.
 
-For example, in the ``MBA Business Student Data''
+The specific groups of a categorical variable are called
+\textbf{levels}, and the broad name for the groups is called a
+\textbf{factor.} For example, in the ``MBA Business Student Data''
 (\href{https://www.dropbox.com/scl/fi/b2vq1yi5azwb5u8j7xe74/hormone_data.csv?rlkey=lv77ppuseg5cmqsy99pal55ct&dl=0}{hormone\_data.csv})
 researchers measure the variable \textbf{sex} as a categorical factor,
-with just two levels : \textbf{female} and \textbf{male}\footnote{I'll
-  just spend pages going over it. Hah hah.}.
+with just two levels : \textbf{female} and \textbf{male}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6336,7 +6398,7 @@ Take a moment and look at this graph - what do you observe?
 
 \pandocbounded{\includegraphics[keepaspectratio]{chapters/7R_CategoricalIV_files/figure-pdf/unnamed-chunk-6-1.pdf}}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{What Professor Sees.}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{What Professor Sees.}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6646,8 +6708,8 @@ make the effect look bigger than it really is.~
 If only there was a way to actually define how large an effect is..using
 numbers! Oh\ldots.do you hear that\ldots..it's \(R^2\)'s music!!!!!
 
-\section{\texorpdfstring{\(R^\) and the Linear Model with a Categorical
-IV}{R\^{} and the Linear Model with a Categorical IV}}\label{r-and-the-linear-model-with-a-categorical-iv}
+\section{\texorpdfstring{\(R^2\) and the Linear Model with a Categorical
+IV}{R\^{}2 and the Linear Model with a Categorical IV}}\label{r2-and-the-linear-model-with-a-categorical-iv}
 
 The principle behind \(R^2\) for a linear model with a categorical IV is
 the same - we are looking to see \emph{how much less residual error
@@ -6854,7 +6916,7 @@ interpret what you learn.
 
 Try this on your own. There's a key (and video key) below.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \href{https://www.loom.com/share/909ad220c4d44d39886cd805eccbcb3f?sid=4e1d79e5-8b05-44f1-99cb-8fa9df914b34}{Defining
 the Linear Model and Graphing the Relationship with plotmeans()}
@@ -6903,7 +6965,7 @@ R2}
 the
 Data}\label{part-2-the-four-reasons-why-youd-observe-a-pattern-in-the-data}
 
-\subsubsection{Example : The Mascot
+\subsection{Example : The Mascot
 Dataset}\label{example-the-mascot-dataset}
 
 Last lecture, we saw that there was a relationship between how much
@@ -6986,7 +7048,7 @@ organized and on-time) and how long they will live.
 \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/clipboard-821411917.png}}
 \end{center}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Answers to Personality and Longevity Example}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Answers to Personality and Longevity Example}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7160,8 +7222,8 @@ questions to evaluate sampling bias.
 
 \pandocbounded{\includegraphics[keepaspectratio]{chapters/images/clipboard-3670391903.png}}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{\textbf{What is the research question, who is the population relevant to
-this question, and who is in the sample?}}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{\textbf{What is the research question, who is the population relevant to
+this question, and who is in the sample?}}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \item
@@ -7177,8 +7239,8 @@ this question, and who is in the sample?}}, colframe=quarto-callout-tip-color-fr
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{\textbf{Is the sample representative of the population, or is there a
-systematic bias?}}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{\textbf{Is the sample representative of the population, or is there a
+systematic bias?}}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -7192,8 +7254,8 @@ systematic bias?}}, colframe=quarto-callout-tip-color-frame]
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Is this bias \textbf{related} to the \textbf{dependent variable}? (Will
-the bias influence the results?)}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Is this bias \textbf{related} to the \textbf{dependent variable}? (Will
+the bias influence the results?)}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \item
@@ -8072,8 +8134,8 @@ All the t-value does is evaluate how large the slope from your study (b
 = the slope) is, compared to the ``average'' slope you might find due to
 random sampling error (se = the standard error).~
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Pop Quiz. As a researcher hoping to show that your slope is ``real'',
-would you want the t-value to be LARGE or SMALL?}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Pop Quiz. As a researcher hoping to show that your slope is ``real'',
+would you want the t-value to be LARGE or SMALL?}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 You would want the t-value to be LARGE, since this means that your slope
 is a lot bigger than the ``average slope'' you might find due to
@@ -8752,7 +8814,7 @@ experiment.}
   \& control{]}
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Answers to Google Shade of Blue Experiment}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Answers to Google Shade of Blue Experiment}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{itemize}
 \item
@@ -9398,8 +9460,8 @@ of the terms.~
   more about this here}.~
 \end{enumerate}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{ACTIVITY : Look over the models. How do the slopes change from Model 1
-to Model 3? From Model 2 to Model 3?}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{ACTIVITY : Look over the models. How do the slopes change from Model 1
+to Model 3? From Model 2 to Model 3?}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 The difference (slope) between professionals and blue collar workers
 that we saw in Model 1 (ß = 1.89) goes down and becomes non-significant
@@ -9819,7 +9881,7 @@ Y \textasciitilde{} 10 - 0 - 10 + 0~
 
 Y \textasciitilde{} 0
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example Model}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Example Model}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
@@ -10094,7 +10156,7 @@ As practice, take a look at the output - what do you observe? Think
 about a) the pattern in the data; b) the interpretation of the
 significance and effect size; c) the ``who cares'' about these results.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{What Professor Observes (Think On Ur Own First?)}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{What Professor Observes (Think On Ur Own First?)}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 I notice the following:
 
@@ -10172,7 +10234,7 @@ Multiple R-squared:  0.3695,    Adjusted R-squared:  0.3623
 F-statistic: 51.56 on 1 and 88 DF,  p-value: 2.111e-10
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, toprule=.15mm, rightrule=.15mm, breakable, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacityback=0, coltitle=black, bottomtitle=1mm, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{What Professor Thinks Went Wrong (Think On Ur Own First?)}, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, titlerule=0mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{What Professor Thinks Went Wrong (Think On Ur Own First?)}, leftrule=.75mm, arc=.35mm, toprule=.15mm]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -10831,8 +10893,6 @@ rows and j columns (replace i and j with numbers) \\
 \markboth{References}{References}
 
 \phantomsection\label{refs}
-\begin{CSLReferences}{0}{1}
-\end{CSLReferences}
 
 
 

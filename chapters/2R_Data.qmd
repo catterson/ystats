@@ -8,9 +8,9 @@ Hello students! We are back. In this week’s reading, you’ll learn how to wor
 ## To-Do List:
 
 -   Read this document and watch the videos to learn how to...
-    -   define different types of data, and using your human brain to understand these data (Part 1).
-    -   use R to define variables, import datasets, and navigate these datasets (Part 2).
-    -   navigate the big business of academic research, and find research articles relevant to your interests (Part 3.)
+    -   define different types of data, and using your human brain to understand these data (**Part 1 : Statistics**)
+    -   use R to define variables, import datasets, and navigate these datasets (**Part 2 : R**)
+    -   navigate the big business of academic research, and find research articles relevant to your interests (**Part 3 : Research Methods**)
 -   Take the practice exam (on navigating and loading datasets) in Part 2.
 -   Take Quiz 2.
 :::
@@ -418,14 +418,132 @@ Okay, this was a LOT. Like drinking water from a fire hose. I promise this will 
 
 -   [**Here’s a video key with the practice quiz answers**](https://youtu.be/cfeogtcAhNM)**.** Please attempt the quiz on your own; if you get stuck, refer to the relevant videos above. And feel free to reach out on Discord if something’s confusing or I got something wrong. Appreciate y’alls engagement!
 
-# Part 3 : No Research Methods Stuff This Week
+# Part 3 : Research for Fun and Profit
 
-Loading data is a major pain point, so best to focus on that. It will get easier, I promise :)
+Researchers share their knowledge with others in **scientific articles**. These are written by researchers for other researchers, tend to be very detailed and technical, and are a researcher's golden ticket to getting a job, research grant, invited talk or book deal, podcast invitation, etc. So there’s a lot of pressure to publish research among academics.
+
+## The Publication Process
+
+Researchers spread their scientific knowledge by publishing research papers. You can read more about how researchers publish research HERE. However, the TLDR is something like this :
+
+1.  **Researcher has an idea!** They assemble a team of others interested in the idea, and do a literature review in order to gain background knowledge on the topic.
+
+2.  **Researcher designs a study, collects data, analyzes the data, and writes up the data as a report.** All the steps of the scientific method. This is what you will do for the final project!
+
+3.  **Researcher submits the report to a scientific journal.** A journal is a collection of articles that are usually united by some common theme. In general, the shorter the name of the journal, the more prestigious[^2r_data-7]. For example, the “Journal of Research in Personality” is considered less prestigious than the “Journal of Personality and Social Psychology”, which is less prestigious than the journal called “Psychological Science”, which is considered less prestigious than the journal called “Science”. 
+
+4.  **An editor decides whether to review or reject the article.** Editors make an initial decision - based on a summary of the study and a letter that the author writes to the editor - whether the research article might be a good fit for the journal. If so, they pass it along to the next step. If not, they send a “Thanks, but….” rejection letter.
+
+5.  **The editor sends the article to peer-reviewers.** Peer reviewers are other researchers who have some related research interests or skills in the topic of the paper. They will look over the article. The editor may know these people, or they get asked by another peer-reviewer who didn’t want to do it but nominated someone else to step into the role. Peer-reviewers work on a completely voluntary basis - it’s seen as required service, and there’s a bit of professional reputation to maintain in doing this work. Yes, there are problems with unpaid labor in academia. We can chat about that if you’d like; ask questions / raise it as an issue on Discord.
+
+6.  **The editor makes a decision on the paper based on the feedback from the peer-reviewers.** The editor summarizes the feedback, and either accepts the paper, accepts as long as the person makes necessary revisions, asks the researcher to “Revise and Resubmit” (this is called an R&R - probably the most common outcome, and does not guarantee that the paper will be accepted if the revisions are made, but will get sent out to peer-reviewers again), or rejects the paper. In any case, the author will see the comments made by the peer-reviewers and the editor.
+
+7.  **The (accepted) paper goes to a proofreader and is published.** Hooray! This process probably takes anywhere from 6 months (insanely fast) to 2 years (or more, depending on the number of revisions that are required).
+
+[^2r_data-7]: Prestige is a very subjective concept in science. However, scientists have found many ways to quantify it, as described in the sections below!
+
+## Publish! Or Perish…?
+
+Ask any grad student or professor - the publication process is stressful, unpredictable, slow, and threatening. Grad students are required to publish papers in order to have a chance at an academic job as a researcher (and even extremely productive and thoughtful graduate students are not guaranteed an academic job), professors are required to publish papers in order to get a chance of getting tenure (and even extremely productive and thoughtful researchers are not guaranteed tenure).
+
+This creates incredible pressure on researchers to get results; pressure that often can interfere with people's ability to do GOOD science. We'll talk about this more throughout the semester; bring questions to class / Discord!
+
+## Types of Research Articles
+
+We’ll learn how to read and dissect scientific articles this semester, but first it will be important to learn how to identify the different types of articles. There are a few different types of articles that researchers write :
+
+1.  **Original Reports :** An original report is where the researcher(s) write about the results of a novel study they did to test some theory. This means the researchers did something “new” - usually they collected and analyzed new data to test a theory, or analyzed existing data in a new way. Here’s an example of an original report on the topic of emotion regulation.
+
+2.  **Replication :** A replication is a type of study where a researcher repeats the steps they (or another) researcher did, and sees if they get the same result. As we discussed, psychology (and many other fields) is in a **replication crisis.** This type of article was not very common before the 2010s, but is more common now. Still, faculty tend to be biased toward producing original reports - a school like Berkeley or Stanford would not hire a researcher just for doing replications. Here’s an example of a replication on the topic of emotion regulation. Note this is not really a direct replication, since they replicated in a different population.
+
+3.  **Meta-Analyses :** A meta-analysis is where researchers take other people’s data, collect it, and analyze it in order to see broad trends across an entire field. For example, a meta-analysis might take all the research on whether there’s a relationship between playing violent video games and violent behavior, and analyze this existing research in terms of common themes, such as the type of video games the researchers studied, the measures of violence, and the results. Meta-Analyses can be a great way to look at a broad trend, but they rely on the assumption that the individual studies they summarize are, in fact, valid themselves. That is, if there are systematic biases in the way researchers study a topic, the Meta Analysis won’t solve or even identify those problems. Here’s an example of a meta-analysis done on the topic of emotion regulation.
+
+4.  **Review Article :** Review articles summarize existing research without doing any additional data analysis (in contrast to a Meta-Analysis, in which there is data analysis of past research). This is the closest thing to a paper you might write in an English class - the authors take past research, summarize it in terms of common themes, and maybe highlight limitations, or new directions the field might take. Review articles are a great way to get a broad overview of a topic, since they summarize and organize past research, and will often highlight next steps that researchers should take. Here’s an example of a review article done on the topic of emotion regulation.
+
+## The Peer Review Process
+
+In order to publish their results, researchers have their peers review their work, and provide comments or suggestions. The peer-review process ideally serves two purposes : 
+
+1.  **Peer Reviewers Help Improve the Research.** The peers doing the reviewing are supposed to have expertise in the topic of the paper. This allows them to suggest ways to improve the paper. These suggestions can run from the simple (such as recommending other researchers to reference in the introduction or additional analyses to run) to very involved (suggestions for additional studies to run, different methods to use, or different people to study).
+
+2.  **Peer Reviewers Provide a Vote of Confidence in the Ideas and Analyses of the Paper.** The editor of a journal will look to the peer reviewers for evidence that the research is “high quality” and / or novel enough to be published. There’s a fair amount of bias here - some reviewers think the research is good but not considered a “good fit” for the journal. But the “peer-reviewed” label of a journal gives at least one layer of confidence that some other people like this research.
+
+One important aspect of the peer-review process is that the peer-reviewers are anonymous to the author, and sometimes the author is anonymous to the peer-reviewers. Ideally, this helps prevent previous beliefs bias (since some researchers may have positive or negative impressions of each other) and social influence bias (since a famous researcher at a fancy school may have their research more trusted than someone with less prestige to their name or institution). However, psychological fields are often small enough that people tend to know who’s doing what research, and there are other cues that can tip peer-reviewers off about who the author of a study is (for example, the author of a study will likely reference their own work, since their new study builds off their old study.)
+
+::: callout-warning
+### Academic Publishers are Predatory Capitalists.
+
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/angry_mickey.png) | You know how the music business can hurt artists and interrupt the free flow of groovy music??? Well, academic publishers are no different, and can make profits in the billions of dollars. They do this by charging exorbitant fees for accessing peer-reviewed articles, and not paying the researchers who publish papers any money. That’s right; researchers get a 0% commission of any sales of their academic articles. It is a horrible and corrupt system that deserves to die.                                                                                                                                                                                                                                                                                                                                                                                               |
+|                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|                              | But you don’t have to take my word for it! You can read more about the [**problem with publishers and a (controversial) solution - sci-hub**](https://bigthink.com/surprising-science/open-access-academic-publishers/) - here. Here’s an [**\[OPTIONAL\] longer article**](https://www.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science) that goes into the history of academic publishing, and why it’s so corrupt. [Here’s a video](https://www.youtube.com/watch?v=usDdBOGdEV0) that covers some of the same info. [**Here’s an even longer article**](https://www.theverge.com/2018/2/8/16985666/alexandra-elbakyan-sci-hub-open-access-science-papers-lawsuit) that goes into sci-hub and “scientific communism”. Feel free to skim or skip all of this! But lemme know if you read / found something you thought was interesting :) |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+:::
+
+## Finding Research Articles
+
+Next week we will find research articles related to YOUR research interests. I like to use Google Scholar for this - I find the search features powerful and Google will comb the internet for free versions of research articles (so I don’t have to be on campus or have proxy access to a college library, or “steal” articles from predatory publishers who don't pay authors using tools like sci-hub or annas-archive).
+
+For example, searching for one of my dissertation chapters shows [this page](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=situational+suppression&btnG=).
+
+![](images/5_DissChapterGoogle.png)
+
+### **How to Find Articles**
+
+Some tips for finding an article related to your topic : 
+
+1.  **Use the right “jargon”.** As part of the operationalization process, scientists use specialized terms. What you might call “holding it in” researchers call “expressive suppression”; a “jerk” would be someone “low in agreeableness”; that feeling of “being hella stressed before an exam but also low key stepping up because of that stress” is the “psychophysiological distinction between challenge and threat”. As you search for research related to your topic, take note of how researchers are describing related phenomena, and adjust your terms as needed. This is part of building your schema for the topic.
+
+2.  **Look at past research on the topic.** If you’ve found a relevant article on your topic, it’s likely that the article has referenced other research that is also relevant. Read or scan through the introduction (or the references section) and see if there’s something that looks related to your interests.
+
+3.  **Look at future research on the topic.** If you found a relevant article on your topic, it’s likely that other researchers have also read that article, and used it in their future research. Google Scholar has a “Cited By” button \[![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdWGVqSlFveQI-XwiVPiF5OVZfqTJ6ZVpbWoZ4d6eyX-vZsyT3FIds-nNl45tG3S27HzsIfnY5wTXOlGFuOUApLFAMv_gV26IYmMs8fK19bnTlcvPg3VyPAhpz2mM1si-r--9McWxuobdjof6KyiJ0TjZA_?key=1Qk4xdWCPgEH5SdUQ-Oz2w){width="40" height="13"}\]that you can use in order to see more recent articles that have referenced the article you found. This is a particularly useful way to find more recent research if you found a “classic” in the field, or check for replications or controversies.
+
+4.  **Old Research is Okay! But look for new research too.** Many students wonder if an “old” study is still relevant. Some papers are “classics” in the field, and great to read. But it’s likely that our field’s understanding of self-esteem has changed from 1970. If you are hoping to build your schema on a topic, finding a review article from the last 10 years (or 5; or 2!) would be a good place to start.
+
+### How to Evaluate an Article
+
+It can often be overwhelming for students to sift through the masses of research on a topic and know what’s most important and relevant. 
+
+Reading the article and using your critical thinking skills / psychological training is the best approach. To do this, it is recommended to **go to Graduate School,** where you can spend multiple years reading as much as you want on a beautiful college campus, taking classes where you can deeply engage with the research and ideas, immerse yourself in meaningful intellectual conversations had by other graduate students and kindly professors - the gleam of knowledge and excitement of supporting the next generation of researcher in their eye. Oh, that is not interesting to you / grad schools are flooded with applications / you can’t get an office hour appointment with your professor who actually / you don’t have the privilege of spending 5-8 years getting paid near-poverty wages to be a poor scholar? 
+
+Well, below are a few other ideas to make superficial, all depending on our good friend social influence bias :
+
+1.  **The Citation Count.** Google scholar allows you to see how many other research articles have referenced the article that you found. While this can be a nice way to see how influential a paper is, a paper could be referenced a lot for reasons other than its validity, and maybe no one has read the most amazing paper in the world.
+
+2.  **The Impact Factor of the Journal.** Journals have different “prestige factors”, and the impact factor is one way to quantify this prestige. Impact factor is usually defined as the number of times the average article in a journal has been referenced by other researchers in a year. So an impact factor of 2 means that each article in that journal is referenced by two other articles in a year. The impact factor is something you have to look up - journals usually track this. I wouldn’t spend too much time worrying about it, but it’s a quick way to get a very superficial sense of the journal’s reputation. For example, let’s see how the impact factor relates to our rule of “broader journal name = more prestige”.
+
++----------------------------------------------+--------------------------------------------------+
+| **Journal**                                  | **Impact Factor According to Google in 2024**    |
++----------------------------------------------+--------------------------------------------------+
+| Journal of Research in Personality           | 2.6                                              |
++----------------------------------------------+--------------------------------------------------+
+| Journal of Personality and Social Psychology | 6.4                                              |
++----------------------------------------------+--------------------------------------------------+
+| Psychological Science                        | 10.1 \[couldn’t find a recent stat on this tho\] |
++----------------------------------------------+--------------------------------------------------+
+| Science                                      | 44.7 \[this escalated quickly\]                  |
++----------------------------------------------+--------------------------------------------------+
+
+3.  **The Researcher and Institution.** Another way to evaluate an article is by evaluating the author. Does it look like this research has produced other cool research, or do you find their work boring and problematic for some reason? Is this researcher well known and respected in the field? Do they seem to have a happy photo with all their graduate students on their lab website, or is their lab website 10 years old and just has one sad looking graduate student asking for help with their eyes? Has the researcher continued to produce interesting, reliable research? Or were they the subject of a replication scandal?
+
+### Video Examples : Using Google Scholar to Find Research
+
+#### Using Google Scholar
+
+{{< video https://youtu.be/j4dx9Cw_SuU >}}
+
+-   How to find articles, use the right jargon, and do some very superficial evaluations of the article’s quality.
+
+#### Exporting APA Citations
+
+{{< video https://youtu.be/HWd4z4a67uE >}}
+
+-   The “” button on Google Scholar makes life so much easier!! No more memorizing APA format!! Hooray!!!
 
 # TLDR
 
 We learned about different kinds of data (numeric and categorical), and how to graph and interpret these data. We also learned how to load and navigate datasets in R in order to look at variables.
 
-In lecture this week, we will continue to get practice working with datasets and variables. Yeah!
+In class this week, we will continue to get practice working with datasets and variables. Yeah!
 
 That is all. Thx for reading, as always.
