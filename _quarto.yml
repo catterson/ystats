@@ -13,8 +13,8 @@ book:
         - ./chapters/1R_WhyStats.qmd
         - ./chapters/2R_Data.qmd
         - ./chapters/3R_Description.qmd
-        - ./chapters/4R_Scales.qmd
-        - ./chapters/5R_GoodScience.qmd
+        - ./chapters/4R_NormalPeople.qmd
+        - ./chapters/5R_GoodMeasures.qmd
     - part: "Predicting People"
       chapters: 
         - ./chapters/6R_LinearModels.qmd
