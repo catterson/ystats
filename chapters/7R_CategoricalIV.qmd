@@ -8,7 +8,7 @@ format:
 
 # Chapter Overview
 
-::: {.column-screen}
+::: column-screen
 ![](images/clipboard-2948302145.png)
 :::
 
@@ -27,8 +27,9 @@ It’s been a while since we focused on categorical variables, so let's review s
 The specific groups of a categorical variable are called **levels**, and the broad name for the groups is called a **factor.** For example, in the “MBA Business Student Data” ([hormone_data.csv](https://www.dropbox.com/scl/fi/b2vq1yi5azwb5u8j7xe74/hormone_data.csv?rlkey=lv77ppuseg5cmqsy99pal55ct&dl=0)) researchers measure the variable **sex** as a categorical factor, with just two levels : **female** and **male**.
 
 ```{r}
-mba <- read.csv("~/Dropbox/!WHY STATS/Chapter Datasets/hormone_data.csv", stringsAsFactors = T)
-mba$sex
+mba <- read.csv("~/Dropbox/!WHY STATS/Chapter Datasets/Hormone Data/hormone_dataset.csv", stringsAsFactors = T)
+mba$sex <- as.factor(mba$sex)
+levels(mba$sex) <- c("male", "female")
 ```
 
 I can use the `plot()` function to illustrate this variable, and `summary()` function to report the number of individuals in each group.
@@ -42,8 +43,9 @@ summary(mba$sex)
 
 ## A Conceptual Example
 
-The equation for a linear model with a categorical IV is identical to what we’ve seen before : \
-$\huge y_i = a + b_1 * X_i + \epsilon_i$
+The equation for a linear model with a categorical IV is identical to what we’ve seen before :
+
+$\huge y_i = a + b_1 \* X_i + \epsilon\_i\$
 
 We are making a **prediction about some dependent variable** ($y_i$) from a **linear equation** that has an **intercept** ($a$, the starting place for our prediction), and then **a slope** ($b_1$ an adjustment we make) based on information about another **(independent) variable** ($x_i$).
 
@@ -168,9 +170,9 @@ The linear model that we have defined with this categorical independent is doing
 
 When the independent variable is categorical, it cannot take any value, since the data are constrained to be in a specific group. This means that we have to assign each group some numeric value - something called **dummy coding**.In our example, researchers have measured sex as a simple binary (Male or Female), the independent variable (sex) can only take two values - Male and Female. Male and Female are not values, so we will assign them values - 0 and 1.
 
-R defaults to alphabetical order - because F (for Female) comes earlier in the alphabet than M (for Male), when X = 0, we will be referring to the Females in the dataset, and when X = 1, we will be referring to the Males in the dataset.[^1]
+R defaults to alphabetical order - because F (for Female) comes earlier in the alphabet than M (for Male), when X = 0, we will be referring to the Females in the dataset, and when X = 1, we will be referring to the Males in the dataset.[^7r_categoricaliv-1]
 
-[^1]: It’s up to you which group will be assigned the value 0 and which group will be assigned the value 1, and later we will learn how to swap this around and why it might matter.
+[^7r_categoricaliv-1]: It’s up to you which group will be assigned the value 0 and which group will be assigned the value 1, and later we will learn how to swap this around and why it might matter.
 
 | IV Value | Categorical Factor Level |
 |----------|--------------------------|
@@ -194,13 +196,13 @@ The slope is the adjustment we make to our prediction when X changes by 1, which
 
 I only use the plot() function for conceptual understanding - there are better (and easier) ways to visualize this linear model in R.
 
-One method I like is the plotmeans() function. This function comes from the gplots package. You will need to install this package once, then load it from the library each time you start R.[^2]
+One method I like is the plotmeans() function. This function comes from the gplots package. You will need to install this package once, then load it from the library each time you start R.[^7r_categoricaliv-2]
 
-[^2]: install.packages(“gplots”) to install the package, then library(gplots) to load.
+[^7r_categoricaliv-2]: install.packages(“gplots”) to install the package, then library(gplots) to load.
 
-Below is what it looks like when I install the gplots package (remember you only need to do this once) and then load the gplots library.[^3]
+Below is what it looks like when I install the gplots package (remember you only need to do this once) and then load the gplots library.[^7r_categoricaliv-3]
 
-[^3]: The warning message is telling me that the gplots and the stats libaries both have a function called lowess. R is “masking” this function from stats, which means if I refer to the lowess function , R will think I mean the one that comes from the gplots package. If I want to use the lowess from the stats library, I will need to manually tell R to do this using stats::lowess(). We won’t use the lowess function in this class.
+[^7r_categoricaliv-3]: The warning message is telling me that the gplots and the stats libaries both have a function called lowess. R is “masking” this function from stats, which means if I refer to the lowess function , R will think I mean the one that comes from the gplots package. If I want to use the lowess from the stats library, I will need to manually tell R to do this using stats::lowess(). We won’t use the lowess function in this class.
 
 ![](images/7_gplots.png){fig-align="center"}
 
@@ -276,13 +278,14 @@ So yes, male business students say they are more narcissistic than female busine
 
 ## Re-Leveling a 2-Level Factor Variable.
 
-Okay, last thing. Remember how I write that the order of the levels (female = 0, male = 1) is arbitrary, and R defaults to alphabetical order? Sometimes you want to change the order around - in this example, make male = 0 and female = 1.[^4]
+Okay, last thing. Remember how I write that the order of the levels (female = 0, male = 1) is arbitrary, and R defaults to alphabetical order? Sometimes you want to change the order around - in this example, make male = 0 and female = 1.[^7r_categoricaliv-4]
 
-[^4]: It’s not important to do releveling in this example. However, sometimes one group is a clear reference group that should be assigned as the intercept. For example, if one group is the “default” experience, and you want to see how the other group changes that default. We’ll chat more about this next week.
+[^7r_categoricaliv-4]: It’s not important to do releveling in this example. However, sometimes one group is a clear reference group that should be assigned as the intercept. For example, if one group is the “default” experience, and you want to see how the other group changes that default. We’ll chat more about this next week.
 
 This is called releveling. When you relevel, the data do not change - just the order of the data changes.
 
 ```{r}
+levels(mba$sex)
 relevel(mba$sex, ref = "male")
 ```
 

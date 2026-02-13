@@ -230,14 +230,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/4R_Scales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Measures</span></span></a>
+  <a href="../chapters/4R_NormalPeople.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">“Normal” Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/5R_GoodScience.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">“Normal” Data</span></span></a>
+  <a href="../chapters/5R_GoodMeasures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Good Measures</span></span></a>
   </div>
 </li>
       </ul>
@@ -1042,7 +1042,7 @@ So to recap, we have a population of data (40,000 individuals) for whom the “t
 <h3 class="anchored" data-anchor-id="calculating-nhst-in-r-very-easy">Calculating NHST in R : Very Easy!</h3>
 <p>Y’all will like this - it is very easy to do all the NHST stuff in R. First, you start with a linear model. I’m going to draw from the MBA study we’ve used before, and examine the relationship between Narcissism (NPI) and Age (age).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>mba <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Dropbox/!WHY STATS/Chapter Datasets/hormone_data.csv"</span>, <span class="at">stringsAsFactors =</span> T)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>mba <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Dropbox/!WHY STATS/Chapter Datasets/Hormone Data/hormone_dataset.csv"</span>, <span class="at">stringsAsFactors =</span> T)</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>age.mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(NPI <span class="sc">~</span> age, <span class="at">data =</span> mba)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(NPI <span class="sc">~</span> age, <span class="at">data =</span> mba, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">xlab =</span> <span class="st">"Age"</span>, <span class="at">ylab =</span> <span class="st">"Narcissism (NPI)"</span>)</span>
@@ -1060,7 +1060,7 @@ So to recap, we have a population of data (40,000 individuals) for whom the “t
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(age.mod)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)         age 
- 4.74855460 -0.05651782 </code></pre>
+ 4.74631008 -0.05654037 </code></pre>
 </div>
 </div>
 <p>Someone with an age of 0 is predicted to have a Narcissism score of 4.7. These data don’t make sense, since our data were only collected on adults.</p>
@@ -1076,19 +1076,19 @@ lm(formula = NPI ~ age, data = mba)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--1.25302 -0.34583  0.00417  0.27644  1.41394 
+-1.25010 -0.34770  0.00201  0.27432  1.41182 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  4.74855    0.61722   7.693  7.8e-12 ***
-age         -0.05652    0.02217  -2.549   0.0122 *  
+(Intercept)  4.74631    0.61697   7.693 7.83e-12 ***
+age         -0.05654    0.02216  -2.552   0.0122 *  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.5219 on 106 degrees of freedom
+Residual standard error: 0.5217 on 106 degrees of freedom
   (14 observations deleted due to missingness)
-Multiple R-squared:  0.05778,   Adjusted R-squared:  0.04889 
-F-statistic:   6.5 on 1 and 106 DF,  p-value: 0.01222</code></pre>
+Multiple R-squared:  0.05786,   Adjusted R-squared:  0.04898 
+F-statistic:  6.51 on 1 and 106 DF,  p-value: 0.01215</code></pre>
 </div>
 </div>
 <ul>

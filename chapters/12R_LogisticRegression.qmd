@@ -17,7 +17,7 @@ Let's look at the hormone dataset again. Previously, we saw that sex was related
 ```{r}
 library(gplots)
 
-h <- read.csv("~/Dropbox/!GRADSTATS/Datasets/hormone_dataset.csv")
+h <- read.csv("~/Dropbox/!GRADSTATS/Datasets/Hormone Data/hormone_dataset.csv")
 h$sexF <- as.factor(h$sex)
 levels(h$sexF) <- c("Male", "Female")
 h$sexF <- relevel(h$sexF, ref = "Female")
