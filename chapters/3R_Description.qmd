@@ -303,9 +303,9 @@ We will practice removing outliers in lecture! It will get easier.
 
 This week, we will learn different methods of reading a research article. To help support this journey, read the following two articles
 
-1. [How to read a paper.](https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf). I like this article because it emphasizes that there are different layers to reading a paper. Use this paper to help you read the next one :)
+1.  [How to read a paper.](https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf). I like this article because it emphasizes that there are different layers to reading a paper. Use this paper to help you read the next one :)
 
-2. [Ten simple rules for reading a scientific paper.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7392212/) This article comes from a biology perspective, but has a nice overview of the different parts to a research paper, and some of the broader questions to consider.
+2.  [Ten simple rules for reading a scientific paper.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7392212/) This article comes from a biology perspective, but has a nice overview of the different parts to a research paper, and some of the broader questions to consider.
 
 Which article was more helpful or useful? Did the first paper help you read the second paper at all? What do you like to read (for fun or school?) Let us know on Discord :)
 
