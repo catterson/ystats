@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Description – Why Statistics?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/4R_NormalPeople.html" rel="next">
+<link href="../chapters/2R_Data.html" rel="prev">
+<link href=".././images/open_source_mouse.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-dd8479a8b43ae629028e453cd63fb9c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Why Statistics?</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
+<span class="menu-text">List of R Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://catterson.github.io"> 
+<span class="menu-text">Prof.&nbsp;Cat Homepage</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/3R_Description.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src=".././images/open_source_mouse.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src=".././images/open_source_mouse.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hello (An Introduction)!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Describing People</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/1R_WhyStats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/2R_Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Data Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/3R_Description.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/4R_NormalPeople.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">“Normal” Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/5R_GoodMeasures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Good Measures</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Predicting People</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/6R_LinearModels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Linear Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/7R_CategoricalIV.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model : Categorical IV</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/8R_SamplingError.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sampling Error and Bias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/9R_ModelExtensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">More Levels and Experiments</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">People Are Complex</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10R_MultipleRegression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multiple Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11R_InteractionFX.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interaction Effects</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12R_LogisticRegression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13R_Conclusion2Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Farewell! (A Conclusion)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Rcode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#part-1-descriptive-statistics" id="toc-part-1-descriptive-statistics" class="nav-link active" data-scroll-target="#part-1-descriptive-statistics">Part 1 : Descriptive Statistics</a>
+  <ul>
+  <li><a href="#centrality" id="toc-centrality" class="nav-link" data-scroll-target="#centrality">Centrality</a>
+  <ul class="collapse">
+  <li><a href="#the-mean" id="toc-the-mean" class="nav-link" data-scroll-target="#the-mean">The Mean</a>
+  <ul class="collapse">
+  <li><a href="#definition." id="toc-definition." class="nav-link" data-scroll-target="#definition.">Definition.</a></li>
+  <li><a href="#why-it-matters." id="toc-why-it-matters." class="nav-link" data-scroll-target="#why-it-matters.">Why It Matters.</a></li>
+  </ul></li>
+  <li><a href="#the-median" id="toc-the-median" class="nav-link" data-scroll-target="#the-median">The Median</a>
+  <ul class="collapse">
+  <li><a href="#the-definition" id="toc-the-definition" class="nav-link" data-scroll-target="#the-definition">The Definition</a></li>
+  <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link" data-scroll-target="#why-it-matters">Why It Matters</a></li>
+  </ul></li>
+  <li><a href="#the-mode" id="toc-the-mode" class="nav-link" data-scroll-target="#the-mode">The Mode</a>
+  <ul class="collapse">
+  <li><a href="#the-definition-1" id="toc-the-definition-1" class="nav-link" data-scroll-target="#the-definition-1">The Definition</a></li>
+  <li><a href="#why-it-matters-1" id="toc-why-it-matters-1" class="nav-link" data-scroll-target="#why-it-matters-1">Why It Matters</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#complexity" id="toc-complexity" class="nav-link" data-scroll-target="#complexity">Complexity</a>
+  <ul class="collapse">
+  <li><a href="#range." id="toc-range." class="nav-link" data-scroll-target="#range.">Range.</a>
+  <ul class="collapse">
+  <li><a href="#definition.-1" id="toc-definition.-1" class="nav-link" data-scroll-target="#definition.-1">Definition.</a></li>
+  <li><a href="#why-it-matters.-1" id="toc-why-it-matters.-1" class="nav-link" data-scroll-target="#why-it-matters.-1">Why It Matters.</a></li>
+  </ul></li>
+  <li><a href="#outliers." id="toc-outliers." class="nav-link" data-scroll-target="#outliers.">Outliers.</a>
+  <ul class="collapse">
+  <li><a href="#the-definition-2" id="toc-the-definition-2" class="nav-link" data-scroll-target="#the-definition-2">The Definition</a></li>
+  <li><a href="#why-it-matters.-2" id="toc-why-it-matters.-2" class="nav-link" data-scroll-target="#why-it-matters.-2">Why It Matters.</a></li>
+  </ul></li>
+  <li><a href="#skew." id="toc-skew." class="nav-link" data-scroll-target="#skew.">Skew.</a>
+  <ul class="collapse">
+  <li><a href="#definition.-2" id="toc-definition.-2" class="nav-link" data-scroll-target="#definition.-2">Definition.</a></li>
+  <li><a href="#why-it-matters.-3" id="toc-why-it-matters.-3" class="nav-link" data-scroll-target="#why-it-matters.-3">Why It Matters.</a></li>
+  </ul></li>
+  <li><a href="#kurtosis" id="toc-kurtosis" class="nav-link" data-scroll-target="#kurtosis">Kurtosis</a></li>
+  </ul></li>
+  <li><a href="#the-standard-deviation-a-mix-of-centrality-and-complexity" id="toc-the-standard-deviation-a-mix-of-centrality-and-complexity" class="nav-link" data-scroll-target="#the-standard-deviation-a-mix-of-centrality-and-complexity">The Standard Deviation : A Mix of Centrality and Complexity</a>
+  <ul class="collapse">
+  <li><a href="#the-definition-3" id="toc-the-definition-3" class="nav-link" data-scroll-target="#the-definition-3">The Definition</a>
+  <ul class="collapse">
+  <li><a href="#video-the-mean-as-prediction" id="toc-video-the-mean-as-prediction" class="nav-link" data-scroll-target="#video-the-mean-as-prediction">Video : The Mean as Prediction</a></li>
+  <li><a href="#video-residuals-as-error" id="toc-video-residuals-as-error" class="nav-link" data-scroll-target="#video-residuals-as-error">Video : Residuals as Error</a></li>
+  <li><a href="#video-the-sum-of-squared-residual-errors" id="toc-video-the-sum-of-squared-residual-errors" class="nav-link" data-scroll-target="#video-the-sum-of-squared-residual-errors">Video : The Sum of (Squared) Residual Errors</a></li>
+  <li><a href="#video-the-unsquared-average-of-these-squared-residuals-standard-deviation" id="toc-video-the-unsquared-average-of-these-squared-residuals-standard-deviation" class="nav-link" data-scroll-target="#video-the-unsquared-average-of-these-squared-residuals-standard-deviation">Video : The (Unsquared) Average of These Squared Residuals = Standard Deviation</a></li>
+  </ul></li>
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why This Matters</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part-2-describing-data-in-r" id="toc-part-2-describing-data-in-r" class="nav-link" data-scroll-target="#part-2-describing-data-in-r">Part 2 : Describing Data in R</a>
+  <ul>
+  <li><a href="#video-describing-happiness-world-happiness-report" id="toc-video-describing-happiness-world-happiness-report" class="nav-link" data-scroll-target="#video-describing-happiness-world-happiness-report">Video : Describing Happiness (World Happiness Report)</a></li>
+  <li><a href="#video-standard-deviation-of-happiness-world-happiness-report" id="toc-video-standard-deviation-of-happiness-world-happiness-report" class="nav-link" data-scroll-target="#video-standard-deviation-of-happiness-world-happiness-report">Video : Standard Deviation of Happiness (World Happiness Report)</a></li>
+  <li><a href="#r-code-descriptive-statistics" id="toc-r-code-descriptive-statistics" class="nav-link" data-scroll-target="#r-code-descriptive-statistics">R Code : Descriptive Statistics</a></li>
+  <li><a href="#practice-quiz-with-r-practice-quiz-3-describing-variables" id="toc-practice-quiz-with-r-practice-quiz-3-describing-variables" class="nav-link" data-scroll-target="#practice-quiz-with-r-practice-quiz-3-describing-variables">Practice Quiz with R : Practice Quiz 3 (Describing Variables)</a></li>
+  <li><a href="#video-removing-outliers" id="toc-video-removing-outliers" class="nav-link" data-scroll-target="#video-removing-outliers">Video : Removing Outliers</a></li>
+  </ul></li>
+  <li><a href="#part-3.-reading-research." id="toc-part-3.-reading-research." class="nav-link" data-scroll-target="#part-3.-reading-research.">Part 3. Reading Research.</a></li>
+  <li><a href="#tldr." id="toc-tldr." class="nav-link" data-scroll-target="#tldr.">TLDR.</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/1R_WhyStats.html">Describing People</a></li><li class="breadcrumb-item"><a href="../chapters/3R_Description.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Description</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Hello! This week, you’ll learn how to use statistics to describe data in terms of centrality and complexity (and review how the mean and standard deviation can be thought of as prediction and error).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/3_Bar_GraphDigitalStyle.png.webp" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>To-Do List:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Read this document and watch the videos. Are you pressed for time? Some guidance below.
+<ul>
+<li>Part 1 : Focus on the mean, and why it’s important, and watch the videos on standard deviation.</li>
+<li>Part 2 : Complete the practice quiz and watch the video key. If time, watch the video on removing outliers.</li>
+</ul></li>
+<li>Take Quiz 3 : on using your knowledge of R (and standard deviation) to describe data.</li>
+</ul>
+</div>
+</div>
+<section id="part-1-descriptive-statistics" class="level1 page-columns page-full">
+<h1>Part 1 : Descriptive Statistics</h1>
+<p>We use statistics as a language to describe how individuals are both similar to, and different from, each other.</p>
+<section id="centrality" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="centrality">Centrality</h2>
+<p>Statistics like the mean, median, and mode focus on what is most central to a distribution of data. These measures of centrality reduce the complexity of individual scores, but in doing so emphasize some of the core aspects of the variable. You can think of <em>centrality</em> like a summary of the data. While a lot of information is lost in summary (e.g., Lord of the Rings is much more about some Hobbits trying to destroy an evil ring), a summary often gets the key points across in few words (e.g., Lord of the Rings does spend a lot of time describing Hobbits trying to destroy an evil ring.)</p>
+<section id="the-mean" class="level3">
+<h3 class="anchored" data-anchor-id="the-mean">The Mean</h3>
+<section id="definition." class="level4">
+<h4 class="anchored" data-anchor-id="definition.">Definition.</h4>
+<p>The mean (also known as the average) is one of the most important statistics, and the foundation for much of what we will do in this class.</p>
+<p>You probably learned this equation as something like, “add up all the numbers and divide by the total number of numbers”. This is technically correct, but scientists like to be more specific and formal, and so statistics uses a more specific language.</p>
+<p>The statistical equation for the mean is below; it may look confusing, but it is really just a fancy version of the same definition of the mean you know and love. Specifically, the formula defines the mean as “equal to the sum of all individual x-values (starting with the first individual and ending with the last individual in the dataset), and divided by the sample size.”</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>The Equation</th>
+<th>Breakdown of Terminology</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[
+\Large \bar{y} = \frac{\sum_{i=1}^n y_i}{n}
+\]</span></td>
+<td><ul>
+<li><span class="math inline">\(\bar{y}\)</span> = “y bar” = the mean of y</li>
+<li><span class="math inline">\(\Sigma\)</span> = Sigma = the “sum” of numbers (starting from the number on the bottom all the way through the number on the top).</li>
+<li><span class="math inline">\(i\)</span> = index = an individual</li>
+<li><span class="math inline">\(n\)</span> = sample size = the number of individuals in the dataset</li>
+<li><span class="math inline">\(y\)</span> = a variable</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p>So, when reading this formula, you would “say” : “y bar (the mean) is equal to the sum of all individuals of y (<span class="math inline">\(y_i\)</span>) starting with the first (<span class="math inline">\(i=1\)</span>) and going all the way through the total number of individuals (<span class="math inline">\(n\)</span>). And then you take that sum, and divide by the total number of individuals (<span class="math inline">\(n\)</span>).</p>
+<p>See?! Simple!</p>
+</section>
+<section id="why-it-matters." class="level4">
+<h4 class="anchored" data-anchor-id="why-it-matters.">Why It Matters.</h4>
+<p>One important characteristic of the mean is that it is the value of a distribution that is closest to all the other scores. This means that the mean serves as our “best guess” (a prediction) about the value of what any random individual scores in this distribution. This is why the mean is also called the ‘expected value’.</p>
+<p>You’ve internalized this in many ways - if you know the average temperature for summer in the Bay Area is a high of 70 degrees and a low of 56, then you can predict on any given day that you might need a sweater in the morning and evening, but will be hot in the afternoon.</p>
+<p>HOWEVER - the mean does not perfectly describe all scores in the distribution (because people are complex - we are not the same). We’ll talk more about these “errors” in prediction when we talk about the standard deviation (a measure of complexity) below.</p>
+</section>
+</section>
+<section id="the-median" class="level3">
+<h3 class="anchored" data-anchor-id="the-median">The Median</h3>
+<section id="the-definition" class="level4">
+<h4 class="anchored" data-anchor-id="the-definition">The Definition</h4>
+<p>The <strong>median</strong> is the value that is in the very <em>middle</em> of a distribution of scores. This means that 50% of scores in the distribution are higher than the median value, and 50% of the scores are lower than the median value.&nbsp; If there’s an odd set of numbers, the median is the middle number. If there’s an even set of numbers, the median is the average of the two middle numbers.&nbsp;</p>
+<p>So imagine two sets of numbers : what number is in the very middle?</p>
+<ul>
+<li>2, 3, 3, 5, 10, 14, 19</li>
+<li>2, 2, 3, 3, 5, 10, 14, 19</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity : What’s the median?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>2, 3, 3, 5, 10, 14, 19 = the median value is 5, since this number is in the middle. note that when calculating the median, the values of the data should be organized from smallest to larges.</p></li>
+<li><p>2, 2, 3, 3, 5, 10, 14, 19 = the median value is 4; since there is no “true” middle, 4 is the value that is in the middle of the two nearest values 3 and 5.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="why-it-matters" class="level4">
+<h4 class="anchored" data-anchor-id="why-it-matters">Why It Matters</h4>
+<p>Because the median is defined entirely by the middle of a distribution, it is less influenced by extreme data (outliers) than the mean. Below are two graphs of height. The one on the left is for a collection of people, and the histogram on the right is a graph of heights for a collection of people and some big friendly giants. The median of this distribution is illustrated as a vertical blue line, and the mean of this distribution is illustrated as a vertical red line.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/3_MedianvMean.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="the-mode" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="the-mode">The Mode</h3>
+<section id="the-definition-1" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="the-definition-1">The Definition</h4>
+<p>The <strong>mode</strong> is the most common number in a set of numbers. If two numbers are equally common in a distribution, then the distribution is said to be bi-modal (and more than two most common numbers = multimodal)</p>
+<p>So if your distribution was : 2, 3, 3, 5, 10, 14, 19, 20, 20, then the mode would be…<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;the mode would be 3 and 20, since these are the most frequent</p></div></div></section>
+<section id="why-it-matters-1" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="why-it-matters-1">Why It Matters</h4>
+<p>The mode is rarely reported in research articles - I sometimes see it in within-person studies, or in situations where researchers are measuring psychophysiological measures (like heart rate or vagal tone) where the peak of the distribution might indicate something important.</p>
+<p>Conceptually, it can be interesting to note the presence of a mode, and to think about why a bi-modal (or multi-modal) distribution occurs.&nbsp;</p>
+<p>For example, look at the following illustration : why might this bimodal distribution occur?</p>
+<p><img src="images/3_bimodalwhy.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Reasons for this bimodal distribution.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 47%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p>The more conventional answer is that this bimodal distribution represents overlap between male and females in a dataset.</p>
+<p><img src="images/3_boringbimodal.png" class="img-fluid"></p></td>
+<td><p>Another possibility is that this graph illustrates a python who has swallowed an elephant.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a><br>
+</p>
+<p><img src="images/3_hateleephant.png" class="img-fluid"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;see Antoine de Saint-Exupéry’s (1943). The Little Prince.</p></div></div></section>
+</section>
+</section>
+<section id="complexity" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="complexity">Complexity</h2>
+<p>Complexity refers to the ways that data differ from each other - really the focus of variation. And yet, as scientists, we are trying to understand patterns in that variation, and so have developed a language to talk about some of the systematic ways that individuals differ.</p>
+<section id="range." class="level3">
+<h3 class="anchored" data-anchor-id="range.">Range.</h3>
+<section id="definition.-1" class="level4">
+<h4 class="anchored" data-anchor-id="definition.-1">Definition.</h4>
+<p>One way people differ is by the extreme ends; this is called <strong>the range</strong>. Most people refer to the range as the lowest and highest value; though sometimes the range is defined as the distance between the highest and lowest value.</p>
+</section>
+<section id="why-it-matters.-1" class="level4">
+<h4 class="anchored" data-anchor-id="why-it-matters.-1">Why It Matters.</h4>
+<p>The extreme low and high of your variable give you a sense about the limits of variation. How to interpret these limits really depends on the variable you are measuring; for a variable like reaction time in some cognitive task, I would expect the low end to be zero (or something near zero, but not negative) and the high end influenced by how long I would expect the task to take (usually anywhere from less than a second for a quick reaction to a few minutes.) If the high end of the range was something like 30-minutes, I would think that something went wrong.</p>
+<p>As a researcher (and teacher) I often use the range as a quick way to ensure the data are correct - that is, to confirm that the lowest and highest scores are possible values given the way the variable was measured. For example, I check the range when looking at test scores to make sure no students got a negative score or score above 100% (both impossible in my class.)</p>
+</section>
+</section>
+<section id="outliers." class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="outliers.">Outliers.</h3>
+<section id="the-definition-2" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="the-definition-2">The Definition</h4>
+<p>Outliers are extreme values that are so different from the rest of the data that you remove them from the dataset because you worry that they might cause problems for your data. Outliers exist because of errors in data entry (for example, the person who lists their age as 1009 instead of 19) or because they represent individuals who are qualitatively different from the rest of your data (for example, the participant who is a billionaire and lists that as their income.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>)</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;No shame billionaires! You are just very different from the rest of us. Let us know if I can hang out on your yacht? You belong to an understudied group and I have some research ideas. kthxbye.</p></div></div><p>How extreme is too extreme? Some folks like to come up with rules for making this decision based on the number of standard deviations away from the mean or some other metric. I appreciate those efforts, but personally believe it’s better to judge outliers based on the qualitative decisions above (and use past research as a guide). Whatever you do, make sure to (1) justify your decisions, (2) report these decisions in your code and analyses, and (3) make any decisions about removing outliers as early as possible and before you start making predictions.</p>
+</section>
+<section id="why-it-matters.-2" class="level4">
+<h4 class="anchored" data-anchor-id="why-it-matters.-2">Why It Matters.</h4>
+<p>The presence of outliers in your data has the potential to influence your results in ways that will bias your results. For example, if someone wandered off in the middle of a cognitive task, their outliers for reaction time might make you think people took way longer to complete the task than people really needed to take. If I included everyone who didn’t take the exam (and got a zero) in taking the average of the exam score, I might think that students did worse on the exam than they really did, when I should have excluded these zeros to get a better representation of how people did on the exam.</p>
+<p>It’s therefore super critical to a) identify any possible outliers in the data, and b) remove them from data analysis, and c) be 100% transparent that you have removed data. You will learn to do this using R in Part 4 below.</p>
+</section>
+</section>
+<section id="skew." class="level3">
+<h3 class="anchored" data-anchor-id="skew.">Skew.</h3>
+<section id="definition.-2" class="level4">
+<h4 class="anchored" data-anchor-id="definition.-2">Definition.</h4>
+<p>Skew describes asymmetry in the shape of the distribution. A graph that is symmetrical has no skew.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/3_skewgraphs.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>It’s easy to confuse the different types of skew, so I like to think of skew as a type of pokemon (“pikaskew”), where the direction of skewness is defined by its tail, since Pokemon (at least the ones I can think of) have tails. This is my trick; feel free to use it (you are welcome) or develop your own!&nbsp;</p>
+<p><strong>skew → pikachu →</strong> <img src="images/3_pikaskew.png" class="img-fluid" width="102"><strong>–&gt; tail</strong></p>
+</section>
+<section id="why-it-matters.-3" class="level4">
+<h4 class="anchored" data-anchor-id="why-it-matters.-3">Why It Matters.</h4>
+<p>Skew can help us to think about why people</p>
+<ul>
+<li><p><strong>Negative Skew (also called “Left Skew”)</strong> is when the distribution “tail” sticks out on the negative (low) end of the measure. A negatively skewed distribution means that there’s a greater probability of high scores than low scores, and can be explained by ceiling effects (a measure does not differentiate between high scorers - like an exam that almost everybody aces because you were all prepared.)</p></li>
+<li><p><strong>Positive Skew (also called “Right Skew”)</strong> is when the distribution “tail” sticks out on the positive (high) end of the measure. A positively skewed distribution means that there’s a greater probability of low scores than positive scores, and can be explained by floor effects (a measure does not differentiate between low scorers).</p></li>
+<li><p><strong>No Skew (also called the “Normal Distribution”)</strong> is when the distribution is symmetrical.</p></li>
+</ul>
+</section>
+</section>
+<section id="kurtosis" class="level3">
+<h3 class="anchored" data-anchor-id="kurtosis">Kurtosis</h3>
+<p>Kurtosis describes the size of the tails, relative to the middle of the distribution. I think of kurtosis as the pointiness of the distribution. Mesokurtic is a distribution that looks “normal”, leptokurtic is a distribution that is skinny in the middle (with many individual scores in the tail of the distribution), and platykurtic is a distribution wide in the middle with few observations in the tails.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/3_Kurtosis.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Like skew, there are ways to quantify kurtosis, but we won’t cover this in the class. I almost never see kurtosis reported as a statistic in journals.</p>
+</section>
+</section>
+<section id="the-standard-deviation-a-mix-of-centrality-and-complexity" class="level2">
+<h2 class="anchored" data-anchor-id="the-standard-deviation-a-mix-of-centrality-and-complexity">The Standard Deviation : A Mix of Centrality and Complexity</h2>
+<section id="the-definition-3" class="level3">
+<h3 class="anchored" data-anchor-id="the-definition-3">The Definition</h3>
+<p>Standard Deviation (sd) is a way to quantify the ‘average’ variation in your dataset. More specifically, it is the average distance between all individual data points in the distribution, and the mean of the distribution. These distances (between an individual score and our prediction) are called residuals.</p>
+<p>The standard deviation is always positive, since it describes the average distance of individual scores from the mean (residuals), and not whether those residuals are above or below the mean. A standard deviation of zero means there is no variation - all scores in the distribution are the same. The larger the standard deviation, the more variation there is in the data. There’s no limit to how large the standard deviation might be.</p>
+<p>Understanding what the standard deviation is, and how it’s calculated, is a critical skill. In the videos below I walk through how to calculate standard deviation by “hand”. You will never actually use this approach in real-life, but I find it very helpful to fully understand what a standard deviation is, and how (and why) we use residual scores in statistics. With the chickenweights dataset, of course.</p>
+<section id="video-the-mean-as-prediction" class="level4">
+<h4 class="anchored" data-anchor-id="video-the-mean-as-prediction">Video : The Mean as Prediction</h4>
+<p>With no other knowledge about an individual, the mean is our best prediction about what an individual is like.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/sK6_vcs23I0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="video-residuals-as-error" class="level4">
+<h4 class="anchored" data-anchor-id="video-residuals-as-error">Video : Residuals as Error</h4>
+<p><strong>Residuals</strong> refer to the fact that the mean is not a perfect prediction for every person; people will differ from our predictions. These differences between each individual’s actual score and our predicted value (in this case, the mean) are called residuals. The residuals will always be actual score minus prediction - I remember this because as researchers we care about actual people first.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/AGl7jo3WRJY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="video-the-sum-of-squared-residual-errors" class="level4">
+<h4 class="anchored" data-anchor-id="video-the-sum-of-squared-residual-errors">Video : The Sum of (Squared) Residual Errors</h4>
+<p><strong>The sum of squared errors (SS)</strong> is a way to quantify the total residuals when using the mean to make predictions. As you’ll see in the video, we must first square the residual differences in order to remove the direction (since we care about the total error, not whether the individual was above or below our prediction.). And then we sum these squared differences to quantify the total (squared error).</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/hN5opflzXIA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="video-the-unsquared-average-of-these-squared-residuals-standard-deviation" class="level4">
+<h4 class="anchored" data-anchor-id="video-the-unsquared-average-of-these-squared-residuals-standard-deviation">Video : The (Unsquared) Average of These Squared Residuals = Standard Deviation</h4>
+<p><strong>The standard deviation</strong> is the squared root of these averaged squared differences. Or, in less technical terms, the standard deviation is the average of how much people differ from the mean - a measure of the average variation.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/4SQUK8GXwrI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+</section>
+<section id="why-this-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-matters">Why This Matters</h3>
+<p>Great question! The standard deviation does two things :</p>
+<ol type="1">
+<li>The standard deviation quantifies how much the “average” person differs from the average of the individuals in a group. This is a great statistic to have, since it quantifies how much individuals differ from each other on average (between-person variation)</li>
+<li>The standard deviation serves as a baseline for our predictions. The mean is a GREAT starting place for our predictions, but soon we will want to make more sophisticated predictions. We will do this with our good friend <em>the linear model</em>, and will know whether we can improve our predictions by decreasing the amount of residual error.</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="part-2-describing-data-in-r" class="level1">
+<h1>Part 2 : Describing Data in R</h1>
+<section id="video-describing-happiness-world-happiness-report" class="level2">
+<h2 class="anchored" data-anchor-id="video-describing-happiness-world-happiness-report">Video : Describing Happiness (World Happiness Report)</h2>
+<p>In this video, I walk through loading the World Happiness Report (in our Chapter Dataset folder on the course page), and describing and graphing the happiness variable.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Te1ChWgiATU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="video-standard-deviation-of-happiness-world-happiness-report" class="level2">
+<h2 class="anchored" data-anchor-id="video-standard-deviation-of-happiness-world-happiness-report">Video : Standard Deviation of Happiness (World Happiness Report)</h2>
+<p>In this video, I review how to calculate the standard deviation, and what this statistic tells you about the variable happiness.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Pm8Z2z6QWMs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="r-code-descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="r-code-descriptive-statistics">R Code : Descriptive Statistics</h2>
+<p>Below is a list of code we’ll use to calculate descriptive statistics in R.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>R Command</strong></td>
+<td><strong>What It Does</strong></td>
+</tr>
+<tr class="even">
+<td><code>summary(dat)</code></td>
+<td>Reports descriptive statistics for all variables in the dataset.</td>
+</tr>
+<tr class="odd">
+<td><code>summary(dat$variable)</code></td>
+<td><p>Reports descriptive statistics for a continuous variable.</p>
+<p>Reports frequency for a categorical variable.</p></td>
+</tr>
+<tr class="even">
+<td><code>mean(dat$variable, na.rm = T)</code></td>
+<td>Reports the mean (average) of a variable; you must include the na.rm = T argument if there is missing data (otherwise R will return NA as the result).</td>
+</tr>
+<tr class="odd">
+<td><code>median(dat$variable, na.rm = T)</code></td>
+<td>Reports the median (middle point) of a variable.</td>
+</tr>
+<tr class="even">
+<td><code>range(dat$variable, na.rm = T)</code></td>
+<td>Reports the lower limit and upper limit of the variable.</td>
+</tr>
+<tr class="odd">
+<td><code>sd(dat$variable, na.rm = T)</code></td>
+<td>Reports the standard deviation of the variable.</td>
+</tr>
+<tr class="even">
+<td><p><code>hist(dat$variable)</code></p>
+<p><code>abline(v =mean(dat$variable))</code></p></td>
+<td>Draws a line on a plot or histogram at specified values (e.g., this draws a vertical line at the mean of dat$variable. You can replace v with h to draw a horizontal line. We will use abline() later in the semester in a different way.</td>
+</tr>
+<tr class="odd">
+<td><code>par(mfrow = c(i, j))</code></td>
+<td>Splits your graphics window into i rows and j columns (replace i and j with numbers)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="practice-quiz-with-r-practice-quiz-3-describing-variables" class="level2">
+<h2 class="anchored" data-anchor-id="practice-quiz-with-r-practice-quiz-3-describing-variables"><a href="https://docs.google.com/forms/d/e/1FAIpQLScJ2ZvwLv2D4SYXFN2NL-7M8-B3Acq9BXsS1HwJSPf-LnGx4w/viewform?usp=sf_link">Practice Quiz with R</a> : Practice Quiz 3 (Describing Variables)</h2>
+<p><strong>Instructions</strong></p>
+<p>Use R and the twitter_emotion_data.csv to answer the following questions in the check-in above.</p>
+<ul>
+<li><p>Here’s a <a href="https://www.dropbox.com/scl/fi/zye2fojtmol8wdmd1gfb7/twitter_emotion_data.csv?rlkey=t728np5edvmw3wjoorj2hddwu&amp;dl=0"><strong>link to the dataset</strong></a> (load this into R) and a <a href="https://www.dropbox.com/scl/fi/0q0meai7hawk4oexw948c/CODEBOOK-_-Twitter-Emotion-Dataset.pdf?rlkey=yz6aiqtow6k4ey16k8qd0y4yz&amp;dl=0">link to the Codebook</a> (that describes the dataset)</p></li>
+<li><p><a href="https://youtu.be/L3kQXfp2jNg"><strong>Link to a video key</strong></a><strong>;</strong> but good to try this on your own!</p></li>
+</ul>
+<p><strong>Questions</strong></p>
+<ol type="1">
+<li><p>Load the data and check to make sure the data loaded correctly. How many individuals (tweets; in this dataset, each row = one tweet) are in the dataset?</p></li>
+<li><p>Graph the variable retweet_count. How would you describe the shape of this variable?</p></li>
+<li><p>What do you learn about the variable retweet_count from this graph?</p></li>
+<li><p>What is the mean of the variable retweet_count?</p></li>
+<li><p>What is the median of the variable retweet_count?</p></li>
+<li><p>What is the standard deviation of the variable retweet_count? [note : you do not need to do this by hand]?</p></li>
+<li><p>What is the lowest value (range) of the variable retweet_count?</p></li>
+<li><p>What is the highest value (range) of the variable retweet_count?</p></li>
+<li><p>Now, work with the categorical variable Orientation. How many Liberal (tweets) are in the dataset?</p></li>
+<li><p>How many Conservative (tweets) are in the dataset?</p></li>
+</ol>
+</section>
+<section id="video-removing-outliers" class="level2">
+<h2 class="anchored" data-anchor-id="video-removing-outliers">Video : Removing Outliers</h2>
+<p>The video below describes how to remove outliers, using a datset built into R.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Hi0C8M5398Q" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>We will practice removing outliers in lecture! It will get easier.</p>
+</section>
+</section>
+<section id="part-3.-reading-research." class="level1">
+<h1>Part 3. Reading Research.</h1>
+<p>This week, we will learn different methods of reading a research article. To help support this journey, read the following two articles</p>
+<ol type="1">
+<li><p><a href="https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf">How to read a paper.</a>. I like this article because it emphasizes that there are different layers to reading a paper. Use this paper to help you read the next one :)</p></li>
+<li><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7392212/">Ten simple rules for reading a scientific paper.</a> This article comes from a biology perspective, but has a nice overview of the different parts to a research paper, and some of the broader questions to consider.</p></li>
+</ol>
+<p>Which article was more helpful or useful? Did the first paper help you read the second paper at all? What do you like to read (for fun or school?) Let us know on Discord :)</p>
+</section>
+<section id="tldr." class="level1">
+<h1>TLDR.</h1>
+<p>We learned how to describe variables in terms of consistency (e.g., mean, median) and complexity (e.g., range, standard deviation). We focused on how to define the standard deviation, and then looked at how to do this in R.</p>
+<p>Next week in lecture, we will continue to learn to use R, statistics, and our human brains to describe and understand how people differ.</p>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/2R_Data.html" class="pagination-link" aria-label="Data Data Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Data Data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/4R_NormalPeople.html" class="pagination-link" aria-label="&quot;Normal&quot; Data">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">“Normal” Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
