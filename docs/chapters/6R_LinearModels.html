@@ -341,7 +341,7 @@ window.Quarto = {
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
-  <li><a href="#part-1-making-predictions" id="toc-part-1-making-predictions" class="nav-link active" data-scroll-target="#part-1-making-predictions">Part 1 : Making Predictions</a>
+  <li><a href="#part-1-making-predictions-with-models" id="toc-part-1-making-predictions-with-models" class="nav-link active" data-scroll-target="#part-1-making-predictions-with-models">Part 1 : Making Predictions with Models</a>
   <ul>
   <li><a href="#recap-the-mean-and-linear-model-as-prediction" id="toc-recap-the-mean-and-linear-model-as-prediction" class="nav-link" data-scroll-target="#recap-the-mean-and-linear-model-as-prediction">RECAP : The Mean (and Linear Model) as Prediction</a></li>
   <li><a href="#the-linear-model-its-just-a-line-with-a-slope" id="toc-the-linear-model-its-just-a-line-with-a-slope" class="nav-link" data-scroll-target="#the-linear-model-its-just-a-line-with-a-slope">The Linear Model : It’s Just a Line (With a Slope)</a>
@@ -395,9 +395,26 @@ window.Quarto = {
 </header>
 
 
-<p>This week, you’ll learn about how we can define a linear model to make predictions about one variable (the DV) from another (the IV). You’ll then learn about R2 (read : “R-squared”) - professor’s favorite statistic - and how this quantifies the amount of error in a model. You’ll then learn how our good friend the z-score can be used to calculate a correlation coefficient. Wow!</p>
-<section id="part-1-making-predictions" class="level1 page-columns page-full">
-<h1>Part 1 : Making Predictions</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>In This Chapter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Learn about how we can define a linear model to make predictions about one variable (the DV) from another (the IV)</p></li>
+<li><p>You’ll then learn about R2 (read : “R-squared”) - professor’s favorite statistic - and how this quantifies the amount of error in a model.</p></li>
+<li><p>Learn how our good friend the z-score can be used to calculate a correlation coefficient. Wow!</p></li>
+</ul>
+</div>
+</div>
+<p><img src="images/clipboard-1265666125.png" class="img-fluid"></p>
+<section id="part-1-making-predictions-with-models" class="level1 page-columns page-full">
+<h1>Part 1 : Making Predictions with Models</h1>
 <p>At the beginning of the semester, we talked about how the goal of psychological science is to make predictions about people, while recognizing that our predictions will not perfectly match what actually happens (which we call error).</p>
 <p>Conceptually, we can think of a person’s actual score on y (some variable) as the sum of our prediction and the error in our prediction (with the goal to minimize error as much as possible).</p>
 <p>As an equation, we would write this as: <code>actual.score = our.prediction + error</code></p>
@@ -592,7 +609,7 @@ window.Quarto = {
 <li>on the graph: the distance between each individual data point and the line.</li>
 </ul>
 </div></div><div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -601,7 +618,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>Test your understanding of linear models!</strong> Use the Prestige dataset and R to predict the variable income (the DV) from the variable education (the IV). You can try to do this in R on your own computer, or use the output below. Use this model to answer the questions for this check-in in the link above.</p>
 <div class="cell">
@@ -725,7 +742,7 @@ Coefficients:
 </ul>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/mfR5JNwCrYs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -734,7 +751,7 @@ Coefficients:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Here’s a super quick check-in on interpreting <span class="math inline">\(R^2\)</span> values!</p>
 </div>
@@ -745,7 +762,7 @@ Coefficients:
 <section id="part-3-interpreting-models-with-the-z-score" class="level1">
 <h1>Part 3 : Interpreting Models with the Z-Score</h1>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -754,7 +771,7 @@ Coefficients:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>A z-score describes how far an individual score falls above and below the mean (a residual!) in units of standard deviation. Z-scores are used to help give context to data - how far above or below the average is an individual (their distance from the mean), compared to the standard deviation (the average amount that people differ from the mean).</p>
 <p>Z-scores can also be useful when the units of measurement don’t have any meaning. For example, let’s say you take a job on Jeff Bezo’s Mars ™ and learn that a job pays 1298723 BezosBucks. Is this a little? A lot? Well, knowing that it’s 120 BezosBucks above the average income might give you some indication that you are going to be better off than others on Jeff Bezos’ Mars ™. But how much better off?</p>
