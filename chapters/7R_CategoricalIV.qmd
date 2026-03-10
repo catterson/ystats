@@ -30,6 +30,7 @@ The specific groups of a categorical variable are called **levels**, and the bro
 mba <- read.csv("~/Dropbox/!WHY STATS/Chapter Datasets/Hormone Data/hormone_dataset.csv", stringsAsFactors = T)
 mba$sex <- as.factor(mba$sex)
 levels(mba$sex) <- c("male", "female")
+mba$sex <- relevel(mba$sex, ref = "female")
 ```
 
 I can use the `plot()` function to illustrate this variable, and `summary()` function to report the number of individuals in each group.
@@ -45,7 +46,7 @@ summary(mba$sex)
 
 The equation for a linear model with a categorical IV is identical to what we’ve seen before :
 
-$\huge y_i = a + b_1 \* X_i + \epsilon\_i\$
+$ \huge y_i = a + b_1 * X_i + \epsilon_i $
 
 We are making a **prediction about some dependent variable** ($y_i$) from a **linear equation** that has an **intercept** ($a$, the starting place for our prediction), and then **a slope** ($b_1$ an adjustment we make) based on information about another **(independent) variable** ($x_i$).
 
@@ -73,7 +74,7 @@ See if you can guess where the mean is; illustrated as a horizontal line that go
 ```{r}
 plot(mba$NPI, pch = 19, ylab = "Narcissism Score", xlab = "Index (Position in Dataset)",
      main = "Plot of Individual Narcissism Scores")
-# abline(h = mean(mba$NPI, na.rm = T), lwd = 5)
+abline(h = mean(mba$NPI, na.rm = T), lwd = 0)
 ```
 
 #### Here is the mean!
