@@ -18,15 +18,12 @@ The population is not often clearly defined or reported, but can be inferred by 
 
 Below are a few examples of reserach questions, populations, and the specific samples that researchers studied.
 
-+------------------------------------------------------------------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Researcher Question**                                                            | **Population**                                               | **Sample (Example)**                                                                                                                                                                                                                                                          |
-+------------------------------------------------------------------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| What is the patient's white blood cell count.                                      | All the blood in a person's body.                            | The vial of blood that a phlebotomist collects.                                                                                                                                                                                                                               |
-+------------------------------------------------------------------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  |  |  |
+|----|----|----|
+| **Researcher Question** | **Population** | **Sample (Example)** |
+| What is the patient's white blood cell count. | All the blood in a person's body. | The vial of blood that a phlebotomist collects. |
 | [Is money related to happiness?](https://www.pnas.org/doi/10.1073/pnas.2208661120) | Everyone in the world who could be happy and have an income. | "Participants were 33,391 employed adults living in the United States. The median age was 33, the median household income was \$85,000/year (25th percentile = \$45,000; 75th percentile = \$137,500; mean = \$106,548; SD = \$95,393), 36% were male, and 37% were married." |
-+------------------------------------------------------------------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Your final project research question.                                              | Who is in the population?                                    | Who will be in your sample?                                                                                                                                                                                                                                                   |
-+------------------------------------------------------------------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Your final project research question. | Who is in the population? | Who will be in your sample? |
 
 ### When the Sample Doesn't Equal the Population
 
@@ -84,79 +81,11 @@ Below are data from 2012[^8r_samplingerror-1], when Barack Obama was running aga
 
 ### Types of Sampling Bias
 
-The sampling bais in this example would be labeled **exclusion bias;** below are a few other common types of biases.
+The sampling bias in this example would be labeled **exclusion bias;** below are a few other common types of biases.
 
 -   **Self-Selection Bias :** People volunteer to be in a study, and there's likely something different about someone who might choose to be in a study compared to someone who may not want to be in a study in ways that might influence the results.
 -   **Survivor Bias :** Participants often drop out of a study, especially those where you are following the participant over a long period of time. Researchers therefore are only collecting data from a specific group of people who “lasted” through the study. I experience this with my check-ins; the students who rate how the class is going are biased, because they are the ones who haven't quit out of boredom or anxiety.
 -   **WEIRD Samples.** Read the short article [“A WEIRD View of Human Nature”](https://www.dropbox.com/s/p9rszc3afaiwmcs/2010_WEIRDinScience.pdf?dl=0) that describes how most psychologists get samples for their studies. Focus on the following key ideas: the definition of WEIRD; the frequency and influence of cross-cultural research on sampling biases.
-
-### Another Example
-
-1.  What is the POPULATION for “Rate My Professor” (a website where students rate the quality of a professor they have had)?
-
-    1.  All the people in the world.
-
-    2.  All the students in the world.
-
-    3.  All the students who have taken a specific professor’s course.
-
-    4.  All the students who wrote a review about the course.
-
-    5.  All the students who read the reviews.
-
-2.  What is the SAMPLE for “Rate My Professor” (a website where students rate the quality of a professor they have had)?
-
-    1.  All the people in the world.
-
-    2.  All the students in the world.
-
-    3.  All the students who have taken a specific professor’s course.
-
-    4.  All the students who wrote a review about the professor’s course.
-
-    5.  All the students who read the reviews.
-
-3.  What does WEIRD stand for?
-
-    1.  White, Educated, Individualistic, Rich, Democratic
-
-    2.  Western, Educated, Industrial, Rich, Democratic
-
-    3.  A statistical term that describes participants who are more than three standard deviations from the average of a variable.
-
-    4.  This is a term that psychologists no longer use because it is dehumanizing
-
-    5.  None of the above.
-
-4.  According to the article on cross-cultural differences in psychology…
-
-    1.  Effects that are “fundamental” do not differ across cultures.
-
-    2.  Certain areas of psychology, like visual perception, do not differ across cultures.
-
-    3.  Most psychological researchers put effort into examining cross-cultural differences.
-
-    4.  All of the above.
-
-    5.  None of the above.
-
-5.  Dr. Researcher wants to study people’s attitudes about marijuana. According to the Professor’s video in the reading notes, which of the following would be an example of sampling bias?
-
-    1.  Dr. Researcher surveys people living in the Bay Area (where people tend to have more positive attitudes about marijuana than people living in other places).
-
-    2.  Dr. Researcher surveys people living in Lytle, Texas (where people tend to have more negative attitudes about marijuana than people living in other places).
-
-    3.  Dr. Researcher surveys people wearing white t-shirts (a factor that is unrelated to attitudes about marijuana).
-
-    4.  Both A and B
-
-    5.  all of the above.
-
- Piff, P. K., Dietze, P., Feinberg, M., Stancato, D. M., & Keltner, D. (2015). Awe, the small self, and prosocial behavior. Journal of personality and social psychology, 108(6), 883. [LINK TO FULL ARTICLE](https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/c/359/files/2018/08/Awe-and-Prosocial-Behavior.pdf?bid=359)
-
-\
-
-![](images/clipboard-3582987792.png)
 
 ## Sampling Error (Conceptual)
 
@@ -208,9 +137,7 @@ coef(mod)
 round(coef(mod), 10)
 ```
 
-\
 So to recap, we have a population of data (40,000 individuals) for whom the “true” relationship is zero.\
-\
 
 ### Using R to Define a "Perfectly Random Sample"
 
@@ -221,8 +148,6 @@ Most samples in psychology are biased; taking a random sample from the populatio
 We can illustrate this in R. R has a built-in function called sample(), which takes a random sample[^8r_samplingerror-3] of whatever numbers you give it. For example, here’s a fun game - think of a number between 1 and 10. Then ask R to sample() a random number between 1 and 10 and see if you are vibing with R. I am thinking of the number FOUR.
 
 [^8r_samplingerror-3]: There are different ways that computers can take “random samples”, each with different merits. The default method R uses is “"Mersenne-Twister" From Matsumoto and Nishimura (1998). This stuff goes way beyond my pay grade; I imagine there are a few explanations on the internet. Let me know if you find a good one!
-
-    \
 
 In the code below, I’m asking R to define the numbers 1 through 10, and then draw ONE number from this set.[^8r_samplingerror-4]
 
@@ -330,7 +255,7 @@ for(i in c(1:20)){
 
 1.  **Each sample, as instructed, has 150 individuals in the dataset.** I can see there are more dots in each scatterplot. Good to know that R did what I asked.
 
-2.  **None of the lines appear to have a slope of exactly zero, like our population does.** A few are close (the third linear model on the top row has a slope = 0.003 and an R2 = 0.000011 - close to zero but not exaclty zero! there is still some error!!!)
+2.  **None of the lines appear to have a slope of exactly zero like our population does.** A few are close (the third linear model on the top row has a slope = 0.003 and an R2 = 0.000011 - close to zero but not exaclty zero! there is still some error!!!)
 
 3.  **I can see that there’s less variation in the steepness of the lines.** Some slopes (like top row fourth column) appear steeper than others, but I see less extremes in the variation in these slopes when I have a sample size = 150 than when I have a sample size = 10. (I can see this because the green lines are more similar to each other when n = 150 than when n = 10.)
 
