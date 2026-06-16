@@ -40,7 +40,7 @@ book:
         href: https://catterson.github.io
   sidebar: 
     style: docked
-    alignment: "left"
+    alignment: "right"
     subtitle: "Table of Contents"
     logo: ./images/open_source_mouse.png
   date: "Spring 2026"
