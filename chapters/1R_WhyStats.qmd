@@ -7,13 +7,13 @@ In this week’s reading, you’ll learn why students like you are required to l
 ::: callout-important
 ## To-Do List (due before our next lecture)
 
--   Read this chapter and watch the videos.
+- Read this chapter and watch the videos.
 
--   Complete the practice exercises (check-ins) and try to create some variables in R.
+- Complete the practice exercises (check-ins) and try to create some variables in R.
 
--   Take Quiz 1 (on our course page).
+- Take Quiz 1 (on our course page).
 
--   Think about something you would want to learn about people (or non-human animals) if you were a researcher.
+- Think about something you would want to learn about people (or non-human animals) if you were a researcher.
 :::
 
 ## Part 1 : Why Statistics in Psychology?
@@ -39,6 +39,8 @@ Like all languages, statistics has vocabulary - words that have shared meaning, 
 Variation is at the heart of statistics, and is the specific vocabulary that researchers use to describe the differences, change, and complexity that defines life.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                    |
++===========================================================================================================================================================================================================================================================================================================================================================================================================================+====================================================================================================================================================================================================================+
 | **Between-Person Variation** describes how individuals differ from each other. Think about ways that you differ from others; not everybody wears glasses, has the same level of silliness / seriousness / desire to cause mischief / fascination with horses.                                                                                                                                                             | ![](/images/1_between_belcher_variation.webp){fig-alt="five characters who are family members of the the TV show bob’s burgers expressing a variety of emotions and striking different poses." fig-align="center"} |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Within-Person Variation** describes how one individual changes over time or across different situations. Think about the person you are today - are you exactly the same as you were yesterday? A year ago? You’ve changed (varied) in ways both small (hunger, exhaustion, number of words you’ve read for this class) and large (personality, love interests, identity, etc.)                                         | ![](images/clipboard-3637432840.png)                                                                                                                                                                               |
@@ -52,11 +54,11 @@ Variation is at the heart of statistics, and is the specific vocabulary that res
 
 **A Variable** is a label for some psychological phenomenon that has variation. I'm not sure where I first heard this, but psychologists often focus on what they call the “ABCs”. 
 
--   **A is for Affect = the emotions that you feel.**
+- **A is for Affect = the emotions that you feel.**
 
--   **B is for Behavior = the actions that you do.**
+- **B is for Behavior = the actions that you do.**
 
--   **C is for cognition = the thoughts you have.**
+- **C is for cognition = the thoughts you have.**
 
 These are not rigid categories, and psychologists often debate the definitions of these terms. But they can be useful ways to think about how to think about people, and help break down a complex phenomenon into more specific components.
 
@@ -64,15 +66,12 @@ These are not rigid categories, and psychologists often debate the definitions o
 
 For example, think about how affect, behavior, and cognition might be relevant if I ask you to think about an upcoming exam (your first exam is in just a few weeks!)
 
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                       | **highlight the cells below to see my ideas / check your understanding**                                                                                                                                                                                                          |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Affect Example**    | [the feeling of anxiety or dread you have thinking about being assessed, or maybe a feeling of excitement about the opportunity to demonstrate your hard work / effort / knowledge!]{style="color:white"}                                                                         |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Behavior Example**  | [immediately checking your calendar to see when exams are; or maybe avoiding your classes with a nice procrastination session on the ol’ infinite scroll machine.]{style="color:white"}                                                                                           |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  |  |
+|----|----|
+|  | **highlight the cells below to see my ideas / check your understanding** |
+| **Affect Example** | [the feeling of anxiety or dread you have thinking about being assessed, or maybe a feeling of excitement about the opportunity to demonstrate your hard work / effort / knowledge!]{style="color:white"} |
+| **Behavior Example** | [immediately checking your calendar to see when exams are; or maybe avoiding your classes with a nice procrastination session on the ol’ infinite scroll machine.]{style="color:white"} |
 | **Cognition Example** | [thinking about all the work you have to do; wondering why the professor would choose this example when he could have thought about the ways that affect, behavior, and cognition would be triggered when you see a puppy or kitten or something like that…]{style="color:white"} |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 [Here's [a cat video](https://www.youtube.com/watch?v=Am3NVGP9rkQ) I like for students needing a distraction from thinking about exams. I promise your exams in this class will be chill and I'll do my best to prepare y'all.]{.aside}
 
@@ -80,13 +79,13 @@ For example, think about how affect, behavior, and cognition might be relevant i
 
 Statisitcs, like spoken languages, is a combination of vocabulary, rules, and culture that people use to communicate with each other.
 
--   **Vocabulary.** Equations like "the mean" or “standard deviation” or "cronbach's alpha" or "p-value" are precise vocabulary terms that define some feature of variation. Some of these vocabulary words are easier to understand and remember than others, and like all languages, sometimes people disagree on the definition, and sometimes misuse these words.
+- **Vocabulary.** Equations like "the mean" or “standard deviation” or "cronbach's alpha" or "p-value" are precise vocabulary terms that define some feature of variation. Some of these vocabulary words are easier to understand and remember than others, and like all languages, sometimes people disagree on the definition, and sometimes misuse these words.
 
--   **Grammar and Syntax.** The way we organize words also matters when learning languages. Saying “the professor graded the students“ has a very different meaning than “the students graded the professor”, even though these share the exact same words. Statistics (and research methods) also requires precision in the way we organize the ideas, terms, and processes. We’ll learn more about this as we discuss the scientific method (a highly structured and organized approach to doing research), but also as we learn how to navigate doing data analysis.
+- **Grammar and Syntax.** The way we organize words also matters when learning languages. Saying “the professor graded the students“ has a very different meaning than “the students graded the professor”, even though these share the exact same words. Statistics (and research methods) also requires precision in the way we organize the ideas, terms, and processes. We’ll learn more about this as we discuss the scientific method (a highly structured and organized approach to doing research), but also as we learn how to navigate doing data analysis.
 
--   **Cultural Immersion.** A good language class will also help students to understand the ways that the language is connected to people, places, and history[^1r_whystats-2]. In this class, we’ll think about the ways we can immerse ourselves in the culture of statistics and research methods, from the cultural practices that inform which methods or tools to use, to the ways that the culture of statistics and research might needlessly create barriers for certain types of people or studies.
+- **Cultural Immersion.** A good language class will also help students to understand the ways that the language is connected to people, places, and history[^1r_whystats-2]. In this class, we’ll think about the ways we can immerse ourselves in the culture of statistics and research methods, from the cultural practices that inform which methods or tools to use, to the ways that the culture of statistics and research might needlessly create barriers for certain types of people or studies.
 
--   **Practice and Past Experiences.** And yes, in order to gain fluency in a language, you need to practice! Attendance and regular engagement with this class will ensure that you are able to get the practice that you need. It’s also good to note that people differ in terms of their past experiences with computers and math, and are bringing those experiences (for better or worse) with them into this class.
+- **Practice and Past Experiences.** And yes, in order to gain fluency in a language, you need to practice! Attendance and regular engagement with this class will ensure that you are able to get the practice that you need. It’s also good to note that people differ in terms of their past experiences with computers and math, and are bringing those experiences (for better or worse) with them into this class.
 
 [^1r_whystats-2]: And usually food, though I’m not sure if there’s cultural food norms about statistics or research methods.
 
@@ -104,13 +103,11 @@ Me-search can be an important way for researchers to use their statistics and re
 
 Below are a few examples of research questions that are related to a person's real-life experiences.
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| **Real Life Experience**                                                                                                                                                                                                                               | **Research Question**                                                |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| A researcher develops vision problems due to his studies of light, and had to live in a completely darkened room, where he became completely isolated from most of reality.[^1r_whystats-3]                                                            | Does reality exist, or can it only be known through our perceptions? |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| A black graduate student at the University of Chicago realizes that white people cross the street to avoid him, and finds himself whistling classical music to signal that he does not fit their negative stereotypes of a black male.[^1r_whystats-4] | How do people respond and react to others' negative stereotypes?     |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+|  |  |
+|----|----|
+| **Real Life Experience** | **Research Question** |
+| A researcher develops vision problems due to his studies of light, and had to live in a completely darkened room, where he became completely isolated from most of reality.[^1r_whystats-3] | Does reality exist, or can it only be known through our perceptions? |
+| A black graduate student at the University of Chicago realizes that white people cross the street to avoid him, and finds himself whistling classical music to signal that he does not fit their negative stereotypes of a black male.[^1r_whystats-4] | How do people respond and react to others' negative stereotypes? |
 
 [^1r_whystats-3]: This happened to [Gustav Fechner](https://plato.stanford.edu/entries/fechner/), one of the early psychologists who pioneered the study of psychophysics, which tested theories that our perceptions do not always match reality (seen in many examples, such as [the dress](https://www.rit.edu/news/color-scientists-explain-dress-went-viral)). FWIW I see it as blue and black.
 
@@ -136,13 +133,13 @@ It's also a goal of this class to not only highlight the important contributions
 
 Psychology uses statistics because, in part, it wants to establish itself as a real science, like physics and chemistry. You don’t have to take my word for it, just look at the definitions of some common sources of psychological knowledge - introductory textbooks:
 
--   “Today, we define psychology as the science of behavior and mental processes.” (Myers, 2011)
+- “Today, we define psychology as the science of behavior and mental processes.” (Myers, 2011)
 
--   “...the science of behavior and the mind.” (Grey, 2010)
+- “...the science of behavior and the mind.” (Grey, 2010)
 
--   “...the scientific study of mind, brain, and behavior.” (Gazzaniga, 2010)
+- “...the scientific study of mind, brain, and behavior.” (Gazzaniga, 2010)
 
--   “...We now define psychology as the science of behavior and mental processes.” (Myers & DeWall, 2018)
+- “...We now define psychology as the science of behavior and mental processes.” (Myers & DeWall, 2018)
 
 I’m probably showing my age looking to textbooks, so let’s check in with ChatGPT[^1r_whystats-6] to see whether the algorithmic summary of large piles of data suggests that psychology is, in fact, a “real science” : 
 
@@ -160,9 +157,9 @@ One of the most important goals of science is to form **predictions**, and then 
 
 A **prediction** is an educated guess you have about the future. Educated means that the guess comes from some knowledge (either your experiences, beliefs, something you learned in a textbook, or the results of a scientific study). A prediction can have two outcomes :
 
--   **Valid :** your prediction is right
+- **Valid :** your prediction is right
 
--   **Error :** your prediction is wrong.
+- **Error :** your prediction is wrong.
 
 Of course, things are rarely as simple as "right" or "wrong", and a large part of this class will be learning how to quantify exactly how much error there is in our scientific predictions.
 
@@ -174,19 +171,19 @@ As an example, let's look to the stars. Astronomers have developed knowledge abo
 
 As another example, on the day I'm writing these words, I do not predict that it will rain outside. I am making this prediction based on the following information:
 
--   it did not rain yesterday
+- it did not rain yesterday
 
--   it is not currently raining
+- it is not currently raining
 
--   I live in Oakland, where it rarely rains in August.
+- I live in Oakland, where it rarely rains in August.
 
--   the air doesn't have that feeling of rain; that smell.
+- the air doesn't have that feeling of rain; that smell.
 
--   I looked at the weather forecast app and it said we had a week of sunny weather ahead.
+- I looked at the weather forecast app and it said we had a week of sunny weather ahead.
 
--   [Nobody was carrying an umbrella today](https://walzr.com/weather-watching).
+- [Nobody was carrying an umbrella today](https://walzr.com/weather-watching).
 
--   there are no clouds.
+- there are no clouds.
 
 Because I predict it will not rain, I'm not too worried that the tarp is not covering my bike locked outside. Of course, my prediction could be wrong.
 
@@ -206,27 +203,25 @@ A linear model takes the following form: [^1r_whystats-7]
 
 [^1r_whystats-7]: I can already feel some of y'alls math anxiety rising across time and space. But remember, stats is just a language with some vocabulary we need to learn.
 
-$$
-DV \sim IV_1 + IV_2 + ... + IV_k + \epsilon
-$$
+$$DV \sim IV_1 + IV_2 + ... + IV_k + \epsilon$$
 
 Below is a description of terms in the model :
 
--   **DV = dependent variable.** This is the variable that you want to predict. It's up to the researcher what variable is the dependent variable. More complicated models can have more than one DV, but for this class we will just focus on one DV at a time.
+- **DV = dependent variable.** This is the variable that you want to predict. It's up to the researcher what variable is the dependent variable. More complicated models can have more than one DV, but for this class we will just focus on one DV at a time.
 
--   **IV = independent variable.** This is a different variable that you think will help you make predictions. Again, it's up to the researcher to choose what variables they will include to try and make predictions of the DV.
+- **IV = independent variable.** This is a different variable that you think will help you make predictions. Again, it's up to the researcher to choose what variables they will include to try and make predictions of the DV.
 
--   **k = any number.** This is a way of saying that there can be many IVs. Life is complex, and so in order to predict one variable, we will need to use information from lots of other variables.
+- **k = any number.** This is a way of saying that there can be many IVs. Life is complex, and so in order to predict one variable, we will need to use information from lots of other variables.
 
--   **\~ = a squiggly line / tilde.** I like to use the squiggly line to reinforce the idea that our model is uncertain and squiggly (this is not an exact prediction where an equal sign would be used). R also uses the tilde for defining a model, so it's nice to start practicing stretching our pinkie finger to reach that upper left corner of the keyboard.
+- **\~ = a squiggly line / tilde.** I like to use the squiggly line to reinforce the idea that our model is uncertain and squiggly (this is not an exact prediction where an equal sign would be used). R also uses the tilde for defining a model, so it's nice to start practicing stretching our pinkie finger to reach that upper left corner of the keyboard.
 
--   $\epsilon$ **= error =** this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven't included certain variables that are important to make predictions (either because we can't measure them in our study, don't think they are important enough to study, or don't know that we should study them), or because we are measuring our variables with some amount of error[^1r_whystats-8].
+- $\epsilon$ **= error =** this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven't included certain variables that are important to make predictions (either because we can't measure them in our study, don't think they are important enough to study, or don't know that we should study them), or because we are measuring our variables with some amount of error[^1r_whystats-8].
 
 [^1r_whystats-8]: We will learn more about *measurement error* in Chapter 4.
 
 For example, I could write out my prediction about rain as the following linear model :
 
--   rain \~ clouds + umbrellas + weather app status + smell + air pressure + season + location + temperature + error
+- rain \~ clouds + umbrellas + weather app status + smell + air pressure + season + location + temperature + error
 
 We read a model as : "the DV is a function of..." or sometimes "the DV depends on...". So I'd read this model as "rain is a function of clouds, umbrellas, the weather app status...etc." And it's good practice to leave the variables neutral (e.g., just "clouds", not "storm clouds").[^1r_whystats-9]
 
@@ -238,11 +233,11 @@ Once we add numbers and data to a linear model[^1r_whystats-10], we can quickly 
 
 [^1r_whystats-10]: We will get to this in Chapter 6!
 
--   which variables allow us to make the best predictions, and which variables do not improve our predictions (e.g., is the number of umbrellas others are carrying a good predictor of whether it's going to rain or not?)
+- which variables allow us to make the best predictions, and which variables do not improve our predictions (e.g., is the number of umbrellas others are carrying a good predictor of whether it's going to rain or not?)
 
--   the direction of the relationship between each IV and the DV (e.g., is it that more umbrellas = more rain, or more umbrellas = less rain?)
+- the direction of the relationship between each IV and the DV (e.g., is it that more umbrellas = more rain, or more umbrellas = less rain?)
 
--   the amount of error in our predictions (e.g., how good, exactly, is this model at predicting the rain?)
+- the amount of error in our predictions (e.g., how good, exactly, is this model at predicting the rain?)
 
 ##### Practice Writing A Model
 
@@ -266,34 +261,34 @@ Let us know if you get stuck on the class discord.
 
 {{< video https://youtu.be/0pXGqGDSySM >}}
 
--   objects - assign function for numerical data
+- objects - assign function for numerical data
 
--   c() : combining data together.
+- c() : combining data together.
 
--   length() : the number of objects
+- length() : the number of objects
 
 ### Video : Graphing Numeric Variables in R
 
 {{< video https://youtu.be/lmXQ2BhQNuo >}}
 
--   hist() : a graph
+- hist() : a graph
 
--   changing arguments : xlab, ylab, main
+- changing arguments : xlab, ylab, main
 
 ### Video : Defining Categorical Variables in R
 
 {{< video https://youtu.be/CFXRxfaadIw>}}
 
--   categorical data (“string”)
--   as.factor() : to convert a string to a categorical variable
--   levels() : to see the levels of your categorical variable.
+- categorical data (“string”)
+- as.factor() : to convert a string to a categorical variable
+- levels() : to see the levels of your categorical variable.
 
 ### Video : Graphing categorical variables in R
 
 {{< video https://youtu.be/Fmai9Ltpa5I>}}
 
--   plot()
--   changing arguments : col, bor, main; xlab; ylab
+- plot()
+- changing arguments : col, bor, main; xlab; ylab
 
 ## Part 3 : How Science? The Scientific Method in Five Easy Steps
 
@@ -313,15 +308,15 @@ The first step, is picking some topic or variable that you care about, and ident
 
 Looking for project topic inspiration? A few ideas to consider :
 
--   **Think about why you become a psychology major.** Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people's lies? Think about these interests, then think about what variables might be relevant. For example, while you won't have access to an fMRI machine (or the required statistics) in order to [reconstruct images people see during their dreams](https://www.youtube.com/watch?v=inaH_i_TjV4), you might study people's beliefs about the importance of their dreams, or the extent to which they have dreams.
+- **Think about why you become a psychology major.** Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people's lies? Think about these interests, then think about what variables might be relevant. For example, while you won't have access to an fMRI machine (or the required statistics) in order to [reconstruct images people see during their dreams](https://www.youtube.com/watch?v=inaH_i_TjV4), you might study people's beliefs about the importance of their dreams, or the extent to which they have dreams.
 
--   **Focus on a problem you've encountered or observed in real-life.** Notice that something in the world could be better? How would you label that as a variable? For example, maybe you want to better understand people's attitudes about capitalism or racism or housing costs.
+- **Focus on a problem you've encountered or observed in real-life.** Notice that something in the world could be better? How would you label that as a variable? For example, maybe you want to better understand people's attitudes about capitalism or racism or housing costs.
 
--   **Look at faculty webpages, and see what they (and / or their graduate students) are studying.** Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question might you study with this project?
+- **Look at faculty webpages, and see what they (and / or their graduate students) are studying.** Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question might you study with this project?
 
--   **Chase the latest trends of today.** Identify the new hot trend in our capitalist society these days, and then focus your project on that. For example, you could examine how people's perceptions of HOTNEWTREND are influenced by some aspect of their identity, or how exposure to HOTNEWTREND influences people's affect, behavior, or cognition (compared to another HOTTREND, or maybe an OLDTREND).
+- **Chase the latest trends of today.** Identify the new hot trend in our capitalist society these days, and then focus your project on that. For example, you could examine how people's perceptions of HOTNEWTREND are influenced by some aspect of their identity, or how exposure to HOTNEWTREND influences people's affect, behavior, or cognition (compared to another HOTTREND, or maybe an OLDTREND).
 
--   **You don't have to take my word for it.** [Here's another guide](https://libguides.usc.edu/writingguide/introduction/researchproblem) that might offer some help, or ask for help in the class discord / office hours / lecture!
+- **You don't have to take my word for it.** [Here's another guide](https://libguides.usc.edu/writingguide/introduction/researchproblem) that might offer some help, or ask for help in the class discord / office hours / lecture!
 
 Once you've chosen your topic, make sure that it's the right level of focus, and something you can complete with the resources you have.
 
@@ -361,15 +356,15 @@ A scientific theory is one that is comprehensive, explanatory, and supported by 
 
 **Hypotheses** are specific predictions that researchers make about what they expect to see in the data if their theory is supported or is not supported by data. 
 
--   The **alternative hypothesis** (sometimes written **HA**) is the researcher’s own belief. It may seem strange to label your belief “alternative” when this word is used for things that are supposed to be different (“alternative rock = it’s not your parent’s rock & roll!”), and we are so used to thinking that our beliefs are the default that to call them alternative seems wrong. This is an example of previous beliefs bias, and the decision to label our beliefs as the “alternative” is an example of science trying to correct this bias. It’s a small and symbolic correction, but it’s better than nothing.
+- The **alternative hypothesis** (sometimes written **HA**) is the researcher’s own belief. It may seem strange to label your belief “alternative” when this word is used for things that are supposed to be different (“alternative rock = it’s not your parent’s rock & roll!”), and we are so used to thinking that our beliefs are the default that to call them alternative seems wrong. This is an example of previous beliefs bias, and the decision to label our beliefs as the “alternative” is an example of science trying to correct this bias. It’s a small and symbolic correction, but it’s better than nothing.
 
--   The **null hypothesis** (sometimes written **H0**) is the label given for whatever evidence would not support the researcher’s belief.
+- The **null hypothesis** (sometimes written **H0**) is the label given for whatever evidence would not support the researcher’s belief.
 
 **EXAMPLE :** Let’s say you believe that smoking cannabis hurts a person’s memory. What’s the alternative hypothesis? What’s the null?
 
--   **Null Hypothesis :** People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna. [^1r_whystats-13]
+- **Null Hypothesis :** People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna. [^1r_whystats-13]
 
--   **Alternative Hypothesis :** People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.
+- **Alternative Hypothesis :** People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.
 
 [^1r_whystats-13]: Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs. non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)
 
