@@ -1,19 +1,16 @@
 # Why Statistics?
 
-In this week’s reading, you’ll learn why students like you are required to learn the statistics, programming language, and research methods required of modern psychology.
-
-[![](images/clipboard-4017464194.png){fig-align="center"}](https://commons.wikimedia.org/wiki/File:The_oldest_writing_in_the_world_-_The_Sumerian_Stone_Tablet.jpg)
+[![A Sumerian (Modern Iraq) stone tablet representing where locusts and caterpillars had infested different plots of land.](images/clipboard-4017464194.png){fig-align="center"}](https://commons.wikimedia.org/wiki/File:The_oldest_writing_in_the_world_-_The_Sumerian_Stone_Tablet.jpg)
 
 ::: callout-important
-## To-Do List (due before our next lecture)
+## Who Cares?
 
-- Read this chapter and watch the videos.
+In this week’s reading, you’ll learn why students like you are required to learn the statistics, programming language, and research methods required of modern psychology (and other social sciences).
 
-- Complete the practice exercises (check-ins) and try to create some variables in R.
-
-- Take Quiz 1 (on our course page).
-
-- Think about something you would want to learn about people (or non-human animals) if you were a researcher.
+- Part 1 covers how and why science is used by people in positions of power to study variation in ways that help them gain knowledge and influence the world.
+- Part 2 covers how to use the programming language R to define and graph a variable to illustrate variation.
+- Part 3 reviews the method that scientists
+- 
 :::
 
 ## Part 1 : Why Statistics in Psychology?
@@ -28,7 +25,7 @@ I hope that you have an interest in people (or non-human animals), and that this
 
 ### Statistics as a Language
 
-Statistics is a language that scientists use to describe this complexity. Indeed, historical records of the earliest written language reveal that people have used some form of symbols and numbers to represent - the Sumerian (modern day Iraq) stone tablet at the beginning of this chapter was used to represent where locusts and caterpillars had infested different plots of land.
+Statistics is a language that scientists use to describe this complexity. Historical records of the earliest written languages reveal that humans across cultures have used some form of symbols to . For example, the Sumerian (modern day Iraq) stone tablet seen at the beginning of this chapter was used to represent where locusts and caterpillars had infested different plots of land.
 
 Psychology uses this language to better understand differences in people (or non-human animals), and other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.
 
@@ -290,15 +287,17 @@ Let us know if you get stuck on the class discord.
 - plot()
 - changing arguments : col, bor, main; xlab; ylab
 
-## Part 3 : How Science? The Scientific Method in Five Easy Steps
+## Part 3 : How Science?
+
+### The Scientific Method in Five Easy Steps
 
 The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project[^1r_whystats-11].
 
-[^1r_whystats-11]:   Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the [American Psychological Association](https://convention.apa.org/) or the [Association of Psychological Science](https://www.psychologicalscience.org/conventions). The [Western Psychological Association](https://westernpsych.org/convention/) has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the [Society of Personality and Social Psychology](http://meeting.spsp.org/)). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.
+[^1r_whystats-11]: Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the [American Psychological Association](https://convention.apa.org/) or the [Association of Psychological Science](https://www.psychologicalscience.org/conventions). The [Western Psychological Association](https://westernpsych.org/convention/) has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the [Society of Personality and Social Psychology](http://meeting.spsp.org/)). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.
 
 I like to organize the scientific method into five broad parts, described below.
 
-### Step 1 : Identify a Question
+#### Step 1 : Identify a Question
 
 First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Part 1 of this chapter, we talked about how these questions are often informed by the researcher’s own observations or experiences. In this section, we'll discuss ways you can choose a topic to inspire a specific research question - something you will do as part of your final project in this class.
 
@@ -342,7 +341,7 @@ Hi folks, Prof. Cat here. I'll be popping up throughout this book to guide you t
 ![hi, says prof. cat](images/1_profcathi.JPG){fig-alt="a hand drawn image of a cat wearing clothes and glasses and saying hi" fig-align="left" width="136"}
 :::
 
-### Step 2 : Develop a Theory
+#### Step 2 : Develop a Theory
 
 A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is *comprehensive* (it relates to all nature, not just plants or animals or finches), it is *explanatory* (it’s why we and [cats](https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg) both narrow our eyes when we are scared and angry), and it is *supported* (by over 100 years of evidence[^1r_whystats-12]). 
 
@@ -370,7 +369,7 @@ A scientific theory is one that is comprehensive, explanatory, and supported by 
 
 [**Practice : Identifying Models, Null, and Alternative Hypotheses**](https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=header)**.** Here's a quick practice quiz to review identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory.
 
-### Step 3 : Collect Data
+#### Step 3 : Collect Data
 
 As described above, scientific theories are supported by evidence called data. How researchers collect data is something we will discuss in more detail over the next few weeks. In general, researchers have to figure out how to measure the variables they are interested in studying (e.g., “how will I know if someone is happy or not?”), and then find participants (people or animals) to study (e.g., “whose happiness should I study”). 
 
@@ -378,13 +377,13 @@ For example, in our smoking cannabis example the decisions about how to measure 
 
 The decisions that researchers make about how to define their measures and the participants they will study are very important, and will influence the results of the study (and thus our knowledge of the topic), so stay tuned for more discussion!
 
-### Step 4 : Use Data to Test Theories
+#### Step 4 : Use Data to Test Theories
 
 Finally, researchers look to see if the data they collected supports or rejects their theory (and evaluate how strongly their theory is supported or rejected). We'll talk much more about using data to test theories this semester.
 
 In our smoking cannabis example, the researcher would look to see which group did better on the memory test, and if the smokers did worse, then their theory would be supported (by this one study, at least).
 
-### Step 5 : Repeat
+#### Step 5 : Repeat
 
 Once a study is completed, researchers repeat the scientific method in two different ways.
 
@@ -392,7 +391,7 @@ Researchers will sometimes repeat the exact same steps a second time - something
 
 Scientists also repeat the scientific method with a new question that is based on the results from their first study. Science is a process, and researchers are never done learning about how to better predict & control the world. There’s always more research to do. For example, after identifying a pattern between smoking cannabis and memory, a researcher might ask whether the type or dosage of cannabis intake would influence memory, whether abstinence could reverse the effects of memory impairment, or whether cannabis and coffee together might lead to a different result. Note that this is not an example of replication, since researchers are not testing the same question they had - but it’s repeating the scientific method for a new question inspired by the old. This is good, and part of scientific progress. But the problem is that the incentives for scientific publication focused almost entirely on “new” research, and not really making sure that the “old” research was valid.
 
-### It's Never Actually Easy
+### The Scientific Method Is Never Easy
 
 Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a [Replication Crisis](https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics). There are two parts to the crisis:
 
@@ -401,8 +400,8 @@ Science is hard, and people are very complex, which makes psychological science 
 
 [^1r_whystats-14]: You can go deeper into some of the drama surrounding the replication project [here](#0). lemme know what you think on the discord thread for this week.
 
-We will chat more about this in our next lecture. But I think that's enough reading for now?
+# Next Steps
 
-# In Lecture.
-
-This week in lecture, we will get practice working in R (and define some variables), talk more about the work that psychological researchers do, and start learning how to develop your own interests into a final project topic that you are excited to work on. Yeah!
+1.  **Complete Quiz 1.**
+2.  **Complete Lab 1.**
+3.  **Contribute to Discussion 1.**

@@ -34,16 +34,17 @@ book:
     background: primary
     search: true
     left:
-      - text: "List of R Code"
-        href: Rcode.qmd
       - text: "Prof. Cat Homepage"
         href: https://catterson.github.io
+      - text: "List of R Code"
+        href: Rcode.qmd
   sidebar: 
     style: docked
     alignment: "left"
+    collapse-level: 3
     subtitle: "Table of Contents"
     logo: ./images/open_source_mouse.png
-  date: "Spring 2026"
+  date: "Summer 2026"
   
 bibliography: references.bib
 
@@ -57,8 +58,10 @@ format:
     toc-title: In This Chapter
     format-links: true
     number-sections: true
-    reference-location: margin
-    citation-location: margin
+    grid:
+      sidebar-width: 200px
+      body-width: 900px
+      margin-width: 200px
   pdf:
     documentclass: scrreprt
     include-in-header: 
