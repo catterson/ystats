@@ -1,80 +1,120 @@
 # Why Statistics?
 
-[![A Sumerian (Modern Iraq) stone tablet representing where locusts and caterpillars had infested different plots of land.](images/clipboard-4017464194.png){fig-align="center"}](https://commons.wikimedia.org/wiki/File:The_oldest_writing_in_the_world_-_The_Sumerian_Stone_Tablet.jpg)
+[![A Sumerian (Modern Iraq) stone tablet representing agricultural data.](images/clipboard-4017464194.png){fig-align="center"}](https://commons.wikimedia.org/wiki/File:The_oldest_writing_in_the_world_-_The_Sumerian_Stone_Tablet.jpg)
 
 ::: callout-important
 ## Who Cares?
 
 In this week’s reading, you’ll learn why students like you are required to learn the statistics, programming language, and research methods required of modern psychology (and other social sciences).
 
-- Part 1 covers how and why science is used by people in positions of power to study variation in ways that help them gain knowledge and influence the world.
-- Part 2 covers how to use the programming language R to define and graph a variable to illustrate variation.
-- Part 3 reviews the method that scientists
-- 
+- **Part 1** covers how and why science is used by people in positions of power to study variation in ways that help them gain knowledge and influence the world.
+- **Part 2** covers how to start using the programming language R to define and graph a variable to illustrate variation.
+- **Part 3** reviews the scientific method, and ways that scientists can be biased by their own experiences.
+
+**By the end of this chapter :** you will be able to define a research question you might be interested in studying, think about the focus of that question in terms of the ABCs and between vs. within-person variation, and use R to define and graph some variables.
 :::
 
-## Part 1 : Why Statistics in Psychology?
+## Part 1 : Why Statistics?
 
-As y’all know, this class is a requirement for students who want to be psychology majors. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder *why-the-flip* they are required to take a math class when all they just want to learn about people (or other non-human animals), ya know!??!
+Statistics is a requirement for students who want to be social scientists. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder *why-the-flip* they are required to take a math class when all they just want to learn about people (or other non-human animals), ya know!??!
 
 I agree that people (or non-human animals) are interesting. And we all have this interest in people (or non-human animals) because we are complex[^1r_whystats-1]. While people are similar in many ways, we also differ in radical ways; from superficial features like age and race, to more complex ways like our personality or emotions, to highly specific behaviors such as whether all students in the class are reading these words or not, or how bored or excited (or any emotional experience) students are while reading these words.
 
-[^1r_whystats-1]: One of the reasons I love teaching in the Bay Area is y’all are hella complex.
+[^1r_whystats-1]: One of the reasons I love teaching is that students in the Bay Area are hella complex.
 
 I hope that you have an interest in people (or non-human animals), and that this class helps you learn how to think about those interests through a psychological, and statistical lens. You don't always need this lens - and as we will discuss there can sometimes be dangers in viewing people through this lens - but it's useful to be able to wear these "stats glasses" when needed.
 
 ### Statistics as a Language
 
-Statistics is a language that scientists use to describe this complexity. Historical records of the earliest written languages reveal that humans across cultures have used some form of symbols to . For example, the Sumerian (modern day Iraq) stone tablet seen at the beginning of this chapter was used to represent where locusts and caterpillars had infested different plots of land.
+Statistics is a language that scientists use to describe this complexity. Historical records of the earliest written languages reveal that humans across cultures have used some form of symbols to represent data. For example, the Sumerian stone tablet seen at the beginning of this chapter was used to represent where locusts and caterpillars had infested different plots of land in modern day Iraq.
 
-Psychology uses this language to better understand differences in people (or non-human animals), and other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.
+Social scientists use this language to better understand differences in people (or non-human animals), and other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.
 
 Like all languages, statistics has vocabulary - words that have shared meaning, and allow us to understand what we are talking about.
 
-#### Variables and Variation
+#### Types of Variation
 
 Variation is at the heart of statistics, and is the specific vocabulary that researchers use to describe the differences, change, and complexity that defines life.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                    |
-+===========================================================================================================================================================================================================================================================================================================================================================================================================================+====================================================================================================================================================================================================================+
-| **Between-Person Variation** describes how individuals differ from each other. Think about ways that you differ from others; not everybody wears glasses, has the same level of silliness / seriousness / desire to cause mischief / fascination with horses.                                                                                                                                                             | ![](/images/1_between_belcher_variation.webp){fig-alt="five characters who are family members of the the TV show bob’s burgers expressing a variety of emotions and striking different poses." fig-align="center"} |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Within-Person Variation** describes how one individual changes over time or across different situations. Think about the person you are today - are you exactly the same as you were yesterday? A year ago? You’ve changed (varied) in ways both small (hunger, exhaustion, number of words you’ve read for this class) and large (personality, love interests, identity, etc.)                                         | ![](images/clipboard-3637432840.png)                                                                                                                                                                               |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **No variation** would describe a situation in which everyone is exactly the same. I can’t think of too many situations where there is no variation; let me know on Discord if you can think of one? And while there’s no theoretical limit to the amount of variation that there can be, one major task of this class will be to learn to quantify the amount of variation that we observe in our role as psychologists. | ::: {style="font-size:300%;"}                                                                                                                                                                                      |
-|                                                                                                                                                                                                                                                                                                                                                                                                                           | 🌞🌞🌞                                                                                                                                                                                                             |
-|                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                    |
-|                                                                                                                                                                                                                                                                                                                                                                                                                           | 🌞🌞🌞                                                                                                                                                                                                             |
-|                                                                                                                                                                                                                                                                                                                                                                                                                           | :::                                                                                                                                                                                                                |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Click on the tabs below to examine two different approaches to studying variation.
 
-**A Variable** is a label for some psychological phenomenon that has variation. I'm not sure where I first heard this, but psychologists often focus on what they call the “ABCs”. 
+:::::::::::: panel-tabset
+##### Between-Person
+
+::::: columns
+::: {.column width="50%"}
+**Between-Person (or between-subject / intra-individual) variation** describes how individuals differ from each other. Think about ways that you differ from others; not everybody wears glasses, has the same level of silliness / seriousness / desire to cause mischief / fascination with horses.
+
+This type of variation is not always focused on people - a study of how one country differs from other countries in terms of GDP or happiness, how one plant differs from another plant in terms of its height, or how one advertising campaign receives more clicks than another advertising campaign, would also be a form of between-individual variation.
+:::
+
+::: {.column width="50%"}
+![](images/1_between_belcher_variation.webp){fig-alt="five characters who are family members of the the TV show bob’s burgers expressing a variety of emotions and striking different poses." fig-align="center" width="291"}
+:::
+:::::
+
+##### Within-Person
+
+::::: columns
+::: {.column width="50%"}
+**Within-Person (or within-subject / intra-individual) variation** describes how one individual changes over time or across different situations. Think about the person you are today - are you exactly the same as you were yesterday? A year ago? You’ve changed (varied) in ways both small (hunger, exhaustion, number of words you’ve read for this class) and large (personality, love interests, identity, etc.)
+
+Looking to our other examples, you could also study how one country changes in happiness over time, how one plant changes in height based on the amount of sunlight it receives, or how one advertising campaign becomes less popular over time when everyone gets sick of hearing that same song that it uses repeated over and over again.
+:::
+
+::: {.column width="50%"}
+![](images/clipboard-3637432840.png){width="407"}
+:::
+:::::
+
+##### No Variation
+
+::::: columns
+::: {.column width="50%"}
+**No variation** would describe a situation in which everyone is exactly the same. I can’t think of too many situations where there is no variation; let me know on Discord if you can think of one? Life manages to express variation even in situations where scientists use their knowledge to control every known variable - while there's very little variation, not every plant has the exact same height or leaf structure in the image despite Monsanto's efforts.
+
+While there could be a world in which no variation exists, there’s no theoretical limit to the amount of variation that there can be. Indeed, one major task of statistics - and this class - will be to quantify the amount of variation that we observe.
+:::
+
+::: {.column width="50%"}
+![](images/clipboard-2911431703.png)
+:::
+:::::
+::::::::::::
+
+#### Types of Variables
+
+**A Variable** is a label for some phenomenon that has variation. I'm not sure where I first heard this, but social scientists often focus on what they call the “ABCs”. 
 
 - **A is for Affect = the emotions that you feel.**
 
 - **B is for Behavior = the actions that you do.**
 
-- **C is for cognition = the thoughts you have.**
+- **C is for Cognition = the thoughts you have.**
 
-These are not rigid categories, and psychologists often debate the definitions of these terms. But they can be useful ways to think about how to think about people, and help break down a complex phenomenon into more specific components.
+These are not rigid categories, and social scientists often debate the definitions of these terms. But they can be useful ways to think about how to think about people, and help break down a complex phenomenon into more specific components.
 
 #### Practice : Variables and Variation
 
 For example, think about how affect, behavior, and cognition might be relevant if I ask you to think about an upcoming exam (your first exam is in just a few weeks!)
 
-|  |  |
-|----|----|
-|  | **highlight the cells below to see my ideas / check your understanding** |
-| **Affect Example** | [the feeling of anxiety or dread you have thinking about being assessed, or maybe a feeling of excitement about the opportunity to demonstrate your hard work / effort / knowledge!]{style="color:white"} |
-| **Behavior Example** | [immediately checking your calendar to see when exams are; or maybe avoiding your classes with a nice procrastination session on the ol’ infinite scroll machine.]{style="color:white"} |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                       |                                                                                                                                                                                                                                                                                   |
++=======================+===================================================================================================================================================================================================================================================================================+
+|                       | **highlight the cells below to see my ideas / check your understanding**                                                                                                                                                                                                          |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Affect Example**    | [the feeling of anxiety or dread you have thinking about being assessed, or maybe a feeling of excitement about the opportunity to demonstrate your hard work / effort / knowledge!]{style="color:white"}                                                                         |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Behavior Example**  | [immediately checking your calendar to see when exams are; or maybe avoiding your classes with a nice procrastination session on the ol’ infinite scroll machine.]{style="color:white"}                                                                                           |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Cognition Example** | [thinking about all the work you have to do; wondering why the professor would choose this example when he could have thought about the ways that affect, behavior, and cognition would be triggered when you see a puppy or kitten or something like that…]{style="color:white"} |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 [Here's [a cat video](https://www.youtube.com/watch?v=Am3NVGP9rkQ) I like for students needing a distraction from thinking about exams. I promise your exams in this class will be chill and I'll do my best to prepare y'all.]{.aside}
 
 #### What's Language?
 
-Statisitcs, like spoken languages, is a combination of vocabulary, rules, and culture that people use to communicate with each other.
+Statistics, like spoken languages, is a combination of vocabulary, rules, and culture that people use to communicate with each other.
 
 - **Vocabulary.** Equations like "the mean" or “standard deviation” or "cronbach's alpha" or "p-value" are precise vocabulary terms that define some feature of variation. Some of these vocabulary words are easier to understand and remember than others, and like all languages, sometimes people disagree on the definition, and sometimes misuse these words.
 
@@ -86,12 +126,15 @@ Statisitcs, like spoken languages, is a combination of vocabulary, rules, and cu
 
 [^1r_whystats-2]: And usually food, though I’m not sure if there’s cultural food norms about statistics or research methods.
 
-#### Culture in Statistics : Me-Search
+### Critical and Culture in Statistics
+
+:::: callout-tip
+#### The Role of "Me-Search"
 
 ::: column-margin
 [Hiya folks! Everyone's favorite Open-Source Mickey Mouse here. I'll be popping up in the book from time to time to critically engage with the idea that statistics has a culture that is socially constructed by people like you!]{.smallcaps}
 
-![](/images/doff_intro_mickey.png){width="156"}
+![](images/doff_intro_mickey.png){width="80%"}
 :::
 
 All psychologists are interested in questions sparked by their own observations or experiences. This is sometimes called “**me-search**" - the idea that a person’s research interests reflect their own experience.
@@ -100,35 +143,38 @@ Me-search can be an important way for researchers to use their statistics and re
 
 Below are a few examples of research questions that are related to a person's real-life experiences.
 
-|  |  |
-|----|----|
-| **Real Life Experience** | **Research Question** |
-| A researcher develops vision problems due to his studies of light, and had to live in a completely darkened room, where he became completely isolated from most of reality.[^1r_whystats-3] | Does reality exist, or can it only be known through our perceptions? |
-| A black graduate student at the University of Chicago realizes that white people cross the street to avoid him, and finds himself whistling classical music to signal that he does not fit their negative stereotypes of a black male.[^1r_whystats-4] | How do people respond and react to others' negative stereotypes? |
-
-[^1r_whystats-3]: This happened to [Gustav Fechner](https://plato.stanford.edu/entries/fechner/), one of the early psychologists who pioneered the study of psychophysics, which tested theories that our perceptions do not always match reality (seen in many examples, such as [the dress](https://www.rit.edu/news/color-scientists-explain-dress-went-viral)). FWIW I see it as blue and black.
-
-[^1r_whystats-4]: This anecdote ([as reported here](https://www.npr.org/2010/04/12/125859207/whistling-vivaldi-and-beating-stereotypes)) inspired Claude Steele's research on [stereotype threat](https://en.wikipedia.org/wiki/Stereotype_threat).
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+|                                                                                                                                                                                                                                                        |                                                                      |
++========================================================================================================================================================================================================================================================+======================================================================+
+| **Real Life Experience**                                                                                                                                                                                                                               | **Research Question**                                                |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| A researcher develops vision problems due to his studies of light, and had to live in a completely darkened room, where he became completely isolated from most of reality.[^1r_whystats-3]                                                            | Does reality exist, or can it only be known through our perceptions? |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| A black graduate student at the University of Chicago realizes that white people cross the street to avoid him, and finds himself whistling classical music to signal that he does not fit their negative stereotypes of a black male.[^1r_whystats-4] | How do people respond and react to others' negative stereotypes?     |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
 Me-search also serves as a form of potential bias in research - not only will a researcher’s own biases and beliefs influence the way they conduct research, but the types of questions that are asked will be influenced by the types of people doing research.
 
 For example, a survey of over 26,000 research articles in psychology documented just how rarely the topic of race is studied.
 
-![](/images/1_RaceResearch.png){fig-alt="a graph that illustrates how much research on race is published in three different types of psychology journals. the proportion of publications on the y-axis, and the decade on the x-axis. the graph shows that over time, the percentage of publications that highlight race has stayed at zero for cognitive psychology, slightly increased from around 5% for developmental and social psychology (in the 1970s) to 10% for developmental psychology in the 2010s and 8% in social psychology in the 2010s." fig-align="center" width="475"}
+![](images/1_RaceResearch.png){fig-alt="a graph that illustrates how much research on race is published in three different types of psychology journals. the proportion of publications on the y-axis, and the decade on the x-axis. the graph shows that over time, the percentage of publications that highlight race has stayed at zero for cognitive psychology, slightly increased from around 5% for developmental and social psychology (in the 1970s) to 10% for developmental psychology in the 2010s and 8% in social psychology in the 2010s." fig-align="center"}
 
 As we'll discuss throughout this class, life is complex and there is never one explanation for any phenomenon. However, it's important to note that psychology as a field has historically been dominated by white authors (researchers who write scientific papers) and white editors (researchers who decide what papers get published or not).
 
-![](/images/1_white_authors.png){fig-alt="another graph that illustrates the percentage of journal articles that were written by authors who were white or persons of color over the last 4 decades." fig-align="center" width="475"}
+![](images/1_white_authors-01.png){fig-alt="another graph that illustrates the percentage of journal articles that were written by authors who were white or persons of color over the last 4 decades." fig-align="center"}
 
-These trends are important to reflect on, because they reveal a bias in who becomes a psychologist, and what types of questions these researchers are interested in pursuing.
+These trends are important to reflect on, because they reveal a bias in who becomes a social scientist, and what types of questions these researchers are interested in pursuing.
 
-It's also a goal of this class to not only highlight the important contributions of non-white researchers and statisticians, but also make sure that all students in this diverse classroom feels empowered to use statistics, research methods, and R skills to ask (and answer) research questions that matter to them![^1r_whystats-5]
+It's also a goal of this class to not only highlight the important contributions of non-white researchers and statisticians, but also make sure that all students in this diverse classroom feels empowered to use statistics, research methods, and R skills to ask (and answer) research questions that matter to them!
+::::
 
-[^1r_whystats-5]: This is the purpose of your final project! We'll talk more about this throughout the class.
+[^1r_whystats-3]: This happened to [Gustav Fechner](https://plato.stanford.edu/entries/fechner/), one of the early psychologists who pioneered the study of psychophysics, which tested theories that our perceptions do not always match reality (seen in many examples, such as [the dress](https://www.rit.edu/news/color-scientists-explain-dress-went-viral)). FWIW I see it as blue and black.
 
-### Psychology as a REAL SCIENCE ™
+[^1r_whystats-4]: This anecdote ([as reported here](https://www.npr.org/2010/04/12/125859207/whistling-vivaldi-and-beating-stereotypes)) inspired Claude Steele's research on [stereotype threat](https://en.wikipedia.org/wiki/Stereotype_threat).
 
-Psychology uses statistics because, in part, it wants to establish itself as a real science, like physics and chemistry. You don’t have to take my word for it, just look at the definitions of some common sources of psychological knowledge - introductory textbooks:
+### Psychology is a REAL SCIENCE ™
+
+Psychology and other social sciences uses statistics because, in part, it wants to establish itself as a real science, like physics and chemistry. I've never heard anyone use the phrase "chemistry science" because this almost feels redundant - it is implied that chemistry is a science. You don’t have to take my word for it, just look at the definitions of some common sources of psychological knowledge - introductory textbooks:
 
 - “Today, we define psychology as the science of behavior and mental processes.” (Myers, 2011)
 
@@ -138,11 +184,11 @@ Psychology uses statistics because, in part, it wants to establish itself as a r
 
 - “...We now define psychology as the science of behavior and mental processes.” (Myers & DeWall, 2018)
 
-I’m probably showing my age looking to textbooks, so let’s check in with ChatGPT[^1r_whystats-6] to see whether the algorithmic summary of large piles of data suggests that psychology is, in fact, a “real science” : 
+I’m probably showing my age looking to textbooks, so let’s check in with ChatGPT[^1r_whystats-5] to see whether the algorithmic summary of large piles of data suggests that psychology is, in fact, a “real science” : 
 
-[^1r_whystats-6]: See the syllabus for the course ChatGPT policy. You may also be interested to read on the ethical and [environmental issues](https://bsj.studentorg.berkeley.edu/the-new-dimension-to-the-climate-crisis-chat-gpt/) surrounding this emerging technology.
+[^1r_whystats-5]: See the syllabus for the course ChatGPT policy. You may also be interested to read on the ethical and [environmental issues](https://bsj.studentorg.berkeley.edu/the-new-dimension-to-the-climate-crisis-chat-gpt/) surrounding this emerging technology.
 
-![](/images/1_psychsci_chatGPT_def.png){width="475"}
+![](images/1_psychsci_chatGPT_def.png){fig-align="center"}
 
 Perhaps more authoritatively, the American Psychological Association (APA) confirms that psychology is, “the study of the mind and behavior…a diverse scientific discipline comprising several major branches of research.” (APA, 2024).
 
@@ -190,15 +236,15 @@ Because I predict it will not rain, I'm not too worried that the tarp is not cov
 
 Think about some predictions that you have made. What knowledge informed the prediction? Did you use this prediction to influence your future behavior in some way? What kinds of predictions do psychologists make? We will chat more about these ideas in class :) but it's a core focus on why psychologists use predictions.
 
-And so, here we are. In this document, in this required class for the psychology major, learning how to DO REAL SCIENCE. With statistics.
+And so, here we are. In this document, in this required class, learning how to DO REAL SCIENCE. With statistics.
 
 #### Linear Models to Organize Our Predictions
 
 The linear model a simple formula that helps researchers to make, and quantify, their predictions. We will talk much more about linear models in our class - they are one of the most important concepts we will cover and a foundation of modern statistics - but for now let's just focus on the basics :
 
-A linear model takes the following form: [^1r_whystats-7]
+A linear model takes the following form: [^1r_whystats-6]
 
-[^1r_whystats-7]: I can already feel some of y'alls math anxiety rising across time and space. But remember, stats is just a language with some vocabulary we need to learn.
+[^1r_whystats-6]: I can already feel some of y'alls math anxiety rising across time and space. But remember, stats is just a language with some vocabulary we need to learn.
 
 $$DV \sim IV_1 + IV_2 + ... + IV_k + \epsilon$$
 
@@ -212,23 +258,23 @@ Below is a description of terms in the model :
 
 - **\~ = a squiggly line / tilde.** I like to use the squiggly line to reinforce the idea that our model is uncertain and squiggly (this is not an exact prediction where an equal sign would be used). R also uses the tilde for defining a model, so it's nice to start practicing stretching our pinkie finger to reach that upper left corner of the keyboard.
 
-- $\epsilon$ **= error =** this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven't included certain variables that are important to make predictions (either because we can't measure them in our study, don't think they are important enough to study, or don't know that we should study them), or because we are measuring our variables with some amount of error[^1r_whystats-8].
+- $\epsilon$ **= error =** this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven't included certain variables that are important to make predictions (either because we can't measure them in our study, don't think they are important enough to study, or don't know that we should study them), or because we are measuring our variables with some amount of error[^1r_whystats-7].
 
-[^1r_whystats-8]: We will learn more about *measurement error* in Chapter 4.
+[^1r_whystats-7]: We will learn more about *measurement error* in Chapter 4.
 
 For example, I could write out my prediction about rain as the following linear model :
 
 - rain \~ clouds + umbrellas + weather app status + smell + air pressure + season + location + temperature + error
 
-We read a model as : "the DV is a function of..." or sometimes "the DV depends on...". So I'd read this model as "rain is a function of clouds, umbrellas, the weather app status...etc." And it's good practice to leave the variables neutral (e.g., just "clouds", not "storm clouds").[^1r_whystats-9]
+We read a model as : "the DV is a function of..." or sometimes "the DV depends on...". So I'd read this model as "rain is a function of clouds, umbrellas, the weather app status...etc." And it's good practice to leave the variables neutral (e.g., just "clouds", not "storm clouds").[^1r_whystats-8]
 
-[^1r_whystats-9]: Later we will talk about ways to account for the fact that more umbrellas increases the chance it will rain in our model.
+[^1r_whystats-8]: Later we will talk about ways to account for the fact that more umbrellas increases the chance it will rain in our model.
 
 Error in this model would represent the fact that I haven't accounted for some important variables that we know we should include (like humidity, coastal pressure systems, or palnetary waves), the fact that some of my variables were probably measured with error (was no one *really* carrying an umbrella???), and the fact that there are some things that we don't know about rain, and what predicts it (this is what weather scientists are trying to learn more about.)
 
-Once we add numbers and data to a linear model[^1r_whystats-10], we can quickly see :
+Once we add numbers and data to a linear model[^1r_whystats-9], we can quickly see :
 
-[^1r_whystats-10]: We will get to this in Chapter 6!
+[^1r_whystats-9]: We will get to this in Chapter 6!
 
 - which variables allow us to make the best predictions, and which variables do not improve our predictions (e.g., is the number of umbrellas others are carrying a good predictor of whether it's going to rain or not?)
 
@@ -245,16 +291,20 @@ Imagine a researcher wants to better understand why people differ in happiness, 
 
 happiness \~ music playing + water intake + ice cream consumption + error
 
-For this model, I've organized the focus of the research question on the left-hand side and listed the three other variables to the right, using neutral descriptions (e.g., 'water intake' rather than 'drinking more water'). I also included error at the end of my model to account for the fact that some people who play music, drink water, and eat ice cream are, in fact, not happy. I also didn't add other varibles that might be related to happiness, since these were not part of the researcher's statement.
+For this model, I've organized the focus of the research question on the left-hand side and listed the three other variables to the right, using neutral descriptions (e.g., 'water intake' rather than 'drinking more water'). I also included error at the end of my model to account for the fact that some people who play music, drink water, and eat ice cream are, in fact, not happy. I also didn't add other variables that might be related to happiness, since these were not part of the researcher's statement.
 :::
 
 ## Part 2 : Defining Variables in R
 
-Below are some videos, and R code, that review how to define a variable in R. Practice creating your own script in RStudio to follow along; there’s value in typing this out yourself to get that muscle memory in 💪🤘.
+In Part 1, we learned how variables were one of the core units of statistics (and science). In Part 2, you'll learn how to define (and graph) variables in R. We will talk much more about variables (and graphs) in future chapters; this is just an introduction.
 
-Let us know if you get stuck on the class discord.
+Below are some videos, and R code, that review how to define a variable in R. Practice creating your own script in RStudio to follow along; there’s value in typing this out yourself to get that muscle memory in 💪🤘. *Make sure you have R and RStudio installed on your computer, and have watched the videos giving a tour of these programs in the Introduction.* Let us know if you get stuck on the class discord; happy to help provide some support or additional videos as needed.
 
-### Video : Defining Numeric Variables in R
+### Numeric Variables in R
+
+As you'll learn in Chapter 2, some variables are described with numbers. For example, you might be interested in measuring the number of pets that a person has, and this number can vary from 0 (no pets) to an infinite number (in theory.)
+
+#### Defining a Numeric Variable in R
 
 {{< video https://youtu.be/0pXGqGDSySM >}}
 
@@ -264,7 +314,7 @@ Let us know if you get stuck on the class discord.
 
 - length() : the number of objects
 
-### Video : Graphing Numeric Variables in R
+#### Graphing Numeric Variables in R
 
 {{< video https://youtu.be/lmXQ2BhQNuo >}}
 
@@ -272,7 +322,11 @@ Let us know if you get stuck on the class discord.
 
 - changing arguments : xlab, ylab, main
 
-### Video : Defining Categorical Variables in R
+### Categorical Variables in R
+
+Other variables are better described as categories. For example, if you are interested in measuring a person's favorite type of pet, you might have them choose from a list of options : "turtle", "rabbit", "rat", "dog", "dog", "rat", etc.
+
+#### Defining a Categorical Variable in R
 
 {{< video https://youtu.be/CFXRxfaadIw>}}
 
@@ -280,7 +334,7 @@ Let us know if you get stuck on the class discord.
 - as.factor() : to convert a string to a categorical variable
 - levels() : to see the levels of your categorical variable.
 
-### Video : Graphing categorical variables in R
+#### Graphing a Categorical Variables in R
 
 {{< video https://youtu.be/Fmai9Ltpa5I>}}
 
@@ -291,31 +345,29 @@ Let us know if you get stuck on the class discord.
 
 ### The Scientific Method in Five Easy Steps
 
-The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project[^1r_whystats-11].
+The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project[^1r_whystats-10].
 
-[^1r_whystats-11]: Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the [American Psychological Association](https://convention.apa.org/) or the [Association of Psychological Science](https://www.psychologicalscience.org/conventions). The [Western Psychological Association](https://westernpsych.org/convention/) has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the [Society of Personality and Social Psychology](http://meeting.spsp.org/)). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.
+[^1r_whystats-10]: Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the [American Psychological Association](https://convention.apa.org/) or the [Association of Psychological Science](https://www.psychologicalscience.org/conventions). The [Western Psychological Association](https://westernpsych.org/convention/) has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the [Society of Personality and Social Psychology](http://meeting.spsp.org/)). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.
 
 I like to organize the scientific method into five broad parts, described below.
 
 #### Step 1 : Identify a Question
 
-First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Part 1 of this chapter, we talked about how these questions are often informed by the researcher’s own observations or experiences. In this section, we'll discuss ways you can choose a topic to inspire a specific research question - something you will do as part of your final project in this class.
+First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Part 1 of this chapter, we talked about how these questions are often informed by the researcher’s own observations or experiences. In Part 3, we'll discuss ways you can choose a topic to inspire a specific research question - something you will do as part of your training in statistics and research.
 
-We'll talk about this more in class, but the basic idea is that you will identify a topic that you care about, develop this idea into a research question, design a study to answer some part of this question, collect and analyze the data from your study (using R!), and then write up the results as an academic paper.
-
-The first step, is picking some topic or variable that you care about, and identifying the parts of your background or experiences that influence this topic. This can be a challenging first step, and it's okay to struggle. Your topic will also change as we develop it, so don't feel like it needs to be "perfect" or "locked in" yet.
+The first step, is picking some topic or variable that you care about, and identifying the parts of your background or experiences that influence this topic. This can be a challenging first step, and it's okay to struggle. Your topic will also change as we develop over the year, so don't feel like it needs to be "perfect" or "locked in" yet.
 
 Looking for project topic inspiration? A few ideas to consider :
 
-- **Think about why you become a psychology major.** Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people's lies? Think about these interests, then think about what variables might be relevant. For example, while you won't have access to an fMRI machine (or the required statistics) in order to [reconstruct images people see during their dreams](https://www.youtube.com/watch?v=inaH_i_TjV4), you might study people's beliefs about the importance of their dreams, or the extent to which they have dreams.
+- **Think about why you chose to focus on psychology or the social sciences.** Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people's lies? Think about these interests, then think about what variables might be relevant. For example, while you won't have access to an fMRI machine (or the required statistics) in order to [reconstruct images people see during their dreams](https://www.youtube.com/watch?v=inaH_i_TjV4), you might study people's beliefs about the importance of their dreams, or the extent to which they have dreams.
 
 - **Focus on a problem you've encountered or observed in real-life.** Notice that something in the world could be better? How would you label that as a variable? For example, maybe you want to better understand people's attitudes about capitalism or racism or housing costs.
 
-- **Look at faculty webpages, and see what they (and / or their graduate students) are studying.** Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question might you study with this project?
+- **Look at faculty webpages or a future employeer, and see what they (and / or their graduate students) are working on.** Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question or job might you study with this project?
 
 - **Chase the latest trends of today.** Identify the new hot trend in our capitalist society these days, and then focus your project on that. For example, you could examine how people's perceptions of HOTNEWTREND are influenced by some aspect of their identity, or how exposure to HOTNEWTREND influences people's affect, behavior, or cognition (compared to another HOTTREND, or maybe an OLDTREND).
 
-- **You don't have to take my word for it.** [Here's another guide](https://libguides.usc.edu/writingguide/introduction/researchproblem) that might offer some help, or ask for help in the class discord / office hours / lecture!
+- **You don't have to take my word for it.** [Here's another guide](https://libguides.usc.edu/writingguide/introduction/researchproblem) that might offer some help, or ask for help in the class discord / office hours!
 
 Once you've chosen your topic, make sure that it's the right level of focus, and something you can complete with the resources you have.
 
@@ -338,14 +390,14 @@ Hi folks, Prof. Cat here. I'll be popping up throughout this book to guide you t
 :::
 
 ::: column-margin
-![hi, says prof. cat](images/1_profcathi.JPG){fig-alt="a hand drawn image of a cat wearing clothes and glasses and saying hi" fig-align="left" width="136"}
+![](images/clipboard-818370036.png){width="95"}
 :::
 
 #### Step 2 : Develop a Theory
 
-A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is *comprehensive* (it relates to all nature, not just plants or animals or finches), it is *explanatory* (it’s why we and [cats](https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg) both narrow our eyes when we are scared and angry), and it is *supported* (by over 100 years of evidence[^1r_whystats-12]). 
+A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is *comprehensive* (it relates to all nature, not just plants or animals or finches), it is *explanatory* (it’s why we and [cats](https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg) both narrow our eyes when we are scared and angry), and it is *supported* (by over 100 years of evidence[^1r_whystats-11]). 
 
-[^1r_whystats-12]: [From fossil records to observations of fruit flies and plans](https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01)
+[^1r_whystats-11]: [From fossil records to observations of fruit flies and plans](https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01)
 
 **Most scientists refrain from saying that a theory is “proven” or “true” for two reasons:**
 
@@ -361,11 +413,11 @@ A scientific theory is one that is comprehensive, explanatory, and supported by 
 
 **EXAMPLE :** Let’s say you believe that smoking cannabis hurts a person’s memory. What’s the alternative hypothesis? What’s the null?
 
-- **Null Hypothesis :** People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna. [^1r_whystats-13]
+- **Null Hypothesis :** People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijuana. [^1r_whystats-12]
 
-- **Alternative Hypothesis :** People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.
+- **Alternative Hypothesis :** People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijuana.
 
-[^1r_whystats-13]: Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs. non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)
+[^1r_whystats-12]: Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs. non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)
 
 [**Practice : Identifying Models, Null, and Alternative Hypotheses**](https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=header)**.** Here's a quick practice quiz to review identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory.
 
@@ -393,15 +445,11 @@ Scientists also repeat the scientific method with a new question that is based o
 
 ### The Scientific Method Is Never Easy
 
-Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a [Replication Crisis](https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics). There are two parts to the crisis:
+Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a [Replication Crisis](https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics).
+
+There are two parts to the crisis :
 
 1.  Researchers tend not to seek to replicate their (or others’) results.
-2.  Systematic attempts to replicate previous research suggests that the majority of results in psychology do not replicate[^1r_whystats-14].
+2.  Systematic attempts to replicate previous research suggests that the majority of results in psychology do not replicate[^1r_whystats-13].
 
-[^1r_whystats-14]: You can go deeper into some of the drama surrounding the replication project [here](#0). lemme know what you think on the discord thread for this week.
-
-# Next Steps
-
-1.  **Complete Quiz 1.**
-2.  **Complete Lab 1.**
-3.  **Contribute to Discussion 1.**
+[^1r_whystats-13]: You can go deeper into some of the drama surrounding the replication project [here](#0). lemme know what you think on the discord thread for this week.
