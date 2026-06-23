@@ -310,22 +310,24 @@ window.Quarto = {
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
-  <li><a href="#part-1-why-statistics" id="toc-part-1-why-statistics" class="nav-link active" data-scroll-target="#part-1-why-statistics">Part 1 : Why Statistics?</a>
+  <li><a href="#part-1-why-statistics-in-psychology" id="toc-part-1-why-statistics-in-psychology" class="nav-link active" data-scroll-target="#part-1-why-statistics-in-psychology">Part 1 : Why Statistics in Psychology?</a>
   <ul class="collapse">
   <li><a href="#statistics-as-a-language" id="toc-statistics-as-a-language" class="nav-link" data-scroll-target="#statistics-as-a-language">Statistics as a Language</a></li>
-  <li><a href="#critical-and-culture-in-statistics" id="toc-critical-and-culture-in-statistics" class="nav-link" data-scroll-target="#critical-and-culture-in-statistics">Critical and Culture in Statistics</a></li>
-  <li><a href="#psychology-is-a-real-science" id="toc-psychology-is-a-real-science" class="nav-link" data-scroll-target="#psychology-is-a-real-science">Psychology is a REAL SCIENCE ™</a></li>
+  <li><a href="#psychology-as-a-real-science" id="toc-psychology-as-a-real-science" class="nav-link" data-scroll-target="#psychology-as-a-real-science">Psychology as a REAL SCIENCE ™</a></li>
   </ul></li>
   <li><a href="#part-2-defining-variables-in-r" id="toc-part-2-defining-variables-in-r" class="nav-link" data-scroll-target="#part-2-defining-variables-in-r">Part 2 : Defining Variables in R</a>
   <ul class="collapse">
-  <li><a href="#numeric-variables-in-r" id="toc-numeric-variables-in-r" class="nav-link" data-scroll-target="#numeric-variables-in-r">Numeric Variables in R</a></li>
-  <li><a href="#categorical-variables-in-r" id="toc-categorical-variables-in-r" class="nav-link" data-scroll-target="#categorical-variables-in-r">Categorical Variables in R</a></li>
+  <li><a href="#video-defining-numeric-variables-in-r" id="toc-video-defining-numeric-variables-in-r" class="nav-link" data-scroll-target="#video-defining-numeric-variables-in-r">Video : Defining Numeric Variables in R</a></li>
+  <li><a href="#video-graphing-numeric-variables-in-r" id="toc-video-graphing-numeric-variables-in-r" class="nav-link" data-scroll-target="#video-graphing-numeric-variables-in-r">Video : Graphing Numeric Variables in R</a></li>
+  <li><a href="#video-defining-categorical-variables-in-r" id="toc-video-defining-categorical-variables-in-r" class="nav-link" data-scroll-target="#video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</a></li>
+  <li><a href="#video-graphing-categorical-variables-in-r" id="toc-video-graphing-categorical-variables-in-r" class="nav-link" data-scroll-target="#video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</a></li>
   </ul></li>
   <li><a href="#part-3-how-science" id="toc-part-3-how-science" class="nav-link" data-scroll-target="#part-3-how-science">Part 3 : How Science?</a>
   <ul class="collapse">
   <li><a href="#the-scientific-method-in-five-easy-steps" id="toc-the-scientific-method-in-five-easy-steps" class="nav-link" data-scroll-target="#the-scientific-method-in-five-easy-steps">The Scientific Method in Five Easy Steps</a></li>
   <li><a href="#the-scientific-method-is-never-easy" id="toc-the-scientific-method-is-never-easy" class="nav-link" data-scroll-target="#the-scientific-method-is-never-easy">The Scientific Method Is Never Easy</a></li>
   </ul></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
   </ul>
 </nav>
     </div>
@@ -377,11 +379,10 @@ window.Quarto = {
 <li><strong>Part 2</strong> covers how to start using the programming language R to define and graph a variable to illustrate variation.</li>
 <li><strong>Part 3</strong> reviews the scientific method, and ways that scientists can be biased by their own experiences.</li>
 </ul>
-<p><strong>By the end of this chapter :</strong> you will be able to define a research question you might be interested in studying, think about the focus of that question in terms of the ABCs and between vs.&nbsp;within-person variation, and use R to define and graph some variables.</p>
 </div>
 </div>
-<section id="part-1-why-statistics" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="part-1-why-statistics">Part 1 : Why Statistics?</h2>
+<section id="part-1-why-statistics-in-psychology" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="part-1-why-statistics-in-psychology">Part 1 : Why Statistics in Psychology?</h2>
 <p>Statistics is a requirement for students who want to be social scientists. This is exciting for me (your professor), and probably some students too. However, over the years I have learned this can be frustrating and stressful for students who wonder <em>why-the-flip</em> they are required to take a math class when all they just want to learn about people (or other non-human animals), ya know!??!</p>
 <p>I agree that people (or non-human animals) are interesting. And we all have this interest in people (or non-human animals) because we are complex<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. While people are similar in many ways, we also differ in radical ways; from superficial features like age and race, to more complex ways like our personality or emotions, to highly specific behaviors such as whether all students in the class are reading these words or not, or how bored or excited (or any emotional experience) students are while reading these words.</p>
 <p>I hope that you have an interest in people (or non-human animals), and that this class helps you learn how to think about those interests through a psychological, and statistical lens. You don’t always need this lens - and as we will discuss there can sometimes be dangers in viewing people through this lens - but it’s useful to be able to wear these “stats glasses” when needed.</p>
@@ -390,22 +391,20 @@ window.Quarto = {
 <p>Statistics is a language that scientists use to describe this complexity. Historical records of the earliest written languages reveal that humans across cultures have used some form of symbols to represent data. For example, the Sumerian stone tablet seen at the beginning of this chapter was used to represent where locusts and caterpillars had infested different plots of land in modern day Iraq.</p>
 <p>Social scientists use this language to better understand differences in people (or non-human animals), and other scientific disciplines focus on their own domains; physicists seek to understand differences (and similarities) in matter and energy, chemists seek to understand differences (and similarities) in elements and compounds, botanists seek to understand differences in plants, and economists seek to understand money.</p>
 <p>Like all languages, statistics has vocabulary - words that have shared meaning, and allow us to understand what we are talking about.</p>
-<section id="types-of-variation" class="level4">
-<h4 class="anchored" data-anchor-id="types-of-variation">Types of Variation</h4>
+<section id="variables-and-variation" class="level4">
+<h4 class="anchored" data-anchor-id="variables-and-variation">Variables and Variation</h4>
 <p>Variation is at the heart of statistics, and is the specific vocabulary that researchers use to describe the differences, change, and complexity that defines life.</p>
-<p>Click on the tabs below to examine two different approaches to studying variation.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Between-Person</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Within-Person</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">No Variation</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Between-Person Variation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Within-Person Variation</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Between-Person (or between-subject / intra-individual) variation</strong> describes how individuals differ from each other. Think about ways that you differ from others; not everybody wears glasses, has the same level of silliness / seriousness / desire to cause mischief / fascination with horses.</p>
-<p>This type of variation is not always focused on people - a study of how one country differs from other countries in terms of GDP or happiness, how one plant differs from another plant in terms of its height, or how one advertising campaign receives more clicks than another advertising campaign, would also be a form of between-individual variation.</p>
+<p>Between-Person Variation describes how individuals differ from each other. Think about ways that you differ from others; not everybody wears glasses, has the same level of silliness / seriousness / desire to cause mischief / fascination with horses.</p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/1_between_belcher_variation.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="five characters who are family members of the the TV show bob’s burgers expressing a variety of emotions and striking different poses." width="291"></p>
+<p><img src="../images/1_between_belcher_variation.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="five characters who are family members of the the TV show bob’s burgers expressing a variety of emotions and striking different poses."></p>
 </figure>
 </div>
 </div>
@@ -414,35 +413,23 @@ window.Quarto = {
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Within-Person (or within-subject / intra-individual) variation</strong> describes how one individual changes over time or across different situations. Think about the person you are today - are you exactly the same as you were yesterday? A year ago? You’ve changed (varied) in ways both small (hunger, exhaustion, number of words you’ve read for this class) and large (personality, love interests, identity, etc.)</p>
-<p>Looking to our other examples, you could also study how one country changes in happiness over time, how one plant changes in height based on the amount of sunlight it receives, or how one advertising campaign becomes less popular over time when everyone gets sick of hearing that same song that it uses repeated over and over again.</p>
+<p><strong>Within-Person Variation</strong> describes how one individual changes over time or across different situations. Think about the person you are today - are you exactly the same as you were yesterday? A year ago? You’ve changed (varied) in ways both small (hunger, exhaustion, number of words you’ve read for this class) and large (personality, love interests, identity, etc.)</p>
 </div><div class="column" style="width:50%;">
-<p><img src="images/clipboard-3637432840.png" class="img-fluid" width="407"></p>
-</div>
-</div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>No variation</strong> would describe a situation in which everyone is exactly the same. I can’t think of too many situations where there is no variation; let me know on Discord if you can think of one? Life manages to express variation even in situations where scientists use their knowledge to control every known variable - while there’s very little variation, not every plant has the exact same height or leaf structure in the image despite Monsanto’s efforts.</p>
-<p>While there could be a world in which no variation exists, there’s no theoretical limit to the amount of variation that there can be. Indeed, one major task of statistics - and this class - will be to quantify the amount of variation that we observe.</p>
-</div><div class="column" style="width:50%;">
-<p><img src="images/clipboard-2911431703.png" class="img-fluid"></p>
+<p><img src="images/clipboard-3637432840.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="types-of-variables" class="level4">
-<h4 class="anchored" data-anchor-id="types-of-variables">Types of Variables</h4>
-<p><strong>A Variable</strong> is a label for some phenomenon that has variation. I’m not sure where I first heard this, but social scientists often focus on what they call the “ABCs”.&nbsp;</p>
+<p><strong>No variation</strong> would describe a situation in which everyone is exactly the same. I can’t think of too many situations where there is no variation; let me know on Discord if you can think of one? And while there’s no theoretical limit to the amount of variation that there can be, one major task of this class will be to learn to quantify the amount of variation that we observe in our role as psychologists.</p>
+<p>{style=“font-size:300%;”}🌞🌞🌞</p>
+<p><strong>A Variable</strong> is a label for some psychological phenomenon that has variation. I’m not sure where I first heard this, but psychologists often focus on what they call the “ABCs”.&nbsp;</p>
 <ul>
 <li><p><strong>A is for Affect = the emotions that you feel.</strong></p></li>
 <li><p><strong>B is for Behavior = the actions that you do.</strong></p></li>
-<li><p><strong>C is for Cognition = the thoughts you have.</strong></p></li>
+<li><p><strong>C is for cognition = the thoughts you have.</strong></p></li>
 </ul>
-<p>These are not rigid categories, and social scientists often debate the definitions of these terms. But they can be useful ways to think about how to think about people, and help break down a complex phenomenon into more specific components.</p>
+<p>These are not rigid categories, and psychologists often debate the definitions of these terms. But they can be useful ways to think about how to think about people, and help break down a complex phenomenon into more specific components.</p>
 </section>
 <section id="practice-variables-and-variation" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="practice-variables-and-variation">Practice : Variables and Variation</h4>
@@ -475,7 +462,7 @@ window.Quarto = {
 </section>
 <section id="whats-language" class="level4">
 <h4 class="anchored" data-anchor-id="whats-language">What’s Language?</h4>
-<p>Statistics, like spoken languages, is a combination of vocabulary, rules, and culture that people use to communicate with each other.</p>
+<p>Statisitcs, like spoken languages, is a combination of vocabulary, rules, and culture that people use to communicate with each other.</p>
 <ul>
 <li><p><strong>Vocabulary.</strong> Equations like “the mean” or “standard deviation” or “cronbach’s alpha” or “p-value” are precise vocabulary terms that define some feature of variation. Some of these vocabulary words are easier to understand and remember than others, and like all languages, sometimes people disagree on the definition, and sometimes misuse these words.</p></li>
 <li><p><strong>Grammar and Syntax.</strong> The way we organize words also matters when learning languages. Saying “the professor graded the students“ has a very different meaning than “the students graded the professor”, even though these share the exact same words. Statistics (and research methods) also requires precision in the way we organize the ideas, terms, and processes. We’ll learn more about this as we discuss the scientific method (a highly structured and organized approach to doing research), but also as we learn how to navigate doing data analysis.</p></li>
@@ -483,21 +470,13 @@ window.Quarto = {
 <li><p><strong>Practice and Past Experiences.</strong> And yes, in order to gain fluency in a language, you need to practice! Attendance and regular engagement with this class will ensure that you are able to get the practice that you need. It’s also good to note that people differ in terms of their past experiences with computers and math, and are bringing those experiences (for better or worse) with them into this class.</p></li>
 </ul>
 </section>
-</section>
-<section id="critical-and-culture-in-statistics" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="critical-and-culture-in-statistics">Critical and Culture in Statistics</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>The Role of “Me-Search”
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<section id="culture-in-statistics-me-search" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="culture-in-statistics-me-search">Culture in Statistics : Me-Search</h4>
 
-<p>All psychologists are interested in questions sparked by their own observations or experiences. This is sometimes called “<strong>me-search</strong>” - the idea that a person’s research interests reflect their own experience.</p>
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="smallcaps">Hiya folks! Everyone’s favorite Open-Source Mickey Mouse here. I’ll be popping up in the book from time to time to critically engage with the idea that statistics has a culture that is socially constructed by people like you!</span></p>
+<p><img src="../images/doff_intro_mickey.png" class="img-fluid" width="156"></p>
+</div></div><p>All psychologists are interested in questions sparked by their own observations or experiences. This is sometimes called “<strong>me-search</strong>” - the idea that a person’s research interests reflect their own experience.</p>
 <p>Me-search can be an important way for researchers to use their statistics and research methods training to address questions and issues that are relevant to their lives and communities.</p>
 <p>Below are a few examples of research questions that are related to a person’s real-life experiences.</p>
 <table class="caption-top table">
@@ -520,38 +499,30 @@ window.Quarto = {
 <p>For example, a survey of over 26,000 research articles in psychology documented just how rarely the topic of race is studied.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/1_RaceResearch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="a graph that illustrates how much research on race is published in three different types of psychology journals. the proportion of publications on the y-axis, and the decade on the x-axis. the graph shows that over time, the percentage of publications that highlight race has stayed at zero for cognitive psychology, slightly increased from around 5% for developmental and social psychology (in the 1970s) to 10% for developmental psychology in the 2010s and 8% in social psychology in the 2010s."></p>
+<p><img src="../images/1_RaceResearch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="a graph that illustrates how much research on race is published in three different types of psychology journals. the proportion of publications on the y-axis, and the decade on the x-axis. the graph shows that over time, the percentage of publications that highlight race has stayed at zero for cognitive psychology, slightly increased from around 5% for developmental and social psychology (in the 1970s) to 10% for developmental psychology in the 2010s and 8% in social psychology in the 2010s." width="475"></p>
 </figure>
 </div>
 <p>As we’ll discuss throughout this class, life is complex and there is never one explanation for any phenomenon. However, it’s important to note that psychology as a field has historically been dominated by white authors (researchers who write scientific papers) and white editors (researchers who decide what papers get published or not).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/1_white_authors-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="another graph that illustrates the percentage of journal articles that were written by authors who were white or persons of color over the last 4 decades."></p>
+<p><img src="../images/1_white_authors.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="another graph that illustrates the percentage of journal articles that were written by authors who were white or persons of color over the last 4 decades." width="475"></p>
 </figure>
 </div>
-<p>These trends are important to reflect on, because they reveal a bias in who becomes a social scientist, and what types of questions these researchers are interested in pursuing.</p>
-<p>It’s also a goal of this class to not only highlight the important contributions of non-white researchers and statisticians, but also make sure that all students in this diverse classroom feels empowered to use statistics, research methods, and R skills to ask (and answer) research questions that matter to them!</p>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><div class="callout-margin-content">
-<p><span class="smallcaps">Hiya folks! Everyone’s favorite Open-Source Mickey Mouse here. I’ll be popping up in the book from time to time to critically engage with the idea that statistics has a culture that is socially constructed by people like you!</span></p>
-<p><img src="images/doff_intro_mickey.png" class="img-fluid" style="width:80.0%"></p>
-</div></div></section>
-<section id="psychology-is-a-real-science" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="psychology-is-a-real-science">Psychology is a REAL SCIENCE ™</h3>
-<p>Psychology and other social sciences uses statistics because, in part, it wants to establish itself as a real science, like physics and chemistry. I’ve never heard anyone use the phrase “chemistry science” because this almost feels redundant - it is implied that chemistry is a science. You don’t have to take my word for it, just look at the definitions of some common sources of psychological knowledge - introductory textbooks:</p>
+<p>These trends are important to reflect on, because they reveal a bias in who becomes a psychologist, and what types of questions these researchers are interested in pursuing.</p>
+<p>It’s also a goal of this class to not only highlight the important contributions of non-white researchers and statisticians, but also make sure that all students in this diverse classroom feels empowered to use statistics, research methods, and R skills to ask (and answer) research questions that matter to them!<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+</section>
+</section>
+<section id="psychology-as-a-real-science" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="psychology-as-a-real-science">Psychology as a REAL SCIENCE ™</h3>
+<p>Psychology uses statistics because, in part, it wants to establish itself as a real science, like physics and chemistry. You don’t have to take my word for it, just look at the definitions of some common sources of psychological knowledge - introductory textbooks:</p>
 <ul>
 <li><p>“Today, we define psychology as the science of behavior and mental processes.” (Myers, 2011)</p></li>
 <li><p>“…the science of behavior and the mind.” (Grey, 2010)</p></li>
 <li><p>“…the scientific study of mind, brain, and behavior.” (Gazzaniga, 2010)</p></li>
 <li><p>“…We now define psychology as the science of behavior and mental processes.” (Myers &amp; DeWall, 2018)</p></li>
 </ul>
-<p>I’m probably showing my age looking to textbooks, so let’s check in with ChatGPT<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> to see whether the algorithmic summary of large piles of data suggests that psychology is, in fact, a “real science” :&nbsp;</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/1_psychsci_chatGPT_def.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
+<p>I’m probably showing my age looking to textbooks, so let’s check in with ChatGPT<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> to see whether the algorithmic summary of large piles of data suggests that psychology is, in fact, a “real science” :&nbsp;</p>
+<p><img src="../images/1_psychsci_chatGPT_def.png" class="img-fluid" width="475"></p>
 <p>Perhaps more authoritatively, the American Psychological Association (APA) confirms that psychology is, “the study of the mind and behavior…a diverse scientific discipline comprising several major branches of research.” (APA, 2024).</p>
 <p>The consistent emphasis on science (and “rigorous” methods!) in these definitions is an attempt to elevate psychology through language to the status of other “hard” sciences, like physics and chemistry. But inclusion of the term “science” also seeks to differentiate psychology from its less scientific heritage and past, defend itself from accusations from other scientists / talking heads (if not some of your friends in STEM majors…or parents) that it is not actually REAL SCIENCE ™.&nbsp;</p>
 <section id="what-is-science-prediction-and-error" class="level4 page-columns page-full">
@@ -587,12 +558,12 @@ window.Quarto = {
 <div class="no-row-height column-margin column-container"><div class="">
 <p><img src="images/1_puffinrain.png" class="img-fluid quarto-figure quarto-figure-center"> It sometimes rains when sunny, as on Puffin Rock, where we’ll be here come rain or shine.</p>
 </div></div><p>Think about some predictions that you have made. What knowledge informed the prediction? Did you use this prediction to influence your future behavior in some way? What kinds of predictions do psychologists make? We will chat more about these ideas in class :) but it’s a core focus on why psychologists use predictions.</p>
-<p>And so, here we are. In this document, in this required class, learning how to DO REAL SCIENCE. With statistics.</p>
+<p>And so, here we are. In this document, in this required class for the psychology major, learning how to DO REAL SCIENCE. With statistics.</p>
 </section>
 <section id="linear-models-to-organize-our-predictions" class="level4">
 <h4 class="anchored" data-anchor-id="linear-models-to-organize-our-predictions">Linear Models to Organize Our Predictions</h4>
 <p>The linear model a simple formula that helps researchers to make, and quantify, their predictions. We will talk much more about linear models in our class - they are one of the most important concepts we will cover and a foundation of modern statistics - but for now let’s just focus on the basics :</p>
-<p>A linear model takes the following form: <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>A linear model takes the following form: <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
 <p><span class="math display">\[DV \sim IV_1 + IV_2 + ... + IV_k + \epsilon\]</span></p>
 <p>Below is a description of terms in the model :</p>
 <ul>
@@ -600,15 +571,15 @@ window.Quarto = {
 <li><p><strong>IV = independent variable.</strong> This is a different variable that you think will help you make predictions. Again, it’s up to the researcher to choose what variables they will include to try and make predictions of the DV.</p></li>
 <li><p><strong>k = any number.</strong> This is a way of saying that there can be many IVs. Life is complex, and so in order to predict one variable, we will need to use information from lots of other variables.</p></li>
 <li><p><strong>~ = a squiggly line / tilde.</strong> I like to use the squiggly line to reinforce the idea that our model is uncertain and squiggly (this is not an exact prediction where an equal sign would be used). R also uses the tilde for defining a model, so it’s nice to start practicing stretching our pinkie finger to reach that upper left corner of the keyboard.</p></li>
-<li><p><span class="math inline">\(\epsilon\)</span> <strong>= error =</strong> this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven’t included certain variables that are important to make predictions (either because we can’t measure them in our study, don’t think they are important enough to study, or don’t know that we should study them), or because we are measuring our variables with some amount of error<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p></li>
+<li><p><span class="math inline">\(\epsilon\)</span> <strong>= error =</strong> this term always concludes our written model, and accounts for the many other reasons why our predictions might be wrong. This could be because we haven’t included certain variables that are important to make predictions (either because we can’t measure them in our study, don’t think they are important enough to study, or don’t know that we should study them), or because we are measuring our variables with some amount of error<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p></li>
 </ul>
 <p>For example, I could write out my prediction about rain as the following linear model :</p>
 <ul>
 <li>rain ~ clouds + umbrellas + weather app status + smell + air pressure + season + location + temperature + error</li>
 </ul>
-<p>We read a model as : “the DV is a function of…” or sometimes “the DV depends on…”. So I’d read this model as “rain is a function of clouds, umbrellas, the weather app status…etc.” And it’s good practice to leave the variables neutral (e.g., just “clouds”, not “storm clouds”).<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<p>We read a model as : “the DV is a function of…” or sometimes “the DV depends on…”. So I’d read this model as “rain is a function of clouds, umbrellas, the weather app status…etc.” And it’s good practice to leave the variables neutral (e.g., just “clouds”, not “storm clouds”).<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
 <p>Error in this model would represent the fact that I haven’t accounted for some important variables that we know we should include (like humidity, coastal pressure systems, or palnetary waves), the fact that some of my variables were probably measured with error (was no one <em>really</em> carrying an umbrella???), and the fact that there are some things that we don’t know about rain, and what predicts it (this is what weather scientists are trying to learn more about.)</p>
-<p>Once we add numbers and data to a linear model<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>, we can quickly see :</p>
+<p>Once we add numbers and data to a linear model<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, we can quickly see :</p>
 <ul>
 <li><p>which variables allow us to make the best predictions, and which variables do not improve our predictions (e.g., is the number of umbrellas others are carrying a good predictor of whether it’s going to rain or not?)</p></li>
 <li><p>the direction of the relationship between each IV and the DV (e.g., is it that more umbrellas = more rain, or more umbrellas = less rain?)</p></li>
@@ -618,7 +589,7 @@ window.Quarto = {
 <h5 class="anchored" data-anchor-id="practice-writing-a-model">Practice Writing A Model</h5>
 <p>Imagine a researcher wants to better understand why people differ in happiness, and believes that playing music, drinking more water, and eating ice cream sandwiches are important factors to consider. How would you write this out as a linear model?</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -627,10 +598,10 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>happiness ~ music playing + water intake + ice cream consumption + error</p>
-<p>For this model, I’ve organized the focus of the research question on the left-hand side and listed the three other variables to the right, using neutral descriptions (e.g., ‘water intake’ rather than ‘drinking more water’). I also included error at the end of my model to account for the fact that some people who play music, drink water, and eat ice cream are, in fact, not happy. I also didn’t add other variables that might be related to happiness, since these were not part of the researcher’s statement.</p>
+<p>For this model, I’ve organized the focus of the research question on the left-hand side and listed the three other variables to the right, using neutral descriptions (e.g., ‘water intake’ rather than ‘drinking more water’). I also included error at the end of my model to account for the fact that some people who play music, drink water, and eat ice cream are, in fact, not happy. I also didn’t add other varibles that might be related to happiness, since these were not part of the researcher’s statement.</p>
 </div>
 </div>
 </div>
@@ -640,13 +611,10 @@ window.Quarto = {
 </section>
 <section id="part-2-defining-variables-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="part-2-defining-variables-in-r">Part 2 : Defining Variables in R</h2>
-<p>In Part 1, we learned how variables were one of the core units of statistics (and science). In Part 2, you’ll learn how to define (and graph) variables in R. We will talk much more about variables (and graphs) in future chapters; this is just an introduction.</p>
-<p>Below are some videos, and R code, that review how to define a variable in R. Practice creating your own script in RStudio to follow along; there’s value in typing this out yourself to get that muscle memory in 💪🤘. <em>Make sure you have R and RStudio installed on your computer, and have watched the videos giving a tour of these programs in the Introduction.</em> Let us know if you get stuck on the class discord; happy to help provide some support or additional videos as needed.</p>
-<section id="numeric-variables-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="numeric-variables-in-r">Numeric Variables in R</h3>
-<p>As you’ll learn in Chapter 2, some variables are described with numbers. For example, you might be interested in measuring the number of pets that a person has, and this number can vary from 0 (no pets) to an infinite number (in theory.)</p>
-<section id="defining-a-numeric-variable-in-r" class="level4">
-<h4 class="anchored" data-anchor-id="defining-a-numeric-variable-in-r">Defining a Numeric Variable in R</h4>
+<p>Below are some videos, and R code, that review how to define a variable in R. Practice creating your own script in RStudio to follow along; there’s value in typing this out yourself to get that muscle memory in 💪🤘.</p>
+<p>Let us know if you get stuck on the class discord.</p>
+<section id="video-defining-numeric-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-defining-numeric-variables-in-r">Video : Defining Numeric Variables in R</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/0pXGqGDSySM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li><p>objects - assign function for numerical data</p></li>
@@ -654,20 +622,16 @@ window.Quarto = {
 <li><p>length() : the number of objects</p></li>
 </ul>
 </section>
-<section id="graphing-numeric-variables-in-r" class="level4">
-<h4 class="anchored" data-anchor-id="graphing-numeric-variables-in-r">Graphing Numeric Variables in R</h4>
+<section id="video-graphing-numeric-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-graphing-numeric-variables-in-r">Video : Graphing Numeric Variables in R</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/lmXQ2BhQNuo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li><p>hist() : a graph</p></li>
 <li><p>changing arguments : xlab, ylab, main</p></li>
 </ul>
 </section>
-</section>
-<section id="categorical-variables-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="categorical-variables-in-r">Categorical Variables in R</h3>
-<p>Other variables are better described as categories. For example, if you are interested in measuring a person’s favorite type of pet, you might have them choose from a list of options : “turtle”, “rabbit”, “rat”, “dog”, “dog”, “rat”, etc.</p>
-<section id="defining-a-categorical-variable-in-r" class="level4">
-<h4 class="anchored" data-anchor-id="defining-a-categorical-variable-in-r">Defining a Categorical Variable in R</h4>
+<section id="video-defining-categorical-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-defining-categorical-variables-in-r">Video : Defining Categorical Variables in R</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/CFXRxfaadIw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li>categorical data (“string”)</li>
@@ -675,8 +639,8 @@ window.Quarto = {
 <li>levels() : to see the levels of your categorical variable.</li>
 </ul>
 </section>
-<section id="graphing-a-categorical-variables-in-r" class="level4">
-<h4 class="anchored" data-anchor-id="graphing-a-categorical-variables-in-r">Graphing a Categorical Variables in R</h4>
+<section id="video-graphing-categorical-variables-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-graphing-categorical-variables-in-r">Video : Graphing categorical variables in R</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Fmai9Ltpa5I" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
 <li>plot()</li>
@@ -684,24 +648,24 @@ window.Quarto = {
 </ul>
 </section>
 </section>
-</section>
 <section id="part-3-how-science" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="part-3-how-science">Part 3 : How Science?</h2>
 <section id="the-scientific-method-in-five-easy-steps" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="the-scientific-method-in-five-easy-steps">The Scientific Method in Five Easy Steps</h3>
-<p>The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>.</p>
+<p>The Scientific Method is used to help science progress toward valid (accurate, “true”) predictions and avoid biases. This is the same scientific method you may have learned about in a previous science class or used for a science fair project<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>.</p>
 <p>I like to organize the scientific method into five broad parts, described below.</p>
 <section id="step-1-identify-a-question" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="step-1-identify-a-question">Step 1 : Identify a Question</h4>
-<p>First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Part 1 of this chapter, we talked about how these questions are often informed by the researcher’s own observations or experiences. In Part 3, we’ll discuss ways you can choose a topic to inspire a specific research question - something you will do as part of your training in statistics and research.</p>
-<p>The first step, is picking some topic or variable that you care about, and identifying the parts of your background or experiences that influence this topic. This can be a challenging first step, and it’s okay to struggle. Your topic will also change as we develop over the year, so don’t feel like it needs to be “perfect” or “locked in” yet.</p>
+<p>First, a researcher starts with a question about the variable that they want to predict or the psychological phenomenon they are interested in. In Part 1 of this chapter, we talked about how these questions are often informed by the researcher’s own observations or experiences. In this section, we’ll discuss ways you can choose a topic to inspire a specific research question - something you will do as part of your final project in this class.</p>
+<p>We’ll talk about this more in class, but the basic idea is that you will identify a topic that you care about, develop this idea into a research question, design a study to answer some part of this question, collect and analyze the data from your study (using R!), and then write up the results as an academic paper.</p>
+<p>The first step, is picking some topic or variable that you care about, and identifying the parts of your background or experiences that influence this topic. This can be a challenging first step, and it’s okay to struggle. Your topic will also change as we develop it, so don’t feel like it needs to be “perfect” or “locked in” yet.</p>
 <p>Looking for project topic inspiration? A few ideas to consider :</p>
 <ul>
-<li><p><strong>Think about why you chose to focus on psychology or the social sciences.</strong> Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people’s lies? Think about these interests, then think about what variables might be relevant. For example, while you won’t have access to an fMRI machine (or the required statistics) in order to <a href="https://www.youtube.com/watch?v=inaH_i_TjV4">reconstruct images people see during their dreams</a>, you might study people’s beliefs about the importance of their dreams, or the extent to which they have dreams.</p></li>
+<li><p><strong>Think about why you become a psychology major.</strong> Was it because you were interested in people, find dreams fascinating, wonder if you could get good at detecting people’s lies? Think about these interests, then think about what variables might be relevant. For example, while you won’t have access to an fMRI machine (or the required statistics) in order to <a href="https://www.youtube.com/watch?v=inaH_i_TjV4">reconstruct images people see during their dreams</a>, you might study people’s beliefs about the importance of their dreams, or the extent to which they have dreams.</p></li>
 <li><p><strong>Focus on a problem you’ve encountered or observed in real-life.</strong> Notice that something in the world could be better? How would you label that as a variable? For example, maybe you want to better understand people’s attitudes about capitalism or racism or housing costs.</p></li>
-<li><p><strong>Look at faculty webpages or a future employeer, and see what they (and / or their graduate students) are working on.</strong> Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question or job might you study with this project?</p></li>
+<li><p><strong>Look at faculty webpages, and see what they (and / or their graduate students) are studying.</strong> Does anything seem interesting to you? Who looks like they might be cool to work with? What aspects of their research question might you study with this project?</p></li>
 <li><p><strong>Chase the latest trends of today.</strong> Identify the new hot trend in our capitalist society these days, and then focus your project on that. For example, you could examine how people’s perceptions of HOTNEWTREND are influenced by some aspect of their identity, or how exposure to HOTNEWTREND influences people’s affect, behavior, or cognition (compared to another HOTTREND, or maybe an OLDTREND).</p></li>
-<li><p><strong>You don’t have to take my word for it.</strong> <a href="https://libguides.usc.edu/writingguide/introduction/researchproblem">Here’s another guide</a> that might offer some help, or ask for help in the class discord / office hours!</p></li>
+<li><p><strong>You don’t have to take my word for it.</strong> <a href="https://libguides.usc.edu/writingguide/introduction/researchproblem">Here’s another guide</a> that might offer some help, or ask for help in the class discord / office hours / lecture!</p></li>
 </ul>
 <p>Once you’ve chosen your topic, make sure that it’s the right level of focus, and something you can complete with the resources you have.</p>
 <table class="caption-top table">
@@ -754,11 +718,16 @@ window.Quarto = {
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p><img src="images/clipboard-818370036.png" class="img-fluid" width="95"></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/1_profcathi.JPG" class="img-fluid figure-img" alt="a hand drawn image of a cat wearing clothes and glasses and saying hi" width="136"></p>
+<figcaption>hi, says prof. cat</figcaption>
+</figure>
+</div>
 </div></div></section>
 <section id="step-2-develop-a-theory" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-develop-a-theory">Step 2 : Develop a Theory</h4>
-<p>A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is <em>comprehensive</em> (it relates to all nature, not just plants or animals or finches), it is <em>explanatory</em> (it’s why we and <a href="https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg">cats</a> both narrow our eyes when we are scared and angry), and it is <em>supported</em> (by over 100 years of evidence<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>).&nbsp;</p>
+<p>A scientific theory is one that is comprehensive, explanatory, and supported by evidence. For example, the theory of evolution is <em>comprehensive</em> (it relates to all nature, not just plants or animals or finches), it is <em>explanatory</em> (it’s why we and <a href="https://www.gutenberg.org/files/1227/1227-h/images/fig15.jpg">cats</a> both narrow our eyes when we are scared and angry), and it is <em>supported</em> (by over 100 years of evidence<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>).&nbsp;</p>
 <p><strong>Most scientists refrain from saying that a theory is “proven” or “true” for two reasons:</strong></p>
 <ol type="1">
 <li><p>First, the scientific method is a process - our knowledge and ideas are continually updated. So it’s likely that the theory of evolution will be updated as we learn more about the complex ways genes replicate and interact with the environment. Saying that a theory is “proven” is a common mistake - watch out for it!&nbsp;</p></li>
@@ -771,8 +740,8 @@ window.Quarto = {
 </ul>
 <p><strong>EXAMPLE :</strong> Let’s say you believe that smoking cannabis hurts a person’s memory. What’s the alternative hypothesis? What’s the null?</p>
 <ul>
-<li><p><strong>Null Hypothesis :</strong> People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijuana. <a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></p></li>
-<li><p><strong>Alternative Hypothesis :</strong> People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijuana.</p></li>
+<li><p><strong>Null Hypothesis :</strong> People who smoke cannabis will perform BETTER or NO DIFFERENT on a memory test than people who do not smoke marijauna. <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p></li>
+<li><p><strong>Alternative Hypothesis :</strong> People who smoke cannabis will perform WORSE on a memory test than people who do not smoke marijauna.</p></li>
 </ul>
 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdPgseWI3odCwC34jvRZGe0H4oz0Et4HwG8xTig5YFtDU_ldw/viewform?usp=header"><strong>Practice : Identifying Models, Null, and Alternative Hypotheses</strong></a><strong>.</strong> Here’s a quick practice quiz to review identifying models based on research questions and theories, and identifying the null and alternative hypotheses based on a given theory.</p>
 </section>
@@ -796,15 +765,22 @@ window.Quarto = {
 </section>
 <section id="the-scientific-method-is-never-easy" class="level3">
 <h3 class="anchored" data-anchor-id="the-scientific-method-is-never-easy">The Scientific Method Is Never Easy</h3>
-<p>Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a <a href="https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics">Replication Crisis</a>.</p>
-<p>There are two parts to the crisis :</p>
+<p>Science is hard, and people are very complex, which makes psychological science very hard. Unfortunately, psychology is in a bit of a <a href="https://www.vox.com/future-perfect/21504366/science-replication-crisis-peer-review-statistics">Replication Crisis</a>. There are two parts to the crisis:</p>
 <ol type="1">
 <li>Researchers tend not to seek to replicate their (or others’) results.</li>
-<li>Systematic attempts to replicate previous research suggests that the majority of results in psychology do not replicate<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>.</li>
+<li>Systematic attempts to replicate previous research suggests that the majority of results in psychology do not replicate<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>.</li>
+</ol>
+</section>
+</section>
+<section id="next-steps" class="level1">
+<h1>Next Steps</h1>
+<ol type="1">
+<li><strong>Complete Quiz 1.</strong></li>
+<li><strong>Complete Lab 1.</strong></li>
+<li><strong>Contribute to Discussion 1.</strong></li>
 </ol>
 
 
-</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
@@ -813,15 +789,16 @@ window.Quarto = {
 <li id="fn2"><p>And usually food, though I’m not sure if there’s cultural food norms about statistics or research methods.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>This happened to <a href="https://plato.stanford.edu/entries/fechner/">Gustav Fechner</a>, one of the early psychologists who pioneered the study of psychophysics, which tested theories that our perceptions do not always match reality (seen in many examples, such as <a href="https://www.rit.edu/news/color-scientists-explain-dress-went-viral">the dress</a>). FWIW I see it as blue and black.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>This anecdote (<a href="https://www.npr.org/2010/04/12/125859207/whistling-vivaldi-and-beating-stereotypes">as reported here</a>) inspired Claude Steele’s research on <a href="https://en.wikipedia.org/wiki/Stereotype_threat">stereotype threat</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>See the syllabus for the course ChatGPT policy. You may also be interested to read on the ethical and <a href="https://bsj.studentorg.berkeley.edu/the-new-dimension-to-the-climate-crisis-chat-gpt/">environmental issues</a> surrounding this emerging technology.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>I can already feel some of y’alls math anxiety rising across time and space. But remember, stats is just a language with some vocabulary we need to learn.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>We will learn more about <em>measurement error</em> in Chapter 4.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>Later we will talk about ways to account for the fact that more umbrellas increases the chance it will rain in our model.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>We will get to this in Chapter 6!<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the <a href="https://convention.apa.org/">American Psychological Association</a> or the <a href="https://www.psychologicalscience.org/conventions">Association of Psychological Science</a>. The <a href="https://westernpsych.org/convention/">Western Psychological Association</a> has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the <a href="http://meeting.spsp.org/">Society of Personality and Social Psychology</a>). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p><a href="https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01">From fossil records to observations of fruit flies and plans</a><a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs.&nbsp;non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13"><p>You can go deeper into some of the drama surrounding the replication project <a href="#0">here</a>. lemme know what you think on the discord thread for this week.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>This is the purpose of your final project! We’ll talk more about this throughout the class.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>See the syllabus for the course ChatGPT policy. You may also be interested to read on the ethical and <a href="https://bsj.studentorg.berkeley.edu/the-new-dimension-to-the-climate-crisis-chat-gpt/">environmental issues</a> surrounding this emerging technology.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>I can already feel some of y’alls math anxiety rising across time and space. But remember, stats is just a language with some vocabulary we need to learn.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>We will learn more about <em>measurement error</em> in Chapter 4.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Later we will talk about ways to account for the fact that more umbrellas increases the chance it will rain in our model.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>We will get to this in Chapter 6!<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Do elementary school students still do those science fair projects with the tri-fold posters? Adult scientists do the same kinds of science fairs, except they are called “conferences”, involve a little more math, and use flat posters. I also don’t think anyone gets ribbons (status among scientists takes other less concrete forms). Some of the largest conferences include that held by the <a href="https://convention.apa.org/">American Psychological Association</a> or the <a href="https://www.psychologicalscience.org/conventions">Association of Psychological Science</a>. The <a href="https://westernpsych.org/convention/">Western Psychological Association</a> has a more local conference, and there are literally hundreds of other conferences based on research topic (for example, the <a href="http://meeting.spsp.org/">Society of Personality and Social Psychology</a>). If you are interested in learning more about conferences, ask your GSI what conferences they attend. And you even might be able to present your project in this class as a conference poster - no tri-fold needed.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p><a href="https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_01">From fossil records to observations of fruit flies and plans</a><a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Many students forget to include the “NO DIFFERENT” in the null hypothesis example above. However remember that the null hypothesis is everything that your theory is not. So if your theory is that smoking cannabis HURTS memory, then finding no difference in the memory of pot smokers vs.&nbsp;non-smokers would not support your theory, and is thus part of the null hypothesis. (Note : some of y’all may have missed this because you are remembering learning about “directional” vs “non-directional” hypotheses - we will discuss this more in Lecture 8.)<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>You can go deeper into some of the drama surrounding the replication project <a href="#0">here</a>. lemme know what you think on the discord thread for this week.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
