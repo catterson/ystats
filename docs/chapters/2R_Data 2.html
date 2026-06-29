@@ -344,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#definition-the-.csv-file" id="toc-definition-the-.csv-file" class="nav-link" data-scroll-target="#definition-the-.csv-file">Definition : The .csv File</a></li>
   <li><a href="#videos-how-to-load-datasets-in-r" id="toc-videos-how-to-load-datasets-in-r" class="nav-link" data-scroll-target="#videos-how-to-load-datasets-in-r">Videos : How to Load Datasets in R</a></li>
   </ul></li>
-  <li><a href="#practice-for-quiz-2" id="toc-practice-for-quiz-2" class="nav-link" data-scroll-target="#practice-for-quiz-2">Practice for Quiz 2</a></li>
+  <li><a href="#practice-quiz-2" id="toc-practice-quiz-2" class="nav-link" data-scroll-target="#practice-quiz-2">Practice Quiz 2</a></li>
   </ul></li>
   <li><a href="#part-3-research-for-fun-and-profit" id="toc-part-3-research-for-fun-and-profit" class="nav-link" data-scroll-target="#part-3-research-for-fun-and-profit">Part 3 : Research for Fun and Profit</a>
   <ul class="collapse">
@@ -388,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/2_medicalposter.jpg" class="img-fluid figure-img" alt="a chinese medical poster, depicting a human on the left and a mechanical version of the human on the right. for example, the human is holding up a weight with their arm, whereas the mechanical human has a crane for an arm."></p>
-<figcaption><em>A Chinese medical poster.</em> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <em>1933 (ref <a href="https://www.nlm.nih.gov/hmd/chineseposters/understanding.html">US NLM</a>; image source <a href="http://www.notechmagazine.com/2009/06/the-body-is-a-machine.html">here</a>)</em></figcaption>
+<figcaption>Chinese medical poster, 1933 (ref <a href="https://www.nlm.nih.gov/hmd/chineseposters/understanding.html">US NLM</a>; image source <a href="http://www.notechmagazine.com/2009/06/the-body-is-a-machine.html">here</a>)</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -419,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Neuroscientists quantify <strong>cognition</strong> in terms of voxel activation in the brain, or a sleep researcher might ask participants to write down their dreams in a journal, which then a team of research assistants would read and convert into….you guessed it…numbers (e.g., number of times person dreamt about water or their parents; how stressful the dream seemed to the reader; etc.)</p></li>
 </ul>
 <p>These numbers have error (called <strong>measurement error</strong>), and a fair amount of work in psychology and the social sciences goes into learning how to reduce measurement error as much as possible. The existence of measurement error is one form of error that will contributes to the ERROR term in our linear models.</p>
-<p>Quantitative data takes two forms that we will see in this class - <strong>numeric</strong> <strong>data</strong> (which I sometimes refer to as “continuous” data) and <strong>categorical data</strong>.&nbsp;</p>
+<p>Quantitative data takes two forms that we will see in this class - <strong>numeric</strong> (sometimes called <strong>continuous data</strong>)&nbsp; and <strong>categorical data (</strong>sometimes called “string” data).&nbsp;</p>
 <section id="numeric-variables" class="level2">
 <h2 class="anchored" data-anchor-id="numeric-variables">Numeric Variables</h2>
 <section id="definition-numeric-variable" class="level3">
@@ -428,7 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Continuous variables</strong> are a special type of numeric variable, with the idea that values of the variable represent an “infinite” range of possibilities.</p>
 <p>We often simplify complexity into discrete groups, but for most complex phenomena, I believe that it’s best to think of life as a spectrum. For example, while I look at my walls and say “they are blue”, a physicist who really understands color theory would be able to interpret the wavelength of light that is being reflected off these walls, and understands that that wavelength really just a point on an infinite spectrum (bound by a certain range).</p>
 <p><img src="images/2_lightspectrum.png" class="img-fluid"></p>
-<p>Scientists working in R often use numeric data, and see this as a list (or vector) of numbers. For example, below is data on the narcissism (variable = NPI; a measure of how self-absorbed; self-interested) of a group of Berkeley Haas MBA students were<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Scientists working in R often use numeric data, and see this as a list (or vector) of numbers. For example, below is data on the narcissism (variable = NPI; a measure of how self-absorbed; self-interested) of a group of Berkeley Haas MBA students were<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>haas <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"./chapter_data/hormone_data.csv"</span>, <span class="at">stringsAsFactors =</span> T) </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>haas<span class="sc">$</span>NPI</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -444,7 +444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [121] 3.38 3.13</code></pre>
 </div>
 </div>
-<p><strong>Professor Interpretation</strong> I learn a lot just from this simple output! <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p><strong>Professor Interpretation</strong> I learn a lot just from this simple output! <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <ul>
 <li><strong>haas &lt;- read.csv(“./chapter_data/hormone_data.csv”, stringsAsFactors = T”)</strong> is the R command that loads the dataset. Note that the path to the datafile - hormone_data.csv - is specific to the way I’ve stored these data in my file system. You’ll learn below how to change this to access your own dataset :)</li>
 <li><strong>haas$NPI</strong> is the R command that was used to generate the output below; a list of 122 individual Narcissism scores.
@@ -456,7 +456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="graphing-the-histogram" class="level3">
 <h3 class="anchored" data-anchor-id="graphing-the-histogram">Graphing : The Histogram</h3>
-<p>Always always always graph your data. Graphs will help summarize, organize, and highlight important features of your data that would be impossible to see just by looking at numbers.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>Always always always graph your data. Graphs will help summarize, organize, and highlight important features of your data that would be impossible to see just by looking at numbers.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p><strong>The Histogram</strong> is a common way researchers illustrate numeric variables. The histogram organizes data - you lose the individual values, but gain understanding in seeing how data are grouped together, which helps you observe patterns and get a quick summary of the variable.</p>
 <p>There are two dimensions of a histogram :</p>
 <ul>
@@ -546,7 +546,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="definition-categorical-variable" class="level3">
 <h3 class="anchored" data-anchor-id="definition-categorical-variable">Definition : Categorical Variable</h3>
 <p>A categorical variable is when the values of the variable represent different groups (or categories). Categories are often useful and simple ways to group individuals together. For example, when I see a color, I don’t ever describe it in terms of its color hex code or specific wavelength - I just call it by the simple primary color that I got from the crayola box….maybe the 24 color version if I’m feeling fancy.</p>
-<p>Which of the shades below would you call blue?<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>Which of the shades below would you call blue?<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/2_shadesofcyan.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="a 3x3 grid of different squares that are shades of blue and green" width="388"></p>
@@ -597,8 +597,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Indeed, categories almost always oversimplify the complexity of life, yet are often used by people (and researchers) because they can sometimes be useful and simple shortcuts for us to understand the world.</p>
 <p>If you are simply interested in doing a superficial survey of a variable like race, ethnicity, or gender, then I think categorical data can be a fine -if often unscientific - approach, and would recommend giving all people the chance to express their identity in some way. For example, <a href="https://compass.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/spc3.12506">here’s an article</a> describing research on the way that exclusionary categories can negatively impact science, and offering clear and easy recommendations for reseachers to broaden science (e.g., reporting non-binary participants).</p>
-<p>However, if you are interested in really digging into a variable, then a continuous approach is almost always best, since it allows for more flexibility in capturing complexity in variation. We’ll discuss more on how to do this in a few weeks when we learn about measuring continuous variables with likert scales later in the semester. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
-<p><img src="images/2_genderspectrum.png" class="img-fluid"></p>
+<p>However, if you are interested in really digging into a variable, then a continuous approach is almost always best, since it allows for more flexibility in capturing complexity in variation. We’ll discuss more on how to do this in a few weeks when we learn about measuring continuous variables with likert scales.</p>
+<p><img src="images/2_genderspectrum.png" class="img-fluid"><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 </div>
 </div>
 <div class="no-row-height column-margin column-container"><div class="callout-margin-content">
@@ -639,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>What I see and observe with no stats language :</strong></p>
 <ul>
 <li><p>It appears that the researchers only measured sex as a f/m binary (or that no participants reported a category other than female or male).</p></li>
-<li><p>there were more males than females in this dataset. This matches my perception / stereotype of what a typical MBA program might look like; however I looked into it and Haas reports a larger percentage of female enrollments in the MBA program; so our data may not serve as a representative sample of the true population.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a><br>
+<li><p>there were more males than females in this dataset. This matches my perception / stereotype of what a typical MBA program might look like; however I looked into it and Haas reports a larger percentage of female enrollments in the MBA program; so our data may not serve as a representative sample of the true population.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a><br>
 </p></li>
 </ul></li>
 </ul>
@@ -652,7 +652,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="the-dataframe">The Dataframe</h2>
 <section id="definition-rows-and-columns" class="level3">
 <h3 class="anchored" data-anchor-id="definition-rows-and-columns">Definition : Rows and Columns</h3>
-<p>Life is complicated, so researchers asking questions collect data on lots of different variables at one time for each individual. A study of mental health, for example, could easily include more than 100 variables by measuring characteristics like a person’s depression, anxiety, personality, demographic data, friendships, etc. Research studies also collect data from multiple people. This mass of data can get overwhelming, so scientists organize them into a dataset.</p>
+<p>As a researcher, you’ll be interested in understanding not only one variable at a time, but will be interested in a dataset - multiple variables about an individual that are organized - in order to see how variables are related to each other (remember : this is a function of the linear model).</p>
+<p>The datasets in our class will be stored on Dropbox; you can find a link to this on our course page, under the Course Materials module (see below for the image that you’re looking for).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/2_dropboxchapters.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>You’ll learn how to load these datasets later in this lecture. For now, what is a dataset?</p>
 <p>A dataset is really a <strong>dataframe</strong> - a two-dimensional way to organize data - and takes the following structure in this class.</p>
 <ul>
 <li><p><strong>the rows</strong> define the individual in the dataset.&nbsp;rows go across horizontally, like a rowboat going across a lake.</p></li>
@@ -663,13 +670,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <br>
 In the example dataframe above - I see 5 rows (representing 5 individuals) and five columns (representing five variables like the person’s <strong>age</strong>, their <strong>sex,</strong> their <strong>test</strong>osterone levels, political <strong>ideo</strong>logy, and their <strong>NPI</strong> (Narcissism) score.&nbsp; or their Race, etc.) Note that the names of the variables do not count as a row, since these are not individuals in the dataset, and you would need to know more about the dataset to know that ideo = political ideology, or test = testosterone. I also see that R is helpfully telling me that this is only a snapshot of the entire dataset - the whole dataframe has 122 entries (rows), meaning that there’s 122 MBA students in this dataset, and 5 total columns (which we can all see here.)</p>
 <p>As a researcher, you have access to an entire dataset (either collected by you or another researcher) that organizes multiple variables for each individual. This semester, we’ll work with a variety of datasets on different psychological topics - not just haas students.</p>
-<p>The datasets in our class will be stored on Dropbox; you can find a link to this on our course page, under the Course Materials module (see below for the image that you’re looking for).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/2_dropboxchapters.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>You’ll learn how to load these datasets later in this lecture. For now, what is a dataset?</p>
 </section>
 <section id="definition-indexing" class="level3">
 <h3 class="anchored" data-anchor-id="definition-indexing">Definition : Indexing</h3>
@@ -816,7 +816,8 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 </div>
 </div>
 <p>I am overwhelmed with data. So it will be important to find ways to target the data that we want. There are several ways we can do this!</p>
-<p>Because a dataset has two different dimensions, we have to use two coordinates to index the dataset - one coordinate for the row(s) that we want to focus on, and one coordinate for the column(s) that we want to focus on.</p>
+<p>Because a dataset has two different dimensions, we have to use two coordinates to index the dataset - one coordinate for the row(s) that we want to focus on, and one coordinate for the column(s) that we want to focus on.<br>
+</p>
 <section id="indexing-an-entire-dataset" class="level4">
 <h4 class="anchored" data-anchor-id="indexing-an-entire-dataset">Indexing an Entire Dataset</h4>
 <p>Because a dataset has two different dimensions, we have to use two coordinates to index the dataset - one coordinate for the row(s) that we want to focus on, and one coordinate for the column(s) that we want to focus on.</p>
@@ -982,8 +983,11 @@ In the example dataframe above - I see 5 rows (representing 5 individuals) and f
 <h2 class="anchored" data-anchor-id="the-.csv-file">The .csv File</h2>
 <section id="definition-the-.csv-file" class="level3">
 <h3 class="anchored" data-anchor-id="definition-the-.csv-file">Definition : The .csv File</h3>
-<p>As a researcher, you will work with data that you (or other researcher friends) have collected. The .csv file (csv stands for comma separated variables) is one of the most common formats for storing data that you will encounter. You’ve probably encountered this before, and likely have opened this file type in a program like excel or google sheets. But in this class, we’ll learn to load these files directly into R.</p>
-<p>R allows us to document all of our steps. This semester, we’ll learn how to make changes to the dataset (e.g., changing the names of a variable; removing bad data; transforming data). It’s important to be completely transparent about these changes, and doing these changes in R (with an R Script!) will ensure that we document our steps for our future selves / other researchers.</p>
+<p>As a researcher, you will work with data that you (or other researcher friends) have collected. The .csv file (csv stands for comma separated variables) is one of the most common formats for storing data that you will encounter. You’ve probably encountered this before, and likely have opened this file type in a program like excel or google sheets. But in this class, we’ll learn to load these files directly into R. Using R has two advantages :</p>
+<ul>
+<li>R is way more powerful than excel or Google Sheets.</li>
+<li>R allows us to document all of our steps. This semester, we’ll learn how to make changes to the dataset (e.g., changing the names of a variable; removing bad data; transforming data). It’s important to be completely transparent about these changes, and doing these changes in R (with an R Script!) will ensure that we document our steps for our future selves / other researchers.</li>
+</ul>
 </section>
 <section id="videos-how-to-load-datasets-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="videos-how-to-load-datasets-in-r">Videos : How to Load Datasets in R</h3>
@@ -998,12 +1002,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Regardless of which method you use, there are three things you want to check every time you load data :</p>
-<ol type="1">
-<li><strong>Change the name of the dataset.</strong> You will be typing the name of the dataset frequently, so want to make the name something easy to type. I used to give my datasets memorable names (like <code>haas</code>) but have recently just been naming all my datasets <code>d</code>.</li>
-<li><strong>Check the headers.</strong> (make sure the variables have names, since sometimes), and</li>
-<li><strong>Set stringAsFactors = TRUE.</strong> This automatically converts all your string variables into categorical factor variables, which is almost always what you will want to do in this class. (You would want to preserve the “string” format if you are working with qualitative data that did not (e.g., a person’s open-ended response about what comes to mind when they think about the word “love”)</li>
-</ol>
+<p>Regardless of which method you use, there are three things you want to check every time you load data : change the name of the dataset (to make it something simple to type and memorable); check the headers (make sure the variables have names, since sometimes), and set stringAsFactors = TRUE (which will automatically convert all your string variables into categorical factor variables, which is almost always what you will want to do in this class.</p>
 <p>These instructions are highlighted because students often forget. So note the importance! They are important steps!!!</p>
 </div>
 </div>
@@ -1024,11 +1023,10 @@ Important
 </section>
 </section>
 </section>
-<section id="practice-for-quiz-2" class="level2">
-<h2 class="anchored" data-anchor-id="practice-for-quiz-2">Practice for Quiz 2</h2>
-<p>Okay, this was a LOT. Like drinking water from a fire hose. I promise this will get easier, and it just requires practice.</p>
-<p>Let’s see how clear the professor’s instructions were with this…practice quiz!</p>
-<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSczCIkUMPcHX36bYbBpU4fH2Ei_U4neGsERl5WD8jTWRSxfiw/viewform?usp=sf_link"><strong>CLICK THIS LINK to take the Practice Quiz.</strong></a> Use your knowledge of navigating and loading datasets to answer these questions.</p>
+<section id="practice-quiz-2" class="level2">
+<h2 class="anchored" data-anchor-id="practice-quiz-2">Practice Quiz 2</h2>
+<p>Okay, this was a LOT. Like drinking water from a fire hose. I promise this will get easier, and it just requires practice. Let’s see how clear the professor’s instructions were with this…practice quiz!</p>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSczCIkUMPcHX36bYbBpU4fH2Ei_U4neGsERl5WD8jTWRSxfiw/viewform?usp=sf_link"><strong>CLICK THIS LINK to take the Practice Quiz.</strong></a> Use your knowledge of navigating and loading datasets to answer&nbsp;</p>
 <ul>
 <li><p><a href="https://www.dropbox.com/scl/fi/972y9dq8yan2l2q7cme5f/2.1_NavigatingData.R?rlkey=al8gff6iqxj0fdiy0mn8wiyp9&amp;dl=0"><strong>Here’s an Rscript with the practice quiz questions</strong></a><strong>.</strong> Submit your answers to the link above for credit (this is graded based on completion).</p></li>
 <li><p><a href="https://youtu.be/cfeogtcAhNM"><strong>Here’s a video key with the practice quiz answers</strong></a><strong>.</strong> Please attempt the quiz on your own; if you get stuck, refer to the relevant videos above. And feel free to reach out on Discord if something’s confusing or I got something wrong. Appreciate y’alls engagement!</p></li>
@@ -1044,7 +1042,7 @@ Important
 <ol type="1">
 <li><p><strong>Researcher has an idea!</strong> They assemble a team of others interested in the idea, and do a literature review in order to gain background knowledge on the topic.</p></li>
 <li><p><strong>Researcher designs a study, collects data, analyzes the data, and writes up the data as a report.</strong> All the steps of the scientific method. This is what you will do for the final project!</p></li>
-<li><p><strong>Researcher submits the report to a scientific journal.</strong> A journal is a collection of articles that are usually united by some common theme. In general, the shorter the name of the journal, the more prestigious<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. For example, the “Journal of Research in Personality” is considered less prestigious than the “Journal of Personality and Social Psychology”, which is less prestigious than the journal called “Psychological Science”, which is considered less prestigious than the journal called “Science”.&nbsp;</p></li>
+<li><p><strong>Researcher submits the report to a scientific journal.</strong> A journal is a collection of articles that are usually united by some common theme. In general, the shorter the name of the journal, the more prestigious<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. For example, the “Journal of Research in Personality” is considered less prestigious than the “Journal of Personality and Social Psychology”, which is less prestigious than the journal called “Psychological Science”, which is considered less prestigious than the journal called “Science”.&nbsp;</p></li>
 <li><p><strong>An editor decides whether to review or reject the article.</strong> Editors make an initial decision - based on a summary of the study and a letter that the author writes to the editor - whether the research article might be a good fit for the journal. If so, they pass it along to the next step. If not, they send a “Thanks, but….” rejection letter.</p></li>
 <li><p><strong>The editor sends the article to peer-reviewers.</strong> Peer reviewers are other researchers who have some related research interests or skills in the topic of the paper. They will look over the article. The editor may know these people, or they get asked by another peer-reviewer who didn’t want to do it but nominated someone else to step into the role. Peer-reviewers work on a completely voluntary basis - it’s seen as required service, and there’s a bit of professional reputation to maintain in doing this work. Yes, there are problems with unpaid labor in academia. We can chat about that if you’d like; ask questions / raise it as an issue on Discord.</p></li>
 <li><p><strong>The editor makes a decision on the paper based on the feedback from the peer-reviewers.</strong> The editor summarizes the feedback, and either accepts the paper, accepts as long as the person makes necessary revisions, asks the researcher to “Revise and Resubmit” (this is called an R&amp;R - probably the most common outcome, and does not guarantee that the paper will be accepted if the revisions are made, but will get sent out to peer-reviewers again), or rejects the paper. In any case, the author will see the comments made by the peer-reviewers and the editor.</p></li>
@@ -1114,7 +1112,7 @@ Important
 <section id="how-to-evaluate-an-article" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-evaluate-an-article">How to Evaluate an Article</h3>
 <p>It can often be overwhelming for students to sift through the masses of research on a topic and know what’s most important and relevant.&nbsp;</p>
-<p>Reading the article and using your critical thinking skills / psychological training is the best approach. To do this, it is recommended to get a PhD<strong>,</strong> where you can spend multiple years reading as much as you want on a beautiful college campus, taking classes where you can deeply engage with the research and ideas, immerse yourself in meaningful intellectual conversations had by other graduate students and kindly professors - the gleam of knowledge and excitement of supporting the next generation of researcher in their eye. Oh, that is not interesting to you / grad schools are flooded with applications / you can’t get an office hour appointment with your professor who actually / you don’t have the privilege of spending 5-8 years getting paid near-poverty wages to be a poor scholar?</p>
+<p>Reading the article and using your critical thinking skills / psychological training is the best approach. To do this, it is recommended to <strong>go to Graduate School,</strong> where you can spend multiple years reading as much as you want on a beautiful college campus, taking classes where you can deeply engage with the research and ideas, immerse yourself in meaningful intellectual conversations had by other graduate students and kindly professors - the gleam of knowledge and excitement of supporting the next generation of researcher in their eye. Oh, that is not interesting to you / grad schools are flooded with applications / you can’t get an office hour appointment with your professor who actually / you don’t have the privilege of spending 5-8 years getting paid near-poverty wages to be a poor scholar?&nbsp;</p>
 <p>Well, below are a few other ideas to make superficial, all depending on our good friend social influence bias :</p>
 <ol type="1">
 <li><p><strong>The Citation Count.</strong> Google scholar allows you to see how many other research articles have referenced the article that you found. While this can be a nice way to see how influential a paper is, a paper could be referenced a lot for reasons other than its validity, and maybe no one has read the most amazing paper in the world.</p></li>
@@ -1182,14 +1180,13 @@ Important
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>My understanding is that the image is representing the human body as a machine, which serves as a metaphor for the way social scientists quantify human life. However, let me know if I am missing something in translation!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>These data come from the hormone_data.csv file, which should be updated to our course page. You’ll learn more about how to access these data files later in this chapter.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>We’ll go over how to load datasets in R in Part 2. For this part of the chapter, the focus is on understanding what R is doing, and why we are doing it.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>yes, dear student, it is true : a picture is worth…a thousand words.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>they are all one color - the <em>human color</em>. just kidding from the top left it’s 2, 3, 4, and 7. but I’m blue green color blind so you should argue with me in the comments.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>a <a href="https://scalar.usc.edu/works/index-2/media/the-gender-spectrum">continuous approach</a> to measuring gender. hi if u still reading, let me know if you have any thoughts on this section of the chapter.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Will learn about these ideas much later this semester! here’s a link to learn more about <a href="https://mba.haas.berkeley.edu/student-life/women">women in Haas</a>. capitalism will eat us all eventually I guess, and good to challenge our stereotypes / perceptions!<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>Prestige is a very subjective concept in science. However, scientists have found many ways to quantify it, as described in the sections below!<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>These data come from the hormone_data.csv file, which should be updated to our course page. You’ll learn more about how to access these data files later in this chapter.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>We’ll go over how to load datasets in R in Part 2. For this part of the chapter, the focus is on understanding what R is doing, and why we are doing it.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>yes, dear student, it is true : a picture is worth…a thousand words.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>they are all one color - the <em>human color</em>. just kidding from the top left it’s 2, 3, 4, and 7. but I’m blue green color blind so you should argue with me in the comments.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>a <a href="https://scalar.usc.edu/works/index-2/media/the-gender-spectrum">continuous approach</a> to measuring gender. hi if u still reading, let me know if you have any thoughts on this section of the chapter.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Will learn about these ideas much later this semester! here’s a link to learn more about <a href="https://mba.haas.berkeley.edu/student-life/women">women in Haas</a>. capitalism will eat us all eventually I guess, and good to challenge our stereotypes / perceptions!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Prestige is a very subjective concept in science. However, scientists have found many ways to quantify it, as described in the sections below!<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

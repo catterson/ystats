@@ -1,6 +1,10 @@
 # Data Data Data
 
-![Chinese medical poster, 1933 (ref [US NLM](https://www.nlm.nih.gov/hmd/chineseposters/understanding.html); image source [here](http://www.notechmagazine.com/2009/06/the-body-is-a-machine.html))](images/2_medicalposter.jpg){fig-alt="a chinese medical poster, depicting a human on the left and a mechanical version of the human on the right. for example, the human is holding up a weight with their arm, whereas the mechanical human has a crane for an arm." fig-align="center"}
+![*A Chinese medical poster.* [^2r_data-1] *1933 (ref [US NLM](https://www.nlm.nih.gov/hmd/chineseposters/understanding.html); image source [here](http://www.notechmagazine.com/2009/06/the-body-is-a-machine.html))*](images/2_medicalposter.jpg){fig-alt="a chinese medical poster, depicting a human on the left and a mechanical version of the human on the right. for example, the human is holding up a weight with their arm, whereas the mechanical human has a crane for an arm." fig-align="center"}
+
+[^2r_data-1]: My understanding is that the image is representing the human body as a machine, which serves as a metaphor for the way social scientists quantify human life. However, let me know if I am missing something in translation!
+
+[^2r_data-2]: My understanding is that the image is representing the human body as a machine, which serves as a metaphor for the way social scientists quantify human life. However, let me know if I am missing something in translation!
 
 ::: callout-important
 ## Who Cares?
@@ -26,7 +30,7 @@ Researchers seeking to bring a scientific approach to psychology love data, and 
 
 These numbers have error (called **measurement error**), and a fair amount of work in psychology and the social sciences goes into learning how to reduce measurement error as much as possible. The existence of measurement error is one form of error that will contributes to the ERROR term in our linear models.
 
-Quantitative data takes two forms that we will see in this class - **numeric** (sometimes called **continuous data**)  and **categorical data (**sometimes called “string” data). 
+Quantitative data takes two forms that we will see in this class - **numeric** **data** (which I sometimes refer to as "continuous" data) and **categorical data**. 
 
 ## Numeric Variables
 
@@ -40,9 +44,9 @@ We often simplify complexity into discrete groups, but for most complex phenomen
 
 ![](images/2_lightspectrum.png)
 
-Scientists working in R often use numeric data, and see this as a list (or vector) of numbers. For example, below is data on the narcissism (variable = NPI; a measure of how self-absorbed; self-interested) of a group of Berkeley Haas MBA students were[^2r_data-1].
+Scientists working in R often use numeric data, and see this as a list (or vector) of numbers. For example, below is data on the narcissism (variable = NPI; a measure of how self-absorbed; self-interested) of a group of Berkeley Haas MBA students were[^2r_data-3].
 
-[^2r_data-1]: These data come from the hormone_data.csv file, which should be updated to our course page. You’ll learn more about how to access these data files later in this chapter.
+[^2r_data-3]: These data come from the hormone_data.csv file, which should be updated to our course page. You’ll learn more about how to access these data files later in this chapter.
 
 ```{r}
 #| label: preload data
@@ -50,9 +54,9 @@ haas <- read.csv("./chapter_data/hormone_data.csv", stringsAsFactors = T)
 haas$NPI
 ```
 
-**Professor Interpretation** I learn a lot just from this simple output! [^2r_data-2]
+**Professor Interpretation** I learn a lot just from this simple output! [^2r_data-4]
 
-[^2r_data-2]: We'll go over how to load datasets in R in Part 2. For this part of the chapter, the focus is on understanding what R is doing, and why we are doing it.
+[^2r_data-4]: We'll go over how to load datasets in R in Part 2. For this part of the chapter, the focus is on understanding what R is doing, and why we are doing it.
 
 - **haas \<- read.csv("./chapter_data/hormone_data.csv", stringsAsFactors = T")** is the R command that loads the dataset. Note that the path to the datafile - hormone_data.csv - is specific to the way I've stored these data in my file system. You'll learn below how to change this to access your own dataset :)
 - **haas\$NPI** is the R command that was used to generate the output below; a list of 122 individual Narcissism scores.
@@ -61,9 +65,9 @@ haas$NPI
 
 ### Graphing : The Histogram
 
-Always always always graph your data. Graphs will help summarize, organize, and highlight important features of your data that would be impossible to see just by looking at numbers.[^2r_data-3]
+Always always always graph your data. Graphs will help summarize, organize, and highlight important features of your data that would be impossible to see just by looking at numbers.[^2r_data-5]
 
-[^2r_data-3]: yes, dear student, it is true : a picture is worth...a thousand words.
+[^2r_data-5]: yes, dear student, it is true : a picture is worth...a thousand words.
 
 **The Histogram** is a common way researchers illustrate numeric variables. The histogram organizes data - you lose the individual values, but gain understanding in seeing how data are grouped together, which helps you observe patterns and get a quick summary of the variable.
 
@@ -133,9 +137,9 @@ hist(haas$test,
 
 A categorical variable is when the values of the variable represent different groups (or categories). Categories are often useful and simple ways to group individuals together. For example, when I see a color, I don’t ever describe it in terms of its color hex code or specific wavelength - I just call it by the simple primary color that I got from the crayola box....maybe the 24 color version if I’m feeling fancy.
 
-Which of the shades below would you call blue?[^2r_data-4]
+Which of the shades below would you call blue?[^2r_data-6]
 
-[^2r_data-4]: they are all one color - the *human color*. just kidding from the top left it's 2, 3, 4, and 7. but I'm blue green color blind so you should argue with me in the comments.
+[^2r_data-6]: they are all one color - the *human color*. just kidding from the top left it's 2, 3, 4, and 7. but I'm blue green color blind so you should argue with me in the comments.
 
 ![](images/2_shadesofcyan.png){fig-alt="a 3x3 grid of different squares that are shades of blue and green" fig-align="center" width="388"}
 
@@ -171,12 +175,12 @@ Indeed, categories almost always oversimplify the complexity of life, yet are of
 
 If you are simply interested in doing a superficial survey of a variable like race, ethnicity, or gender, then I think categorical data can be a fine -if often unscientific - approach, and would recommend giving all people the chance to express their identity in some way. For example, [here's an article](https://compass.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/spc3.12506) describing research on the way that exclusionary categories can negatively impact science, and offering clear and easy recommendations for reseachers to broaden science (e.g., reporting non-binary participants).
 
-However, if you are interested in really digging into a variable, then a continuous approach is almost always best, since it allows for more flexibility in capturing complexity in variation. We’ll discuss more on how to do this in a few weeks when we learn about measuring continuous variables with likert scales later in the semester. [^2r_data-5]
+However, if you are interested in really digging into a variable, then a continuous approach is almost always best, since it allows for more flexibility in capturing complexity in variation. We’ll discuss more on how to do this in a few weeks when we learn about measuring continuous variables with likert scales later in the semester. [^2r_data-7]
 
 ![](images/2_genderspectrum.png)
 ::::
 
-[^2r_data-5]: a [continuous approach](https://scalar.usc.edu/works/index-2/media/the-gender-spectrum) to measuring gender. hi if u still reading, let me know if you have any thoughts on this section of the chapter.
+[^2r_data-7]: a [continuous approach](https://scalar.usc.edu/works/index-2/media/the-gender-spectrum) to measuring gender. hi if u still reading, let me know if you have any thoughts on this section of the chapter.
 
 ### Graphing : The Categorical Plot
 
@@ -212,9 +216,9 @@ plot(haas$sex, col = 'black', bor = 'white', xlab = "Sex")
 
   - It appears that the researchers only measured sex as a f/m binary (or that no participants reported a category other than female or male).
 
-  - there were more males than females in this dataset. This matches my perception / stereotype of what a typical MBA program might look like; however I looked into it and Haas reports a larger percentage of female enrollments in the MBA program; so our data may not serve as a representative sample of the true population.[^2r_data-6]\
+  - there were more males than females in this dataset. This matches my perception / stereotype of what a typical MBA program might look like; however I looked into it and Haas reports a larger percentage of female enrollments in the MBA program; so our data may not serve as a representative sample of the true population.[^2r_data-8]\
 
-[^2r_data-6]: Will learn about these ideas much later this semester! here’s a link to learn more about [women in Haas](https://mba.haas.berkeley.edu/student-life/women). capitalism will eat us all eventually I guess, and good to challenge our stereotypes / perceptions!
+[^2r_data-8]: Will learn about these ideas much later this semester! here’s a link to learn more about [women in Haas](https://mba.haas.berkeley.edu/student-life/women). capitalism will eat us all eventually I guess, and good to challenge our stereotypes / perceptions!
 
 # Part 2 : Data and Datasets in R
 
@@ -438,7 +442,7 @@ Researchers spread their scientific knowledge by publishing research papers. You
 
 2.  **Researcher designs a study, collects data, analyzes the data, and writes up the data as a report.** All the steps of the scientific method. This is what you will do for the final project!
 
-3.  **Researcher submits the report to a scientific journal.** A journal is a collection of articles that are usually united by some common theme. In general, the shorter the name of the journal, the more prestigious[^2r_data-7]. For example, the “Journal of Research in Personality” is considered less prestigious than the “Journal of Personality and Social Psychology”, which is less prestigious than the journal called “Psychological Science”, which is considered less prestigious than the journal called “Science”. 
+3.  **Researcher submits the report to a scientific journal.** A journal is a collection of articles that are usually united by some common theme. In general, the shorter the name of the journal, the more prestigious[^2r_data-9]. For example, the “Journal of Research in Personality” is considered less prestigious than the “Journal of Personality and Social Psychology”, which is less prestigious than the journal called “Psychological Science”, which is considered less prestigious than the journal called “Science”. 
 
 4.  **An editor decides whether to review or reject the article.** Editors make an initial decision - based on a summary of the study and a letter that the author writes to the editor - whether the research article might be a good fit for the journal. If so, they pass it along to the next step. If not, they send a “Thanks, but….” rejection letter.
 
@@ -448,7 +452,7 @@ Researchers spread their scientific knowledge by publishing research papers. You
 
 7.  **The (accepted) paper goes to a proofreader and is published.** Hooray! This process probably takes anywhere from 6 months (insanely fast) to 2 years (or more, depending on the number of revisions that are required).
 
-[^2r_data-7]: Prestige is a very subjective concept in science. However, scientists have found many ways to quantify it, as described in the sections below!
+[^2r_data-9]: Prestige is a very subjective concept in science. However, scientists have found many ways to quantify it, as described in the sections below!
 
 ## Publish! Or Perish…?
 
