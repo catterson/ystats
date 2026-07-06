@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Good Measures – Why Statistics?</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -70,15 +73,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href=".././images/open_source_mouse.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dd8479a8b43ae629028e453cd63fb9c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-db3e6f83599a0e60308012facca9f98e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -117,8 +119,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Why Statistics?</span>
     </a>
@@ -130,12 +130,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
-<span class="menu-text">List of R Code</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://catterson.github.io"> 
 <span class="menu-text">Prof.&nbsp;Cat Homepage</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
+<span class="menu-text">List of R Code</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/3R_Description.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Describing Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -308,12 +308,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
   <li><a href="#part-1-hard-data-in-a-soft-science" id="toc-part-1-hard-data-in-a-soft-science" class="nav-link active" data-scroll-target="#part-1-hard-data-in-a-soft-science">Part 1 : Hard Data in a Soft Science</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#observations" id="toc-observations" class="nav-link" data-scroll-target="#observations">Observations</a></li>
   <li><a href="#self-reports" id="toc-self-reports" class="nav-link" data-scroll-target="#self-reports">Self-Reports</a>
   <ul class="collapse">
@@ -328,7 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   </ul></li>
   <li><a href="#part-2-creating-a-likert-scale-in-r" id="toc-part-2-creating-a-likert-scale-in-r" class="nav-link" data-scroll-target="#part-2-creating-a-likert-scale-in-r">Part 2 : Creating a Likert Scale in R</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#i-like-to-read" id="toc-i-like-to-read" class="nav-link" data-scroll-target="#i-like-to-read">I Like To Read!</a>
   <ul class="collapse">
   <li><a href="#import-and-check-the-data." id="toc-import-and-check-the-data." class="nav-link" data-scroll-target="#import-and-check-the-data.">1. Import and Check the Data.</a></li>
@@ -341,12 +345,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#i-like-to-watch-videos-creating-a-likert-scale" id="toc-i-like-to-watch-videos-creating-a-likert-scale" class="nav-link" data-scroll-target="#i-like-to-watch-videos-creating-a-likert-scale">I Like To Watch Videos : Creating a Likert Scale</a></li>
   </ul></li>
   <li><a href="#likert-scale-quiz." id="toc-likert-scale-quiz." class="nav-link" data-scroll-target="#likert-scale-quiz.">Likert Scale Quiz.</a></li>
+  <li><a href="#part-3-good-data-validity-and-reliability" id="toc-part-3-good-data-validity-and-reliability" class="nav-link" data-scroll-target="#part-3-good-data-validity-and-reliability">Part 3 : Good Data (Validity and Reliability)</a>
+  <ul class="collapse">
+  <li><a href="#validity-and-its-specific-forms" id="toc-validity-and-its-specific-forms" class="nav-link" data-scroll-target="#validity-and-its-specific-forms">Validity and Its Specific Forms</a></li>
+  <li><a href="#reliability" id="toc-reliability" class="nav-link" data-scroll-target="#reliability">Reliability</a>
+  <ul class="collapse">
+  <li><a href="#example-validity-and-reliability" id="toc-example-validity-and-reliability" class="nav-link" data-scroll-target="#example-validity-and-reliability">Example : Validity and Reliability</a></li>
+  </ul></li>
+  <li><a href="#bad-data-phrenology-in-terms-of-validity-and-reliability" id="toc-bad-data-phrenology-in-terms-of-validity-and-reliability" class="nav-link" data-scroll-target="#bad-data-phrenology-in-terms-of-validity-and-reliability">Bad Data : Phrenology in terms of Validity and Reliability</a>
+  <ul class="collapse">
+  <li><a href="#check-in-reliability-and-validity." id="toc-check-in-reliability-and-validity." class="nav-link" data-scroll-target="#check-in-reliability-and-validity."><strong>Check-In : Reliability and Validity</strong><strong>.</strong></a></li>
+  <li><a href="#would-you-like-to-learn-more-optional-readings" id="toc-would-you-like-to-learn-more-optional-readings" class="nav-link" data-scroll-target="#would-you-like-to-learn-more-optional-readings">Would You Like to Learn More? (Optional Readings)</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -392,10 +405,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Part 1 : Hard Data in a Soft Science</h1>
 <p>One of the challenges psychologists face in their attempts to be a REAL SCIENCE ™ is that their data is particularly hard to collect. Unlike physical variables like temperature or mass, psychological variables are often internal to people, and defined by mental states that are difficult to observe. As we saw in lecture, even a “simple” expressed behavior like an interruption can be very difficult to measure with high degrees of reliability and validity that we would hope. For a more complex variable such as depression, the task might seem impossible. Indeed, a large part of psychological research is engaging in debate and scholarship about how to best <strong>operationalize</strong> variables of interest (e.g., how should we define or measure depression?)&nbsp;</p>
 <p>A full discussion of the different types of methods psychologists use to collect data is beyond the scope of this author. However, below I’ve tried to outline a few different approaches psychologists take, commenting on their benefits and limitations so you can begin to critically think about whether these methods are, in fact, getting at “THE TRUTH” of what people (or non-human animals) are like.</p>
-<section id="observations" class="level2 page-columns page-full">
+<section id="observations" class="level2">
 <h2 class="anchored" data-anchor-id="observations">Observations</h2>
 <p>Often, self-reports are insufficient to capture what a person is like, or researchers are studying individuals who cannot give self-reports, such as infants, people with disabilities, or non-human animals.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;If I was a billionaire, I’d fund a team of psychologists to train monkeys to answer surveys. this is maybe why I am not a billionaire. that and the whole “intergenerational wealth” thing / chosen teaching career / lack of a desire to crush others and extract as much wealth from them…hard to know which factor is at play. Life is complex! Let me know if you are a billionaire and want to fund some other ideas / subscribe to my newsletter.</p></div></div><p>Read about some common forms of observation methods below.</p>
+<p>Read about some common forms of observation methods below.</p>
 <table class="caption-top table">
 <tbody>
 <tr class="odd">
@@ -429,17 +442,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;You can compare <a href="https://www.youtube.com/watch?v=QquZxJhuSg8">this child’s reaction</a> to <a href="https://www.youtube.com/watch?v=AGRT6VjnTm8">this child’s reaction</a>. What do you observe? How would you quantify these observations and turn them into cold, hard data?</p></div></div></section>
-<section id="self-reports" class="level2 page-columns page-full">
+</section>
+<section id="self-reports" class="level2">
 <h2 class="anchored" data-anchor-id="self-reports">Self-Reports</h2>
 <p>One of the simplest ways to collect data on an individual is just to ask them what they are like, and have the person report on themselves (a self-report). There are two different approaches to getting self-reports - survey methods and qualitative interviews.</p>
-<section id="qualitative-interviews" class="level3 page-columns page-full">
+<section id="qualitative-interviews" class="level3">
 <h3 class="anchored" data-anchor-id="qualitative-interviews">Qualitative Interviews</h3>
 <p>One way to get individuals to tell you what they are like is through a structured interview where researchers ask open-ended questions. One such example of this is the McAdams Life Narrative<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. In this structured interview, a trained research assistant asks a set of broad questions to participants over the course of 1 to 3 hours. The research assistant is advised to “feel free to skip some of these questions if they seem redundant or irrelevant, and should follow up with other questions as needed “ but also to “not adopt an advisory or judgmental role, but should instead serve as an empathic and encouraging guide and an affirming sounding board.”</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;McAdams talks about his work in this <a href="#0">popular press interview</a> and writes about it in this <a href="#0">scientific journal review article</a>.</p></div><div id="fn4"><p><sup>4</sup>&nbsp;<a href="https://www.dropbox.com/scl/fi/pn3tlz9alo4u0m6lqgcwl/McAdams_Narrative_Instructions.pdf?rlkey=8m48abjh5kgdxbbdworh0dxbh&amp;dl=0">Here’s a link to the full narrative instructions</a> if you want to do the whole thing; it’s a great way to know someone.</p></div></div><p>Below is an excerpt from the first part of the interview - if you are comfortable, please share your chapters on the Chapter 4 Discord thread!<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>Below is an excerpt from the first part of the interview - if you are comfortable, please share your chapters on the Chapter 4 Discord thread!<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <p><img src="images/4_McAdams.png" class="img-fluid"></p>
 </section>
-<section id="survey-methods" class="level3 page-columns page-full">
+<section id="survey-methods" class="level3">
 <h3 class="anchored" data-anchor-id="survey-methods">Survey Methods</h3>
 <p>Qualitative interviews are not very common in psychological research, because they take a lot of time to conduct, and then more time to convert people’s open-ended responses into data (a form of behavioral coding, described in more detail below).</p>
 <p>Instead, the majority of self-reports come from surveys. Read about these below.</p>
@@ -469,9 +482,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Indeed, our society decides what <a href="https://jacobin.com/2022/11/no-stock-buyback-coalition-labor-unions-corporate-greed-inequality">forms of cheating are acceptable</a>.</p></div></div><p>Self-reports have a bad reputation in psychology, particularly because of the ability for people to engage in self-enhancement/diminishment or self-insight bias. However, they are a very powerful, and very commonly used method of assessment, even for studies where researchers are able to observe other types of data.&nbsp;</p>
+<p>Self-reports have a bad reputation in psychology, particularly because of the ability for people to engage in self-enhancement/diminishment or self-insight bias. However, they are a very powerful, and very commonly used method of assessment, even for studies where researchers are able to observe other types of data.&nbsp;</p>
 <p>For example, despite all the behavioral data that powerful technology companies like Facebook/Instagram/Meta, TikTok, Twitter/X, etc. collect, you’ve probably seen them ask you to answer some survey. They care about you<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, and know that asking you questions about yourself is an important way to show that level of care.</p>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;…and your clicking on advertisements; hey, it’s hard to distinguish the two really…</p></div></div><p>Below is one example from some survey when I used to be on Facebook. If they changed their graphic design since I was last on, it’s probably because of some survey feedback they received.</p>
+<p>Below is one example from some survey when I used to be on Facebook. If they changed their graphic design since I was last on, it’s probably because of some survey feedback they received.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/4L_FBsurvey.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -485,12 +498,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="definition-theory" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="definition-theory">Definition &amp; Theory</h3>
 <p>A likert scale is a common survey method psychologists use to measure <a href="https://docs.google.com/document/d/18nv4NsyRkjP3ClgreidOOWyxS3VdSQPpT2kRwfTHvm0/edit#bookmark=id.hco904ai8j6f">continuous variation</a>. Likert scales can be used for self-report surveys (where an individual answers questions about themselves), or given to observers (where an individual answers questions about another person - either someone they know, or someone they are actively observing).&nbsp;For example, to the right is an example likert scale - the Rosenberg Self-Esteem Scale<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. Here’s a link to <a href="https://www.wwnorton.com/college/psych/psychsci/media/rosenberg.htm">take the survey</a> and get feedback.</p>
-<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;Rosenberg, M. (1965). Rosenberg Self-Esteem Scale (RSES) [Database record]. APA PsycTests. Here’s a link to <a href="https://www.wwnorton.com/college/psych/psychsci/media/rosenberg.htm">take the survey</a> and get feedback.</p>
-<p><br>
-</p></div><div class="">
+
+<div class="no-row-height column-margin column-container"><div class="">
 <p><img src="images/4_SWLS.png" class="img-fluid"></p>
-</div></div>
-<p>Below are some common terms we will use when describing likert scale. (There’s a video that goes over these terms with another example below too.)</p>
+</div></div><p>Below are some common terms we will use when describing likert scale. (There’s a video that goes over these terms with another example below too.)</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 3%">
@@ -538,7 +549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;You would subtract from 8, since 1+7 = 8. So a 7 for a negatively-keyed item on the 1-7 scale would be turned into a 1, since 8-7 = 1</p></div></div><p><strong>Advantages of Likert Scales</strong></p>
+<p><strong>Advantages of Likert Scales</strong></p>
 <ol type="1">
 <li><p>They are easy to administer as a self-report or observational survey, and provide structured data.</p></li>
 <li><p><strong>The principle of aggregation</strong> describes a phenomenon where combining multiple items into one scale will provide a more reliable and continuous measure. Remember, the <strong>normal distribution</strong> is a theoretical distribution that exists when there are multiple explanations for one variable that occur randomly in a population. The multiple items in a scale are one way to try and measure the multiple random explanations for variation. And indeed, as you’ll see in the R demonstration, when you combine multiple categorical items into one variable, the distribution of the variable looks more normal than any individual item.</p></li>
@@ -622,8 +633,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="evaluate-the-reliability-of-the-items-in-this-variable.">4. Evaluate the reliability of the items in this variable.</h3>
 <p>I’ll examine the internal reliability of the scale. Internal reliability measures how consistent people’s responses were for each of the items of the scale. I’m hoping for a high value.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych) <span class="co"># make sure you install.packages("psych") first!</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">alpha</span>(extra.df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych) <span class="co"># make sure you install.packages("psych") first!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'psych' was built under R version 4.4.3</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">alpha</span>(extra.df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in response.frequencies(x, max = max): response.frequency has been
+deprecated and replaced with responseFrequecy.  Please fix your call</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Reliability analysis   
@@ -679,7 +697,7 @@ X6...ec.e6r 0.16 0.34 0.20 0.22 0.08 0.00</code></pre>
 </ul>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">this calculates the average of these items for each row (individual) in the dataset. This is the measure of extraversion for each person. Notice that there is some missing data - the default for this code is that a person’s data will be totally removed if they didn’t answer all the questions in the scale. This is a very conservative way to handle missing data.</span></div></div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rowMeans</span>(extra.df) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rowMeans</span>(extra.df) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 2.166667 2.833333 2.333333 2.500000 5.000000 2.333333 3.333333 3.666667
  [9] 2.833333 2.333333 2.000000 3.500000 4.166667 2.333333 4.500000 3.166667
@@ -694,7 +712,7 @@ X6...ec.e6r 0.16 0.34 0.20 0.22 0.08 0.00</code></pre>
 <li><strong>Method #2 (more liberal approach) :</strong> this removes missing data from specific items, so the average score will be calculated even if the person didn’t answer some of the items.&nbsp;</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowMeans</span>(extra.df, <span class="at">na.rm =</span> T) <span class="co">#     adding na.rm = T as an argument. </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowMeans</span>(extra.df, <span class="at">na.rm =</span> T) <span class="co">#     adding na.rm = T as an argument. </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 2.166667 2.833333 2.333333 2.500000 5.000000 2.333333 3.333333 3.666667
  [9] 2.833333 2.333333 2.000000 3.500000 4.166667 2.333333 4.500000 3.166667
@@ -709,14 +727,14 @@ X6...ec.e6r 0.16 0.34 0.20 0.22 0.08 0.00</code></pre>
 <li><strong>IMPORTANT</strong> In order to save the output as a variable, you will need to assign the output of rowMeans() to a new object, ideally one that is saved as part of the original dataset.</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ec<span class="sc">$</span>EXTRAVERSION <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(extra.df, <span class="at">na.rm =</span> T) <span class="co"># this saves the scales to the dataset as a new object (which I'm calling EXTRAVERSION). I like to name variables that I create in ALL CAPS. Note that I've chosen to be less conservative in how I handle missing data.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ec<span class="sc">$</span>EXTRAVERSION <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(extra.df, <span class="at">na.rm =</span> T) <span class="co"># this saves the scales to the dataset as a new object (which I'm calling EXTRAVERSION). I like to name variables that I create in ALL CAPS. Note that I've chosen to be less conservative in how I handle missing data.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="graph-this-variable-and-interpret-the-graph-what-do-you-learn" class="level3">
 <h3 class="anchored" data-anchor-id="graph-this-variable-and-interpret-the-graph-what-do-you-learn">6. Graph this variable and interpret the graph (what do you learn)?</h3>
 <p>Okay, we have a scale! And this scale should measure continuous variation! Let’s graph it. I’m looking for a graph that ranges from 1 to 5 (since that was the limit of my response scale), and something that looks mostly normally distributed.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ec<span class="sc">$</span>EXTRAVERSION, <span class="at">main =</span> <span class="st">""</span>, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ec<span class="sc">$</span>EXTRAVERSION, <span class="at">main =</span> <span class="st">""</span>, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -745,10 +763,138 @@ X6...ec.e6r 0.16 0.34 0.20 0.22 0.08 0.00</code></pre>
 <section id="likert-scale-quiz." class="level1">
 <h1>Likert Scale Quiz.</h1>
 <p>Note : Creating likert scales takes practice. So I went ahead and uploaded a video key for this quiz (as part of the quiz assignment). You should try to take the quiz on your own - good to have a little bit of struggle! - and use the video key as a guide to learn.</p>
+</section>
+<section id="part-3-good-data-validity-and-reliability" class="level1 page-columns page-full">
+<h1>Part 3 : Good Data (Validity and Reliability)</h1>
+<p>Scientists evaluate the quality of their measures in terms of <strong>validity</strong> (“truth” or accuracy) and <strong>reliability</strong> (repeatability or precision). Learn more about these two concepts - and their specific forms - in the two videos below.</p>
+<section id="validity-and-its-specific-forms" class="level2">
+<h2 class="anchored" data-anchor-id="validity-and-its-specific-forms">Validity and Its Specific Forms</h2>
+<ul>
+<li><p><strong>Face Validity:</strong> asks us to evaluate whether our measure or result look like what it should look like. This is a superficial (and somewhat subjective) judgment. But it is often a powerful and quick way to assess. For example, if I measure my height and it tells me 100 feet, I know something is wrong because there is no way I’m that tall. Or, when looking at a self-esteem measure, I would want to see items that look like self-esteem questions (“I feel good about myself”.) If the self-esteem measure had other questions in it that didn’t really seem like they were measuring self-esteem (“I like to look at myself in the mirror”) I would have questions about the face-validity of the measure. This seems super obvious, but it’s an important check - do the measures used actually look like what they should?</p></li>
+<li><p><strong>Convergent validity:</strong> asks us to evaluate whether our measure similar to related concepts. When two things converge, they come together, and we want our measure to be similar to things that it should be similar to. For example, a measure of body height should be related to a measure of shoe size or tibia length. A measure of self-esteem should be similar to a measure of self-efficacy or satisfaction with life, since both are about how the person is subjectively seeing themselves. They shouldn’t be exactly the same thing, but we’d expect to see a pattern in the data. (We’ll talk more about how to quantify these patterns when we learn more about linear models.)</p></li>
+<li><p><strong>Discriminant validity:</strong> asks about whether our measure is different from unrelated concepts. When two things diverge, they are different from one another. And we WANT our measure to be different from things that we expect them to be different from. For example, a measure of height should be different from a measure of reading speed or how organized a person is. We would expect self-esteem to be different from how social a person is (though maybe there’s some relationship since our society values sociability, and people who are social might get more positive messages from others, bolstering their self-esteem.) This is the hardest concept for students to get, but it’s a really important test of the validity of a measure. I not only want my measure to be related to concepts it should be related to, but also different from concepts it should be different from.</p></li>
+</ul>
+</section>
+<section id="reliability" class="level2">
+<h2 class="anchored" data-anchor-id="reliability">Reliability</h2>
+<ul>
+<li><p><strong>Test-retest reliability:</strong> asks us to evaluate whether we get the same result if we take multiple measures separated by time. If I think of self-esteem as a stable trait, I should expect to see some similarity in a person’s self-esteem at one time point and then the next day. Of course, there will be some change - self-esteem (and other personality variables) can be influenced by the situation and environment. But they shouldn’t be radically different if we have a good measure of this core aspect of the self.</p></li>
+<li><p><strong>Inter-rater / Inter-judge reliability:</strong> asks us to evalute whether multiple observers (or tools) make similar measurements. If I have two rulers made by the same company, I would expect them to give me similar answers for how tall I am. Similarly, two different observers who are reliable should make similar jugments about a person’s self-esteem, or the number of interruptions they count. If our measure is not reliable, then we might get different answers from the different people (or tools) making the measurement.</p></li>
+<li><p><strong>Inter-item reliability:</strong> When we learned about likert scales, we learned about Cronbach’s Alpha - a method of assessing how much the different items in a likert scale were related to each other. This is a form of reliability - specific only to likert scales where we have different questions that are all measuring the same thing. If the scale is reliable, we expect to get similar answers across the different items. For example, someone who says “I feel good about myself” should also say “I feel that I have a number of good qualities.”</p></li>
+</ul>
+<section id="example-validity-and-reliability" class="level3">
+<h3 class="anchored" data-anchor-id="example-validity-and-reliability">Example : Validity and Reliability</h3>
+<p>Think about a scale. How would you evaluate the validity (face, convergent, discriminant) and reliability (test-retest / interjudge) of a bathroom scale? Think about this on your own, then look over the video key / guide below.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Expand To See Answers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Watch the video below to go over some possible answers, or just look over the table.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/T9dTk6Sa434" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>face :</strong> does our measure or result look like what it should look like?</td>
+<td><strong>high :</strong> I have a sense of what my weight should be (e.g, if it says 10 or 1000 i know either the units are wrong or scale is broken.)</td>
+</tr>
+<tr class="even">
+<td><strong>convergent :</strong> is our measure similar to related concepts?</td>
+<td><strong>high :</strong> my weight according to the scale is (somewhat) related to how much I stress eat, how little I exercise, my parents’ weight, etc.</td>
+</tr>
+<tr class="odd">
+<td><strong>discriminant :</strong> is our measure different from unrelated concepts?</td>
+<td><strong>high :</strong> my weight is unrelated to intelligence, how much I love R, whether I wear sandals with or without socks, etc.</td>
+</tr>
+<tr class="even">
+<td><strong>test-retest :</strong> do we get the same result if we take multiple measures?</td>
+<td><strong>high :</strong> If I step on the scale and get a number, I should be able to step off the scale, step on again, and get the same number.</td>
+</tr>
+<tr class="odd">
+<td><strong>interrater reliability :</strong> would another observer make the same measurements?</td>
+<td><strong>high :</strong> a different scale (same model and technology) should give me the same result as my scale.</td>
+</tr>
+<tr class="even">
+<td><strong>inter-item reliability :</strong> would one item in the likert scale be related to others?</td>
+<td><strong>not relevant.</strong> a bathroom scale is not a likert scale.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bad-data-phrenology-in-terms-of-validity-and-reliability" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="bad-data-phrenology-in-terms-of-validity-and-reliability">Bad Data : Phrenology in terms of Validity and Reliability</h2>
+<p>Watch the video below to review these terms, in the context of phrenology - an example of scientific racism.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/5_PhrenologyHead.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="38322-004-6FE24489.jpg" width="222"></p>
+</figure>
+</div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/DoLK72ueYs8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Phrenology is no longer considered a valid or reliable science, yet its presence still lingers in psychology, and is often taught as history without reference to its racist origins and consequences<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. And as we have (and will continue to discuss) there are still many ways in which racism (and sexism, classism, and ableism) occur and affect psychology (and other sciences too).</p>
+<p>For example, more modern intelligence testing is often criticized for prioritizing White European values and language in the way it assesses supposedly “objective” knowledge. In an important test of this claim, the psychologist Robert Williams (pictured to the right) designed an IQ test that was as <strong>reliable</strong> as the default IQ test, but was “biased” to prioritize and value Black culture.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/5_IQtest.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>As seen in the table, Black students scored higher on this IQ test than White students - a point he (and others) use to emphasize the inherent biases in intelligence testing. Dr.&nbsp;Williams also came to define the concept of Ebonics, and demonstrate that African American English is as much a complete language as “Standard” English.&nbsp;</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/5_Williams.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div></div><section id="check-in-reliability-and-validity." class="level3">
+<h3 class="anchored" data-anchor-id="check-in-reliability-and-validity."><a href="https://docs.google.com/forms/d/e/1FAIpQLSf7fmDMX_o3kOqPblXT_WSnu-6hQRJfX2VEqyQsMSjdSrURBw/viewform?usp=sf_link"><strong>Check-In : Reliability and Validity</strong></a><strong>.</strong></h3>
+<p>Test your understanding of reliability and validity with the check-in above.</p>
+<p>Below is a video to review the check-in answers, since these terms can be tricky :)</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/95W3DKRGR24" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="would-you-like-to-learn-more-optional-readings" class="level3">
+<h3 class="anchored" data-anchor-id="would-you-like-to-learn-more-optional-readings">Would You Like to Learn More? (Optional Readings)</h3>
+<ul>
+<li><p><strong>Here’s a <a href="https://kpu.pressbooks.pub/psychmethods4e/chapter/reliability-and-validity-of-measurement/">textbook chapter on the same topics</a>.</strong> Note these authors use three terms to describe what I broadly call “convergent validity”. Internal consistency (a form of reliability) is measured with “alpha reliability” (we will learn about this next week).</p></li>
+<li><p><strong>Dr.&nbsp;Williams <a href="https://www.youtube.com/watch?v=SAqHmKIXZBE">talks about his research here</a></strong> and here’s an episode of the <a href="http://dailymotion.com/video/x6fmo36">TV show Good Times</a> that Dr.&nbsp;Williams consulted on. Here’s a <a href="https://files.eric.ed.gov/fulltext/ED070799.pdf">link to his full study</a>. Note that Dr.&nbsp;Williams gave his intelligence test a name I don’t feel comfortable using because it is sexist :(. Times change, and it’s good to call out outdated language and update our terms accordingly :)</p></li>
+<li><p><strong>Learn more about the <a href="https://www.theguardian.com/science/blog/2013/feb/05/django-unchained-racist-science-phrenology">racist history of how phrenology was produced and consumed</a></strong> and an article that conducted <a href="http://theconversation.com/neuroscientists-put-the-dubious-theory-of-phrenology-through-rigorous-testing-for-the-first-time-88291">more recent research</a>to test phrenology’s theories. # TLDR.</p></li>
+</ul>
+<p>Developing a valid science of people is hard at best, and can be problematic when you use it to rank people. There are lots of different methods to measure what individuals are like, and for your final project you probably will want to give people self-report surveys to keep things simple for this very first study.</p>
 
 
 </section>
-
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>If I was a billionaire, I’d fund a team of psychologists to train monkeys to answer surveys. this is maybe why I am not a billionaire. that and the whole “intergenerational wealth” thing / chosen teaching career / lack of a desire to crush others and extract as much wealth from them…hard to know which factor is at play. Life is complex! Let me know if you are a billionaire and want to fund some other ideas / subscribe to my newsletter.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>You can compare <a href="https://www.youtube.com/watch?v=QquZxJhuSg8">this child’s reaction</a> to <a href="https://www.youtube.com/watch?v=AGRT6VjnTm8">this child’s reaction</a>. What do you observe? How would you quantify these observations and turn them into cold, hard data?<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>McAdams talks about his work in this <a href="#0">popular press interview</a> and writes about it in this <a href="#0">scientific journal review article</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><a href="https://www.dropbox.com/scl/fi/pn3tlz9alo4u0m6lqgcwl/McAdams_Narrative_Instructions.pdf?rlkey=8m48abjh5kgdxbbdworh0dxbh&amp;dl=0">Here’s a link to the full narrative instructions</a> if you want to do the whole thing; it’s a great way to know someone.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Indeed, our society decides what <a href="https://jacobin.com/2022/11/no-stock-buyback-coalition-labor-unions-corporate-greed-inequality">forms of cheating are acceptable</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>…and your clicking on advertisements; hey, it’s hard to distinguish the two really…<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Rosenberg, M. (1965). Rosenberg Self-Esteem Scale (RSES) [Database record]. APA PsycTests. Here’s a link to <a href="https://www.wwnorton.com/college/psych/psychsci/media/rosenberg.htm">take the survey</a> and get feedback.</p>
+<p><br>
+<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>You would subtract from 8, since 1+7 = 8. So a 7 for a negatively-keyed item on the 1-7 scale would be turned into a 1, since 8-7 = 1<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>For examples, in the common Intro Psych textbook written by Myers &amp; DeWall (2018)<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

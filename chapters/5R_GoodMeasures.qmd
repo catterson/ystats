@@ -283,3 +283,85 @@ This looks good. When I look at this graph I see the following things:
 # Likert Scale Quiz.
 
 Note : Creating likert scales takes practice. So I went ahead and uploaded a video key for this quiz (as part of the quiz assignment). You should try to take the quiz on your own - good to have a little bit of struggle! - and use the video key as a guide to learn.
+
+# Part 3 : Good Data (Validity and Reliability)
+
+Scientists evaluate the quality of their measures in terms of **validity** (“truth” or accuracy) and **reliability** (repeatability or precision). Learn more about these two concepts - and their specific forms - in the two videos below.
+
+## Validity and Its Specific Forms
+
+-   **Face Validity:** asks us to evaluate whether our measure or result look like what it should look like. This is a superficial (and somewhat subjective) judgment. But it is often a powerful and quick way to assess. For example, if I measure my height and it tells me 100 feet, I know something is wrong because there is no way I'm that tall. Or, when looking at a self-esteem measure, I would want to see items that look like self-esteem questions ("I feel good about myself".) If the self-esteem measure had other questions in it that didn't really seem like they were measuring self-esteem ("I like to look at myself in the mirror") I would have questions about the face-validity of the measure. This seems super obvious, but it's an important check - do the measures used actually look like what they should?
+
+-   **Convergent validity:** asks us to evaluate whether our measure similar to related concepts. When two things converge, they come together, and we want our measure to be similar to things that it should be similar to. For example, a measure of body height should be related to a measure of shoe size or tibia length. A measure of self-esteem should be similar to a measure of self-efficacy or satisfaction with life, since both are about how the person is subjectively seeing themselves. They shouldn't be exactly the same thing, but we'd expect to see a pattern in the data. (We'll talk more about how to quantify these patterns when we learn more about linear models.)
+
+-   **Discriminant validity:** asks about whether our measure is different from unrelated concepts. When two things diverge, they are different from one another. And we WANT our measure to be different from things that we expect them to be different from. For example, a measure of height should be different from a measure of reading speed or how organized a person is. We would expect self-esteem to be different from how social a person is (though maybe there's some relationship since our society values sociability, and people who are social might get more positive messages from others, bolstering their self-esteem.) This is the hardest concept for students to get, but it's a really important test of the validity of a measure. I not only want my measure to be related to concepts it should be related to, but also different from concepts it should be different from.
+
+## Reliability
+
+-   **Test-retest reliability:** asks us to evaluate whether we get the same result if we take multiple measures separated by time. If I think of self-esteem as a stable trait, I should expect to see some similarity in a person's self-esteem at one time point and then the next day. Of course, there will be some change - self-esteem (and other personality variables) can be influenced by the situation and environment. But they shouldn't be radically different if we have a good measure of this core aspect of the self.
+
+-   **Inter-rater / Inter-judge reliability:** asks us to evalute whether multiple observers (or tools) make similar measurements. If I have two rulers made by the same company, I would expect them to give me similar answers for how tall I am. Similarly, two different observers who are reliable should make similar jugments about a person's self-esteem, or the number of interruptions they count. If our measure is not reliable, then we might get different answers from the different people (or tools) making the measurement.
+
+-   **Inter-item reliability:** When we learned about likert scales, we learned about Cronbach's Alpha - a method of assessing how much the different items in a likert scale were related to each other. This is a form of reliability - specific only to likert scales where we have different questions that are all measuring the same thing. If the scale is reliable, we expect to get similar answers across the different items. For example, someone who says "I feel good about myself" should also say "I feel that I have a number of good qualities."
+
+### Example : Validity and Reliability
+
+Think about a scale. How would you evaluate the validity (face, convergent, discriminant) and reliability (test-retest / interjudge) of a bathroom scale? Think about this on your own, then look over the video key / guide below.
+
+::: {.callout-tip collapse="true"}
+### Expand To See Answers
+
+Watch the video below to go over some possible answers, or just look over the table.
+
+{{< video https://youtu.be/T9dTk6Sa434 >}}
+
+|  |  |
+|------------------------------------|------------------------------------|
+| **face :** does our measure or result look like what it should look like? | **high :** I have a sense of what my weight should be (e.g, if it says 10 or 1000 i know either the units are wrong or scale is broken.) |
+| **convergent :** is our measure similar to related concepts? | **high :** my weight according to the scale is (somewhat) related to how much I stress eat, how little I exercise, my parents’ weight, etc. |
+| **discriminant :** is our measure different from unrelated concepts? | **high :** my weight is unrelated to intelligence, how much I love R, whether I wear sandals with or without socks, etc. |
+| **test-retest :** do we get the same result if we take multiple measures? | **high :** If I step on the scale and get a number, I should be able to step off the scale, step on again, and get the same number. |
+| **interrater reliability :** would another observer make the same measurements? | **high :** a different scale (same model and technology) should give me the same result as my scale. |
+| **inter-item reliability :** would one item in the likert scale be related to others? | **not relevant.** a bathroom scale is not a likert scale. |
+:::
+
+## Bad Data : Phrenology in terms of Validity and Reliability
+
+Watch the video below to review these terms, in the context of phrenology - an example of scientific racism.
+
+![](images/5_PhrenologyHead.png){alt="38322-004-6FE24489.jpg" fig-align="center" width="222"}
+
+{{< video https://youtu.be/DoLK72ueYs8 >}}
+
+Phrenology is no longer considered a valid or reliable science, yet its presence still lingers in psychology, and is often taught as history without reference to its racist origins and consequences[^4r_normalpeople-11]. And as we have (and will continue to discuss) there are still many ways in which racism (and sexism, classism, and ableism) occur and affect psychology (and other sciences too).
+
+[^4r_normalpeople-11]: For examples, in the common Intro Psych textbook written by Myers & DeWall (2018)
+
+For example, more modern intelligence testing is often criticized for prioritizing White European values and language in the way it assesses supposedly “objective” knowledge. In an important test of this claim, the psychologist Robert Williams (pictured to the right) designed an IQ test that was as **reliable** as the default IQ test, but was “biased” to prioritize and value Black culture.
+
+![](images/5_IQtest.png){fig-align="center"}
+
+::: column-margin
+As seen in the table, Black students scored higher on this IQ test than White students - a point he (and others) use to emphasize the inherent biases in intelligence testing. Dr. Williams also came to define the concept of Ebonics, and demonstrate that African American English is as much a complete language as “Standard” English. 
+
+![](images/5_Williams.png){fig-align="center"}
+:::
+
+### [**Check-In : Reliability and Validity**](https://docs.google.com/forms/d/e/1FAIpQLSf7fmDMX_o3kOqPblXT_WSnu-6hQRJfX2VEqyQsMSjdSrURBw/viewform?usp=sf_link)**.**
+
+Test your understanding of reliability and validity with the check-in above.
+
+Below is a video to review the check-in answers, since these terms can be tricky :)
+
+{{< video https://youtu.be/95W3DKRGR24 >}}
+
+### Would You Like to Learn More? (Optional Readings)
+
+-   **Here’s a [textbook chapter on the same topics](https://kpu.pressbooks.pub/psychmethods4e/chapter/reliability-and-validity-of-measurement/).** Note these authors use three terms to describe what I broadly call “convergent validity”. Internal consistency (a form of reliability) is measured with “alpha reliability” (we will learn about this next week).
+
+-   **Dr. Williams [talks about his research here](https://www.youtube.com/watch?v=SAqHmKIXZBE)** and here’s an episode of the [TV show Good Times](http://dailymotion.com/video/x6fmo36) that Dr. Williams consulted on. Here’s a [link to his full study](https://files.eric.ed.gov/fulltext/ED070799.pdf). Note that Dr. Williams gave his intelligence test a name I don’t feel comfortable using because it is sexist :(. Times change, and it’s good to call out outdated language and update our terms accordingly :)
+
+-   **Learn more about the [racist history of how phrenology was produced and consumed](https://www.theguardian.com/science/blog/2013/feb/05/django-unchained-racist-science-phrenology)** and an article that conducted [more recent research](http://theconversation.com/neuroscientists-put-the-dubious-theory-of-phrenology-through-rigorous-testing-for-the-first-time-88291)to test phrenology’s theories. \# TLDR.
+
+Developing a valid science of people is hard at best, and can be problematic when you use it to rank people. There are lots of different methods to measure what individuals are like, and for your final project you probably will want to give people self-report surveys to keep things simple for this very first study.
+

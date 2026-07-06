@@ -1,56 +1,51 @@
 # "Normal" Data
 
-::: callout-important
-## In This Chapter
-
--   Define, discuss, and critique the idea of "normality" and "deviance".
-
--   Use R to calculate a z-score, which quantifies an individual's deviance from the mean.
-
--   Learn how scientists evaluate the quality of data, and see how this was used to debunk phrenology as racist.
-:::
-
 ![](images/clipboard-4149537892.png)
 
 The image above depicts [*Grounded in the Stars*](https://www.thomasjprice.com/times-square-arts), a 12-foot sculpture of a young woman that stood in New York City's Times Square from April 29 through June 14, 2025.
 
-There's a lot that I love about this image, from the artistry of rendering braids and clothes so naturally in sculpted bronze, to the way the character stares off in the distance as if unconcerned with the gaze of others, to the way the sculpture proudly claims space in a society that does not currently and historically create inclusive spaces for black women. Indeed, the sculpture is surrounded by other massive images[^4r_normalpeople-1] whose presence in the space may go unnoticed because it is so routine to see images of white men in public places.
+::: callout-important
+## Who Cares?
 
-[^4r_normalpeople-1]: Tom Cruise and some eyeglass model who kind of looks like a 90s era Tom Cruise. Ving Rhames is there too if you look closely enough.
+In this chapter, you’ll learn how to define, discuss, and critique the idea of "normality" and "deviance".
+
+- **Part 1** reviews the "normal" distribution, why social scientists often see this type of distribution, and some of the reasons why scientists do not always see this type of distribution.
+- **Part 2** discusses how to quantify deviation from the mean in R, identify outliers, and remove them using R.
+
+**By the end of this chapter :** you will be able to express how and why data differ from the mean, and remove outliers in R.
+:::
+
+There's a lot that I love about the image at the top of this chapter, from the artistry of rendering braids and clothes so naturally in sculpted bronze, to the way the character stares off in the distance as if unconcerned with the gaze of others, to the way the sculpture proudly claims space in a society that does not currently and historically create inclusive spaces for black women. Indeed, the sculpture is surrounded by other massive images\[\^4r_normalpeople-1\] whose presence in the space may go unnoticed because it is so routine to see images of white men in public places. \[\^4r_normalpeople-1\]: Tom Cruise and some eyeglass model who kind of looks like a 90s era Tom Cruise. Ving Rhames is there too if you look closely enough.
 
 The artist's website emphasizes the way the sculpture challenges pre-existing ideas about who is represented in our society, and references Michelangelo's *David* as inspiration, but clarifies that this sculpture is "A fictionalized character constructed from images, observations, and open calls spanning between Los Angeles and London" who "carries familiar qualities, from her stance and countenance to her everyday clothing."
 
 This statue, and the fact that it was an amalgamation of real people, also reminded me of the sculptures of "Normmann" and Norma.
 
-::: column-margin
-![](images/clipboard-1894112951.png)
-:::
+![](images/clipboard-1894112951.png){fig-align="center" width="80%"}
 
-Like the unnamed woman in Times Square who was the subject of *Grounded in the Stars,* Normmann and Norma's measurements were based on composites of other people; in Norma's case "the averaged measurements of 'native white' American women recorded and standardized by the Bureau of Home Economics in 1940, in an attempt to devise the first standardized system of sizing for ready-made clothes."[^4r_normalpeople-2]
+Like the unnamed woman in Times Square who was the subject of *Grounded in the Stars,* Normmann and Norma's measurements were based on composites of other people; in Norma's case "the averaged measurements of 'native white' American women recorded and standardized by the Bureau of Home Economics in 1940, in an attempt to devise the first standardized system of sizing for ready-made clothes."[^4r_normalpeople-1]
 
-[^4r_normalpeople-2]: For a more in-depth history of Norma and Normann, including critiques of the gender and post-WW2 contexts in which these statues arose, See Chapter 8 of Peter Cryle & and Elizabeth Stephens' *Normality: A Critical Genealogy*. University of Chicago Press, 2017.Chicago Scholarship Online, 2018. [https://doi.org/10.7208/chicago/9780226484198.001.0001](#0).
+[^4r_normalpeople-1]: For a more in-depth history of Norma and Normann, including critiques of the gender and post-WW2 contexts in which these statues arose, See Chapter 8 of Peter Cryle & and Elizabeth Stephens' *Normality: A Critical Genealogy*. University of Chicago Press, 2017.Chicago Scholarship Online, 2018. [https://doi.org/10.7208/chicago/9780226484198.001.0001](#0).
 
 Unlike the subject of *Grounded in the Stars,* Norma and Normmann were based on different demographic data. More important, these characters were labeled and advertised as "The Typical American". A type of person who reflected and reinforced the values that white America wanted to promote.
 
-Indeed, these statues achieved their purpose in various ways; Norma and Normman were first displayed in the American Museum of Natural History during the International Congresses of Eugenics in 1945. Furthermore, when the statues were gifted to the Cleveland Health Museum, the museum held a contest to find the woman who most typically represented Norma[^4r_normalpeople-3], offering prize money in "a search for Norma, the typical American woman". While a winner was selected, the search failed in the original efforts to find someone who *perfectly* matched this average, as the measurements of the winner “did not coincide with those of the statue. . . . after assessment of the measurements of 3,863 women who entered the search, Norma remained a hypothetical individual.”[^4r_normalpeople-4]
+Indeed, these statues achieved their purpose in various ways; Norma and Normman were first displayed in the American Museum of Natural History during the International Congresses of Eugenics in 1945. Furthermore, when the statues were gifted to the Cleveland Health Museum, the museum held a contest to find the woman who most typically represented Norma[^4r_normalpeople-2], offering prize money in "a search for Norma, the typical American woman". While a winner was selected, the search failed in the original efforts to find someone who *perfectly* matched this average, as the measurements of the winner “did not coincide with those of the statue. . . . after assessment of the measurements of 3,863 women who entered the search, Norma remained a hypothetical individual.”[^4r_normalpeople-3]
 
-[^4r_normalpeople-3]: I'm not entirely sure why Normann was not subject to a similar contest, though my guess is that it's a symptom of a patriarchy that perpetuates the male gaze in [many ways](https://www.youtube.com/watch?v=ulsjuiFO2J0).
+[^4r_normalpeople-2]: I'm not entirely sure why Normann was not subject to a similar contest, though my guess is that it's a symptom of a patriarchy that perpetuates the male gaze in [many ways](https://www.youtube.com/watch?v=ulsjuiFO2J0).
 
-[^4r_normalpeople-4]: Josephine Robertson, “Theatre Cashier, 23, Wins Title of ‘Norma,’ Besting 3,863 Entries,” Cleveland Plain Dealer, September 23, 1945, 1.
+[^4r_normalpeople-3]: Josephine Robertson, “Theatre Cashier, 23, Wins Title of ‘Norma,’ Besting 3,863 Entries,” Cleveland Plain Dealer, September 23, 1945, 1.
 
 Here, we see a few course themes that we will discuss in this chapter, and in this week's lecture :
 
--   What is "normal" and who gets to define this term?
+- What is "normal" and who gets to define this term?
 
--   What are the alternatives to "normality"? How are these alternatives labeled?
+- What are the alternatives to "normality"? How are these alternatives labeled?
 
--   What is the point of labeling individuals as normal?
+- What is the point of labeling individuals as normal?
 
-# Part 1. The "Normal" Distribution.
+# Part 1. Defining and Critiquing "Normality"
 
-Before we get into the critique in our class, let's use this space to go over some of the basic definitions.
-
-## Definition.
+## The "Normal" Distribution.
 
 The “Normal” (or Gaussian) distribution is a common shape for what distributions of data look like. The shape is often called a “bell curve”, because it looks like the curve of a bell. Ding.
 
@@ -65,9 +60,9 @@ The Normal Distribution is called "normal", in part, because researchers expect 
 
 ### Example 1 : Thinking About Distributions.
 
-Indeed, many of the variables that psychologists measure do appear "Normal". For example, let’s look at one example "normal" distributions - a "self-esteem" variable. Note that it's not perfectly normal[^4r_normalpeople-5], but it's pretty close and representative of the kind of "real world" data that you might encounter.
+Indeed, many of the variables that psychologists measure do appear "Normal". For example, let’s look at one example "normal" distributions - a "self-esteem" variable. Note that it's not perfectly normal[^4r_normalpeople-4], but it's pretty close and representative of the kind of "real world" data that you might encounter.
 
-[^4r_normalpeople-5]: good not to hold data to unrealistic body images as well as people.
+[^4r_normalpeople-4]: good not to hold data to unrealistic body images as well as people.
 
 ```{r}
 #| include: false
@@ -86,17 +81,17 @@ hist(d$SELFES, col = 'black', bor = 'white',
 
 **"Non-Random" Explanations.** Careful observers will note that self-esteem appears slightly shifted above the mid-point of the scale (which goes from 1-4, so 2.5 would be the mid-point), and that there's some slight negative skew (meaning more individuals are on the higher end of the distribution). It's unclear why there's this shift in the data, but below are a few possible reasons :
 
--   There's some shared cultural experiences among participants - our society values self-esteem, and people might be biased to self-enhance / self-present a higher self-esteem. This is a non-independent influence, since many participants might experience this in our culture that puts pressure on people to have a high self-esteem.
+- There's some shared cultural experiences among participants - our society values self-esteem, and people might be biased to self-enhance / self-present a higher self-esteem. This is a non-independent influence, since many participants might experience this in our culture that puts pressure on people to have a high self-esteem.
 
--   The sample was biased to include people with higher levels of self-esteem, or maybe people with lower levels of self-esteem were less likely to complete the survey (which hurts their self-esteem because they haven't yet fully internalized that it's okay to be imperfect in a society that demands perfection.) In any case
+- The sample was biased to include people with higher levels of self-esteem, or maybe people with lower levels of self-esteem were less likely to complete the survey (which hurts their self-esteem because they haven't yet fully internalized that it's okay to be imperfect in a society that demands perfection.) In any case
 
--   The survey was administered on a day when everyone in the world had a really good hair day, so there's a non-independent factor that's shifting many people's self-esteem up.
+- The survey was administered on a day when everyone in the world had a really good hair day, so there's a non-independent factor that's shifting many people's self-esteem up.
 
 ### Example 2 : Thinking About Distributions.
 
-Below is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer[^4r_normalpeople-6].)
+Below is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer[^4r_normalpeople-5].)
 
-[^4r_normalpeople-6]: It is negatively skewed, since the tail is on the negative side of the distribution.
+[^4r_normalpeople-5]: It is negatively skewed, since the tail is on the negative side of the distribution.
 
 ![](images/3_RGrades.png){fig-align="center"}
 
@@ -112,16 +107,18 @@ Lots of things can influence a student’s score on an exam, such as how much st
 These data are not normally distributed because the students were all part of the same college, in the same classroom, taught by the same professor, at the same time. The professor did his best to prepare these students, and wrote a test that would be based on the kinds of practice they had gone over in lecture. These variables are considered “non random” because they were shared by all students. The data are skewed because these non-random shared experiences helped students do well on the exam.
 :::
 
-#### 
+### Critical Culture in Statistics
+
+:::: callout-tip
+#### The Normal Curve
 
 ::: column-margin
-![](../images/doff_intro_mickey.png){width="3in"}
+[That's right folks, it's time for another chat with your friend Open-Source Mickey Mouse about how statistics has a culture that is socially constructed by people like you!]{.smallcaps}
+
+![](images/doff_intro_mickey.png){width="80%"}
 :::
 
-::: callout-warning
-#### Culture in Statistics : The Normal Curve
-
-That's right folks, it's time for another chat with your friend Open-Source Mickey Mouse! This time, we're gonna chat about the idea that people differ from some average. The idea that you could quantify people as "average" is fairly new - it's hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s[^4r_normalpeople-7]. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet's ideas to try and "rank" individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else. Yuck!
+This time, we're gonna chat about the idea that people differ from some average. The idea that you could quantify people as "average" is fairly new - it's hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s[^4r_normalpeople-6]. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet's ideas to try and "rank" individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else. Yuck!
 
 I think it's worth the time and space to hear this from Galton himself.
 
@@ -133,19 +130,33 @@ The point of bringing up some of the racist origins of statistics is two-fold :
 2.  Statistics is a tool, and that tool can be used poorly and dangerously in ways that can cause a lot of pain. Just because something has numbers doens't mean it's correct. For example, Galton's work showing "statistically" that white people were superior in ability to other groups didn't account for other factors like socioeconomic status. And for what it's worth, modern scientists overwhelmingly agree that "race" is a social construct. There are genetic differences that explain different skin tones, however there is more genetic variation in skin tone within a similar “race” than between different “races”. [Read more about this here.](https://www.smithsonianmag.com/smart-news/genetic-study-shows-skin-color-just-skin-deep-180965261/)
 
 Alright, that's all for now! Let me know what you think and see you next time!
-:::
+::::
 
-[^4r_normalpeople-7]: see Rose's END OF AVERAGE (2016) or, for a more critical approach, Chapman's (2023) EMPIRE OF NORMALITY.
+[^4r_normalpeople-6]: see Rose's END OF AVERAGE (2016) or, for a more critical approach, Chapman's (2023) EMPIRE OF NORMALITY.
 
-## Why This Matters.
+### Why This Matters.
 
 The normal distribution is foundational to the statistics we will learn in this class. (And in an advanced statistics class, you'll learn how to adapt techniques if you want to understand non-normal distributions.)
 
-This does not mean that every variable needs to be normally distributed; we'll work with skewed variables and categorical variables (which have their own distributions) in lots of ways. However, the "normal distribution" is an important reference point that we can use to evaluate variables. For example, exam scores are *negatively skewed* because they differ from the normal distribution.
+This does not mean that every variable needs to be normally distributed; we'll work with skewed variables and categorical variables (which have their own distributions) in lots of ways. However, the "normal distribution" is an important reference point that we can use to evaluate variables. For example, I see (and hope) that exam scores will be *negatively skewed* because they differ from the normal distribution in a systematic way - I want most students to do really well on the exam, but also understand that a few may struggle for a variety of reasons (things in their life going on that take away from their ability to focus or spend time in the class, past math or stats or computer trauma, lack of experiences, really not vibing with me or the class, got addicted to playing Civilization 5 or catching Pokemon or learning to play the mandolin...etc.)
 
-# Part 2. Outliers and Z-Scoring in R
+## Outliers : When People Differ from "Normal"
 
-## Some Conceptual Understanding
+### The Definition
+
+Outliers are extreme values that are so different from the rest of the data that you remove them from the dataset because you worry that they might cause problems for your data. Outliers exist because of errors in data entry (for example, the person who lists their age as 1009 instead of 19) or because they represent individuals who are qualitatively different from the rest of your data (for example, the participant who is a billionaire and lists that as their income.[^4r_normalpeople-7])
+
+[^4r_normalpeople-7]: No shame billionaires! You are just very different from the rest of us. Let us know if I can hang out on your yacht? You belong to an understudied group and I have some research ideas. kthxbye.
+
+How extreme is too extreme? Some folks like to come up with rules for making this decision based on the number of standard deviations away from the mean or some other metric. I appreciate those efforts, but personally believe it’s better to judge outliers based on the qualitative decisions above (and use past research as a guide). Whatever you do, make sure to (1) justify your decisions, (2) report these decisions in your code and analyses, and (3) make any decisions about removing outliers as early as possible and before you start making predictions.
+
+### Why It Matters.
+
+The presence of outliers in your data has the potential to influence your results in ways that will bias your results. For example, if someone wandered off in the middle of a cognitive task, their outliers for reaction time might make you think people took way longer to complete the task than people really needed to take. If I included everyone who didn't take the exam (and got a zero) in taking the average of the exam score, I might think that students did worse on the exam than they really did, when I should have excluded these zeros to get a better representation of how people did on the exam.
+
+It's therefore super critical to a) identify any possible outliers in the data, and b) remove them from data analysis, and c) be 100% transparent that you have removed data. You will learn to do this using R in Part 2 below.
+
+## The Z-Score : Okay, but I want to quantify *exactly* how much a person is an outlier!
 
 ### Z-Score : Definition
 
@@ -153,23 +164,21 @@ The z-score is a linear transformation[^4r_normalpeople-8] that calculates the d
 
 [^4r_normalpeople-8]: A linear transformation means that the order and spacing of the data are unchanged - the person who has the highest self-esteem when measured on a 0 to 4 scale will still have the highest z-score, and be the same distance away from the next highest individual.
 
-$$
-\huge z = \frac{y_i - \hat{y}}{\sigma_y}
-$$
+$$\huge z = \frac{y_i - \hat{y}}{\sigma_y}$$
 
 Each individual score in the dataset can be z-scored, and this statistic tells you how far above or below the individual is from others (the mean), relative to the average difference from the means (which is what the standard deviation describes.)
 
 Z-scoring changes the units of the variable from the original unit of measurement, to units of standard deviation.
 
--   A z-score of 1 means that the individual is 1 standard deviation above the mean (about as different as average).
+- A z-score of 1 means that the individual is 1 standard deviation above the mean (about as different as average).
 
--   A z-score of 0 means that the individual is EXACTLY the mean.
+- A z-score of 0 means that the individual is EXACTLY the mean.
 
--   A z-score of -4.112 means that the individual is over 4 standard deviations below the mean; which is VERY below average.
+- A z-score of -4.112 means that the individual is over 4 standard deviations below the mean; which is VERY below average.
 
--   A z-score of .01 means the person is just a tiiiiny bit above the mean.
+- A z-score of .01 means the person is just a tiiiiny bit above the mean.
 
-### Z-Score : in R
+### Z-Score : Some Examples (using R)
 
 You can see first few "Raw" and "Z-Scores" from the self-esteem dataset below.
 
@@ -187,7 +196,7 @@ There are two ways of calculating the z-scores:
     d$SELFES_Z[1:5]
     ```
 
-    -   Note that the \[1:5\] index is not needed for z-scoring, and is just helping me only show the first five elements.
+    - Note that the \[1:5\] index is not needed for z-scoring, and is just helping me only show the first five elements.
 
 2.  **You can also manually calculate a z-score.** But don't do this by hand. I mean you could, but you could also do this with a pencil and that's not needed anymore.
 
@@ -204,7 +213,7 @@ A z-score can be useful for two reasons :
 1.  **It removes the units of measurement.** Many variables in psychology are measured with likert scales, or other made up numbers that don't have a shared meaning, but are instead meant to rank or sort individuals along some spectrum. For example, I don't really know what to do with the knowledge that a person 3 in the dataset has a self-esteem score of `r d$SELFES[3]` . But knowing that this person's z-score is `r zSELF[3]` tells me that their self-esteem is lower than average, but only a little lower than the average.
 2.  **It emphasizes the individual's rank within the distribution.** If you know a job at Amazon dot com is offering 5187 BEZOS BUCKS, you may not know whether this is a high or low paying job among other jobs at Amazon dot com. But if you know the salary of this job has a z-score of .34, you know that this job is higher than average, but only a little higher.
 
-## Example : Using Z-Scores to Make Decisions About Outliers
+### In Practice : Using Z-Scores to Make Decisions About Outliers
 
 If we look at the variable age from the same self-esteem dataset, we see some issues.
 
@@ -224,11 +233,11 @@ d$age[d$age > 100 & !is.na(d$age)]
 
 In this code, I'm using indexing \[\] to ask R to find two things :
 
--   `d$age > 120` asks R to find the rows from the dataset d that contain ages that are greater than 100 years old.
+- `d$age > 120` asks R to find the rows from the dataset d that contain ages that are greater than 100 years old.
 
--   **`!is.na(d$age)`** asks R to find the rows where age is NOT and NA values (the ! when used in coding means "not"). You don't strictly need this code, but it made the output easier to read by removing all the NA values that I don't care about right now.
+- **`!is.na(d$age)`** asks R to find the rows where age is NOT and NA values (the ! when used in coding means "not"). You don't strictly need this code, but it made the output easier to read by removing all the NA values that I don't care about right now.
 
--   the `&` sign in between these commands asks R to find individuals where both conditions are met. You can also use the `|` bar[^4r_normalpeople-9] to ask R to find individuals where EITHER condition is met.
+- the `&` sign in between these commands asks R to find individuals where both conditions are met. You can also use the `|` bar[^4r_normalpeople-9] to ask R to find individuals where EITHER condition is met.
 
 [^4r_normalpeople-9]: the bar can be typed by hitting shift + the key above your return or enter key on the keyboard.
 
@@ -273,7 +282,7 @@ mean(d$age, na.rm = T)
 sd(d$age, na.rm = T)
 ```
 
-#### Okay, back to using z-scoring.
+### Okay, back to using z-scoring.
 
 Looking at the graph, I'm not sure that 100 was the best cut-off for age. There are only a few people between the ages of 80-100, and I'm wondering whether they should actually be included in the dataset.
 
@@ -302,101 +311,44 @@ So, if 99.99963% of other scores are expected to fall below an age that is 4.48 
 
 Some people like to define "rules" for excluding data; things like 3x the standard deviation, or 4x the standard deviation. I'm not a huge fan of these rules, since I think they ignore important context for variables, and are hard to always apply (for example, the teenagers in the dataset are within 3 standard deviations, but I still think they could and should be excluded.) It's best to try and see what the standards in a particular field are, try to make decisions about outlier removal before you collect the data (something called pre-registration, which we will learn about later), document these changes (in your R code), and then be prepared to make different decisions when someone reviewing your research (like an advisor or journal editor) asks you to do something different.
 
-## Video Example : War Data
+# Part 2. Outliers and Z-Scoring in R
+
+## Some Conceptual Videos
+
+First, a few conceputal videos to reinforce the ideas from Part 1 above :)
+
+### VIDEO : Z-Scores
+
+Here's a video I recorded a few years ago on z-scores.
+
+{{< video https://www.youtube.com/watch?v=wPX4tlDLXjE >}}
+
+### VIDEO : Removing Obvious Outliers in R
+
+The video below describes how to remove outliers, using a dataset built into R.
+
+{{< video https://youtu.be/Hi0C8M5398Q >}}
+
+## The "War" Dataset
+
+The videos below discuss data from the "Intra-State-Wars" dataset in the "Chapters" Folder.
+
+### VIDEO : Introduction to the Dataset, Data Cleaning, and Mean and Median
 
 In the video below, I introduce the dataset, do some data cleaning, and discuss the mean and median.
 
 {{< video https://youtu.be/nEdJvrwV0GQ >}}
 
+### VIDEO : Calculating the Standard Deviation and the "Problem" of Outliers
+
 In the video below, I work through calculating the standard deviation, why the outliers are causing problems with the descriptive statistics, and then professor goes on a little tangent about a few different methods on how to address these problems. Note : we won't really cover log-transformations in this chapter (yet! maybe I'll add it at some point but there's already a lot going on.) But let me know if you have questions and I can try to explain point y'all to some other resources.
 
 {{< video https://youtu.be/Y20eLKQmnew >}}
 
-Here's a link to the RScript I use in the videos.
+[Here's a link to the RScript I use in the videos](https://www.dropbox.com/scl/fi/hgl3lne7jvrycf14m93wy/IndividualOutliers.R?rlkey=3izduxnx0i6s6g71nof37detb&dl=0).
 
-### Another Video : Z-Scores
+## TLDR.
 
-Here's a video I recorded a few years ago on z-scores. Plan to re-record something, so let me know what you like about this video, and / or what other videos on this topic (or any topic in the class) you would like to see.
+We learned how and why people differ from the mean in a predictable pattern (the "normal distribution"), how to quantify how far people are away from the mean in terms of a z-score, and how to remove outliers when needed.
 
-{{< video https://www.youtube.com/watch?v=wPX4tlDLXjE >}}
-
-# Part 3 : Good Data (Validity and Reliability)
-
-Scientists evaluate the quality of their measures in terms of **validity** (“truth” or accuracy) and **reliability** (repeatability or precision). Learn more about these two concepts - and their specific forms - in the two videos below.
-
-## Validity and Its Specific Forms
-
--   **Face Validity:** asks us to evaluate whether our measure or result look like what it should look like. This is a superficial (and somewhat subjective) judgment. But it is often a powerful and quick way to assess. For example, if I measure my height and it tells me 100 feet, I know something is wrong because there is no way I'm that tall. Or, when looking at a self-esteem measure, I would want to see items that look like self-esteem questions ("I feel good about myself".) If the self-esteem measure had other questions in it that didn't really seem like they were measuring self-esteem ("I like to look at myself in the mirror") I would have questions about the face-validity of the measure. This seems super obvious, but it's an important check - do the measures used actually look like what they should?
-
--   **Convergent validity:** asks us to evaluate whether our measure similar to related concepts. When two things converge, they come together, and we want our measure to be similar to things that it should be similar to. For example, a measure of body height should be related to a measure of shoe size or tibia length. A measure of self-esteem should be similar to a measure of self-efficacy or satisfaction with life, since both are about how the person is subjectively seeing themselves. They shouldn't be exactly the same thing, but we'd expect to see a pattern in the data. (We'll talk more about how to quantify these patterns when we learn more about linear models.)
-
--   **Discriminant validity:** asks about whether our measure is different from unrelated concepts. When two things diverge, they are different from one another. And we WANT our measure to be different from things that we expect them to be different from. For example, a measure of height should be different from a measure of reading speed or how organized a person is. We would expect self-esteem to be different from how social a person is (though maybe there's some relationship since our society values sociability, and people who are social might get more positive messages from others, bolstering their self-esteem.) This is the hardest concept for students to get, but it's a really important test of the validity of a measure. I not only want my measure to be related to concepts it should be related to, but also different from concepts it should be different from.
-
-## Reliability
-
--   **Test-retest reliability:** asks us to evaluate whether we get the same result if we take multiple measures separated by time. If I think of self-esteem as a stable trait, I should expect to see some similarity in a person's self-esteem at one time point and then the next day. Of course, there will be some change - self-esteem (and other personality variables) can be influenced by the situation and environment. But they shouldn't be radically different if we have a good measure of this core aspect of the self.
-
--   **Inter-rater / Inter-judge reliability:** asks us to evalute whether multiple observers (or tools) make similar measurements. If I have two rulers made by the same company, I would expect them to give me similar answers for how tall I am. Similarly, two different observers who are reliable should make similar jugments about a person's self-esteem, or the number of interruptions they count. If our measure is not reliable, then we might get different answers from the different people (or tools) making the measurement.
-
--   **Inter-item reliability:** When we learned about likert scales, we learned about Cronbach's Alpha - a method of assessing how much the different items in a likert scale were related to each other. This is a form of reliability - specific only to likert scales where we have different questions that are all measuring the same thing. If the scale is reliable, we expect to get similar answers across the different items. For example, someone who says "I feel good about myself" should also say "I feel that I have a number of good qualities."
-
-### Example : Validity and Reliability
-
-Think about a scale. How would you evaluate the validity (face, convergent, discriminant) and reliability (test-retest / interjudge) of a bathroom scale? Think about this on your own, then look over the video key / guide below.
-
-::: {.callout-tip collapse="true"}
-### Expand To See Answers
-
-Watch the video below to go over some possible answers, or just look over the table.
-
-{{< video https://youtu.be/T9dTk6Sa434 >}}
-
-|  |  |
-|------------------------------------|------------------------------------|
-| **face :** does our measure or result look like what it should look like? | **high :** I have a sense of what my weight should be (e.g, if it says 10 or 1000 i know either the units are wrong or scale is broken.) |
-| **convergent :** is our measure similar to related concepts? | **high :** my weight according to the scale is (somewhat) related to how much I stress eat, how little I exercise, my parents’ weight, etc. |
-| **discriminant :** is our measure different from unrelated concepts? | **high :** my weight is unrelated to intelligence, how much I love R, whether I wear sandals with or without socks, etc. |
-| **test-retest :** do we get the same result if we take multiple measures? | **high :** If I step on the scale and get a number, I should be able to step off the scale, step on again, and get the same number. |
-| **interrater reliability :** would another observer make the same measurements? | **high :** a different scale (same model and technology) should give me the same result as my scale. |
-| **inter-item reliability :** would one item in the likert scale be related to others? | **not relevant.** a bathroom scale is not a likert scale. |
-:::
-
-## Bad Data : Phrenology in terms of Validity and Reliability
-
-Watch the video below to review these terms, in the context of phrenology - an example of scientific racism.
-
-![](images/5_PhrenologyHead.png){alt="38322-004-6FE24489.jpg" fig-align="center" width="222"}
-
-{{< video https://youtu.be/DoLK72ueYs8 >}}
-
-Phrenology is no longer considered a valid or reliable science, yet its presence still lingers in psychology, and is often taught as history without reference to its racist origins and consequences[^4r_normalpeople-11]. And as we have (and will continue to discuss) there are still many ways in which racism (and sexism, classism, and ableism) occur and affect psychology (and other sciences too).
-
-[^4r_normalpeople-11]: For examples, in the common Intro Psych textbook written by Myers & DeWall (2018)
-
-For example, more modern intelligence testing is often criticized for prioritizing White European values and language in the way it assesses supposedly “objective” knowledge. In an important test of this claim, the psychologist Robert Williams (pictured to the right) designed an IQ test that was as **reliable** as the default IQ test, but was “biased” to prioritize and value Black culture.
-
-![](images/5_IQtest.png){fig-align="center"}
-
-::: column-margin
-As seen in the table, Black students scored higher on this IQ test than White students - a point he (and others) use to emphasize the inherent biases in intelligence testing. Dr. Williams also came to define the concept of Ebonics, and demonstrate that African American English is as much a complete language as “Standard” English. 
-
-![](images/5_Williams.png){fig-align="center"}
-:::
-
-### [**Check-In : Reliability and Validity**](https://docs.google.com/forms/d/e/1FAIpQLSf7fmDMX_o3kOqPblXT_WSnu-6hQRJfX2VEqyQsMSjdSrURBw/viewform?usp=sf_link)**.**
-
-Test your understanding of reliability and validity with the check-in above.
-
-Below is a video to review the check-in answers, since these terms can be tricky :)
-
-{{< video https://youtu.be/95W3DKRGR24 >}}
-
-### Would You Like to Learn More? (Optional Readings)
-
--   **Here’s a [textbook chapter on the same topics](https://kpu.pressbooks.pub/psychmethods4e/chapter/reliability-and-validity-of-measurement/).** Note these authors use three terms to describe what I broadly call “convergent validity”. Internal consistency (a form of reliability) is measured with “alpha reliability” (we will learn about this next week).
-
--   **Dr. Williams [talks about his research here](https://www.youtube.com/watch?v=SAqHmKIXZBE)** and here’s an episode of the [TV show Good Times](http://dailymotion.com/video/x6fmo36) that Dr. Williams consulted on. Here’s a [link to his full study](https://files.eric.ed.gov/fulltext/ED070799.pdf). Note that Dr. Williams gave his intelligence test a name I don’t feel comfortable using because it is sexist :(. Times change, and it’s good to call out outdated language and update our terms accordingly :)
-
--   **Learn more about the [racist history of how phrenology was produced and consumed](https://www.theguardian.com/science/blog/2013/feb/05/django-unchained-racist-science-phrenology)** and an article that conducted [more recent research](http://theconversation.com/neuroscientists-put-the-dubious-theory-of-phrenology-through-rigorous-testing-for-the-first-time-88291)to test phrenology’s theories. \# TLDR.
-
-Developing a valid science of people is hard at best, and can be problematic when you use it to rank people. There are lots of different methods to measure what individuals are like, and for your final project you probably will want to give people self-report surveys to keep things simple for this very first study.
+In the next chapter, we will learn how to make more sophisticated predictions of people using the linear model.

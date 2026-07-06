@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>“Normal” Data – Why Statistics?</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -70,15 +73,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href=".././images/open_source_mouse.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dd8479a8b43ae629028e453cd63fb9c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-db3e6f83599a0e60308012facca9f98e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -146,8 +148,6 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Why Statistics?</span>
     </a>
@@ -159,12 +159,12 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
-<span class="menu-text">List of R Code</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://catterson.github.io"> 
 <span class="menu-text">Prof.&nbsp;Cat Homepage</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
+<span class="menu-text">List of R Code</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -225,7 +225,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/3R_Description.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Describing Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -337,61 +337,54 @@ window.Quarto = {
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
-    <h2 id="toc-title">In This Chapter</h2>
-   
-  <ul>
-  <li><a href="#part-1.-the-normal-distribution." id="toc-part-1.-the-normal-distribution." class="nav-link active" data-scroll-target="#part-1.-the-normal-distribution.">Part 1. The “Normal” Distribution.</a>
-  <ul>
-  <li><a href="#definition." id="toc-definition." class="nav-link" data-scroll-target="#definition.">Definition.</a>
-  <ul class="collapse">
-  <li><a href="#example-1-thinking-about-distributions." id="toc-example-1-thinking-about-distributions." class="nav-link" data-scroll-target="#example-1-thinking-about-distributions.">Example 1 : Thinking About Distributions.</a></li>
-  <li><a href="#example-2-thinking-about-distributions." id="toc-example-2-thinking-about-distributions." class="nav-link" data-scroll-target="#example-2-thinking-about-distributions.">Example 2 : Thinking About Distributions.</a>
-  <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#why-this-matters." id="toc-why-this-matters." class="nav-link" data-scroll-target="#why-this-matters.">Why This Matters.</a></li>
-  </ul></li>
-  <li><a href="#part-2.-outliers-and-z-scoring-in-r" id="toc-part-2.-outliers-and-z-scoring-in-r" class="nav-link" data-scroll-target="#part-2.-outliers-and-z-scoring-in-r">Part 2. Outliers and Z-Scoring in R</a>
-  <ul>
-  <li><a href="#some-conceptual-understanding" id="toc-some-conceptual-understanding" class="nav-link" data-scroll-target="#some-conceptual-understanding">Some Conceptual Understanding</a>
-  <ul class="collapse">
-  <li><a href="#z-score-definition" id="toc-z-score-definition" class="nav-link" data-scroll-target="#z-score-definition">Z-Score : Definition</a></li>
-  <li><a href="#z-score-in-r" id="toc-z-score-in-r" class="nav-link" data-scroll-target="#z-score-in-r">Z-Score : in R</a></li>
-  <li><a href="#z-score-who-cares" id="toc-z-score-who-cares" class="nav-link" data-scroll-target="#z-score-who-cares">Z-Score : Who Cares?</a></li>
-  </ul></li>
-  <li><a href="#example-using-z-scores-to-make-decisions-about-outliers" id="toc-example-using-z-scores-to-make-decisions-about-outliers" class="nav-link" data-scroll-target="#example-using-z-scores-to-make-decisions-about-outliers">Example : Using Z-Scores to Make Decisions About Outliers</a>
-  <ul class="collapse">
-  <li><a href="#side-quest-removing-outliers-without-z-scoring" id="toc-side-quest-removing-outliers-without-z-scoring" class="nav-link" data-scroll-target="#side-quest-removing-outliers-without-z-scoring">Side Quest : Removing Outliers Without Z-Scoring</a>
-  <ul class="collapse">
-  <li><a href="#okay-back-to-using-z-scoring." id="toc-okay-back-to-using-z-scoring." class="nav-link" data-scroll-target="#okay-back-to-using-z-scoring.">Okay, back to using z-scoring.</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#video-example-war-data" id="toc-video-example-war-data" class="nav-link" data-scroll-target="#video-example-war-data">Video Example : War Data</a>
-  <ul class="collapse">
-  <li><a href="#another-video-z-scores" id="toc-another-video-z-scores" class="nav-link" data-scroll-target="#another-video-z-scores">Another Video : Z-Scores</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#part-3-good-data-validity-and-reliability" id="toc-part-3-good-data-validity-and-reliability" class="nav-link" data-scroll-target="#part-3-good-data-validity-and-reliability">Part 3 : Good Data (Validity and Reliability)</a>
-  <ul>
-  <li><a href="#validity-and-its-specific-forms" id="toc-validity-and-its-specific-forms" class="nav-link" data-scroll-target="#validity-and-its-specific-forms">Validity and Its Specific Forms</a></li>
-  <li><a href="#reliability" id="toc-reliability" class="nav-link" data-scroll-target="#reliability">Reliability</a>
-  <ul class="collapse">
-  <li><a href="#example-validity-and-reliability" id="toc-example-validity-and-reliability" class="nav-link" data-scroll-target="#example-validity-and-reliability">Example : Validity and Reliability</a></li>
-  </ul></li>
-  <li><a href="#bad-data-phrenology-in-terms-of-validity-and-reliability" id="toc-bad-data-phrenology-in-terms-of-validity-and-reliability" class="nav-link" data-scroll-target="#bad-data-phrenology-in-terms-of-validity-and-reliability">Bad Data : Phrenology in terms of Validity and Reliability</a>
-  <ul class="collapse">
-  <li><a href="#check-in-reliability-and-validity." id="toc-check-in-reliability-and-validity." class="nav-link" data-scroll-target="#check-in-reliability-and-validity."><strong>Check-In : Reliability and Validity</strong><strong>.</strong></a></li>
-  <li><a href="#would-you-like-to-learn-more-optional-readings" id="toc-would-you-like-to-learn-more-optional-readings" class="nav-link" data-scroll-target="#would-you-like-to-learn-more-optional-readings">Would You Like to Learn More? (Optional Readings)</a></li>
-  </ul></li>
-  </ul></li>
-  </ul>
-</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#part-1.-defining-and-critiquing-normality" id="toc-part-1.-defining-and-critiquing-normality" class="nav-link active" data-scroll-target="#part-1.-defining-and-critiquing-normality">Part 1. Defining and Critiquing “Normality”</a>
+  <ul class="collapse">
+  <li><a href="#the-normal-distribution." id="toc-the-normal-distribution." class="nav-link" data-scroll-target="#the-normal-distribution.">The “Normal” Distribution.</a>
+  <ul class="collapse">
+  <li><a href="#example-1-thinking-about-distributions." id="toc-example-1-thinking-about-distributions." class="nav-link" data-scroll-target="#example-1-thinking-about-distributions.">Example 1 : Thinking About Distributions.</a></li>
+  <li><a href="#example-2-thinking-about-distributions." id="toc-example-2-thinking-about-distributions." class="nav-link" data-scroll-target="#example-2-thinking-about-distributions.">Example 2 : Thinking About Distributions.</a></li>
+  <li><a href="#critical-culture-in-statistics" id="toc-critical-culture-in-statistics" class="nav-link" data-scroll-target="#critical-culture-in-statistics">Critical Culture in Statistics</a></li>
+  <li><a href="#why-this-matters." id="toc-why-this-matters." class="nav-link" data-scroll-target="#why-this-matters.">Why This Matters.</a></li>
+  </ul></li>
+  <li><a href="#outliers-when-people-differ-from-normal" id="toc-outliers-when-people-differ-from-normal" class="nav-link" data-scroll-target="#outliers-when-people-differ-from-normal">Outliers : When People Differ from “Normal”</a>
+  <ul class="collapse">
+  <li><a href="#the-definition" id="toc-the-definition" class="nav-link" data-scroll-target="#the-definition">The Definition</a></li>
+  <li><a href="#why-it-matters." id="toc-why-it-matters." class="nav-link" data-scroll-target="#why-it-matters.">Why It Matters.</a></li>
+  </ul></li>
+  <li><a href="#the-z-score-okay-but-i-want-to-quantify-exactly-how-much-a-person-is-an-outlier" id="toc-the-z-score-okay-but-i-want-to-quantify-exactly-how-much-a-person-is-an-outlier" class="nav-link" data-scroll-target="#the-z-score-okay-but-i-want-to-quantify-exactly-how-much-a-person-is-an-outlier">The Z-Score : Okay, but I want to quantify <em>exactly</em> how much a person is an outlier!</a>
+  <ul class="collapse">
+  <li><a href="#z-score-definition" id="toc-z-score-definition" class="nav-link" data-scroll-target="#z-score-definition">Z-Score : Definition</a></li>
+  <li><a href="#z-score-some-examples-using-r" id="toc-z-score-some-examples-using-r" class="nav-link" data-scroll-target="#z-score-some-examples-using-r">Z-Score : Some Examples (using R)</a></li>
+  <li><a href="#z-score-who-cares" id="toc-z-score-who-cares" class="nav-link" data-scroll-target="#z-score-who-cares">Z-Score : Who Cares?</a></li>
+  <li><a href="#in-practice-using-z-scores-to-make-decisions-about-outliers" id="toc-in-practice-using-z-scores-to-make-decisions-about-outliers" class="nav-link" data-scroll-target="#in-practice-using-z-scores-to-make-decisions-about-outliers">In Practice : Using Z-Scores to Make Decisions About Outliers</a></li>
+  <li><a href="#side-quest-removing-outliers-without-z-scoring" id="toc-side-quest-removing-outliers-without-z-scoring" class="nav-link" data-scroll-target="#side-quest-removing-outliers-without-z-scoring">Side Quest : Removing Outliers Without Z-Scoring</a></li>
+  <li><a href="#okay-back-to-using-z-scoring." id="toc-okay-back-to-using-z-scoring." class="nav-link" data-scroll-target="#okay-back-to-using-z-scoring.">Okay, back to using z-scoring.</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part-2.-outliers-and-z-scoring-in-r" id="toc-part-2.-outliers-and-z-scoring-in-r" class="nav-link" data-scroll-target="#part-2.-outliers-and-z-scoring-in-r">Part 2. Outliers and Z-Scoring in R</a>
+  <ul class="collapse">
+  <li><a href="#some-conceptual-videos" id="toc-some-conceptual-videos" class="nav-link" data-scroll-target="#some-conceptual-videos">Some Conceptual Videos</a>
+  <ul class="collapse">
+  <li><a href="#video-z-scores" id="toc-video-z-scores" class="nav-link" data-scroll-target="#video-z-scores">VIDEO : Z-Scores</a></li>
+  <li><a href="#video-removing-obvious-outliers-in-r" id="toc-video-removing-obvious-outliers-in-r" class="nav-link" data-scroll-target="#video-removing-obvious-outliers-in-r">VIDEO : Removing Obvious Outliers in R</a></li>
+  </ul></li>
+  <li><a href="#the-war-dataset" id="toc-the-war-dataset" class="nav-link" data-scroll-target="#the-war-dataset">The “War” Dataset</a>
+  <ul class="collapse">
+  <li><a href="#video-introduction-to-the-dataset-data-cleaning-and-mean-and-median" id="toc-video-introduction-to-the-dataset-data-cleaning-and-mean-and-median" class="nav-link" data-scroll-target="#video-introduction-to-the-dataset-data-cleaning-and-mean-and-median">VIDEO : Introduction to the Dataset, Data Cleaning, and Mean and Median</a></li>
+  <li><a href="#video-calculating-the-standard-deviation-and-the-problem-of-outliers" id="toc-video-calculating-the-standard-deviation-and-the-problem-of-outliers" class="nav-link" data-scroll-target="#video-calculating-the-standard-deviation-and-the-problem-of-outliers">VIDEO : Calculating the Standard Deviation and the “Problem” of Outliers</a></li>
+  </ul></li>
+  <li><a href="#tldr." id="toc-tldr." class="nav-link" data-scroll-target="#tldr.">TLDR.</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -415,45 +408,47 @@ window.Quarto = {
 </header>
 
 
+<p><img src="images/clipboard-4149537892.png" class="img-fluid"></p>
+<p>The image above depicts <a href="https://www.thomasjprice.com/times-square-arts"><em>Grounded in the Stars</em></a>, a 12-foot sculpture of a young woman that stood in New York City’s Times Square from April 29 through June 14, 2025.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>In This Chapter
+<span class="screen-reader-only">Important</span>Who Cares?
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>In this chapter, you’ll learn how to define, discuss, and critique the idea of “normality” and “deviance”.</p>
 <ul>
-<li><p>Define, discuss, and critique the idea of “normality” and “deviance”.</p></li>
-<li><p>Use R to calculate a z-score, which quantifies an individual’s deviance from the mean.</p></li>
-<li><p>Learn how scientists evaluate the quality of data, and see how this was used to debunk phrenology as racist.</p></li>
+<li><strong>Part 1</strong> reviews the “normal” distribution, why social scientists often see this type of distribution, and some of the reasons why scientists do not always see this type of distribution.</li>
+<li><strong>Part 2</strong> discusses how to quantify deviation from the mean in R, identify outliers, and remove them using R.</li>
 </ul>
+<p><strong>By the end of this chapter :</strong> you will be able to express how and why data differ from the mean, and remove outliers in R.</p>
 </div>
 </div>
-<p><img src="images/clipboard-4149537892.png" class="img-fluid"></p>
-<p>The image above depicts <a href="https://www.thomasjprice.com/times-square-arts"><em>Grounded in the Stars</em></a>, a 12-foot sculpture of a young woman that stood in New York City’s Times Square from April 29 through June 14, 2025.</p>
-<p>There’s a lot that I love about this image, from the artistry of rendering braids and clothes so naturally in sculpted bronze, to the way the character stares off in the distance as if unconcerned with the gaze of others, to the way the sculpture proudly claims space in a society that does not currently and historically create inclusive spaces for black women. Indeed, the sculpture is surrounded by other massive images<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> whose presence in the space may go unnoticed because it is so routine to see images of white men in public places.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Tom Cruise and some eyeglass model who kind of looks like a 90s era Tom Cruise. Ving Rhames is there too if you look closely enough.</p></div></div><p>The artist’s website emphasizes the way the sculpture challenges pre-existing ideas about who is represented in our society, and references Michelangelo’s <em>David</em> as inspiration, but clarifies that this sculpture is “A fictionalized character constructed from images, observations, and open calls spanning between Los Angeles and London” who “carries familiar qualities, from her stance and countenance to her everyday clothing.”</p>
+<p>There’s a lot that I love about the image at the top of this chapter, from the artistry of rendering braids and clothes so naturally in sculpted bronze, to the way the character stares off in the distance as if unconcerned with the gaze of others, to the way the sculpture proudly claims space in a society that does not currently and historically create inclusive spaces for black women. Indeed, the sculpture is surrounded by other massive images[^4r_normalpeople-1] whose presence in the space may go unnoticed because it is so routine to see images of white men in public places. [^4r_normalpeople-1]: Tom Cruise and some eyeglass model who kind of looks like a 90s era Tom Cruise. Ving Rhames is there too if you look closely enough.</p>
+<p>The artist’s website emphasizes the way the sculpture challenges pre-existing ideas about who is represented in our society, and references Michelangelo’s <em>David</em> as inspiration, but clarifies that this sculpture is “A fictionalized character constructed from images, observations, and open calls spanning between Los Angeles and London” who “carries familiar qualities, from her stance and countenance to her everyday clothing.”</p>
 <p>This statue, and the fact that it was an amalgamation of real people, also reminded me of the sculptures of “Normmann” and Norma.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><img src="images/clipboard-1894112951.png" class="img-fluid"></p>
-</div><div id="fn2"><p><sup>2</sup>&nbsp;For a more in-depth history of Norma and Normann, including critiques of the gender and post-WW2 contexts in which these statues arose, See Chapter 8 of Peter Cryle &amp; and Elizabeth Stephens’ <em>Normality: A Critical Genealogy</em>. University of Chicago Press, 2017.Chicago Scholarship Online, 2018. <a href="#0">https://doi.org/10.7208/chicago/9780226484198.001.0001</a>.</p></div></div><p>Like the unnamed woman in Times Square who was the subject of <em>Grounded in the Stars,</em> Normmann and Norma’s measurements were based on composites of other people; in Norma’s case “the averaged measurements of ‘native white’ American women recorded and standardized by the Bureau of Home Economics in 1940, in an attempt to devise the first standardized system of sizing for ready-made clothes.”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1894112951.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>Like the unnamed woman in Times Square who was the subject of <em>Grounded in the Stars,</em> Normmann and Norma’s measurements were based on composites of other people; in Norma’s case “the averaged measurements of ‘native white’ American women recorded and standardized by the Bureau of Home Economics in 1940, in an attempt to devise the first standardized system of sizing for ready-made clothes.”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>Unlike the subject of <em>Grounded in the Stars,</em> Norma and Normmann were based on different demographic data. More important, these characters were labeled and advertised as “The Typical American”. A type of person who reflected and reinforced the values that white America wanted to promote.</p>
-<p>Indeed, these statues achieved their purpose in various ways; Norma and Normman were first displayed in the American Museum of Natural History during the International Congresses of Eugenics in 1945. Furthermore, when the statues were gifted to the Cleveland Health Museum, the museum held a contest to find the woman who most typically represented Norma<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, offering prize money in “a search for Norma, the typical American woman”. While a winner was selected, the search failed in the original efforts to find someone who <em>perfectly</em> matched this average, as the measurements of the winner “did not coincide with those of the statue. . . . after assessment of the measurements of 3,863 women who entered the search, Norma remained a hypothetical individual.”<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;I’m not entirely sure why Normann was not subject to a similar contest, though my guess is that it’s a symptom of a patriarchy that perpetuates the male gaze in <a href="https://www.youtube.com/watch?v=ulsjuiFO2J0">many ways</a>.</p></div><div id="fn4"><p><sup>4</sup>&nbsp;Josephine Robertson, “Theatre Cashier, 23, Wins Title of ‘Norma,’ Besting 3,863 Entries,” Cleveland Plain Dealer, September 23, 1945, 1.</p></div></div><p>Here, we see a few course themes that we will discuss in this chapter, and in this week’s lecture :</p>
+<p>Indeed, these statues achieved their purpose in various ways; Norma and Normman were first displayed in the American Museum of Natural History during the International Congresses of Eugenics in 1945. Furthermore, when the statues were gifted to the Cleveland Health Museum, the museum held a contest to find the woman who most typically represented Norma<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, offering prize money in “a search for Norma, the typical American woman”. While a winner was selected, the search failed in the original efforts to find someone who <em>perfectly</em> matched this average, as the measurements of the winner “did not coincide with those of the statue. . . . after assessment of the measurements of 3,863 women who entered the search, Norma remained a hypothetical individual.”<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Here, we see a few course themes that we will discuss in this chapter, and in this week’s lecture :</p>
 <ul>
 <li><p>What is “normal” and who gets to define this term?</p></li>
 <li><p>What are the alternatives to “normality”? How are these alternatives labeled?</p></li>
 <li><p>What is the point of labeling individuals as normal?</p></li>
 </ul>
-<section id="part-1.-the-normal-distribution." class="level1 page-columns page-full">
-<h1>Part 1. The “Normal” Distribution.</h1>
-<p>Before we get into the critique in our class, let’s use this space to go over some of the basic definitions.</p>
-<section id="definition." class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="definition.">Definition.</h2>
+<section id="part-1.-defining-and-critiquing-normality" class="level1 page-columns page-full">
+<h1>Part 1. Defining and Critiquing “Normality”</h1>
+<section id="the-normal-distribution." class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-normal-distribution.">The “Normal” Distribution.</h2>
 <p>The “Normal” (or Gaussian) distribution is a common shape for what distributions of data look like. The shape is often called a “bell curve”, because it looks like the curve of a bell. Ding.</p>
 <p>While many distributions appear normal, the “Normal Distribution” ™ refers to a distribution that describes an expected probability of a range of scores.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -466,10 +461,10 @@ window.Quarto = {
 <li><strong>There are multiple explanations for why the variation occurs</strong>. This happens very frequently across all science, since life is complex and there are many reasons why individuals differ.</li>
 <li><strong>These multiple explanations occur independently</strong>. “Independence” means that one explanation for variation is unrelated to the presence of another explanation for variation. For example, your height is somewhat influenced by your genetics (you are likely similar height to your family members) and your diet (i.e., whether you got enough nutrients in childhood or not), but your diet is likely unrelated to your genetics. Non-independence might mean that there is some shared experience among individuals that is influencing their variation in predictable ways. For example, children who were exposed to all the horrors of war experienced multiple factors that negatively impacted their height - malnutrition, sleep disturbances,</li>
 </ol>
-<section id="example-1-thinking-about-distributions." class="level3 page-columns page-full">
+<section id="example-1-thinking-about-distributions." class="level3">
 <h3 class="anchored" data-anchor-id="example-1-thinking-about-distributions.">Example 1 : Thinking About Distributions.</h3>
-<p>Indeed, many of the variables that psychologists measure do appear “Normal”. For example, let’s look at one example “normal” distributions - a “self-esteem” variable. Note that it’s not perfectly normal<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, but it’s pretty close and representative of the kind of “real world” data that you might encounter.</p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;good not to hold data to unrealistic body images as well as people.</p></div></div><div class="cell">
+<p>Indeed, many of the variables that psychologists measure do appear “Normal”. For example, let’s look at one example “normal” distributions - a “self-esteem” variable. Note that it’s not perfectly normal<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, but it’s pretty close and representative of the kind of “real world” data that you might encounter.</p>
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d<span class="sc">$</span>SELFES, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>, </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Histogram of Self-Esteem"</span>, </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Self-Esteem Score"</span>, <span class="at">breaks =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -489,10 +484,10 @@ window.Quarto = {
 <li><p>The survey was administered on a day when everyone in the world had a really good hair day, so there’s a non-independent factor that’s shifting many people’s self-esteem up.</p></li>
 </ul>
 </section>
-<section id="example-2-thinking-about-distributions." class="level3 page-columns page-full">
+<section id="example-2-thinking-about-distributions." class="level3">
 <h3 class="anchored" data-anchor-id="example-2-thinking-about-distributions.">Example 2 : Thinking About Distributions.</h3>
-<p>Below is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.)</p>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;It is negatively skewed, since the tail is on the negative side of the distribution.</p></div></div><div class="quarto-figure quarto-figure-center">
+<p>Below is another example of a distribution - this one is not random, but is skewed (pop quiz : is it positively or negatively skewed? See here for answer<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.)</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/3_RGrades.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
@@ -529,22 +524,21 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="section" class="level4 page-columns page-full">
-<h4 class="anchored" data-anchor-id="section"></h4>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><img src="../images/doff_intro_mickey.png" class="img-fluid" style="width:3in"></p>
-</div></div><div class="callout callout-style-default callout-warning callout-titled">
+</section>
+<section id="critical-culture-in-statistics" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="critical-culture-in-statistics">Critical Culture in Statistics</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Culture in Statistics : The Normal Curve
+<span class="screen-reader-only">Tip</span>The Normal Curve
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>That’s right folks, it’s time for another chat with your friend Open-Source Mickey Mouse! This time, we’re gonna chat about the idea that people differ from some average. The idea that you could quantify people as “average” is fairly new - it’s hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet’s ideas to try and “rank” individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else. Yuck!</p>
+
+<p>This time, we’re gonna chat about the idea that people differ from some average. The idea that you could quantify people as “average” is fairly new - it’s hard to pinpoint exactly, but a scientist named Quetelet first extended the statistical methods derived from astronomy to be applied to humans in the 1860s<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Quetelet thought the average was an ideal state since it reflected the center of all possible individuals. However, a few years later Francis Galton used Quetelet’s ideas to try and “rank” individuals according to some hierarchy of excellence. For Galton, the average was not an ideal state, but rather something to overcome in a desire for greater and greater excellence. Galton was also a racist and father of the eugenics movement, who used distorted statistics as a tool to justify his own pre-existing racist beliefs that white people were superior to everyone else. Yuck!</p>
 <p>I think it’s worth the time and space to hear this from Galton himself.</p>
 <p><em>To conclude, the range of mental power between—I will not say the highest Caucasian and the lowest savage—but between the greatest and least of English intellects, is enormous. … I propose in this chapter to range men according to their natural abilities, putting them into classes separated by equal degrees of merit, and to show the relative number of individuals included in the several classes…..The method I shall employ for discovering all this, is an application of the very curious theoretical law of “deviation from an average.” First, I will explain the law, and then I will show that the production of natural intellectual gifts comes justly within its scope. -</em> Galton, Hereditary Genius (1869). <a href="https://galton.org/books/hereditary-genius/text/v5/galton-1869-hereditary-genius-v5.htm">Linked here</a>.</p>
 <p>The point of bringing up some of the racist origins of statistics is two-fold :</p>
@@ -555,25 +549,35 @@ window.Quarto = {
 <p>Alright, that’s all for now! Let me know what you think and see you next time!</p>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;see Rose’s END OF AVERAGE (2016) or, for a more critical approach, Chapman’s (2023) EMPIRE OF NORMALITY.</p></div></div></section>
-</section>
-</section>
-<section id="why-this-matters." class="level2">
-<h2 class="anchored" data-anchor-id="why-this-matters.">Why This Matters.</h2>
+<div class="no-row-height column-margin column-container"><div class="callout-margin-content">
+<p><span class="smallcaps">That’s right folks, it’s time for another chat with your friend Open-Source Mickey Mouse about how statistics has a culture that is socially constructed by people like you!</span></p>
+<p><img src="images/doff_intro_mickey.png" class="img-fluid" style="width:80.0%"></p>
+</div></div></section>
+<section id="why-this-matters." class="level3">
+<h3 class="anchored" data-anchor-id="why-this-matters.">Why This Matters.</h3>
 <p>The normal distribution is foundational to the statistics we will learn in this class. (And in an advanced statistics class, you’ll learn how to adapt techniques if you want to understand non-normal distributions.)</p>
-<p>This does not mean that every variable needs to be normally distributed; we’ll work with skewed variables and categorical variables (which have their own distributions) in lots of ways. However, the “normal distribution” is an important reference point that we can use to evaluate variables. For example, exam scores are <em>negatively skewed</em> because they differ from the normal distribution.</p>
+<p>This does not mean that every variable needs to be normally distributed; we’ll work with skewed variables and categorical variables (which have their own distributions) in lots of ways. However, the “normal distribution” is an important reference point that we can use to evaluate variables. For example, I see (and hope) that exam scores will be <em>negatively skewed</em> because they differ from the normal distribution in a systematic way - I want most students to do really well on the exam, but also understand that a few may struggle for a variety of reasons (things in their life going on that take away from their ability to focus or spend time in the class, past math or stats or computer trauma, lack of experiences, really not vibing with me or the class, got addicted to playing Civilization 5 or catching Pokemon or learning to play the mandolin…etc.)</p>
 </section>
 </section>
-<section id="part-2.-outliers-and-z-scoring-in-r" class="level1 page-columns page-full">
-<h1>Part 2. Outliers and Z-Scoring in R</h1>
-<section id="some-conceptual-understanding" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="some-conceptual-understanding">Some Conceptual Understanding</h2>
-<section id="z-score-definition" class="level3 page-columns page-full">
+<section id="outliers-when-people-differ-from-normal" class="level2">
+<h2 class="anchored" data-anchor-id="outliers-when-people-differ-from-normal">Outliers : When People Differ from “Normal”</h2>
+<section id="the-definition" class="level3">
+<h3 class="anchored" data-anchor-id="the-definition">The Definition</h3>
+<p>Outliers are extreme values that are so different from the rest of the data that you remove them from the dataset because you worry that they might cause problems for your data. Outliers exist because of errors in data entry (for example, the person who lists their age as 1009 instead of 19) or because they represent individuals who are qualitatively different from the rest of your data (for example, the participant who is a billionaire and lists that as their income.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>)</p>
+<p>How extreme is too extreme? Some folks like to come up with rules for making this decision based on the number of standard deviations away from the mean or some other metric. I appreciate those efforts, but personally believe it’s better to judge outliers based on the qualitative decisions above (and use past research as a guide). Whatever you do, make sure to (1) justify your decisions, (2) report these decisions in your code and analyses, and (3) make any decisions about removing outliers as early as possible and before you start making predictions.</p>
+</section>
+<section id="why-it-matters." class="level3">
+<h3 class="anchored" data-anchor-id="why-it-matters.">Why It Matters.</h3>
+<p>The presence of outliers in your data has the potential to influence your results in ways that will bias your results. For example, if someone wandered off in the middle of a cognitive task, their outliers for reaction time might make you think people took way longer to complete the task than people really needed to take. If I included everyone who didn’t take the exam (and got a zero) in taking the average of the exam score, I might think that students did worse on the exam than they really did, when I should have excluded these zeros to get a better representation of how people did on the exam.</p>
+<p>It’s therefore super critical to a) identify any possible outliers in the data, and b) remove them from data analysis, and c) be 100% transparent that you have removed data. You will learn to do this using R in Part 2 below.</p>
+</section>
+</section>
+<section id="the-z-score-okay-but-i-want-to-quantify-exactly-how-much-a-person-is-an-outlier" class="level2">
+<h2 class="anchored" data-anchor-id="the-z-score-okay-but-i-want-to-quantify-exactly-how-much-a-person-is-an-outlier">The Z-Score : Okay, but I want to quantify <em>exactly</em> how much a person is an outlier!</h2>
+<section id="z-score-definition" class="level3">
 <h3 class="anchored" data-anchor-id="z-score-definition">Z-Score : Definition</h3>
 <p>The z-score is a linear transformation<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> that calculates the distance of an individual score (<span class="math inline">\({y_i}\)</span>) from the mean (<span class="math inline">\(\hat{y}\)</span>) in units of standard deviation <span class="math inline">\({\sigma_y}\)</span>.</p>
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;A linear transformation means that the order and spacing of the data are unchanged - the person who has the highest self-esteem when measured on a 0 to 4 scale will still have the highest z-score, and be the same distance away from the next highest individual.</p></div></div><p><span class="math display">\[
-\huge z = \frac{y_i - \hat{y}}{\sigma_y}
-\]</span></p>
+<p><span class="math display">\[\huge z = \frac{y_i - \hat{y}}{\sigma_y}\]</span></p>
 <p>Each individual score in the dataset can be z-scored, and this statistic tells you how far above or below the individual is from others (the mean), relative to the average difference from the means (which is what the standard deviation describes.)</p>
 <p>Z-scoring changes the units of the variable from the original unit of measurement, to units of standard deviation.</p>
 <ul>
@@ -583,8 +587,8 @@ window.Quarto = {
 <li><p>A z-score of .01 means the person is just a tiiiiny bit above the mean.</p></li>
 </ul>
 </section>
-<section id="z-score-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="z-score-in-r">Z-Score : in R</h3>
+<section id="z-score-some-examples-using-r" class="level3">
+<h3 class="anchored" data-anchor-id="z-score-some-examples-using-r">Z-Score : Some Examples (using R)</h3>
 <p>You can see first few “Raw” and “Z-Scores” from the self-esteem dataset below.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -629,9 +633,8 @@ window.Quarto = {
 <li><strong>It emphasizes the individual’s rank within the distribution.</strong> If you know a job at Amazon dot com is offering 5187 BEZOS BUCKS, you may not know whether this is a high or low paying job among other jobs at Amazon dot com. But if you know the salary of this job has a z-score of .34, you know that this job is higher than average, but only a little higher.</li>
 </ol>
 </section>
-</section>
-<section id="example-using-z-scores-to-make-decisions-about-outliers" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="example-using-z-scores-to-make-decisions-about-outliers">Example : Using Z-Scores to Make Decisions About Outliers</h2>
+<section id="in-practice-using-z-scores-to-make-decisions-about-outliers" class="level3">
+<h3 class="anchored" data-anchor-id="in-practice-using-z-scores-to-make-decisions-about-outliers">In Practice : Using Z-Scores to Make Decisions About Outliers</h3>
 <p>If we look at the variable age from the same self-esteem dataset, we see some issues.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -666,7 +669,7 @@ window.Quarto = {
 <li><p><strong><code>!is.na(d$age)</code></strong> asks R to find the rows where age is NOT and NA values (the ! when used in coding means “not”). You don’t strictly need this code, but it made the output easier to read by removing all the NA values that I don’t care about right now.</p></li>
 <li><p>the <code>&amp;</code> sign in between these commands asks R to find individuals where both conditions are met. You can also use the <code>|</code> bar<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> to ask R to find individuals where EITHER condition is met.</p></li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;the bar can be typed by hitting shift + the key above your return or enter key on the keyboard.</p></div></div><p>I see that some of the ages were entered in as the year of birth; others look like maybe errors in data entry or jokes (e.g., 90210) and someone entered in an extreme value of 2147483647 that is contributing to our strange graph, and throwing off the mean (but not the median, since it, as we all remember from Chapter 3, is less sensitive to outliers.)</p>
+<p>I see that some of the ages were entered in as the year of birth; others look like maybe errors in data entry or jokes (e.g., 90210) and someone entered in an extreme value of 2147483647 that is contributing to our strange graph, and throwing off the mean (but not the median, since it, as we all remember from Chapter 3, is less sensitive to outliers.)</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>age, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -677,7 +680,8 @@ window.Quarto = {
 <pre><code>[1] 22</code></pre>
 </div>
 </div>
-<section id="side-quest-removing-outliers-without-z-scoring" class="level3 page-columns page-full">
+</section>
+<section id="side-quest-removing-outliers-without-z-scoring" class="level3">
 <h3 class="anchored" data-anchor-id="side-quest-removing-outliers-without-z-scoring">Side Quest : Removing Outliers Without Z-Scoring</h3>
 <p>So let’s remove these outliers, and check to see that R did this correctly.</p>
 <div class="cell">
@@ -739,8 +743,9 @@ window.Quarto = {
 <pre><code>[1] 12.25539</code></pre>
 </div>
 </div>
-<section id="okay-back-to-using-z-scoring." class="level4 page-columns page-full">
-<h4 class="anchored" data-anchor-id="okay-back-to-using-z-scoring.">Okay, back to using z-scoring.</h4>
+</section>
+<section id="okay-back-to-using-z-scoring." class="level3">
+<h3 class="anchored" data-anchor-id="okay-back-to-using-z-scoring.">Okay, back to using z-scoring.</h3>
 <p>Looking at the graph, I’m not sure that 100 was the best cut-off for age. There are only a few people between the ages of 80-100, and I’m wondering whether they should actually be included in the dataset.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>age[d<span class="sc">$</span>age <span class="sc">&gt;</span> <span class="dv">80</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(d<span class="sc">$</span>age)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -750,7 +755,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Here’s where a z-score could be useful. Are these elders radically different from our distribution? Let’s see how far they are away from the mean of age in units of standard deviation!<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;In the code below, I’m calculating the z-score of age, and defining this as ageZ. But I’m using the original variable - age - to define my rules inside of the bracket.</p></div></div><div class="cell">
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>ageZ <span class="ot">&lt;-</span> <span class="fu">scale</span>(d<span class="sc">$</span>age)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>ageZ[d<span class="sc">$</span>age <span class="sc">&gt;</span> <span class="dv">80</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(d<span class="sc">$</span>age)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -782,136 +787,60 @@ window.Quarto = {
 </section>
 </section>
 </section>
-<section id="video-example-war-data" class="level2">
-<h2 class="anchored" data-anchor-id="video-example-war-data">Video Example : War Data</h2>
-<p>In the video below, I introduce the dataset, do some data cleaning, and discuss the mean and median.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nEdJvrwV0GQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>In the video below, I work through calculating the standard deviation, why the outliers are causing problems with the descriptive statistics, and then professor goes on a little tangent about a few different methods on how to address these problems. Note : we won’t really cover log-transformations in this chapter (yet! maybe I’ll add it at some point but there’s already a lot going on.) But let me know if you have questions and I can try to explain point y’all to some other resources.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Y20eLKQmnew" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>Here’s a link to the RScript I use in the videos.</p>
-<section id="another-video-z-scores" class="level3">
-<h3 class="anchored" data-anchor-id="another-video-z-scores">Another Video : Z-Scores</h3>
-<p>Here’s a video I recorded a few years ago on z-scores. Plan to re-record something, so let me know what you like about this video, and / or what other videos on this topic (or any topic in the class) you would like to see.</p>
+<section id="part-2.-outliers-and-z-scoring-in-r" class="level1">
+<h1>Part 2. Outliers and Z-Scoring in R</h1>
+<section id="some-conceptual-videos" class="level2">
+<h2 class="anchored" data-anchor-id="some-conceptual-videos">Some Conceptual Videos</h2>
+<p>First, a few conceputal videos to reinforce the ideas from Part 1 above :)</p>
+<section id="video-z-scores" class="level3">
+<h3 class="anchored" data-anchor-id="video-z-scores">VIDEO : Z-Scores</h3>
+<p>Here’s a video I recorded a few years ago on z-scores.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/wPX4tlDLXjE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
+<section id="video-removing-obvious-outliers-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="video-removing-obvious-outliers-in-r">VIDEO : Removing Obvious Outliers in R</h3>
+<p>The video below describes how to remove outliers, using a dataset built into R.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Hi0C8M5398Q" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 </section>
-<section id="part-3-good-data-validity-and-reliability" class="level1 page-columns page-full">
-<h1>Part 3 : Good Data (Validity and Reliability)</h1>
-<p>Scientists evaluate the quality of their measures in terms of <strong>validity</strong> (“truth” or accuracy) and <strong>reliability</strong> (repeatability or precision). Learn more about these two concepts - and their specific forms - in the two videos below.</p>
-<section id="validity-and-its-specific-forms" class="level2">
-<h2 class="anchored" data-anchor-id="validity-and-its-specific-forms">Validity and Its Specific Forms</h2>
-<ul>
-<li><p><strong>Face Validity:</strong> asks us to evaluate whether our measure or result look like what it should look like. This is a superficial (and somewhat subjective) judgment. But it is often a powerful and quick way to assess. For example, if I measure my height and it tells me 100 feet, I know something is wrong because there is no way I’m that tall. Or, when looking at a self-esteem measure, I would want to see items that look like self-esteem questions (“I feel good about myself”.) If the self-esteem measure had other questions in it that didn’t really seem like they were measuring self-esteem (“I like to look at myself in the mirror”) I would have questions about the face-validity of the measure. This seems super obvious, but it’s an important check - do the measures used actually look like what they should?</p></li>
-<li><p><strong>Convergent validity:</strong> asks us to evaluate whether our measure similar to related concepts. When two things converge, they come together, and we want our measure to be similar to things that it should be similar to. For example, a measure of body height should be related to a measure of shoe size or tibia length. A measure of self-esteem should be similar to a measure of self-efficacy or satisfaction with life, since both are about how the person is subjectively seeing themselves. They shouldn’t be exactly the same thing, but we’d expect to see a pattern in the data. (We’ll talk more about how to quantify these patterns when we learn more about linear models.)</p></li>
-<li><p><strong>Discriminant validity:</strong> asks about whether our measure is different from unrelated concepts. When two things diverge, they are different from one another. And we WANT our measure to be different from things that we expect them to be different from. For example, a measure of height should be different from a measure of reading speed or how organized a person is. We would expect self-esteem to be different from how social a person is (though maybe there’s some relationship since our society values sociability, and people who are social might get more positive messages from others, bolstering their self-esteem.) This is the hardest concept for students to get, but it’s a really important test of the validity of a measure. I not only want my measure to be related to concepts it should be related to, but also different from concepts it should be different from.</p></li>
-</ul>
+<section id="the-war-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="the-war-dataset">The “War” Dataset</h2>
+<p>The videos below discuss data from the “Intra-State-Wars” dataset in the “Chapters” Folder.</p>
+<section id="video-introduction-to-the-dataset-data-cleaning-and-mean-and-median" class="level3">
+<h3 class="anchored" data-anchor-id="video-introduction-to-the-dataset-data-cleaning-and-mean-and-median">VIDEO : Introduction to the Dataset, Data Cleaning, and Mean and Median</h3>
+<p>In the video below, I introduce the dataset, do some data cleaning, and discuss the mean and median.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nEdJvrwV0GQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="reliability" class="level2">
-<h2 class="anchored" data-anchor-id="reliability">Reliability</h2>
-<ul>
-<li><p><strong>Test-retest reliability:</strong> asks us to evaluate whether we get the same result if we take multiple measures separated by time. If I think of self-esteem as a stable trait, I should expect to see some similarity in a person’s self-esteem at one time point and then the next day. Of course, there will be some change - self-esteem (and other personality variables) can be influenced by the situation and environment. But they shouldn’t be radically different if we have a good measure of this core aspect of the self.</p></li>
-<li><p><strong>Inter-rater / Inter-judge reliability:</strong> asks us to evalute whether multiple observers (or tools) make similar measurements. If I have two rulers made by the same company, I would expect them to give me similar answers for how tall I am. Similarly, two different observers who are reliable should make similar jugments about a person’s self-esteem, or the number of interruptions they count. If our measure is not reliable, then we might get different answers from the different people (or tools) making the measurement.</p></li>
-<li><p><strong>Inter-item reliability:</strong> When we learned about likert scales, we learned about Cronbach’s Alpha - a method of assessing how much the different items in a likert scale were related to each other. This is a form of reliability - specific only to likert scales where we have different questions that are all measuring the same thing. If the scale is reliable, we expect to get similar answers across the different items. For example, someone who says “I feel good about myself” should also say “I feel that I have a number of good qualities.”</p></li>
-</ul>
-<section id="example-validity-and-reliability" class="level3">
-<h3 class="anchored" data-anchor-id="example-validity-and-reliability">Example : Validity and Reliability</h3>
-<p>Think about a scale. How would you evaluate the validity (face, convergent, discriminant) and reliability (test-retest / interjudge) of a bathroom scale? Think about this on your own, then look over the video key / guide below.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Expand To See Answers
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Watch the video below to go over some possible answers, or just look over the table.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/T9dTk6Sa434" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>face :</strong> does our measure or result look like what it should look like?</td>
-<td><strong>high :</strong> I have a sense of what my weight should be (e.g, if it says 10 or 1000 i know either the units are wrong or scale is broken.)</td>
-</tr>
-<tr class="even">
-<td><strong>convergent :</strong> is our measure similar to related concepts?</td>
-<td><strong>high :</strong> my weight according to the scale is (somewhat) related to how much I stress eat, how little I exercise, my parents’ weight, etc.</td>
-</tr>
-<tr class="odd">
-<td><strong>discriminant :</strong> is our measure different from unrelated concepts?</td>
-<td><strong>high :</strong> my weight is unrelated to intelligence, how much I love R, whether I wear sandals with or without socks, etc.</td>
-</tr>
-<tr class="even">
-<td><strong>test-retest :</strong> do we get the same result if we take multiple measures?</td>
-<td><strong>high :</strong> If I step on the scale and get a number, I should be able to step off the scale, step on again, and get the same number.</td>
-</tr>
-<tr class="odd">
-<td><strong>interrater reliability :</strong> would another observer make the same measurements?</td>
-<td><strong>high :</strong> a different scale (same model and technology) should give me the same result as my scale.</td>
-</tr>
-<tr class="even">
-<td><strong>inter-item reliability :</strong> would one item in the likert scale be related to others?</td>
-<td><strong>not relevant.</strong> a bathroom scale is not a likert scale.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
+<section id="video-calculating-the-standard-deviation-and-the-problem-of-outliers" class="level3">
+<h3 class="anchored" data-anchor-id="video-calculating-the-standard-deviation-and-the-problem-of-outliers">VIDEO : Calculating the Standard Deviation and the “Problem” of Outliers</h3>
+<p>In the video below, I work through calculating the standard deviation, why the outliers are causing problems with the descriptive statistics, and then professor goes on a little tangent about a few different methods on how to address these problems. Note : we won’t really cover log-transformations in this chapter (yet! maybe I’ll add it at some point but there’s already a lot going on.) But let me know if you have questions and I can try to explain point y’all to some other resources.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Y20eLKQmnew" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><a href="https://www.dropbox.com/scl/fi/hgl3lne7jvrycf14m93wy/IndividualOutliers.R?rlkey=3izduxnx0i6s6g71nof37detb&amp;dl=0">Here’s a link to the RScript I use in the videos</a>.</p>
 </section>
 </section>
-<section id="bad-data-phrenology-in-terms-of-validity-and-reliability" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="bad-data-phrenology-in-terms-of-validity-and-reliability">Bad Data : Phrenology in terms of Validity and Reliability</h2>
-<p>Watch the video below to review these terms, in the context of phrenology - an example of scientific racism.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/5_PhrenologyHead.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="38322-004-6FE24489.jpg" width="222"></p>
-</figure>
-</div>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/DoLK72ueYs8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>Phrenology is no longer considered a valid or reliable science, yet its presence still lingers in psychology, and is often taught as history without reference to its racist origins and consequences<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. And as we have (and will continue to discuss) there are still many ways in which racism (and sexism, classism, and ableism) occur and affect psychology (and other sciences too).</p>
-<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;For examples, in the common Intro Psych textbook written by Myers &amp; DeWall (2018)</p></div></div><p>For example, more modern intelligence testing is often criticized for prioritizing White European values and language in the way it assesses supposedly “objective” knowledge. In an important test of this claim, the psychologist Robert Williams (pictured to the right) designed an IQ test that was as <strong>reliable</strong> as the default IQ test, but was “biased” to prioritize and value Black culture.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/5_IQtest.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>As seen in the table, Black students scored higher on this IQ test than White students - a point he (and others) use to emphasize the inherent biases in intelligence testing. Dr.&nbsp;Williams also came to define the concept of Ebonics, and demonstrate that African American English is as much a complete language as “Standard” English.&nbsp;</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/5_Williams.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</div></div><section id="check-in-reliability-and-validity." class="level3">
-<h3 class="anchored" data-anchor-id="check-in-reliability-and-validity."><a href="https://docs.google.com/forms/d/e/1FAIpQLSf7fmDMX_o3kOqPblXT_WSnu-6hQRJfX2VEqyQsMSjdSrURBw/viewform?usp=sf_link"><strong>Check-In : Reliability and Validity</strong></a><strong>.</strong></h3>
-<p>Test your understanding of reliability and validity with the check-in above.</p>
-<p>Below is a video to review the check-in answers, since these terms can be tricky :)</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/95W3DKRGR24" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="would-you-like-to-learn-more-optional-readings" class="level3">
-<h3 class="anchored" data-anchor-id="would-you-like-to-learn-more-optional-readings">Would You Like to Learn More? (Optional Readings)</h3>
-<ul>
-<li><p><strong>Here’s a <a href="https://kpu.pressbooks.pub/psychmethods4e/chapter/reliability-and-validity-of-measurement/">textbook chapter on the same topics</a>.</strong> Note these authors use three terms to describe what I broadly call “convergent validity”. Internal consistency (a form of reliability) is measured with “alpha reliability” (we will learn about this next week).</p></li>
-<li><p><strong>Dr.&nbsp;Williams <a href="https://www.youtube.com/watch?v=SAqHmKIXZBE">talks about his research here</a></strong> and here’s an episode of the <a href="http://dailymotion.com/video/x6fmo36">TV show Good Times</a> that Dr.&nbsp;Williams consulted on. Here’s a <a href="https://files.eric.ed.gov/fulltext/ED070799.pdf">link to his full study</a>. Note that Dr.&nbsp;Williams gave his intelligence test a name I don’t feel comfortable using because it is sexist :(. Times change, and it’s good to call out outdated language and update our terms accordingly :)</p></li>
-<li><p><strong>Learn more about the <a href="https://www.theguardian.com/science/blog/2013/feb/05/django-unchained-racist-science-phrenology">racist history of how phrenology was produced and consumed</a></strong> and an article that conducted <a href="http://theconversation.com/neuroscientists-put-the-dubious-theory-of-phrenology-through-rigorous-testing-for-the-first-time-88291">more recent research</a>to test phrenology’s theories. # TLDR.</p></li>
-</ul>
-<p>Developing a valid science of people is hard at best, and can be problematic when you use it to rank people. There are lots of different methods to measure what individuals are like, and for your final project you probably will want to give people self-report surveys to keep things simple for this very first study.</p>
+<section id="tldr." class="level2">
+<h2 class="anchored" data-anchor-id="tldr.">TLDR.</h2>
+<p>We learned how and why people differ from the mean in a predictable pattern (the “normal distribution”), how to quantify how far people are away from the mean in terms of a z-score, and how to remove outliers when needed.</p>
+<p>In the next chapter, we will learn how to make more sophisticated predictions of people using the linear model.</p>
 
 
 </section>
 </section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>For a more in-depth history of Norma and Normann, including critiques of the gender and post-WW2 contexts in which these statues arose, See Chapter 8 of Peter Cryle &amp; and Elizabeth Stephens’ <em>Normality: A Critical Genealogy</em>. University of Chicago Press, 2017.Chicago Scholarship Online, 2018. <a href="#0">https://doi.org/10.7208/chicago/9780226484198.001.0001</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I’m not entirely sure why Normann was not subject to a similar contest, though my guess is that it’s a symptom of a patriarchy that perpetuates the male gaze in <a href="https://www.youtube.com/watch?v=ulsjuiFO2J0">many ways</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Josephine Robertson, “Theatre Cashier, 23, Wins Title of ‘Norma,’ Besting 3,863 Entries,” Cleveland Plain Dealer, September 23, 1945, 1.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>good not to hold data to unrealistic body images as well as people.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>It is negatively skewed, since the tail is on the negative side of the distribution.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>see Rose’s END OF AVERAGE (2016) or, for a more critical approach, Chapman’s (2023) EMPIRE OF NORMALITY.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>No shame billionaires! You are just very different from the rest of us. Let us know if I can hang out on your yacht? You belong to an understudied group and I have some research ideas. kthxbye.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>A linear transformation means that the order and spacing of the data are unchanged - the person who has the highest self-esteem when measured on a 0 to 4 scale will still have the highest z-score, and be the same distance away from the next highest individual.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>the bar can be typed by hitting shift + the key above your return or enter key on the keyboard.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>In the code below, I’m calculating the z-score of age, and defining this as ageZ. But I’m using the original variable - age - to define my rules inside of the bracket.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1316,8 +1245,8 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/3R_Description.html" class="pagination-link" aria-label="Description">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></span>
+      <a href="../chapters/3R_Description.html" class="pagination-link" aria-label="Describing Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Describing Data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

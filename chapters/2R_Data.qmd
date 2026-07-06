@@ -154,7 +154,7 @@ As another example, researchers can measure gender with categories such as femal
 - Level : would be the categories female, male, transgender, and other.
 :::
 
-### Critical and Culture in Statistics
+### Critical Culture in Statistics
 
 :::: callout-tip
 #### Gender Identity
@@ -555,6 +555,16 @@ Well, below are a few other ideas to make superficial, all depending on our good
 {{< video https://youtu.be/HWd4z4a67uE >}}
 
 - The “” button on Google Scholar makes life so much easier!! No more memorizing APA format!! Hooray!!!
+
+## Reading Research Articles
+
+This week, we will learn different methods of reading a research article. To help support this journey, read the following two articles
+
+1.  [How to read a paper.](https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf). I like this article because it emphasizes that there are different layers to reading a paper. Use this paper to help you read the next one :)
+
+2.  [Ten simple rules for reading a scientific paper.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7392212/) This article comes from a biology perspective, but has a nice overview of the different parts to a research paper, and some of the broader questions to consider.
+
+Which article was more helpful or useful? Did the first paper help you read the second paper at all? What do you like to read (for fun or school?) Let us know on Discord :)
 
 # TLDR
 
