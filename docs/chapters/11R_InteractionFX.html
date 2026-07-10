@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Interaction Effects – Why Statistics?</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -35,15 +38,14 @@ ul.task-list li input[type="checkbox"] {
 <link href=".././images/open_source_mouse.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dd8479a8b43ae629028e453cd63fb9c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-db3e6f83599a0e60308012facca9f98e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,15 +77,13 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Why Statistics?</span>
     </a>
@@ -95,12 +95,12 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
-<span class="menu-text">List of R Code</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://catterson.github.io"> 
 <span class="menu-text">Prof.&nbsp;Cat Homepage</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
+<span class="menu-text">List of R Code</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/3R_Description.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Describing Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/5R_GoodMeasures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Good Measures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Good Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -263,22 +263,20 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
   <li><a href="#part-1-interaction-effects-it-depends-life-is-complex" id="toc-part-1-interaction-effects-it-depends-life-is-complex" class="nav-link active" data-scroll-target="#part-1-interaction-effects-it-depends-life-is-complex">Part 1 : Interaction Effects (“It Depends” / Life is Complex…)</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#tldr-what-is-an-interaction-effect-and-why-should-i-care-professor" id="toc-tldr-what-is-an-interaction-effect-and-why-should-i-care-professor" class="nav-link" data-scroll-target="#tldr-what-is-an-interaction-effect-and-why-should-i-care-professor">TLDR : What is an Interaction Effect and Why Should I Care, Professor?</a></li>
   <li><a href="#recap-main-effects-the-independent-effect-of-one-iv-on-the-dv" id="toc-recap-main-effects-the-independent-effect-of-one-iv-on-the-dv" class="nav-link" data-scroll-target="#recap-main-effects-the-independent-effect-of-one-iv-on-the-dv">RECAP : Main Effects (the independent effect of one IV on the DV)</a>
   <ul class="collapse">
@@ -296,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   </ul></li>
   <li><a href="#part-2-how-to-calculate-interaction-effects-in-r" id="toc-part-2-how-to-calculate-interaction-effects-in-r" class="nav-link" data-scroll-target="#part-2-how-to-calculate-interaction-effects-in-r">Part 2 : How To Calculate Interaction Effects in R</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#interaction-effects-vs.-main-effects" id="toc-interaction-effects-vs.-main-effects" class="nav-link" data-scroll-target="#interaction-effects-vs.-main-effects">Interaction Effects (vs.&nbsp;Main Effects)</a>
   <ul class="collapse">
   <li><a href="#main-effects" id="toc-main-effects" class="nav-link" data-scroll-target="#main-effects">Main Effects</a></li>
@@ -312,13 +310,9 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   </ul>
 </nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/10R_MultipleRegression.html">People Are Complex</a></li><li class="breadcrumb-item"><a href="../chapters/11R_InteractionFX.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interaction Effects</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -340,7 +334,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><strong>Goal :</strong> In this document, I’ll do my best to walk y’all through the theory and computation required to understand and interpret interaction effects in R.</p>
-<section id="part-1-interaction-effects-it-depends-life-is-complex" class="level1 page-columns page-full">
+<section id="part-1-interaction-effects-it-depends-life-is-complex" class="level1">
 <h1>Part 1 : Interaction Effects (“It Depends” / Life is Complex…)</h1>
 <section id="tldr-what-is-an-interaction-effect-and-why-should-i-care-professor" class="level2">
 <h2 class="anchored" data-anchor-id="tldr-what-is-an-interaction-effect-and-why-should-i-care-professor">TLDR : What is an Interaction Effect and Why Should I Care, Professor?</h2>
@@ -376,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Looking at the fake data, I find the exact same slopes for each independent variable even when controlling for redundant covariation with a multiple regression - folks who ride a bike are more safe (b = 5) and there’s no effect of wearing a helmet on safety (b = 0). I’d say these are independent main effects - since I’m looking at each variable in isolation.</p>
 </section>
 </section>
-<section id="interaction-effects-when-the-effect-of-one-variable-depends-on-another" class="level2 page-columns page-full">
+<section id="interaction-effects-when-the-effect-of-one-variable-depends-on-another" class="level2">
 <h2 class="anchored" data-anchor-id="interaction-effects-when-the-effect-of-one-variable-depends-on-another">Interaction Effects : When the Effect of One Variable Depends on Another</h2>
 <section id="the-interaction-effect-in-an-equation" class="level3">
 <h3 class="anchored" data-anchor-id="the-interaction-effect-in-an-equation"><strong>The Interaction Effect in an Equation</strong></h3>
@@ -398,12 +392,12 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="the-effect-of-using-implementation-intentions-on-task-completion-depends-on-the-type-of-goal" class="level3 page-columns page-full">
+<section id="the-effect-of-using-implementation-intentions-on-task-completion-depends-on-the-type-of-goal" class="level3">
 <h3 class="anchored" data-anchor-id="the-effect-of-using-implementation-intentions-on-task-completion-depends-on-the-type-of-goal"><strong>The Effect of Using Implementation Intentions on Task Completion Depends on the Type of Goal</strong></h3>
 <p>What is an implementation intention? I’m glad you asked!</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/QpdA8Ex9kZ4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p>How to interpret the interaction effect of an implementation intentions? In six minutes.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;note : somewhat tragic story, shortly after I started working on this implementation intention, I got an e-mail from someone advertising a paper that was a more clearly written version of the paper that I wrote that got rejected. Would have been more heartbreaking had it a) not been almost a decade since I got rejected (to be honest it was almost a relief to be free of that burden of a project that I had long stopped caring about) and b) the newer paper was really good. can’t find it right now but if anyone is reading this let me know and I’ll try to find a copy of the paper!</p></div></div><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/6WWYGsp1IwA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/6WWYGsp1IwA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p><img src="images/clipboard-1741193459.png" class="img-fluid"></p>
 </section>
 <section id="the-effect-of-resume-quality-on-callback-percentage-depends-on-the-applicants-perceived-race" class="level3">
@@ -412,12 +406,10 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nqounP_I35k" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p><img src="images/clipboard-2833945437.png" class="img-fluid"></p>
 </section>
-<section id="the-effect-of-time-on-hurt-feelings-depends-on-whether-you-take-a-pain-pill-or-not" class="level3 page-columns page-full">
+<section id="the-effect-of-time-on-hurt-feelings-depends-on-whether-you-take-a-pain-pill-or-not" class="level3">
 <h3 class="anchored" data-anchor-id="the-effect-of-time-on-hurt-feelings-depends-on-whether-you-take-a-pain-pill-or-not">The Effect of Time on Hurt Feelings Depends on Whether You Take a Pain Pill or Not</h3>
 <p>Still in the mood for another example? Don’t worry about hurting my feelings I’m loaded up on TYLENOL.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Data from : DeWall, C. N., MacDonald, G., Webster, G. D., Masten, C. L., Baumeister, R. F., Powell, C., … &amp; Eisenberger, N. I. (2010). Acetaminophen reduces social pain: Behavioral and neural evidence. Psychological science, 21(7), 931-937. [<a href="https://journals.sagepub.com/doi/pdf/10.1177/0956797610374741?casa_token=CfSYNCtQg4wAAAAA:yNE2IwEr2B-Ozdb7VCvjS_VCeqZDetIme6KFw3zjgTvEGuM5ODVw4COhJ0sAdv_Zl2E7oEIYHdew"><strong>Link</strong></a> and here’s a <a href="https://neurocritic.blogspot.com/2010/06/suffering-from-pain-of-social-rejection.html"><strong>good critique of the research</strong></a>]</p>
-<p><br>
-</p></div></div><p><img src="images/clipboard-1469369044.png" class="img-fluid"></p>
+<p><img src="images/clipboard-1469369044.png" class="img-fluid"></p>
 </section>
 <section id="gosh-professor-i-just-love-these-examples-can-we-have-some-more" class="level3">
 <h3 class="anchored" data-anchor-id="gosh-professor-i-just-love-these-examples-can-we-have-some-more">Gosh Professor, I Just Love These Examples, Can We Have Some More?</h3>
@@ -594,7 +586,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>note : somewhat tragic story, shortly after I started working on this implementation intention, I got an e-mail from someone advertising a paper that was a more clearly written version of the paper that I wrote that got rejected. Would have been more heartbreaking had it a) not been almost a decade since I got rejected (to be honest it was almost a relief to be free of that burden of a project that I had long stopped caring about) and b) the newer paper was really good. can’t find it right now but if anyone is reading this let me know and I’ll try to find a copy of the paper!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Data from : DeWall, C. N., MacDonald, G., Webster, G. D., Masten, C. L., Baumeister, R. F., Powell, C., … &amp; Eisenberger, N. I. (2010). Acetaminophen reduces social pain: Behavioral and neural evidence. Psychological science, 21(7), 931-937. [<a href="https://journals.sagepub.com/doi/pdf/10.1177/0956797610374741?casa_token=CfSYNCtQg4wAAAAA:yNE2IwEr2B-Ozdb7VCvjS_VCeqZDetIme6KFw3zjgTvEGuM5ODVw4COhJ0sAdv_Zl2E7oEIYHdew"><strong>Link</strong></a> and here’s a <a href="https://neurocritic.blogspot.com/2010/06/suffering-from-pain-of-social-rejection.html"><strong>good critique of the research</strong></a>]</p>
+<p><br>
+<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

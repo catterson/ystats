@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Multiple Regression – Why Statistics?</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -70,15 +73,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href=".././images/open_source_mouse.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dd8479a8b43ae629028e453cd63fb9c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-db3e6f83599a0e60308012facca9f98e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -139,15 +141,13 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Why Statistics?</span>
     </a>
@@ -159,12 +159,12 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
-<span class="menu-text">List of R Code</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://catterson.github.io"> 
 <span class="menu-text">Prof.&nbsp;Cat Homepage</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../Rcode.html" aria-current="page"> 
+<span class="menu-text">List of R Code</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -225,7 +225,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/3R_Description.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Description</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Describing Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -237,7 +237,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/5R_GoodMeasures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Good Measures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Good Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -327,42 +327,36 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
   <li><a href="#the-purpose-of-multiple-regression" id="toc-the-purpose-of-multiple-regression" class="nav-link active" data-scroll-target="#the-purpose-of-multiple-regression">The Purpose of Multiple Regression</a></li>
   <li><a href="#multivariate-linear-regression-a-more-complex-model" id="toc-multivariate-linear-regression-a-more-complex-model" class="nav-link" data-scroll-target="#multivariate-linear-regression-a-more-complex-model">Multivariate Linear Regression : A More Complex Model</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#comparing-models-the-regression-table." id="toc-comparing-models-the-regression-table." class="nav-link" data-scroll-target="#comparing-models-the-regression-table.">Comparing Models : The Regression Table.</a></li>
   <li><a href="#types-of-changes-between-the-multivariate-and-bivariate-models" id="toc-types-of-changes-between-the-multivariate-and-bivariate-models" class="nav-link" data-scroll-target="#types-of-changes-between-the-multivariate-and-bivariate-models">Types of Changes Between the Multivariate and Bivariate Models</a></li>
   <li><a href="#reasons-why-the-relationship-changes-between-models" id="toc-reasons-why-the-relationship-changes-between-models" class="nav-link" data-scroll-target="#reasons-why-the-relationship-changes-between-models">Reasons Why The Relationship Changes Between Models</a></li>
   </ul></li>
   <li><a href="#more-practice" id="toc-more-practice" class="nav-link" data-scroll-target="#more-practice">More Practice</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#a-multiple-regression-video" id="toc-a-multiple-regression-video" class="nav-link" data-scroll-target="#a-multiple-regression-video"><strong>A MULTIPLE REGRESSION VIDEO :</strong></a></li>
   <li><a href="#check-in-heres-a-practice-quiz" id="toc-check-in-heres-a-practice-quiz" class="nav-link" data-scroll-target="#check-in-heres-a-practice-quiz"><strong>Check-In : Here’s a Practice Quiz</strong></a></li>
   <li><a href="#check-out" id="toc-check-out" class="nav-link" data-scroll-target="#check-out">Check-Out</a></li>
   </ul></li>
   </ul>
 </nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/10R_MultipleRegression.html">People Are Complex</a></li><li class="breadcrumb-item"><a href="../chapters/10R_MultipleRegression.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Multiple Regression</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -393,7 +387,7 @@ window.Quarto = {
 <figcaption>The Entire City, Max Ernst (1934)</figcaption>
 </figure>
 </div>
-<section id="the-purpose-of-multiple-regression" class="level2 page-columns page-full">
+<section id="the-purpose-of-multiple-regression" class="level2">
 <h2 class="anchored" data-anchor-id="the-purpose-of-multiple-regression">The Purpose of Multiple Regression</h2>
 <p><strong>Key Questions :</strong> What is redundant covariation and how does this relate to the idea of a 3rd variable?</p>
 <p><strong>“The Whole is Greater Than the Sum of Its Parts”</strong></p>
@@ -412,13 +406,27 @@ window.Quarto = {
 <p>We wrote out this bivariate model like so :</p>
 <p><span class="math display">\[\huge y_i = a + b_1*X_{1i} + {\epsilon}_i\]</span></p>
 <p>To make sure we are all on the same page<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, let’s recap what’s going on with this model. On the left-hand side, we are making predictions for some variable (y : the dependent variable) - specifically an individual’s score on that variable (yi : the tiny i represents some specific individual in the dataset). On the right-hand side of the equation, we have a starting place for our predictions (a : the intercept), and then a slope (b1) that describes how we adjust our predictions of Y based on the individual’s specific value of some other variable (X1i : the first independent variable). And since human life is complex, our predictions will not be perfect, but will have error (ei) which we define as the difference between the individual’s actual score (yi) and our predictions for that person’s score (a + b1X1i). Neat.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;since this is written. har har.</p></div></div><p>So far, we’ve used the linear model to make predictions of continuous variables based on categorical variables. For example, in the Prestige dataset (<a href="https://www.dropbox.com/s/lca1e7vdkt27wz0/prestige_data.csv?dl=1">download HERE</a>) we predicted prestige from job type (a categorical factor with three levels - blue collar, professional, and white collar).</p>
+<p>So far, we’ve used the linear model to make predictions of continuous variables based on categorical variables. For example, in the Prestige dataset (<a href="https://www.dropbox.com/s/lca1e7vdkt27wz0/prestige_data.csv?dl=1">download HERE</a>) we predicted prestige from job type (a categorical factor with three levels - blue collar, professional, and white collar).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: carData</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gplots)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'gplots' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+---------------------
+gplots 3.3.0 loaded:
+  * Use citation('gplots') for citation info.
+  * Homepage: https://talgalili.github.io/gplots/
+  * Report issues: https://github.com/talgalili/gplots/issues
+  * Ask questions: https://stackoverflow.com/questions/tagged/gplots
+  * Suppress this message with: suppressPackageStartupMessages(library(gplots))
+---------------------</code></pre>
+</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'gplots'</code></pre>
@@ -428,8 +436,8 @@ Attaching package: 'gplots'</code></pre>
 
     lowess</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> type, <span class="at">data =</span> Prestige)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(prestige <span class="sc">~</span> type, <span class="at">data =</span> Prestige, <span class="at">connect =</span> F, <span class="at">ylab =</span> <span class="st">"Prestige"</span>, <span class="at">xlab =</span> <span class="st">"Job Type"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> type, <span class="at">data =</span> Prestige)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(prestige <span class="sc">~</span> type, <span class="at">data =</span> Prestige, <span class="at">connect =</span> F, <span class="at">ylab =</span> <span class="st">"Prestige"</span>, <span class="at">xlab =</span> <span class="st">"Job Type"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -437,7 +445,7 @@ Attaching package: 'gplots'</code></pre>
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -463,9 +471,9 @@ F-statistic: 109.6 on 2 and 95 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>We also used this linear model to make predictions of continuous variables (e.g., prestige) based on other continuous variables (e.g., education).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> Prestige)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> Prestige, <span class="at">xlab =</span> <span class="st">"Years of Education"</span>, <span class="at">ylab =</span> <span class="st">"Prestige"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(mod2, <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> Prestige)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(prestige <span class="sc">~</span> education, <span class="at">data =</span> Prestige, <span class="at">xlab =</span> <span class="st">"Years of Education"</span>, <span class="at">ylab =</span> <span class="st">"Prestige"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(mod2, <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -473,7 +481,7 @@ F-statistic: 109.6 on 2 and 95 DF,  p-value: &lt; 2.2e-16</code></pre>
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -498,9 +506,9 @@ F-statistic: 260.8 on 1 and 100 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p><br>
 <strong>Redundant Covariation</strong></p>
 <p>We could go through life (and statistics) by considering simple relationships between two variables. These kinds of bivariate models are a good (and necessary) place to start our inquiry. But no psychological phenomenon is entirely explained by any one variable. Instead, human life is explained by multiple variables that are often related to each other and sometimes work together<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> in order to influence behavior. We saw this in the example above, where prestige appears to be separately explained both by job type and education. But the situation gets more complicated, because as a quick test in R reveals, job type and education are also related to each other.&nbsp;</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;we’ll talk about this point (an interaction effect) in the next set of lecture notes.</p></div></div><div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mod3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(education <span class="sc">~</span> type, <span class="at">data =</span> Prestige)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mod3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(education <span class="sc">~</span> type, <span class="at">data =</span> Prestige)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -523,7 +531,7 @@ Residual standard error: 1.194 on 95 degrees of freedom
 Multiple R-squared:  0.8153,    Adjusted R-squared:  0.8114 
 F-statistic: 209.6 on 2 and 95 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(education <span class="sc">~</span> type, <span class="at">data =</span> Prestige, <span class="at">connect =</span> F, <span class="at">xlab =</span> <span class="st">"Job Type"</span>, <span class="at">ylab =</span> <span class="st">"Years of Education"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(education <span class="sc">~</span> type, <span class="at">data =</span> Prestige, <span class="at">connect =</span> F, <span class="at">xlab =</span> <span class="st">"Job Type"</span>, <span class="at">ylab =</span> <span class="st">"Years of Education"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -536,16 +544,16 @@ F-statistic: 209.6 on 2 and 95 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>That job type, education, and prestige are all related to each other represents <strong>redundant covariation</strong> and raises an important possibility - the relationship between job type and prestige could really be due to the relationship between education and prestige. That is, since jobs with more education are rated as having more prestige, and blue collar workers have the least education (on average), the reason why blue collar jobs have the least amount of prestige could be better explained by differences in education. Similarly, professionals might be rated as having the most prestige because they have the most education. Of course, it’s also possible that education is related to prestige because of the type of job that workers have.</p>
 <p>With separate bivariate models, it’s impossible to know whether these two independent variables are uniquely related to prestige or whether one variable is more related to prestige than another because we are only looking at one relationship at a time. The multivariate regression - one that predicts prestige simultaneously from both education and job type - will help sort out this issue.&nbsp;</p>
 </section>
-<section id="multivariate-linear-regression-a-more-complex-model" class="level2 page-columns page-full">
+<section id="multivariate-linear-regression-a-more-complex-model" class="level2">
 <h2 class="anchored" data-anchor-id="multivariate-linear-regression-a-more-complex-model">Multivariate Linear Regression : A More Complex Model</h2>
 <p>In order to better understand the complexity of human life, we’ll need to define a more complex model that explains some dependent variable as a function of multiple independent variables. This is called a multivariate (multiple variables) linear regression model, or a multiple regression for short. In a multiple linear regression, we are going to use…wait for it…multiple independent variables to make predictions about the dependent variable.&nbsp;</p>
 <p>We’ll now write our model out like this :</p>
 <p><span class="math display">\[\huge y_i = a + b_1*X_{1i} + b_2*X_{2i} + ... + b_k*X_{ki} + {\epsilon}_i\]</span></p>
-<p>At first, this model may look scary, but it’s actually quite familiar - we are making predictions about some specific individual’s score on some specific variable (y), but now are using information in multiple variables (X1 and X2) to update our predictions of y. The ’k’s indicate that you can build a model with as many predictors as you want (this will create complications that we’ll talk about later…).</p>
+<p>At first, this model may look scary, but it’s actually quite familiar - we are making predictions about some specific individual’s score on some specific variable (y), but now are using information in multiple variables (X1 and X2) to update our predictions of y. The ‘k’s indicate that you can build a model with as many predictors as you want (this will create complications that we’ll talk about later…).</p>
 <p>Below is a model where we predict prestige from both education and job type. Spend a few minutes looking at this output, and see if you can interpret it. (Don’t worry, we’ll get to the NHST stuff later.)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mod4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> education <span class="sc">+</span> type, <span class="at">data =</span> Prestige)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>mod4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prestige <span class="sc">~</span> education <span class="sc">+</span> type, <span class="at">data =</span> Prestige)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)   education    typeprof      typewc 
   -2.698159    4.572793    6.142444   -5.458495 </code></pre>
@@ -560,7 +568,7 @@ F-statistic: 209.6 on 2 and 95 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li><p><strong>the slope of professional :</strong> this coefficient describes the change in our predictions between the reference level (blue collar workers - defined by the intercept) and professionals, controlling for the effect of education (the unique effect of being a professional worker). When accounting for the effect of education in the model, professionals have 6.1 more prestige points than blue collar workers.</p></li>
 <li><p><strong>the slope of white collar :</strong> this coefficient describes the change in our predictions between the reference level (blue collar workers - defined by the intercept) and white collar workers, controlling for the effect of education. When accounting for the effect of education in the model, white collar workers are predicted to have 5.6 less prestige points than blue collar workers.</p></li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;THE PREDICTED VALUE OF Y WHEN ALL X VALUES ARE ZERO</p></div></div><p>We can use this model to make predictions for specific individuals : <strong>Ŷ ~ -2.7 + 4.6(Xeducation) + 6.1(Xprof) - 5.5 (Xwc)</strong></p>
+<p>We can use this model to make predictions for specific individuals : <strong>Ŷ ~ -2.7 + 4.6(Xeducation) + 6.1(Xprof) - 5.5 (Xwc)</strong></p>
 <p><strong>Pop Quiz :</strong> Use this model to calculate the predicted values of Y for….</p>
 <ul>
 <li><p>a blue collar worker with 10 years of education?</p></li>
@@ -568,7 +576,7 @@ F-statistic: 209.6 on 2 and 95 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li><p>a professional worker with 12 years of education?</p></li>
 </ul>
 <p><strong>Here are the answers.</strong> No peeking!<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;43.3, 47, and 58.6.</p></div></div><section id="comparing-models-the-regression-table." class="level3">
+<section id="comparing-models-the-regression-table." class="level3">
 <h3 class="anchored" data-anchor-id="comparing-models-the-regression-table.">Comparing Models : The Regression Table.</h3>
 <p>Because your multivariate model will contain two different independent variables, it’s likely that the scale of your two IVs will be different. To assist in comparing the change between models, or comparing the slopes within one multivariate model, it’s important to scale (standardize or z-score) your variables.</p>
 <p>We did this before, when we used the scale function to transform each variable in the model.</p>
@@ -576,9 +584,9 @@ F-statistic: 209.6 on 2 and 95 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>If you are reading this far, go ahead and try a new function - <code>export_summs()</code> from the <code>jtools</code> library. You’ll need to install this new package <code>install.packages("jtools")</code>, and then load this to your library.</p>
 <p>We can use the <code>export_summs()</code> function to export the summary of multiple models, and then ask R to transform both the response (DV) and IVs.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("jtools")</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jtools)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">export_summs</span>(mod1, mod2, mod4, <span class="at">transform.response =</span> T, <span class="at">scale =</span> T, <span class="at">center =</span> T, <span class="at">binary.factors =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("jtools")</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jtools)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">export_summs</span>(mod1, mod2, mod4, <span class="at">transform.response =</span> T, <span class="at">scale =</span> T, <span class="at">center =</span> T, <span class="at">binary.factors =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  ">
 <colgroup><col><col><col><col></colgroup><tbody><tr>
@@ -679,7 +687,15 @@ F-statistic: 209.6 on 2 and 95 DF,  p-value: &lt; 2.2e-16</code></pre>
 
 </section>
 </section>
-
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>since this is written. har har.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>we’ll talk about this point (an interaction effect) in the next set of lecture notes.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>THE PREDICTED VALUE OF Y WHEN ALL X VALUES ARE ZERO<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>43.3, 47, and 58.6.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

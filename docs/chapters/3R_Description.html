@@ -202,7 +202,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/5R_GoodMeasures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Good Measures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Good Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -292,12 +292,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Rcode</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -321,13 +315,12 @@ window.Quarto = {
   <li><a href="#complexity" id="toc-complexity" class="nav-link" data-scroll-target="#complexity">Complexity</a>
   <ul class="collapse">
   <li><a href="#range." id="toc-range." class="nav-link" data-scroll-target="#range.">Range.</a></li>
-  <li><a href="#outliers." id="toc-outliers." class="nav-link" data-scroll-target="#outliers.">Outliers.</a></li>
   <li><a href="#skew." id="toc-skew." class="nav-link" data-scroll-target="#skew.">Skew.</a></li>
   <li><a href="#kurtosis" id="toc-kurtosis" class="nav-link" data-scroll-target="#kurtosis">Kurtosis</a></li>
   </ul></li>
   <li><a href="#the-standard-deviation-a-mix-of-centrality-and-complexity" id="toc-the-standard-deviation-a-mix-of-centrality-and-complexity" class="nav-link" data-scroll-target="#the-standard-deviation-a-mix-of-centrality-and-complexity">The Standard Deviation : A Mix of Centrality and Complexity</a>
   <ul class="collapse">
-  <li><a href="#the-definition-3" id="toc-the-definition-3" class="nav-link" data-scroll-target="#the-definition-3">The Definition</a></li>
+  <li><a href="#the-definition-2" id="toc-the-definition-2" class="nav-link" data-scroll-target="#the-definition-2">The Definition</a></li>
   <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why This Matters</a></li>
   </ul></li>
   </ul></li>
@@ -336,7 +329,6 @@ window.Quarto = {
   <li><a href="#r-code-descriptive-statistics" id="toc-r-code-descriptive-statistics" class="nav-link" data-scroll-target="#r-code-descriptive-statistics">R Code : Descriptive Statistics</a></li>
   <li><a href="#video-describing-happiness-world-happiness-report" id="toc-video-describing-happiness-world-happiness-report" class="nav-link" data-scroll-target="#video-describing-happiness-world-happiness-report">Video : Describing Happiness (World Happiness Report)</a></li>
   <li><a href="#video-standard-deviation-of-happiness-world-happiness-report" id="toc-video-standard-deviation-of-happiness-world-happiness-report" class="nav-link" data-scroll-target="#video-standard-deviation-of-happiness-world-happiness-report">Video : Standard Deviation of Happiness (World Happiness Report)</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   <li><a href="#practice-quiz-with-r-practice-chapter-3-quiz-describing-variables" id="toc-practice-quiz-with-r-practice-chapter-3-quiz-describing-variables" class="nav-link" data-scroll-target="#practice-quiz-with-r-practice-chapter-3-quiz-describing-variables">Practice Quiz with R : Practice Chapter 3 Quiz (Describing Variables)</a></li>
   </ul></li>
   <li><a href="#tldr." id="toc-tldr." class="nav-link" data-scroll-target="#tldr.">TLDR.</a></li>
@@ -564,19 +556,6 @@ window.Quarto = {
 <p>As a researcher (and teacher) I often use the range as a quick way to ensure the data are correct - that is, to confirm that the lowest and highest scores are possible values given the way the variable was measured. For example, I check the range when looking at test scores to make sure no students got a negative score or score above 100% (both impossible in my class.)</p>
 </section>
 </section>
-<section id="outliers." class="level3">
-<h3 class="anchored" data-anchor-id="outliers.">Outliers.</h3>
-<section id="the-definition-2" class="level4">
-<h4 class="anchored" data-anchor-id="the-definition-2">The Definition</h4>
-<p>Outliers are extreme values that are so different from the rest of the data that you remove them from the dataset because you worry that they might cause problems for your data. Outliers exist because of errors in data entry (for example, the person who lists their age as 1009 instead of 19) or because they represent individuals who are qualitatively different from the rest of your data (for example, the participant who is a billionaire and lists that as their income.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>)</p>
-<p>How extreme is too extreme? Some folks like to come up with rules for making this decision based on the number of standard deviations away from the mean or some other metric. I appreciate those efforts, but personally believe it’s better to judge outliers based on the qualitative decisions above (and use past research as a guide). Whatever you do, make sure to (1) justify your decisions, (2) report these decisions in your code and analyses, and (3) make any decisions about removing outliers as early as possible and before you start making predictions.</p>
-</section>
-<section id="why-it-matters.-2" class="level4">
-<h4 class="anchored" data-anchor-id="why-it-matters.-2">Why It Matters.</h4>
-<p>The presence of outliers in your data has the potential to influence your results in ways that will bias your results. For example, if someone wandered off in the middle of a cognitive task, their outliers for reaction time might make you think people took way longer to complete the task than people really needed to take. If I included everyone who didn’t take the exam (and got a zero) in taking the average of the exam score, I might think that students did worse on the exam than they really did, when I should have excluded these zeros to get a better representation of how people did on the exam.</p>
-<p>It’s therefore super critical to a) identify any possible outliers in the data, and b) remove them from data analysis, and c) be 100% transparent that you have removed data. You will learn to do this using R in Part 4 below.</p>
-</section>
-</section>
 <section id="skew." class="level3">
 <h3 class="anchored" data-anchor-id="skew.">Skew.</h3>
 <section id="definition.-2" class="level4">
@@ -590,8 +569,8 @@ window.Quarto = {
 <p>It’s easy to confuse the different types of skew, so I like to think of skew as a type of pokemon (“pikaskew”), where the direction of skewness is defined by its tail, since Pokemon (at least the ones I can think of) have tails. This is my trick; feel free to use it (you are welcome) or develop your own!&nbsp;</p>
 <p><strong>skew → pikachu →</strong> <img src="images/3_pikaskew.png" class="img-fluid" width="102"><strong>–&gt; tail</strong></p>
 </section>
-<section id="why-it-matters.-3" class="level4">
-<h4 class="anchored" data-anchor-id="why-it-matters.-3">Why It Matters.</h4>
+<section id="why-it-matters.-2" class="level4">
+<h4 class="anchored" data-anchor-id="why-it-matters.-2">Why It Matters.</h4>
 <p>Thinking about skew can help guide thoughts about why people differ.</p>
 <ul>
 <li><p><strong>Negative Skew (also called “Left Skew”)</strong> is when the distribution “tail” sticks out on the negative (low) end of the measure. A negatively skewed distribution means that there’s a greater probability of high scores than low scores, and can be explained by ceiling effects (a measure does not differentiate between high scorers - like an exam that almost everybody aces because you were all prepared.)</p></li>
@@ -613,8 +592,8 @@ window.Quarto = {
 </section>
 <section id="the-standard-deviation-a-mix-of-centrality-and-complexity" class="level2">
 <h2 class="anchored" data-anchor-id="the-standard-deviation-a-mix-of-centrality-and-complexity">The Standard Deviation : A Mix of Centrality and Complexity</h2>
-<section id="the-definition-3" class="level3">
-<h3 class="anchored" data-anchor-id="the-definition-3">The Definition</h3>
+<section id="the-definition-2" class="level3">
+<h3 class="anchored" data-anchor-id="the-definition-2">The Definition</h3>
 <p>The standard deviation (<em>sd</em>) is a way to quantify the ‘average’ variation in your dataset. More specifically, it is the average distance between all individual data points in the distribution, and the mean of the distribution. These distances (between an individual score and our prediction) are called residuals.</p>
 <p>The standard deviation is always positive, since it describes the average distance of individual scores from the mean (residuals), and not whether those residuals are above or below the mean. A standard deviation of zero means there is no variation - all scores in the distribution are the same. The larger the standard deviation, the more variation there is in the data. There’s no limit to how large the standard deviation might be.</p>
 <p>Understanding what the standard deviation is, and how it’s calculated, is a critical skill. In the videos below I walk through how to calculate standard deviation by “hand”. You will never actually use this approach in real-life, but I find it very helpful to fully understand what a standard deviation is, and how (and why) we use residual scores in statistics.</p>
@@ -705,16 +684,13 @@ window.Quarto = {
 </section>
 <section id="video-describing-happiness-world-happiness-report" class="level2">
 <h2 class="anchored" data-anchor-id="video-describing-happiness-world-happiness-report">Video : Describing Happiness (World Happiness Report)</h2>
-<p>In this video, I walk through loading the a version of the World Happiness Report and describing and graphing the happiness variable. NOTE : the dataset that you have access to in the “Chapter Datset” folder is a slightly different version of the dataset I’m using in these videos.</p>
+<p>In this video, I walk through loading the a version of the World Happiness Report and describing and graphing the happiness variable. NOTE : the dataset that you have access to in the “Chapter Dataset” folder is a slightly different version of the dataset I’m using in these videos…apologies for the confusion! I will try to re-record the video and update this soon :)</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Te1ChWgiATU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 <section id="video-standard-deviation-of-happiness-world-happiness-report" class="level2">
 <h2 class="anchored" data-anchor-id="video-standard-deviation-of-happiness-world-happiness-report">Video : Standard Deviation of Happiness (World Happiness Report)</h2>
 <p>In this video, I review how to calculate the standard deviation, and what this statistic tells you about the variable happiness.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Pm8Z2z6QWMs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
 </section>
 <section id="practice-quiz-with-r-practice-chapter-3-quiz-describing-variables" class="level2">
 <h2 class="anchored" data-anchor-id="practice-quiz-with-r-practice-chapter-3-quiz-describing-variables"><a href="https://docs.google.com/forms/d/e/1FAIpQLScJ2ZvwLv2D4SYXFN2NL-7M8-B3Acq9BXsS1HwJSPf-LnGx4w/viewform?usp=sf_link">Practice Quiz with R</a> : Practice Chapter 3 Quiz (Describing Variables)</h2>
@@ -751,7 +727,6 @@ window.Quarto = {
 <ol>
 <li id="fn1"><p>the mode would be 3 and 20, since these are the most frequent<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>see Antoine de Saint-Exupéry’s (1943). The Little Prince.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>No shame billionaires! You are just very different from the rest of us. Let us know if I can hang out on your yacht? You belong to an understudied group and I have some research ideas. kthxbye.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

@@ -29,7 +29,7 @@ book:
     - ./chapters/13R_Conclusion2Introduction.qmd
   appendices:
     - Rcode.qmd
-    - references.qmd
+#    - references.qmd
   navbar: 
     background: primary
     search: true
