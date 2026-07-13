@@ -3,13 +3,10 @@
 ::: callout-important
 ## Who Cares?
 
-Linear models are the foundation of much of statistics, and one important way that scientists make predictions about one variable using knowledge of another variable (or more than one!).
+Linear models are the foundation of much of statistics, and help scientists make predictions. Ultimately, a linear model is just a line, and in this chapter we'll learn how to use a line to do the following :
 
-- Learn about how we can define a linear model to make predictions about one variable (the DV) from another (the IV).
-
-- You’ll then learn about $R^2$ (read this as : “R squared”) - professor’s favorite statistic - and how this quantifies the amount of error in our predictions.
-
-- Learn how our good friend the z-score can be used to calculate a correlation coefficient.
+- Make predictions about one variable (the DV) from another (the IV).
+- Quantify the amount of error in our predictions.
 :::
 
 ![A series of models of Pinocchio (himself a model of a real boy.)](images/clipboard-1265666125.png)
@@ -26,7 +23,7 @@ Great! But the real question is WHAT should define our prediction?
 
 ## RECAP : The Mean (and Linear Model) as Prediction
 
-Previously, we learned how the mean was a simple way to make a prediction about individuals.
+In Chapter 3, we learned how the mean was a simple way to make a prediction about individuals.
 
 For example, if you wanted to know whether it would rain today, you might look at the average rainfall for today’s date, and use that average for your prediction.
 
@@ -99,9 +96,11 @@ Next, we'll try to improve upon our predictions of prestige.
 
 The **linear model** is a simple, yet flexible, way to make predictions about one variable (the DV or y). There are many types of models, but most follow the same basic principles that we will review in this document. [The mean is actually a linear model in its simplest form : y \~ 1 + error, with 1 serving as a constant value (the mean!).]{.aside}
 
-The mean is a great starting place, but it's limited because it's static - we have the same prediction for everyone in the dataset, when we know that people differ. So we will want to come up with predictions that change, depending on what we learn about another person. This is something I refer to as **the principle of covariation**. It's a simple idea - if there's a pattern in how two things vary, then we can use information about one variable to make a prediction about what will happen for the other variable. This is what we talked about earlier in the semester when we discussed the idea of prediction - we're just formalizing this idea with numbers now.
+The mean is a great starting place, but it's limited because it's static - we have the same prediction for everyone in the dataset, when we know that people differ. So we will want to come up with predictions that change, depending on what we learn about another person.
 
-So, as a conceptual example, there is variation in rain (some days it rains and some days it does not) and there is variation in clouds (bright skies some days; clouds other days). The ***covariation*** happens as I notice that on days when it rains (variable = rain), it also tends to be cloudy (variable = clouds). These two variables vary together (they "co-vary"). Of course, this pattern isn't always true - there's error.
+**This principle of covariation** is a simple idea - if there's a pattern in how two things vary, then we can use information about one variable to make a prediction about what will happen for the other variable. This is what we talked about earlier in the semester when we discussed the idea of prediction - we're just formalizing this idea with numbers now.
+
+As a conceptual example, there is variation in rain (some days it rains and some days it does not) and there is variation in clouds (bright skies some days; clouds other days). The ***covariation*** happens as I notice that on days when it rains (variable = rain), it also tends to be cloudy (variable = clouds). These two variables vary together (they "co-vary"). Of course, this pattern isn't always true - there's error.
 
 I could write this as a model, where my predictions about whether it will rain will be influenced by whether I see clouds in the sky : `rain = clouds + error`
 
@@ -280,113 +279,36 @@ What $R^2$ does is contextualize our reduction in error, by describing how much 
 
 - $R^2$ can range from 0 to 1. The closer to zero, the less our model improves upon predictions (because 0 = no difference between the error when using the mean to make predictions and the error when using the model to make predictions). The closer to one, the more our model improves upon predictions. An $R^2$ of 1 would mean that you are making perfect predictions. If this happens, you have probably done something wrong.
 
-## Video Example : Age and Narcissism
-
-Remember our Narcissistic MBA students? They’re back, in Linear Model form!!!!
-
-- [link to the R script I used for this video](https://www.dropbox.com/s/w7qi8v13vkp7tjp/linearmodel_NPIage.R?dl=0)
-
-{{< video https://youtu.be/mfR5JNwCrYs >}}
-
 ::: {.callout-note collapse="false"}
 ## [Check-In : Understanding $R^2$](https://docs.google.com/forms/d/e/1FAIpQLScaXZgOIYrWEUQdOS_vRq2UlMne8VHOvmfRYzSerpsamGP5Zg/viewform?usp=sf_link)
 
 Here’s a super quick check-in on interpreting $R^2$ values!
 :::
 
-# Part 3 : Interpreting Models with the Z-Score
+# Example : Age and Narcissism
 
-::: {.callout-warning collapse="false"}
-## RECAP : Uhhh…can you re-explain Z-Scoring Professor???
+## Practice Questions
 
-A z-score describes how far an individual score falls above and below the mean (a residual!) in units of standard deviation. Z-scores are used to help give context to data - how far above or below the average is an individual (their distance from the mean), compared to the standard deviation (the average amount that people differ from the mean).
+**Remember our Narcissistic MBA students? They’re back, in Linear Model form! Practice working with linear models to answer the following questions.**
 
-Z-scores can also be useful when the units of measurement don’t have any meaning. For example, let’s say you take a job on Jeff Bezo’s Mars ™ and learn that a job pays 1298723 BezosBucks. Is this a little? A lot? Well, knowing that it’s 120 BezosBucks above the average income might give you some indication that you are going to be better off than others on Jeff Bezos’ Mars ™. But how much better off?
+[Link to dataset](https://www.dropbox.com/scl/fi/iaq0xi3ewnbck6n7o13wr/hormone_dataset.csv?rlkey=tzk1q408c8hkfvc8omrssf3bq&dl=0)
 
-If you learn the standard deviation of income on Jeff Bezos’ Mars ™ is 12, then your above average salary is 10 times more than what you’d expect the average person to differ from the average salary - you are gonna be VERY RICH compared to the average resident - drinking fresh water and breathing air created by the finest asteroidoxygenators!
+1.  Is there a relationship between narcissism (DV = NPI) and age (IV = age)?
 
-But if the standard deviation is 1200, then your z-score = .1, which means you are only a tenth of a standard deviation above average, which means that you will be lumped with the masses on Jeff Bezos’ Mars - slurping recycled air with the rest of us.
-:::
+2.  What is the intercept of this linear model (and what does it tell you?)
 
-## Why Z-Score in a Model
+3.  What is the slope of this linear model (and what does it tell you?)
 
-In a linear model, the slope describes the relationship between the two variables in whatever units the DV and the IV were measured in. So in our prestige example, the slope of 5.36 means that for every 1-unit increase in years of education, our prediction of prestige goes up by 5.36 points. Is that a little change in prestige? A lot? It’s hard to know, since prestige is not tangible, but a human-created construct.
+4.  What is the predicted narcissism for someone who is 25 years old?
 
-Which brings us back to z-scores. If we z-score both the DV and the IV in our linear model, the (arbitrary) units of measurement disappear, and both variables are described in terms of standard deviation. This allows us to better relate each variable to another. To z-score the variables in a model, you just use the scale() function inside the linear model.
+5.  What is the sum of the squared residual errors from this model (and what does this statistic tell you / mean?)
 
-Click the tabs to switch between Raw Units and Z-Scored Units. What changes? What stays the same??
+6.  What is the $R^2$ value of this linear model (and what does this statistic tell you?)
 
-::: panel-tabset
-### Linear Model in Raw Units
+## Video Walk-through
 
-Here's the graph, in the original units of measurement.
+**Try to answer the questions on your own before watching the video below.**
 
-```{r}
-plot(prestige ~ education, data = presto, 
-     ylab = "Prestige (Raw Units)",
-     xlab = "Education (Years)") 
-mod <- lm(prestige ~ education, data = presto)
-abline(mod, lwd = 5, col = 'red')
-```
+{{< video https://youtu.be/mfR5JNwCrYs >}}
 
-And here's the result of the model.
-
-```{r}
-round(coef(mod), 2)
-```
-
-### Linear Model in Z-Scored Units
-
-Here's the graph when the DV and IV are Z-Scored.
-
-```{r}
-plot(scale(prestige) ~ scale(education), data = presto, 
-     ylab = "Prestige (Units of Standard Deviation)",
-     xlab = "Education (Units of Standard Deviation)") 
-zmod <- lm(scale(prestige) ~ scale(education), data = presto)
-abline(zmod, lwd = 5, col = 'red')
-```
-
-And here's the result of the model.
-
-```{r}
-round(coef(zmod), 2)
-```
-:::
-
-### Interpretation of Z-Scores
-
-As before, the data do not change - the only thing that changes are the units in which the DV and IV are measured (and thus the units of the intercept and slope). 
-
-- **The intercept of a z-scored model will always be zero (or something very near zero).** Remember that a z-score of zero means average, and the intercept is defined as “the predicted value of the DV when all IVs are zero.” This means that….
-
-  - …the predicted value of the DV is zero when the IV is zero.
-
-  - …someone with the average IV (IV = z-score of zero) is predicted to have the average DV (DV = z-score of zero), or 
-
-- **The slope of a z-scored model describes the relationship between the variables in units of standard deviation.** When both the DV and IV share the same units of measurement, the slope becomes a lot more informative, since it tells you exactly how linked the two variables are. Knowing that for every 1-unit increase in years of education, the predicted prestige goes up by 5.36 (the slope) makes far less sense to me than knowing that for every standard deviation increase in years of education, the predicted prestige goes up by .85.
-
-  - The maximum slope of a z-scored linear model (with one IV) is 1 (one). This would be a perfect positive relationship, where a one standard deviation increase in the IV is equal to a one standard deviation increase in the DV. 
-
-  - The minimum slope of a z-scored linear model (with one IV) is -1 (negative one). This would be a perfect negative relationship, where a one standard deviation increase in the IV is equal to a one standard deviation decrease in the DV. 
-
-  - A slope of zero would mean that there’s no relationship between the two variables.
-
-  - Wait a minute…that’s….CORRELATION COEFFICIENT’S MUSIC.
-
-Yes, class, a correlation - the relationship between two variables, is just the standardized (z-scored) slope of a linear model (with one IV).
-
-```{r}
-cor(presto$prestige, presto$education) # the correlation
-coef(zmod)[2] # the slope of our z-scored model
-```
-
-See the video below for another example.
-
-### Video Example : Age and Narcissism (Z-Scored)
-
-{{< video https://youtu.be/2jYwIOTaQ6g >}} The video above walks through z-scoring in another example, from the narcissism dataset.
-
-![](images/6_AgeNPIZscoreVid.png){fig-align="center"}
-
-## [CHECK-OUT : Understanding Z-Scores and this Chapter! Document](https://docs.google.com/forms/d/e/1FAIpQLSdpzsYEijsSkaG_gRA4Pmqg1QFGWmTSUUmR8B31cYNtms6jtw/viewform?usp=sf_link)
+- [link to the R script I used for this video](https://www.dropbox.com/s/w7qi8v13vkp7tjp/linearmodel_NPIage.R?dl=0)
