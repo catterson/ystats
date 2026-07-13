@@ -57,6 +57,7 @@ format:
     toc-location: right
     toc-title: In This Chapter
     format-links: true
+    code-overflow: wrap
     number-sections: true
     grid:
       sidebar-width: 200px

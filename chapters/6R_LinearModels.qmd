@@ -1,10 +1,4 @@
----
-title: "The Linear Model"
-format: 
-  html:
-      code-overflow: wrap
-      code-fold: show
----
+# The Linear Model
 
 ::: callout-important
 ## Who Cares?
@@ -387,7 +381,7 @@ cor(presto$prestige, presto$education) # the correlation
 coef(zmod)[2] # the slope of our z-scored model
 ```
 
-Wow! We will chat more about this in the video below, and in lecture next week :) thanks for reading!
+See the video below for another example.
 
 ### Video Example : Age and Narcissism (Z-Scored)
 
