@@ -1,16 +1,11 @@
----
-title: "Linear Model : Categorical IV"
-format: 
-  html:
-      code-overflow: wrap
-      code-fold: show
----
-
-# Chapter Overview
+# The Linear Model : Categorical IV
 
 ::: column-screen
 ![](images/clipboard-2948302145.png)
 :::
+
+::: callout-important
+## Who Cares?
 
 This week, we will learn how to define and interpret a linear model when the predictor is categorical.
 
@@ -18,11 +13,14 @@ Often times, researchers want to group people into categories that represent bro
 
 These categorical variables highlight ways that people differ - there are real and important differences between people who own the means of production, and people who do the work. However, categorical variables can also exaggerate the differences between groups (e.g., both capitalists and workers probably love their children in similar ways) and can minimize individual differences within groups (e.g., workers can differ in terms of their income, their race, their attitudes about capitalism, etc.)
 
+:::
+
+
 # Part 1 : The Linear Model with a Categorical IV with Two Levels
 
 ## RECAP : Working With Categorical Factor and Levels
 
-It’s been a while since we focused on categorical variables, so let's review some terms as we work through an example.
+It’s been a few weeks since we focused on categorical variables, so let's review some terms as we work through an example.
 
 The specific groups of a categorical variable are called **levels**, and the broad name for the groups is called a **factor.** For example, in the “MBA Business Student Data” ([hormone_data.csv](https://www.dropbox.com/scl/fi/b2vq1yi5azwb5u8j7xe74/hormone_data.csv?rlkey=lv77ppuseg5cmqsy99pal55ct&dl=0)) researchers measure the variable **sex** as a categorical factor, with just two levels : **female** and **male**.
 
@@ -37,7 +35,6 @@ I can use the `plot()` function to illustrate this variable, and `summary()` fun
 
 ```{r}
 #| fig-cap: "Sex, Graphed and Summarized"
-#| column: margin
 plot(mba$sex)
 summary(mba$sex)
 ```
@@ -46,7 +43,7 @@ summary(mba$sex)
 
 The equation for a linear model with a categorical IV is identical to what we’ve seen before :
 
-$ \huge y_i = a + b_1 * X_i + \epsilon_i $
+$\huge y_i = a + b_1 * X_i + \epsilon_i$
 
 We are making a **prediction about some dependent variable** ($y_i$) from a **linear equation** that has an **intercept** ($a$, the starting place for our prediction), and then **a slope** ($b_1$ an adjustment we make) based on information about another **(independent) variable** ($x_i$).
 
@@ -56,7 +53,6 @@ Before we jump to the linear model, let’s graph our dependent variable using t
 
 ```{r}
 #| fig-cap: "Narcissism Variable, Graphed"
-#| column: margin
 hist(mba$NPI, col = 'black', bor = 'white', main = "", xlab = "Narcissism (NPI) Score", xlim = c(1,5))
 ```
 
@@ -183,7 +179,6 @@ R defaults to alphabetical order - because F (for Female) comes earlier in the a
 Let’s look at the graph. **The intercept** is the starting place for our predictions when all X values (the IV) are equal to zero. In this case, an X value of zero means that the individual is NOT male. The only other option in these data if the individual is NOT male is to be female. So the intercept - 3.01 - is the predicted Narcissism for someone who is female.
 
 ```{r}
-#| column: margin
 coef(mod)
 plot(mba$NPI, pch = 19, col = mba$sex, ylab = "Narcissism Score", xlab = "Index (Position in Dataset)",
      main = "Plot of Individual Narcissism Scores\nGrouped By Sex (Red = Male, Black = Female)")
@@ -309,21 +304,43 @@ And if I ask R to calculate the R2 value, I get the same result because the mode
 
 ## [CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE](https://docs.google.com/forms/d/e/1FAIpQLScDbKcyNYVWCVt-n3k8AT7xDSaUGwK-VYRgjxQ8iXPgZc3Hyg/viewform?usp=sf_link)
 
-## Another Example
+## Practice Quiz : Defining a Linear Model with a Categorical IV
 
 Let’s practice with another example : Professor wants to know whether there are sex differences in testosterone. Define a linear model to predict testosterone (DV = test) from sex (IV = sex). Graph the linear model, report the slope and R2 value from the linear model, and interpret what you learn.
 
 Try this on your own. There’s a key (and video key) below.
 
+### Practice Quiz Key
+
 ::: {.callout-tip collapse="true"}
-[Defining the Linear Model and Graphing the Relationship with plotmeans()](https://www.loom.com/share/909ad220c4d44d39886cd805eccbcb3f?sid=4e1d79e5-8b05-44f1-99cb-8fa9df914b34)
+#### Defining the Linear Model and Graphing the Relationship with plotmeans()
+
+:::: {style="position: relative; padding-bottom: 62.5%; height: 0;"}
+
+<iframe src="https://www.loom.com/embed/909ad220c4d44d39886cd805eccbcb3f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+
+</iframe>
+
+::::
 
 ```{r}
 test.mod <- lm(test ~ sex, data = mba)
 coef(test.mod)
+plotmeans(test ~ sex, data = mba, connect = F)
 ```
 
-[Graphing the Relationship: Conceptual Example](https://www.loom.com/share/3e1e386827354ab2a5ac5a0731f46b66?sid=8c7e3d8c-b1f9-479e-a948-ba90c75e0f5b)
+:::
+
+::: {.callout-tip collapse="true"}
+#### Graphing the Relationship: Conceptual Example
+
+:::: {style="position: relative; padding-bottom: 62.5%; height: 0;"}
+
+<iframe src="https://www.loom.com/embed/3e1e386827354ab2a5ac5a0731f46b66" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+
+</iframe>
+::::
+
 
 ```{r}
 plot(mba$test, col = mba$sex)
@@ -331,7 +348,22 @@ abline(h = coef(test.mod)[1], lwd = 5, col = "black")
 abline(h = coef(test.mod)[1] + coef(test.mod)[2], lwd = 5, col = "red")
 ```
 
-[Interpreting R2](https://www.loom.com/share/d68a666340504fee871228d4d188ce54?sid=808010d7-1127-4177-8969-24df13936be1)
+:::
+
+::: {.callout-tip collapse="true"}
+
+
+#### Interpreting R^2
+
+
+
+:::: {style="position: relative; padding-bottom: 62.5%; height: 0;"}
+
+<iframe src="https://www.loom.com/embed/d68a666340504fee871228d4d188ce54" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+
+</iframe>
+::::
+
 
 ```{r}
 summary(test.mod)$r.squared
@@ -342,7 +374,7 @@ summary(test.mod)$r.squared
 
 ### Example : The Mascot Dataset
 
-Last lecture, we saw that there was a relationship between how much explicit prejudice against indigenous groups people reported, and their love for a native american mascot.
+Consider the example below, from a research study that reported a relationship between how much explicit prejudice against indigenous groups people reported, and people's (positive) attitudes toward a Native American mascot.
 
 ![](images/7_mascotgraph.png){fig-align="center"}
 

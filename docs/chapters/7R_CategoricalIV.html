@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Linear Model : Categorical IV – Why Statistics?</title>
+<title>The Linear Model : Categorical IV – Why Statistics?</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -141,7 +141,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -177,7 +177,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/7R_CategoricalIV.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model : Categorical IV</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/7R_CategoricalIV.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Linear Model : Categorical IV</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -260,7 +260,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/7R_CategoricalIV.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model : Categorical IV</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Linear Model : Categorical IV</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -339,8 +339,7 @@ window.Quarto = {
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
-  <li><a href="#chapter-overview" id="toc-chapter-overview" class="nav-link active" data-scroll-target="#chapter-overview">Chapter Overview</a></li>
-  <li><a href="#part-1-the-linear-model-with-a-categorical-iv-with-two-levels" id="toc-part-1-the-linear-model-with-a-categorical-iv-with-two-levels" class="nav-link" data-scroll-target="#part-1-the-linear-model-with-a-categorical-iv-with-two-levels">Part 1 : The Linear Model with a Categorical IV with Two Levels</a>
+  <li><a href="#part-1-the-linear-model-with-a-categorical-iv-with-two-levels" id="toc-part-1-the-linear-model-with-a-categorical-iv-with-two-levels" class="nav-link active" data-scroll-target="#part-1-the-linear-model-with-a-categorical-iv-with-two-levels">Part 1 : The Linear Model with a Categorical IV with Two Levels</a>
   <ul class="collapse">
   <li><a href="#recap-working-with-categorical-factor-and-levels" id="toc-recap-working-with-categorical-factor-and-levels" class="nav-link" data-scroll-target="#recap-working-with-categorical-factor-and-levels">RECAP : Working With Categorical Factor and Levels</a></li>
   <li><a href="#a-conceptual-example" id="toc-a-conceptual-example" class="nav-link" data-scroll-target="#a-conceptual-example">A Conceptual Example</a></li>
@@ -349,7 +348,10 @@ window.Quarto = {
   <li><a href="#r2-and-the-linear-model-with-a-categorical-iv" id="toc-r2-and-the-linear-model-with-a-categorical-iv" class="nav-link" data-scroll-target="#r2-and-the-linear-model-with-a-categorical-iv"><span class="math inline">\(R^2\)</span> and the Linear Model with a Categorical IV</a></li>
   <li><a href="#re-leveling-a-2-level-factor-variable." id="toc-re-leveling-a-2-level-factor-variable." class="nav-link" data-scroll-target="#re-leveling-a-2-level-factor-variable.">Re-Leveling a 2-Level Factor Variable.</a></li>
   <li><a href="#check-in-to-assess-your-understanding-here" id="toc-check-in-to-assess-your-understanding-here" class="nav-link" data-scroll-target="#check-in-to-assess-your-understanding-here">CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE</a></li>
-  <li><a href="#another-example" id="toc-another-example" class="nav-link" data-scroll-target="#another-example">Another Example</a></li>
+  <li><a href="#practice-quiz-defining-a-linear-model-with-a-categorical-iv" id="toc-practice-quiz-defining-a-linear-model-with-a-categorical-iv" class="nav-link" data-scroll-target="#practice-quiz-defining-a-linear-model-with-a-categorical-iv">Practice Quiz : Defining a Linear Model with a Categorical IV</a>
+  <ul class="collapse">
+  <li><a href="#practice-quiz-key" id="toc-practice-quiz-key" class="nav-link" data-scroll-target="#practice-quiz-key">Practice Quiz Key</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#part-2-the-four-reasons-why-youd-observe-a-pattern-in-the-data" id="toc-part-2-the-four-reasons-why-youd-observe-a-pattern-in-the-data" class="nav-link" data-scroll-target="#part-2-the-four-reasons-why-youd-observe-a-pattern-in-the-data">Part 2 : The “Four Reasons” Why You’d Observe a Pattern in the Data</a>
   <ul class="collapse">
@@ -362,9 +364,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/7R_CategoricalIV.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Linear Model : Categorical IV</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/6R_LinearModels.html">Predicting People</a></li><li class="breadcrumb-item"><a href="../chapters/7R_CategoricalIV.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Linear Model : Categorical IV</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Linear Model : Categorical IV</h1>
+<h1 class="title">The Linear Model : Categorical IV</h1>
 </div>
 
 
@@ -381,75 +383,72 @@ window.Quarto = {
 </header>
 
 
-<section id="chapter-overview" class="level1 page-columns page-full">
-<h1>Chapter Overview</h1>
 <div class="column-screen">
 <p><img src="images/clipboard-2948302145.png" class="img-fluid"></p>
 </div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Who Cares?
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>This week, we will learn how to define and interpret a linear model when the predictor is categorical.</p>
 <p>Often times, researchers want to group people into categories that represent broad and important differences. For example researchers or <a href="https://en.wikipedia.org/wiki/Man_at_the_Crossroads">artists</a> looking to understand social class might divide individuals into groups like capitalists and workers.</p>
 <p>These categorical variables highlight ways that people differ - there are real and important differences between people who own the means of production, and people who do the work. However, categorical variables can also exaggerate the differences between groups (e.g., both capitalists and workers probably love their children in similar ways) and can minimize individual differences within groups (e.g., workers can differ in terms of their income, their race, their attitudes about capitalism, etc.)</p>
-</section>
-<section id="part-1-the-linear-model-with-a-categorical-iv-with-two-levels" class="level1 page-columns page-full">
+</div>
+</div>
+<section id="part-1-the-linear-model-with-a-categorical-iv-with-two-levels" class="level1">
 <h1>Part 1 : The Linear Model with a Categorical IV with Two Levels</h1>
-<section id="recap-working-with-categorical-factor-and-levels" class="level2 page-columns page-full">
+<section id="recap-working-with-categorical-factor-and-levels" class="level2">
 <h2 class="anchored" data-anchor-id="recap-working-with-categorical-factor-and-levels">RECAP : Working With Categorical Factor and Levels</h2>
-<p>It’s been a while since we focused on categorical variables, so let’s review some terms as we work through an example.</p>
+<p>It’s been a few weeks since we focused on categorical variables, so let’s review some terms as we work through an example.</p>
 <p>The specific groups of a categorical variable are called <strong>levels</strong>, and the broad name for the groups is called a <strong>factor.</strong> For example, in the “MBA Business Student Data” (<a href="https://www.dropbox.com/scl/fi/b2vq1yi5azwb5u8j7xe74/hormone_data.csv?rlkey=lv77ppuseg5cmqsy99pal55ct&amp;dl=0">hormone_data.csv</a>) researchers measure the variable <strong>sex</strong> as a categorical factor, with just two levels : <strong>female</strong> and <strong>male</strong>.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mba <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Dropbox/!WHY STATS/Chapter Datasets/Hormone Data/hormone_dataset.csv"</span>, <span class="at">stringsAsFactors =</span> T)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mba<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mba<span class="sc">$</span>sex)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(mba<span class="sc">$</span>sex) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"male"</span>, <span class="st">"female"</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>mba<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">relevel</span>(mba<span class="sc">$</span>sex, <span class="at">ref =</span> <span class="st">"female"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
 <p>I can use the <code>plot()</code> function to illustrate this variable, and <code>summary()</code> function to report the number of individuals in each group.</p>
-<div class="cell page-columns page-full">
-<details open="" class="code-fold">
-<summary>Code</summary>
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-
-<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Sex, Graphed and Summarized</figcaption>
 </figure>
 </div>
-</div></div><details open="" class="code-fold">
-<summary>Code</summary>
+</div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mba<span class="sc">$</span>sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>female   male 
     35     87 </code></pre>
 </div>
 </div>
 </section>
-<section id="a-conceptual-example" class="level2 page-columns page-full">
+<section id="a-conceptual-example" class="level2">
 <h2 class="anchored" data-anchor-id="a-conceptual-example">A Conceptual Example</h2>
 <p>The equation for a linear model with a categorical IV is identical to what we’ve seen before :</p>
-<p>$ y_i = a + b_1 * X_i + _i $</p>
+<p><span class="math inline">\(\huge y_i = a + b_1 * X_i + \epsilon_i\)</span></p>
 <p>We are making a <strong>prediction about some dependent variable</strong> (<span class="math inline">\(y_i\)</span>) from a <strong>linear equation</strong> that has an <strong>intercept</strong> (<span class="math inline">\(a\)</span>, the starting place for our prediction), and then <strong>a slope</strong> (<span class="math inline">\(b_1\)</span> an adjustment we make) based on information about another <strong>(independent) variable</strong> (<span class="math inline">\(x_i\)</span>).</p>
 <p>For this first example, let’s define a model to predict narcissism (how self-centered and egotistical a person says they are) from the person’s sex.</p>
 <p>Before we jump to the linear model, let’s graph our dependent variable using the hist() function, since the variable is numeric. In the mba dataset, NPI (Narcissistic Personality Inventory) is what researchers defined for Narcissism</p>
-<div class="cell page-columns page-full">
-<details open="" class="code-fold">
-<summary>Code</summary>
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mba<span class="sc">$</span>NPI, <span class="at">col =</span> <span class="st">'black'</span>, <span class="at">bor =</span> <span class="st">'white'</span>, <span class="at">main =</span> <span class="st">""</span>, <span class="at">xlab =</span> <span class="st">"Narcissism (NPI) Score"</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-
-<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Narcissism Variable, Graphed</figcaption>
 </figure>
 </div>
-</div></div></div>
+</div>
+</div>
 <p>The data look good - I don’t see any outliers or problems in the data, and while it seems a little odd nobody said they were a 1 in terms of narcissism, the distribution is mostly normal and maybe everyone’s a little narcissistic?</p>
 <p>In the graph below, I’m using the plot function to illustrate the individual narcissism scores.</p>
 <p>Each individual narcissism score is a dot defined by the value on the y-axis, and their index (position in the dataset) is located on the x-axis. So the individual in the top left corner has a narcissism score of around 4.45, and was one of the first people to provide data (the index is not super relevant).</p>
@@ -459,12 +458,9 @@ window.Quarto = {
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Plot of Individual Narcissism Scores"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(mba<span class="sc">$</span>NPI, <span class="at">na.rm =</span> T), <span class="at">lwd =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -476,12 +472,9 @@ window.Quarto = {
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Plot of Individual Narcissism Scores"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(mba<span class="sc">$</span>NPI, <span class="at">na.rm =</span> T), <span class="at">lwd =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -497,11 +490,8 @@ window.Quarto = {
 <p>The graph below illustrates the same data, however this time I’ve asked R to color the dots based on the variable sex. In this graph, red dots illustrate the narcissism score for males in the dataset, the black dots illustrate the narcissism score for females in the dataset. Narcissism scores are on the y-axis, and the x-axis again indicates the index of the individual.</p>
 <p>Take a moment and look at this graph - what do you observe?</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> mba<span class="sc">$</span>sex, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Plot of Individual Narcissism Scores</span><span class="sc">\n</span><span class="st">Grouped By Sex (Red = Male, Black = Female)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -511,7 +501,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -520,7 +510,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>I see that there are more red dots than black dots. This matches what I know about the variable ‘sex’ - there were more Male MBA students than Female MBA students in the data.</li>
@@ -575,23 +565,17 @@ window.Quarto = {
 <p>For people who are female, we can predict a narcissism score of around 3 (where the black line hits the y-axis). Not every female has this exact same narcissism score, but the line defines the trend.</p>
 <p>And now, we can calculate the difference between these two groups - 0.3 - as the slope - the change we make in our predictions of narcissism depending on whether the person is male or female. Wow.</p>
 </section>
-<section id="connecting-a-linear-model-to-the-graph" class="level2 page-columns page-full">
+<section id="connecting-a-linear-model-to-the-graph" class="level2">
 <h2 class="anchored" data-anchor-id="connecting-a-linear-model-to-the-graph">Connecting a Linear Model to the Graph</h2>
 <p>Okay, let’s dig into what’s really going on here with the model. To define these lines, I ran the same function we used last week - `lm()`.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(NPI <span class="sc">~</span> sex, <span class="at">data =</span> mba) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
 <ul>
 <li>This code defines an object (that I’m calling mod, but you can call it whatever you want) as a linear model (lm), predicting Narcissism (NPI) from the variable sex, using the mba dataset. Nothing is show, because we have just defined the model.</li>
 </ul>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)     sexmale 
   3.0110294   0.2627206 </code></pre>
@@ -623,30 +607,24 @@ window.Quarto = {
 </tbody>
 </table>
 <p>Let’s look at the graph. <strong>The intercept</strong> is the starting place for our predictions when all X values (the IV) are equal to zero. In this case, an X value of zero means that the individual is NOT male. The only other option in these data if the individual is NOT male is to be female. So the intercept - 3.01 - is the predicted Narcissism for someone who is female.</p>
-<div class="cell page-columns page-full">
-<details open="" class="code-fold">
-<summary>Code</summary>
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)     sexmale 
   3.0110294   0.2627206 </code></pre>
 </div>
-<details open="" class="code-fold">
-<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> mba<span class="sc">$</span>sex, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Plot of Individual Narcissism Scores</span><span class="sc">\n</span><span class="st">Grouped By Sex (Red = Male, Black = Female)"</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'black'</span>)</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(mod)[<span class="dv">2</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-
-<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
-</div></div></div>
+</div>
+</div>
 <p>The slope is the adjustment we make to our prediction when X changes by 1, which means we refer to the males in the dataset. This means we add 0.26 to our starting place = 3.01 + .26 = 3.27 = where the horizontal red line is drawn = the predicted value of Narcissism for males in the dataset.</p>
 </section>
 <section id="a-simpler-way-to-illustrate-a-model-with-a-categorical-iv-the-plotmeans-function" class="level2">
@@ -661,24 +639,7 @@ window.Quarto = {
 </div>
 <p>Once I get the gplots library working, I can use the plotmeans() function. This works similar to plot(), in that I define a DV, IV, and dataset. It can also take familiar arguments (like changing the title, axis labels, and axis limits). Below is the default graph you see when I run the most basic code :&nbsp;</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gplots)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'gplots' was built under R version 4.4.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
----------------------
-gplots 3.3.0 loaded:
-  * Use citation('gplots') for citation info.
-  * Homepage: https://talgalili.github.io/gplots/
-  * Report issues: https://github.com/talgalili/gplots/issues
-  * Ask questions: https://stackoverflow.com/questions/tagged/gplots
-  * Suppress this message with: suppressPackageStartupMessages(library(gplots))
----------------------</code></pre>
-</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'gplots'</code></pre>
@@ -688,10 +649,7 @@ Attaching package: 'gplots'</code></pre>
 
     lowess</code></pre>
 </div>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(NPI <span class="sc">~</span> sex, <span class="at">data =</span> mba)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(NPI <span class="sc">~</span> sex, <span class="at">data =</span> mba)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -709,11 +667,8 @@ Attaching package: 'gplots'</code></pre>
 </ul>
 <p>Below is a graph I might run to “clean-up” some of these issues; I’ve removed the line illustrating the slope, expanded the range of the y-axis, and renamed the variables.&nbsp;</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(NPI <span class="sc">~</span> sex, <span class="at">data =</span> mba, <span class="at">connect =</span> F, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Sex"</span>,</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(NPI <span class="sc">~</span> sex, <span class="at">data =</span> mba, <span class="at">connect =</span> F, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Sex"</span>,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in arrows(x, li, x, pmax(y - gap, li), col = barcol, lwd = lwd, :
 zero-length arrow is of indeterminate angle and so skipped</code></pre>
@@ -738,17 +693,14 @@ zero-length arrow is of indeterminate angle and so skipped</code></pre>
 <p>The principle behind <span class="math inline">\(R^2\)</span> for a linear model with a categorical IV is the same - we are looking to see <em>how much less residual error there is when we use the model to make predictions of our DV</em>, compared to when we use the mean when making predictions of our DV.</p>
 <p>You can try to visualize this decrease in the graphs below.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Residual Errors Using the Mean"</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(mba<span class="sc">$</span>NPI, <span class="at">na.rm =</span> T), <span class="at">lwd =</span> <span class="dv">5</span>)</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> mba<span class="sc">$</span>sex, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Residual Errors Using the Model"</span>)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'black'</span>)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(mod)[<span class="dv">2</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Residual Errors Using the Mean"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(mba<span class="sc">$</span>NPI, <span class="at">na.rm =</span> T), <span class="at">lwd =</span> <span class="dv">5</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>NPI, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> mba<span class="sc">$</span>sex, <span class="at">ylab =</span> <span class="st">"Narcissism Score"</span>, <span class="at">xlab =</span> <span class="st">"Index (Position in Dataset)"</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Residual Errors Using the Model"</span>)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'black'</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(mod)[<span class="dv">2</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">'red'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -763,44 +715,29 @@ zero-length arrow is of indeterminate angle and so skipped</code></pre>
 </ul>
 <p>I can calculate these residuals, like we did in the last chapter for a linear model with a numeric IV.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>residual <span class="ot">&lt;-</span> mba<span class="sc">$</span>NPI <span class="sc">-</span> <span class="fu">mean</span>(mba<span class="sc">$</span>NPI, <span class="at">na.rm =</span> T)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>total.residual <span class="ot">&lt;-</span> <span class="fu">sum</span>(residual<span class="sc">^</span><span class="dv">2</span>, <span class="at">na.rm =</span> T) <span class="co"># 32.48</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>total.residual</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>residual <span class="ot">&lt;-</span> mba<span class="sc">$</span>NPI <span class="sc">-</span> <span class="fu">mean</span>(mba<span class="sc">$</span>NPI, <span class="at">na.rm =</span> T)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>total.residual <span class="ot">&lt;-</span> <span class="fu">sum</span>(residual<span class="sc">^</span><span class="dv">2</span>, <span class="at">na.rm =</span> T) <span class="co"># 32.48</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>total.residual</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 32.46321</code></pre>
 </div>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>model.residual <span class="ot">&lt;-</span> <span class="fu">sum</span>(mod<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>model.residual</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>model.residual <span class="ot">&lt;-</span> <span class="fu">sum</span>(mod<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>model.residual</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 30.81636</code></pre>
 </div>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>total.residual <span class="sc">-</span> model.residual</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>total.residual <span class="sc">-</span> model.residual</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.646843</code></pre>
 </div>
 </div>
 <p>It’s a pretty small difference in residual errors, and plugging these values into our equation of <span class="math inline">\(R^2\)</span> shows that our model really only reduces residual error by about 5% (compared to the mean).</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>(total.residual <span class="sc">-</span> model.residual)<span class="sc">/</span>model.residual</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(total.residual <span class="sc">-</span> model.residual)<span class="sc">/</span>model.residual</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.05344054</code></pre>
 </div>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)<span class="sc">$</span>r.squared <span class="co"># R^2 the easy way</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)<span class="sc">$</span>r.squared <span class="co"># R^2 the easy way</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.05072953</code></pre>
 </div>
@@ -812,17 +749,11 @@ zero-length arrow is of indeterminate angle and so skipped</code></pre>
 <p>Okay, last thing. Remember how I write that the order of the levels (female = 0, male = 1) is arbitrary, and R defaults to alphabetical order? Sometimes you want to change the order around - in this example, make male = 0 and female = 1.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <p>This is called releveling. When you relevel, the data do not change - just the order of the data changes.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(mba<span class="sc">$</span>sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(mba<span class="sc">$</span>sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "female" "male"  </code></pre>
 </div>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">relevel</span>(mba<span class="sc">$</span>sex, <span class="at">ref =</span> <span class="st">"male"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">relevel</span>(mba<span class="sc">$</span>sex, <span class="at">ref =</span> <span class="st">"male"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1] male   male   male   male   male   female male   male   male   male  
  [11] male   male   male   male   male   male   male   male   male   male  
@@ -842,21 +773,15 @@ Levels: male female</code></pre>
 </div>
 <p>Note that this time at the bottom of the output, R is listing male as the first level, and female as the second level. To save the releveling change, I’m going to define a new variable (sexR) that is part of the mba dataset. I can then use this new, releveled variable, in my linear model and create a graph.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|fig-column: margin</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>mba<span class="sc">$</span>sexR <span class="ot">&lt;-</span> <span class="fu">relevel</span>(mba<span class="sc">$</span>sex, <span class="at">ref =</span> <span class="st">"male"</span>)</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>modR <span class="ot">&lt;-</span> <span class="fu">lm</span>(NPI <span class="sc">~</span> sexR, <span class="at">data =</span> mba)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(modR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|fig-column: margin</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>mba<span class="sc">$</span>sexR <span class="ot">&lt;-</span> <span class="fu">relevel</span>(mba<span class="sc">$</span>sex, <span class="at">ref =</span> <span class="st">"male"</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>modR <span class="ot">&lt;-</span> <span class="fu">lm</span>(NPI <span class="sc">~</span> sexR, <span class="at">data =</span> mba)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(modR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)  sexRfemale 
   3.2737500  -0.2627206 </code></pre>
 </div>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(NPI <span class="sc">~</span> sexR, <span class="at">data =</span> mba)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(NPI <span class="sc">~</span> sexR, <span class="at">data =</span> mba)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -864,10 +789,7 @@ Levels: male female</code></pre>
 </figure>
 </div>
 </div>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modR)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modR)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.05072953</code></pre>
 </div>
@@ -879,42 +801,67 @@ Levels: male female</code></pre>
 <section id="check-in-to-assess-your-understanding-here" class="level2">
 <h2 class="anchored" data-anchor-id="check-in-to-assess-your-understanding-here"><a href="https://docs.google.com/forms/d/e/1FAIpQLScDbKcyNYVWCVt-n3k8AT7xDSaUGwK-VYRgjxQ8iXPgZc3Hyg/viewform?usp=sf_link">CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE</a></h2>
 </section>
-<section id="another-example" class="level2">
-<h2 class="anchored" data-anchor-id="another-example">Another Example</h2>
+<section id="practice-quiz-defining-a-linear-model-with-a-categorical-iv" class="level2">
+<h2 class="anchored" data-anchor-id="practice-quiz-defining-a-linear-model-with-a-categorical-iv">Practice Quiz : Defining a Linear Model with a Categorical IV</h2>
 <p>Let’s practice with another example : Professor wants to know whether there are sex differences in testosterone. Define a linear model to predict testosterone (DV = test) from sex (IV = sex). Graph the linear model, report the slope and R2 value from the linear model, and interpret what you learn.</p>
 <p>Try this on your own. There’s a key (and video key) below.</p>
+<section id="practice-quiz-key" class="level3">
+<h3 class="anchored" data-anchor-id="practice-quiz-key">Practice Quiz Key</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>Defining the Linear Model and Graphing the Relationship with plotmeans()
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="https://www.loom.com/share/909ad220c4d44d39886cd805eccbcb3f?sid=4e1d79e5-8b05-44f1-99cb-8fa9df914b34">Defining the Linear Model and Graphing the Relationship with plotmeans()</a></p>
+<div style="position: relative; padding-bottom: 62.5%; height: 0;">
+<iframe src="https://www.loom.com/embed/909ad220c4d44d39886cd805eccbcb3f" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+</iframe>
+</div>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>test.mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(test <span class="sc">~</span> sex, <span class="at">data =</span> mba)</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(test.mod)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>test.mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(test <span class="sc">~</span> sex, <span class="at">data =</span> mba)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(test.mod)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)     sexmale 
    41.39556    49.28841 </code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(test <span class="sc">~</span> sex, <span class="at">data =</span> mba, <span class="at">connect =</span> F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="7R_CategoricalIV_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<p><a href="https://www.loom.com/share/3e1e386827354ab2a5ac5a0731f46b66?sid=8c7e3d8c-b1f9-479e-a948-ba90c75e0f5b">Graphing the Relationship: Conceptual Example</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Graphing the Relationship: Conceptual Example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="position: relative; padding-bottom: 62.5%; height: 0;">
+<iframe src="https://www.loom.com/embed/3e1e386827354ab2a5ac5a0731f46b66" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+</iframe>
+</div>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>test, <span class="at">col =</span> mba<span class="sc">$</span>sex)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(test.mod)[<span class="dv">1</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">"black"</span>)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(test.mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(test.mod)[<span class="dv">2</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mba<span class="sc">$</span>test, <span class="at">col =</span> mba<span class="sc">$</span>sex)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(test.mod)[<span class="dv">1</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">"black"</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">coef</span>(test.mod)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(test.mod)[<span class="dv">2</span>], <span class="at">lwd =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -923,12 +870,27 @@ Tip
 </div>
 </div>
 </div>
-<p><a href="https://www.loom.com/share/d68a666340504fee871228d4d188ce54?sid=808010d7-1127-4177-8969-24df13936be1">Interpreting R2</a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Interpreting R^2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="position: relative; padding-bottom: 62.5%; height: 0;">
+<iframe src="https://www.loom.com/embed/d68a666340504fee871228d4d188ce54" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+</iframe>
+</div>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(test.mod)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(test.mod)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3469868</code></pre>
 </div>
@@ -938,11 +900,12 @@ Tip
 </div>
 </section>
 </section>
+</section>
 <section id="part-2-the-four-reasons-why-youd-observe-a-pattern-in-the-data" class="level1">
 <h1>Part 2 : The “Four Reasons” Why You’d Observe a Pattern in the Data</h1>
 <section id="example-the-mascot-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="example-the-mascot-dataset">Example : The Mascot Dataset</h3>
-<p>Last lecture, we saw that there was a relationship between how much explicit prejudice against indigenous groups people reported, and their love for a native american mascot.</p>
+<p>Consider the example below, from a research study that reported a relationship between how much explicit prejudice against indigenous groups people reported, and people’s (positive) attitudes toward a Native American mascot.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/7_mascotgraph.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -1002,7 +965,7 @@ Tip
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1011,7 +974,7 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p><strong>Causation.</strong> Conscientiousness causes people to die less early; makes people more likely to go to the doctor; follow safety rules (wear helmets!); etc than people low in conscientiousness.</p></li>
