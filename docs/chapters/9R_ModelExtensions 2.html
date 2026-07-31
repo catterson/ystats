@@ -849,7 +849,7 @@ F-statistic: 260.8 on 1 and 100 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>I would then reference or write about the results in the following way :</p>
-<p><em>In Model 1, I found a strong relationship between Job Type and Prestige (</em><span class="math inline">\(R^2\)</span> = .70). Specifically, professional workers were rated as almost 2 standard deviations higher in prestige than blue collar workers (<span class="math inline">\(\beta\)</span> = 1.89, 95% CI = [1.6, 2.1], p &lt; .001). White collar workers were also rated as significantly higher in prestige than blue collar workers (<span class="math inline">\(\beta\)</span> = .39, 95% CI = [0.1, .07]). These differences are illustrated in Figure 1 below.</p>
+<p><em>In Model 1, I found a strong relationship between Job Type and Prestige (<span class="math inline">\(R^2\)</span> = .70). Specifically, professional workers were rated as almost 2 standard deviations higher in prestige than blue collar workers (<span class="math inline">\(\beta\)</span> = 1.89, 95% CI = [1.6, 2.1], p &lt; .001). White collar workers were also rated as significantly higher in prestige than blue collar workers (<span class="math inline">\(\beta\)</span> = .39, 95% CI = [0.1, .07]). These differences are illustrated in Figure 1 below.</em></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotmeans</span>(prestige <span class="sc">~</span> type, <span class="at">data =</span> presto, <span class="at">connect =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">xlab =</span> <span class="st">"Job Type"</span>, <span class="at">ylab =</span> <span class="st">"Prestige Rating"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -877,16 +877,8 @@ F-statistic: 260.8 on 1 and 100 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </div>
-<p><em>Together, these data suggest that both job type and the average years of education required for a job are strong predictors of how much prestige the job has.</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Okay, I hope that helped?! Let me know on Discord if you still have questions. However, I’ve recorded a video key for this week’s lab assignment that you can use as a guide, and I hope that this guide helps!</p>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>You may be thinking that education is also related to job type (this is something you can test in Quiz 7!). And if education IS related to job type, then maybe part of the reason that job type is related to prestige is because different types of jobs have different education requirements, and it’s education that’s <u><strong><em>really</em></strong></u> related to prestige. Or maybe it’s the other way around, and the only reason people’s fancy degrees seems related to prestige is because they are associated with certain job types? We will explore these questions later in the year when we get to <em>Multiple Regression.</em><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->

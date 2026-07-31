@@ -1,26 +1,42 @@
-# More Levels and Experiments
+# Extensions and Presentations of the Linear Model
+
+![sf ballet dancers madeline woo and joseph walsh](images/clipboard-1247635049.png){fig-align="center" width="499"}
+
+::: callout-important
+## Who Cares?
+
+This week, we will continue practicing how to work with, interpret, and compare linear models across a variety of types of data. Specifically, you'll learn :
+
+- how to interpret a linear model when the IV is categorical with more than three levels.
+
+- how (and why) to interpret a linear model when the variables have been z-scored (spoiler: this is a correlation)
+
+- how to quickly export a comparison of multiple linear models in a way that looks nicer that default R output :)
+:::
 
 ## Part 1 : The Linear Model with a Categorical IV…with THREE+ Levels
 
+::: callout-important
+### GOAL
+
 In Chapter 7, we showed how the linear model could be adapted to predict a numeric DV when the IV was a categorical variable with two levels. And guess what? When the IV has more than three levels, we can use the same linear model. Hooray! The only difference is now you have multiple levels that differ from the intercept (or “reference group”).
+:::
 
-Let's mix it up, and see if some good ol' fashioned YOUTUBE VIDEOS OF A DISEMBODIED VOICE can explain this.
+Let's see if some good ol' fashioned YOUTUBE VIDEOS OF A DISEMBODIED VOICE can explain this.
 
-```{r}
-#| include: false
-library(car)
-library(gplots)
-
-presto <- Prestige
-```
-
-### **Video 1 : Defining the Model with the lm() function**
+### Video 1 : Defining the Model with the lm() function
 
 - [**here’s a link to R Script (as used in the video)**](https://www.dropbox.com/scl/fi/zftlvmxn81onija9awafk/7_3LevelModelQuiz7.R?rlkey=5qxhanq64lbvmtya7du6ubypf&dl=0)
 
 {{< video https://youtu.be/pTnWxUq9opE >}}
 
 ```{r}
+#| message: false
+#| warning: false
+library(car)
+library(gplots)
+presto <- Prestige
+
 par(mfrow = c(1,2))
 hist(presto$prestige)
 plot(presto$type)
@@ -41,21 +57,21 @@ coef(mod)
 
 #### **Using the Equation and Dummy Coding to Generate Predicted Values**
 
-+----------+-----------------+------------+----------+-------------------------+-----------------+
-|          |                 |            |          |                         |                 |
-+==========+=================+============+==========+=========================+=================+
-|          | (the intercept) | X1         | X2       | Calculations            | Predicted Value |
-|          |                 |            |          |                         |                 |
-|          | **35.5**        | (typeprof) | (typewc) |                         |                 |
-|          |                 |            |          |                         |                 |
-|          |                 | **32.3**   | **6.7**  |                         |                 |
-+----------+-----------------+------------+----------+-------------------------+-----------------+
-| bc       | 1               | 0          | 0        | 35.5 + 32.3\*0 + 6.7\*0 | = 35.5          |
-+----------+-----------------+------------+----------+-------------------------+-----------------+
-| prof     | 1               | 1          | 0        | 35.5 + 32.3\*1 + 6.7\*0 | = 67.8          |
-+----------+-----------------+------------+----------+-------------------------+-----------------+
-| wc       | 1               | 0          | 1        | 35.5 + 32.3\*0 + 6.7\*1 | = 42.2          |
-+----------+-----------------+------------+----------+-------------------------+-----------------+
++--------------------------+-----------------+------------+----------+-------------------------+---------------------+
+|                          |                 |            |          |                         |                     |
++==========================+=================+============+==========+=========================+=====================+
+|                          | **X0**          | **X1**     | **X2**   | **Calculations**        | **Predicted Value** |
+|                          |                 |            |          |                         |                     |
+|                          | (the intercept) | (typeprof) | (typewc) |                         |                     |
++--------------------------+-----------------+------------+----------+-------------------------+---------------------+
+| **statistic**            | **35.5**        | **32.3**   | **6.7**  |                         |                     |
++--------------------------+-----------------+------------+----------+-------------------------+---------------------+
+| predicted value for bc   | 1               | 0          | 0        | 35.5 + 32.3\*0 + 6.7\*0 | = 35.5              |
++--------------------------+-----------------+------------+----------+-------------------------+---------------------+
+| predicted value for prof | 1               | 1          | 0        | 35.5 + 32.3\*1 + 6.7\*0 | = 67.8              |
++--------------------------+-----------------+------------+----------+-------------------------+---------------------+
+| predicted value for wc   | 1               | 0          | 1        | 35.5 + 32.3\*0 + 6.7\*1 | = 42.2              |
++--------------------------+-----------------+------------+----------+-------------------------+---------------------+
 
 #### **Yes, Professor, A Picture is Worth....1000 Words.**
 
@@ -69,7 +85,7 @@ abline(h = coef(mod)[1], col = 'black', lwd = 5) # blue collar
 plotmeans(prestige ~ type, data = presto, connect = FALSE)
 ```
 
-### **Video 3 : Releveling the Variable**
+### **Video 3 : Re-Leveling the Variable**
 
 {{< video https://youtu.be/dXtLevWv4WU >}}
 
@@ -80,7 +96,7 @@ plotmeans(prestige ~ typeR, data = presto, connect = FALSE)
 coef(mod2)
 ```
 
-### **Video 4 :** $R^2$ **for a Categorical Model**
+### **Video 4 :** $R^2$ **for a Categorical Model with 3-Levels.**
 
 {{< video https://youtu.be/qebJ3AH6r3I>}}
 
@@ -97,10 +113,20 @@ abline(h = coef(mod)[1], col = 'black', lwd = 5) # blue collar
 
 ## [**CHECK-IN TO ASSESS YOUR UNDERSTANDING HERE**](https://docs.google.com/forms/d/e/1FAIpQLScyhL8OaHrdnmFXc36O6czzfkK1h85ka-XqIV9hWrWjwv5I-A/viewform?usp=sf_link) **\[no r required\]**
 
-# Part 3 : Interpreting Models with the Z-Score
+## Part 2 : Interpreting Models with the Z-Score
+
+In a linear model, the slope describes the relationship between the two variables in whatever units the DV and the IV were measured in. Sometimes, these units can interfere with our interpretation of a linear model, and so we will want to transform the units in order to improve our interpretation.
+
+For example, knowing that the relationship between years of education and income has a slope of b = 12870 might seem really large, but if the units of income are measured in 1/10 of a penny, then the "large" slope would be misleading. If the units were in some cryptocurrency that had units of indeterminate size because it's made up, then the slope would be totally meaningless.
+
+There are different ways to transform the units of a variable to help improve the interpretation. For example, our slope of b = 12870 in units of 1/10 a penny could be divided by 1000 to be translated into a slope of b = 12.870 in units of dollars.
+
+However, sometimes researchers want to standardize the units of measurement for a variable so they can be compared across models and studies.
+
+Hopefully, the idea of "standardizing" a variable feels somewhat familiar, as it's the basis for the z-score that we learned about in Chapter 4.
 
 ::: {.callout-warning collapse="false"}
-## RECAP : Uhhh…can you re-explain Z-Scoring Professor???
+### RECAP : Uhhh…professor I do not remember what a z-score is. Can you please re-explain z-scoring???
 
 A z-score describes how far an individual score falls above and below the mean (a residual!) in units of standard deviation. Z-scores are used to help give context to data - how far above or below the average is an individual (their distance from the mean), compared to the standard deviation (the average amount that people differ from the mean).
 
@@ -111,16 +137,16 @@ If you learn the standard deviation of income on Jeff Bezos’ Mars ™ is 12, t
 But if the standard deviation is 1200, then your z-score = .1, which means you are only a tenth of a standard deviation above average, which means that you will be lumped with the masses on Jeff Bezos’ Mars - slurping recycled air with the rest of us.
 :::
 
-## Why Z-Score in a Model
+### Why Z-Score in a Model
 
-In a linear model, the slope describes the relationship between the two variables in whatever units the DV and the IV were measured in. So in our prestige example, the slope of 5.36 means that for every 1-unit increase in years of education, our prediction of prestige goes up by 5.36 points. Is that a little change in prestige? A lot? It’s hard to know, since prestige is not tangible, but a human-created construct.
+So in our prestige example, the slope of 5.36 means that for every 1-unit increase in years of education, our prediction of prestige goes up by 5.36 points. Is that a little change in prestige? A lot? It’s hard to know, since prestige is not tangible, but a human-created construct.
 
 Which brings us back to z-scores. If we z-score both the DV and the IV in our linear model, the (arbitrary) units of measurement disappear, and both variables are described in terms of standard deviation. This allows us to better relate each variable to another. To z-score the variables in a model, you just use the scale() function inside the linear model.
 
 Click the tabs to switch between Raw Units and Z-Scored Units. What changes? What stays the same??
 
 ::: panel-tabset
-### Linear Model in Raw Units
+#### Linear Model in Raw Units
 
 Here's the graph, in the original units of measurement.
 
@@ -128,17 +154,17 @@ Here's the graph, in the original units of measurement.
 plot(prestige ~ education, data = presto, 
      ylab = "Prestige (Raw Units)",
      xlab = "Education (Years)") 
-mod <- lm(prestige ~ education, data = presto)
-abline(mod, lwd = 5, col = 'red')
+mod2 <- lm(prestige ~ education, data = presto)
+abline(mod2, lwd = 5, col = 'red')
 ```
 
 And here's the result of the model.
 
 ```{r}
-round(coef(mod), 2)
+round(coef(mod2), 2)
 ```
 
-### Linear Model in Z-Scored Units
+#### Linear Model in Z-Scored Units
 
 Here's the graph when the DV and IV are Z-Scored.
 
@@ -146,18 +172,18 @@ Here's the graph when the DV and IV are Z-Scored.
 plot(scale(prestige) ~ scale(education), data = presto, 
      ylab = "Prestige (Units of Standard Deviation)",
      xlab = "Education (Units of Standard Deviation)") 
-zmod <- lm(scale(prestige) ~ scale(education), data = presto)
-abline(zmod, lwd = 5, col = 'red')
+zmod2 <- lm(scale(prestige) ~ scale(education), data = presto)
+abline(zmod2, lwd = 5, col = 'red')
 ```
 
 And here's the result of the model.
 
 ```{r}
-round(coef(zmod), 2)
+round(coef(zmod2), 2)
 ```
 :::
 
-### Interpretation of Z-Scores
+#### Interpretation of Z-Scores
 
 As before, the data do not change - the only thing that changes are the units in which the DV and IV are measured (and thus the units of the intercept and slope). 
 
@@ -181,136 +207,87 @@ Yes, class, a correlation - the relationship between two variables, is just the 
 
 ```{r}
 cor(presto$prestige, presto$education) # the correlation
-coef(zmod)[2] # the slope of our z-scored model
+coef(zmod2)[2] # the slope of our z-scored model
 ```
 
-See the video below for another example.
+See the video below for another example, from the narcissism dataset.
 
-### Video Example : Age and Narcissism (Z-Scored)
+#### Video Example : Age and Narcissism (Z-Scored)
 
-{{< video https://youtu.be/2jYwIOTaQ6g >}} The video above walks through z-scoring in another example, from the narcissism dataset.
+{{< video https://youtu.be/2jYwIOTaQ6g >}}
+
+The video above walks through z-scoring in another example, from the narcissism dataset.
 
 ![](images/6_AgeNPIZscoreVid.png){fig-align="center"}
 
-## [CHECK-OUT : Understanding Z-Scores and this Chapter! Document](https://docs.google.com/forms/d/e/1FAIpQLSdpzsYEijsSkaG_gRA4Pmqg1QFGWmTSUUmR8B31cYNtms6jtw/viewform?usp=sf_link)
+### [CHECK-IN : Understanding Z-Scores](https://docs.google.com/forms/d/e/1FAIpQLSdpzsYEijsSkaG_gRA4Pmqg1QFGWmTSUUmR8B31cYNtms6jtw/viewform?usp=sf_link)
 
-# Part 3 : Experimental Methods
+## Part 3 : Presenting Linear Models in Tables and Written Human Language
 
-Last chapter, we learned the “four reasons” why you might find a “pattern in the data” (another way of saying why “correlation does not equal causation”. However, scientists and psychologists often want (or need) to establish causation, and an experiment is the “gold standard” approach for how to do this.
+A few final notes about how to organize and present the results of your linear models. Since we are now juggling lots of information, it can feel overwhelming!
 
-Scientists and psychologists often want (or need) to establish causation, and an experiment is the “gold standard” approach for how to do this.
-
-I’m guessing y’all have learned about experiments in many other classes, so won’t spend pages and pages and pages going over it again here.[^9r_modelextensions-1]
-
-[^9r_modelextensions-1]: I'll just spend pages going over it. Hah hah.
-
-**Here’s a [supplemental chapter on experiments](https://kpu.pressbooks.pub/psychmethods4e/part/experimental-research/) that reviews some key terms you should be familiar with :** experimental manipulation; extraneous variables as “noise”; random assignment; placebo effects; external validity; construct validity; experimenter expectancy effects.
-
-### The Definition of Causality
-
-1.  The cause and effect are contiguous in space and time.
-2.  The cause must be prior to the effect. (no reverse causation)
-3.  There must be a constant union betwixt the cause and effect. (“Tis chiefly this quality, that constitutes the relation.”) (no random chance)
-4.  The same cause always produces the same effect, and the same effect never arises but from the same cause. (not "just" some third variable) \[\^1\]
-
-\[\^1\] but remember, life is complex and there are often multiple causes of human behavior!
-
-### The Google Experiment
-
-When I worked at Google as an intern for one summer[^9r_modelextensions-2], corporate PR told a story about their "data driven approach", where no decision was left to mere chance. Even something as simple as the color font they used could be the focus of an analytic research question.
-
-[^9r_modelextensions-2]: well-fed; gratuitously paid; soul-drained. I was in their "People Operations" (/HR) department, helping them set up longitudinal surveys and do various other research projects on compensation, appreciation, and diversity that helped feed the corporate beast.
-
-+------------------------------------------+-----------------------------------------+
-|                                          |                                         |
-+==========================================+=========================================+
-| **Google Homepage : Before Experiments** | **Google Homepage : After Experiments** |
-+------------------------------------------+-----------------------------------------+
-| ![](images/7_goog.png)                   | ![](images/7_goog2.png)                 |
-+------------------------------------------+-----------------------------------------+
-
-Watch the video below. You can [read more about this study here](https://www.theguardian.com/technology/2014/feb/05/why-google-engineers-designers).
-
-{{< video https://youtu.be/WtBMEEdgmuc >}}
-
-![](images/7_goog3.png){fig-align="center"}
-
-**Then, see if you can identify the different parts of an experiment.**
-
-- **linear model :** DV \~ IV (what was manipulated) + confound variables + error
-
-- **manipulation :** what were the treatment and control groups?
-
-- **random assignment :** how were confound variables balanced across conditions?
-
-- **double-blind :** did the study avoid demand characteristics & placebo effects?
-
-- **generalizability :** did the study have external validity? what was the effect size (R2)?
-
-- **ethics :** should researchers do this type of study \[predict & control\]
-
-::: {.callout-tip collapse="true"}
-### Answers to Google Shade of Blue Experiment
-
-- **linear model** : number of ads that peopled clicked on \~ shade of blue people saw + age + location + income + education + media literacy + relevance of the ad + etc + error
-
-- **manipulation :** “control” group = shade of blue (existing shade of blue); treatment group = shade of blue.
-
-- **random assignment :** participants were randomly assigned to see links in one shade of blue or another. because this was randomly assigned, all the other differences between people (those variables that might affect the DV, such as age or location) are “balanced out”.
-
-- **double-blind :** the participant didn’t know that google was manipulating the shade of blue to get them to click on ads. the website (google) doesn’t know whats going on.
-
-- **generalizability :** yes, high external validity! Google was changing its own website. an example of low external validity would be printing out a sheet with different shades of blue that users “click” on with their finger.
-
-- **ethics :** WOULD LOVE TO HEAR FROM Y’ALL : do you think it’s ethical for companies like Google to do this research???
-:::
-
-# Part 4 : Regression Assumptions
-
-The interpretation of our linear models depends on a variety of different assumptions being met. You can read more about these from the great [Gelman & Hill's textbook : Data Analysis Using Regression](https://www.dropbox.com/scl/fi/iuhs0x2un3d4ivhcc3rug/Gelman_Hill_RegressionAssumptions.pdf?rlkey=blhc8bcxypu0ar5wvzpruslqk&dl=0). But below is a TLDR, with a few ideas of my own thrown in.
-
-*AUTHOR'S NOTE : this is a pretty incomplete part of the textbook; could probably use a few examples. on the very long to-do list!*
-
-1.  **Validity.** Is your linear model the right model to answer the research question that you have? This is the big question, and often goes beyond the specific statistics that we are focusing on. Did you include the right variables in your model, or are you leaving something out? Are you studying the right sample of people, drawn from the right population? Are your measures valid? This is hard to do, and good to remember that it is hard so you ask yourself "am I doing a good job"?
-
-2.  **Reliability of Measures.** The variables in your linear model should be measured with low error (“garbage in, garbage out”). There are different ways to assess reliability.
-
-    - **Cronbach's alpha** (`psych::alpha()`) is good for assessing the inter-item reliability of a likert scale.
-
-    - **The Intraclass Correlation Coefficient (ICC)** is often used for observational ratings where multiple judges form impressions of the same target.
-
-    - **Test-retest reliability** is a great way to ensure that physiological or single-item measures will yield repeatable measures over time (assuming the target of measurement has not changed between time points). One way to test this is to define a linear model to predict the measure at one time point from the measure at another; you'd expect to see a strong relationship.
-
-3.  **Independence.** This is a big one - the residuals in your model need to be unrelated to each other. That is, I should not be able to predict the value of one error from another error. When the data in a linear model come from distinct individuals who are unrelated to each other, this assumption is usually considered to be met. However, there are often types of studies where the data are not independent.
-
-    - **Nested Data :** Often times, individuals in a dataset belong to a group where there's a clear dependence. For example, the happiness of individual members of a family is probably dependent on one another (since they share the same environment, stressors, etc.); the test-scores of children in a school are probably all related to each other (since they share the same teachers, administrators, funding, lead exposure in the drinking water, etc.)
-
-    - **Repeated Measures :** If a person is measured multiple times, then their data at one time point will be related to their data at the second time point, since they are coming from the same person, with the same past experiences and beliefs and genetics and all that other good stuff.
-
-    If the data are not independent, then we will need to account for the dependence in the data. We will learn to do this when we review Multilevel Linear Models. (Spoiler : it's more lines.)
-
-4.  **Linearity.** The dependent (outcome) variable should be the result of one or more linear functions (slopes). In other words, the outcome is the result of a bunch of straight lines. If the straight lines don't properly "fit" or "explain" your data, then maybe you need some non-straight lines...you could bend the line (add a quadratic term), look for an interaction term (that tests whether there's a multiplicative relationship between the variables), or apply a non-linear transformation to the data (i.e., often times income is log transformed, since a 9,000 point difference between 1000 and 10,000 dollars/month is not the same as a 9,000 point difference between 1,000,000 and 1,009,000 dollars/month).
-
-5.  **Equal Variance of Errors (Homoscedasticity).** The errors associated with the predicted values of the DV (the residuals) should be similar for all different values of the IV. Homoscedasticity means that the residual errors in our outcome variable are distributed the same across the different values of the IV. Heteroscedasticity means there is some non-constant variability in errors, which means that your model may not be an appropriate explanation of the data.
-
-6.  **Normality of Errors (Residuals and Sampling).** This assumption is less emphasized as our datasets have gotten larger, and methods for estimating sampling error have improved. But the basic idea is that statistics like confidence intervals and estimates of slopes assume that the errors in our model are normally distributed. If they are not, it's likely that your model is not appropriately fitting the data (i.e., maybe some outliers are influencing the results.)
-
-### Testing Assumptions in R
-
-Assumptions 1-3 require critical thinking about your methods and measures.
-
-Assumptions 4 and 5 can be examined using the plot() function in base R - you may have accidentally come across these when trying to graph your linear model.
-
-We talked about how to interpret these plots a little in lecture; here's [another tutorial](https://library.virginia.edu/data/articles/diagnostic-plots) that walks through the interpretation. Let us know (on Discord!) if you find another good example / explanation.
+To recap, in Part 1, we defined the following linear model :
 
 ```{r}
-par(mfrow = c(2,2))
-plot(mod)
+summary(mod)
 ```
 
-Assumption 6 can be examined by graphing the residuals of your model object with a histogram.
+In Part 2, we defined the following linear model :
 
 ```{r}
-par(mfrow = c(1,1))
-hist(mod$residuals)
+mod2 <- lm(prestige ~ education, data = presto)
+summary(mod2)
 ```
+
+When writing about multiple models, it can be useful to organize the results into a regression table. A good regression table will report the relevant statistics you need to fully understand each model. This includes the predictive statistics like the intercept, slope(s), and $R^2$ - as well as some relevant inferential statistics. Many regression tables only report the p-value (sometimes using stars to indicate whether a slope is statistically significant). However, I recommend also reporting standard error values (or 95% Confidence Intervals), since this gives the reader more information about sampling error (which the p-value is based on).
+
+There's a neat package in R called `jtools` that quickly helps you produce a publication-worthy table using the function `export_summs()`, alongside the models that you defined in earlier R code.
+
+```{r}
+library(jtools)
+export_summs(mod, mod2)
+```
+
+You can read more about `jtools` from the help file by running `?jtools`, or read the [jtools website](https://jtools.jacob-long.com/reference/export_summs). For example, there are ways you can adapt the code for jtools to add 95% confidence intervals, change the names of your coefficients to help readers, round to two decimal places, and standardize the variables in your model. Whew!
+
+```{r}
+#| tbl-cap: "Table : Predicting Prestige from Job Type and Education"
+#| tbl-cap-location: top
+
+
+export_summs(mod, mod2,
+             error_format = "CI = [{conf.low}, {conf.high}]",
+             coefs = c("Intercept" = "(Intercept)",
+                       "Professional (vs. Blue Collar)" = "typeprof",
+                       "White Collar (vs. Blue Collar)" = "typewc",
+                       "Years of Education" = "education"),
+             number_format = "%.2f",
+             scale = TRUE, transform.response = TRUE)
+```
+
+I would then reference or write about the results in the following way :
+
+*In Model 1, I found a strong relationship between Job Type and Prestige (*$R^2$ = .70). Specifically, professional workers were rated as almost 2 standard deviations higher in prestige than blue collar workers ($\beta$ = 1.89, 95% CI = \[1.6, 2.1\], p \< .001). White collar workers were also rated as significantly higher in prestige than blue collar workers ($\beta$ = .39, 95% CI = \[0.1, .07\]). These differences are illustrated in Figure 1 below.
+
+```{r}
+#| fig-cap: "Figure 1. Note : bc = Blue Collar, wc = White Collar, prof = Professional"
+
+plotmeans(prestige ~ type, data = presto, connect = FALSE,
+          xlab = "Job Type", ylab = "Prestige Rating")
+```
+
+*In Model 2, I found that education was also strongly and significantly related to prestige - for every one standard deviation increase in education required for the job, the prestige of the job increases by .85 standard deviations (95% CI = \[.75, .95\], p \< .001). This pattern is illustrated in Figure 2 below.*
+
+```{r}
+plot(prestige ~ education, data = presto, 
+     ylab = "Prestige (Raw Units)",
+     xlab = "Education (Years)") 
+mod2 <- lm(prestige ~ education, data = presto)
+abline(mod2, lwd = 5, col = 'red')
+```
+
+*Together, these data suggest that both job type and the average years of education required for a job are strong predictors of how much prestige the job has.*[^9r_modelextensions-1]
+
+[^9r_modelextensions-1]: You may be thinking that education is also related to job type (this is something you can test in Quiz 7!). And if education IS related to job type, then maybe part of the reason that job type is related to prestige is because different types of jobs have different education requirements, and it's education that's [***really***]{.underline} related to prestige. Or maybe it's the other way around, and the only reason people's fancy degrees seems related to prestige is because they are associated with certain job types? We will explore these questions later in the year when we get to *Multiple Regression.*
+
+Okay, I hope that helped?! Let me know on Discord if you still have questions. However, I've recorded a video key for this week's lab assignment that you can use as a guide, and I hope that this guide helps!
